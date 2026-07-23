@@ -204,97 +204,97 @@ voxgig_value* sdk_direct(BluefinTecsMerchantPortalSDK* sdk, voxgig_value* fetcha
 
 
 // MerchantPortalApiController entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_merchant_portal_api_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_merchant_portal_api_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return merchant_portal_api_controller_entity_new(client, entopts);
 }
 
 // MerchantPortalCommonController entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_merchant_portal_common_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_merchant_portal_common_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return merchant_portal_common_controller_entity_new(client, entopts);
 }
 
 // MerchantPortalPamContractController entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_merchant_portal_pam_contract_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_merchant_portal_pam_contract_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return merchant_portal_pam_contract_controller_entity_new(client, entopts);
 }
 
 // MerchantPortalPamDocumentController entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_merchant_portal_pam_document_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_merchant_portal_pam_document_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return merchant_portal_pam_document_controller_entity_new(client, entopts);
 }
 
 // MerchantPortalPamFormController entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_merchant_portal_pam_form_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_merchant_portal_pam_form_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return merchant_portal_pam_form_controller_entity_new(client, entopts);
 }
 
 // MerchantPortalPamMandatorController entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_merchant_portal_pam_mandator_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_merchant_portal_pam_mandator_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return merchant_portal_pam_mandator_controller_entity_new(client, entopts);
 }
 
 // MerchantPortalPamMerchantController entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_merchant_portal_pam_merchant_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_merchant_portal_pam_merchant_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return merchant_portal_pam_merchant_controller_entity_new(client, entopts);
 }
 
 // MerchantPortalPamPackageController entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_merchant_portal_pam_package_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_merchant_portal_pam_package_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return merchant_portal_pam_package_controller_entity_new(client, entopts);
 }
 
 // MerchantPortalPamProductController entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_merchant_portal_pam_product_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_merchant_portal_pam_product_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return merchant_portal_pam_product_controller_entity_new(client, entopts);
 }
 
 // OutputAddProduct entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_output_add_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_output_add_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return output_add_product_entity_new(client, entopts);
 }
 
 // OutputCreateProduct entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_output_create_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_output_create_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return output_create_product_entity_new(client, entopts);
 }
 
 // OutputDetail entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_output_detail(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_output_detail(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return output_detail_entity_new(client, entopts);
 }
 
 // OutputList entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_output_list(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_output_list(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return output_list_entity_new(client, entopts);
 }
 
 // OutputMessage entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_output_message(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_output_message(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return output_message_entity_new(client, entopts);
 }
 
 // OutputMoveTid entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_output_move_tid(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_output_move_tid(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return output_move_tid_entity_new(client, entopts);
 }
 
 // OutputRemoveProduct entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_output_remove_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_output_remove_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return output_remove_product_entity_new(client, entopts);
 }
 
 // OutputStart entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_output_start(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_output_start(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return output_start_entity_new(client, entopts);
 }
 
 // OutputStatus entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_output_status(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_output_status(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return output_status_entity_new(client, entopts);
 }
 
 // OutputUpdateProduct entity bound to this client.
-Entity* bluefin_tecs_merchant_portal_output_update_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantportal_output_update_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts) {
   return output_update_product_entity_new(client, entopts);
 }
 

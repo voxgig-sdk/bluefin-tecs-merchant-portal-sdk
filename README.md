@@ -112,7 +112,7 @@ local result, err = client:OutputDetail():load({ id = "test01" })
 
 BluefinTecsMerchantPortalSDK* client = test_sdk(NULL, NULL);
 PNError* err = NULL;
-Entity* output_detail = bluefin_tecs_merchant_portal_output_detail(client, NULL);
+Entity* output_detail = bluefintecsmerchantportal_output_detail(client, NULL);
 voxgig_value* output_detail_rec = output_detail->vt->load(output_detail, cmap(1, "id", v_str("test01")), NULL, &err);
 printf("%s\n", voxgig_to_json(output_detail_rec));
 ```
@@ -424,7 +424,7 @@ local client = sdk.new()
 ```c
 #include "core/api.h"
 
-BluefinTecsMerchantPortalSDK* client = bluefin_tecs_merchant_portal_sdk_new(NULL);
+BluefinTecsMerchantPortalSDK* client = bluefintecsmerchantportal_sdk_new(NULL);
 PNError* err = NULL;
 
 ```

@@ -10,7 +10,7 @@ Complete API reference for the BluefinTecsMerchantPortal C SDK.
 ```c
 #include "core/api.h"
 
-BluefinTecsMerchantPortalSDK* client = bluefin_tecs_merchant_portal_sdk_new(options);
+BluefinTecsMerchantPortalSDK* client = bluefintecsmerchantportal_sdk_new(options);
 ```
 
 Create a new SDK client instance. `options` is a `voxgig_value*` map
@@ -42,97 +42,97 @@ BluefinTecsMerchantPortalSDK* client = test_sdk(NULL, NULL);
 
 ### Entity Accessors
 
-#### `Entity* bluefin_tecs_merchant_portal_merchant_portal_api_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_merchant_portal_api_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `MerchantPortalApiController` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_merchant_portal_common_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_merchant_portal_common_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `MerchantPortalCommonController` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_merchant_portal_pam_contract_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_merchant_portal_pam_contract_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `MerchantPortalPamContractController` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_merchant_portal_pam_document_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_merchant_portal_pam_document_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `MerchantPortalPamDocumentController` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_merchant_portal_pam_form_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_merchant_portal_pam_form_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `MerchantPortalPamFormController` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_merchant_portal_pam_mandator_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_merchant_portal_pam_mandator_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `MerchantPortalPamMandatorController` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_merchant_portal_pam_merchant_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_merchant_portal_pam_merchant_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `MerchantPortalPamMerchantController` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_merchant_portal_pam_package_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_merchant_portal_pam_package_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `MerchantPortalPamPackageController` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_merchant_portal_pam_product_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_merchant_portal_pam_product_controller(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `MerchantPortalPamProductController` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_output_add_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_output_add_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputAddProduct` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_output_create_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_output_create_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputCreateProduct` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_output_detail(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_output_detail(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputDetail` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_output_list(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_output_list(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputList` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_output_message(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_output_message(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputMessage` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_output_move_tid(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_output_move_tid(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputMoveTid` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_output_remove_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_output_remove_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputRemoveProduct` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_output_start(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_output_start(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputStart` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_output_status(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_output_status(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputStatus` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_portal_output_update_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantportal_output_update_product(BluefinTecsMerchantPortalSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputUpdateProduct` entity instance. Pass `NULL` for no initial
 options.
@@ -166,7 +166,7 @@ Prepare a fetch definition without sending. Returns the fetchdef and sets
 ## MerchantPortalApiController
 
 ```c
-Entity* merchant_portal_api_controller = bluefin_tecs_merchant_portal_merchant_portal_api_controller(client, NULL);
+Entity* merchant_portal_api_controller = bluefintecsmerchantportal_merchant_portal_api_controller(client, NULL);
 ```
 
 ### Fields
@@ -214,7 +214,7 @@ Entity* merchant_portal_api_controller = bluefin_tecs_merchant_portal_merchant_p
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* merchant_portal_api_controller = bluefin_tecs_merchant_portal_merchant_portal_api_controller(client, NULL);
+Entity* merchant_portal_api_controller = bluefintecsmerchantportal_merchant_portal_api_controller(client, NULL);
 voxgig_value* result = merchant_portal_api_controller->vt->create(merchant_portal_api_controller, cmap(18,
     "business_reg_number", v_str("example_business_reg_number"),  // char*
     "city", v_str("example_city"),  // char*
@@ -261,7 +261,7 @@ Return the entity name.
 ## MerchantPortalCommonController
 
 ```c
-Entity* merchant_portal_common_controller = bluefin_tecs_merchant_portal_merchant_portal_common_controller(client, NULL);
+Entity* merchant_portal_common_controller = bluefintecsmerchantportal_merchant_portal_common_controller(client, NULL);
 ```
 
 ### Operations
@@ -271,7 +271,7 @@ Entity* merchant_portal_common_controller = bluefin_tecs_merchant_portal_merchan
 Load a single entity matching the given criteria. Returns the entity data and sets `*err` on failure.
 
 ```c
-Entity* merchant_portal_common_controller = bluefin_tecs_merchant_portal_merchant_portal_common_controller(client, NULL);
+Entity* merchant_portal_common_controller = bluefintecsmerchantportal_merchant_portal_common_controller(client, NULL);
 voxgig_value* result = merchant_portal_common_controller->vt->load(merchant_portal_common_controller, NULL, NULL, &err);
 ```
 
@@ -299,7 +299,7 @@ Return the entity name.
 ## MerchantPortalPamContractController
 
 ```c
-Entity* merchant_portal_pam_contract_controller = bluefin_tecs_merchant_portal_merchant_portal_pam_contract_controller(client, NULL);
+Entity* merchant_portal_pam_contract_controller = bluefintecsmerchantportal_merchant_portal_pam_contract_controller(client, NULL);
 ```
 
 ### Fields
@@ -316,7 +316,7 @@ Entity* merchant_portal_pam_contract_controller = bluefin_tecs_merchant_portal_m
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* merchant_portal_pam_contract_controller = bluefin_tecs_merchant_portal_merchant_portal_pam_contract_controller(client, NULL);
+Entity* merchant_portal_pam_contract_controller = bluefintecsmerchantportal_merchant_portal_pam_contract_controller(client, NULL);
 voxgig_value* result = merchant_portal_pam_contract_controller->vt->create(merchant_portal_pam_contract_controller, cmap(2,
     "language", v_str("example_language"),  // char*
     "product_order_uuid", v_str("example_product_order_uuid"))  // char*
@@ -347,7 +347,7 @@ Return the entity name.
 ## MerchantPortalPamDocumentController
 
 ```c
-Entity* merchant_portal_pam_document_controller = bluefin_tecs_merchant_portal_merchant_portal_pam_document_controller(client, NULL);
+Entity* merchant_portal_pam_document_controller = bluefintecsmerchantportal_merchant_portal_pam_document_controller(client, NULL);
 ```
 
 ### Fields
@@ -365,7 +365,7 @@ Entity* merchant_portal_pam_document_controller = bluefin_tecs_merchant_portal_m
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* merchant_portal_pam_document_controller = bluefin_tecs_merchant_portal_merchant_portal_pam_document_controller(client, NULL);
+Entity* merchant_portal_pam_document_controller = bluefintecsmerchantportal_merchant_portal_pam_document_controller(client, NULL);
 voxgig_value* result = merchant_portal_pam_document_controller->vt->create(merchant_portal_pam_document_controller, cmap(1,
     "app_form_field_desc_uuid", v_str("example_app_form_field_desc_uuid"))  // char*
 , NULL, &err);
@@ -395,7 +395,7 @@ Return the entity name.
 ## MerchantPortalPamFormController
 
 ```c
-Entity* merchant_portal_pam_form_controller = bluefin_tecs_merchant_portal_merchant_portal_pam_form_controller(client, NULL);
+Entity* merchant_portal_pam_form_controller = bluefintecsmerchantportal_merchant_portal_pam_form_controller(client, NULL);
 ```
 
 ### Fields
@@ -433,7 +433,7 @@ Entity* merchant_portal_pam_form_controller = bluefin_tecs_merchant_portal_merch
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* merchant_portal_pam_form_controller = bluefin_tecs_merchant_portal_merchant_portal_pam_form_controller(client, NULL);
+Entity* merchant_portal_pam_form_controller = bluefintecsmerchantportal_merchant_portal_pam_form_controller(client, NULL);
 voxgig_value* result = merchant_portal_pam_form_controller->vt->create(merchant_portal_pam_form_controller, cmap(4,
     "app_form_fields_desc_uuid", v_str("example_app_form_fields_desc_uuid"),  // char*
     "language", v_str("example_language"),  // char*
@@ -466,7 +466,7 @@ Return the entity name.
 ## MerchantPortalPamMandatorController
 
 ```c
-Entity* merchant_portal_pam_mandator_controller = bluefin_tecs_merchant_portal_merchant_portal_pam_mandator_controller(client, NULL);
+Entity* merchant_portal_pam_mandator_controller = bluefintecsmerchantportal_merchant_portal_pam_mandator_controller(client, NULL);
 ```
 
 ### Fields
@@ -485,7 +485,7 @@ Entity* merchant_portal_pam_mandator_controller = bluefin_tecs_merchant_portal_m
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* merchant_portal_pam_mandator_controller = bluefin_tecs_merchant_portal_merchant_portal_pam_mandator_controller(client, NULL);
+Entity* merchant_portal_pam_mandator_controller = bluefintecsmerchantportal_merchant_portal_pam_mandator_controller(client, NULL);
 voxgig_value* result = merchant_portal_pam_mandator_controller->vt->create(merchant_portal_pam_mandator_controller, cmap(2,
     "mandator_name", v_str("example_mandator_name"),  // char*
     "package_uuid", v_str("example_package_uuid"))  // char*
@@ -516,7 +516,7 @@ Return the entity name.
 ## MerchantPortalPamMerchantController
 
 ```c
-Entity* merchant_portal_pam_merchant_controller = bluefin_tecs_merchant_portal_merchant_portal_pam_merchant_controller(client, NULL);
+Entity* merchant_portal_pam_merchant_controller = bluefintecsmerchantportal_merchant_portal_pam_merchant_controller(client, NULL);
 ```
 
 ### Fields
@@ -588,7 +588,7 @@ Entity* merchant_portal_pam_merchant_controller = bluefin_tecs_merchant_portal_m
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* merchant_portal_pam_merchant_controller = bluefin_tecs_merchant_portal_merchant_portal_pam_merchant_controller(client, NULL);
+Entity* merchant_portal_pam_merchant_controller = bluefintecsmerchantportal_merchant_portal_pam_merchant_controller(client, NULL);
 voxgig_value* result = merchant_portal_pam_merchant_controller->vt->create(merchant_portal_pam_merchant_controller, cmap(13,
     "business_registration_number", v_str("example_business_registration_number"),  // char*
     "company_name", v_str("example_company_name"),  // char*
@@ -630,7 +630,7 @@ Return the entity name.
 ## MerchantPortalPamPackageController
 
 ```c
-Entity* merchant_portal_pam_package_controller = bluefin_tecs_merchant_portal_merchant_portal_pam_package_controller(client, NULL);
+Entity* merchant_portal_pam_package_controller = bluefintecsmerchantportal_merchant_portal_pam_package_controller(client, NULL);
 ```
 
 ### Fields
@@ -672,7 +672,7 @@ Entity* merchant_portal_pam_package_controller = bluefin_tecs_merchant_portal_me
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* merchant_portal_pam_package_controller = bluefin_tecs_merchant_portal_merchant_portal_pam_package_controller(client, NULL);
+Entity* merchant_portal_pam_package_controller = bluefintecsmerchantportal_merchant_portal_pam_package_controller(client, NULL);
 voxgig_value* result = merchant_portal_pam_package_controller->vt->create(merchant_portal_pam_package_controller, cmap(2,
     "language", v_str("example_language"),  // char*
     "package_uuid", v_str("example_package_uuid"))  // char*
@@ -703,7 +703,7 @@ Return the entity name.
 ## MerchantPortalPamProductController
 
 ```c
-Entity* merchant_portal_pam_product_controller = bluefin_tecs_merchant_portal_merchant_portal_pam_product_controller(client, NULL);
+Entity* merchant_portal_pam_product_controller = bluefintecsmerchantportal_merchant_portal_pam_product_controller(client, NULL);
 ```
 
 ### Fields
@@ -728,7 +728,7 @@ Entity* merchant_portal_pam_product_controller = bluefin_tecs_merchant_portal_me
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* merchant_portal_pam_product_controller = bluefin_tecs_merchant_portal_merchant_portal_pam_product_controller(client, NULL);
+Entity* merchant_portal_pam_product_controller = bluefintecsmerchantportal_merchant_portal_pam_product_controller(client, NULL);
 voxgig_value* result = merchant_portal_pam_product_controller->vt->create(merchant_portal_pam_product_controller, cmap(4,
     "package_order_uuid", v_str("example_package_order_uuid"),  // char*
     "product_order_uuid", v_str("example_product_order_uuid"),  // char*
@@ -761,7 +761,7 @@ Return the entity name.
 ## OutputAddProduct
 
 ```c
-Entity* output_add_product = bluefin_tecs_merchant_portal_output_add_product(client, NULL);
+Entity* output_add_product = bluefintecsmerchantportal_output_add_product(client, NULL);
 ```
 
 ### Fields
@@ -780,7 +780,7 @@ Entity* output_add_product = bluefin_tecs_merchant_portal_output_add_product(cli
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_add_product = bluefin_tecs_merchant_portal_output_add_product(client, NULL);
+Entity* output_add_product = bluefintecsmerchantportal_output_add_product(client, NULL);
 voxgig_value* result = output_add_product->vt->create(output_add_product, cmap(4,
     "package_uuid", v_str("example_package_uuid"),  // char*
     "product_uui_d", v_list(),  // voxgig_value* (list)
@@ -813,7 +813,7 @@ Return the entity name.
 ## OutputCreateProduct
 
 ```c
-Entity* output_create_product = bluefin_tecs_merchant_portal_output_create_product(client, NULL);
+Entity* output_create_product = bluefintecsmerchantportal_output_create_product(client, NULL);
 ```
 
 ### Fields
@@ -842,7 +842,7 @@ Entity* output_create_product = bluefin_tecs_merchant_portal_output_create_produ
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_create_product = bluefin_tecs_merchant_portal_output_create_product(client, NULL);
+Entity* output_create_product = bluefintecsmerchantportal_output_create_product(client, NULL);
 voxgig_value* result = output_create_product->vt->create(output_create_product, cmap(12,
     "allow_multiple_order", v_bool(true),  // bool
     "app_form_template_name", v_str("example_app_form_template_name"),  // char*
@@ -883,7 +883,7 @@ Return the entity name.
 ## OutputDetail
 
 ```c
-Entity* output_detail = bluefin_tecs_merchant_portal_output_detail(client, NULL);
+Entity* output_detail = bluefintecsmerchantportal_output_detail(client, NULL);
 ```
 
 ### Fields
@@ -901,7 +901,7 @@ Entity* output_detail = bluefin_tecs_merchant_portal_output_detail(client, NULL)
 Load a single entity matching the given criteria. Returns the entity data and sets `*err` on failure.
 
 ```c
-Entity* output_detail = bluefin_tecs_merchant_portal_output_detail(client, NULL);
+Entity* output_detail = bluefintecsmerchantportal_output_detail(client, NULL);
 voxgig_value* result = output_detail->vt->load(output_detail, cmap(1, "id", v_str("output_detail_id")), NULL, &err);
 ```
 
@@ -929,7 +929,7 @@ Return the entity name.
 ## OutputList
 
 ```c
-Entity* output_list = bluefin_tecs_merchant_portal_output_list(client, NULL);
+Entity* output_list = bluefintecsmerchantportal_output_list(client, NULL);
 ```
 
 ### Fields
@@ -959,7 +959,7 @@ Entity* output_list = bluefin_tecs_merchant_portal_output_list(client, NULL);
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_list = bluefin_tecs_merchant_portal_output_list(client, NULL);
+Entity* output_list = bluefintecsmerchantportal_output_list(client, NULL);
 voxgig_value* result = output_list->vt->create(output_list, cmap(3,
     "pagination", v_map(),  // voxgig_value* (map)
     "response_code", v_num(1),  // int64_t
@@ -991,7 +991,7 @@ Return the entity name.
 ## OutputMessage
 
 ```c
-Entity* output_message = bluefin_tecs_merchant_portal_output_message(client, NULL);
+Entity* output_message = bluefintecsmerchantportal_output_message(client, NULL);
 ```
 
 ### Fields
@@ -1008,7 +1008,7 @@ Entity* output_message = bluefin_tecs_merchant_portal_output_message(client, NUL
 Load a single entity matching the given criteria. Returns the entity data and sets `*err` on failure.
 
 ```c
-Entity* output_message = bluefin_tecs_merchant_portal_output_message(client, NULL);
+Entity* output_message = bluefintecsmerchantportal_output_message(client, NULL);
 voxgig_value* result = output_message->vt->load(output_message, cmap(1, "id", v_str("output_message_id")), NULL, &err);
 ```
 
@@ -1036,7 +1036,7 @@ Return the entity name.
 ## OutputMoveTid
 
 ```c
-Entity* output_move_tid = bluefin_tecs_merchant_portal_output_move_tid(client, NULL);
+Entity* output_move_tid = bluefintecsmerchantportal_output_move_tid(client, NULL);
 ```
 
 ### Fields
@@ -1056,7 +1056,7 @@ Entity* output_move_tid = bluefin_tecs_merchant_portal_output_move_tid(client, N
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_move_tid = bluefin_tecs_merchant_portal_output_move_tid(client, NULL);
+Entity* output_move_tid = bluefintecsmerchantportal_output_move_tid(client, NULL);
 voxgig_value* result = output_move_tid->vt->create(output_move_tid, cmap(5,
     "product_order_uui_d", v_list(),  // voxgig_value* (list)
     "response_code", v_num(1),  // int64_t
@@ -1090,7 +1090,7 @@ Return the entity name.
 ## OutputRemoveProduct
 
 ```c
-Entity* output_remove_product = bluefin_tecs_merchant_portal_output_remove_product(client, NULL);
+Entity* output_remove_product = bluefintecsmerchantportal_output_remove_product(client, NULL);
 ```
 
 ### Fields
@@ -1109,7 +1109,7 @@ Entity* output_remove_product = bluefin_tecs_merchant_portal_output_remove_produ
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_remove_product = bluefin_tecs_merchant_portal_output_remove_product(client, NULL);
+Entity* output_remove_product = bluefintecsmerchantportal_output_remove_product(client, NULL);
 voxgig_value* result = output_remove_product->vt->create(output_remove_product, cmap(4,
     "package_uuid", v_str("example_package_uuid"),  // char*
     "product_uui_d", v_list(),  // voxgig_value* (list)
@@ -1142,7 +1142,7 @@ Return the entity name.
 ## OutputStart
 
 ```c
-Entity* output_start = bluefin_tecs_merchant_portal_output_start(client, NULL);
+Entity* output_start = bluefintecsmerchantportal_output_start(client, NULL);
 ```
 
 ### Fields
@@ -1160,7 +1160,7 @@ Entity* output_start = bluefin_tecs_merchant_portal_output_start(client, NULL);
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_start = bluefin_tecs_merchant_portal_output_start(client, NULL);
+Entity* output_start = bluefintecsmerchantportal_output_start(client, NULL);
 voxgig_value* result = output_start->vt->create(output_start, cmap(2,
     "response_code", v_num(1),  // int64_t
     "response_message", v_str("example_response_message"))  // char*
@@ -1191,7 +1191,7 @@ Return the entity name.
 ## OutputStatus
 
 ```c
-Entity* output_status = bluefin_tecs_merchant_portal_output_status(client, NULL);
+Entity* output_status = bluefintecsmerchantportal_output_status(client, NULL);
 ```
 
 ### Fields
@@ -1210,7 +1210,7 @@ Entity* output_status = bluefin_tecs_merchant_portal_output_status(client, NULL)
 Load a single entity matching the given criteria. Returns the entity data and sets `*err` on failure.
 
 ```c
-Entity* output_status = bluefin_tecs_merchant_portal_output_status(client, NULL);
+Entity* output_status = bluefintecsmerchantportal_output_status(client, NULL);
 voxgig_value* result = output_status->vt->load(output_status, cmap(1, "id", v_str("output_status_id")), NULL, &err);
 ```
 
@@ -1238,7 +1238,7 @@ Return the entity name.
 ## OutputUpdateProduct
 
 ```c
-Entity* output_update_product = bluefin_tecs_merchant_portal_output_update_product(client, NULL);
+Entity* output_update_product = bluefintecsmerchantportal_output_update_product(client, NULL);
 ```
 
 ### Fields
@@ -1266,7 +1266,7 @@ Entity* output_update_product = bluefin_tecs_merchant_portal_output_update_produ
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_update_product = bluefin_tecs_merchant_portal_output_update_product(client, NULL);
+Entity* output_update_product = bluefintecsmerchantportal_output_update_product(client, NULL);
 voxgig_value* result = output_update_product->vt->create(output_update_product, cmap(3,
     "product_uuid", v_str("example_product_uuid"),  // char*
     "response_code", v_num(1),  // int64_t
@@ -1305,7 +1305,7 @@ Return the entity name.
 Features are activated via the `feature` option:
 
 ```c
-BluefinTecsMerchantPortalSDK* client = bluefin_tecs_merchant_portal_sdk_new(cmap(1,
+BluefinTecsMerchantPortalSDK* client = bluefintecsmerchantportal_sdk_new(cmap(1,
     "feature", cmap(1,
         "test", cmap(1, "active", v_bool(true)))
 ));

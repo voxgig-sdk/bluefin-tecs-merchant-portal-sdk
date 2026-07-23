@@ -28,7 +28,7 @@ static BluefinTecsMerchantPortalSDK* output_detail_direct_setup(voxgig_value* mo
   voxgig_value* opts = cmap(2,
     "base", v_str("http://localhost:8080"),
     "system", cmap(1, "fetch", vfn(output_detail_mock, mockres)));
-  return bluefin_tecs_merchant_portal_sdk_new(opts);
+  return bluefintecsmerchantportal_sdk_new(opts);
 }
 
 int main(void) {
@@ -58,5 +58,5 @@ int main(void) {
     CHECK(strstr(LAST_URL, "direct01") != NULL, "load: url has direct01");
   }
 
-  TEST_SUMMARY("bluefin_tecs_merchant_portal_output_detail_direct");
+  TEST_SUMMARY("bluefintecsmerchantportal_output_detail_direct");
 }
