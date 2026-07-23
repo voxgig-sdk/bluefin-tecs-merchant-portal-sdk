@@ -1,0 +1,5066 @@
+{
+ "openapi": "3.0.0",
+ "info": {
+  "description": "Web service for merchant registration and management.",
+  "version": "1.39.13",
+  "title": "Merchant Portal Web Service Documentation",
+  "termsOfService": "https://www.tecs.at/merchant-portal-ws/terms-of-service-url/",
+  "contact": {
+   "name": "Contact",
+   "url": "https://www.tecs.at/contact/",
+   "email": "contact@tecs.at"
+  },
+  "license": {
+   "name": "Telecommunication & E-Commerce Solutions GmbH \u00a9 All rights reserved",
+   "url": "https://www.tecs.at/merchant-portal-ws/license-url/"
+  }
+ },
+ "tags": [
+  {
+   "name": "merchant-portal-common-controller",
+   "description": "Common endpoints (dev info, version)"
+  },
+  {
+   "name": "merchant-portal-pam-contract-controller",
+   "description": "Contract endpoints"
+  },
+  {
+   "name": "merchant-portal-pam-document-controller",
+   "description": "Document endpoints"
+  },
+  {
+   "name": "merchant-portal-pam-form-controller",
+   "description": "Form endpoints"
+  },
+  {
+   "name": "merchant-portal-pam-mandator-controller",
+   "description": "Mandator endpoints"
+  },
+  {
+   "name": "merchant-portal-pam-merchant-controller",
+   "description": "Merchant endpoints"
+  },
+  {
+   "name": "merchant-portal-pam-package-controller",
+   "description": "Package endpoints"
+  },
+  {
+   "name": "merchant-portal-pam-product-controller",
+   "description": "Product endpoints"
+  },
+  {
+   "name": "merchant-portal-pam-batch-controller",
+   "description": "Batch endpoints"
+  },
+  {
+   "name": "merchant-portal-api-controller",
+   "description": "Public API endpoints"
+  }
+ ],
+ "paths": {
+  "/merchantportalws/addProductsToPackage": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-product-controller"
+    ],
+    "summary": "Add products to a package",
+    "description": "Required role for operation: BO_MP_ADD_PACKAGE_PRODUCTS",
+    "operationId": "addProductsToPackageUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputAddProducts"
+       }
+      }
+     },
+     "description": "inputAddProducts",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputAddProducts"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/applicationForm": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-form-controller"
+    ],
+    "summary": "Get application form",
+    "operationId": "applicationFormUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputApplicationForm"
+       }
+      }
+     },
+     "description": "inputApplicationForm",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputApplicationForm"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/approveProduct": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-product-controller"
+    ],
+    "summary": "Approve product",
+    "operationId": "approveProductUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputApproveProduct"
+       }
+      }
+     },
+     "description": "inputApproveProduct",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputApproveProduct"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/availablePackages": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-package-controller"
+    ],
+    "summary": "Get list of available packages",
+    "operationId": "availablePackagesUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputAvailablePackages"
+       }
+      }
+     },
+     "description": "inputAvailablePackages",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputAvailablePackages"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/batch/registerAdditionalTerminal/details/{id}": {
+   "get": {
+    "tags": [
+     "merchant-portal-pam-batch-controller"
+    ],
+    "summary": "details",
+    "operationId": "detailsUsingGET",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     },
+     {
+      "name": "id",
+      "in": "path",
+      "description": "id",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputDetails"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/batch/registerAdditionalTerminal/list": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-batch-controller"
+    ],
+    "summary": "list",
+    "operationId": "listUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputList"
+       }
+      }
+     },
+     "description": "inputList",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputList"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}": {
+   "get": {
+    "tags": [
+     "merchant-portal-pam-batch-controller"
+    ],
+    "summary": "restart",
+    "operationId": "restartUsingGET",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     },
+     {
+      "name": "id",
+      "in": "path",
+      "description": "id",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputMessage"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/batch/registerAdditionalTerminal/start": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-batch-controller"
+    ],
+    "summary": "start",
+    "operationId": "startUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "multipart/form-data": {
+       "schema": {
+        "type": "object",
+        "properties": {
+         "inputJsonMessage": {
+          "type": "string"
+         },
+         "inputCsvFile": {
+          "description": "inputCsvFile",
+          "type": "string",
+          "format": "binary"
+         }
+        },
+        "required": [
+         "inputCsvFile"
+        ]
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputStart"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/batch/registerAdditionalTerminal/status/{id}": {
+   "get": {
+    "tags": [
+     "merchant-portal-pam-batch-controller"
+    ],
+    "summary": "status",
+    "operationId": "statusUsingGET",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     },
+     {
+      "name": "id",
+      "in": "path",
+      "description": "id",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputStatus"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}": {
+   "get": {
+    "tags": [
+     "merchant-portal-pam-batch-controller"
+    ],
+    "summary": "stop",
+    "operationId": "stopUsingGET",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     },
+     {
+      "name": "id",
+      "in": "path",
+      "description": "id",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputMessage"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/contractNumber": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-merchant-controller"
+    ],
+    "summary": "Get merchant contract number",
+    "operationId": "contractNumberUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputContractNumber"
+       }
+      }
+     },
+     "description": "inputContractNumber",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputContractNumber"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/createMandatorConfig": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-mandator-controller"
+    ],
+    "summary": "Create mandator config record",
+    "operationId": "createMandatorConfigUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputCreateMandatorConfig"
+       }
+      }
+     },
+     "description": "inputCreateMandatorConfig",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputCreateMandatorConfig"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/createNewProduct": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-product-controller"
+    ],
+    "summary": "Create new product",
+    "description": "Required role for operation: BO_MP_CREATE_NEW_PRODUCT",
+    "operationId": "createNewProductUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputCreateProduct"
+       }
+      }
+     },
+     "description": "inputCreateProduct",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputCreateProduct"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/deactivateTerminal": {
+   "post": {
+    "tags": [
+     "merchant-portal-api-controller"
+    ],
+    "summary": "Terminal deactivation",
+    "operationId": "deactivateTerminalUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputDeactivateTerminal"
+       }
+      }
+     },
+     "description": "inputDeactivateTerminal",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputDeactivateTerminal"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/declineProduct": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-product-controller"
+    ],
+    "summary": "Decline product",
+    "operationId": "declineProductUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputDeclineProduct"
+       }
+      }
+     },
+     "description": "inputDeclineProduct",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputDeclineProduct"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/documentsList": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-document-controller"
+    ],
+    "summary": "Get list of documents",
+    "operationId": "documentsListUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputDocumentsList"
+       }
+      }
+     },
+     "description": "inputDocumentsList",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputDocumentsList"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/downloadDocument": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-document-controller"
+    ],
+    "summary": "Download document",
+    "operationId": "downloadDocumentUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputDownloadDocument"
+       }
+      }
+     },
+     "description": "inputDownloadDocument",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputDownloadDocument"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/generateContract": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-contract-controller"
+    ],
+    "summary": "Generate contract",
+    "operationId": "generateContractUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputGenerateContract"
+       }
+      }
+     },
+     "description": "inputGenerateContract",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/Resource"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/introduceMandatorPackage": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-mandator-controller"
+    ],
+    "summary": "Introduce mandator package",
+    "operationId": "introduceMandatorPackageUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputIntroduceMandatorPackage"
+       }
+      }
+     },
+     "description": "inputIntroduceMandatorPackage",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputIntroduceMandatorPackage"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/logDeveloperInfo": {
+   "get": {
+    "tags": [
+     "merchant-portal-common-controller"
+    ],
+    "summary": "Log all useful developer information - app configuration, persistence manager configuration, connection pools (database connection, HTTP working thread, HTTP thread for external web service calls) and so on. Useful for performance tuning.",
+    "operationId": "logDeveloperInfoUsingGET",
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputMessage"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/moveTid": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-product-controller"
+    ],
+    "summary": "Move TID",
+    "description": "Required role for operation: BO_MP_MOVE_TID",
+    "operationId": "moveTidUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputMoveTid"
+       }
+      }
+     },
+     "description": "inputMoveTid",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputMoveTid"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/orderAdditionalProduct": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-product-controller"
+    ],
+    "summary": "Order additional product from package",
+    "operationId": "orderAdditionalProductUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputOrderAdditionalProduct"
+       }
+      }
+     },
+     "description": "inputOrderAdditionalProduct",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputOrderAdditionalProduct"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/orderPackage": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-package-controller"
+    ],
+    "summary": "Register merchant account",
+    "operationId": "orderPackageUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputOrderPackage"
+       }
+      }
+     },
+     "description": "inputOrderPackage",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputOrderPackage"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/orderedPackages": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-package-controller"
+    ],
+    "summary": "Get list of ordered packages",
+    "operationId": "orderedPackagesUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputOrderedPackages"
+       }
+      }
+     },
+     "description": "inputOrderedPackages",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputOrderedPackages"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/packageForm": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-form-controller"
+    ],
+    "summary": "Get register merchant form",
+    "operationId": "merchantFormUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputMerchantForm"
+       }
+      }
+     },
+     "description": "inputMerchantForm",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputMerchantForm"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/packageTemplates": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-package-controller"
+    ],
+    "summary": "Display package templates",
+    "operationId": "packageTemplatesUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputPackageTemplates"
+       }
+      }
+     },
+     "description": "inputPackageTemplates",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputPackageTemplates"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/productsList": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-product-controller"
+    ],
+    "summary": "Get list of products",
+    "operationId": "productsListUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputProductsList"
+       }
+      }
+     },
+     "description": "inputProductsList",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputProductsList"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/reactivateTerminal": {
+   "post": {
+    "tags": [
+     "merchant-portal-api-controller"
+    ],
+    "summary": "Terminal reactivation",
+    "operationId": "reactivateTerminalUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputReactivateTerminal"
+       }
+      }
+     },
+     "description": "inputReactivateTerminal",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputReactivateTerminal"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/registerAdditionalAcquiring": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-merchant-controller"
+    ],
+    "summary": "Register Additional Acquiring for Existing Merchant",
+    "description": "Registers an acquirer for an existing merchant\u2019s terminal(s) on the TECS Platform. The call requires the package order UUID (received from the initial merchant registration), the transaction currency (in ISO 4217 format), the acquirer product identifier, and the merchant\u2019s contract number with the acquirer (vu_nummer). Optionally, you may provide a list of terminal IDs  for which acquiring should be enabled. If no terminal IDs are supplied, acquiring will be activated  for all terminals registered to the merchant.\n",
+    "operationId": "registerAdditionalAcquiringUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization header containing valid credentials. Example: \"Bearer AT-2359-DFYpOWfDFSls4DeKDmGOXDyynx0a8Trwk\"\n",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputRegisterAdditionalAcquiring"
+       }
+      }
+     },
+     "description": "JSON payload containing details for registering additional acquiring. This includes the package order UUID, transaction currency, acquirer product identifier, merchant contract number, and optional terminal IDs.\n",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful registration of additional acquiring.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputRegisterAdditionalAcquiring"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad Request \u2013 Missing or invalid parameters.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized \u2013 Invalid authentication credentials provided.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden \u2013 The caller does not have sufficient permissions.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal Server Error \u2013 An unexpected error occurred on the server.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/registerAdditionalTerminal": {
+   "post": {
+    "tags": [
+     "merchant-portal-api-controller"
+    ],
+    "summary": "Register Additional Terminal for Existing Merchant",
+    "description": "Registers an additional terminal for an existing merchant on the TECS Platform. The caller must supply the package order UUID (obtained from the initial merchant registration) and detailed terminal information including country code, language code, location, and serial number. Optional fields such as product ID, terminal ID from the acquirer, and user contact details can also be provided. If the merchant username or password are omitted, TECS will generate these credentials and return them in the response.\n",
+    "operationId": "registerAdditionalTerminalUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization header containing a valid Bearer token or Basic authentication credentials. Example: \"Bearer AT-2359-DFYpOWfDFSls4DeKDmGOXDyynx0a8Trwk\"\n",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputRegisterAdditionalTerminal"
+       }
+      }
+     },
+     "description": "JSON payload containing the details required to register an additional terminal. This includes the package order UUID and terminal-specific details.\n",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful registration of an additional terminal.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputRegisterAdditionalTerminal"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad Request \u2013 One or more required fields are missing or incorrectly formatted.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized \u2013 Invalid authentication credentials provided.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden \u2013 The caller does not have permission to register an additional terminal.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal Server Error \u2013 An unexpected error occurred on the server.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/registerMerchant": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-merchant-controller"
+    ],
+    "summary": "Register merchant account",
+    "operationId": "registerMerchantUsingPOST",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputRegisterMerchant"
+       }
+      }
+     },
+     "description": "inputRegisterMerchant",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputRegisterMerchant"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/registerNewMerchant": {
+   "post": {
+    "tags": [
+     "merchant-portal-api-controller"
+    ],
+    "summary": "Merchant and Terminal Registration",
+    "description": "Registers a new merchant along with its first terminal on the TECS Platform. The caller must supply all required merchant details, including the package ID (supplied by TECS) and merchant address information. On success, the response includes a unique package order UUID (packageorderuuid) that must be stored and used for subsequent registrations  (such as additional terminals or acquirers). If the merchant username or password are omitted, TECS will generate and return them.\n",
+    "operationId": "registerNewMerchantUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization credentials (Bearer token or Basic authentication).  Example: \"Bearer AT-2359-DFYpOWfDFSls4DeKDmGOXDyynx0a8Trwk\"\n",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputRegisterNewMerchant"
+       }
+      }
+     },
+     "description": "JSON payload containing all required fields for merchant and terminal registration.",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful merchant and terminal registration.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputRegisterNewMerchant"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad Request - One or more required fields are missing or in an incorrect format.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Invalid credentials provided.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - The caller does not have the necessary permissions to perform this operation.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal Server Error - An unexpected error occurred on the server.",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/removeProductsFromPackage": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-product-controller"
+    ],
+    "summary": "Remove products from package",
+    "description": "Required role for operation: BO_MP_REMOVE_PACKAGE_PRODUCTS",
+    "operationId": "removeProductsFromPackageUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputRemoveProducts"
+       }
+      }
+     },
+     "description": "inputRemoveProducts",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputRemoveProducts"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/reopenForm": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-form-controller"
+    ],
+    "summary": "Reopen form",
+    "operationId": "reopenFormUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputReopenForm"
+       }
+      }
+     },
+     "description": "inputReopenForm",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputReopenForm"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/secretKey": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-form-controller"
+    ],
+    "summary": "Get tecs web secret key",
+    "operationId": "secretKeyUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputSecretKey"
+       }
+      }
+     },
+     "description": "inputSecretKey",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputSecretKey"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/selfRegistrationLink": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-mandator-controller"
+    ],
+    "summary": "Generate self registration link",
+    "operationId": "selfRegistrationLinkUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputSelfRegistrationLink"
+       }
+      }
+     },
+     "description": "inputSelfRegistrationLink",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputSelfRegistrationLink"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/submitForm": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-form-controller"
+    ],
+    "summary": "Submit form",
+    "operationId": "submitFormUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputSubmitForm"
+       }
+      }
+     },
+     "description": "inputSubmitForm",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputSubmitForm"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/submitValues": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-form-controller"
+    ],
+    "summary": "Submit values in application form",
+    "operationId": "submitValuesUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputSubmitValues"
+       }
+      }
+     },
+     "description": "inputSubmitValues",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputSubmitValues"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/updateMerchant": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-merchant-controller"
+    ],
+    "summary": "Update merchant data",
+    "operationId": "updateMerchantUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputUpdateMerchant"
+       }
+      }
+     },
+     "description": "inputUpdateMerchant",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputUpdateMerchant"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/updatePackageData": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-package-controller"
+    ],
+    "summary": "Update package data",
+    "operationId": "updatePackageDataUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": false,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputUpdatePackageData"
+       }
+      }
+     },
+     "description": "inputUpdatePackageData",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputUpdatePackageData"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/updateProduct": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-product-controller"
+    ],
+    "summary": "Update product",
+    "description": "Required role for operation: BO_MP_UPDATE_PRODUCT",
+    "operationId": "updateProductUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputUpdateProduct"
+       }
+      }
+     },
+     "description": "inputUpdateProduct",
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputUpdateProduct"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/uploadContract": {
+   "post": {
+    "tags": [
+     "merchant-portal-pam-contract-controller"
+    ],
+    "summary": "Upload PDF file through standard multipart/form-data method",
+    "operationId": "uploadContractUsingPOST",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Authorization",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "multipart/form-data": {
+       "schema": {
+        "type": "object",
+        "properties": {
+         "inputMessage": {
+          "type": "string"
+         },
+         "pdfFile": {
+          "description": "Binary multipart file in PDF format",
+          "type": "string",
+          "format": "binary"
+         }
+        },
+        "required": [
+         "pdfFile"
+        ]
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputUploadContract"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/merchantportalws/version": {
+   "get": {
+    "tags": [
+     "merchant-portal-common-controller"
+    ],
+    "summary": "Web service version information including application name & build date",
+    "operationId": "versionUsingGET",
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "*/*": {
+        "schema": {
+         "$ref": "#/components/schemas/Version"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "servers": [
+  {
+   "url": "https://test.tecs.at",
+   "description": "Test"
+  }
+ ],
+ "components": {
+  "schemas": {
+   "Batch": {
+    "type": "object",
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "name": {
+      "type": "string"
+     },
+     "owner": {
+      "type": "string"
+     },
+     "status": {
+      "type": "string",
+      "enum": [
+       "COMPLETED_SUCCESSFULLY",
+       "COMPLETED_WITH_ERRORS",
+       "RUNNING",
+       "STOPPED"
+      ]
+     },
+     "timestamp": {
+      "type": "string"
+     }
+    },
+    "title": "Batch"
+   },
+   "Data": {
+    "type": "object",
+    "properties": {
+     "value": {
+      "type": "string"
+     }
+    },
+    "title": "Data"
+   },
+   "GenericResponse": {
+    "type": "object",
+    "properties": {
+     "response_code": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Response code: 0 indicates success, any non-zero value indicates an error.",
+      "example": 0
+     },
+     "response_message": {
+      "type": "string",
+      "description": "A human-readable error message.",
+      "example": "OK"
+     }
+    },
+    "required": [
+     "response_code",
+     "response_message"
+    ]
+   },
+   "Details": {
+    "type": "object",
+    "properties": {
+     "batch": {
+      "$ref": "#/components/schemas/Batch"
+     },
+     "lines": {
+      "type": "object",
+      "additionalProperties": {
+       "$ref": "#/components/schemas/Line"
+      }
+     },
+     "progress": {
+      "$ref": "#/components/schemas/Progress"
+     }
+    },
+    "title": "Details"
+   },
+   "Flow": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "$ref": "#/components/schemas/FlowInput"
+     },
+     "output": {
+      "$ref": "#/components/schemas/FlowOutput"
+     }
+    },
+    "title": "Flow"
+   },
+   "FlowInput": {
+    "type": "object",
+    "required": [
+     "currency",
+     "packageorderuuid",
+     "terminal_country_code",
+     "terminal_language_code",
+     "terminal_location",
+     "terminal_serial_number"
+    ],
+    "properties": {
+     "additional_data": {
+      "type": "object",
+      "example": {
+       "firstname": "John",
+       "surname": "Doe",
+       "type": "tx-300",
+       "version": "v1.2.3"
+      },
+      "description": "Arbitrary merchant specific data related to register terminal steps.",
+      "additionalProperties": {
+       "type": "string"
+      }
+     },
+     "currency": {
+      "type": "string",
+      "example": "EUR",
+      "description": "Transaction currency (Has to be in \"ISO 4217\" format)."
+     },
+     "packageorderuuid": {
+      "type": "string",
+      "example": "dccb9a6a-b02c-46e3-aef3-a28f0b7bf993",
+      "description": "Identifier of registered merchant in TECS system, provided by TECS in \"Merchant and terminal registration\" call."
+     },
+     "password": {
+      "type": "string",
+      "example": "testpassword",
+      "description": "Merchant password for MPOS (In case if not provided, will be generated by TECS and provided in response parameters of the call)."
+     },
+     "productid": {
+      "type": "string",
+      "example": "d8af7e4f-a04f-42ea-91ac-bed20c5eebfe",
+      "description": "Identifier of the product for which terminal registration has to be performed."
+     },
+     "terminal_country_code": {
+      "type": "string",
+      "example": "SVK",
+      "description": "Terminal country code (Has to be in \"ISO-3166 ALPHA-3\" format)."
+     },
+     "terminal_language_code": {
+      "type": "string",
+      "example": "EN",
+      "description": "Terminal language code (Has to be in \"ISO 639-1\" format)."
+     },
+     "terminal_location": {
+      "type": "string",
+      "example": "Palisady 12 BA",
+      "description": "Terminal location."
+     },
+     "terminal_serial_number": {
+      "type": "string",
+      "example": "325-320-924",
+      "description": "Terminal serial number."
+     },
+     "terminalid_acquirer": {
+      "type": "string",
+      "example": 66000001,
+      "description": "A terminal ID set by acquirer"
+     },
+     "user_email": {
+      "type": "string",
+      "example": "testemail@tecs.at",
+      "description": "Email address of user, which acts in behalf of the merchant."
+     },
+     "user_phone_number": {
+      "type": "string",
+      "example": "+421910876567",
+      "description": "Phone number of user, which acts in behalf of the merchant (Has to be in international format: + country code + phone number. Example: +421910711234)."
+     },
+     "username": {
+      "type": "string",
+      "example": "testuser",
+      "description": "Merchant username for MPOS (In case if not provided, will be generated by TECS and provided in response parameters of the call)."
+     }
+    },
+    "title": "FlowInput"
+   },
+   "FlowOutput": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "password": {
+      "type": "string",
+      "example": "testpassword",
+      "description": "TECS generated merchant password in case if not provided in request."
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code (0 = OK, otherwise an error code)."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Human readable response code representation."
+     },
+     "terminalid": {
+      "type": "integer",
+      "format": "int32",
+      "example": 88091104,
+      "description": "TECS terminalid given by TECS processing engine."
+     },
+     "username": {
+      "type": "string",
+      "example": "testuser",
+      "description": "TECS generated merchant username in case if not provided in request."
+     }
+    },
+    "title": "FlowOutput"
+   },
+   "InputAddProducts": {
+    "type": "object",
+    "required": [
+     "packageUUID",
+     "productUUIDs"
+    ],
+    "properties": {
+     "packageUUID": {
+      "type": "string",
+      "example": "123e4567-e89b-12d3-a456-426614174000",
+      "description": "Unique identifier for the package."
+     },
+     "productUUIDs": {
+      "type": "array",
+      "example": [
+       "123e4567-e89b-12d3-a456-426614174000",
+       "123e4567-e89b-12d3-a456-426614174001"
+      ],
+      "description": "The list of unique identifiers of the products.",
+      "uniqueItems": true,
+      "items": {
+       "type": "string"
+      }
+     }
+    },
+    "title": "InputAddProducts"
+   },
+   "InputApplicationForm": {
+    "type": "object",
+    "required": [
+     "language",
+     "packageOrderUUID"
+    ],
+    "properties": {
+     "filter": {
+      "$ref": "#/components/schemas/InputApplicationForm_Filter"
+     },
+     "language": {
+      "type": "string"
+     },
+     "packageOrderUUID": {
+      "type": "string"
+     }
+    },
+    "title": "InputApplicationForm"
+   },
+   "InputApplicationForm_Filter": {
+    "type": "object",
+    "properties": {
+     "page": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "productOrderUUID": {
+      "type": "string"
+     }
+    },
+    "title": "InputApplicationForm_Filter"
+   },
+   "InputApproveProduct": {
+    "type": "object",
+    "required": [
+     "productOrderUUID"
+    ],
+    "properties": {
+     "merchantID": {
+      "type": "string"
+     },
+     "productOrderUUID": {
+      "type": "string"
+     }
+    },
+    "title": "InputApproveProduct"
+   },
+   "InputAvailablePackages": {
+    "type": "object",
+    "required": [
+     "language"
+    ],
+    "properties": {
+     "filter": {
+      "$ref": "#/components/schemas/InputAvailablePackages_Filter"
+     },
+     "language": {
+      "type": "string"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/Pagination"
+     },
+     "sorting": {
+      "$ref": "#/components/schemas/Sorting"
+     }
+    },
+    "title": "InputAvailablePackages"
+   },
+   "InputAvailablePackages_Filter": {
+    "type": "object",
+    "properties": {
+     "packageStatus": {
+      "type": "string",
+      "example": "Active",
+      "description": "Name of the package status"
+     },
+     "packageUUID": {
+      "type": "string"
+     },
+     "productType": {
+      "type": "string",
+      "example": "MERCHANT_CONTRACT",
+      "description": "Name of the product type"
+     }
+    },
+    "title": "InputAvailablePackages_Filter"
+   },
+   "InputContractNumber": {
+    "type": "object",
+    "required": [
+     "merchantContractNumber"
+    ],
+    "properties": {
+     "merchantContractNumber": {
+      "type": "string"
+     }
+    },
+    "title": "InputContractNumber"
+   },
+   "InputCreateMandatorConfig": {
+    "type": "object",
+    "required": [
+     "mandatorName"
+    ],
+    "properties": {
+     "clientSecret": {
+      "type": "string"
+     },
+     "mandatorName": {
+      "type": "string"
+     },
+     "notificationEmail": {
+      "type": "string"
+     }
+    },
+    "title": "InputCreateMandatorConfig"
+   },
+   "InputCreateProduct": {
+    "type": "object",
+    "required": [
+     "allowMultipleOrders",
+     "appFormTemplateName",
+     "contractNeeded",
+     "descriptionKey",
+     "nameKey",
+     "prescreeningAllowed",
+     "productName",
+     "terminalTemplateName",
+     "vendorName",
+     "xmlTemplateFile"
+    ],
+    "properties": {
+     "acquirerId": {
+      "type": "string",
+      "example": 123456789,
+      "description": "Unique identifier for the acquirer. Only numeric values are allowed."
+     },
+     "allowMultipleOrders": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indication whether multiple orders are allowed or not."
+     },
+     "appFormTemplateName": {
+      "type": "string",
+      "example": "AppForm_123",
+      "description": "Name of the application form template."
+     },
+     "contractNeeded": {
+      "type": "boolean",
+      "example": true,
+      "description": "Indication whether contract is needed or not."
+     },
+     "credentialsNeeded": {
+      "type": "boolean",
+      "example": true,
+      "description": "Indication whether credentials are needed or not."
+     },
+     "descriptionKey": {
+      "type": "string",
+      "example": "Desc_123",
+      "description": "Key indicator for product description."
+     },
+     "nameKey": {
+      "type": "string",
+      "example": "Key_123",
+      "description": "Key indicator for product name."
+     },
+     "prescreeningAllowed": {
+      "type": "boolean",
+      "example": true,
+      "description": "Indication whether prescreening is allowed or not."
+     },
+     "productName": {
+      "type": "string",
+      "example": "Product_123",
+      "description": "Name of the product."
+     },
+     "terminalTemplateName": {
+      "type": "string",
+      "example": "TerminalTemplate_123",
+      "description": "Name of the terminal template."
+     },
+     "vendorName": {
+      "type": "string",
+      "example": "Vendor_123",
+      "description": "Name of the vendor."
+     },
+     "xmlTemplateFile": {
+      "type": "string",
+      "example": "PFRlcm1pbmFsVGVtcGxhdGU+PGRlc2NyaXB0aW9uPjxEZXNjcmlwdGlvblRleHQ+VGVybWluYWwgcmVnaXN0cmF0aW9uIHRlbXBsYXRlIFRlc3Q8L0Rlc2NyaXB0aW9uVGV4dD48L2Rlc2NyaXB0aW9uPjwvVGVybWluYWxUZW1wbGF0ZT4=",
+      "description": "A string value containing the XML template file encoded in Base64."
+     }
+    },
+    "title": "InputCreateProduct"
+   },
+   "InputDeactivateTerminal": {
+    "type": "object",
+    "required": [
+     "reason_deactivation",
+     "terminalid"
+    ],
+    "properties": {
+     "reason_deactivation": {
+      "type": "string",
+      "example": "Terminal was stolen",
+      "description": "Reason for terminal deactivation."
+     },
+     "terminalid": {
+      "type": "integer",
+      "format": "int32",
+      "example": 88091105,
+      "description": "TECS terminalid given by Tecs processing engine."
+     }
+    },
+    "title": "InputDeactivateTerminal"
+   },
+   "InputDeclineProduct": {
+    "type": "object",
+    "required": [
+     "productOrderUUID",
+     "reason_decline"
+    ],
+    "properties": {
+     "productOrderUUID": {
+      "type": "string"
+     },
+     "reason_decline": {
+      "type": "string",
+      "example": "Switch to new product",
+      "description": "Reason for product decline."
+     }
+    },
+    "title": "InputDeclineProduct"
+   },
+   "InputDocumentsList": {
+    "type": "object",
+    "properties": {
+     "packageOrderUUID": {
+      "type": "string",
+      "description": "UUID of the package order. NOTE: Either package order UUID or product order UUID has to be present. If none is present error is returned. If both are present error is returned."
+     },
+     "productOrderUUID": {
+      "type": "string",
+      "description": "UUID of the product order. NOTE: Either package order UUID or product order UUID has to be present. If none is present error is returned. If both are present error is returned."
+     }
+    },
+    "title": "InputDocumentsList"
+   },
+   "InputDownloadDocument": {
+    "type": "object",
+    "required": [
+     "appFormFieldDescUUID"
+    ],
+    "properties": {
+     "appFormFieldDescUUID": {
+      "type": "string"
+     },
+     "packageOrderUUID": {
+      "type": "string",
+      "description": "UUID of the package order. NOTE: Either package order UUID or product order UUID has to be present. If none is present error is returned. If both are present error is returned."
+     },
+     "productOrderUUID": {
+      "type": "string",
+      "description": "UUID of the product order. NOTE: Either package order UUID or product order UUID has to be present. If none is present error is returned. If both are present error is returned."
+     }
+    },
+    "title": "InputDownloadDocument"
+   },
+   "InputGenerateContract": {
+    "type": "object",
+    "required": [
+     "language",
+     "productOrderUUID"
+    ],
+    "properties": {
+     "language": {
+      "type": "string"
+     },
+     "productOrderUUID": {
+      "type": "string"
+     }
+    },
+    "title": "InputGenerateContract"
+   },
+   "InputIntroduceMandatorPackage": {
+    "type": "object",
+    "required": [
+     "packageUUID"
+    ],
+    "properties": {
+     "packageUUID": {
+      "type": "string"
+     }
+    },
+    "title": "InputIntroduceMandatorPackage"
+   },
+   "InputList": {
+    "type": "object",
+    "properties": {
+     "pagination": {
+      "$ref": "#/components/schemas/Pagination"
+     },
+     "sorting": {
+      "$ref": "#/components/schemas/Sorting"
+     }
+    },
+    "title": "InputList"
+   },
+   "InputMerchantForm": {
+    "type": "object",
+    "properties": {
+     "filter": {
+      "$ref": "#/components/schemas/InputMerchantForm_Filter"
+     },
+     "language": {
+      "type": "string"
+     },
+     "packageUUID": {
+      "type": "string"
+     }
+    },
+    "title": "InputMerchantForm"
+   },
+   "InputMerchantForm_Filter": {
+    "type": "object",
+    "properties": {
+     "productType": {
+      "type": "string",
+      "example": "MERCHANT_CONTRACT",
+      "description": "Name of the product type"
+     },
+     "productUUID": {
+      "type": "string"
+     }
+    },
+    "title": "InputMerchantForm_Filter"
+   },
+   "InputMoveTid": {
+    "type": "object",
+    "required": [
+     "productOrderUUIDs",
+     "targetPackageOrderUUID",
+     "targetProductOrderUUID"
+    ],
+    "properties": {
+     "productOrderUUIDs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+       "type": "string"
+      }
+     },
+     "targetPackageOrderUUID": {
+      "type": "string"
+     },
+     "targetProductOrderUUID": {
+      "type": "string"
+     }
+    },
+    "title": "InputMoveTid"
+   },
+   "InputOrderAdditionalProduct": {
+    "type": "object",
+    "required": [
+     "packageOrderUUID",
+     "productUUID"
+    ],
+    "properties": {
+     "consumerUUID": {
+      "type": "string"
+     },
+     "language": {
+      "type": "string"
+     },
+     "packageOrderUUID": {
+      "type": "string"
+     },
+     "productUUID": {
+      "type": "string"
+     }
+    },
+    "title": "InputOrderAdditionalProduct"
+   },
+   "InputOrderPackage": {
+    "type": "object",
+    "required": [
+     "packageUUID"
+    ],
+    "properties": {
+     "consumerUUID": {
+      "type": "string"
+     },
+     "corporateUUID": {
+      "type": "string"
+     },
+     "language": {
+      "type": "string"
+     },
+     "packageUUID": {
+      "type": "string"
+     }
+    },
+    "title": "InputOrderPackage"
+   },
+   "InputOrderedPackages": {
+    "type": "object",
+    "required": [
+     "language"
+    ],
+    "properties": {
+     "filter": {
+      "$ref": "#/components/schemas/InputOrderedPackages_Filter"
+     },
+     "language": {
+      "type": "string"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/Pagination"
+     },
+     "sorting": {
+      "$ref": "#/components/schemas/Sorting"
+     }
+    },
+    "title": "InputOrderedPackages"
+   },
+   "InputOrderedPackages_Filter": {
+    "type": "object",
+    "properties": {
+     "consumerUUID": {
+      "type": "string"
+     },
+     "corporateUUID": {
+      "type": "string"
+     },
+     "dateFrom": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "dateTo": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "packageOrderStatus": {
+      "type": "string",
+      "example": "New",
+      "description": "Name of the package order status"
+     },
+     "packageOrderUUID": {
+      "type": "string"
+     },
+     "packageStatus": {
+      "type": "string",
+      "example": "Active",
+      "description": "Name of the package status"
+     },
+     "packageUUID": {
+      "type": "string"
+     },
+     "productOrderStatus": {
+      "type": "string",
+      "example": "New",
+      "description": "Name of the product order status"
+     },
+     "productOrderUUID": {
+      "type": "string"
+     },
+     "productUUID": {
+      "type": "string"
+     }
+    },
+    "title": "InputOrderedPackages_Filter"
+   },
+   "InputPackageTemplates": {
+    "type": "object",
+    "properties": {
+     "filter": {
+      "$ref": "#/components/schemas/InputPackageTemplates_Filter"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/Pagination"
+     },
+     "sorting": {
+      "$ref": "#/components/schemas/Sorting"
+     }
+    },
+    "title": "InputPackageTemplates"
+   },
+   "InputPackageTemplates_Filter": {
+    "type": "object",
+    "properties": {
+     "descriptionKey": {
+      "type": "string"
+     }
+    },
+    "title": "InputPackageTemplates_Filter"
+   },
+   "InputProductsList": {
+    "type": "object",
+    "properties": {
+     "filter": {
+      "$ref": "#/components/schemas/InputProductsList_Filter"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/Pagination"
+     },
+     "sorting": {
+      "$ref": "#/components/schemas/Sorting"
+     }
+    },
+    "title": "InputProductsList"
+   },
+   "InputProductsList_Filter": {
+    "type": "object",
+    "properties": {
+     "productUUID": {
+      "type": "string",
+      "example": "d0a0b0c0-d0a0-b0c0-d0a0-b0c0d0a0b0c0",
+      "description": "UUID of the product."
+     }
+    },
+    "title": "InputProductsList_Filter"
+   },
+   "InputReactivateTerminal": {
+    "type": "object",
+    "required": [
+     "reason_reactivation",
+     "terminalid"
+    ],
+    "properties": {
+     "reason_reactivation": {
+      "type": "string",
+      "example": "Terminal is again in use",
+      "description": "Reason for terminal reactivation."
+     },
+     "terminalid": {
+      "type": "integer",
+      "format": "int32",
+      "example": 88091105,
+      "description": "TECS terminalid given by Tecs processing engine."
+     }
+    },
+    "title": "InputReactivateTerminal"
+   },
+   "InputRegisterAdditionalAcquiring": {
+    "type": "object",
+    "title": "InputRegisterAdditionalAcquiring",
+    "required": [
+     "currency",
+     "packageorderuuid",
+     "productid_acquirer",
+     "vu_nummer"
+    ],
+    "properties": {
+     "additional_data": {
+      "type": "object",
+      "description": "Optional additional merchant-specific data related to enabling acquiring.\nThis may include custom key-value pairs that provide further context.\n",
+      "example": {
+       "firstname": "John",
+       "surname": "Doe",
+       "type": "tx-300",
+       "version": "v1.2.3"
+      },
+      "additionalProperties": {
+       "type": "string"
+      }
+     },
+     "currency": {
+      "type": "string",
+      "description": "Transaction currency in ISO 4217 format.",
+      "example": "EUR",
+      "minLength": 3,
+      "maxLength": 3
+     },
+     "packageorderuuid": {
+      "type": "string",
+      "description": "Unique identifier for the registered merchant in the TECS system. This value is provided by TECS during the initial merchant registration and must be used for subsequent terminal or acquirer registrations.\n",
+      "example": "16acb5a4-e573-423c-a024-fae90ea45d70"
+     },
+     "productid_acquirer": {
+      "type": "string",
+      "description": "Identifier of the product for which acquiring is to be enabled. If not provided, the default product as defined in the package may be used.\n",
+      "example": "874d84a8-a6f4-47fa-b594-944593fc394b"
+     },
+     "terminalIds": {
+      "type": "array",
+      "description": "Optional list of terminal IDs for which acquiring should be activated. If omitted, acquiring will be enabled for all terminals associated with the merchant.\n",
+      "items": {
+       "type": "integer",
+       "format": "int32"
+      },
+      "example": [
+       77000001,
+       77000002,
+       77000003
+      ]
+     },
+     "terminalid_acquirer": {
+      "type": "string",
+      "description": "Optional terminal ID provided by the acquirer.",
+      "example": "66000001"
+     },
+     "vu_nummer": {
+      "type": "string",
+      "description": "Merchant contract number with the acquirer.",
+      "example": "VU-20230501-00123"
+     }
+    }
+   },
+   "InputRegisterAdditionalTerminal": {
+    "type": "object",
+    "title": "InputRegisterAdditionalTerminal",
+    "required": [
+     "packageorderuuid",
+     "terminal_country_code",
+     "terminal_language_code",
+     "terminal_location",
+     "terminal_serial_number"
+    ],
+    "properties": {
+     "additional_data": {
+      "type": "object",
+      "description": "Arbitrary merchant-specific data related to terminal registration.\nProvide any additional key-value pairs as required.\n",
+      "example": {
+       "firstname": "John",
+       "surname": "Doe",
+       "type": "tx-300",
+       "version": "v1.2.3"
+      },
+      "additionalProperties": {
+       "type": "string"
+      }
+     },
+     "packageorderuuid": {
+      "type": "string",
+      "description": "Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call.\n",
+      "example": "dccb9a6a-b02c-46e3-aef3-a28f0b7bf993"
+     },
+     "password": {
+      "type": "string",
+      "description": "Merchant password for MPOS. If not provided, TECS will generate a password and return it in the response.\n",
+      "example": "testpassword"
+     },
+     "productid": {
+      "type": "string",
+      "description": "Identifier of the product for which terminal registration is to be performed. If omitted, a default product may be used.\n",
+      "example": "d8af7e4f-a04f-42ea-91ac-bed20c5eebfe"
+     },
+     "terminal_country_code": {
+      "type": "string",
+      "description": "Terminal country code (must be in 'ISO-3166 ALPHA-3' format).",
+      "minLength": 3,
+      "maxLength": 3,
+      "example": "SVK"
+     },
+     "terminal_language_code": {
+      "type": "string",
+      "description": "Terminal language code (must be in 'ISO 639-1' format).",
+      "minLength": 2,
+      "maxLength": 2,
+      "example": "EN"
+     },
+     "terminal_location": {
+      "type": "string",
+      "description": "Physical or logical location of the terminal.",
+      "example": "Palisady 12 BA"
+     },
+     "terminal_serial_number": {
+      "type": "string",
+      "description": "Terminal serial number.",
+      "example": "325-320-924"
+     },
+     "terminalid_acquirer": {
+      "type": "string",
+      "description": "Terminal ID as set by the acquirer (optional).",
+      "example": "66000001"
+     },
+     "user_email": {
+      "type": "string",
+      "description": "Email address of the user acting on behalf of the merchant.",
+      "format": "email",
+      "example": "testemail@tecs.at"
+     },
+     "user_phone_number": {
+      "type": "string",
+      "description": "Phone number of the user acting on behalf of the merchant. Must be in international format (e.g., +421910711234).\n",
+      "example": "+421910876567"
+     },
+     "username": {
+      "type": "string",
+      "description": "Merchant username for MPOS. If not provided, TECS will generate a username and include it in the response.\n",
+      "example": "testuser"
+     },
+     "web_shop_url": {
+      "type": "string",
+      "description": "URL of the merchant's web shop.",
+      "format": "uri",
+      "example": "https://www.tecs.at"
+     }
+    }
+   },
+   "InputRegisterMerchant": {
+    "type": "object",
+    "required": [
+     "businessRegistrationNumber",
+     "companyName",
+     "email",
+     "language",
+     "login",
+     "mandator",
+     "phoneNumber"
+    ],
+    "properties": {
+     "businessRegistrationNumber": {
+      "type": "string"
+     },
+     "companyName": {
+      "type": "string"
+     },
+     "email": {
+      "type": "string"
+     },
+     "language": {
+      "type": "string"
+     },
+     "login": {
+      "type": "string"
+     },
+     "mandator": {
+      "type": "string",
+      "example": "MY_MANDATOR",
+      "description": "Mandator name assigned by TECS."
+     },
+     "packageUUID": {
+      "type": "string",
+      "example": "aabdf175-3035-435e-b982-4fd82ed9f763",
+      "description": "UUID of the package."
+     },
+     "phoneNumber": {
+      "type": "string"
+     },
+     "signature": {
+      "type": "string",
+      "example": "If packageUUID is: aabdf175-3035-435e-b982-4fd82ed9f763, mandator is: MY_MANDATOR, client secret is: MY_CLIENT_SECRET, salt is: MY_SALT then signature will be 4d595f53414c54-1ec8296e5e95f99cf0495a3ad99546ad63f942e36c72de936396f881bd6ddddd",
+      "description": "Signature value = saltAsHex-hashAsHex. Salt as hex value = Hex.encodeHexString(saltAsByte). Hash as hex value = DigestUtils.sha256Hex(packageUUID + \"|\" + mandator + \"|\" + clientSecret + \"|\" + saltAsString)."
+     }
+    },
+    "title": "InputRegisterMerchant"
+   },
+   "InputRegisterNewMerchant": {
+    "type": "object",
+    "title": "InputRegisterNewMerchant",
+    "required": [
+     "business_reg_number",
+     "city",
+     "country",
+     "currency",
+     "merchant_category_code",
+     "merchant_name",
+     "packageid",
+     "street",
+     "terminal_country_code",
+     "terminal_language_code",
+     "terminal_location",
+     "terminal_serial_number",
+     "vu_nummer",
+     "zipcode"
+    ],
+    "properties": {
+     "account_number": {
+      "type": "integer",
+      "format": "int32",
+      "example": 123456,
+      "description": "Account number provided by the acquirer."
+     },
+     "additional_data": {
+      "type": "object",
+      "description": "Arbitrary merchant-specific data related to enabling acquiring or terminal registration.\nThis object can contain key-value pairs where the value is a string.\n",
+      "example": {
+       "firstname": "John",
+       "surname": "Doe",
+       "type": "tx-300",
+       "version": "v1.2.3"
+      },
+      "additionalProperties": {
+       "type": "string"
+      }
+     },
+     "business_reg_number": {
+      "type": "string",
+      "example": "345345345",
+      "description": "Merchant business registration number as stated in the company registry. Typically a 9-character alphanumeric string."
+     },
+     "city": {
+      "type": "string",
+      "example": "Bratislava",
+      "description": "Merchant's address: city."
+     },
+     "corporateuuid": {
+      "type": "string",
+      "example": "123e4567-e89b-12d3-a456-426614174000",
+      "description": "Unique identifier for the corporate entity (UUID format)."
+     },
+     "country": {
+      "type": "string",
+      "example": "SVK",
+      "description": "Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format).",
+      "minLength": 3,
+      "maxLength": 3
+     },
+     "currency": {
+      "type": "string",
+      "example": "EUR",
+      "description": "Transaction currency (must be in \"ISO 4217\" format).",
+      "minLength": 3,
+      "maxLength": 3
+     },
+     "merchant_category_code": {
+      "type": "integer",
+      "format": "int32",
+      "example": 5999,
+      "description": "Merchant category code as defined by the payment network."
+     },
+     "merchant_email": {
+      "type": "string",
+      "example": "testemail@tecs.at",
+      "description": "Merchant's email address for receiving notifications.",
+      "format": "email"
+     },
+     "merchant_name": {
+      "type": "string",
+      "example": "Test merchant",
+      "description": "The officially incorporated company name of the merchant."
+     },
+     "merchant_phone_number": {
+      "type": "string",
+      "example": "+421910876567",
+      "description": "Merchant's phone number for notifications. Must be in international format (e.g., +421910711234)."
+     },
+     "packageid": {
+      "type": "string",
+      "example": "87055654-3158-42fc-9838-74f1fc77f42b",
+      "description": "Identifier of the package in the TECS processing engine provided by TECS. Typically a UUID."
+     },
+     "password": {
+      "type": "string",
+      "example": "testpassword",
+      "description": "Merchant password for MPOS. If not provided, TECS will generate a password and return it in the response.\n"
+     },
+     "productid": {
+      "type": "string",
+      "example": "d8af7e4f-a04f-42ea-91ac-bed20c5eebfe",
+      "description": "Identifier of the product for which terminal registration is being performed."
+     },
+     "productid_acquirer": {
+      "type": "string",
+      "example": "874d84a8-a6f4-47fa-b594-944593fc394b",
+      "description": "Identifier of the product for which acquiring is enabled."
+     },
+     "sorting_code": {
+      "type": "integer",
+      "format": "int32",
+      "example": 123456,
+      "description": "Sorting code provided by the acquirer."
+     },
+     "state": {
+      "type": "string",
+      "example": "null",
+      "description": "Merchant's address: state. May be null if not applicable."
+     },
+     "street": {
+      "type": "string",
+      "example": "Palisady 12",
+      "description": "Merchant's address: street and house number."
+     },
+     "terminal_country_code": {
+      "type": "string",
+      "example": "SVK",
+      "description": "Terminal country code (must be in \"ISO-3166 ALPHA-3\" format).",
+      "minLength": 3,
+      "maxLength": 3
+     },
+     "terminal_language_code": {
+      "type": "string",
+      "example": "EN",
+      "description": "Terminal language code (must be in \"ISO 639-1\" format).",
+      "minLength": 2,
+      "maxLength": 2
+     },
+     "terminal_location": {
+      "type": "string",
+      "example": "Palisady 12 BA",
+      "description": "Physical or logical location of the terminal."
+     },
+     "terminal_serial_number": {
+      "type": "string",
+      "example": "325-320-924",
+      "description": "Terminal serial number."
+     },
+     "terminalid_acquirer": {
+      "type": "string",
+      "example": "66000001",
+      "description": "Terminal ID as provided by the acquirer (if applicable)."
+     },
+     "user_email": {
+      "type": "string",
+      "example": "testemail12@tecs.at",
+      "description": "Email address of the user acting on behalf of the merchant.",
+      "format": "email"
+     },
+     "user_phone_number": {
+      "type": "string",
+      "example": "+421910876568",
+      "description": "Phone number of the user acting on behalf of the merchant. Must be in international format (e.g., +421910711234)."
+     },
+     "username": {
+      "type": "string",
+      "example": "testuser",
+      "description": "Merchant username for MPOS. If not provided, TECS will generate a username and include it in the response.\n"
+     },
+     "vu_nummer": {
+      "type": "string",
+      "example": "9034520",
+      "description": "Merchant contract number with the acquirer."
+     },
+     "web_shop_url": {
+      "type": "string",
+      "example": "https://www.tecs.at",
+      "description": "URL of the merchant's web shop.",
+      "format": "uri"
+     },
+     "zipcode": {
+      "type": "string",
+      "example": "81106",
+      "description": "Merchant's address: postal code."
+     }
+    }
+   },
+   "InputRemoveProducts": {
+    "type": "object",
+    "required": [
+     "packageUUID",
+     "productUUIDs"
+    ],
+    "properties": {
+     "packageUUID": {
+      "type": "string",
+      "example": "654e3217-e98b-21d3-a456-426614174999",
+      "description": "Unique identifier for the package."
+     },
+     "productUUIDs": {
+      "type": "array",
+      "example": [
+       "567e4345-e84b-34d2-b356-125614243567",
+       "678f4543-f34c-23d1-c345-234615453451"
+      ],
+      "description": "List of product unique identifiers.",
+      "uniqueItems": true,
+      "items": {
+       "type": "string"
+      }
+     }
+    },
+    "title": "InputRemoveProducts"
+   },
+   "InputReopenForm": {
+    "type": "object",
+    "required": [
+     "appFormFieldsDescUUID",
+     "reasonOfReopening"
+    ],
+    "properties": {
+     "appFormFieldsDescUUID": {
+      "type": "string"
+     },
+     "packageOrderUUID": {
+      "type": "string",
+      "description": "UUID of the package order. NOTE: Either package order UUID or product order UUID has to be present. If none is present error is returned. If both are present error is returned."
+     },
+     "productOrderUUID": {
+      "type": "string",
+      "description": "UUID of the product order. NOTE: Either package order UUID or product order UUID has to be present. If none is present error is returned. If both are present error is returned."
+     },
+     "reasonOfReopening": {
+      "type": "string"
+     }
+    },
+    "title": "InputReopenForm"
+   },
+   "InputSecretKey": {
+    "type": "object",
+    "required": [
+     "productOrderUUID"
+    ],
+    "properties": {
+     "productOrderUUID": {
+      "type": "string"
+     }
+    },
+    "title": "InputSecretKey"
+   },
+   "InputSelfRegistrationLink": {
+    "type": "object",
+    "required": [
+     "packageUUID"
+    ],
+    "properties": {
+     "packageUUID": {
+      "type": "string"
+     }
+    },
+    "title": "InputSelfRegistrationLink"
+   },
+   "InputStream": {
+    "type": "object",
+    "title": "InputStream"
+   },
+   "InputSubmitForm": {
+    "type": "object",
+    "required": [
+     "productOrderUUID"
+    ],
+    "properties": {
+     "productOrderUUID": {
+      "type": "string"
+     }
+    },
+    "title": "InputSubmitForm"
+   },
+   "InputSubmitValues": {
+    "type": "object",
+    "properties": {
+     "packageOrder": {
+      "$ref": "#/components/schemas/InputSubmitValues_PackageOrder"
+     },
+     "productOrders": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/InputSubmitValues_ProductOrder"
+      }
+     }
+    },
+    "title": "InputSubmitValues"
+   },
+   "InputSubmitValues_ApplicationForm": {
+    "type": "object",
+    "required": [
+     "appFormFieldDescUUID",
+     "merchantAppFormsValue"
+    ],
+    "properties": {
+     "appFormFieldDescUUID": {
+      "type": "string"
+     },
+     "document": {
+      "type": "string",
+      "example": "JVBERi0=",
+      "description": "Base64 encoded byte array of document. The following types are supported: PDF, JPEG."
+     },
+     "merchantAppFormsValue": {
+      "type": "string"
+     }
+    },
+    "title": "InputSubmitValues_ApplicationForm"
+   },
+   "InputSubmitValues_PackageOrder": {
+    "type": "object",
+    "properties": {
+     "applicationForms": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/InputSubmitValues_ApplicationForm"
+      }
+     },
+     "uuid": {
+      "type": "string"
+     }
+    },
+    "title": "InputSubmitValues_PackageOrder"
+   },
+   "InputSubmitValues_ProductOrder": {
+    "type": "object",
+    "properties": {
+     "applicationForms": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/InputSubmitValues_ApplicationForm"
+      }
+     },
+     "uuid": {
+      "type": "string"
+     }
+    },
+    "title": "InputSubmitValues_ProductOrder"
+   },
+   "InputUpdateMerchant": {
+    "type": "object",
+    "required": [
+     "corporateUUID"
+    ],
+    "properties": {
+     "city": {
+      "type": "string",
+      "example": "Vienna",
+      "description": "City where the merchant is located."
+     },
+     "corporateUUID": {
+      "type": "string",
+      "example": "123e4567-e89b-12d3-a456-426614174000",
+      "description": "Unique identifier for the corporate entity."
+     },
+     "country": {
+      "type": "string",
+      "example": "Austria",
+      "description": "Country where the merchant is located."
+     },
+     "merchantContractNumber": {
+      "type": "string",
+      "example": 987654321,
+      "description": "Unique identifier for the merchant within a specific system."
+     },
+     "merchantName": {
+      "type": "string",
+      "example": "Acme Corporation",
+      "description": "Name of the merchant."
+     },
+     "merchant_category_code": {
+      "type": "string",
+      "example": 1234,
+      "description": "Merchant Category Code (MCC) describing the merchant\u2019s type of business."
+     },
+     "postalCode": {
+      "type": "string",
+      "example": 1010,
+      "description": "Postal or ZIP code of the merchant\u2019s location."
+     },
+     "region": {
+      "type": "string",
+      "example": "Vienna",
+      "description": "State or province where the merchant is located."
+     },
+     "registrationNumber": {
+      "type": "string",
+      "example": 1234567890,
+      "description": "Business registration number."
+     },
+     "street": {
+      "type": "string",
+      "example": "Main Street 123",
+      "description": "Street address of the merchant."
+     }
+    },
+    "title": "InputUpdateMerchant"
+   },
+   "InputUpdatePackageData": {
+    "type": "object",
+    "required": [
+     "packageUUID"
+    ],
+    "properties": {
+     "country": {
+      "type": "string",
+      "example": "AT",
+      "description": "Country associated with the package."
+     },
+     "descriptionKey": {
+      "type": "string",
+      "example": "package_description_key",
+      "description": "Key for the description of the package."
+     },
+     "nameKey": {
+      "type": "string",
+      "example": "package_name_key",
+      "description": "Key for the name of the package."
+     },
+     "packageStatus": {
+      "type": "string",
+      "example": "Active",
+      "description": "Status of the package. Possible values: Active/Inactive"
+     },
+     "packageUUID": {
+      "type": "string",
+      "example": "123e4567-e89b-12d3-a456-426655440000",
+      "description": "Unique identifier for the package."
+     }
+    },
+    "title": "InputUpdatePackageData"
+   },
+   "InputUpdateProduct": {
+    "type": "object",
+    "required": [
+     "productUUID"
+    ],
+    "properties": {
+     "allowMultipleOrders": {
+      "type": "boolean",
+      "example": true,
+      "description": "An attribute to indicate if multiple orders are allowed"
+     },
+     "appFormName": {
+      "type": "string",
+      "example": "My Application Form Name",
+      "description": "The name of the application form"
+     },
+     "contractNeeded": {
+      "type": "boolean",
+      "example": true,
+      "description": "An attribute to indicate if a contract is needed"
+     },
+     "credentialsNeeded": {
+      "type": "boolean",
+      "example": true,
+      "description": "An attribute to indicate if credentials are needed"
+     },
+     "descriptionKey": {
+      "type": "string",
+      "example": "My Product Description",
+      "description": "The description of the product"
+     },
+     "nameKey": {
+      "type": "string",
+      "example": "My Product Name Key",
+      "description": "The key of the product name"
+     },
+     "prescreeningAllowed": {
+      "type": "boolean",
+      "example": true,
+      "description": "An attribute to indicate if prescreening is allowed"
+     },
+     "productName": {
+      "type": "string",
+      "example": "My Product Name",
+      "description": "The name of the product"
+     },
+     "productStatus": {
+      "type": "string",
+      "example": "ACTIVE",
+      "description": "The status of the product"
+     },
+     "productUUID": {
+      "type": "string",
+      "example": "123e4567-e89b-12d3-a456-426614174000",
+      "description": "The UUID of the product to update"
+     },
+     "vendorName": {
+      "type": "string",
+      "example": "My Vendor Name",
+      "description": "The name of the vendor"
+     }
+    },
+    "title": "InputUpdateProduct"
+   },
+   "Line": {
+    "type": "object",
+    "properties": {
+     "data": {
+      "$ref": "#/components/schemas/Data"
+     },
+     "flow": {
+      "$ref": "#/components/schemas/Flow"
+     }
+    },
+    "title": "Line"
+   },
+   "OutputAddProducts": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputAddProducts"
+   },
+   "OutputApplicationForm": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "packageOrder": {
+      "$ref": "#/components/schemas/OutputApplicationForm_PackageOrder"
+     },
+     "productOrders": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputApplicationForm_ProductOrder"
+      }
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputApplicationForm"
+   },
+   "OutputApplicationForm_ApplicationFormItem": {
+    "type": "object",
+    "properties": {
+     "appFormFieldDescUUID": {
+      "type": "string"
+     },
+     "defaultValue": {
+      "type": "string"
+     },
+     "description": {
+      "type": "string"
+     },
+     "fieldInputTypeDescription": {
+      "type": "string"
+     },
+     "mandatory": {
+      "type": "boolean"
+     },
+     "merchantAppFormsValue": {
+      "type": "string"
+     },
+     "name": {
+      "type": "string"
+     },
+     "originalReopenReason": {
+      "type": "string"
+     },
+     "page": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "placeHolder": {
+      "type": "string"
+     },
+     "position": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "possibleValues": {
+      "type": "string"
+     },
+     "readOnly": {
+      "type": "boolean"
+     },
+     "reopenReason": {
+      "type": "string"
+     },
+     "visible": {
+      "type": "boolean"
+     }
+    },
+    "title": "OutputApplicationForm_ApplicationFormItem"
+   },
+   "OutputApplicationForm_PackageOrder": {
+    "type": "object",
+    "properties": {
+     "packageApplicationForm": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputApplicationForm_ApplicationFormItem"
+      }
+     },
+     "pagesCount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "statusDescription": {
+      "type": "string"
+     },
+     "uuid": {
+      "type": "string"
+     }
+    },
+    "title": "OutputApplicationForm_PackageOrder"
+   },
+   "OutputApplicationForm_ProductOrder": {
+    "type": "object",
+    "properties": {
+     "applicationForm": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputApplicationForm_ApplicationFormItem"
+      }
+     },
+     "pagesCount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "productName": {
+      "type": "string"
+     },
+     "statusDescription": {
+      "type": "string"
+     },
+     "uuid": {
+      "type": "string"
+     }
+    },
+    "title": "OutputApplicationForm_ProductOrder"
+   },
+   "OutputApproveProduct": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputApproveProduct"
+   },
+   "OutputAvailablePackages": {
+    "type": "object",
+    "required": [
+     "pagination",
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "packages": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputAvailablePackages_Package"
+      }
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/OutputPagination"
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputAvailablePackages"
+   },
+   "OutputAvailablePackages_Package": {
+    "type": "object",
+    "properties": {
+     "country": {
+      "type": "string"
+     },
+     "description": {
+      "type": "string"
+     },
+     "name": {
+      "type": "string"
+     },
+     "packageStatus": {
+      "type": "string"
+     },
+     "products": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputAvailablePackages_Product"
+      }
+     },
+     "uuid": {
+      "type": "string"
+     }
+    },
+    "title": "OutputAvailablePackages_Package"
+   },
+   "OutputAvailablePackages_Product": {
+    "type": "object",
+    "properties": {
+     "allowMultipleOrders": {
+      "type": "boolean"
+     },
+     "description": {
+      "type": "string"
+     },
+     "name": {
+      "type": "string"
+     },
+     "productName": {
+      "type": "string"
+     },
+     "uuid": {
+      "type": "string"
+     }
+    },
+    "title": "OutputAvailablePackages_Product"
+   },
+   "OutputContractNumber": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputContractNumber"
+   },
+   "OutputCreateMandatorConfig": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputCreateMandatorConfig"
+   },
+   "OutputCreateProduct": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputCreateProduct"
+   },
+   "OutputDeactivateTerminal": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code (0 = OK, otherwise an error code)."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Human readable response code representation."
+     }
+    },
+    "title": "OutputDeactivateTerminal"
+   },
+   "OutputDeclineProduct": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputDeclineProduct"
+   },
+   "OutputDetails": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "details": {
+      "$ref": "#/components/schemas/Details"
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputDetails"
+   },
+   "OutputDocumentsList": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "documents": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputDocumentsList_Document"
+      }
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputDocumentsList"
+   },
+   "OutputDocumentsList_Document": {
+    "type": "object",
+    "properties": {
+     "content": {
+      "type": "string",
+      "description": "Data URL value as used for providing inline content in HTML / CSS. Pattern: data:[MEDIA_TYPE];[ENCODING],[DATA]. For example: data:application/pdf;base64,UERGIGRhdGEuLi4=. Currently supported media types are: application/pdf, image/jpeg. If it is not possible to identify one of mentioned types then common media type: application/octet-stream is returned. Currently we support only Base64 encoding."
+     },
+     "name": {
+      "type": "string"
+     }
+    },
+    "title": "OutputDocumentsList_Document"
+   },
+   "OutputDownloadDocument": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "content": {
+      "type": "string",
+      "description": "Data URL value as used for providing inline content in HTML / CSS. Pattern: data:[MEDIA_TYPE];[ENCODING],[DATA]. For example: data:application/pdf;base64,UERGIGRhdGEuLi4=. Currently supported media types are: application/pdf, image/jpeg. If it is not possible to identify one of mentioned types then common media type: application/octet-stream is returned. Currently we support only Base64 encoding."
+     },
+     "name": {
+      "type": "string"
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputDownloadDocument"
+   },
+   "OutputIntroduceMandatorPackage": {
+    "type": "object",
+    "required": [
+     "packageUUID",
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "packageUUID": {
+      "type": "string"
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputIntroduceMandatorPackage"
+   },
+   "OutputList": {
+    "type": "object",
+    "required": [
+     "pagination",
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "items": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/Batch"
+      }
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/OutputPagination"
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputList"
+   },
+   "OutputMerchantForm": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "packages": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputMerchantForm_Package"
+      }
+     },
+     "products": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputMerchantForm_Product"
+      }
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputMerchantForm"
+   },
+   "OutputMerchantForm_ApplicationFormItem": {
+    "type": "object",
+    "properties": {
+     "appFormFieldDescUUID": {
+      "type": "string"
+     },
+     "backendMappingDescription": {
+      "type": "string"
+     },
+     "backendMappingField": {
+      "type": "string"
+     },
+     "backendMappingService": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "defaultValue": {
+      "type": "string"
+     },
+     "description": {
+      "type": "string"
+     },
+     "fieldConstraints": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputMerchantForm_FieldConstraint"
+      }
+     },
+     "fieldInputTypeDescription": {
+      "type": "string"
+     },
+     "mandatory": {
+      "type": "boolean"
+     },
+     "name": {
+      "type": "string"
+     },
+     "page": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "placeHolder": {
+      "type": "string"
+     },
+     "position": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "possibleValues": {
+      "type": "string"
+     },
+     "readOnly": {
+      "type": "boolean"
+     },
+     "visible": {
+      "type": "boolean"
+     }
+    },
+    "title": "OutputMerchantForm_ApplicationFormItem"
+   },
+   "OutputMerchantForm_FieldConstraint": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "value": {
+      "type": "string"
+     }
+    },
+    "title": "OutputMerchantForm_FieldConstraint"
+   },
+   "OutputMerchantForm_Package": {
+    "type": "object",
+    "properties": {
+     "packageFormItems": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputMerchantForm_ApplicationFormItem"
+      }
+     },
+     "pagesCount": {
+      "type": "integer",
+      "format": "int32"
+     }
+    },
+    "title": "OutputMerchantForm_Package"
+   },
+   "OutputMerchantForm_Product": {
+    "type": "object",
+    "properties": {
+     "pagesCount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "productFormItems": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputMerchantForm_ApplicationFormItem"
+      }
+     },
+     "productName": {
+      "type": "string"
+     }
+    },
+    "title": "OutputMerchantForm_Product"
+   },
+   "OutputMessage": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputMessage"
+   },
+   "OutputMoveTid": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputMoveTid"
+   },
+   "OutputOrderAdditionalProduct": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "productOrderUUID": {
+      "type": "string"
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputOrderAdditionalProduct"
+   },
+   "OutputOrderPackage": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "packageOrderUUID": {
+      "type": "string"
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputOrderPackage"
+   },
+   "OutputOrderedPackages": {
+    "type": "object",
+    "required": [
+     "pagination",
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "packageOrders": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputOrderedPackages_PackageOrder"
+      }
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/OutputPagination"
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputOrderedPackages"
+   },
+   "OutputOrderedPackages_PackageOrder": {
+    "type": "object",
+    "properties": {
+     "consumerUUID": {
+      "type": "string"
+     },
+     "corporateName": {
+      "type": "string"
+     },
+     "corporateUUID": {
+      "type": "string"
+     },
+     "country": {
+      "type": "string"
+     },
+     "datetimeCreated": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "description": {
+      "type": "string"
+     },
+     "name": {
+      "type": "string"
+     },
+     "numberOfRequiredFields": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "numberOfSubmittedFields": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "packageOrderStatus": {
+      "type": "string"
+     },
+     "packageOrderUUID": {
+      "type": "string"
+     },
+     "packageUUID": {
+      "type": "string"
+     },
+     "productOrders": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputOrderedPackages_ProductOrder"
+      }
+     }
+    },
+    "title": "OutputOrderedPackages_PackageOrder"
+   },
+   "OutputOrderedPackages_ProductOrder": {
+    "type": "object",
+    "properties": {
+     "allowMultipleOrders": {
+      "type": "boolean"
+     },
+     "consumerUUID": {
+      "type": "string"
+     },
+     "datetimeCreated": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "numberOfRequiredFields": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "numberOfSubmittedFields": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "productDescription": {
+      "type": "string"
+     },
+     "productName": {
+      "type": "string"
+     },
+     "productOrderStatus": {
+      "type": "string"
+     },
+     "productOrderUUID": {
+      "type": "string"
+     },
+     "productType": {
+      "type": "string"
+     },
+     "productUUID": {
+      "type": "string"
+     },
+     "terminal": {
+      "$ref": "#/components/schemas/OutputOrderedPackages_Terminal"
+     }
+    },
+    "title": "OutputOrderedPackages_ProductOrder"
+   },
+   "OutputOrderedPackages_Terminal": {
+    "type": "object",
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "location": {
+      "type": "string"
+     }
+    },
+    "title": "OutputOrderedPackages_Terminal"
+   },
+   "OutputPackageTemplates": {
+    "type": "object",
+    "required": [
+     "pagination",
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "packages": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputPackageTemplates_Package"
+      }
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/OutputPagination"
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputPackageTemplates"
+   },
+   "OutputPackageTemplates_Package": {
+    "type": "object",
+    "properties": {
+     "descriptionKey": {
+      "type": "string"
+     },
+     "nameKey": {
+      "type": "string"
+     },
+     "packageUUID": {
+      "type": "string"
+     }
+    },
+    "title": "OutputPackageTemplates_Package"
+   },
+   "OutputPagination": {
+    "type": "object",
+    "required": [
+     "totalElements",
+     "totalPages"
+    ],
+    "properties": {
+     "page": {
+      "type": "integer",
+      "format": "int32",
+      "example": 1,
+      "description": "Number of the page to display."
+     },
+     "size": {
+      "type": "integer",
+      "format": "int32",
+      "example": 10,
+      "description": "Number of elements per page to display."
+     },
+     "totalElements": {
+      "type": "integer",
+      "format": "int64",
+      "example": 1587,
+      "description": "Number of total elements available."
+     },
+     "totalPages": {
+      "type": "integer",
+      "format": "int32",
+      "example": 10,
+      "description": "Number of total pages available."
+     }
+    },
+    "title": "OutputPagination"
+   },
+   "OutputProductsList": {
+    "type": "object",
+    "required": [
+     "pagination",
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "pagination": {
+      "$ref": "#/components/schemas/OutputPagination"
+     },
+     "products": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputProductsList_Product"
+      }
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputProductsList"
+   },
+   "OutputProductsList_Product": {
+    "type": "object",
+    "properties": {
+     "productDescriptionKey": {
+      "type": "string",
+      "example": "MPI software component of the 3D Secure version 1.0.2",
+      "description": "Key of the product description."
+     },
+     "productName": {
+      "type": "string",
+      "example": "3D Secure version 1.0.2",
+      "description": "Name of the product."
+     },
+     "productUUID": {
+      "type": "string",
+      "example": "d0a0b0c0-d0a0-b0c0-d0a0-b0c0d0a0b0c0",
+      "description": "UUID of the product."
+     },
+     "terminalTemplateDescription": {
+      "type": "string",
+      "example": "Template for the terminal configuration N9100",
+      "description": "Description of the terminal template."
+     },
+     "vendorName": {
+      "type": "string",
+      "example": "TECS telecommunication & e-commerce solutions GmbH",
+      "description": "Name of the vendor."
+     }
+    },
+    "title": "OutputProductsList_Product"
+   },
+   "OutputReactivateTerminal": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code (0 = OK, otherwise an error code)."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Human readable response code representation."
+     }
+    },
+    "title": "OutputReactivateTerminal"
+   },
+   "OutputRegisterAdditionalAcquiring": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputRegisterAdditionalAcquiring"
+   },
+   "OutputRegisterAdditionalTerminal": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "password": {
+      "type": "string",
+      "example": "testpassword",
+      "description": "TECS generated merchant password in case if not provided in request."
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code (0 = OK, otherwise an error code)."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Human readable response code representation."
+     },
+     "terminalid": {
+      "type": "integer",
+      "format": "int32",
+      "example": 88091104,
+      "description": "TECS terminalid given by TECS processing engine."
+     },
+     "username": {
+      "type": "string",
+      "example": "testuser",
+      "description": "TECS generated merchant username in case if not provided in request."
+     }
+    },
+    "title": "OutputRegisterAdditionalTerminal"
+   },
+   "OutputRegisterMerchant": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputRegisterMerchant"
+   },
+   "OutputRegisterNewMerchant": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "corporateuuid": {
+      "type": "string",
+      "example": "fd1b6927-9105-4e2a-92c0-07c6da71624d",
+      "description": "An UUID of the newly registered corporate (if created during the flow - it is an optional value)."
+     },
+     "packageorderuuid": {
+      "type": "string",
+      "example": "16acb5a4-e573-423c-a024-fae90ea45d70",
+      "description": "Unique identifier, which could be used later for registering additional terminals for existing merchants."
+     },
+     "password": {
+      "type": "string",
+      "example": "testpassword",
+      "description": "TECS generated merchant password in case if not provided in request."
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code (0 = OK, otherwise an error code)."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Human readable response code representation."
+     },
+     "terminalid": {
+      "type": "integer",
+      "format": "int32",
+      "example": 88091104,
+      "description": "TECS terminalid given by TECS processing engine."
+     },
+     "username": {
+      "type": "string",
+      "example": "testuser",
+      "description": "TECS generated merchant username in case if not provided in request."
+     }
+    },
+    "title": "OutputRegisterNewMerchant"
+   },
+   "OutputRemoveProducts": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputRemoveProducts"
+   },
+   "OutputReopenForm": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputReopenForm"
+   },
+   "OutputSecretKey": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     },
+     "tecsWebSecretKey": {
+      "type": "string"
+     }
+    },
+    "title": "OutputSecretKey"
+   },
+   "OutputSelfRegistrationLink": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     },
+     "selfRegistrationLink": {
+      "type": "string"
+     }
+    },
+    "title": "OutputSelfRegistrationLink"
+   },
+   "OutputStart": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputStart"
+   },
+   "OutputStatus": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "percentage": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     },
+     "status": {
+      "type": "string",
+      "enum": [
+       "COMPLETED_SUCCESSFULLY",
+       "COMPLETED_WITH_ERRORS",
+       "RUNNING",
+       "STOPPED"
+      ]
+     }
+    },
+    "title": "OutputStatus"
+   },
+   "OutputSubmitForm": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "missingFields": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OutputSubmitForm_MissingField"
+      }
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputSubmitForm"
+   },
+   "OutputSubmitForm_MissingField": {
+    "type": "object",
+    "properties": {
+     "appFormFieldDescUUID": {
+      "type": "string"
+     },
+     "packageOrderUUID": {
+      "type": "string"
+     },
+     "productOrderUUID": {
+      "type": "string"
+     }
+    },
+    "title": "OutputSubmitForm_MissingField"
+   },
+   "OutputSubmitValues": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputSubmitValues"
+   },
+   "OutputUpdateMerchant": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputUpdateMerchant"
+   },
+   "OutputUpdatePackageData": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputUpdatePackageData"
+   },
+   "OutputUpdateProduct": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputUpdateProduct"
+   },
+   "OutputUploadContract": {
+    "type": "object",
+    "required": [
+     "responseCode",
+     "responseMessage"
+    ],
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "example": 0,
+      "description": "Response code. For success state 0. For failure state lower than 0."
+     },
+     "responseMessage": {
+      "type": "string",
+      "example": "OK",
+      "description": "Response message. For success state OK. For failure state description of the cause."
+     }
+    },
+    "title": "OutputUploadContract"
+   },
+   "Pagination": {
+    "type": "object",
+    "properties": {
+     "page": {
+      "type": "integer",
+      "format": "int32",
+      "example": 1,
+      "description": "Number of the page to display."
+     },
+     "size": {
+      "type": "integer",
+      "format": "int32",
+      "example": 10,
+      "description": "Number of elements per page to display."
+     }
+    },
+    "title": "Pagination"
+   },
+   "Progress": {
+    "type": "object",
+    "properties": {
+     "line": {
+      "type": "string"
+     },
+     "percentage": {
+      "type": "integer",
+      "format": "int32"
+     }
+    },
+    "title": "Progress"
+   },
+   "Resource": {
+    "type": "object",
+    "title": "Resource",
+    "properties": {
+     "description": {
+      "type": "string"
+     },
+     "file": {
+      "type": "string",
+      "format": "binary"
+     },
+     "filename": {
+      "type": "string"
+     },
+     "inputStream": {
+      "$ref": "#/components/schemas/InputStream"
+     },
+     "open": {
+      "type": "boolean"
+     },
+     "readable": {
+      "type": "boolean"
+     },
+     "uri": {
+      "type": "string",
+      "format": "uri"
+     },
+     "url": {
+      "type": "string",
+      "format": "url"
+     }
+    }
+   },
+   "Sorting": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string",
+      "example": "requestorID",
+      "description": "Sort attribute name."
+     },
+     "type": {
+      "type": "string",
+      "example": "ASC",
+      "description": "Sort type ASC / DESC."
+     }
+    },
+    "title": "Sorting"
+   },
+   "Version": {
+    "type": "object",
+    "properties": {
+     "appName": {
+      "type": "string"
+     },
+     "buildDate": {
+      "type": "string"
+     },
+     "version": {
+      "type": "string"
+     }
+    },
+    "title": "Version"
+   }
+  }
+ },
+ "x-readme": {
+  "explorer-enabled": true,
+  "proxy-enabled": true
+ }
+}
