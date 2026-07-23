@@ -1,0 +1,69 @@
+# Entity: output_add_product
+
+main: kit: entity: output_add_product: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "package_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "product_uui_d"
+      req: true
+      type: "`$ARRAY`"
+    }
+    {
+      name: "response_code"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "output_add_product"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/addProductsToPackage"
+          parts: [
+            "merchantportalws"
+            "addProductsToPackage"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

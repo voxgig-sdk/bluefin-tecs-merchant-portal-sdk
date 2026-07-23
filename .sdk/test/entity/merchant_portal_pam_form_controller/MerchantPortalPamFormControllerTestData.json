@@ -1,0 +1,57 @@
+{
+  "existing": {
+    "merchant_portal_pam_form_controller": {
+      "MERCHANT_PORTAL_PAM_FORM_CONTROLLER00": {
+        "app_form_fields_desc_uuid": "s5a",
+        "filter": {},
+        "language": "s5c",
+        "package_order": {},
+        "package_order_uuid": "s5e",
+        "package_uuid": "s5f",
+        "product_order": [],
+        "product_order_uuid": "s61",
+        "reason_of_reopening": "s62",
+        "id": "MERCHANT_PORTAL_PAM_FORM_CONTROLLER00"
+      },
+      "MERCHANT_PORTAL_PAM_FORM_CONTROLLER01": {
+        "app_form_fields_desc_uuid": "sb4",
+        "filter": {},
+        "language": "sb6",
+        "package_order": {},
+        "package_order_uuid": "sb8",
+        "package_uuid": "sb9",
+        "product_order": [],
+        "product_order_uuid": "sbb",
+        "reason_of_reopening": "sbc",
+        "id": "MERCHANT_PORTAL_PAM_FORM_CONTROLLER01"
+      },
+      "MERCHANT_PORTAL_PAM_FORM_CONTROLLER02": {
+        "app_form_fields_desc_uuid": "s10e",
+        "filter": {},
+        "language": "s110",
+        "package_order": {},
+        "package_order_uuid": "s112",
+        "package_uuid": "s113",
+        "product_order": [],
+        "product_order_uuid": "s115",
+        "reason_of_reopening": "s116",
+        "id": "MERCHANT_PORTAL_PAM_FORM_CONTROLLER02"
+      }
+    }
+  },
+  "new": {
+    "merchant_portal_pam_form_controller": {
+      "merchant_portal_pam_form_controller_ref01": {
+        "app_form_fields_desc_uuid": "s168",
+        "filter": {},
+        "language": "s16a",
+        "package_order": {},
+        "package_order_uuid": "s16c",
+        "package_uuid": "s16d",
+        "product_order": [],
+        "product_order_uuid": "s16f",
+        "reason_of_reopening": "s170"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# BasicMerchantPortalPamDocumentControllerFlow
+
+main: kit: flow: BasicMerchantPortalPamDocumentControllerFlow:
+{
+  entity: "merchant_portal_pam_document_controller",
+  kind: "basic",
+  name: "BasicMerchantPortalPamDocumentControllerFlow",
+  step: [
+    {
+      input: {
+        ref: "merchant_portal_pam_document_controller_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicMerchantPortalPamDocumentControllerFlow"
+}

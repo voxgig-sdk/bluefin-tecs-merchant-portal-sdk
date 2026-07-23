@@ -1,0 +1,32 @@
+# BasicOutputStatusFlow
+
+main: kit: flow: BasicOutputStatusFlow:
+{
+  entity: "output_status",
+  kind: "basic",
+  name: "BasicOutputStatusFlow",
+  step: [
+    {
+      input: {
+        ref: "output_status_ref01",
+        srcdatavar: "output_status_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "output_status01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-output_status_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOutputStatusFlow"
+}

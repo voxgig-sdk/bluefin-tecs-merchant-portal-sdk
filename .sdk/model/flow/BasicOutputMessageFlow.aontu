@@ -1,0 +1,32 @@
+# BasicOutputMessageFlow
+
+main: kit: flow: BasicOutputMessageFlow:
+{
+  entity: "output_message",
+  kind: "basic",
+  name: "BasicOutputMessageFlow",
+  step: [
+    {
+      input: {
+        ref: "output_message_ref01",
+        srcdatavar: "output_message_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "output_message01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-output_message_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOutputMessageFlow"
+}

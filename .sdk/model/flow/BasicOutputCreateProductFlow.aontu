@@ -1,0 +1,18 @@
+# BasicOutputCreateProductFlow
+
+main: kit: flow: BasicOutputCreateProductFlow:
+{
+  entity: "output_create_product",
+  kind: "basic",
+  name: "BasicOutputCreateProductFlow",
+  step: [
+    {
+      input: {
+        ref: "output_create_product_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputCreateProductFlow"
+}

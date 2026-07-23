@@ -1,0 +1,18 @@
+# BasicOutputRemoveProductFlow
+
+main: kit: flow: BasicOutputRemoveProductFlow:
+{
+  entity: "output_remove_product",
+  kind: "basic",
+  name: "BasicOutputRemoveProductFlow",
+  step: [
+    {
+      input: {
+        ref: "output_remove_product_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputRemoveProductFlow"
+}

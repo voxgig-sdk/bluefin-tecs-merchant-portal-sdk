@@ -1,0 +1,119 @@
+# Entity: output_create_product
+
+main: kit: entity: output_create_product: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "acquirer_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "allow_multiple_order"
+      req: true
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "app_form_template_name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "contract_needed"
+      req: true
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "credentials_needed"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "description_key"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "name_key"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "prescreening_allowed"
+      req: true
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "product_name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_template_name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "vendor_name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "xml_template_file"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "output_create_product"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/createNewProduct"
+          parts: [
+            "merchantportalws"
+            "createNewProduct"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

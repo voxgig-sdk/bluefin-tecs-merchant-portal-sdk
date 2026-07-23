@@ -1,0 +1,18 @@
+# BasicOutputListFlow
+
+main: kit: flow: BasicOutputListFlow:
+{
+  entity: "output_list",
+  kind: "basic",
+  name: "BasicOutputListFlow",
+  step: [
+    {
+      input: {
+        ref: "output_list_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputListFlow"
+}

@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "output_message": {
+      "OUTPUT_MESSAGE00": {
+        "response_code": "s14",
+        "response_message": "s15",
+        "id": "OUTPUT_MESSAGE00"
+      },
+      "OUTPUT_MESSAGE01": {
+        "response_code": "s28",
+        "response_message": "s29",
+        "id": "OUTPUT_MESSAGE01"
+      },
+      "OUTPUT_MESSAGE02": {
+        "response_code": "s3c",
+        "response_message": "s3d",
+        "id": "OUTPUT_MESSAGE02"
+      }
+    }
+  },
+  "new": {
+    "output_message": {
+      "output_message_ref01": {
+        "response_code": "s50",
+        "response_message": "s51"
+      }
+    }
+  }
+}

@@ -1,0 +1,194 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 19
+  metrics: count: path: 43
+  metrics: count: method: 43
+
+  entity: merchant_portal_api_controller: {
+    path: "/merchantportalws/deactivateTerminal": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/reactivateTerminal": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/registerAdditionalTerminal": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/registerNewMerchant": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: merchant_portal_common_controller: {
+    path: "/merchantportalws/logDeveloperInfo": {
+      op: load: method: *GET
+    }
+    path: "/merchantportalws/version": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: merchant_portal_pam_contract_controller: {
+    path: "/merchantportalws/generateContract": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/uploadContract": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: merchant_portal_pam_document_controller: {
+    path: "/merchantportalws/documentsList": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/downloadDocument": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: merchant_portal_pam_form_controller: {
+    path: "/merchantportalws/applicationForm": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/packageForm": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/reopenForm": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/secretKey": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/submitForm": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/submitValues": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: merchant_portal_pam_mandator_controller: {
+    path: "/merchantportalws/createMandatorConfig": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/introduceMandatorPackage": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/selfRegistrationLink": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: merchant_portal_pam_merchant_controller: {
+    path: "/merchantportalws/contractNumber": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/registerAdditionalAcquiring": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/registerMerchant": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/updateMerchant": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: merchant_portal_pam_package_controller: {
+    path: "/merchantportalws/availablePackages": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/orderPackage": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/orderedPackages": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/packageTemplates": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/updatePackageData": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: merchant_portal_pam_product_controller: {
+    path: "/merchantportalws/approveProduct": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/declineProduct": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/orderAdditionalProduct": {
+      op: create: method: *POST
+    }
+    path: "/merchantportalws/productsList": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_add_product: {
+    path: "/merchantportalws/addProductsToPackage": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_create_product: {
+    path: "/merchantportalws/createNewProduct": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_detail: {
+    path: "/merchantportalws/batch/registerAdditionalTerminal/details/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: output_list: {
+    path: "/merchantportalws/batch/registerAdditionalTerminal/list": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_message: {
+    path: "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}": {
+      op: load: method: *GET
+    }
+    path: "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: output_move_tid: {
+    path: "/merchantportalws/moveTid": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_remove_product: {
+    path: "/merchantportalws/removeProductsFromPackage": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_start: {
+    path: "/merchantportalws/batch/registerAdditionalTerminal/start": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_status: {
+    path: "/merchantportalws/batch/registerAdditionalTerminal/status/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: output_update_product: {
+    path: "/merchantportalws/updateProduct": {
+      op: create: method: *POST
+    }
+  }
+
+}

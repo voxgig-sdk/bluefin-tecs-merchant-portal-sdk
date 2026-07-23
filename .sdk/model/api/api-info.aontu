@@ -1,0 +1,32 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        email: "contact@tecs.at"
+        name: "Contact"
+        url: "https://www.tecs.at/contact/"
+      }
+      description: "Web service for merchant registration and management."
+      license: {
+        name: "Telecommunication & E-Commerce Solutions GmbH © All rights reserved"
+        url: "https://www.tecs.at/merchant-portal-ws/license-url/"
+      }
+      servers: [
+        {
+          description: "Test"
+          url: "https://test.tecs.at"
+        }
+      ]
+      summary: "Web service for merchant registration and management."
+      termsOfService: "https://www.tecs.at/merchant-portal-ws/terms-of-service-url/"
+      title: "Merchant Portal Web Service Documentation"
+      version: "1.39.13"
+      website: "https://test.tecs.at"
+    }
+  }
+}
+

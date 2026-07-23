@@ -1,0 +1,65 @@
+{
+  "existing": {
+    "merchant_portal_pam_package_controller": {
+      "MERCHANT_PORTAL_PAM_PACKAGE_CONTROLLER00": {
+        "consumer_uuid": "s6e",
+        "corporate_uuid": "s6f",
+        "country": "s70",
+        "description_key": "s71",
+        "filter": {},
+        "language": "s73",
+        "name_key": "s74",
+        "package_status": "s75",
+        "package_uuid": "s76",
+        "pagination": {},
+        "sorting": {},
+        "id": "MERCHANT_PORTAL_PAM_PACKAGE_CONTROLLER00"
+      },
+      "MERCHANT_PORTAL_PAM_PACKAGE_CONTROLLER01": {
+        "consumer_uuid": "sdc",
+        "corporate_uuid": "sdd",
+        "country": "sde",
+        "description_key": "sdf",
+        "filter": {},
+        "language": "se1",
+        "name_key": "se2",
+        "package_status": "se3",
+        "package_uuid": "se4",
+        "pagination": {},
+        "sorting": {},
+        "id": "MERCHANT_PORTAL_PAM_PACKAGE_CONTROLLER01"
+      },
+      "MERCHANT_PORTAL_PAM_PACKAGE_CONTROLLER02": {
+        "consumer_uuid": "s14a",
+        "corporate_uuid": "s14b",
+        "country": "s14c",
+        "description_key": "s14d",
+        "filter": {},
+        "language": "s14f",
+        "name_key": "s150",
+        "package_status": "s151",
+        "package_uuid": "s152",
+        "pagination": {},
+        "sorting": {},
+        "id": "MERCHANT_PORTAL_PAM_PACKAGE_CONTROLLER02"
+      }
+    }
+  },
+  "new": {
+    "merchant_portal_pam_package_controller": {
+      "merchant_portal_pam_package_controller_ref01": {
+        "consumer_uuid": "s1b8",
+        "corporate_uuid": "s1b9",
+        "country": "s1ba",
+        "description_key": "s1bb",
+        "filter": {},
+        "language": "s1bd",
+        "name_key": "s1be",
+        "package_status": "s1bf",
+        "package_uuid": "s1c0",
+        "pagination": {},
+        "sorting": {}
+      }
+    }
+  }
+}

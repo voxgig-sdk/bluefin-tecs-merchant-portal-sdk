@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "output_list": {
+      "OUTPUT_LIST00": {
+        "item": [],
+        "pagination": {},
+        "response_code": "s34",
+        "response_message": "s35",
+        "sorting": {},
+        "id": "OUTPUT_LIST00"
+      },
+      "OUTPUT_LIST01": {
+        "item": [],
+        "pagination": {},
+        "response_code": "s66",
+        "response_message": "s67",
+        "sorting": {},
+        "id": "OUTPUT_LIST01"
+      },
+      "OUTPUT_LIST02": {
+        "item": [],
+        "pagination": {},
+        "response_code": "s98",
+        "response_message": "s99",
+        "sorting": {},
+        "id": "OUTPUT_LIST02"
+      }
+    }
+  },
+  "new": {
+    "output_list": {
+      "output_list_ref01": {
+        "item": [],
+        "pagination": {},
+        "response_code": "sca",
+        "response_message": "scb",
+        "sorting": {}
+      }
+    }
+  }
+}

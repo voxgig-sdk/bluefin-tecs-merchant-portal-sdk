@@ -1,0 +1,42 @@
+# Entity: merchant_portal_common_controller
+
+main: kit: entity: merchant_portal_common_controller: {
+
+  alias: field: {}
+
+  name: "merchant_portal_common_controller"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          method: "GET"
+          orig: "/merchantportalws/logDeveloperInfo"
+          parts: [
+            "merchantportalws"
+            "logDeveloperInfo"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          method: "GET"
+          orig: "/merchantportalws/version"
+          parts: [
+            "merchantportalws"
+            "version"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

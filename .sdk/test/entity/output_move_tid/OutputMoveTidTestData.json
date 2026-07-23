@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "output_move_tid": {
+      "OUTPUT_MOVE_TID00": {
+        "product_order_uui_d": [],
+        "response_code": "s33",
+        "response_message": "s34",
+        "target_package_order_uuid": "s35",
+        "target_product_order_uuid": "s36",
+        "id": "OUTPUT_MOVE_TID00"
+      },
+      "OUTPUT_MOVE_TID01": {
+        "product_order_uui_d": [],
+        "response_code": "s65",
+        "response_message": "s66",
+        "target_package_order_uuid": "s67",
+        "target_product_order_uuid": "s68",
+        "id": "OUTPUT_MOVE_TID01"
+      },
+      "OUTPUT_MOVE_TID02": {
+        "product_order_uui_d": [],
+        "response_code": "s97",
+        "response_message": "s98",
+        "target_package_order_uuid": "s99",
+        "target_product_order_uuid": "s9a",
+        "id": "OUTPUT_MOVE_TID02"
+      }
+    }
+  },
+  "new": {
+    "output_move_tid": {
+      "output_move_tid_ref01": {
+        "product_order_uui_d": [],
+        "response_code": "sc9",
+        "response_message": "sca",
+        "target_package_order_uuid": "scb",
+        "target_product_order_uuid": "scc"
+      }
+    }
+  }
+}

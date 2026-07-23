@@ -1,0 +1,20 @@
+{
+  "existing": {
+    "merchant_portal_common_controller": {
+      "MERCHANT_PORTAL_COMMON_CONTROLLER00": {
+        "id": "MERCHANT_PORTAL_COMMON_CONTROLLER00"
+      },
+      "MERCHANT_PORTAL_COMMON_CONTROLLER01": {
+        "id": "MERCHANT_PORTAL_COMMON_CONTROLLER01"
+      },
+      "MERCHANT_PORTAL_COMMON_CONTROLLER02": {
+        "id": "MERCHANT_PORTAL_COMMON_CONTROLLER02"
+      }
+    }
+  },
+  "new": {
+    "merchant_portal_common_controller": {
+      "merchant_portal_common_controller_ref01": {}
+    }
+  }
+}

@@ -1,0 +1,252 @@
+# Entity: merchant_portal_pam_form_controller
+
+main: kit: entity: merchant_portal_pam_form_controller: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "app_form_fields_desc_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "filter"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "language"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "package_order"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "package_order_uuid"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "package_uuid"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "product_order"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "product_order_uuid"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "reason_of_reopening"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "merchant_portal_pam_form_controller"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/applicationForm"
+          parts: [
+            "merchantportalws"
+            "applicationForm"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/packageForm"
+          parts: [
+            "merchantportalws"
+            "packageForm"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/reopenForm"
+          parts: [
+            "merchantportalws"
+            "reopenForm"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/secretKey"
+          parts: [
+            "merchantportalws"
+            "secretKey"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/submitForm"
+          parts: [
+            "merchantportalws"
+            "submitForm"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/submitValues"
+          parts: [
+            "merchantportalws"
+            "submitValues"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

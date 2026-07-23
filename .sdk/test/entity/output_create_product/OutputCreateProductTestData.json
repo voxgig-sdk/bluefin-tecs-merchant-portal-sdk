@@ -1,0 +1,77 @@
+{
+  "existing": {
+    "output_create_product": {
+      "OUTPUT_CREATE_PRODUCT00": {
+        "acquirer_id": "ACQUIRER01",
+        "allow_multiple_order": false,
+        "app_form_template_name": "s8e",
+        "contract_needed": false,
+        "credentials_needed": true,
+        "description_key": "s91",
+        "name_key": "s92",
+        "prescreening_allowed": false,
+        "product_name": "s94",
+        "response_code": "s95",
+        "response_message": "s96",
+        "terminal_template_name": "s97",
+        "vendor_name": "s98",
+        "xml_template_file": "s99",
+        "id": "OUTPUT_CREATE_PRODUCT00"
+      },
+      "OUTPUT_CREATE_PRODUCT01": {
+        "acquirer_id": "ACQUIRER01",
+        "allow_multiple_order": false,
+        "app_form_template_name": "s11a",
+        "contract_needed": false,
+        "credentials_needed": true,
+        "description_key": "s11d",
+        "name_key": "s11e",
+        "prescreening_allowed": false,
+        "product_name": "s120",
+        "response_code": "s121",
+        "response_message": "s122",
+        "terminal_template_name": "s123",
+        "vendor_name": "s124",
+        "xml_template_file": "s125",
+        "id": "OUTPUT_CREATE_PRODUCT01"
+      },
+      "OUTPUT_CREATE_PRODUCT02": {
+        "acquirer_id": "ACQUIRER01",
+        "allow_multiple_order": false,
+        "app_form_template_name": "s1a6",
+        "contract_needed": false,
+        "credentials_needed": true,
+        "description_key": "s1a9",
+        "name_key": "s1aa",
+        "prescreening_allowed": false,
+        "product_name": "s1ac",
+        "response_code": "s1ad",
+        "response_message": "s1ae",
+        "terminal_template_name": "s1af",
+        "vendor_name": "s1b0",
+        "xml_template_file": "s1b1",
+        "id": "OUTPUT_CREATE_PRODUCT02"
+      }
+    }
+  },
+  "new": {
+    "output_create_product": {
+      "output_create_product_ref01": {
+        "acquirer_id": "ACQUIRER01",
+        "allow_multiple_order": false,
+        "app_form_template_name": "s232",
+        "contract_needed": false,
+        "credentials_needed": true,
+        "description_key": "s235",
+        "name_key": "s236",
+        "prescreening_allowed": false,
+        "product_name": "s238",
+        "response_code": "s239",
+        "response_message": "s23a",
+        "terminal_template_name": "s23b",
+        "vendor_name": "s23c",
+        "xml_template_file": "s23d"
+      }
+    }
+  }
+}

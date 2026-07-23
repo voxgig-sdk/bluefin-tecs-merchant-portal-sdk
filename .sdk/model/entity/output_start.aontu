@@ -1,0 +1,71 @@
+# Entity: output_start
+
+main: kit: entity: output_start: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "output_start"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/batch/registerAdditionalTerminal/start"
+          parts: [
+            "merchantportalws"
+            "batch"
+            "registerAdditionalTerminal"
+            "start"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

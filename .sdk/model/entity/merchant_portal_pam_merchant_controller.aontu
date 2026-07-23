@@ -1,0 +1,253 @@
+# Entity: merchant_portal_pam_merchant_controller
+
+main: kit: entity: merchant_portal_pam_merchant_controller: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "additional_data"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "business_registration_number"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "city"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "company_name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "corporate_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "country"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "currency"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "email"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "language"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "login"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "mandator"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "merchant_category_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "merchant_contract_number"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "merchant_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "package_uuid"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "packageorderuuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "phone_number"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "postal_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "productid_acquirer"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "region"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "registration_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "signature"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "street"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_id"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "terminalid_acquirer"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "vu_nummer"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "merchant_portal_pam_merchant_controller"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/contractNumber"
+          parts: [
+            "merchantportalws"
+            "contractNumber"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/registerAdditionalAcquiring"
+          parts: [
+            "merchantportalws"
+            "registerAdditionalAcquiring"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/updateMerchant"
+          parts: [
+            "merchantportalws"
+            "updateMerchant"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          method: "POST"
+          orig: "/merchantportalws/registerMerchant"
+          parts: [
+            "merchantportalws"
+            "registerMerchant"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

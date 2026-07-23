@@ -1,0 +1,82 @@
+# Entity: output_status
+
+main: kit: entity: output_status: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "percentage"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_code"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "status"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "output_status"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/merchantportalws/batch/registerAdditionalTerminal/status/{id}"
+          parts: [
+            "merchantportalws"
+            "batch"
+            "registerAdditionalTerminal"
+            "status"
+            "{id}"
+          ]
+          select: {
+            exist: [
+              "authorization"
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

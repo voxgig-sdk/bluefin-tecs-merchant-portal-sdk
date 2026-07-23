@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "output_remove_product": {
+      "OUTPUT_REMOVE_PRODUCT00": {
+        "package_uuid": "s28",
+        "product_uui_d": [],
+        "response_code": "s2a",
+        "response_message": "s2b",
+        "id": "OUTPUT_REMOVE_PRODUCT00"
+      },
+      "OUTPUT_REMOVE_PRODUCT01": {
+        "package_uuid": "s50",
+        "product_uui_d": [],
+        "response_code": "s52",
+        "response_message": "s53",
+        "id": "OUTPUT_REMOVE_PRODUCT01"
+      },
+      "OUTPUT_REMOVE_PRODUCT02": {
+        "package_uuid": "s78",
+        "product_uui_d": [],
+        "response_code": "s7a",
+        "response_message": "s7b",
+        "id": "OUTPUT_REMOVE_PRODUCT02"
+      }
+    }
+  },
+  "new": {
+    "output_remove_product": {
+      "output_remove_product_ref01": {
+        "package_uuid": "sa0",
+        "product_uui_d": [],
+        "response_code": "sa2",
+        "response_message": "sa3"
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "merchant_portal_pam_document_controller": {
+      "MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER00": {
+        "app_form_field_desc_uuid": "s1e",
+        "package_order_uuid": "s1f",
+        "product_order_uuid": "s20",
+        "id": "MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER00"
+      },
+      "MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER01": {
+        "app_form_field_desc_uuid": "s3c",
+        "package_order_uuid": "s3d",
+        "product_order_uuid": "s3e",
+        "id": "MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER01"
+      },
+      "MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER02": {
+        "app_form_field_desc_uuid": "s5a",
+        "package_order_uuid": "s5b",
+        "product_order_uuid": "s5c",
+        "id": "MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER02"
+      }
+    }
+  },
+  "new": {
+    "merchant_portal_pam_document_controller": {
+      "merchant_portal_pam_document_controller_ref01": {
+        "app_form_field_desc_uuid": "s78",
+        "package_order_uuid": "s79",
+        "product_order_uuid": "s7a"
+      }
+    }
+  }
+}

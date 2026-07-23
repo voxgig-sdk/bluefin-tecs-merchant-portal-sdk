@@ -1,0 +1,73 @@
+{
+  "existing": {
+    "output_update_product": {
+      "OUTPUT_UPDATE_PRODUCT00": {
+        "allow_multiple_order": true,
+        "app_form_name": "s83",
+        "contract_needed": true,
+        "credentials_needed": false,
+        "description_key": "s86",
+        "name_key": "s87",
+        "prescreening_allowed": true,
+        "product_name": "s89",
+        "product_status": "s8a",
+        "product_uuid": "s8b",
+        "response_code": "s8c",
+        "response_message": "s8d",
+        "vendor_name": "s8e",
+        "id": "OUTPUT_UPDATE_PRODUCT00"
+      },
+      "OUTPUT_UPDATE_PRODUCT01": {
+        "allow_multiple_order": true,
+        "app_form_name": "s105",
+        "contract_needed": true,
+        "credentials_needed": false,
+        "description_key": "s108",
+        "name_key": "s109",
+        "prescreening_allowed": true,
+        "product_name": "s10b",
+        "product_status": "s10c",
+        "product_uuid": "s10d",
+        "response_code": "s10e",
+        "response_message": "s10f",
+        "vendor_name": "s110",
+        "id": "OUTPUT_UPDATE_PRODUCT01"
+      },
+      "OUTPUT_UPDATE_PRODUCT02": {
+        "allow_multiple_order": true,
+        "app_form_name": "s187",
+        "contract_needed": true,
+        "credentials_needed": false,
+        "description_key": "s18a",
+        "name_key": "s18b",
+        "prescreening_allowed": true,
+        "product_name": "s18d",
+        "product_status": "s18e",
+        "product_uuid": "s18f",
+        "response_code": "s190",
+        "response_message": "s191",
+        "vendor_name": "s192",
+        "id": "OUTPUT_UPDATE_PRODUCT02"
+      }
+    }
+  },
+  "new": {
+    "output_update_product": {
+      "output_update_product_ref01": {
+        "allow_multiple_order": true,
+        "app_form_name": "s209",
+        "contract_needed": true,
+        "credentials_needed": false,
+        "description_key": "s20c",
+        "name_key": "s20d",
+        "prescreening_allowed": true,
+        "product_name": "s20f",
+        "product_status": "s210",
+        "product_uuid": "s211",
+        "response_code": "s212",
+        "response_message": "s213",
+        "vendor_name": "s214"
+      }
+    }
+  }
+}

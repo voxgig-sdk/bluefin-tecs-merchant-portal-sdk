@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "output_status": {
+      "OUTPUT_STATUS00": {
+        "percentage": "s28",
+        "response_code": "s29",
+        "response_message": "s2a",
+        "status": "s2b",
+        "id": "OUTPUT_STATUS00"
+      },
+      "OUTPUT_STATUS01": {
+        "percentage": "s50",
+        "response_code": "s51",
+        "response_message": "s52",
+        "status": "s53",
+        "id": "OUTPUT_STATUS01"
+      },
+      "OUTPUT_STATUS02": {
+        "percentage": "s78",
+        "response_code": "s79",
+        "response_message": "s7a",
+        "status": "s7b",
+        "id": "OUTPUT_STATUS02"
+      }
+    }
+  },
+  "new": {
+    "output_status": {
+      "output_status_ref01": {
+        "percentage": "sa0",
+        "response_code": "sa1",
+        "response_message": "sa2",
+        "status": "sa3"
+      }
+    }
+  }
+}

@@ -1,1 +1,3611 @@
-{"name":"bluefin-tecs-merchant-portal"}
+{
+  "def": "tecs-merchant-portal-openapi.json",
+  "main": {
+    "def": {
+      "desc": ""
+    },
+    "kit": {
+      "config": {
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ],
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "entity": {
+        "merchant_portal_api_controller": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "account_number",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "additional_data",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "business_reg_number",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "city",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "corporateuuid",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "country",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "currency",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "merchant_category_code",
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "merchant_email",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "merchant_name",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "merchant_phone_number",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "packageid",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "packageorderuuid",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "password",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "productid",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "productid_acquirer",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "reason_deactivation",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "reason_reactivation",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "sorting_code",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "state",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "street",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "terminal_country_code",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "terminal_language_code",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "terminal_location",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "terminal_serial_number",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "terminalid",
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "terminalid_acquirer",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "user_email",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "user_phone_number",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "username",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "vu_nummer",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "web_shop_url",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "zipcode",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "merchant_portal_api_controller",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/deactivateTerminal",
+                  "parts": [
+                    "merchantportalws",
+                    "deactivateTerminal"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/reactivateTerminal",
+                  "parts": [
+                    "merchantportalws",
+                    "reactivateTerminal"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/registerAdditionalTerminal",
+                  "parts": [
+                    "merchantportalws",
+                    "registerAdditionalTerminal"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/registerNewMerchant",
+                  "parts": [
+                    "merchantportalws",
+                    "registerNewMerchant"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "merchant_portal_common_controller": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [],
+          "name": "merchant_portal_common_controller",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/merchantportalws/logDeveloperInfo",
+                  "parts": [
+                    "merchantportalws",
+                    "logDeveloperInfo"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/merchantportalws/version",
+                  "parts": [
+                    "merchantportalws",
+                    "version"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "merchant_portal_pam_contract_controller": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "language",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "product_order_uuid",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "merchant_portal_pam_contract_controller",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/generateContract",
+                  "parts": [
+                    "merchantportalws",
+                    "generateContract"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/uploadContract",
+                  "parts": [
+                    "merchantportalws",
+                    "uploadContract"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "merchant_portal_pam_document_controller": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "app_form_field_desc_uuid",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "package_order_uuid",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "product_order_uuid",
+              "req": false,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "merchant_portal_pam_document_controller",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/documentsList",
+                  "parts": [
+                    "merchantportalws",
+                    "documentsList"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/downloadDocument",
+                  "parts": [
+                    "merchantportalws",
+                    "downloadDocument"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "merchant_portal_pam_form_controller": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "app_form_fields_desc_uuid",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "filter",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "language",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "package_order",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "package_order_uuid",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "package_uuid",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "product_order",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "product_order_uuid",
+              "op": {
+                "create": {
+                  "req": true,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "reason_of_reopening",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "merchant_portal_pam_form_controller",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/applicationForm",
+                  "parts": [
+                    "merchantportalws",
+                    "applicationForm"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/packageForm",
+                  "parts": [
+                    "merchantportalws",
+                    "packageForm"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/reopenForm",
+                  "parts": [
+                    "merchantportalws",
+                    "reopenForm"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/secretKey",
+                  "parts": [
+                    "merchantportalws",
+                    "secretKey"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/submitForm",
+                  "parts": [
+                    "merchantportalws",
+                    "submitForm"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/submitValues",
+                  "parts": [
+                    "merchantportalws",
+                    "submitValues"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "merchant_portal_pam_mandator_controller": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "client_secret",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "mandator_name",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "notification_email",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "package_uuid",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "merchant_portal_pam_mandator_controller",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/createMandatorConfig",
+                  "parts": [
+                    "merchantportalws",
+                    "createMandatorConfig"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/introduceMandatorPackage",
+                  "parts": [
+                    "merchantportalws",
+                    "introduceMandatorPackage"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/selfRegistrationLink",
+                  "parts": [
+                    "merchantportalws",
+                    "selfRegistrationLink"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "merchant_portal_pam_merchant_controller": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "additional_data",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "business_registration_number",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "city",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "company_name",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "corporate_uuid",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "country",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "currency",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "email",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "language",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "login",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "mandator",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "merchant_category_code",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "merchant_contract_number",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "merchant_name",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "package_uuid",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "packageorderuuid",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "phone_number",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "postal_code",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "productid_acquirer",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "region",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "registration_number",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "signature",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "street",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "terminal_id",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "terminalid_acquirer",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "vu_nummer",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "merchant_portal_pam_merchant_controller",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/contractNumber",
+                  "parts": [
+                    "merchantportalws",
+                    "contractNumber"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/registerAdditionalAcquiring",
+                  "parts": [
+                    "merchantportalws",
+                    "registerAdditionalAcquiring"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/updateMerchant",
+                  "parts": [
+                    "merchantportalws",
+                    "updateMerchant"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/merchantportalws/registerMerchant",
+                  "parts": [
+                    "merchantportalws",
+                    "registerMerchant"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "merchant_portal_pam_package_controller": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "consumer_uuid",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "corporate_uuid",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "country",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "description_key",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "filter",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "language",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "name_key",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "package_status",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "package_uuid",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "pagination",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "sorting",
+              "req": false,
+              "type": "`$OBJECT`"
+            }
+          ],
+          "name": "merchant_portal_pam_package_controller",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/availablePackages",
+                  "parts": [
+                    "merchantportalws",
+                    "availablePackages"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/orderPackage",
+                  "parts": [
+                    "merchantportalws",
+                    "orderPackage"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/orderedPackages",
+                  "parts": [
+                    "merchantportalws",
+                    "orderedPackages"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/packageTemplates",
+                  "parts": [
+                    "merchantportalws",
+                    "packageTemplates"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/updatePackageData",
+                  "parts": [
+                    "merchantportalws",
+                    "updatePackageData"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "merchant_portal_pam_product_controller": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "consumer_uuid",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "filter",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "language",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "merchant_id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "package_order_uuid",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "pagination",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "product_order_uuid",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "product_uuid",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "reason_decline",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "sorting",
+              "req": false,
+              "type": "`$OBJECT`"
+            }
+          ],
+          "name": "merchant_portal_pam_product_controller",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/approveProduct",
+                  "parts": [
+                    "merchantportalws",
+                    "approveProduct"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/declineProduct",
+                  "parts": [
+                    "merchantportalws",
+                    "declineProduct"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/orderAdditionalProduct",
+                  "parts": [
+                    "merchantportalws",
+                    "orderAdditionalProduct"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/productsList",
+                  "parts": [
+                    "merchantportalws",
+                    "productsList"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "output_add_product": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "package_uuid",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "product_uui_d",
+              "req": true,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "response_code",
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "response_message",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "output_add_product",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/addProductsToPackage",
+                  "parts": [
+                    "merchantportalws",
+                    "addProductsToPackage"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "output_create_product": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "acquirer_id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "allow_multiple_order",
+              "req": true,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "app_form_template_name",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "contract_needed",
+              "req": true,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "credentials_needed",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "description_key",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "name_key",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "prescreening_allowed",
+              "req": true,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "product_name",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "response_code",
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "response_message",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "terminal_template_name",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "vendor_name",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "xml_template_file",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "output_create_product",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/createNewProduct",
+                  "parts": [
+                    "merchantportalws",
+                    "createNewProduct"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "output_detail": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "detail",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "response_code",
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "response_message",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "output_detail",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ],
+                    "params": [
+                      {
+                        "active": true,
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "id",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/merchantportalws/batch/registerAdditionalTerminal/details/{id}",
+                  "parts": [
+                    "merchantportalws",
+                    "batch",
+                    "registerAdditionalTerminal",
+                    "details",
+                    "{id}"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization",
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "output_list": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "item",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "pagination",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$OBJECT`"
+                }
+              },
+              "req": true,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "response_code",
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "response_message",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "sorting",
+              "req": false,
+              "type": "`$OBJECT`"
+            }
+          ],
+          "name": "output_list",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/batch/registerAdditionalTerminal/list",
+                  "parts": [
+                    "merchantportalws",
+                    "batch",
+                    "registerAdditionalTerminal",
+                    "list"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "output_message": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "response_code",
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "response_message",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "output_message",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ],
+                    "params": [
+                      {
+                        "active": true,
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "id",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}",
+                  "parts": [
+                    "merchantportalws",
+                    "batch",
+                    "registerAdditionalTerminal",
+                    "restart",
+                    "{id}"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization",
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ],
+                    "params": [
+                      {
+                        "active": true,
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "id",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}",
+                  "parts": [
+                    "merchantportalws",
+                    "batch",
+                    "registerAdditionalTerminal",
+                    "stop",
+                    "{id}"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization",
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "output_move_tid": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "product_order_uui_d",
+              "req": true,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "response_code",
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "response_message",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "target_package_order_uuid",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "target_product_order_uuid",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "output_move_tid",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/moveTid",
+                  "parts": [
+                    "merchantportalws",
+                    "moveTid"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "output_remove_product": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "package_uuid",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "product_uui_d",
+              "req": true,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "response_code",
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "response_message",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "output_remove_product",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/removeProductsFromPackage",
+                  "parts": [
+                    "merchantportalws",
+                    "removeProductsFromPackage"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "output_start": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "response_code",
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "response_message",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "output_start",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/batch/registerAdditionalTerminal/start",
+                  "parts": [
+                    "merchantportalws",
+                    "batch",
+                    "registerAdditionalTerminal",
+                    "start"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "output_status": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "percentage",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "response_code",
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "response_message",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "status",
+              "req": false,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "output_status",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ],
+                    "params": [
+                      {
+                        "active": true,
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "id",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/merchantportalws/batch/registerAdditionalTerminal/status/{id}",
+                  "parts": [
+                    "merchantportalws",
+                    "batch",
+                    "registerAdditionalTerminal",
+                    "status",
+                    "{id}"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization",
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "output_update_product": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "allow_multiple_order",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "app_form_name",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "contract_needed",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "credentials_needed",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "description_key",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "name_key",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "prescreening_allowed",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "product_name",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "product_status",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "product_uuid",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "response_code",
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "response_message",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "vendor_name",
+              "req": false,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "output_update_product",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "header": [
+                      {
+                        "active": true,
+                        "kind": "header",
+                        "name": "authorization",
+                        "orig": "authorization",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "orig": "/merchantportalws/updateProduct",
+                  "parts": [
+                    "merchantportalws",
+                    "updateProduct"
+                  ],
+                  "select": {
+                    "exist": [
+                      "authorization"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        }
+      },
+      "feature": {
+        "test": {
+          "active": true,
+          "config": {
+            "options": {
+              "active": false
+            }
+          },
+          "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
+              "await": false
+            }
+          },
+          "name": "test",
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "In-memory mock transport for testing without a live server",
+          "version": "0.0.1"
+        }
+      },
+      "flow": {
+        "BasicMerchantPortalApiControllerFlow": {
+          "active": true,
+          "entity": "merchant_portal_api_controller",
+          "key$": "BasicMerchantPortalApiControllerFlow",
+          "kind": "basic",
+          "name": "BasicMerchantPortalApiControllerFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "merchant_portal_api_controller_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicMerchantPortalCommonControllerFlow": {
+          "active": true,
+          "entity": "merchant_portal_common_controller",
+          "key$": "BasicMerchantPortalCommonControllerFlow",
+          "kind": "basic",
+          "name": "BasicMerchantPortalCommonControllerFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "merchant_portal_common_controller_ref01",
+                "srcdatavar": "merchant_portal_common_controller_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {},
+              "op": "load",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-merchant_portal_common_controller_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicMerchantPortalPamContractControllerFlow": {
+          "active": true,
+          "entity": "merchant_portal_pam_contract_controller",
+          "key$": "BasicMerchantPortalPamContractControllerFlow",
+          "kind": "basic",
+          "name": "BasicMerchantPortalPamContractControllerFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "merchant_portal_pam_contract_controller_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicMerchantPortalPamDocumentControllerFlow": {
+          "active": true,
+          "entity": "merchant_portal_pam_document_controller",
+          "key$": "BasicMerchantPortalPamDocumentControllerFlow",
+          "kind": "basic",
+          "name": "BasicMerchantPortalPamDocumentControllerFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "merchant_portal_pam_document_controller_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicMerchantPortalPamFormControllerFlow": {
+          "active": true,
+          "entity": "merchant_portal_pam_form_controller",
+          "key$": "BasicMerchantPortalPamFormControllerFlow",
+          "kind": "basic",
+          "name": "BasicMerchantPortalPamFormControllerFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "merchant_portal_pam_form_controller_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicMerchantPortalPamMandatorControllerFlow": {
+          "active": true,
+          "entity": "merchant_portal_pam_mandator_controller",
+          "key$": "BasicMerchantPortalPamMandatorControllerFlow",
+          "kind": "basic",
+          "name": "BasicMerchantPortalPamMandatorControllerFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "merchant_portal_pam_mandator_controller_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicMerchantPortalPamMerchantControllerFlow": {
+          "active": true,
+          "entity": "merchant_portal_pam_merchant_controller",
+          "key$": "BasicMerchantPortalPamMerchantControllerFlow",
+          "kind": "basic",
+          "name": "BasicMerchantPortalPamMerchantControllerFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "merchant_portal_pam_merchant_controller_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicMerchantPortalPamPackageControllerFlow": {
+          "active": true,
+          "entity": "merchant_portal_pam_package_controller",
+          "key$": "BasicMerchantPortalPamPackageControllerFlow",
+          "kind": "basic",
+          "name": "BasicMerchantPortalPamPackageControllerFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "merchant_portal_pam_package_controller_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicMerchantPortalPamProductControllerFlow": {
+          "active": true,
+          "entity": "merchant_portal_pam_product_controller",
+          "key$": "BasicMerchantPortalPamProductControllerFlow",
+          "kind": "basic",
+          "name": "BasicMerchantPortalPamProductControllerFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "merchant_portal_pam_product_controller_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicOutputAddProductFlow": {
+          "active": true,
+          "entity": "output_add_product",
+          "key$": "BasicOutputAddProductFlow",
+          "kind": "basic",
+          "name": "BasicOutputAddProductFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "output_add_product_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicOutputCreateProductFlow": {
+          "active": true,
+          "entity": "output_create_product",
+          "key$": "BasicOutputCreateProductFlow",
+          "kind": "basic",
+          "name": "BasicOutputCreateProductFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "output_create_product_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicOutputDetailFlow": {
+          "active": true,
+          "entity": "output_detail",
+          "key$": "BasicOutputDetailFlow",
+          "kind": "basic",
+          "name": "BasicOutputDetailFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "output_detail_ref01",
+                "srcdatavar": "output_detail_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "output_detail01"
+              },
+              "op": "load",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-output_detail_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicOutputListFlow": {
+          "active": true,
+          "entity": "output_list",
+          "key$": "BasicOutputListFlow",
+          "kind": "basic",
+          "name": "BasicOutputListFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "output_list_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicOutputMessageFlow": {
+          "active": true,
+          "entity": "output_message",
+          "key$": "BasicOutputMessageFlow",
+          "kind": "basic",
+          "name": "BasicOutputMessageFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "output_message_ref01",
+                "srcdatavar": "output_message_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "output_message01"
+              },
+              "op": "load",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-output_message_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicOutputMoveTidFlow": {
+          "active": true,
+          "entity": "output_move_tid",
+          "key$": "BasicOutputMoveTidFlow",
+          "kind": "basic",
+          "name": "BasicOutputMoveTidFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "output_move_tid_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicOutputRemoveProductFlow": {
+          "active": true,
+          "entity": "output_remove_product",
+          "key$": "BasicOutputRemoveProductFlow",
+          "kind": "basic",
+          "name": "BasicOutputRemoveProductFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "output_remove_product_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicOutputStartFlow": {
+          "active": true,
+          "entity": "output_start",
+          "key$": "BasicOutputStartFlow",
+          "kind": "basic",
+          "name": "BasicOutputStartFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "output_start_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicOutputStatusFlow": {
+          "active": true,
+          "entity": "output_status",
+          "key$": "BasicOutputStatusFlow",
+          "kind": "basic",
+          "name": "BasicOutputStatusFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "output_status_ref01",
+                "srcdatavar": "output_status_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "output_status01"
+              },
+              "op": "load",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-output_status_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicOutputUpdateProductFlow": {
+          "active": true,
+          "entity": "output_update_product",
+          "key$": "BasicOutputUpdateProductFlow",
+          "kind": "basic",
+          "name": "BasicOutputUpdateProductFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "output_update_product_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        }
+      },
+      "info": {
+        "auth": false,
+        "contact": {
+          "email": "contact@tecs.at",
+          "name": "Contact",
+          "url": "https://www.tecs.at/contact/"
+        },
+        "description": "Web service for merchant registration and management.",
+        "license": {
+          "name": "Telecommunication & E-Commerce Solutions GmbH © All rights reserved",
+          "url": "https://www.tecs.at/merchant-portal-ws/license-url/"
+        },
+        "servers": [
+          {
+            "description": "Test",
+            "url": "https://test.tecs.at"
+          }
+        ],
+        "summary": "Web service for merchant registration and management.",
+        "termsOfService": "https://www.tecs.at/merchant-portal-ws/terms-of-service-url/",
+        "title": "Merchant Portal Web Service Documentation",
+        "version": "1.39.13",
+        "website": "https://test.tecs.at"
+      },
+      "option": {},
+      "target": {
+        "go": {
+          "active": true,
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "module": {
+            "name": "bluefin-tecs-merchant-portal"
+          },
+          "name": "go",
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            }
+          },
+          "srcfeature": false,
+          "title": "Golang"
+        },
+        "go-cli": {
+          "active": true,
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "module": {
+            "name": "bluefin-tecs-merchant-portal"
+          },
+          "name": "go-cli",
+          "phase": {
+            "agentguide": {
+              "active": false
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "root"
+            }
+          },
+          "title": "Go CLI"
+        },
+        "go-mcp": {
+          "active": true,
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "module": {
+            "name": "bluefin-tecs-merchant-portal"
+          },
+          "name": "go-mcp",
+          "phase": {
+            "agentguide": {
+              "active": false
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "root"
+            }
+          },
+          "title": "Go MCP server"
+        },
+        "lua": {
+          "active": true,
+          "comment": {
+            "line": "--"
+          },
+          "deps": {
+            "dkjson": {
+              "active": true,
+              "kind": "prod",
+              "version": "2.5"
+            }
+          },
+          "ext": "lua",
+          "module": {
+            "name": "bluefin-tecs-merchant-portal"
+          },
+          "name": "lua",
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "luarocks",
+              "package": "",
+              "state": "pending",
+              "url": "https://luarocks.org",
+              "vault": {
+                "alias": "luarocks",
+                "env": "LUAROCKS_API_KEY",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            }
+          },
+          "srcfeature": false,
+          "title": "Lua"
+        },
+        "php": {
+          "active": true,
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "php",
+          "module": {
+            "name": "bluefin-tecs-merchant-portal"
+          },
+          "name": "php",
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "packagist",
+              "package": "",
+              "state": "pending",
+              "url": "https://packagist.org",
+              "vault": {
+                "alias": "packagist",
+                "env": "PACKAGIST_API_TOKEN",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            }
+          },
+          "srcfeature": false,
+          "title": "PHP"
+        },
+        "py": {
+          "active": true,
+          "comment": {
+            "line": "#"
+          },
+          "deps": {
+            "requests": {
+              "active": true,
+              "kind": "prod",
+              "version": "2.33"
+            }
+          },
+          "ext": "py",
+          "module": {
+            "name": "bluefin-tecs-merchant-portal"
+          },
+          "name": "py",
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "pypi",
+              "package": "",
+              "state": "pending",
+              "url": "https://pypi.org",
+              "vault": {
+                "alias": "pypi",
+                "env": "",
+                "recipe": "pypi"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            }
+          },
+          "srcfeature": false,
+          "title": "Python"
+        },
+        "rb": {
+          "active": true,
+          "comment": {
+            "line": "#"
+          },
+          "deps": {
+            "json": {
+              "active": true,
+              "kind": "prod",
+              "version": "0"
+            },
+            "voxgig-struct": {
+              "active": true,
+              "kind": "prod",
+              "version": "0.0.10"
+            }
+          },
+          "ext": "rb",
+          "module": {
+            "name": "bluefin-tecs-merchant-portal"
+          },
+          "name": "rb",
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "rubygems",
+              "package": "",
+              "state": "pending",
+              "url": "https://rubygems.org",
+              "vault": {
+                "alias": "gem",
+                "env": "",
+                "recipe": "gem"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            }
+          },
+          "srcfeature": false,
+          "title": "Ruby"
+        },
+        "ts": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "dotenv": {
+              "active": true,
+              "kind": "dev",
+              "version": "^17.4.2"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "module": {
+            "name": "bluefin-tecs-merchant-portal"
+          },
+          "name": "ts",
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "npm",
+              "package": "",
+              "state": "pending",
+              "url": "https://registry.npmjs.org",
+              "vault": {
+                "alias": "npm",
+                "env": "",
+                "recipe": "npm"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            }
+          },
+          "title": "TypeScript"
+        }
+      }
+    }
+  },
+  "name": "bluefin-tecs-merchant-portal",
+  "origin": "voxgig-sdk"
+}

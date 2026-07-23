@@ -1,0 +1,28 @@
+# BasicMerchantPortalCommonControllerFlow
+
+main: kit: flow: BasicMerchantPortalCommonControllerFlow:
+{
+  entity: "merchant_portal_common_controller",
+  kind: "basic",
+  name: "BasicMerchantPortalCommonControllerFlow",
+  step: [
+    {
+      input: {
+        ref: "merchant_portal_common_controller_ref01",
+        srcdatavar: "merchant_portal_common_controller_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-merchant_portal_common_controller_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMerchantPortalCommonControllerFlow"
+}

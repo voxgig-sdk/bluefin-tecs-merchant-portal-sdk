@@ -1,0 +1,298 @@
+# Entity: merchant_portal_api_controller
+
+main: kit: entity: merchant_portal_api_controller: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "account_number"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "additional_data"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "business_reg_number"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "city"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "corporateuuid"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "country"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "currency"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "merchant_category_code"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "merchant_email"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "merchant_name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "merchant_phone_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "packageid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "packageorderuuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "password"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "productid"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "productid_acquirer"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "reason_deactivation"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "reason_reactivation"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "sorting_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "state"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "street"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_country_code"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_language_code"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_location"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_serial_number"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "terminalid"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "terminalid_acquirer"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "user_email"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "user_phone_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "username"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "vu_nummer"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "web_shop_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "zipcode"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "merchant_portal_api_controller"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/deactivateTerminal"
+          parts: [
+            "merchantportalws"
+            "deactivateTerminal"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/reactivateTerminal"
+          parts: [
+            "merchantportalws"
+            "reactivateTerminal"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/registerAdditionalTerminal"
+          parts: [
+            "merchantportalws"
+            "registerAdditionalTerminal"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/registerNewMerchant"
+          parts: [
+            "merchantportalws"
+            "registerNewMerchant"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

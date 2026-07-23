@@ -1,0 +1,92 @@
+# Entity: merchant_portal_pam_document_controller
+
+main: kit: entity: merchant_portal_pam_document_controller: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "app_form_field_desc_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "package_order_uuid"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "product_order_uuid"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "merchant_portal_pam_document_controller"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/documentsList"
+          parts: [
+            "merchantportalws"
+            "documentsList"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/downloadDocument"
+          parts: [
+            "merchantportalws"
+            "downloadDocument"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

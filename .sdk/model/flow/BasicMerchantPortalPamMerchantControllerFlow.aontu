@@ -1,0 +1,18 @@
+# BasicMerchantPortalPamMerchantControllerFlow
+
+main: kit: flow: BasicMerchantPortalPamMerchantControllerFlow:
+{
+  entity: "merchant_portal_pam_merchant_controller",
+  kind: "basic",
+  name: "BasicMerchantPortalPamMerchantControllerFlow",
+  step: [
+    {
+      input: {
+        ref: "merchant_portal_pam_merchant_controller_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicMerchantPortalPamMerchantControllerFlow"
+}

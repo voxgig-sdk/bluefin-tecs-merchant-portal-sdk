@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "output_detail": {
+      "OUTPUT_DETAIL00": {
+        "detail": {},
+        "response_code": "s1f",
+        "response_message": "s20",
+        "id": "OUTPUT_DETAIL00"
+      },
+      "OUTPUT_DETAIL01": {
+        "detail": {},
+        "response_code": "s3d",
+        "response_message": "s3e",
+        "id": "OUTPUT_DETAIL01"
+      },
+      "OUTPUT_DETAIL02": {
+        "detail": {},
+        "response_code": "s5b",
+        "response_message": "s5c",
+        "id": "OUTPUT_DETAIL02"
+      }
+    }
+  },
+  "new": {
+    "output_detail": {
+      "output_detail_ref01": {
+        "detail": {},
+        "response_code": "s79",
+        "response_message": "s7a"
+      }
+    }
+  }
+}

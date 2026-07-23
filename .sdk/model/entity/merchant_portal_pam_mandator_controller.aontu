@@ -1,0 +1,125 @@
+# Entity: merchant_portal_pam_mandator_controller
+
+main: kit: entity: merchant_portal_pam_mandator_controller: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "client_secret"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "mandator_name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "notification_email"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "package_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "merchant_portal_pam_mandator_controller"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/createMandatorConfig"
+          parts: [
+            "merchantportalws"
+            "createMandatorConfig"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/introduceMandatorPackage"
+          parts: [
+            "merchantportalws"
+            "introduceMandatorPackage"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/merchantportalws/selfRegistrationLink"
+          parts: [
+            "merchantportalws"
+            "selfRegistrationLink"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
