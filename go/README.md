@@ -66,12 +66,12 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-merchantportalcommoncontroller, err := client.MerchantPortalCommonController(nil).Load(nil, nil)
+outputdetail, err := client.OutputDetail(nil).Load(map[string]any{"id": "example_id"}, nil)
 if err != nil {
     // handle err
     return
 }
-_ = merchantportalcommoncontroller
+_ = outputdetail
 ```
 
 `Direct` follows the same `(value, error)` convention:
@@ -135,13 +135,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-merchantPortalCommonController, err := client.MerchantPortalCommonController(nil).Load(
-    nil, nil,
+outputDetail, err := client.OutputDetail(nil).Load(
+    map[string]any{"id": "test01"}, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(merchantPortalCommonController) // the returned mock data
+fmt.Println(outputDetail) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -1415,11 +1415,11 @@ Entity instances are stateful. After a successful `Load`, the entity
 stores the returned data and match criteria internally.
 
 ```go
-merchantportalcommoncontroller := client.MerchantPortalCommonController(nil)
-merchantportalcommoncontroller.Load(nil, nil)
+outputdetail := client.OutputDetail(nil)
+outputdetail.Load(map[string]any{"id": "example_id"}, nil)
 
-// merchantportalcommoncontroller.Data() now returns the merchantportalcommoncontroller data from the last load
-// merchantportalcommoncontroller.Match() returns the last match criteria
+// outputdetail.Data() now returns the outputdetail data from the last load
+// outputdetail.Match() returns the last match criteria
 ```
 
 Call `Make()` to create a fresh instance with the same configuration

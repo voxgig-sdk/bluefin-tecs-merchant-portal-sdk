@@ -47,7 +47,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $merchantportalcommoncontroller = $client->MerchantPortalCommonController()->load();
+    $outputdetail = $client->OutputDetail()->load(["id" => "example_id"]);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -114,14 +114,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = BluefinTecsMerchantPortalSDK::test();
+$client = BluefinTecsMerchantPortalSDK::test([
+    "entity" => ["outputdetail" => ["test01" => ["id" => "test01"]]],
+]);
 
 // Entity ops return the bare mock record (throws on error).
-$merchantportalcommoncontroller = $client->MerchantPortalCommonController()->load();
-print_r($merchantportalcommoncontroller);
+$outputdetail = $client->OutputDetail()->load(["id" => "test01"]);
+print_r($outputdetail);
 ```
 
 ### Use a custom fetch function
@@ -1328,11 +1331,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$merchantportalcommoncontroller = $client->MerchantPortalCommonController();
-$merchantportalcommoncontroller->load();
+$outputdetail = $client->OutputDetail();
+$outputdetail->load(["id" => "example_id"]);
 
-// $merchantportalcommoncontroller->data_get() now returns the merchantportalcommoncontroller data from the last load
-// $merchantportalcommoncontroller->match_get() returns the last match criteria
+// $outputdetail->data_get() now returns the outputdetail data from the last load
+// $outputdetail->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

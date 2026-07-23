@@ -45,7 +45,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  merchantportalcommoncontroller = client.MerchantPortalCommonController.load()
+  outputdetail = client.OutputDetail.load({ "id" => "example_id" })
 rescue => err
   warn "load failed: #{err}"
 end
@@ -108,14 +108,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = BluefinTecsMerchantPortalSDK.test
+client = BluefinTecsMerchantPortalSDK.test({
+  "entity" => { "outputdetail" => { "test01" => { "id" => "test01" } } },
+})
 
 # Entity ops return the bare mock record (raises on error).
-merchantportalcommoncontroller = client.MerchantPortalCommonController.load()
-puts merchantportalcommoncontroller
+outputdetail = client.OutputDetail.load({ "id" => "test01" })
+puts outputdetail
 ```
 
 ### Use a custom fetch function
@@ -1318,11 +1321,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-merchantportalcommoncontroller = client.MerchantPortalCommonController
-merchantportalcommoncontroller.load()
+outputdetail = client.OutputDetail
+outputdetail.load({ "id" => "example_id" })
 
-# merchantportalcommoncontroller.data_get now returns the merchantportalcommoncontroller data from the last load
-# merchantportalcommoncontroller.match_get returns the last match criteria
+# outputdetail.data_get now returns the outputdetail data from the last load
+# outputdetail.match_get returns the last match criteria
 ```
 
 Call `make` to create a fresh instance with the same configuration

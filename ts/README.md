@@ -67,8 +67,8 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const merchantportalcommoncontroller = await client.MerchantPortalCommonController().load()
-  console.log(merchantportalcommoncontroller)
+  const outputdetail = await client.OutputDetail().load({ id: "example_id" })
+  console.log(outputdetail)
 } catch (err) {
   console.error('load failed:', err)
 }
@@ -134,9 +134,9 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = BluefinTecsMerchantPortalSDK.test()
 
-const merchantportalcommoncontroller = await client.MerchantPortalCommonController().load()
-// merchantportalcommoncontroller is a bare entity populated with mock response data
-console.log(merchantportalcommoncontroller)
+const outputdetail = await client.OutputDetail().load({ id: 'test01' })
+// outputdetail is a bare entity populated with mock response data
+console.log(outputdetail)
 ```
 
 You can also use the instance method:
@@ -151,10 +151,10 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.MerchantPortalCommonController()
+const entity = client.OutputDetail()
 
 // First call runs the operation and stores its result
-await entity.load()
+await entity.load({ id: 'example' })
 
 // Subsequent calls reuse the stored state
 const data = entity.data()
@@ -1375,11 +1375,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const merchantportalcommoncontroller = client.MerchantPortalCommonController()
-await merchantportalcommoncontroller.load()
+const outputdetail = client.OutputDetail()
+await outputdetail.load({ id: "example_id" })
 
-// merchantportalcommoncontroller.data() now returns the merchantportalcommoncontroller data from the last `load`
-// merchantportalcommoncontroller.match() returns the last match criteria
+// outputdetail.data() now returns the outputdetail data from the last `load`
+// outputdetail.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

@@ -51,8 +51,8 @@ Entity operations raise on failure, so wrap them in `try` / `except`:
 
 ```python
 try:
-    merchantportalcommoncontroller = client.MerchantPortalCommonController().load()
-    print(merchantportalcommoncontroller)
+    outputdetail = client.OutputDetail().load({"id": "example_id"})
+    print(outputdetail)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -119,8 +119,8 @@ Create a mock client for unit testing — no server required:
 client = BluefinTecsMerchantPortalSDK.test()
 
 # Entity ops return the bare record and raise on error.
-merchantportalcommoncontroller = client.MerchantPortalCommonController().load()
-# merchantportalcommoncontroller contains the mock response record
+outputdetail = client.OutputDetail().load({"id": "test01"})
+# outputdetail contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -1319,11 +1319,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-merchantportalcommoncontroller = client.MerchantPortalCommonController()
-merchantportalcommoncontroller.load()
+outputdetail = client.OutputDetail()
+outputdetail.load({"id": "example_id"})
 
-# merchantportalcommoncontroller.data_get() now returns the merchantportalcommoncontroller data from the last load
-# merchantportalcommoncontroller.match_get() returns the last match criteria
+# outputdetail.data_get() now returns the outputdetail data from the last load
+# outputdetail.match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

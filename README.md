@@ -56,17 +56,17 @@ network, and no credentials:
 
 ```ts
 const client = BluefinTecsMerchantPortalSDK.test()
-const merchantportalcommoncontroller = await client.MerchantPortalCommonController().load()
-// merchantportalcommoncontroller is a bare MerchantPortalCommonController populated with mock data
-console.log(merchantportalcommoncontroller)
+const outputdetail = await client.OutputDetail().load({ id: 'test01' })
+// outputdetail is a bare OutputDetail populated with mock data
+console.log(outputdetail)
 ```
 
 ### Python
 
 ```python
 client = BluefinTecsMerchantPortalSDK.test()
-merchantportalcommoncontroller = client.MerchantPortalCommonController().load()
-print(merchantportalcommoncontroller)
+outputdetail = client.OutputDetail().load({"id": "test01"})
+print(outputdetail)
 ```
 
 ### PHP
@@ -74,17 +74,17 @@ print(merchantportalcommoncontroller)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = BluefinTecsMerchantPortalSDK::test([
-    "entity" => ["merchantportalcommoncontroller" => ["test01" => []]],
+    "entity" => ["outputdetail" => ["test01" => ["id" => "test01"]]],
 ]);
-$merchantportalcommoncontroller = $client->MerchantPortalCommonController()->load();
+$outputdetail = $client->OutputDetail()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
 client := sdk.Test()
-result, err := client.MerchantPortalCommonController(nil).Load(
-    nil, nil,
+result, err := client.OutputDetail(nil).Load(
+    map[string]any{"id": "test01"}, nil,
 )
 ```
 
@@ -93,16 +93,16 @@ result, err := client.MerchantPortalCommonController(nil).Load(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = BluefinTecsMerchantPortalSDK.test({
-  "entity" => { "merchantportalcommoncontroller" => { "test01" => {} } },
+  "entity" => { "outputdetail" => { "test01" => { "id" => "test01" } } },
 })
-merchantportalcommoncontroller = client.MerchantPortalCommonController.load()
+outputdetail = client.OutputDetail.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:MerchantPortalCommonController():load()
+local result, err = client:OutputDetail():load({ id = "test01" })
 ```
 
 ## Packages

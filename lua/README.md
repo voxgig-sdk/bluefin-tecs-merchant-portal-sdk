@@ -49,7 +49,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local merchantportalcommoncontroller, err = client:MerchantPortalCommonController():load()
+local outputdetail, err = client:OutputDetail():load({ id = "example_id" })
 if err then error(err) end
 ```
 
@@ -107,7 +107,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:MerchantPortalCommonController():load()
+local result, err = client:OutputDetail():load({ id = "test01" })
 -- result is the returned data; err is set on failure
 ```
 
@@ -1310,11 +1310,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local merchantportalcommoncontroller = client:MerchantPortalCommonController()
-merchantportalcommoncontroller:load()
+local outputdetail = client:OutputDetail()
+outputdetail:load({ id = "example_id" })
 
--- merchantportalcommoncontroller:data_get() now returns the merchantportalcommoncontroller data from the last load
--- merchantportalcommoncontroller:match_get() returns the last match criteria
+-- outputdetail:data_get() now returns the outputdetail data from the last load
+-- outputdetail:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration
