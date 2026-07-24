@@ -260,13 +260,13 @@ pub const OutputAddProductEntity = struct {
 
     // ---- CRUD operations ----
 
-    pub fn load(self: *EntyClass, _reqmatch: Value, _ctrl: Value) OpResult {
+    pub fn load(self: *OutputAddProductEntity, _reqmatch: Value, _ctrl: Value) OpResult {
         _ = _reqmatch;
         _ = _ctrl;
         return .{ .err = h.unsupported_op("load", self.name) };
     }
 
-    pub fn list(self: *EntyClass, _reqmatch: Value, _ctrl: Value) OpResult {
+    pub fn list(self: *OutputAddProductEntity, _reqmatch: Value, _ctrl: Value) OpResult {
         _ = _reqmatch;
         _ = _ctrl;
         return .{ .err = h.unsupported_op("list", self.name) };
@@ -295,13 +295,13 @@ pub const OutputAddProductEntity = struct {
     }
     
 
-    pub fn update(self: *EntyClass, _reqdata: Value, _ctrl: Value) OpResult {
+    pub fn update(self: *OutputAddProductEntity, _reqdata: Value, _ctrl: Value) OpResult {
         _ = _reqdata;
         _ = _ctrl;
         return .{ .err = h.unsupported_op("update", self.name) };
     }
 
-    pub fn remove(self: *EntyClass, _reqmatch: Value, _ctrl: Value) OpResult {
+    pub fn remove(self: *OutputAddProductEntity, _reqmatch: Value, _ctrl: Value) OpResult {
         _ = _reqmatch;
         _ = _ctrl;
         return .{ .err = h.unsupported_op("remove", self.name) };
