@@ -65,11 +65,11 @@ function merchant_portal_common_controller_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID" => [],
-        "BLUEFINTECSMERCHANTPORTAL_TEST_LIVE" => "FALSE",
+        "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID" => [],
+        "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"] === "TRUE";
+    $live = $env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

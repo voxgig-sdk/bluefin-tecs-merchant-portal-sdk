@@ -26,8 +26,8 @@ import {
 describe('MerchantPortalCommonControllerEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTPORTAL_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTPORTAL_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantPortalSDK.test()
@@ -62,7 +62,7 @@ describe('MerchantPortalCommonControllerEntity', async () => {
     // LOAD
     const merchant_portal_common_controller_ref01_ent = client.MerchantPortalCommonController()
     const merchant_portal_common_controller_ref01_match_dt0: any = {}
-    const merchant_portal_common_controller_ref01_data_dt0 = await merchant_portal_common_controller_ref01_ent.load(merchant_portal_common_controller_ref01_match_dt0)
+    const merchant_portal_common_controller_ref01_data_dt0 = (await merchant_portal_common_controller_ref01_ent.load(merchant_portal_common_controller_ref01_match_dt0)).data()
     assert(null != merchant_portal_common_controller_ref01_data_dt0)
 
 

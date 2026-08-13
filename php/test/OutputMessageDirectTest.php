@@ -75,11 +75,11 @@ function output_message_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_MESSAGE_ENTID" => [],
-        "BLUEFINTECSMERCHANTPORTAL_TEST_LIVE" => "FALSE",
+        "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_MESSAGE_ENTID" => [],
+        "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"] === "TRUE";
+    $live = $env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

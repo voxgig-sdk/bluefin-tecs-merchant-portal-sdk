@@ -14,6 +14,8 @@ typedef struct merchant_portal_api_controller_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } merchant_portal_api_controller_entity;
 
 typedef void (*merchant_portal_api_controller_postdone_fn)(merchant_portal_api_controller_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* merchant_portal_api_controller_get_name(Entity* e);
 static Entity* merchant_portal_api_controller_make(Entity* e);
 static voxgig_value* merchant_portal_api_controller_data(Entity* e, voxgig_value* args);
 static voxgig_value* merchant_portal_api_controller_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* merchant_portal_api_controller_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* merchant_portal_api_controller_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* merchant_portal_api_controller_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* merchant_portal_api_controller_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* merchant_portal_api_controller_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* merchant_portal_api_controller_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** merchant_portal_api_controller_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* merchant_portal_api_controller_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* merchant_portal_api_controller_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* merchant_portal_api_controller_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void merchant_portal_api_controller_mark_deleted(Entity* e);
+static bool merchant_portal_api_controller_deleted(Entity* e);
 
 static Context* merchant_portal_api_controller_ent_ctx(merchant_portal_api_controller_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* merchant_portal_api_controller_matchv(Entity* e, voxgig_val
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* merchant_portal_api_controller_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* merchant_portal_api_controller_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "merchant_portal_api_controller");
   return NULL;
 }
 
-static voxgig_value* merchant_portal_api_controller_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** merchant_portal_api_controller_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "merchant_portal_api_controller");
   return NULL;
@@ -260,7 +265,7 @@ static void merchant_portal_api_controller_create_postdone(merchant_portal_api_c
   }
 }
 
-static voxgig_value* merchant_portal_api_controller_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* merchant_portal_api_controller_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   merchant_portal_api_controller_entity* self = (merchant_portal_api_controller_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* merchant_portal_api_controller_create(Entity* e, voxgig_val
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, merchant_portal_api_controller_ent_ctx(self));
-  return merchant_portal_api_controller_run_op(self, ctx, merchant_portal_api_controller_create_postdone, err);
+  merchant_portal_api_controller_run_op(self, ctx, merchant_portal_api_controller_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* merchant_portal_api_controller_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* merchant_portal_api_controller_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "merchant_portal_api_controller");
   return NULL;
 }
 
-static voxgig_value* merchant_portal_api_controller_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* merchant_portal_api_controller_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "merchant_portal_api_controller");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void merchant_portal_api_controller_mark_deleted(Entity* e) {
+  ((merchant_portal_api_controller_entity*)e)->deleted = true;
+}
+
+static bool merchant_portal_api_controller_deleted(Entity* e) {
+  return ((merchant_portal_api_controller_entity*)e)->deleted;
 }
 
 static const EntityVT merchant_portal_api_controller_VT = {
@@ -291,6 +314,8 @@ static const EntityVT merchant_portal_api_controller_VT = {
   merchant_portal_api_controller_make,
   merchant_portal_api_controller_data,
   merchant_portal_api_controller_matchv,
+  merchant_portal_api_controller_mark_deleted,
+  merchant_portal_api_controller_deleted,
   merchant_portal_api_controller_load,
   merchant_portal_api_controller_list,
   merchant_portal_api_controller_create,

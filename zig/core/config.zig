@@ -300,6 +300,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/deactivateTerminal") },
                                 .{ "parts", h.ja(&.{
@@ -331,6 +332,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/reactivateTerminal") },
                                 .{ "parts", h.ja(&.{
@@ -362,6 +364,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/registerAdditionalTerminal") },
                                 .{ "parts", h.ja(&.{
@@ -393,6 +396,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/registerNewMerchant") },
                                 .{ "parts", h.ja(&.{
@@ -429,6 +433,7 @@ pub fn make_config() Value {
                             h.jo(&.{
                                 .{ "active", h.vbool(true) },
                                 .{ "args", h.omap() },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/logDeveloperInfo") },
                                 .{ "parts", h.ja(&.{
@@ -445,6 +450,7 @@ pub fn make_config() Value {
                             h.jo(&.{
                                 .{ "active", h.vbool(true) },
                                 .{ "args", h.omap() },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/version") },
                                 .{ "parts", h.ja(&.{
@@ -477,7 +483,7 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("product_order_uuid") },
+                        .{ "name", h.vstr("productOrderUUID") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(1) },
@@ -503,6 +509,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/generateContract") },
                                 .{ "parts", h.ja(&.{
@@ -534,6 +541,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/uploadContract") },
                                 .{ "parts", h.ja(&.{
@@ -563,21 +571,21 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("app_form_field_desc_uuid") },
+                        .{ "name", h.vstr("appFormFieldDescUUID") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(0) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("package_order_uuid") },
+                        .{ "name", h.vstr("packageOrderUUID") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(1) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("product_order_uuid") },
+                        .{ "name", h.vstr("productOrderUUID") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(2) },
@@ -603,6 +611,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/documentsList") },
                                 .{ "parts", h.ja(&.{
@@ -634,6 +643,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/downloadDocument") },
                                 .{ "parts", h.ja(&.{
@@ -663,7 +673,7 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("app_form_fields_desc_uuid") },
+                        .{ "name", h.vstr("appFormFieldsDescUUID") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(0) },
@@ -690,14 +700,14 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("package_order") },
+                        .{ "name", h.vstr("packageOrder") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$OBJECT`") },
                         .{ "index$", h.vnum(3) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("package_order_uuid") },
+                        .{ "name", h.vstr("packageOrderUUID") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
                                 .{ "req", h.vbool(false) },
@@ -710,21 +720,14 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("package_uuid") },
+                        .{ "name", h.vstr("packageUUID") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(5) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("product_order") },
-                        .{ "req", h.vbool(false) },
-                        .{ "type", h.vstr("`$ARRAY`") },
-                        .{ "index$", h.vnum(6) },
-                    }),
-                    h.jo(&.{
-                        .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("product_order_uuid") },
+                        .{ "name", h.vstr("productOrderUUID") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
                                 .{ "req", h.vbool(true) },
@@ -733,11 +736,18 @@ pub fn make_config() Value {
                         }) },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "index$", h.vnum(6) },
+                    }),
+                    h.jo(&.{
+                        .{ "active", h.vbool(true) },
+                        .{ "name", h.vstr("productOrders") },
+                        .{ "req", h.vbool(false) },
+                        .{ "type", h.vstr("`$ARRAY`") },
                         .{ "index$", h.vnum(7) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("reason_of_reopening") },
+                        .{ "name", h.vstr("reasonOfReopening") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(8) },
@@ -763,6 +773,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/applicationForm") },
                                 .{ "parts", h.ja(&.{
@@ -794,6 +805,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/packageForm") },
                                 .{ "parts", h.ja(&.{
@@ -825,6 +837,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/reopenForm") },
                                 .{ "parts", h.ja(&.{
@@ -856,6 +869,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/secretKey") },
                                 .{ "parts", h.ja(&.{
@@ -887,6 +901,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/submitForm") },
                                 .{ "parts", h.ja(&.{
@@ -918,6 +933,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/submitValues") },
                                 .{ "parts", h.ja(&.{
@@ -947,28 +963,28 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("client_secret") },
+                        .{ "name", h.vstr("clientSecret") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(0) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("mandator_name") },
+                        .{ "name", h.vstr("mandatorName") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(1) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("notification_email") },
+                        .{ "name", h.vstr("notificationEmail") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(2) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("package_uuid") },
+                        .{ "name", h.vstr("packageUUID") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(3) },
@@ -994,6 +1010,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/createMandatorConfig") },
                                 .{ "parts", h.ja(&.{
@@ -1025,6 +1042,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/introduceMandatorPackage") },
                                 .{ "parts", h.ja(&.{
@@ -1056,6 +1074,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/selfRegistrationLink") },
                                 .{ "parts", h.ja(&.{
@@ -1092,7 +1111,7 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("business_registration_number") },
+                        .{ "name", h.vstr("businessRegistrationNumber") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(1) },
@@ -1106,14 +1125,14 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("company_name") },
+                        .{ "name", h.vstr("companyName") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(3) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("corporate_uuid") },
+                        .{ "name", h.vstr("corporateUUID") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(4) },
@@ -1162,14 +1181,7 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("merchant_category_code") },
-                        .{ "req", h.vbool(false) },
-                        .{ "type", h.vstr("`$STRING`") },
-                        .{ "index$", h.vnum(11) },
-                    }),
-                    h.jo(&.{
-                        .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("merchant_contract_number") },
+                        .{ "name", h.vstr("merchantContractNumber") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
                                 .{ "req", h.vbool(false) },
@@ -1178,18 +1190,25 @@ pub fn make_config() Value {
                         }) },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "index$", h.vnum(11) },
+                    }),
+                    h.jo(&.{
+                        .{ "active", h.vbool(true) },
+                        .{ "name", h.vstr("merchantName") },
+                        .{ "req", h.vbool(false) },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(12) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("merchant_name") },
+                        .{ "name", h.vstr("merchant_category_code") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(13) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("package_uuid") },
+                        .{ "name", h.vstr("packageUUID") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(14) },
@@ -1203,14 +1222,14 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("phone_number") },
+                        .{ "name", h.vstr("phoneNumber") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(16) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("postal_code") },
+                        .{ "name", h.vstr("postalCode") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(17) },
@@ -1231,7 +1250,7 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("registration_number") },
+                        .{ "name", h.vstr("registrationNumber") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(20) },
@@ -1252,7 +1271,7 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("terminal_id") },
+                        .{ "name", h.vstr("terminalIds") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$ARRAY`") },
                         .{ "index$", h.vnum(23) },
@@ -1292,6 +1311,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/contractNumber") },
                                 .{ "parts", h.ja(&.{
@@ -1323,6 +1343,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/registerAdditionalAcquiring") },
                                 .{ "parts", h.ja(&.{
@@ -1354,6 +1375,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/updateMerchant") },
                                 .{ "parts", h.ja(&.{
@@ -1374,6 +1396,7 @@ pub fn make_config() Value {
                             h.jo(&.{
                                 .{ "active", h.vbool(true) },
                                 .{ "args", h.omap() },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/registerMerchant") },
                                 .{ "parts", h.ja(&.{
@@ -1399,14 +1422,14 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("consumer_uuid") },
+                        .{ "name", h.vstr("consumerUUID") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(0) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("corporate_uuid") },
+                        .{ "name", h.vstr("corporateUUID") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(1) },
@@ -1420,7 +1443,7 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("description_key") },
+                        .{ "name", h.vstr("descriptionKey") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(3) },
@@ -1447,21 +1470,21 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("name_key") },
+                        .{ "name", h.vstr("nameKey") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(6) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("package_status") },
+                        .{ "name", h.vstr("packageStatus") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(7) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("package_uuid") },
+                        .{ "name", h.vstr("packageUUID") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(8) },
@@ -1501,6 +1524,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/availablePackages") },
                                 .{ "parts", h.ja(&.{
@@ -1532,6 +1556,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/orderPackage") },
                                 .{ "parts", h.ja(&.{
@@ -1563,6 +1588,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/orderedPackages") },
                                 .{ "parts", h.ja(&.{
@@ -1594,6 +1620,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/packageTemplates") },
                                 .{ "parts", h.ja(&.{
@@ -1625,6 +1652,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/updatePackageData") },
                                 .{ "parts", h.ja(&.{
@@ -1654,7 +1682,7 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("consumer_uuid") },
+                        .{ "name", h.vstr("consumerUUID") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(0) },
@@ -1675,14 +1703,14 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("merchant_id") },
+                        .{ "name", h.vstr("merchantID") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(3) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("package_order_uuid") },
+                        .{ "name", h.vstr("packageOrderUUID") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(4) },
@@ -1696,14 +1724,14 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("product_order_uuid") },
+                        .{ "name", h.vstr("productOrderUUID") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(6) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("product_uuid") },
+                        .{ "name", h.vstr("productUUID") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(7) },
@@ -1743,6 +1771,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/approveProduct") },
                                 .{ "parts", h.ja(&.{
@@ -1774,6 +1803,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/declineProduct") },
                                 .{ "parts", h.ja(&.{
@@ -1805,6 +1835,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/orderAdditionalProduct") },
                                 .{ "parts", h.ja(&.{
@@ -1836,6 +1867,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/productsList") },
                                 .{ "parts", h.ja(&.{
@@ -1865,28 +1897,28 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("package_uuid") },
+                        .{ "name", h.vstr("packageUUID") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(0) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("product_uui_d") },
+                        .{ "name", h.vstr("productUUIDs") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$ARRAY`") },
                         .{ "index$", h.vnum(1) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_code") },
+                        .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
                         .{ "index$", h.vnum(2) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_message") },
+                        .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(3) },
@@ -1912,6 +1944,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/addProductsToPackage") },
                                 .{ "parts", h.ja(&.{
@@ -1941,98 +1974,98 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("acquirer_id") },
+                        .{ "name", h.vstr("acquirerId") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(0) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("allow_multiple_order") },
+                        .{ "name", h.vstr("allowMultipleOrders") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                         .{ "index$", h.vnum(1) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("app_form_template_name") },
+                        .{ "name", h.vstr("appFormTemplateName") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(2) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("contract_needed") },
+                        .{ "name", h.vstr("contractNeeded") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                         .{ "index$", h.vnum(3) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("credentials_needed") },
+                        .{ "name", h.vstr("credentialsNeeded") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                         .{ "index$", h.vnum(4) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("description_key") },
+                        .{ "name", h.vstr("descriptionKey") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(5) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("name_key") },
+                        .{ "name", h.vstr("nameKey") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(6) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("prescreening_allowed") },
+                        .{ "name", h.vstr("prescreeningAllowed") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                         .{ "index$", h.vnum(7) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("product_name") },
+                        .{ "name", h.vstr("productName") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(8) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_code") },
+                        .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
                         .{ "index$", h.vnum(9) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_message") },
+                        .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(10) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("terminal_template_name") },
+                        .{ "name", h.vstr("terminalTemplateName") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(11) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("vendor_name") },
+                        .{ "name", h.vstr("vendorName") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(12) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("xml_template_file") },
+                        .{ "name", h.vstr("xmlTemplateFile") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(13) },
@@ -2058,6 +2091,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/createNewProduct") },
                                 .{ "parts", h.ja(&.{
@@ -2087,23 +2121,23 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("detail") },
+                        .{ "name", h.vstr("batch") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$OBJECT`") },
                         .{ "index$", h.vnum(0) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_code") },
-                        .{ "req", h.vbool(true) },
-                        .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "name", h.vstr("lines") },
+                        .{ "req", h.vbool(false) },
+                        .{ "type", h.vstr("`$OBJECT`") },
                         .{ "index$", h.vnum(1) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_message") },
-                        .{ "req", h.vbool(true) },
-                        .{ "type", h.vstr("`$STRING`") },
+                        .{ "name", h.vstr("progress") },
+                        .{ "req", h.vbool(false) },
+                        .{ "type", h.vstr("`$OBJECT`") },
                         .{ "index$", h.vnum(2) },
                     }),
                 }) },
@@ -2138,6 +2172,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/details/{id}") },
                                 .{ "parts", h.ja(&.{
@@ -2171,7 +2206,7 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("item") },
+                        .{ "name", h.vstr("items") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$ARRAY`") },
                         .{ "index$", h.vnum(0) },
@@ -2191,14 +2226,14 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_code") },
+                        .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
                         .{ "index$", h.vnum(2) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_message") },
+                        .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(3) },
@@ -2231,6 +2266,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/list") },
                                 .{ "parts", h.ja(&.{
@@ -2262,14 +2298,14 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_code") },
+                        .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
                         .{ "index$", h.vnum(0) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_message") },
+                        .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(1) },
@@ -2306,6 +2342,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/restart/{id}") },
                                 .{ "parts", h.ja(&.{
@@ -2352,6 +2389,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/stop/{id}") },
                                 .{ "parts", h.ja(&.{
@@ -2385,35 +2423,35 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("product_order_uui_d") },
+                        .{ "name", h.vstr("productOrderUUIDs") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$ARRAY`") },
                         .{ "index$", h.vnum(0) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_code") },
+                        .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
                         .{ "index$", h.vnum(1) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_message") },
+                        .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(2) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("target_package_order_uuid") },
+                        .{ "name", h.vstr("targetPackageOrderUUID") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(3) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("target_product_order_uuid") },
+                        .{ "name", h.vstr("targetProductOrderUUID") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(4) },
@@ -2439,6 +2477,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/moveTid") },
                                 .{ "parts", h.ja(&.{
@@ -2468,28 +2507,28 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("package_uuid") },
+                        .{ "name", h.vstr("packageUUID") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(0) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("product_uui_d") },
+                        .{ "name", h.vstr("productUUIDs") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$ARRAY`") },
                         .{ "index$", h.vnum(1) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_code") },
+                        .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
                         .{ "index$", h.vnum(2) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_message") },
+                        .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(3) },
@@ -2515,6 +2554,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/removeProductsFromPackage") },
                                 .{ "parts", h.ja(&.{
@@ -2551,14 +2591,14 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_code") },
+                        .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
                         .{ "index$", h.vnum(1) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_message") },
+                        .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(2) },
@@ -2584,6 +2624,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/start") },
                                 .{ "parts", h.ja(&.{
@@ -2622,14 +2663,14 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_code") },
+                        .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
                         .{ "index$", h.vnum(1) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_message") },
+                        .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(2) },
@@ -2673,6 +2714,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/status/{id}") },
                                 .{ "parts", h.ja(&.{
@@ -2706,91 +2748,91 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("allow_multiple_order") },
+                        .{ "name", h.vstr("allowMultipleOrders") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                         .{ "index$", h.vnum(0) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("app_form_name") },
+                        .{ "name", h.vstr("appFormName") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(1) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("contract_needed") },
+                        .{ "name", h.vstr("contractNeeded") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                         .{ "index$", h.vnum(2) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("credentials_needed") },
+                        .{ "name", h.vstr("credentialsNeeded") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                         .{ "index$", h.vnum(3) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("description_key") },
+                        .{ "name", h.vstr("descriptionKey") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(4) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("name_key") },
+                        .{ "name", h.vstr("nameKey") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(5) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("prescreening_allowed") },
+                        .{ "name", h.vstr("prescreeningAllowed") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                         .{ "index$", h.vnum(6) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("product_name") },
+                        .{ "name", h.vstr("productName") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(7) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("product_status") },
+                        .{ "name", h.vstr("productStatus") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(8) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("product_uuid") },
+                        .{ "name", h.vstr("productUUID") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(9) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_code") },
+                        .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
                         .{ "index$", h.vnum(10) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("response_message") },
+                        .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(11) },
                     }),
                     h.jo(&.{
                         .{ "active", h.vbool(true) },
-                        .{ "name", h.vstr("vendor_name") },
+                        .{ "name", h.vstr("vendorName") },
                         .{ "req", h.vbool(false) },
                         .{ "type", h.vstr("`$STRING`") },
                         .{ "index$", h.vnum(12) },
@@ -2816,6 +2858,7 @@ pub fn make_config() Value {
                                         }),
                                     }) },
                                 }) },
+                                .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/updateProduct") },
                                 .{ "parts", h.ja(&.{

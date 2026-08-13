@@ -35,7 +35,7 @@ object MerchantPortalPamMandatorControllerEntityTest {
       var merchantPortalPamMandatorControllerRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.merchant_portal_pam_mandator_controller"), "merchant_portal_pam_mandator_controller_ref01"))
       val merchantPortalPamMandatorControllerRef01DataResult = merchantPortalPamMandatorControllerRef01Ent.create(merchantPortalPamMandatorControllerRef01Data, null)
-      merchantPortalPamMandatorControllerRef01Data = Helpers.toMapAny(merchantPortalPamMandatorControllerRef01DataResult)
+      merchantPortalPamMandatorControllerRef01Data = Helpers.toMapAny(merchantPortalPamMandatorControllerRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("merchant_portal_pam_mandator_controller.create.map", merchantPortalPamMandatorControllerRef01Data != null, "expected create result to be a map")
     }
   }

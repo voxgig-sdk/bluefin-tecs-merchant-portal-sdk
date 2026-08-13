@@ -478,7 +478,7 @@ const merchant_portal_pam_contract_controller = client.MerchantPortalPamContract
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `language` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
+| `productOrderUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -489,7 +489,7 @@ Create a new entity with the given data.
 ```ts
 const result = await client.MerchantPortalPamContractController().create({
   language: 'example_language',
-  product_order_uuid: 'example_product_order_uuid',
+  productOrderUUID: 'example_productOrderUUID',
 })
 ```
 
@@ -531,9 +531,9 @@ const merchant_portal_pam_document_controller = client.MerchantPortalPamDocument
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_field_desc_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
+| `appFormFieldDescUUID` | `string` | Yes |  |
+| `packageOrderUUID` | `string` | No |  |
+| `productOrderUUID` | `string` | No |  |
 
 ### Operations
 
@@ -543,7 +543,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.MerchantPortalPamDocumentController().create({
-  app_form_field_desc_uuid: 'example_app_form_field_desc_uuid',
+  appFormFieldDescUUID: 'example_appFormFieldDescUUID',
 })
 ```
 
@@ -585,29 +585,29 @@ const merchant_portal_pam_form_controller = client.MerchantPortalPamFormControll
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `string` | Yes |  |
+| `appFormFieldsDescUUID` | `string` | Yes |  |
 | `filter` | `Record<string, any>` | No |  |
 | `language` | `string` | Yes |  |
-| `package_order` | `Record<string, any>` | No |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `package_uuid` | `string` | No |  |
-| `product_order` | `any[]` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `reason_of_reopening` | `string` | Yes |  |
+| `packageOrder` | `Record<string, any>` | No |  |
+| `packageOrderUUID` | `string` | Yes |  |
+| `packageUUID` | `string` | No |  |
+| `productOrderUUID` | `string` | No |  |
+| `productOrders` | `any[]` | No |  |
+| `reasonOfReopening` | `string` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `app_form_fields_desc_uuid` | - |
+| `appFormFieldsDescUUID` | - |
 | `filter` | - |
 | `language` | Yes |
-| `package_order` | - |
-| `package_order_uuid` | Yes |
-| `package_uuid` | - |
-| `product_order` | - |
-| `product_order_uuid` | Yes |
-| `reason_of_reopening` | - |
+| `packageOrder` | - |
+| `packageOrderUUID` | Yes |
+| `packageUUID` | - |
+| `productOrderUUID` | Yes |
+| `productOrders` | - |
+| `reasonOfReopening` | - |
 
 ### Operations
 
@@ -617,10 +617,10 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.MerchantPortalPamFormController().create({
-  app_form_fields_desc_uuid: 'example_app_form_fields_desc_uuid',
+  appFormFieldsDescUUID: 'example_appFormFieldsDescUUID',
   language: 'example_language',
-  package_order_uuid: 'example_package_order_uuid',
-  reason_of_reopening: 'example_reason_of_reopening',
+  packageOrderUUID: 'example_packageOrderUUID',
+  reasonOfReopening: 'example_reasonOfReopening',
 })
 ```
 
@@ -662,10 +662,10 @@ const merchant_portal_pam_mandator_controller = client.MerchantPortalPamMandator
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `string` | No |  |
-| `mandator_name` | `string` | Yes |  |
-| `notification_email` | `string` | No |  |
-| `package_uuid` | `string` | Yes |  |
+| `clientSecret` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `notificationEmail` | `string` | No |  |
+| `packageUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -675,8 +675,8 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.MerchantPortalPamMandatorController().create({
-  mandator_name: 'example_mandator_name',
-  package_uuid: 'example_package_uuid',
+  mandatorName: 'example_mandatorName',
+  packageUUID: 'example_packageUUID',
 })
 ```
 
@@ -719,29 +719,29 @@ const merchant_portal_pam_merchant_controller = client.MerchantPortalPamMerchant
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `additional_data` | `Record<string, any>` | No |  |
-| `business_registration_number` | `string` | Yes |  |
+| `businessRegistrationNumber` | `string` | Yes |  |
 | `city` | `string` | No |  |
-| `company_name` | `string` | Yes |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `companyName` | `string` | Yes |  |
+| `corporateUUID` | `string` | Yes |  |
 | `country` | `string` | No |  |
 | `currency` | `string` | Yes |  |
 | `email` | `string` | Yes |  |
 | `language` | `string` | Yes |  |
 | `login` | `string` | Yes |  |
 | `mandator` | `string` | Yes |  |
+| `merchantContractNumber` | `string` | Yes |  |
+| `merchantName` | `string` | No |  |
 | `merchant_category_code` | `string` | No |  |
-| `merchant_contract_number` | `string` | Yes |  |
-| `merchant_name` | `string` | No |  |
-| `package_uuid` | `string` | No |  |
+| `packageUUID` | `string` | No |  |
 | `packageorderuuid` | `string` | Yes |  |
-| `phone_number` | `string` | Yes |  |
-| `postal_code` | `string` | No |  |
+| `phoneNumber` | `string` | Yes |  |
+| `postalCode` | `string` | No |  |
 | `productid_acquirer` | `string` | Yes |  |
 | `region` | `string` | No |  |
-| `registration_number` | `string` | No |  |
+| `registrationNumber` | `string` | No |  |
 | `signature` | `string` | No |  |
 | `street` | `string` | No |  |
-| `terminal_id` | `any[]` | No |  |
+| `terminalIds` | `any[]` | No |  |
 | `terminalid_acquirer` | `string` | No |  |
 | `vu_nummer` | `string` | Yes |  |
 
@@ -750,29 +750,29 @@ const merchant_portal_pam_merchant_controller = client.MerchantPortalPamMerchant
 | Field | create |
 | --- | --- |
 | `additional_data` | - |
-| `business_registration_number` | - |
+| `businessRegistrationNumber` | - |
 | `city` | - |
-| `company_name` | - |
-| `corporate_uuid` | - |
+| `companyName` | - |
+| `corporateUUID` | - |
 | `country` | - |
 | `currency` | - |
 | `email` | - |
 | `language` | - |
 | `login` | - |
 | `mandator` | - |
+| `merchantContractNumber` | Yes |
+| `merchantName` | - |
 | `merchant_category_code` | - |
-| `merchant_contract_number` | Yes |
-| `merchant_name` | - |
-| `package_uuid` | - |
+| `packageUUID` | - |
 | `packageorderuuid` | - |
-| `phone_number` | - |
-| `postal_code` | - |
+| `phoneNumber` | - |
+| `postalCode` | - |
 | `productid_acquirer` | - |
 | `region` | - |
-| `registration_number` | - |
+| `registrationNumber` | - |
 | `signature` | - |
 | `street` | - |
-| `terminal_id` | - |
+| `terminalIds` | - |
 | `terminalid_acquirer` | - |
 | `vu_nummer` | - |
 
@@ -784,17 +784,17 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.MerchantPortalPamMerchantController().create({
-  business_registration_number: 'example_business_registration_number',
-  company_name: 'example_company_name',
-  corporate_uuid: 'example_corporate_uuid',
+  businessRegistrationNumber: 'example_businessRegistrationNumber',
+  companyName: 'example_companyName',
+  corporateUUID: 'example_corporateUUID',
   currency: 'example_currency',
   email: 'example_email',
   language: 'example_language',
   login: 'example_login',
   mandator: 'example_mandator',
-  merchant_contract_number: 'example_merchant_contract_number',
+  merchantContractNumber: 'example_merchantContractNumber',
   packageorderuuid: 'example_packageorderuuid',
-  phone_number: 'example_phone_number',
+  phoneNumber: 'example_phoneNumber',
   productid_acquirer: 'example_productid_acquirer',
   vu_nummer: 'example_vu_nummer',
 })
@@ -838,15 +838,15 @@ const merchant_portal_pam_package_controller = client.MerchantPortalPamPackageCo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
 | `country` | `string` | No |  |
-| `description_key` | `string` | No |  |
+| `descriptionKey` | `string` | No |  |
 | `filter` | `Record<string, any>` | No |  |
 | `language` | `string` | Yes |  |
-| `name_key` | `string` | No |  |
-| `package_status` | `string` | No |  |
-| `package_uuid` | `string` | Yes |  |
+| `nameKey` | `string` | No |  |
+| `packageStatus` | `string` | No |  |
+| `packageUUID` | `string` | Yes |  |
 | `pagination` | `Record<string, any>` | No |  |
 | `sorting` | `Record<string, any>` | No |  |
 
@@ -854,15 +854,15 @@ const merchant_portal_pam_package_controller = client.MerchantPortalPamPackageCo
 
 | Field | create |
 | --- | --- |
-| `consumer_uuid` | - |
-| `corporate_uuid` | - |
+| `consumerUUID` | - |
+| `corporateUUID` | - |
 | `country` | - |
-| `description_key` | - |
+| `descriptionKey` | - |
 | `filter` | - |
 | `language` | Yes |
-| `name_key` | - |
-| `package_status` | - |
-| `package_uuid` | - |
+| `nameKey` | - |
+| `packageStatus` | - |
+| `packageUUID` | - |
 | `pagination` | - |
 | `sorting` | - |
 
@@ -875,7 +875,7 @@ Create a new entity with the given data.
 ```ts
 const result = await client.MerchantPortalPamPackageController().create({
   language: 'example_language',
-  package_uuid: 'example_package_uuid',
+  packageUUID: 'example_packageUUID',
 })
 ```
 
@@ -917,14 +917,14 @@ const merchant_portal_pam_product_controller = client.MerchantPortalPamProductCo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
 | `filter` | `Record<string, any>` | No |  |
 | `language` | `string` | No |  |
-| `merchant_id` | `string` | No |  |
-| `package_order_uuid` | `string` | Yes |  |
+| `merchantID` | `string` | No |  |
+| `packageOrderUUID` | `string` | Yes |  |
 | `pagination` | `Record<string, any>` | No |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `product_uuid` | `string` | Yes |  |
+| `productOrderUUID` | `string` | Yes |  |
+| `productUUID` | `string` | Yes |  |
 | `reason_decline` | `string` | Yes |  |
 | `sorting` | `Record<string, any>` | No |  |
 
@@ -936,9 +936,9 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.MerchantPortalPamProductController().create({
-  package_order_uuid: 'example_package_order_uuid',
-  product_order_uuid: 'example_product_order_uuid',
-  product_uuid: 'example_product_uuid',
+  packageOrderUUID: 'example_packageOrderUUID',
+  productOrderUUID: 'example_productOrderUUID',
+  productUUID: 'example_productUUID',
   reason_decline: 'example_reason_decline',
 })
 ```
@@ -981,10 +981,10 @@ const output_add_product = client.OutputAddProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `string` | Yes |  |
-| `product_uui_d` | `any[]` | Yes |  |
-| `response_code` | `number` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `packageUUID` | `string` | Yes |  |
+| `productUUIDs` | `any[]` | Yes |  |
+| `responseCode` | `number` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -994,10 +994,10 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.OutputAddProduct().create({
-  package_uuid: 'example_package_uuid',
-  product_uui_d: [],
-  response_code: 1,
-  response_message: 'example_response_message',
+  packageUUID: 'example_packageUUID',
+  productUUIDs: [],
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
 })
 ```
 
@@ -1039,20 +1039,20 @@ const output_create_product = client.OutputCreateProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `allow_multiple_order` | `boolean` | Yes |  |
-| `app_form_template_name` | `string` | Yes |  |
-| `contract_needed` | `boolean` | Yes |  |
-| `credentials_needed` | `boolean` | No |  |
-| `description_key` | `string` | Yes |  |
-| `name_key` | `string` | Yes |  |
-| `prescreening_allowed` | `boolean` | Yes |  |
-| `product_name` | `string` | Yes |  |
-| `response_code` | `number` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `terminal_template_name` | `string` | Yes |  |
-| `vendor_name` | `string` | Yes |  |
-| `xml_template_file` | `string` | Yes |  |
+| `acquirerId` | `string` | No |  |
+| `allowMultipleOrders` | `boolean` | Yes |  |
+| `appFormTemplateName` | `string` | Yes |  |
+| `contractNeeded` | `boolean` | Yes |  |
+| `credentialsNeeded` | `boolean` | No |  |
+| `descriptionKey` | `string` | Yes |  |
+| `nameKey` | `string` | Yes |  |
+| `prescreeningAllowed` | `boolean` | Yes |  |
+| `productName` | `string` | Yes |  |
+| `responseCode` | `number` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `terminalTemplateName` | `string` | Yes |  |
+| `vendorName` | `string` | Yes |  |
+| `xmlTemplateFile` | `string` | Yes |  |
 
 ### Operations
 
@@ -1062,18 +1062,18 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.OutputCreateProduct().create({
-  allow_multiple_order: true,
-  app_form_template_name: 'example_app_form_template_name',
-  contract_needed: true,
-  description_key: 'example_description_key',
-  name_key: 'example_name_key',
-  prescreening_allowed: true,
-  product_name: 'example_product_name',
-  response_code: 1,
-  response_message: 'example_response_message',
-  terminal_template_name: 'example_terminal_template_name',
-  vendor_name: 'example_vendor_name',
-  xml_template_file: 'example_xml_template_file',
+  allowMultipleOrders: true,
+  appFormTemplateName: 'example_appFormTemplateName',
+  contractNeeded: true,
+  descriptionKey: 'example_descriptionKey',
+  nameKey: 'example_nameKey',
+  prescreeningAllowed: true,
+  productName: 'example_productName',
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
+  terminalTemplateName: 'example_terminalTemplateName',
+  vendorName: 'example_vendorName',
+  xmlTemplateFile: 'example_xmlTemplateFile',
 })
 ```
 
@@ -1115,9 +1115,9 @@ const output_detail = client.OutputDetail()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `detail` | `Record<string, any>` | No |  |
-| `response_code` | `number` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `batch` | `Record<string, any>` | No |  |
+| `lines` | `Record<string, any>` | No |  |
+| `progress` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -1167,20 +1167,20 @@ const output_list = client.OutputList()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `item` | `any[]` | No |  |
+| `items` | `any[]` | No |  |
 | `pagination` | `Record<string, any>` | Yes |  |
-| `response_code` | `number` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `number` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 | `sorting` | `Record<string, any>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `item` | - |
+| `items` | - |
 | `pagination` | Yes |
-| `response_code` | - |
-| `response_message` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
 | `sorting` | - |
 
 ### Operations
@@ -1192,8 +1192,8 @@ Create a new entity with the given data.
 ```ts
 const result = await client.OutputList().create({
   pagination: {},
-  response_code: 1,
-  response_message: 'example_response_message',
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
 })
 ```
 
@@ -1235,8 +1235,8 @@ const output_message = client.OutputMessage()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `number` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `number` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1286,11 +1286,11 @@ const output_move_tid = client.OutputMoveTid()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `product_order_uui_d` | `any[]` | Yes |  |
-| `response_code` | `number` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `target_package_order_uuid` | `string` | Yes |  |
-| `target_product_order_uuid` | `string` | Yes |  |
+| `productOrderUUIDs` | `any[]` | Yes |  |
+| `responseCode` | `number` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `targetPackageOrderUUID` | `string` | Yes |  |
+| `targetProductOrderUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -1300,11 +1300,11 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.OutputMoveTid().create({
-  product_order_uui_d: [],
-  response_code: 1,
-  response_message: 'example_response_message',
-  target_package_order_uuid: 'example_target_package_order_uuid',
-  target_product_order_uuid: 'example_target_product_order_uuid',
+  productOrderUUIDs: [],
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
+  targetPackageOrderUUID: 'example_targetPackageOrderUUID',
+  targetProductOrderUUID: 'example_targetProductOrderUUID',
 })
 ```
 
@@ -1346,10 +1346,10 @@ const output_remove_product = client.OutputRemoveProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `string` | Yes |  |
-| `product_uui_d` | `any[]` | Yes |  |
-| `response_code` | `number` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `packageUUID` | `string` | Yes |  |
+| `productUUIDs` | `any[]` | Yes |  |
+| `responseCode` | `number` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1359,10 +1359,10 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.OutputRemoveProduct().create({
-  package_uuid: 'example_package_uuid',
-  product_uui_d: [],
-  response_code: 1,
-  response_message: 'example_response_message',
+  packageUUID: 'example_packageUUID',
+  productUUIDs: [],
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
 })
 ```
 
@@ -1405,8 +1405,8 @@ const output_start = client.OutputStart()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `string` | No |  |
-| `response_code` | `number` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `number` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1416,8 +1416,8 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.OutputStart().create({
-  response_code: 1,
-  response_message: 'example_response_message',
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
 })
 ```
 
@@ -1460,8 +1460,8 @@ const output_status = client.OutputStatus()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `number` | No |  |
-| `response_code` | `number` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `number` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 | `status` | `string` | No |  |
 
 ### Operations
@@ -1512,19 +1512,19 @@ const output_update_product = client.OutputUpdateProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allow_multiple_order` | `boolean` | No |  |
-| `app_form_name` | `string` | No |  |
-| `contract_needed` | `boolean` | No |  |
-| `credentials_needed` | `boolean` | No |  |
-| `description_key` | `string` | No |  |
-| `name_key` | `string` | No |  |
-| `prescreening_allowed` | `boolean` | No |  |
-| `product_name` | `string` | No |  |
-| `product_status` | `string` | No |  |
-| `product_uuid` | `string` | Yes |  |
-| `response_code` | `number` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `vendor_name` | `string` | No |  |
+| `allowMultipleOrders` | `boolean` | No |  |
+| `appFormName` | `string` | No |  |
+| `contractNeeded` | `boolean` | No |  |
+| `credentialsNeeded` | `boolean` | No |  |
+| `descriptionKey` | `string` | No |  |
+| `nameKey` | `string` | No |  |
+| `prescreeningAllowed` | `boolean` | No |  |
+| `productName` | `string` | No |  |
+| `productStatus` | `string` | No |  |
+| `productUUID` | `string` | Yes |  |
+| `responseCode` | `number` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `vendorName` | `string` | No |  |
 
 ### Operations
 
@@ -1534,9 +1534,9 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.OutputUpdateProduct().create({
-  product_uuid: 'example_product_uuid',
-  response_code: 1,
-  response_message: 'example_response_message',
+  productUUID: 'example_productUUID',
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
 })
 ```
 

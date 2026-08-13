@@ -294,7 +294,7 @@ auto merchant_portal_pam_contract_controller = client->merchant_portal_pam_contr
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `language` | `std::string` | Yes |  |
-| `product_order_uuid` | `std::string` | Yes |  |
+| `productOrderUUID` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -305,7 +305,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 ```cpp
 Value result = client->merchant_portal_pam_contract_controller()->create(vmap({
     {"language", Value("example_language")},  // std::string
-    {"product_order_uuid", Value("example_product_order_uuid")},  // std::string
+    {"productOrderUUID", Value("example_productOrderUUID")},  // std::string
 }), Value::undef());
 ```
 
@@ -340,9 +340,9 @@ auto merchant_portal_pam_document_controller = client->merchant_portal_pam_docum
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_field_desc_uuid` | `std::string` | Yes |  |
-| `package_order_uuid` | `std::string` | No |  |
-| `product_order_uuid` | `std::string` | No |  |
+| `appFormFieldDescUUID` | `std::string` | Yes |  |
+| `packageOrderUUID` | `std::string` | No |  |
+| `productOrderUUID` | `std::string` | No |  |
 
 ### Operations
 
@@ -352,7 +352,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->merchant_portal_pam_document_controller()->create(vmap({
-    {"app_form_field_desc_uuid", Value("example_app_form_field_desc_uuid")},  // std::string
+    {"appFormFieldDescUUID", Value("example_appFormFieldDescUUID")},  // std::string
 }), Value::undef());
 ```
 
@@ -387,29 +387,29 @@ auto merchant_portal_pam_form_controller = client->merchant_portal_pam_form_cont
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `std::string` | Yes |  |
+| `appFormFieldsDescUUID` | `std::string` | Yes |  |
 | `filter` | `std::map<std::string, Value>` | No |  |
 | `language` | `std::string` | Yes |  |
-| `package_order` | `std::map<std::string, Value>` | No |  |
-| `package_order_uuid` | `std::string` | Yes |  |
-| `package_uuid` | `std::string` | No |  |
-| `product_order` | `std::vector<Value>` | No |  |
-| `product_order_uuid` | `std::string` | No |  |
-| `reason_of_reopening` | `std::string` | Yes |  |
+| `packageOrder` | `std::map<std::string, Value>` | No |  |
+| `packageOrderUUID` | `std::string` | Yes |  |
+| `packageUUID` | `std::string` | No |  |
+| `productOrderUUID` | `std::string` | No |  |
+| `productOrders` | `std::vector<Value>` | No |  |
+| `reasonOfReopening` | `std::string` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `app_form_fields_desc_uuid` | - |
+| `appFormFieldsDescUUID` | - |
 | `filter` | - |
 | `language` | Yes |
-| `package_order` | - |
-| `package_order_uuid` | Yes |
-| `package_uuid` | - |
-| `product_order` | - |
-| `product_order_uuid` | Yes |
-| `reason_of_reopening` | - |
+| `packageOrder` | - |
+| `packageOrderUUID` | Yes |
+| `packageUUID` | - |
+| `productOrderUUID` | Yes |
+| `productOrders` | - |
+| `reasonOfReopening` | - |
 
 ### Operations
 
@@ -419,10 +419,10 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->merchant_portal_pam_form_controller()->create(vmap({
-    {"app_form_fields_desc_uuid", Value("example_app_form_fields_desc_uuid")},  // std::string
+    {"appFormFieldsDescUUID", Value("example_appFormFieldsDescUUID")},  // std::string
     {"language", Value("example_language")},  // std::string
-    {"package_order_uuid", Value("example_package_order_uuid")},  // std::string
-    {"reason_of_reopening", Value("example_reason_of_reopening")},  // std::string
+    {"packageOrderUUID", Value("example_packageOrderUUID")},  // std::string
+    {"reasonOfReopening", Value("example_reasonOfReopening")},  // std::string
 }), Value::undef());
 ```
 
@@ -457,10 +457,10 @@ auto merchant_portal_pam_mandator_controller = client->merchant_portal_pam_manda
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `std::string` | No |  |
-| `mandator_name` | `std::string` | Yes |  |
-| `notification_email` | `std::string` | No |  |
-| `package_uuid` | `std::string` | Yes |  |
+| `clientSecret` | `std::string` | No |  |
+| `mandatorName` | `std::string` | Yes |  |
+| `notificationEmail` | `std::string` | No |  |
+| `packageUUID` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -470,8 +470,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->merchant_portal_pam_mandator_controller()->create(vmap({
-    {"mandator_name", Value("example_mandator_name")},  // std::string
-    {"package_uuid", Value("example_package_uuid")},  // std::string
+    {"mandatorName", Value("example_mandatorName")},  // std::string
+    {"packageUUID", Value("example_packageUUID")},  // std::string
 }), Value::undef());
 ```
 
@@ -507,29 +507,29 @@ auto merchant_portal_pam_merchant_controller = client->merchant_portal_pam_merch
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `additional_data` | `std::map<std::string, Value>` | No |  |
-| `business_registration_number` | `std::string` | Yes |  |
+| `businessRegistrationNumber` | `std::string` | Yes |  |
 | `city` | `std::string` | No |  |
-| `company_name` | `std::string` | Yes |  |
-| `corporate_uuid` | `std::string` | Yes |  |
+| `companyName` | `std::string` | Yes |  |
+| `corporateUUID` | `std::string` | Yes |  |
 | `country` | `std::string` | No |  |
 | `currency` | `std::string` | Yes |  |
 | `email` | `std::string` | Yes |  |
 | `language` | `std::string` | Yes |  |
 | `login` | `std::string` | Yes |  |
 | `mandator` | `std::string` | Yes |  |
+| `merchantContractNumber` | `std::string` | Yes |  |
+| `merchantName` | `std::string` | No |  |
 | `merchant_category_code` | `std::string` | No |  |
-| `merchant_contract_number` | `std::string` | Yes |  |
-| `merchant_name` | `std::string` | No |  |
-| `package_uuid` | `std::string` | No |  |
+| `packageUUID` | `std::string` | No |  |
 | `packageorderuuid` | `std::string` | Yes |  |
-| `phone_number` | `std::string` | Yes |  |
-| `postal_code` | `std::string` | No |  |
+| `phoneNumber` | `std::string` | Yes |  |
+| `postalCode` | `std::string` | No |  |
 | `productid_acquirer` | `std::string` | Yes |  |
 | `region` | `std::string` | No |  |
-| `registration_number` | `std::string` | No |  |
+| `registrationNumber` | `std::string` | No |  |
 | `signature` | `std::string` | No |  |
 | `street` | `std::string` | No |  |
-| `terminal_id` | `std::vector<Value>` | No |  |
+| `terminalIds` | `std::vector<Value>` | No |  |
 | `terminalid_acquirer` | `std::string` | No |  |
 | `vu_nummer` | `std::string` | Yes |  |
 
@@ -538,29 +538,29 @@ auto merchant_portal_pam_merchant_controller = client->merchant_portal_pam_merch
 | Field | create |
 | --- | --- |
 | `additional_data` | - |
-| `business_registration_number` | - |
+| `businessRegistrationNumber` | - |
 | `city` | - |
-| `company_name` | - |
-| `corporate_uuid` | - |
+| `companyName` | - |
+| `corporateUUID` | - |
 | `country` | - |
 | `currency` | - |
 | `email` | - |
 | `language` | - |
 | `login` | - |
 | `mandator` | - |
+| `merchantContractNumber` | Yes |
+| `merchantName` | - |
 | `merchant_category_code` | - |
-| `merchant_contract_number` | Yes |
-| `merchant_name` | - |
-| `package_uuid` | - |
+| `packageUUID` | - |
 | `packageorderuuid` | - |
-| `phone_number` | - |
-| `postal_code` | - |
+| `phoneNumber` | - |
+| `postalCode` | - |
 | `productid_acquirer` | - |
 | `region` | - |
-| `registration_number` | - |
+| `registrationNumber` | - |
 | `signature` | - |
 | `street` | - |
-| `terminal_id` | - |
+| `terminalIds` | - |
 | `terminalid_acquirer` | - |
 | `vu_nummer` | - |
 
@@ -572,17 +572,17 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->merchant_portal_pam_merchant_controller()->create(vmap({
-    {"business_registration_number", Value("example_business_registration_number")},  // std::string
-    {"company_name", Value("example_company_name")},  // std::string
-    {"corporate_uuid", Value("example_corporate_uuid")},  // std::string
+    {"businessRegistrationNumber", Value("example_businessRegistrationNumber")},  // std::string
+    {"companyName", Value("example_companyName")},  // std::string
+    {"corporateUUID", Value("example_corporateUUID")},  // std::string
     {"currency", Value("example_currency")},  // std::string
     {"email", Value("example_email")},  // std::string
     {"language", Value("example_language")},  // std::string
     {"login", Value("example_login")},  // std::string
     {"mandator", Value("example_mandator")},  // std::string
-    {"merchant_contract_number", Value("example_merchant_contract_number")},  // std::string
+    {"merchantContractNumber", Value("example_merchantContractNumber")},  // std::string
     {"packageorderuuid", Value("example_packageorderuuid")},  // std::string
-    {"phone_number", Value("example_phone_number")},  // std::string
+    {"phoneNumber", Value("example_phoneNumber")},  // std::string
     {"productid_acquirer", Value("example_productid_acquirer")},  // std::string
     {"vu_nummer", Value("example_vu_nummer")},  // std::string
 }), Value::undef());
@@ -619,15 +619,15 @@ auto merchant_portal_pam_package_controller = client->merchant_portal_pam_packag
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `std::string` | No |  |
-| `corporate_uuid` | `std::string` | No |  |
+| `consumerUUID` | `std::string` | No |  |
+| `corporateUUID` | `std::string` | No |  |
 | `country` | `std::string` | No |  |
-| `description_key` | `std::string` | No |  |
+| `descriptionKey` | `std::string` | No |  |
 | `filter` | `std::map<std::string, Value>` | No |  |
 | `language` | `std::string` | Yes |  |
-| `name_key` | `std::string` | No |  |
-| `package_status` | `std::string` | No |  |
-| `package_uuid` | `std::string` | Yes |  |
+| `nameKey` | `std::string` | No |  |
+| `packageStatus` | `std::string` | No |  |
+| `packageUUID` | `std::string` | Yes |  |
 | `pagination` | `std::map<std::string, Value>` | No |  |
 | `sorting` | `std::map<std::string, Value>` | No |  |
 
@@ -635,15 +635,15 @@ auto merchant_portal_pam_package_controller = client->merchant_portal_pam_packag
 
 | Field | create |
 | --- | --- |
-| `consumer_uuid` | - |
-| `corporate_uuid` | - |
+| `consumerUUID` | - |
+| `corporateUUID` | - |
 | `country` | - |
-| `description_key` | - |
+| `descriptionKey` | - |
 | `filter` | - |
 | `language` | Yes |
-| `name_key` | - |
-| `package_status` | - |
-| `package_uuid` | - |
+| `nameKey` | - |
+| `packageStatus` | - |
+| `packageUUID` | - |
 | `pagination` | - |
 | `sorting` | - |
 
@@ -656,7 +656,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 ```cpp
 Value result = client->merchant_portal_pam_package_controller()->create(vmap({
     {"language", Value("example_language")},  // std::string
-    {"package_uuid", Value("example_package_uuid")},  // std::string
+    {"packageUUID", Value("example_packageUUID")},  // std::string
 }), Value::undef());
 ```
 
@@ -691,14 +691,14 @@ auto merchant_portal_pam_product_controller = client->merchant_portal_pam_produc
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `std::string` | No |  |
+| `consumerUUID` | `std::string` | No |  |
 | `filter` | `std::map<std::string, Value>` | No |  |
 | `language` | `std::string` | No |  |
-| `merchant_id` | `std::string` | No |  |
-| `package_order_uuid` | `std::string` | Yes |  |
+| `merchantID` | `std::string` | No |  |
+| `packageOrderUUID` | `std::string` | Yes |  |
 | `pagination` | `std::map<std::string, Value>` | No |  |
-| `product_order_uuid` | `std::string` | Yes |  |
-| `product_uuid` | `std::string` | Yes |  |
+| `productOrderUUID` | `std::string` | Yes |  |
+| `productUUID` | `std::string` | Yes |  |
 | `reason_decline` | `std::string` | Yes |  |
 | `sorting` | `std::map<std::string, Value>` | No |  |
 
@@ -710,9 +710,9 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->merchant_portal_pam_product_controller()->create(vmap({
-    {"package_order_uuid", Value("example_package_order_uuid")},  // std::string
-    {"product_order_uuid", Value("example_product_order_uuid")},  // std::string
-    {"product_uuid", Value("example_product_uuid")},  // std::string
+    {"packageOrderUUID", Value("example_packageOrderUUID")},  // std::string
+    {"productOrderUUID", Value("example_productOrderUUID")},  // std::string
+    {"productUUID", Value("example_productUUID")},  // std::string
     {"reason_decline", Value("example_reason_decline")},  // std::string
 }), Value::undef());
 ```
@@ -748,10 +748,10 @@ auto output_add_product = client->output_add_product();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `std::string` | Yes |  |
-| `product_uui_d` | `std::vector<Value>` | Yes |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `std::string` | Yes |  |
+| `packageUUID` | `std::string` | Yes |  |
+| `productUUIDs` | `std::vector<Value>` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -761,10 +761,10 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->output_add_product()->create(vmap({
-    {"package_uuid", Value("example_package_uuid")},  // std::string
-    {"product_uui_d", vlist()},  // std::vector<Value>
-    {"response_code", Value(1)},  // int64_t
-    {"response_message", Value("example_response_message")},  // std::string
+    {"packageUUID", Value("example_packageUUID")},  // std::string
+    {"productUUIDs", vlist()},  // std::vector<Value>
+    {"responseCode", Value(1)},  // int64_t
+    {"responseMessage", Value("example_responseMessage")},  // std::string
 }), Value::undef());
 ```
 
@@ -799,20 +799,20 @@ auto output_create_product = client->output_create_product();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `std::string` | No |  |
-| `allow_multiple_order` | `bool` | Yes |  |
-| `app_form_template_name` | `std::string` | Yes |  |
-| `contract_needed` | `bool` | Yes |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `std::string` | Yes |  |
-| `name_key` | `std::string` | Yes |  |
-| `prescreening_allowed` | `bool` | Yes |  |
-| `product_name` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `std::string` | Yes |  |
-| `terminal_template_name` | `std::string` | Yes |  |
-| `vendor_name` | `std::string` | Yes |  |
-| `xml_template_file` | `std::string` | Yes |  |
+| `acquirerId` | `std::string` | No |  |
+| `allowMultipleOrders` | `bool` | Yes |  |
+| `appFormTemplateName` | `std::string` | Yes |  |
+| `contractNeeded` | `bool` | Yes |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `std::string` | Yes |  |
+| `nameKey` | `std::string` | Yes |  |
+| `prescreeningAllowed` | `bool` | Yes |  |
+| `productName` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `std::string` | Yes |  |
+| `terminalTemplateName` | `std::string` | Yes |  |
+| `vendorName` | `std::string` | Yes |  |
+| `xmlTemplateFile` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -822,18 +822,18 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->output_create_product()->create(vmap({
-    {"allow_multiple_order", Value(true)},  // bool
-    {"app_form_template_name", Value("example_app_form_template_name")},  // std::string
-    {"contract_needed", Value(true)},  // bool
-    {"description_key", Value("example_description_key")},  // std::string
-    {"name_key", Value("example_name_key")},  // std::string
-    {"prescreening_allowed", Value(true)},  // bool
-    {"product_name", Value("example_product_name")},  // std::string
-    {"response_code", Value(1)},  // int64_t
-    {"response_message", Value("example_response_message")},  // std::string
-    {"terminal_template_name", Value("example_terminal_template_name")},  // std::string
-    {"vendor_name", Value("example_vendor_name")},  // std::string
-    {"xml_template_file", Value("example_xml_template_file")},  // std::string
+    {"allowMultipleOrders", Value(true)},  // bool
+    {"appFormTemplateName", Value("example_appFormTemplateName")},  // std::string
+    {"contractNeeded", Value(true)},  // bool
+    {"descriptionKey", Value("example_descriptionKey")},  // std::string
+    {"nameKey", Value("example_nameKey")},  // std::string
+    {"prescreeningAllowed", Value(true)},  // bool
+    {"productName", Value("example_productName")},  // std::string
+    {"responseCode", Value(1)},  // int64_t
+    {"responseMessage", Value("example_responseMessage")},  // std::string
+    {"terminalTemplateName", Value("example_terminalTemplateName")},  // std::string
+    {"vendorName", Value("example_vendorName")},  // std::string
+    {"xmlTemplateFile", Value("example_xmlTemplateFile")},  // std::string
 }), Value::undef());
 ```
 
@@ -868,9 +868,9 @@ auto output_detail = client->output_detail();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `detail` | `std::map<std::string, Value>` | No |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `std::string` | Yes |  |
+| `batch` | `std::map<std::string, Value>` | No |  |
+| `lines` | `std::map<std::string, Value>` | No |  |
+| `progress` | `std::map<std::string, Value>` | No |  |
 
 ### Operations
 
@@ -913,20 +913,20 @@ auto output_list = client->output_list();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `item` | `std::vector<Value>` | No |  |
+| `items` | `std::vector<Value>` | No |  |
 | `pagination` | `std::map<std::string, Value>` | Yes |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `std::string` | Yes |  |
 | `sorting` | `std::map<std::string, Value>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `item` | - |
+| `items` | - |
 | `pagination` | Yes |
-| `response_code` | - |
-| `response_message` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
 | `sorting` | - |
 
 ### Operations
@@ -938,8 +938,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 ```cpp
 Value result = client->output_list()->create(vmap({
     {"pagination", vmap()},  // std::map<std::string, Value>
-    {"response_code", Value(1)},  // int64_t
-    {"response_message", Value("example_response_message")},  // std::string
+    {"responseCode", Value(1)},  // int64_t
+    {"responseMessage", Value("example_responseMessage")},  // std::string
 }), Value::undef());
 ```
 
@@ -974,8 +974,8 @@ auto output_message = client->output_message();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -1018,11 +1018,11 @@ auto output_move_tid = client->output_move_tid();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `product_order_uui_d` | `std::vector<Value>` | Yes |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `std::string` | Yes |  |
-| `target_package_order_uuid` | `std::string` | Yes |  |
-| `target_product_order_uuid` | `std::string` | Yes |  |
+| `productOrderUUIDs` | `std::vector<Value>` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `std::string` | Yes |  |
+| `targetPackageOrderUUID` | `std::string` | Yes |  |
+| `targetProductOrderUUID` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -1032,11 +1032,11 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->output_move_tid()->create(vmap({
-    {"product_order_uui_d", vlist()},  // std::vector<Value>
-    {"response_code", Value(1)},  // int64_t
-    {"response_message", Value("example_response_message")},  // std::string
-    {"target_package_order_uuid", Value("example_target_package_order_uuid")},  // std::string
-    {"target_product_order_uuid", Value("example_target_product_order_uuid")},  // std::string
+    {"productOrderUUIDs", vlist()},  // std::vector<Value>
+    {"responseCode", Value(1)},  // int64_t
+    {"responseMessage", Value("example_responseMessage")},  // std::string
+    {"targetPackageOrderUUID", Value("example_targetPackageOrderUUID")},  // std::string
+    {"targetProductOrderUUID", Value("example_targetProductOrderUUID")},  // std::string
 }), Value::undef());
 ```
 
@@ -1071,10 +1071,10 @@ auto output_remove_product = client->output_remove_product();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `std::string` | Yes |  |
-| `product_uui_d` | `std::vector<Value>` | Yes |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `std::string` | Yes |  |
+| `packageUUID` | `std::string` | Yes |  |
+| `productUUIDs` | `std::vector<Value>` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -1084,10 +1084,10 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->output_remove_product()->create(vmap({
-    {"package_uuid", Value("example_package_uuid")},  // std::string
-    {"product_uui_d", vlist()},  // std::vector<Value>
-    {"response_code", Value(1)},  // int64_t
-    {"response_message", Value("example_response_message")},  // std::string
+    {"packageUUID", Value("example_packageUUID")},  // std::string
+    {"productUUIDs", vlist()},  // std::vector<Value>
+    {"responseCode", Value(1)},  // int64_t
+    {"responseMessage", Value("example_responseMessage")},  // std::string
 }), Value::undef());
 ```
 
@@ -1123,8 +1123,8 @@ auto output_start = client->output_start();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `std::string` | No |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -1134,8 +1134,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->output_start()->create(vmap({
-    {"response_code", Value(1)},  // int64_t
-    {"response_message", Value("example_response_message")},  // std::string
+    {"responseCode", Value(1)},  // int64_t
+    {"responseMessage", Value("example_responseMessage")},  // std::string
 }), Value::undef());
 ```
 
@@ -1171,8 +1171,8 @@ auto output_status = client->output_status();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `int64_t` | No |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `std::string` | Yes |  |
 | `status` | `std::string` | No |  |
 
 ### Operations
@@ -1216,19 +1216,19 @@ auto output_update_product = client->output_update_product();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allow_multiple_order` | `bool` | No |  |
-| `app_form_name` | `std::string` | No |  |
-| `contract_needed` | `bool` | No |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `std::string` | No |  |
-| `name_key` | `std::string` | No |  |
-| `prescreening_allowed` | `bool` | No |  |
-| `product_name` | `std::string` | No |  |
-| `product_status` | `std::string` | No |  |
-| `product_uuid` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `std::string` | Yes |  |
-| `vendor_name` | `std::string` | No |  |
+| `allowMultipleOrders` | `bool` | No |  |
+| `appFormName` | `std::string` | No |  |
+| `contractNeeded` | `bool` | No |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `std::string` | No |  |
+| `nameKey` | `std::string` | No |  |
+| `prescreeningAllowed` | `bool` | No |  |
+| `productName` | `std::string` | No |  |
+| `productStatus` | `std::string` | No |  |
+| `productUUID` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `std::string` | Yes |  |
+| `vendorName` | `std::string` | No |  |
 
 ### Operations
 
@@ -1238,9 +1238,9 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->output_update_product()->create(vmap({
-    {"product_uuid", Value("example_product_uuid")},  // std::string
-    {"response_code", Value(1)},  // int64_t
-    {"response_message", Value("example_response_message")},  // std::string
+    {"productUUID", Value("example_productUUID")},  // std::string
+    {"responseCode", Value(1)},  // int64_t
+    {"responseMessage", Value("example_responseMessage")},  // std::string
 }), Value::undef());
 ```
 

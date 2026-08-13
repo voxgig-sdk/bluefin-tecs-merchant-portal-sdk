@@ -6,7 +6,7 @@ main: kit: entity: merchant_portal_pam_product_controller: {
 
   fields: [
     {
-      name: "consumer_uuid"
+      name: "consumerUUID"
       req: false
       type: "`$STRING`"
     }
@@ -21,12 +21,12 @@ main: kit: entity: merchant_portal_pam_product_controller: {
       type: "`$STRING`"
     }
     {
-      name: "merchant_id"
+      name: "merchantID"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "package_order_uuid"
+      name: "packageOrderUUID"
       req: true
       type: "`$STRING`"
     }
@@ -36,12 +36,12 @@ main: kit: entity: merchant_portal_pam_product_controller: {
       type: "`$OBJECT`"
     }
     {
-      name: "product_order_uuid"
+      name: "productOrderUUID"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "product_uuid"
+      name: "productUUID"
       req: true
       type: "`$STRING`"
     }

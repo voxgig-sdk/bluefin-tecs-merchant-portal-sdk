@@ -6,7 +6,7 @@ main: kit: entity: merchant_portal_pam_form_controller: {
 
   fields: [
     {
-      name: "app_form_fields_desc_uuid"
+      name: "appFormFieldsDescUUID"
       req: true
       type: "`$STRING`"
     }
@@ -27,12 +27,12 @@ main: kit: entity: merchant_portal_pam_form_controller: {
       type: "`$STRING`"
     }
     {
-      name: "package_order"
+      name: "packageOrder"
       req: false
       type: "`$OBJECT`"
     }
     {
-      name: "package_order_uuid"
+      name: "packageOrderUUID"
       op: {
         create: {
           req: false
@@ -43,17 +43,12 @@ main: kit: entity: merchant_portal_pam_form_controller: {
       type: "`$STRING`"
     }
     {
-      name: "package_uuid"
+      name: "packageUUID"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "product_order"
-      req: false
-      type: "`$ARRAY`"
-    }
-    {
-      name: "product_order_uuid"
+      name: "productOrderUUID"
       op: {
         create: {
           req: true
@@ -64,7 +59,12 @@ main: kit: entity: merchant_portal_pam_form_controller: {
       type: "`$STRING`"
     }
     {
-      name: "reason_of_reopening"
+      name: "productOrders"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "reasonOfReopening"
       req: true
       type: "`$STRING`"
     }

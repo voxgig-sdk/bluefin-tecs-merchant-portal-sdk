@@ -6,19 +6,19 @@ main: kit: entity: output_detail: {
 
   fields: [
     {
-      name: "detail"
+      name: "batch"
       req: false
       type: "`$OBJECT`"
     }
     {
-      name: "response_code"
-      req: true
-      type: "`$INTEGER`"
+      name: "lines"
+      req: false
+      type: "`$OBJECT`"
     }
     {
-      name: "response_message"
-      req: true
-      type: "`$STRING`"
+      name: "progress"
+      req: false
+      type: "`$OBJECT`"
     }
   ]
 

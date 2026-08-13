@@ -39,7 +39,7 @@ BluefinTecsMerchantPortalSDK client = new BluefinTecsMerchantPortalSDK();
 ### 4. Create, update, and remove
 
 ```java
-// Create — returns the bare created record (as Object)
+// Create — returns the ENTITY (call data() for the record)
 Object created = client.merchantPortalApiController(null).create(Map.of("business_reg_number", "example_business_reg_number", "city", "example_city", "country", "example_country", "currency", "example_currency", "merchant_category_code", 1L, "merchant_name", "example_merchant_name", "packageid", "example_packageid", "packageorderuuid", "example_packageorderuuid", "reason_deactivation", "example_reason_deactivation", "reason_reactivation", "example_reason_reactivation", "street", "example_street", "terminal_country_code", "example_terminal_country_code", "terminal_language_code", "example_terminal_language_code", "terminal_location", "example_terminal_location", "terminal_serial_number", "example_terminal_serial_number", "terminalid", 1L, "vu_nummer", "example_vu_nummer", "zipcode", "example_zipcode"), null);
 
 ```
@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```java
 BluefinTecsMerchantPortalSDK client = BluefinTecsMerchantPortalSDK.testSDK(null, null);
 
-// Entity ops return the bare record and raise on error.
+// Entity ops return the ENTITY and raises on error;
+// call data() for the record.
 Object outputDetail = client.outputDetail(null).load(Map.of("id", "test01"), null);
 // outputDetail holds the mock response record
 System.out.println(outputDetail);
@@ -232,7 +233,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `Map` for single-entity
+Entity operations return the ENTITY (call data() for the record) (a `Map` for single-entity
 ops, an aggregate `List` for `list`) as `Object` and raise on error. Wrap
 calls in `try`/`catch` to handle failures.
 
@@ -306,7 +307,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: create.
 
@@ -316,9 +317,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: create.
 
@@ -328,15 +329,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: create.
 
@@ -346,10 +347,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: create.
 
@@ -360,29 +361,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -394,15 +395,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -414,14 +415,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -433,10 +434,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -446,20 +447,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: create.
 
@@ -469,9 +470,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: load.
 
@@ -481,10 +482,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: create.
@@ -495,8 +496,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: load.
 
@@ -506,11 +507,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: create.
 
@@ -520,10 +521,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -534,8 +535,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -546,8 +547,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: load.
@@ -558,19 +559,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: create.
 
@@ -687,14 +688,14 @@ Create an instance: `SdkEntity merchantPortalPamContractController = client.merc
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `String` |  |
-| `product_order_uuid` | `String` |  |
+| `productOrderUUID` | `String` |  |
 
 #### Example: Create
 
 ```java
 Object merchantPortalPamContractController = client.merchantPortalPamContractController(null).create(Map.of(
     "language", "example_language",  // String
-    "product_order_uuid", "example_product_order_uuid"  // String
+    "productOrderUUID", "example_productOrderUUID"  // String
 ), null);
 ```
 
@@ -713,15 +714,15 @@ Create an instance: `SdkEntity merchantPortalPamDocumentController = client.merc
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
+| `appFormFieldDescUUID` | `String` |  |
+| `packageOrderUUID` | `String` |  |
+| `productOrderUUID` | `String` |  |
 
 #### Example: Create
 
 ```java
 Object merchantPortalPamDocumentController = client.merchantPortalPamDocumentController(null).create(Map.of(
-    "app_form_field_desc_uuid", "example_app_form_field_desc_uuid"  // String
+    "appFormFieldDescUUID", "example_appFormFieldDescUUID"  // String
 ), null);
 ```
 
@@ -740,24 +741,24 @@ Create an instance: `SdkEntity merchantPortalPamFormController = client.merchant
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `String` |  |
+| `appFormFieldsDescUUID` | `String` |  |
 | `filter` | `Map<String, Object>` |  |
 | `language` | `String` |  |
-| `package_order` | `Map<String, Object>` |  |
-| `package_order_uuid` | `String` |  |
-| `package_uuid` | `String` |  |
-| `product_order` | `List<Object>` |  |
-| `product_order_uuid` | `String` |  |
-| `reason_of_reopening` | `String` |  |
+| `packageOrder` | `Map<String, Object>` |  |
+| `packageOrderUUID` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productOrderUUID` | `String` |  |
+| `productOrders` | `List<Object>` |  |
+| `reasonOfReopening` | `String` |  |
 
 #### Example: Create
 
 ```java
 Object merchantPortalPamFormController = client.merchantPortalPamFormController(null).create(Map.of(
-    "app_form_fields_desc_uuid", "example_app_form_fields_desc_uuid",  // String
+    "appFormFieldsDescUUID", "example_appFormFieldsDescUUID",  // String
     "language", "example_language",  // String
-    "package_order_uuid", "example_package_order_uuid",  // String
-    "reason_of_reopening", "example_reason_of_reopening"  // String
+    "packageOrderUUID", "example_packageOrderUUID",  // String
+    "reasonOfReopening", "example_reasonOfReopening"  // String
 ), null);
 ```
 
@@ -776,17 +777,17 @@ Create an instance: `SdkEntity merchantPortalPamMandatorController = client.merc
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `String` |  |
-| `mandator_name` | `String` |  |
-| `notification_email` | `String` |  |
-| `package_uuid` | `String` |  |
+| `clientSecret` | `String` |  |
+| `mandatorName` | `String` |  |
+| `notificationEmail` | `String` |  |
+| `packageUUID` | `String` |  |
 
 #### Example: Create
 
 ```java
 Object merchantPortalPamMandatorController = client.merchantPortalPamMandatorController(null).create(Map.of(
-    "mandator_name", "example_mandator_name",  // String
-    "package_uuid", "example_package_uuid"  // String
+    "mandatorName", "example_mandatorName",  // String
+    "packageUUID", "example_packageUUID"  // String
 ), null);
 ```
 
@@ -806,29 +807,29 @@ Create an instance: `SdkEntity merchantPortalPamMerchantController = client.merc
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `Map<String, Object>` |  |
-| `business_registration_number` | `String` |  |
+| `businessRegistrationNumber` | `String` |  |
 | `city` | `String` |  |
-| `company_name` | `String` |  |
-| `corporate_uuid` | `String` |  |
+| `companyName` | `String` |  |
+| `corporateUUID` | `String` |  |
 | `country` | `String` |  |
 | `currency` | `String` |  |
 | `email` | `String` |  |
 | `language` | `String` |  |
 | `login` | `String` |  |
 | `mandator` | `String` |  |
+| `merchantContractNumber` | `String` |  |
+| `merchantName` | `String` |  |
 | `merchant_category_code` | `String` |  |
-| `merchant_contract_number` | `String` |  |
-| `merchant_name` | `String` |  |
-| `package_uuid` | `String` |  |
+| `packageUUID` | `String` |  |
 | `packageorderuuid` | `String` |  |
-| `phone_number` | `String` |  |
-| `postal_code` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `postalCode` | `String` |  |
 | `productid_acquirer` | `String` |  |
 | `region` | `String` |  |
-| `registration_number` | `String` |  |
+| `registrationNumber` | `String` |  |
 | `signature` | `String` |  |
 | `street` | `String` |  |
-| `terminal_id` | `List<Object>` |  |
+| `terminalIds` | `List<Object>` |  |
 | `terminalid_acquirer` | `String` |  |
 | `vu_nummer` | `String` |  |
 
@@ -836,17 +837,17 @@ Create an instance: `SdkEntity merchantPortalPamMerchantController = client.merc
 
 ```java
 Object merchantPortalPamMerchantController = client.merchantPortalPamMerchantController(null).create(Map.of(
-    "business_registration_number", "example_business_registration_number",  // String
-    "company_name", "example_company_name",  // String
-    "corporate_uuid", "example_corporate_uuid",  // String
+    "businessRegistrationNumber", "example_businessRegistrationNumber",  // String
+    "companyName", "example_companyName",  // String
+    "corporateUUID", "example_corporateUUID",  // String
     "currency", "example_currency",  // String
     "email", "example_email",  // String
     "language", "example_language",  // String
     "login", "example_login",  // String
     "mandator", "example_mandator",  // String
-    "merchant_contract_number", "example_merchant_contract_number",  // String
+    "merchantContractNumber", "example_merchantContractNumber",  // String
     "packageorderuuid", "example_packageorderuuid",  // String
-    "phone_number", "example_phone_number",  // String
+    "phoneNumber", "example_phoneNumber",  // String
     "productid_acquirer", "example_productid_acquirer",  // String
     "vu_nummer", "example_vu_nummer"  // String
 ), null);
@@ -867,15 +868,15 @@ Create an instance: `SdkEntity merchantPortalPamPackageController = client.merch
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `corporate_uuid` | `String` |  |
+| `consumerUUID` | `String` |  |
+| `corporateUUID` | `String` |  |
 | `country` | `String` |  |
-| `description_key` | `String` |  |
+| `descriptionKey` | `String` |  |
 | `filter` | `Map<String, Object>` |  |
 | `language` | `String` |  |
-| `name_key` | `String` |  |
-| `package_status` | `String` |  |
-| `package_uuid` | `String` |  |
+| `nameKey` | `String` |  |
+| `packageStatus` | `String` |  |
+| `packageUUID` | `String` |  |
 | `pagination` | `Map<String, Object>` |  |
 | `sorting` | `Map<String, Object>` |  |
 
@@ -884,7 +885,7 @@ Create an instance: `SdkEntity merchantPortalPamPackageController = client.merch
 ```java
 Object merchantPortalPamPackageController = client.merchantPortalPamPackageController(null).create(Map.of(
     "language", "example_language",  // String
-    "package_uuid", "example_package_uuid"  // String
+    "packageUUID", "example_packageUUID"  // String
 ), null);
 ```
 
@@ -903,14 +904,14 @@ Create an instance: `SdkEntity merchantPortalPamProductController = client.merch
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
+| `consumerUUID` | `String` |  |
 | `filter` | `Map<String, Object>` |  |
 | `language` | `String` |  |
-| `merchant_id` | `String` |  |
-| `package_order_uuid` | `String` |  |
+| `merchantID` | `String` |  |
+| `packageOrderUUID` | `String` |  |
 | `pagination` | `Map<String, Object>` |  |
-| `product_order_uuid` | `String` |  |
-| `product_uuid` | `String` |  |
+| `productOrderUUID` | `String` |  |
+| `productUUID` | `String` |  |
 | `reason_decline` | `String` |  |
 | `sorting` | `Map<String, Object>` |  |
 
@@ -918,9 +919,9 @@ Create an instance: `SdkEntity merchantPortalPamProductController = client.merch
 
 ```java
 Object merchantPortalPamProductController = client.merchantPortalPamProductController(null).create(Map.of(
-    "package_order_uuid", "example_package_order_uuid",  // String
-    "product_order_uuid", "example_product_order_uuid",  // String
-    "product_uuid", "example_product_uuid",  // String
+    "packageOrderUUID", "example_packageOrderUUID",  // String
+    "productOrderUUID", "example_productOrderUUID",  // String
+    "productUUID", "example_productUUID",  // String
     "reason_decline", "example_reason_decline"  // String
 ), null);
 ```
@@ -940,19 +941,19 @@ Create an instance: `SdkEntity outputAddProduct = client.outputAddProduct(null);
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `String` |  |
-| `product_uui_d` | `List<Object>` |  |
-| `response_code` | `Long` |  |
-| `response_message` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productUUIDs` | `List<Object>` |  |
+| `responseCode` | `Long` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```java
 Object outputAddProduct = client.outputAddProduct(null).create(Map.of(
-    "package_uuid", "example_package_uuid",  // String
-    "product_uui_d", List.of(),  // List<Object>
-    "response_code", 1L,  // Long
-    "response_message", "example_response_message"  // String
+    "packageUUID", "example_packageUUID",  // String
+    "productUUIDs", List.of(),  // List<Object>
+    "responseCode", 1L,  // Long
+    "responseMessage", "example_responseMessage"  // String
 ), null);
 ```
 
@@ -971,37 +972,37 @@ Create an instance: `SdkEntity outputCreateProduct = client.outputCreateProduct(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `allow_multiple_order` | `Boolean` |  |
-| `app_form_template_name` | `String` |  |
-| `contract_needed` | `Boolean` |  |
-| `credentials_needed` | `Boolean` |  |
-| `description_key` | `String` |  |
-| `name_key` | `String` |  |
-| `prescreening_allowed` | `Boolean` |  |
-| `product_name` | `String` |  |
-| `response_code` | `Long` |  |
-| `response_message` | `String` |  |
-| `terminal_template_name` | `String` |  |
-| `vendor_name` | `String` |  |
-| `xml_template_file` | `String` |  |
+| `acquirerId` | `String` |  |
+| `allowMultipleOrders` | `Boolean` |  |
+| `appFormTemplateName` | `String` |  |
+| `contractNeeded` | `Boolean` |  |
+| `credentialsNeeded` | `Boolean` |  |
+| `descriptionKey` | `String` |  |
+| `nameKey` | `String` |  |
+| `prescreeningAllowed` | `Boolean` |  |
+| `productName` | `String` |  |
+| `responseCode` | `Long` |  |
+| `responseMessage` | `String` |  |
+| `terminalTemplateName` | `String` |  |
+| `vendorName` | `String` |  |
+| `xmlTemplateFile` | `String` |  |
 
 #### Example: Create
 
 ```java
 Object outputCreateProduct = client.outputCreateProduct(null).create(Map.of(
-    "allow_multiple_order", true,  // Boolean
-    "app_form_template_name", "example_app_form_template_name",  // String
-    "contract_needed", true,  // Boolean
-    "description_key", "example_description_key",  // String
-    "name_key", "example_name_key",  // String
-    "prescreening_allowed", true,  // Boolean
-    "product_name", "example_product_name",  // String
-    "response_code", 1L,  // Long
-    "response_message", "example_response_message",  // String
-    "terminal_template_name", "example_terminal_template_name",  // String
-    "vendor_name", "example_vendor_name",  // String
-    "xml_template_file", "example_xml_template_file"  // String
+    "allowMultipleOrders", true,  // Boolean
+    "appFormTemplateName", "example_appFormTemplateName",  // String
+    "contractNeeded", true,  // Boolean
+    "descriptionKey", "example_descriptionKey",  // String
+    "nameKey", "example_nameKey",  // String
+    "prescreeningAllowed", true,  // Boolean
+    "productName", "example_productName",  // String
+    "responseCode", 1L,  // Long
+    "responseMessage", "example_responseMessage",  // String
+    "terminalTemplateName", "example_terminalTemplateName",  // String
+    "vendorName", "example_vendorName",  // String
+    "xmlTemplateFile", "example_xmlTemplateFile"  // String
 ), null);
 ```
 
@@ -1020,9 +1021,9 @@ Create an instance: `SdkEntity outputDetail = client.outputDetail(null);`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `Map<String, Object>` |  |
-| `response_code` | `Long` |  |
-| `response_message` | `String` |  |
+| `batch` | `Map<String, Object>` |  |
+| `lines` | `Map<String, Object>` |  |
+| `progress` | `Map<String, Object>` |  |
 
 #### Example: Load
 
@@ -1045,10 +1046,10 @@ Create an instance: `SdkEntity outputList = client.outputList(null);`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `List<Object>` |  |
+| `items` | `List<Object>` |  |
 | `pagination` | `Map<String, Object>` |  |
-| `response_code` | `Long` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Long` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `Map<String, Object>` |  |
 
 #### Example: Create
@@ -1056,8 +1057,8 @@ Create an instance: `SdkEntity outputList = client.outputList(null);`
 ```java
 Object outputList = client.outputList(null).create(Map.of(
     "pagination", Map.of(),  // Map<String, Object>
-    "response_code", 1L,  // Long
-    "response_message", "example_response_message"  // String
+    "responseCode", 1L,  // Long
+    "responseMessage", "example_responseMessage"  // String
 ), null);
 ```
 
@@ -1076,8 +1077,8 @@ Create an instance: `SdkEntity outputMessage = client.outputMessage(null);`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Long` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Long` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Load
 
@@ -1100,21 +1101,21 @@ Create an instance: `SdkEntity outputMoveTid = client.outputMoveTid(null);`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `List<Object>` |  |
-| `response_code` | `Long` |  |
-| `response_message` | `String` |  |
-| `target_package_order_uuid` | `String` |  |
-| `target_product_order_uuid` | `String` |  |
+| `productOrderUUIDs` | `List<Object>` |  |
+| `responseCode` | `Long` |  |
+| `responseMessage` | `String` |  |
+| `targetPackageOrderUUID` | `String` |  |
+| `targetProductOrderUUID` | `String` |  |
 
 #### Example: Create
 
 ```java
 Object outputMoveTid = client.outputMoveTid(null).create(Map.of(
-    "product_order_uui_d", List.of(),  // List<Object>
-    "response_code", 1L,  // Long
-    "response_message", "example_response_message",  // String
-    "target_package_order_uuid", "example_target_package_order_uuid",  // String
-    "target_product_order_uuid", "example_target_product_order_uuid"  // String
+    "productOrderUUIDs", List.of(),  // List<Object>
+    "responseCode", 1L,  // Long
+    "responseMessage", "example_responseMessage",  // String
+    "targetPackageOrderUUID", "example_targetPackageOrderUUID",  // String
+    "targetProductOrderUUID", "example_targetProductOrderUUID"  // String
 ), null);
 ```
 
@@ -1133,19 +1134,19 @@ Create an instance: `SdkEntity outputRemoveProduct = client.outputRemoveProduct(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `String` |  |
-| `product_uui_d` | `List<Object>` |  |
-| `response_code` | `Long` |  |
-| `response_message` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productUUIDs` | `List<Object>` |  |
+| `responseCode` | `Long` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```java
 Object outputRemoveProduct = client.outputRemoveProduct(null).create(Map.of(
-    "package_uuid", "example_package_uuid",  // String
-    "product_uui_d", List.of(),  // List<Object>
-    "response_code", 1L,  // Long
-    "response_message", "example_response_message"  // String
+    "packageUUID", "example_packageUUID",  // String
+    "productUUIDs", List.of(),  // List<Object>
+    "responseCode", 1L,  // Long
+    "responseMessage", "example_responseMessage"  // String
 ), null);
 ```
 
@@ -1165,15 +1166,15 @@ Create an instance: `SdkEntity outputStart = client.outputStart(null);`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `String` |  |
-| `response_code` | `Long` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Long` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```java
 Object outputStart = client.outputStart(null).create(Map.of(
-    "response_code", 1L,  // Long
-    "response_message", "example_response_message"  // String
+    "responseCode", 1L,  // Long
+    "responseMessage", "example_responseMessage"  // String
 ), null);
 ```
 
@@ -1193,8 +1194,8 @@ Create an instance: `SdkEntity outputStatus = client.outputStatus(null);`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `Long` |  |
-| `response_code` | `Long` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Long` |  |
+| `responseMessage` | `String` |  |
 | `status` | `String` |  |
 
 #### Example: Load
@@ -1218,27 +1219,27 @@ Create an instance: `SdkEntity outputUpdateProduct = client.outputUpdateProduct(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `Boolean` |  |
-| `app_form_name` | `String` |  |
-| `contract_needed` | `Boolean` |  |
-| `credentials_needed` | `Boolean` |  |
-| `description_key` | `String` |  |
-| `name_key` | `String` |  |
-| `prescreening_allowed` | `Boolean` |  |
-| `product_name` | `String` |  |
-| `product_status` | `String` |  |
-| `product_uuid` | `String` |  |
-| `response_code` | `Long` |  |
-| `response_message` | `String` |  |
-| `vendor_name` | `String` |  |
+| `allowMultipleOrders` | `Boolean` |  |
+| `appFormName` | `String` |  |
+| `contractNeeded` | `Boolean` |  |
+| `credentialsNeeded` | `Boolean` |  |
+| `descriptionKey` | `String` |  |
+| `nameKey` | `String` |  |
+| `prescreeningAllowed` | `Boolean` |  |
+| `productName` | `String` |  |
+| `productStatus` | `String` |  |
+| `productUUID` | `String` |  |
+| `responseCode` | `Long` |  |
+| `responseMessage` | `String` |  |
+| `vendorName` | `String` |  |
 
 #### Example: Create
 
 ```java
 Object outputUpdateProduct = client.outputUpdateProduct(null).create(Map.of(
-    "product_uuid", "example_product_uuid",  // String
-    "response_code", 1L,  // Long
-    "response_message", "example_response_message"  // String
+    "productUUID", "example_productUUID",  // String
+    "responseCode", 1L,  // Long
+    "responseMessage", "example_responseMessage"  // String
 ), null);
 ```
 

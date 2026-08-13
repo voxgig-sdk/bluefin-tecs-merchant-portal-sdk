@@ -6,17 +6,17 @@ main: kit: entity: merchant_portal_pam_document_controller: {
 
   fields: [
     {
-      name: "app_form_field_desc_uuid"
+      name: "appFormFieldDescUUID"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "package_order_uuid"
+      name: "packageOrderUUID"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "product_order_uuid"
+      name: "productOrderUUID"
       req: false
       type: "`$STRING`"
     }

@@ -28,72 +28,72 @@ public final class BluefinTecsMerchantPortalTypes {
 
   public record MerchantPortalCommonControllerLoadMatch() {}
 
-  public record MerchantPortalPamContractController(String language, String product_order_uuid) {}
+  public record MerchantPortalPamContractController(String language, String productOrderUUID) {}
 
-  public record MerchantPortalPamContractControllerCreateData(String language, String product_order_uuid) {}
+  public record MerchantPortalPamContractControllerCreateData(String language, String productOrderUUID) {}
 
-  public record MerchantPortalPamDocumentController(String app_form_field_desc_uuid, String package_order_uuid, String product_order_uuid) {}
+  public record MerchantPortalPamDocumentController(String appFormFieldDescUUID, String packageOrderUUID, String productOrderUUID) {}
 
-  public record MerchantPortalPamDocumentControllerCreateData(String app_form_field_desc_uuid, String package_order_uuid, String product_order_uuid) {}
+  public record MerchantPortalPamDocumentControllerCreateData(String appFormFieldDescUUID, String packageOrderUUID, String productOrderUUID) {}
 
-  public record MerchantPortalPamFormController(String app_form_fields_desc_uuid, Map<String, Object> filter, String language, Map<String, Object> package_order, String package_order_uuid, String package_uuid, List<Object> product_order, String product_order_uuid, String reason_of_reopening) {}
+  public record MerchantPortalPamFormController(String appFormFieldsDescUUID, Map<String, Object> filter, String language, Map<String, Object> packageOrder, String packageOrderUUID, String packageUUID, String productOrderUUID, List<Object> productOrders, String reasonOfReopening) {}
 
-  public record MerchantPortalPamFormControllerCreateData(String app_form_fields_desc_uuid, Map<String, Object> filter, String language, Map<String, Object> package_order, String package_order_uuid, String package_uuid, List<Object> product_order, String product_order_uuid, String reason_of_reopening) {}
+  public record MerchantPortalPamFormControllerCreateData(String appFormFieldsDescUUID, Map<String, Object> filter, String language, Map<String, Object> packageOrder, String packageOrderUUID, String packageUUID, String productOrderUUID, List<Object> productOrders, String reasonOfReopening) {}
 
-  public record MerchantPortalPamMandatorController(String client_secret, String mandator_name, String notification_email, String package_uuid) {}
+  public record MerchantPortalPamMandatorController(String clientSecret, String mandatorName, String notificationEmail, String packageUUID) {}
 
-  public record MerchantPortalPamMandatorControllerCreateData(String client_secret, String mandator_name, String notification_email, String package_uuid) {}
+  public record MerchantPortalPamMandatorControllerCreateData(String clientSecret, String mandatorName, String notificationEmail, String packageUUID) {}
 
-  public record MerchantPortalPamMerchantController(Map<String, Object> additional_data, String business_registration_number, String city, String company_name, String corporate_uuid, String country, String currency, String email, String language, String login, String mandator, String merchant_category_code, String merchant_contract_number, String merchant_name, String package_uuid, String packageorderuuid, String phone_number, String postal_code, String productid_acquirer, String region, String registration_number, String signature, String street, List<Object> terminal_id, String terminalid_acquirer, String vu_nummer) {}
+  public record MerchantPortalPamMerchantController(Map<String, Object> additional_data, String businessRegistrationNumber, String city, String companyName, String corporateUUID, String country, String currency, String email, String language, String login, String mandator, String merchantContractNumber, String merchantName, String merchant_category_code, String packageUUID, String packageorderuuid, String phoneNumber, String postalCode, String productid_acquirer, String region, String registrationNumber, String signature, String street, List<Object> terminalIds, String terminalid_acquirer, String vu_nummer) {}
 
-  public record MerchantPortalPamMerchantControllerCreateData(Map<String, Object> additional_data, String business_registration_number, String city, String company_name, String corporate_uuid, String country, String currency, String email, String language, String login, String mandator, String merchant_category_code, String merchant_contract_number, String merchant_name, String package_uuid, String packageorderuuid, String phone_number, String postal_code, String productid_acquirer, String region, String registration_number, String signature, String street, List<Object> terminal_id, String terminalid_acquirer, String vu_nummer) {}
+  public record MerchantPortalPamMerchantControllerCreateData(Map<String, Object> additional_data, String businessRegistrationNumber, String city, String companyName, String corporateUUID, String country, String currency, String email, String language, String login, String mandator, String merchantContractNumber, String merchantName, String merchant_category_code, String packageUUID, String packageorderuuid, String phoneNumber, String postalCode, String productid_acquirer, String region, String registrationNumber, String signature, String street, List<Object> terminalIds, String terminalid_acquirer, String vu_nummer) {}
 
-  public record MerchantPortalPamPackageController(String consumer_uuid, String corporate_uuid, String country, String description_key, Map<String, Object> filter, String language, String name_key, String package_status, String package_uuid, Map<String, Object> pagination, Map<String, Object> sorting) {}
+  public record MerchantPortalPamPackageController(String consumerUUID, String corporateUUID, String country, String descriptionKey, Map<String, Object> filter, String language, String nameKey, String packageStatus, String packageUUID, Map<String, Object> pagination, Map<String, Object> sorting) {}
 
-  public record MerchantPortalPamPackageControllerCreateData(String consumer_uuid, String corporate_uuid, String country, String description_key, Map<String, Object> filter, String language, String name_key, String package_status, String package_uuid, Map<String, Object> pagination, Map<String, Object> sorting) {}
+  public record MerchantPortalPamPackageControllerCreateData(String consumerUUID, String corporateUUID, String country, String descriptionKey, Map<String, Object> filter, String language, String nameKey, String packageStatus, String packageUUID, Map<String, Object> pagination, Map<String, Object> sorting) {}
 
-  public record MerchantPortalPamProductController(String consumer_uuid, Map<String, Object> filter, String language, String merchant_id, String package_order_uuid, Map<String, Object> pagination, String product_order_uuid, String product_uuid, String reason_decline, Map<String, Object> sorting) {}
+  public record MerchantPortalPamProductController(String consumerUUID, Map<String, Object> filter, String language, String merchantID, String packageOrderUUID, Map<String, Object> pagination, String productOrderUUID, String productUUID, String reason_decline, Map<String, Object> sorting) {}
 
-  public record MerchantPortalPamProductControllerCreateData(String consumer_uuid, Map<String, Object> filter, String language, String merchant_id, String package_order_uuid, Map<String, Object> pagination, String product_order_uuid, String product_uuid, String reason_decline, Map<String, Object> sorting) {}
+  public record MerchantPortalPamProductControllerCreateData(String consumerUUID, Map<String, Object> filter, String language, String merchantID, String packageOrderUUID, Map<String, Object> pagination, String productOrderUUID, String productUUID, String reason_decline, Map<String, Object> sorting) {}
 
-  public record OutputAddProduct(String package_uuid, List<Object> product_uui_d, Long response_code, String response_message) {}
+  public record OutputAddProduct(String packageUUID, List<Object> productUUIDs, Long responseCode, String responseMessage) {}
 
-  public record OutputAddProductCreateData(String package_uuid, List<Object> product_uui_d, Long response_code, String response_message) {}
+  public record OutputAddProductCreateData(String packageUUID, List<Object> productUUIDs, Long responseCode, String responseMessage) {}
 
-  public record OutputCreateProduct(String acquirer_id, Boolean allow_multiple_order, String app_form_template_name, Boolean contract_needed, Boolean credentials_needed, String description_key, String name_key, Boolean prescreening_allowed, String product_name, Long response_code, String response_message, String terminal_template_name, String vendor_name, String xml_template_file) {}
+  public record OutputCreateProduct(String acquirerId, Boolean allowMultipleOrders, String appFormTemplateName, Boolean contractNeeded, Boolean credentialsNeeded, String descriptionKey, String nameKey, Boolean prescreeningAllowed, String productName, Long responseCode, String responseMessage, String terminalTemplateName, String vendorName, String xmlTemplateFile) {}
 
-  public record OutputCreateProductCreateData(String acquirer_id, Boolean allow_multiple_order, String app_form_template_name, Boolean contract_needed, Boolean credentials_needed, String description_key, String name_key, Boolean prescreening_allowed, String product_name, Long response_code, String response_message, String terminal_template_name, String vendor_name, String xml_template_file) {}
+  public record OutputCreateProductCreateData(String acquirerId, Boolean allowMultipleOrders, String appFormTemplateName, Boolean contractNeeded, Boolean credentialsNeeded, String descriptionKey, String nameKey, Boolean prescreeningAllowed, String productName, Long responseCode, String responseMessage, String terminalTemplateName, String vendorName, String xmlTemplateFile) {}
 
-  public record OutputDetail(Map<String, Object> detail, Long response_code, String response_message) {}
+  public record OutputDetail(Map<String, Object> batch, Map<String, Object> lines, Map<String, Object> progress) {}
 
   public record OutputDetailLoadMatch(String id) {}
 
-  public record OutputList(List<Object> item, Map<String, Object> pagination, Long response_code, String response_message, Map<String, Object> sorting) {}
+  public record OutputList(List<Object> items, Map<String, Object> pagination, Long responseCode, String responseMessage, Map<String, Object> sorting) {}
 
-  public record OutputListCreateData(List<Object> item, Map<String, Object> pagination, Long response_code, String response_message, Map<String, Object> sorting) {}
+  public record OutputListCreateData(List<Object> items, Map<String, Object> pagination, Long responseCode, String responseMessage, Map<String, Object> sorting) {}
 
-  public record OutputMessage(Long response_code, String response_message) {}
+  public record OutputMessage(Long responseCode, String responseMessage) {}
 
   public record OutputMessageLoadMatch(String id) {}
 
-  public record OutputMoveTid(List<Object> product_order_uui_d, Long response_code, String response_message, String target_package_order_uuid, String target_product_order_uuid) {}
+  public record OutputMoveTid(List<Object> productOrderUUIDs, Long responseCode, String responseMessage, String targetPackageOrderUUID, String targetProductOrderUUID) {}
 
-  public record OutputMoveTidCreateData(List<Object> product_order_uui_d, Long response_code, String response_message, String target_package_order_uuid, String target_product_order_uuid) {}
+  public record OutputMoveTidCreateData(List<Object> productOrderUUIDs, Long responseCode, String responseMessage, String targetPackageOrderUUID, String targetProductOrderUUID) {}
 
-  public record OutputRemoveProduct(String package_uuid, List<Object> product_uui_d, Long response_code, String response_message) {}
+  public record OutputRemoveProduct(String packageUUID, List<Object> productUUIDs, Long responseCode, String responseMessage) {}
 
-  public record OutputRemoveProductCreateData(String package_uuid, List<Object> product_uui_d, Long response_code, String response_message) {}
+  public record OutputRemoveProductCreateData(String packageUUID, List<Object> productUUIDs, Long responseCode, String responseMessage) {}
 
-  public record OutputStart(String id, Long response_code, String response_message) {}
+  public record OutputStart(String id, Long responseCode, String responseMessage) {}
 
-  public record OutputStartCreateData(String id, Long response_code, String response_message) {}
+  public record OutputStartCreateData(String id, Long responseCode, String responseMessage) {}
 
-  public record OutputStatus(Long percentage, Long response_code, String response_message, String status) {}
+  public record OutputStatus(Long percentage, Long responseCode, String responseMessage, String status) {}
 
   public record OutputStatusLoadMatch(String id) {}
 
-  public record OutputUpdateProduct(Boolean allow_multiple_order, String app_form_name, Boolean contract_needed, Boolean credentials_needed, String description_key, String name_key, Boolean prescreening_allowed, String product_name, String product_status, String product_uuid, Long response_code, String response_message, String vendor_name) {}
+  public record OutputUpdateProduct(Boolean allowMultipleOrders, String appFormName, Boolean contractNeeded, Boolean credentialsNeeded, String descriptionKey, String nameKey, Boolean prescreeningAllowed, String productName, String productStatus, String productUUID, Long responseCode, String responseMessage, String vendorName) {}
 
-  public record OutputUpdateProductCreateData(Boolean allow_multiple_order, String app_form_name, Boolean contract_needed, Boolean credentials_needed, String description_key, String name_key, Boolean prescreening_allowed, String product_name, String product_status, String product_uuid, Long response_code, String response_message, String vendor_name) {}
+  public record OutputUpdateProductCreateData(Boolean allowMultipleOrders, String appFormName, Boolean contractNeeded, Boolean credentialsNeeded, String descriptionKey, String nameKey, Boolean prescreeningAllowed, String productName, String productStatus, String productUUID, Long responseCode, String responseMessage, String vendorName) {}
 
 }

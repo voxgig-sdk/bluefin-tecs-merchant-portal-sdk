@@ -60,11 +60,11 @@ function merchant_portal_common_controller_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID"] = {},
-    ["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"] = "FALSE",
+    ["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID"] = {},
+    ["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"] == "TRUE"
+  local live = env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

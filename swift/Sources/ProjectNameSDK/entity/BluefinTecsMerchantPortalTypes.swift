@@ -126,8 +126,8 @@ public struct MerchantPortalPamFormController {
   public var packageOrder: VMap?
   public var packageOrderUuid: String
   public var packageUuid: String?
-  public var productOrder: [Value]?
   public var productOrderUuid: String?
+  public var productOrders: [Value]?
   public var reasonOfReopening: String
 }
 
@@ -139,8 +139,8 @@ public struct MerchantPortalPamFormControllerCreateData {
   public var packageOrder: VMap?
   public var packageOrderUuid: String
   public var packageUuid: String?
-  public var productOrder: [Value]?
   public var productOrderUuid: String?
+  public var productOrders: [Value]?
   public var reasonOfReopening: String
 }
 
@@ -173,9 +173,9 @@ public struct MerchantPortalPamMerchantController {
   public var language: String
   public var login: String
   public var mandator: String
-  public var merchantCategoryCode: String?
   public var merchantContractNumber: String
   public var merchantName: String?
+  public var merchantCategoryCode: String?
   public var packageUuid: String?
   public var packageorderuuid: String
   public var phoneNumber: String
@@ -185,7 +185,7 @@ public struct MerchantPortalPamMerchantController {
   public var registrationNumber: String?
   public var signature: String?
   public var street: String?
-  public var terminalId: [Value]?
+  public var terminalIds: [Value]?
   public var terminalidAcquirer: String?
   public var vuNummer: String
 }
@@ -203,9 +203,9 @@ public struct MerchantPortalPamMerchantControllerCreateData {
   public var language: String
   public var login: String
   public var mandator: String
-  public var merchantCategoryCode: String?
   public var merchantContractNumber: String
   public var merchantName: String?
+  public var merchantCategoryCode: String?
   public var packageUuid: String?
   public var packageorderuuid: String
   public var phoneNumber: String
@@ -215,7 +215,7 @@ public struct MerchantPortalPamMerchantControllerCreateData {
   public var registrationNumber: String?
   public var signature: String?
   public var street: String?
-  public var terminalId: [Value]?
+  public var terminalIds: [Value]?
   public var terminalidAcquirer: String?
   public var vuNummer: String
 }
@@ -281,7 +281,7 @@ public struct MerchantPortalPamProductControllerCreateData {
 /// OutputAddProduct is the typed data model for the output_add_product entity.
 public struct OutputAddProduct {
   public var packageUuid: String
-  public var productUuiD: [Value]
+  public var productUuiDs: [Value]
   public var responseCode: Int
   public var responseMessage: String
 }
@@ -289,7 +289,7 @@ public struct OutputAddProduct {
 /// OutputAddProductCreateData is the typed request payload for OutputAddProduct.create.
 public struct OutputAddProductCreateData {
   public var packageUuid: String
-  public var productUuiD: [Value]
+  public var productUuiDs: [Value]
   public var responseCode: Int
   public var responseMessage: String
 }
@@ -297,7 +297,7 @@ public struct OutputAddProductCreateData {
 /// OutputCreateProduct is the typed data model for the output_create_product entity.
 public struct OutputCreateProduct {
   public var acquirerId: String?
-  public var allowMultipleOrder: Bool
+  public var allowMultipleOrders: Bool
   public var appFormTemplateName: String
   public var contractNeeded: Bool
   public var credentialsNeeded: Bool?
@@ -315,7 +315,7 @@ public struct OutputCreateProduct {
 /// OutputCreateProductCreateData is the typed request payload for OutputCreateProduct.create.
 public struct OutputCreateProductCreateData {
   public var acquirerId: String?
-  public var allowMultipleOrder: Bool
+  public var allowMultipleOrders: Bool
   public var appFormTemplateName: String
   public var contractNeeded: Bool
   public var credentialsNeeded: Bool?
@@ -332,9 +332,9 @@ public struct OutputCreateProductCreateData {
 
 /// OutputDetail is the typed data model for the output_detail entity.
 public struct OutputDetail {
-  public var detail: VMap?
-  public var responseCode: Int
-  public var responseMessage: String
+  public var batch: VMap?
+  public var lines: VMap?
+  public var progress: VMap?
 }
 
 /// OutputDetailLoadMatch is the typed request payload for OutputDetail.load.
@@ -344,7 +344,7 @@ public struct OutputDetailLoadMatch {
 
 /// OutputList is the typed data model for the output_list entity.
 public struct OutputList {
-  public var item: [Value]?
+  public var items: [Value]?
   public var pagination: VMap
   public var responseCode: Int
   public var responseMessage: String
@@ -353,7 +353,7 @@ public struct OutputList {
 
 /// OutputListCreateData is the typed request payload for OutputList.create.
 public struct OutputListCreateData {
-  public var item: [Value]?
+  public var items: [Value]?
   public var pagination: VMap
   public var responseCode: Int
   public var responseMessage: String
@@ -373,7 +373,7 @@ public struct OutputMessageLoadMatch {
 
 /// OutputMoveTid is the typed data model for the output_move_tid entity.
 public struct OutputMoveTid {
-  public var productOrderUuiD: [Value]
+  public var productOrderUuiDs: [Value]
   public var responseCode: Int
   public var responseMessage: String
   public var targetPackageOrderUuid: String
@@ -382,7 +382,7 @@ public struct OutputMoveTid {
 
 /// OutputMoveTidCreateData is the typed request payload for OutputMoveTid.create.
 public struct OutputMoveTidCreateData {
-  public var productOrderUuiD: [Value]
+  public var productOrderUuiDs: [Value]
   public var responseCode: Int
   public var responseMessage: String
   public var targetPackageOrderUuid: String
@@ -392,7 +392,7 @@ public struct OutputMoveTidCreateData {
 /// OutputRemoveProduct is the typed data model for the output_remove_product entity.
 public struct OutputRemoveProduct {
   public var packageUuid: String
-  public var productUuiD: [Value]
+  public var productUuiDs: [Value]
   public var responseCode: Int
   public var responseMessage: String
 }
@@ -400,7 +400,7 @@ public struct OutputRemoveProduct {
 /// OutputRemoveProductCreateData is the typed request payload for OutputRemoveProduct.create.
 public struct OutputRemoveProductCreateData {
   public var packageUuid: String
-  public var productUuiD: [Value]
+  public var productUuiDs: [Value]
   public var responseCode: Int
   public var responseMessage: String
 }
@@ -434,7 +434,7 @@ public struct OutputStatusLoadMatch {
 
 /// OutputUpdateProduct is the typed data model for the output_update_product entity.
 public struct OutputUpdateProduct {
-  public var allowMultipleOrder: Bool?
+  public var allowMultipleOrders: Bool?
   public var appFormName: String?
   public var contractNeeded: Bool?
   public var credentialsNeeded: Bool?
@@ -451,7 +451,7 @@ public struct OutputUpdateProduct {
 
 /// OutputUpdateProductCreateData is the typed request payload for OutputUpdateProduct.create.
 public struct OutputUpdateProductCreateData {
-  public var allowMultipleOrder: Bool?
+  public var allowMultipleOrders: Bool?
   public var appFormName: String?
   public var contractNeeded: Bool?
   public var credentialsNeeded: Bool?

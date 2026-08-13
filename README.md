@@ -55,9 +55,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = BluefinTecsMerchantPortalSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = BluefinTecsMerchantPortalSDK.test({
+  entity: {
+    output_detail: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const outputdetail = await client.OutputDetail().load({ id: 'test01' })
-// outputdetail is a bare OutputDetail populated with mock data
+// outputdetail is the OutputDetail entity, populated with mock data
+// — call outputdetail.data() for the record itself
 console.log(outputdetail)
 ```
 
@@ -198,7 +207,8 @@ System.out.println(outputDetail);
 ```js
 const client = BluefinTecsMerchantPortalSDK.test()
 const outputdetail = await client.OutputDetail().load({ id: 'test01' })
-// outputdetail is a bare entity populated with mock data
+// outputdetail is the entity, populated with mock data
+// — call outputdetail.data() for the record itself
 console.log(outputdetail)
 ```
 
@@ -216,7 +226,7 @@ println(outputDetail)
 let () =
   let client = Sdk_client.test () in
   let result = (Sdk_client.output_detail client Noval).e_load (jo [("id", (Str "test01"))]) Noval in
-  print_endline (stringify result)
+  print_endline (stringify (result.e_data_get ()))
 ```
 
 ### Perl
@@ -864,6 +874,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://www.tecs.at/contact/](https://www.tecs.at/contact/)
 

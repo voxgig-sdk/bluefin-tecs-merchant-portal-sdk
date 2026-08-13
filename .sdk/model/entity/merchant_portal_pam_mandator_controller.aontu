@@ -6,22 +6,22 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
 
   fields: [
     {
-      name: "client_secret"
+      name: "clientSecret"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "mandator_name"
+      name: "mandatorName"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "notification_email"
+      name: "notificationEmail"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "package_uuid"
+      name: "packageUUID"
       req: true
       type: "`$STRING`"
     }

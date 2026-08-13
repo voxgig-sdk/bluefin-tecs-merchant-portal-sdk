@@ -30,37 +30,6 @@ describe('MerchantPortalPamProductControllerEntity', async () => {
   })
 
 
-  // Feature #4: the entity `stream(action, ...)` method runs the op pipeline
-  // and returns an async iterator over result items. With the streaming
-  // feature active it yields the feature's incremental output; otherwise it
-  // falls back to the materialised list so `stream` always yields.
-  test('stream', async () => {
-    const seed = {
-      entity: {
-        merchant_portal_pam_product_controller: { s1: { id: 's1' }, s2: { id: 's2' }, s3: { id: 's3' } }
-      }
-    }
-
-    // Fallback: streaming inactive -> yields the materialised list items.
-    const base = BluefinTecsMerchantPortalSDK.test(seed)
-    const seen = []
-    for await (const item of base.MerchantPortalPamProductController().stream('list')) {
-      seen.push(item)
-    }
-    assert.equal(seen.length, 3)
-
-    // Inbound: streaming active -> yields each item from the feature iterator.
-    if (config.feature && config.feature.streaming) {
-      const sdk = BluefinTecsMerchantPortalSDK.test(seed, { feature: { streaming: { active: true } } })
-      const got = []
-      for await (const item of sdk.MerchantPortalPamProductController().stream('list')) {
-        if (Array.isArray(item)) { got.push(...item) } else { got.push(item) }
-      }
-      assert.equal(got.length, 3)
-    }
-  })
-
-
   test('basic', async () => {
 
     const setup = basicSetup()
@@ -75,7 +44,7 @@ describe('MerchantPortalPamProductControllerEntity', async () => {
     const merchant_portal_pam_product_controller_ref01_ent = client.MerchantPortalPamProductController()
     let merchant_portal_pam_product_controller_ref01_data = setup.data.new.merchant_portal_pam_product_controller['merchant_portal_pam_product_controller_ref01']
 
-    merchant_portal_pam_product_controller_ref01_data = await merchant_portal_pam_product_controller_ref01_ent.create(merchant_portal_pam_product_controller_ref01_data)
+    merchant_portal_pam_product_controller_ref01_data = (await merchant_portal_pam_product_controller_ref01_ent.create(merchant_portal_pam_product_controller_ref01_data)).data()
     assert(null != merchant_portal_pam_product_controller_ref01_data)
 
 

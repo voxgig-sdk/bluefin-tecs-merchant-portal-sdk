@@ -34,7 +34,8 @@ defmodule BluefinTecsMerchantPortal.OutputMessageEntityTest do
     if id != nil do
       sdk = mk_sdk()
       ent = BluefinTecsMerchantPortal.output_message(sdk)
-      rec = BluefinTecsMerchantPortal.Entity.OutputMessage.load(ent, S.jm(["id", id]))
+      loaded = BluefinTecsMerchantPortal.Entity.OutputMessage.load(ent, S.jm(["id", id]))
+      rec = BluefinTecsMerchantPortal.EntityBase.data_get(loaded)
       assert S.ismap(rec)
       assert S.getprop(rec, "id") == id
     end

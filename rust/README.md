@@ -303,7 +303,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -313,9 +313,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -325,15 +325,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: Create.
 
@@ -343,10 +343,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: Create.
 
@@ -357,29 +357,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -391,15 +391,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -411,14 +411,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -430,10 +430,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -443,20 +443,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: Create.
 
@@ -466,9 +466,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: Load.
 
@@ -478,10 +478,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -492,8 +492,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -503,11 +503,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: Create.
 
@@ -517,10 +517,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -531,8 +531,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -543,8 +543,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Load.
@@ -555,19 +555,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: Create.
 
@@ -684,14 +684,14 @@ Create an instance: `let merchant_portal_pam_contract_controller = client.mercha
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `String` |  |
-| `product_order_uuid` | `String` |  |
+| `productOrderUUID` | `String` |  |
 
 #### Example: Create
 
 ```rust
 let merchant_portal_pam_contract_controller = client.merchant_portal_pam_contract_controller(Value::Noval).create(jo(vec![
     ("language", Value::str("example_language")),  // String
-    ("product_order_uuid", Value::str("example_product_order_uuid")),  // String
+    ("productOrderUUID", Value::str("example_productOrderUUID")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -710,15 +710,15 @@ Create an instance: `let merchant_portal_pam_document_controller = client.mercha
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
+| `appFormFieldDescUUID` | `String` |  |
+| `packageOrderUUID` | `String` |  |
+| `productOrderUUID` | `String` |  |
 
 #### Example: Create
 
 ```rust
 let merchant_portal_pam_document_controller = client.merchant_portal_pam_document_controller(Value::Noval).create(jo(vec![
-    ("app_form_field_desc_uuid", Value::str("example_app_form_field_desc_uuid")),  // String
+    ("appFormFieldDescUUID", Value::str("example_appFormFieldDescUUID")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -737,24 +737,24 @@ Create an instance: `let merchant_portal_pam_form_controller = client.merchant_p
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `String` |  |
+| `appFormFieldsDescUUID` | `String` |  |
 | `filter` | `std::collections::HashMap<String, Value>` |  |
 | `language` | `String` |  |
-| `package_order` | `std::collections::HashMap<String, Value>` |  |
-| `package_order_uuid` | `String` |  |
-| `package_uuid` | `String` |  |
-| `product_order` | `Vec<Value>` |  |
-| `product_order_uuid` | `String` |  |
-| `reason_of_reopening` | `String` |  |
+| `packageOrder` | `std::collections::HashMap<String, Value>` |  |
+| `packageOrderUUID` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productOrderUUID` | `String` |  |
+| `productOrders` | `Vec<Value>` |  |
+| `reasonOfReopening` | `String` |  |
 
 #### Example: Create
 
 ```rust
 let merchant_portal_pam_form_controller = client.merchant_portal_pam_form_controller(Value::Noval).create(jo(vec![
-    ("app_form_fields_desc_uuid", Value::str("example_app_form_fields_desc_uuid")),  // String
+    ("appFormFieldsDescUUID", Value::str("example_appFormFieldsDescUUID")),  // String
     ("language", Value::str("example_language")),  // String
-    ("package_order_uuid", Value::str("example_package_order_uuid")),  // String
-    ("reason_of_reopening", Value::str("example_reason_of_reopening")),  // String
+    ("packageOrderUUID", Value::str("example_packageOrderUUID")),  // String
+    ("reasonOfReopening", Value::str("example_reasonOfReopening")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -773,17 +773,17 @@ Create an instance: `let merchant_portal_pam_mandator_controller = client.mercha
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `String` |  |
-| `mandator_name` | `String` |  |
-| `notification_email` | `String` |  |
-| `package_uuid` | `String` |  |
+| `clientSecret` | `String` |  |
+| `mandatorName` | `String` |  |
+| `notificationEmail` | `String` |  |
+| `packageUUID` | `String` |  |
 
 #### Example: Create
 
 ```rust
 let merchant_portal_pam_mandator_controller = client.merchant_portal_pam_mandator_controller(Value::Noval).create(jo(vec![
-    ("mandator_name", Value::str("example_mandator_name")),  // String
-    ("package_uuid", Value::str("example_package_uuid")),  // String
+    ("mandatorName", Value::str("example_mandatorName")),  // String
+    ("packageUUID", Value::str("example_packageUUID")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -803,29 +803,29 @@ Create an instance: `let merchant_portal_pam_merchant_controller = client.mercha
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `std::collections::HashMap<String, Value>` |  |
-| `business_registration_number` | `String` |  |
+| `businessRegistrationNumber` | `String` |  |
 | `city` | `String` |  |
-| `company_name` | `String` |  |
-| `corporate_uuid` | `String` |  |
+| `companyName` | `String` |  |
+| `corporateUUID` | `String` |  |
 | `country` | `String` |  |
 | `currency` | `String` |  |
 | `email` | `String` |  |
 | `language` | `String` |  |
 | `login` | `String` |  |
 | `mandator` | `String` |  |
+| `merchantContractNumber` | `String` |  |
+| `merchantName` | `String` |  |
 | `merchant_category_code` | `String` |  |
-| `merchant_contract_number` | `String` |  |
-| `merchant_name` | `String` |  |
-| `package_uuid` | `String` |  |
+| `packageUUID` | `String` |  |
 | `packageorderuuid` | `String` |  |
-| `phone_number` | `String` |  |
-| `postal_code` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `postalCode` | `String` |  |
 | `productid_acquirer` | `String` |  |
 | `region` | `String` |  |
-| `registration_number` | `String` |  |
+| `registrationNumber` | `String` |  |
 | `signature` | `String` |  |
 | `street` | `String` |  |
-| `terminal_id` | `Vec<Value>` |  |
+| `terminalIds` | `Vec<Value>` |  |
 | `terminalid_acquirer` | `String` |  |
 | `vu_nummer` | `String` |  |
 
@@ -833,17 +833,17 @@ Create an instance: `let merchant_portal_pam_merchant_controller = client.mercha
 
 ```rust
 let merchant_portal_pam_merchant_controller = client.merchant_portal_pam_merchant_controller(Value::Noval).create(jo(vec![
-    ("business_registration_number", Value::str("example_business_registration_number")),  // String
-    ("company_name", Value::str("example_company_name")),  // String
-    ("corporate_uuid", Value::str("example_corporate_uuid")),  // String
+    ("businessRegistrationNumber", Value::str("example_businessRegistrationNumber")),  // String
+    ("companyName", Value::str("example_companyName")),  // String
+    ("corporateUUID", Value::str("example_corporateUUID")),  // String
     ("currency", Value::str("example_currency")),  // String
     ("email", Value::str("example_email")),  // String
     ("language", Value::str("example_language")),  // String
     ("login", Value::str("example_login")),  // String
     ("mandator", Value::str("example_mandator")),  // String
-    ("merchant_contract_number", Value::str("example_merchant_contract_number")),  // String
+    ("merchantContractNumber", Value::str("example_merchantContractNumber")),  // String
     ("packageorderuuid", Value::str("example_packageorderuuid")),  // String
-    ("phone_number", Value::str("example_phone_number")),  // String
+    ("phoneNumber", Value::str("example_phoneNumber")),  // String
     ("productid_acquirer", Value::str("example_productid_acquirer")),  // String
     ("vu_nummer", Value::str("example_vu_nummer")),  // String
 ]), Value::Noval).unwrap();
@@ -864,15 +864,15 @@ Create an instance: `let merchant_portal_pam_package_controller = client.merchan
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `corporate_uuid` | `String` |  |
+| `consumerUUID` | `String` |  |
+| `corporateUUID` | `String` |  |
 | `country` | `String` |  |
-| `description_key` | `String` |  |
+| `descriptionKey` | `String` |  |
 | `filter` | `std::collections::HashMap<String, Value>` |  |
 | `language` | `String` |  |
-| `name_key` | `String` |  |
-| `package_status` | `String` |  |
-| `package_uuid` | `String` |  |
+| `nameKey` | `String` |  |
+| `packageStatus` | `String` |  |
+| `packageUUID` | `String` |  |
 | `pagination` | `std::collections::HashMap<String, Value>` |  |
 | `sorting` | `std::collections::HashMap<String, Value>` |  |
 
@@ -881,7 +881,7 @@ Create an instance: `let merchant_portal_pam_package_controller = client.merchan
 ```rust
 let merchant_portal_pam_package_controller = client.merchant_portal_pam_package_controller(Value::Noval).create(jo(vec![
     ("language", Value::str("example_language")),  // String
-    ("package_uuid", Value::str("example_package_uuid")),  // String
+    ("packageUUID", Value::str("example_packageUUID")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -900,14 +900,14 @@ Create an instance: `let merchant_portal_pam_product_controller = client.merchan
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
+| `consumerUUID` | `String` |  |
 | `filter` | `std::collections::HashMap<String, Value>` |  |
 | `language` | `String` |  |
-| `merchant_id` | `String` |  |
-| `package_order_uuid` | `String` |  |
+| `merchantID` | `String` |  |
+| `packageOrderUUID` | `String` |  |
 | `pagination` | `std::collections::HashMap<String, Value>` |  |
-| `product_order_uuid` | `String` |  |
-| `product_uuid` | `String` |  |
+| `productOrderUUID` | `String` |  |
+| `productUUID` | `String` |  |
 | `reason_decline` | `String` |  |
 | `sorting` | `std::collections::HashMap<String, Value>` |  |
 
@@ -915,9 +915,9 @@ Create an instance: `let merchant_portal_pam_product_controller = client.merchan
 
 ```rust
 let merchant_portal_pam_product_controller = client.merchant_portal_pam_product_controller(Value::Noval).create(jo(vec![
-    ("package_order_uuid", Value::str("example_package_order_uuid")),  // String
-    ("product_order_uuid", Value::str("example_product_order_uuid")),  // String
-    ("product_uuid", Value::str("example_product_uuid")),  // String
+    ("packageOrderUUID", Value::str("example_packageOrderUUID")),  // String
+    ("productOrderUUID", Value::str("example_productOrderUUID")),  // String
+    ("productUUID", Value::str("example_productUUID")),  // String
     ("reason_decline", Value::str("example_reason_decline")),  // String
 ]), Value::Noval).unwrap();
 ```
@@ -937,19 +937,19 @@ Create an instance: `let output_add_product = client.output_add_product(Value::N
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `String` |  |
-| `product_uui_d` | `Vec<Value>` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productUUIDs` | `Vec<Value>` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```rust
 let output_add_product = client.output_add_product(Value::Noval).create(jo(vec![
-    ("package_uuid", Value::str("example_package_uuid")),  // String
-    ("product_uui_d", Value::empty_list()),  // Vec<Value>
-    ("response_code", Value::Num(1.0)),  // i64
-    ("response_message", Value::str("example_response_message")),  // String
+    ("packageUUID", Value::str("example_packageUUID")),  // String
+    ("productUUIDs", Value::empty_list()),  // Vec<Value>
+    ("responseCode", Value::Num(1.0)),  // i64
+    ("responseMessage", Value::str("example_responseMessage")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -968,37 +968,37 @@ Create an instance: `let output_create_product = client.output_create_product(Va
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_template_name` | `String` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `String` |  |
-| `name_key` | `String` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `String` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `String` |  |
-| `terminal_template_name` | `String` |  |
-| `vendor_name` | `String` |  |
-| `xml_template_file` | `String` |  |
+| `acquirerId` | `String` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormTemplateName` | `String` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `String` |  |
+| `nameKey` | `String` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `String` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `String` |  |
+| `terminalTemplateName` | `String` |  |
+| `vendorName` | `String` |  |
+| `xmlTemplateFile` | `String` |  |
 
 #### Example: Create
 
 ```rust
 let output_create_product = client.output_create_product(Value::Noval).create(jo(vec![
-    ("allow_multiple_order", Value::Bool(true)),  // bool
-    ("app_form_template_name", Value::str("example_app_form_template_name")),  // String
-    ("contract_needed", Value::Bool(true)),  // bool
-    ("description_key", Value::str("example_description_key")),  // String
-    ("name_key", Value::str("example_name_key")),  // String
-    ("prescreening_allowed", Value::Bool(true)),  // bool
-    ("product_name", Value::str("example_product_name")),  // String
-    ("response_code", Value::Num(1.0)),  // i64
-    ("response_message", Value::str("example_response_message")),  // String
-    ("terminal_template_name", Value::str("example_terminal_template_name")),  // String
-    ("vendor_name", Value::str("example_vendor_name")),  // String
-    ("xml_template_file", Value::str("example_xml_template_file")),  // String
+    ("allowMultipleOrders", Value::Bool(true)),  // bool
+    ("appFormTemplateName", Value::str("example_appFormTemplateName")),  // String
+    ("contractNeeded", Value::Bool(true)),  // bool
+    ("descriptionKey", Value::str("example_descriptionKey")),  // String
+    ("nameKey", Value::str("example_nameKey")),  // String
+    ("prescreeningAllowed", Value::Bool(true)),  // bool
+    ("productName", Value::str("example_productName")),  // String
+    ("responseCode", Value::Num(1.0)),  // i64
+    ("responseMessage", Value::str("example_responseMessage")),  // String
+    ("terminalTemplateName", Value::str("example_terminalTemplateName")),  // String
+    ("vendorName", Value::str("example_vendorName")),  // String
+    ("xmlTemplateFile", Value::str("example_xmlTemplateFile")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -1017,9 +1017,9 @@ Create an instance: `let output_detail = client.output_detail(Value::Noval);`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `std::collections::HashMap<String, Value>` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `String` |  |
+| `batch` | `std::collections::HashMap<String, Value>` |  |
+| `lines` | `std::collections::HashMap<String, Value>` |  |
+| `progress` | `std::collections::HashMap<String, Value>` |  |
 
 #### Example: Load
 
@@ -1042,10 +1042,10 @@ Create an instance: `let output_list = client.output_list(Value::Noval);`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `Vec<Value>` |  |
+| `items` | `Vec<Value>` |  |
 | `pagination` | `std::collections::HashMap<String, Value>` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `std::collections::HashMap<String, Value>` |  |
 
 #### Example: Create
@@ -1053,8 +1053,8 @@ Create an instance: `let output_list = client.output_list(Value::Noval);`
 ```rust
 let output_list = client.output_list(Value::Noval).create(jo(vec![
     ("pagination", Value::empty_map()),  // std::collections::HashMap<String, Value>
-    ("response_code", Value::Num(1.0)),  // i64
-    ("response_message", Value::str("example_response_message")),  // String
+    ("responseCode", Value::Num(1.0)),  // i64
+    ("responseMessage", Value::str("example_responseMessage")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -1073,8 +1073,8 @@ Create an instance: `let output_message = client.output_message(Value::Noval);`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `i64` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Load
 
@@ -1097,21 +1097,21 @@ Create an instance: `let output_move_tid = client.output_move_tid(Value::Noval);
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `Vec<Value>` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `String` |  |
-| `target_package_order_uuid` | `String` |  |
-| `target_product_order_uuid` | `String` |  |
+| `productOrderUUIDs` | `Vec<Value>` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `String` |  |
+| `targetPackageOrderUUID` | `String` |  |
+| `targetProductOrderUUID` | `String` |  |
 
 #### Example: Create
 
 ```rust
 let output_move_tid = client.output_move_tid(Value::Noval).create(jo(vec![
-    ("product_order_uui_d", Value::empty_list()),  // Vec<Value>
-    ("response_code", Value::Num(1.0)),  // i64
-    ("response_message", Value::str("example_response_message")),  // String
-    ("target_package_order_uuid", Value::str("example_target_package_order_uuid")),  // String
-    ("target_product_order_uuid", Value::str("example_target_product_order_uuid")),  // String
+    ("productOrderUUIDs", Value::empty_list()),  // Vec<Value>
+    ("responseCode", Value::Num(1.0)),  // i64
+    ("responseMessage", Value::str("example_responseMessage")),  // String
+    ("targetPackageOrderUUID", Value::str("example_targetPackageOrderUUID")),  // String
+    ("targetProductOrderUUID", Value::str("example_targetProductOrderUUID")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -1130,19 +1130,19 @@ Create an instance: `let output_remove_product = client.output_remove_product(Va
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `String` |  |
-| `product_uui_d` | `Vec<Value>` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productUUIDs` | `Vec<Value>` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```rust
 let output_remove_product = client.output_remove_product(Value::Noval).create(jo(vec![
-    ("package_uuid", Value::str("example_package_uuid")),  // String
-    ("product_uui_d", Value::empty_list()),  // Vec<Value>
-    ("response_code", Value::Num(1.0)),  // i64
-    ("response_message", Value::str("example_response_message")),  // String
+    ("packageUUID", Value::str("example_packageUUID")),  // String
+    ("productUUIDs", Value::empty_list()),  // Vec<Value>
+    ("responseCode", Value::Num(1.0)),  // i64
+    ("responseMessage", Value::str("example_responseMessage")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -1162,15 +1162,15 @@ Create an instance: `let output_start = client.output_start(Value::Noval);`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `String` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```rust
 let output_start = client.output_start(Value::Noval).create(jo(vec![
-    ("response_code", Value::Num(1.0)),  // i64
-    ("response_message", Value::str("example_response_message")),  // String
+    ("responseCode", Value::Num(1.0)),  // i64
+    ("responseMessage", Value::str("example_responseMessage")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -1190,8 +1190,8 @@ Create an instance: `let output_status = client.output_status(Value::Noval);`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `i64` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `String` |  |
 | `status` | `String` |  |
 
 #### Example: Load
@@ -1215,27 +1215,27 @@ Create an instance: `let output_update_product = client.output_update_product(Va
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_name` | `String` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `String` |  |
-| `name_key` | `String` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `String` |  |
-| `product_status` | `String` |  |
-| `product_uuid` | `String` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `String` |  |
-| `vendor_name` | `String` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormName` | `String` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `String` |  |
+| `nameKey` | `String` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `String` |  |
+| `productStatus` | `String` |  |
+| `productUUID` | `String` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `String` |  |
+| `vendorName` | `String` |  |
 
 #### Example: Create
 
 ```rust
 let output_update_product = client.output_update_product(Value::Noval).create(jo(vec![
-    ("product_uuid", Value::str("example_product_uuid")),  // String
-    ("response_code", Value::Num(1.0)),  // i64
-    ("response_message", Value::str("example_response_message")),  // String
+    ("productUUID", Value::str("example_productUUID")),  // String
+    ("responseCode", Value::Num(1.0)),  // i64
+    ("responseMessage", Value::str("example_responseMessage")),  // String
 ]), Value::Noval).unwrap();
 ```
 

@@ -294,6 +294,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/deactivateTerminal",
                 ["parts"] = {
@@ -325,6 +326,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/reactivateTerminal",
                 ["parts"] = {
@@ -356,6 +358,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/registerAdditionalTerminal",
                 ["parts"] = {
@@ -387,6 +390,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/registerNewMerchant",
                 ["parts"] = {
@@ -423,6 +427,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/merchantportalws/logDeveloperInfo",
                 ["parts"] = {
@@ -439,6 +444,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/merchantportalws/version",
                 ["parts"] = {
@@ -471,7 +477,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "product_order_uuid",
+            ["name"] = "productOrderUUID",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 1,
@@ -497,6 +503,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/generateContract",
                 ["parts"] = {
@@ -528,6 +535,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/uploadContract",
                 ["parts"] = {
@@ -557,21 +565,21 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "app_form_field_desc_uuid",
+            ["name"] = "appFormFieldDescUUID",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 0,
           },
           {
             ["active"] = true,
-            ["name"] = "package_order_uuid",
+            ["name"] = "packageOrderUUID",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 1,
           },
           {
             ["active"] = true,
-            ["name"] = "product_order_uuid",
+            ["name"] = "productOrderUUID",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -597,6 +605,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/documentsList",
                 ["parts"] = {
@@ -628,6 +637,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/downloadDocument",
                 ["parts"] = {
@@ -657,7 +667,7 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "app_form_fields_desc_uuid",
+            ["name"] = "appFormFieldsDescUUID",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 0,
@@ -684,14 +694,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "package_order",
+            ["name"] = "packageOrder",
             ["req"] = false,
             ["type"] = "`$OBJECT`",
             ["index$"] = 3,
           },
           {
             ["active"] = true,
-            ["name"] = "package_order_uuid",
+            ["name"] = "packageOrderUUID",
             ["op"] = {
               ["create"] = {
                 ["req"] = false,
@@ -704,21 +714,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "package_uuid",
+            ["name"] = "packageUUID",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 5,
           },
           {
             ["active"] = true,
-            ["name"] = "product_order",
-            ["req"] = false,
-            ["type"] = "`$ARRAY`",
-            ["index$"] = 6,
-          },
-          {
-            ["active"] = true,
-            ["name"] = "product_order_uuid",
+            ["name"] = "productOrderUUID",
             ["op"] = {
               ["create"] = {
                 ["req"] = true,
@@ -727,11 +730,18 @@ local function make_config()
             },
             ["req"] = false,
             ["type"] = "`$STRING`",
+            ["index$"] = 6,
+          },
+          {
+            ["active"] = true,
+            ["name"] = "productOrders",
+            ["req"] = false,
+            ["type"] = "`$ARRAY`",
             ["index$"] = 7,
           },
           {
             ["active"] = true,
-            ["name"] = "reason_of_reopening",
+            ["name"] = "reasonOfReopening",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 8,
@@ -757,6 +767,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/applicationForm",
                 ["parts"] = {
@@ -788,6 +799,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/packageForm",
                 ["parts"] = {
@@ -819,6 +831,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/reopenForm",
                 ["parts"] = {
@@ -850,6 +863,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/secretKey",
                 ["parts"] = {
@@ -881,6 +895,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/submitForm",
                 ["parts"] = {
@@ -912,6 +927,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/submitValues",
                 ["parts"] = {
@@ -941,28 +957,28 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "client_secret",
+            ["name"] = "clientSecret",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 0,
           },
           {
             ["active"] = true,
-            ["name"] = "mandator_name",
+            ["name"] = "mandatorName",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 1,
           },
           {
             ["active"] = true,
-            ["name"] = "notification_email",
+            ["name"] = "notificationEmail",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
           },
           {
             ["active"] = true,
-            ["name"] = "package_uuid",
+            ["name"] = "packageUUID",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 3,
@@ -988,6 +1004,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/createMandatorConfig",
                 ["parts"] = {
@@ -1019,6 +1036,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/introduceMandatorPackage",
                 ["parts"] = {
@@ -1050,6 +1068,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/selfRegistrationLink",
                 ["parts"] = {
@@ -1086,7 +1105,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "business_registration_number",
+            ["name"] = "businessRegistrationNumber",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 1,
@@ -1100,14 +1119,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "company_name",
+            ["name"] = "companyName",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 3,
           },
           {
             ["active"] = true,
-            ["name"] = "corporate_uuid",
+            ["name"] = "corporateUUID",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 4,
@@ -1156,14 +1175,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "merchant_category_code",
-            ["req"] = false,
-            ["type"] = "`$STRING`",
-            ["index$"] = 11,
-          },
-          {
-            ["active"] = true,
-            ["name"] = "merchant_contract_number",
+            ["name"] = "merchantContractNumber",
             ["op"] = {
               ["create"] = {
                 ["req"] = false,
@@ -1172,18 +1184,25 @@ local function make_config()
             },
             ["req"] = true,
             ["type"] = "`$STRING`",
+            ["index$"] = 11,
+          },
+          {
+            ["active"] = true,
+            ["name"] = "merchantName",
+            ["req"] = false,
+            ["type"] = "`$STRING`",
             ["index$"] = 12,
           },
           {
             ["active"] = true,
-            ["name"] = "merchant_name",
+            ["name"] = "merchant_category_code",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 13,
           },
           {
             ["active"] = true,
-            ["name"] = "package_uuid",
+            ["name"] = "packageUUID",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 14,
@@ -1197,14 +1216,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "phone_number",
+            ["name"] = "phoneNumber",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 16,
           },
           {
             ["active"] = true,
-            ["name"] = "postal_code",
+            ["name"] = "postalCode",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 17,
@@ -1225,7 +1244,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "registration_number",
+            ["name"] = "registrationNumber",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 20,
@@ -1246,7 +1265,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "terminal_id",
+            ["name"] = "terminalIds",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 23,
@@ -1286,6 +1305,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/contractNumber",
                 ["parts"] = {
@@ -1317,6 +1337,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/registerAdditionalAcquiring",
                 ["parts"] = {
@@ -1348,6 +1369,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/updateMerchant",
                 ["parts"] = {
@@ -1368,6 +1390,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/registerMerchant",
                 ["parts"] = {
@@ -1393,14 +1416,14 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "consumer_uuid",
+            ["name"] = "consumerUUID",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 0,
           },
           {
             ["active"] = true,
-            ["name"] = "corporate_uuid",
+            ["name"] = "corporateUUID",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 1,
@@ -1414,7 +1437,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "description_key",
+            ["name"] = "descriptionKey",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 3,
@@ -1441,21 +1464,21 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "name_key",
+            ["name"] = "nameKey",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 6,
           },
           {
             ["active"] = true,
-            ["name"] = "package_status",
+            ["name"] = "packageStatus",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 7,
           },
           {
             ["active"] = true,
-            ["name"] = "package_uuid",
+            ["name"] = "packageUUID",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 8,
@@ -1495,6 +1518,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/availablePackages",
                 ["parts"] = {
@@ -1526,6 +1550,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/orderPackage",
                 ["parts"] = {
@@ -1557,6 +1582,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/orderedPackages",
                 ["parts"] = {
@@ -1588,6 +1614,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/packageTemplates",
                 ["parts"] = {
@@ -1619,6 +1646,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/updatePackageData",
                 ["parts"] = {
@@ -1648,7 +1676,7 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "consumer_uuid",
+            ["name"] = "consumerUUID",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 0,
@@ -1669,14 +1697,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "merchant_id",
+            ["name"] = "merchantID",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 3,
           },
           {
             ["active"] = true,
-            ["name"] = "package_order_uuid",
+            ["name"] = "packageOrderUUID",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 4,
@@ -1690,14 +1718,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "product_order_uuid",
+            ["name"] = "productOrderUUID",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 6,
           },
           {
             ["active"] = true,
-            ["name"] = "product_uuid",
+            ["name"] = "productUUID",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 7,
@@ -1737,6 +1765,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/approveProduct",
                 ["parts"] = {
@@ -1768,6 +1797,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/declineProduct",
                 ["parts"] = {
@@ -1799,6 +1829,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/orderAdditionalProduct",
                 ["parts"] = {
@@ -1830,6 +1861,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/productsList",
                 ["parts"] = {
@@ -1859,28 +1891,28 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "package_uuid",
+            ["name"] = "packageUUID",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 0,
           },
           {
             ["active"] = true,
-            ["name"] = "product_uui_d",
+            ["name"] = "productUUIDs",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
             ["index$"] = 1,
           },
           {
             ["active"] = true,
-            ["name"] = "response_code",
+            ["name"] = "responseCode",
             ["req"] = true,
             ["type"] = "`$INTEGER`",
             ["index$"] = 2,
           },
           {
             ["active"] = true,
-            ["name"] = "response_message",
+            ["name"] = "responseMessage",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 3,
@@ -1906,6 +1938,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/addProductsToPackage",
                 ["parts"] = {
@@ -1935,98 +1968,98 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "acquirer_id",
+            ["name"] = "acquirerId",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 0,
           },
           {
             ["active"] = true,
-            ["name"] = "allow_multiple_order",
+            ["name"] = "allowMultipleOrders",
             ["req"] = true,
             ["type"] = "`$BOOLEAN`",
             ["index$"] = 1,
           },
           {
             ["active"] = true,
-            ["name"] = "app_form_template_name",
+            ["name"] = "appFormTemplateName",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
           },
           {
             ["active"] = true,
-            ["name"] = "contract_needed",
+            ["name"] = "contractNeeded",
             ["req"] = true,
             ["type"] = "`$BOOLEAN`",
             ["index$"] = 3,
           },
           {
             ["active"] = true,
-            ["name"] = "credentials_needed",
+            ["name"] = "credentialsNeeded",
             ["req"] = false,
             ["type"] = "`$BOOLEAN`",
             ["index$"] = 4,
           },
           {
             ["active"] = true,
-            ["name"] = "description_key",
+            ["name"] = "descriptionKey",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 5,
           },
           {
             ["active"] = true,
-            ["name"] = "name_key",
+            ["name"] = "nameKey",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 6,
           },
           {
             ["active"] = true,
-            ["name"] = "prescreening_allowed",
+            ["name"] = "prescreeningAllowed",
             ["req"] = true,
             ["type"] = "`$BOOLEAN`",
             ["index$"] = 7,
           },
           {
             ["active"] = true,
-            ["name"] = "product_name",
+            ["name"] = "productName",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 8,
           },
           {
             ["active"] = true,
-            ["name"] = "response_code",
+            ["name"] = "responseCode",
             ["req"] = true,
             ["type"] = "`$INTEGER`",
             ["index$"] = 9,
           },
           {
             ["active"] = true,
-            ["name"] = "response_message",
+            ["name"] = "responseMessage",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 10,
           },
           {
             ["active"] = true,
-            ["name"] = "terminal_template_name",
+            ["name"] = "terminalTemplateName",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 11,
           },
           {
             ["active"] = true,
-            ["name"] = "vendor_name",
+            ["name"] = "vendorName",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 12,
           },
           {
             ["active"] = true,
-            ["name"] = "xml_template_file",
+            ["name"] = "xmlTemplateFile",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 13,
@@ -2052,6 +2085,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/createNewProduct",
                 ["parts"] = {
@@ -2081,23 +2115,23 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "detail",
+            ["name"] = "batch",
             ["req"] = false,
             ["type"] = "`$OBJECT`",
             ["index$"] = 0,
           },
           {
             ["active"] = true,
-            ["name"] = "response_code",
-            ["req"] = true,
-            ["type"] = "`$INTEGER`",
+            ["name"] = "lines",
+            ["req"] = false,
+            ["type"] = "`$OBJECT`",
             ["index$"] = 1,
           },
           {
             ["active"] = true,
-            ["name"] = "response_message",
-            ["req"] = true,
-            ["type"] = "`$STRING`",
+            ["name"] = "progress",
+            ["req"] = false,
+            ["type"] = "`$OBJECT`",
             ["index$"] = 2,
           },
         },
@@ -2132,6 +2166,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/details/{id}",
                 ["parts"] = {
@@ -2165,7 +2200,7 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "item",
+            ["name"] = "items",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 0,
@@ -2185,14 +2220,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "response_code",
+            ["name"] = "responseCode",
             ["req"] = true,
             ["type"] = "`$INTEGER`",
             ["index$"] = 2,
           },
           {
             ["active"] = true,
-            ["name"] = "response_message",
+            ["name"] = "responseMessage",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 3,
@@ -2225,6 +2260,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/list",
                 ["parts"] = {
@@ -2256,14 +2292,14 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "response_code",
+            ["name"] = "responseCode",
             ["req"] = true,
             ["type"] = "`$INTEGER`",
             ["index$"] = 0,
           },
           {
             ["active"] = true,
-            ["name"] = "response_message",
+            ["name"] = "responseMessage",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 1,
@@ -2300,6 +2336,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}",
                 ["parts"] = {
@@ -2346,6 +2383,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}",
                 ["parts"] = {
@@ -2379,35 +2417,35 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "product_order_uui_d",
+            ["name"] = "productOrderUUIDs",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
             ["index$"] = 0,
           },
           {
             ["active"] = true,
-            ["name"] = "response_code",
+            ["name"] = "responseCode",
             ["req"] = true,
             ["type"] = "`$INTEGER`",
             ["index$"] = 1,
           },
           {
             ["active"] = true,
-            ["name"] = "response_message",
+            ["name"] = "responseMessage",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
           },
           {
             ["active"] = true,
-            ["name"] = "target_package_order_uuid",
+            ["name"] = "targetPackageOrderUUID",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 3,
           },
           {
             ["active"] = true,
-            ["name"] = "target_product_order_uuid",
+            ["name"] = "targetProductOrderUUID",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 4,
@@ -2433,6 +2471,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/moveTid",
                 ["parts"] = {
@@ -2462,28 +2501,28 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "package_uuid",
+            ["name"] = "packageUUID",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 0,
           },
           {
             ["active"] = true,
-            ["name"] = "product_uui_d",
+            ["name"] = "productUUIDs",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
             ["index$"] = 1,
           },
           {
             ["active"] = true,
-            ["name"] = "response_code",
+            ["name"] = "responseCode",
             ["req"] = true,
             ["type"] = "`$INTEGER`",
             ["index$"] = 2,
           },
           {
             ["active"] = true,
-            ["name"] = "response_message",
+            ["name"] = "responseMessage",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 3,
@@ -2509,6 +2548,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/removeProductsFromPackage",
                 ["parts"] = {
@@ -2545,14 +2585,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "response_code",
+            ["name"] = "responseCode",
             ["req"] = true,
             ["type"] = "`$INTEGER`",
             ["index$"] = 1,
           },
           {
             ["active"] = true,
-            ["name"] = "response_message",
+            ["name"] = "responseMessage",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -2578,6 +2618,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/start",
                 ["parts"] = {
@@ -2616,14 +2657,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "response_code",
+            ["name"] = "responseCode",
             ["req"] = true,
             ["type"] = "`$INTEGER`",
             ["index$"] = 1,
           },
           {
             ["active"] = true,
-            ["name"] = "response_message",
+            ["name"] = "responseMessage",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -2667,6 +2708,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/status/{id}",
                 ["parts"] = {
@@ -2700,91 +2742,91 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "allow_multiple_order",
+            ["name"] = "allowMultipleOrders",
             ["req"] = false,
             ["type"] = "`$BOOLEAN`",
             ["index$"] = 0,
           },
           {
             ["active"] = true,
-            ["name"] = "app_form_name",
+            ["name"] = "appFormName",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 1,
           },
           {
             ["active"] = true,
-            ["name"] = "contract_needed",
+            ["name"] = "contractNeeded",
             ["req"] = false,
             ["type"] = "`$BOOLEAN`",
             ["index$"] = 2,
           },
           {
             ["active"] = true,
-            ["name"] = "credentials_needed",
+            ["name"] = "credentialsNeeded",
             ["req"] = false,
             ["type"] = "`$BOOLEAN`",
             ["index$"] = 3,
           },
           {
             ["active"] = true,
-            ["name"] = "description_key",
+            ["name"] = "descriptionKey",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 4,
           },
           {
             ["active"] = true,
-            ["name"] = "name_key",
+            ["name"] = "nameKey",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 5,
           },
           {
             ["active"] = true,
-            ["name"] = "prescreening_allowed",
+            ["name"] = "prescreeningAllowed",
             ["req"] = false,
             ["type"] = "`$BOOLEAN`",
             ["index$"] = 6,
           },
           {
             ["active"] = true,
-            ["name"] = "product_name",
+            ["name"] = "productName",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 7,
           },
           {
             ["active"] = true,
-            ["name"] = "product_status",
+            ["name"] = "productStatus",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 8,
           },
           {
             ["active"] = true,
-            ["name"] = "product_uuid",
+            ["name"] = "productUUID",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 9,
           },
           {
             ["active"] = true,
-            ["name"] = "response_code",
+            ["name"] = "responseCode",
             ["req"] = true,
             ["type"] = "`$INTEGER`",
             ["index$"] = 10,
           },
           {
             ["active"] = true,
-            ["name"] = "response_message",
+            ["name"] = "responseMessage",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 11,
           },
           {
             ["active"] = true,
-            ["name"] = "vendor_name",
+            ["name"] = "vendorName",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 12,
@@ -2810,6 +2852,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/updateProduct",
                 ["parts"] = {

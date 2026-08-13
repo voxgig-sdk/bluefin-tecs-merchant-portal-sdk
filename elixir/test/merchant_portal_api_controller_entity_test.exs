@@ -31,7 +31,8 @@ defmodule BluefinTecsMerchantPortal.MerchantPortalApiControllerEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsMerchantPortal.test(S.jm(["entity", S.jm(["merchant_portal_api_controller", S.jm([])])]))
     ent = BluefinTecsMerchantPortal.merchant_portal_api_controller(sdk)
-    made = BluefinTecsMerchantPortal.Entity.MerchantPortalApiController.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsMerchantPortal.Entity.MerchantPortalApiController.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsMerchantPortal.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

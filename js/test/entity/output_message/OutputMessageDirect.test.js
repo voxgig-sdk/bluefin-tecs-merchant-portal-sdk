@@ -17,6 +17,10 @@ describe('OutputMessageDirect', async () => {
 
   test('direct-exists', async () => {
     const sdk = new BluefinTecsMerchantPortalSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -59,17 +63,17 @@ function directSetup(mockres) {
   const calls = []
 
   const env = envOverride({
-    'BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_MESSAGE_ENTID': {},
-    'BLUEFINTECSMERCHANTPORTAL_TEST_LIVE': 'FALSE',
+    'BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_MESSAGE_ENTID': {},
+    'BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.BLUEFINTECSMERCHANTPORTAL_TEST_LIVE
+  const live = 'TRUE' === env.BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE
 
   if (live) {
     const client = new BluefinTecsMerchantPortalSDK({
     })
 
-    let idmap = env['BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_MESSAGE_ENTID']
+    let idmap = env['BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_MESSAGE_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

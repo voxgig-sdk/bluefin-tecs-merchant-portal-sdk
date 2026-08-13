@@ -11,7 +11,7 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
       type: "`$OBJECT`"
     }
     {
-      name: "business_registration_number"
+      name: "businessRegistrationNumber"
       req: true
       type: "`$STRING`"
     }
@@ -21,12 +21,12 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
       type: "`$STRING`"
     }
     {
-      name: "company_name"
+      name: "companyName"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "corporate_uuid"
+      name: "corporateUUID"
       req: true
       type: "`$STRING`"
     }
@@ -61,12 +61,7 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
       type: "`$STRING`"
     }
     {
-      name: "merchant_category_code"
-      req: false
-      type: "`$STRING`"
-    }
-    {
-      name: "merchant_contract_number"
+      name: "merchantContractNumber"
       op: {
         create: {
           req: false
@@ -77,12 +72,17 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
       type: "`$STRING`"
     }
     {
-      name: "merchant_name"
+      name: "merchantName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "package_uuid"
+      name: "merchant_category_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "packageUUID"
       req: false
       type: "`$STRING`"
     }
@@ -92,12 +92,12 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
       type: "`$STRING`"
     }
     {
-      name: "phone_number"
+      name: "phoneNumber"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "postal_code"
+      name: "postalCode"
       req: false
       type: "`$STRING`"
     }
@@ -112,7 +112,7 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
       type: "`$STRING`"
     }
     {
-      name: "registration_number"
+      name: "registrationNumber"
       req: false
       type: "`$STRING`"
     }
@@ -127,7 +127,7 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
       type: "`$STRING`"
     }
     {
-      name: "terminal_id"
+      name: "terminalIds"
       req: false
       type: "`$ARRAY`"
     }

@@ -98,11 +98,11 @@ class OutputDetailDirectTest {
       val calls = mutableListOf<MutableMap<String, Any?>>()
 
       val envm = linkedMapOf<String, Any?>()
-      envm["BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_DETAIL_ENTID"] = linkedMapOf<String, Any?>()
-      envm["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"] = "FALSE"
+      envm["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_DETAIL_ENTID"] = linkedMapOf<String, Any?>()
+      envm["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"] = "FALSE"
       val env = RunnerSupport.envOverride(envm)
 
-      val live = "TRUE" == env["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"]
+      val live = "TRUE" == env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"]
 
       val setup = DirectSetup()
       setup.calls = calls
@@ -113,7 +113,7 @@ class OutputDetailDirectTest {
         setup.live = true
 
         var idmap: MutableMap<String, Any?> = linkedMapOf()
-        val entidRaw = env["BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_DETAIL_ENTID"]
+        val entidRaw = env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_DETAIL_ENTID"]
         if (entidRaw is String && entidRaw.startsWith("{")) {
           val parsed = Helpers.toMapAny(Json.parseOrNull(entidRaw))
           if (parsed != null) {

@@ -318,7 +318,7 @@ fmt.Println(merchantPortalPamContractController.GetName()) // "merchant_portal_p
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `language` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
+| `productOrderUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -329,7 +329,7 @@ Create a new entity with the given data.
 ```go
 result, err := client.MerchantPortalPamContractController(nil).Create(map[string]any{
     "language": "example_language",
-    "product_order_uuid": "example_product_order_uuid",
+    "productOrderUUID": "example_productOrderUUID",
 }, nil)
 if err != nil {
     panic(err)
@@ -372,9 +372,9 @@ fmt.Println(merchantPortalPamDocumentController.GetName()) // "merchant_portal_p
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_field_desc_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
+| `appFormFieldDescUUID` | `string` | Yes |  |
+| `packageOrderUUID` | `string` | No |  |
+| `productOrderUUID` | `string` | No |  |
 
 ### Operations
 
@@ -384,7 +384,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.MerchantPortalPamDocumentController(nil).Create(map[string]any{
-    "app_form_field_desc_uuid": "example_app_form_field_desc_uuid",
+    "appFormFieldDescUUID": "example_appFormFieldDescUUID",
 }, nil)
 if err != nil {
     panic(err)
@@ -427,29 +427,29 @@ fmt.Println(merchantPortalPamFormController.GetName()) // "merchant_portal_pam_f
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `string` | Yes |  |
+| `appFormFieldsDescUUID` | `string` | Yes |  |
 | `filter` | `map[string]any` | No |  |
 | `language` | `string` | Yes |  |
-| `package_order` | `map[string]any` | No |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `package_uuid` | `string` | No |  |
-| `product_order` | `[]any` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `reason_of_reopening` | `string` | Yes |  |
+| `packageOrder` | `map[string]any` | No |  |
+| `packageOrderUUID` | `string` | Yes |  |
+| `packageUUID` | `string` | No |  |
+| `productOrderUUID` | `string` | No |  |
+| `productOrders` | `[]any` | No |  |
+| `reasonOfReopening` | `string` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `app_form_fields_desc_uuid` | - |
+| `appFormFieldsDescUUID` | - |
 | `filter` | - |
 | `language` | Yes |
-| `package_order` | - |
-| `package_order_uuid` | Yes |
-| `package_uuid` | - |
-| `product_order` | - |
-| `product_order_uuid` | Yes |
-| `reason_of_reopening` | - |
+| `packageOrder` | - |
+| `packageOrderUUID` | Yes |
+| `packageUUID` | - |
+| `productOrderUUID` | Yes |
+| `productOrders` | - |
+| `reasonOfReopening` | - |
 
 ### Operations
 
@@ -459,10 +459,10 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.MerchantPortalPamFormController(nil).Create(map[string]any{
-    "app_form_fields_desc_uuid": "example_app_form_fields_desc_uuid",
+    "appFormFieldsDescUUID": "example_appFormFieldsDescUUID",
     "language": "example_language",
-    "package_order_uuid": "example_package_order_uuid",
-    "reason_of_reopening": "example_reason_of_reopening",
+    "packageOrderUUID": "example_packageOrderUUID",
+    "reasonOfReopening": "example_reasonOfReopening",
 }, nil)
 if err != nil {
     panic(err)
@@ -505,10 +505,10 @@ fmt.Println(merchantPortalPamMandatorController.GetName()) // "merchant_portal_p
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `string` | No |  |
-| `mandator_name` | `string` | Yes |  |
-| `notification_email` | `string` | No |  |
-| `package_uuid` | `string` | Yes |  |
+| `clientSecret` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `notificationEmail` | `string` | No |  |
+| `packageUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -518,8 +518,8 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.MerchantPortalPamMandatorController(nil).Create(map[string]any{
-    "mandator_name": "example_mandator_name",
-    "package_uuid": "example_package_uuid",
+    "mandatorName": "example_mandatorName",
+    "packageUUID": "example_packageUUID",
 }, nil)
 if err != nil {
     panic(err)
@@ -563,29 +563,29 @@ fmt.Println(merchantPortalPamMerchantController.GetName()) // "merchant_portal_p
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `additional_data` | `map[string]any` | No |  |
-| `business_registration_number` | `string` | Yes |  |
+| `businessRegistrationNumber` | `string` | Yes |  |
 | `city` | `string` | No |  |
-| `company_name` | `string` | Yes |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `companyName` | `string` | Yes |  |
+| `corporateUUID` | `string` | Yes |  |
 | `country` | `string` | No |  |
 | `currency` | `string` | Yes |  |
 | `email` | `string` | Yes |  |
 | `language` | `string` | Yes |  |
 | `login` | `string` | Yes |  |
 | `mandator` | `string` | Yes |  |
+| `merchantContractNumber` | `string` | Yes |  |
+| `merchantName` | `string` | No |  |
 | `merchant_category_code` | `string` | No |  |
-| `merchant_contract_number` | `string` | Yes |  |
-| `merchant_name` | `string` | No |  |
-| `package_uuid` | `string` | No |  |
+| `packageUUID` | `string` | No |  |
 | `packageorderuuid` | `string` | Yes |  |
-| `phone_number` | `string` | Yes |  |
-| `postal_code` | `string` | No |  |
+| `phoneNumber` | `string` | Yes |  |
+| `postalCode` | `string` | No |  |
 | `productid_acquirer` | `string` | Yes |  |
 | `region` | `string` | No |  |
-| `registration_number` | `string` | No |  |
+| `registrationNumber` | `string` | No |  |
 | `signature` | `string` | No |  |
 | `street` | `string` | No |  |
-| `terminal_id` | `[]any` | No |  |
+| `terminalIds` | `[]any` | No |  |
 | `terminalid_acquirer` | `string` | No |  |
 | `vu_nummer` | `string` | Yes |  |
 
@@ -594,29 +594,29 @@ fmt.Println(merchantPortalPamMerchantController.GetName()) // "merchant_portal_p
 | Field | create |
 | --- | --- |
 | `additional_data` | - |
-| `business_registration_number` | - |
+| `businessRegistrationNumber` | - |
 | `city` | - |
-| `company_name` | - |
-| `corporate_uuid` | - |
+| `companyName` | - |
+| `corporateUUID` | - |
 | `country` | - |
 | `currency` | - |
 | `email` | - |
 | `language` | - |
 | `login` | - |
 | `mandator` | - |
+| `merchantContractNumber` | Yes |
+| `merchantName` | - |
 | `merchant_category_code` | - |
-| `merchant_contract_number` | Yes |
-| `merchant_name` | - |
-| `package_uuid` | - |
+| `packageUUID` | - |
 | `packageorderuuid` | - |
-| `phone_number` | - |
-| `postal_code` | - |
+| `phoneNumber` | - |
+| `postalCode` | - |
 | `productid_acquirer` | - |
 | `region` | - |
-| `registration_number` | - |
+| `registrationNumber` | - |
 | `signature` | - |
 | `street` | - |
-| `terminal_id` | - |
+| `terminalIds` | - |
 | `terminalid_acquirer` | - |
 | `vu_nummer` | - |
 
@@ -628,17 +628,17 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.MerchantPortalPamMerchantController(nil).Create(map[string]any{
-    "business_registration_number": "example_business_registration_number",
-    "company_name": "example_company_name",
-    "corporate_uuid": "example_corporate_uuid",
+    "businessRegistrationNumber": "example_businessRegistrationNumber",
+    "companyName": "example_companyName",
+    "corporateUUID": "example_corporateUUID",
     "currency": "example_currency",
     "email": "example_email",
     "language": "example_language",
     "login": "example_login",
     "mandator": "example_mandator",
-    "merchant_contract_number": "example_merchant_contract_number",
+    "merchantContractNumber": "example_merchantContractNumber",
     "packageorderuuid": "example_packageorderuuid",
-    "phone_number": "example_phone_number",
+    "phoneNumber": "example_phoneNumber",
     "productid_acquirer": "example_productid_acquirer",
     "vu_nummer": "example_vu_nummer",
 }, nil)
@@ -683,15 +683,15 @@ fmt.Println(merchantPortalPamPackageController.GetName()) // "merchant_portal_pa
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
 | `country` | `string` | No |  |
-| `description_key` | `string` | No |  |
+| `descriptionKey` | `string` | No |  |
 | `filter` | `map[string]any` | No |  |
 | `language` | `string` | Yes |  |
-| `name_key` | `string` | No |  |
-| `package_status` | `string` | No |  |
-| `package_uuid` | `string` | Yes |  |
+| `nameKey` | `string` | No |  |
+| `packageStatus` | `string` | No |  |
+| `packageUUID` | `string` | Yes |  |
 | `pagination` | `map[string]any` | No |  |
 | `sorting` | `map[string]any` | No |  |
 
@@ -699,15 +699,15 @@ fmt.Println(merchantPortalPamPackageController.GetName()) // "merchant_portal_pa
 
 | Field | create |
 | --- | --- |
-| `consumer_uuid` | - |
-| `corporate_uuid` | - |
+| `consumerUUID` | - |
+| `corporateUUID` | - |
 | `country` | - |
-| `description_key` | - |
+| `descriptionKey` | - |
 | `filter` | - |
 | `language` | Yes |
-| `name_key` | - |
-| `package_status` | - |
-| `package_uuid` | - |
+| `nameKey` | - |
+| `packageStatus` | - |
+| `packageUUID` | - |
 | `pagination` | - |
 | `sorting` | - |
 
@@ -720,7 +720,7 @@ Create a new entity with the given data.
 ```go
 result, err := client.MerchantPortalPamPackageController(nil).Create(map[string]any{
     "language": "example_language",
-    "package_uuid": "example_package_uuid",
+    "packageUUID": "example_packageUUID",
 }, nil)
 if err != nil {
     panic(err)
@@ -763,14 +763,14 @@ fmt.Println(merchantPortalPamProductController.GetName()) // "merchant_portal_pa
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
 | `filter` | `map[string]any` | No |  |
 | `language` | `string` | No |  |
-| `merchant_id` | `string` | No |  |
-| `package_order_uuid` | `string` | Yes |  |
+| `merchantID` | `string` | No |  |
+| `packageOrderUUID` | `string` | Yes |  |
 | `pagination` | `map[string]any` | No |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `product_uuid` | `string` | Yes |  |
+| `productOrderUUID` | `string` | Yes |  |
+| `productUUID` | `string` | Yes |  |
 | `reason_decline` | `string` | Yes |  |
 | `sorting` | `map[string]any` | No |  |
 
@@ -782,9 +782,9 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.MerchantPortalPamProductController(nil).Create(map[string]any{
-    "package_order_uuid": "example_package_order_uuid",
-    "product_order_uuid": "example_product_order_uuid",
-    "product_uuid": "example_product_uuid",
+    "packageOrderUUID": "example_packageOrderUUID",
+    "productOrderUUID": "example_productOrderUUID",
+    "productUUID": "example_productUUID",
     "reason_decline": "example_reason_decline",
 }, nil)
 if err != nil {
@@ -828,10 +828,10 @@ fmt.Println(outputAddProduct.GetName()) // "output_add_product"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `string` | Yes |  |
-| `product_uui_d` | `[]any` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `packageUUID` | `string` | Yes |  |
+| `productUUIDs` | `[]any` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -841,10 +841,10 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.OutputAddProduct(nil).Create(map[string]any{
-    "package_uuid": "example_package_uuid",
-    "product_uui_d": []any{},
-    "response_code": 1,
-    "response_message": "example_response_message",
+    "packageUUID": "example_packageUUID",
+    "productUUIDs": []any{},
+    "responseCode": 1,
+    "responseMessage": "example_responseMessage",
 }, nil)
 if err != nil {
     panic(err)
@@ -887,20 +887,20 @@ fmt.Println(outputCreateProduct.GetName()) // "output_create_product"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `allow_multiple_order` | `bool` | Yes |  |
-| `app_form_template_name` | `string` | Yes |  |
-| `contract_needed` | `bool` | Yes |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `string` | Yes |  |
-| `name_key` | `string` | Yes |  |
-| `prescreening_allowed` | `bool` | Yes |  |
-| `product_name` | `string` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `terminal_template_name` | `string` | Yes |  |
-| `vendor_name` | `string` | Yes |  |
-| `xml_template_file` | `string` | Yes |  |
+| `acquirerId` | `string` | No |  |
+| `allowMultipleOrders` | `bool` | Yes |  |
+| `appFormTemplateName` | `string` | Yes |  |
+| `contractNeeded` | `bool` | Yes |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `string` | Yes |  |
+| `nameKey` | `string` | Yes |  |
+| `prescreeningAllowed` | `bool` | Yes |  |
+| `productName` | `string` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `terminalTemplateName` | `string` | Yes |  |
+| `vendorName` | `string` | Yes |  |
+| `xmlTemplateFile` | `string` | Yes |  |
 
 ### Operations
 
@@ -910,18 +910,18 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.OutputCreateProduct(nil).Create(map[string]any{
-    "allow_multiple_order": true,
-    "app_form_template_name": "example_app_form_template_name",
-    "contract_needed": true,
-    "description_key": "example_description_key",
-    "name_key": "example_name_key",
-    "prescreening_allowed": true,
-    "product_name": "example_product_name",
-    "response_code": 1,
-    "response_message": "example_response_message",
-    "terminal_template_name": "example_terminal_template_name",
-    "vendor_name": "example_vendor_name",
-    "xml_template_file": "example_xml_template_file",
+    "allowMultipleOrders": true,
+    "appFormTemplateName": "example_appFormTemplateName",
+    "contractNeeded": true,
+    "descriptionKey": "example_descriptionKey",
+    "nameKey": "example_nameKey",
+    "prescreeningAllowed": true,
+    "productName": "example_productName",
+    "responseCode": 1,
+    "responseMessage": "example_responseMessage",
+    "terminalTemplateName": "example_terminalTemplateName",
+    "vendorName": "example_vendorName",
+    "xmlTemplateFile": "example_xmlTemplateFile",
 }, nil)
 if err != nil {
     panic(err)
@@ -964,9 +964,9 @@ fmt.Println(outputDetail.GetName()) // "output_detail"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `detail` | `map[string]any` | No |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `batch` | `map[string]any` | No |  |
+| `lines` | `map[string]any` | No |  |
+| `progress` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -1017,20 +1017,20 @@ fmt.Println(outputList.GetName()) // "output_list"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `item` | `[]any` | No |  |
+| `items` | `[]any` | No |  |
 | `pagination` | `map[string]any` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 | `sorting` | `map[string]any` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `item` | - |
+| `items` | - |
 | `pagination` | Yes |
-| `response_code` | - |
-| `response_message` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
 | `sorting` | - |
 
 ### Operations
@@ -1042,8 +1042,8 @@ Create a new entity with the given data.
 ```go
 result, err := client.OutputList(nil).Create(map[string]any{
     "pagination": map[string]any{},
-    "response_code": 1,
-    "response_message": "example_response_message",
+    "responseCode": 1,
+    "responseMessage": "example_responseMessage",
 }, nil)
 if err != nil {
     panic(err)
@@ -1086,8 +1086,8 @@ fmt.Println(outputMessage.GetName()) // "output_message"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1138,11 +1138,11 @@ fmt.Println(outputMoveTid.GetName()) // "output_move_tid"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `product_order_uui_d` | `[]any` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `target_package_order_uuid` | `string` | Yes |  |
-| `target_product_order_uuid` | `string` | Yes |  |
+| `productOrderUUIDs` | `[]any` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `targetPackageOrderUUID` | `string` | Yes |  |
+| `targetProductOrderUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -1152,11 +1152,11 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.OutputMoveTid(nil).Create(map[string]any{
-    "product_order_uui_d": []any{},
-    "response_code": 1,
-    "response_message": "example_response_message",
-    "target_package_order_uuid": "example_target_package_order_uuid",
-    "target_product_order_uuid": "example_target_product_order_uuid",
+    "productOrderUUIDs": []any{},
+    "responseCode": 1,
+    "responseMessage": "example_responseMessage",
+    "targetPackageOrderUUID": "example_targetPackageOrderUUID",
+    "targetProductOrderUUID": "example_targetProductOrderUUID",
 }, nil)
 if err != nil {
     panic(err)
@@ -1199,10 +1199,10 @@ fmt.Println(outputRemoveProduct.GetName()) // "output_remove_product"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `string` | Yes |  |
-| `product_uui_d` | `[]any` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `packageUUID` | `string` | Yes |  |
+| `productUUIDs` | `[]any` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1212,10 +1212,10 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.OutputRemoveProduct(nil).Create(map[string]any{
-    "package_uuid": "example_package_uuid",
-    "product_uui_d": []any{},
-    "response_code": 1,
-    "response_message": "example_response_message",
+    "packageUUID": "example_packageUUID",
+    "productUUIDs": []any{},
+    "responseCode": 1,
+    "responseMessage": "example_responseMessage",
 }, nil)
 if err != nil {
     panic(err)
@@ -1259,8 +1259,8 @@ fmt.Println(outputStart.GetName()) // "output_start"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `string` | No |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1270,8 +1270,8 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.OutputStart(nil).Create(map[string]any{
-    "response_code": 1,
-    "response_message": "example_response_message",
+    "responseCode": 1,
+    "responseMessage": "example_responseMessage",
 }, nil)
 if err != nil {
     panic(err)
@@ -1315,8 +1315,8 @@ fmt.Println(outputStatus.GetName()) // "output_status"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `int` | No |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 | `status` | `string` | No |  |
 
 ### Operations
@@ -1368,19 +1368,19 @@ fmt.Println(outputUpdateProduct.GetName()) // "output_update_product"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allow_multiple_order` | `bool` | No |  |
-| `app_form_name` | `string` | No |  |
-| `contract_needed` | `bool` | No |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `string` | No |  |
-| `name_key` | `string` | No |  |
-| `prescreening_allowed` | `bool` | No |  |
-| `product_name` | `string` | No |  |
-| `product_status` | `string` | No |  |
-| `product_uuid` | `string` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `vendor_name` | `string` | No |  |
+| `allowMultipleOrders` | `bool` | No |  |
+| `appFormName` | `string` | No |  |
+| `contractNeeded` | `bool` | No |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `string` | No |  |
+| `nameKey` | `string` | No |  |
+| `prescreeningAllowed` | `bool` | No |  |
+| `productName` | `string` | No |  |
+| `productStatus` | `string` | No |  |
+| `productUUID` | `string` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `vendorName` | `string` | No |  |
 
 ### Operations
 
@@ -1390,9 +1390,9 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.OutputUpdateProduct(nil).Create(map[string]any{
-    "product_uuid": "example_product_uuid",
-    "response_code": 1,
-    "response_message": "example_response_message",
+    "productUUID": "example_productUUID",
+    "responseCode": 1,
+    "responseMessage": "example_responseMessage",
 }, nil)
 if err != nil {
     panic(err)

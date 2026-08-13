@@ -34,7 +34,7 @@ $client = new BluefinTecsMerchantPortalSDK();
 ### 4. Create, update, and remove
 
 ```php
-// create() returns the bare created MerchantPortalApiController record.
+// create() returns the ENTITY — call data_get() for the created MerchantPortalApiController record.
 $created = $client->MerchantPortalApiController()->create(["business_reg_number" => "example_business_reg_number", "city" => "example_city", "country" => "example_country", "currency" => "example_currency", "merchant_category_code" => 1, "merchant_name" => "example_merchant_name", "packageid" => "example_packageid", "packageorderuuid" => "example_packageorderuuid", "reason_deactivation" => "example_reason_deactivation", "reason_reactivation" => "example_reason_reactivation", "street" => "example_street", "terminal_country_code" => "example_terminal_country_code", "terminal_language_code" => "example_terminal_language_code", "terminal_location" => "example_terminal_location", "terminal_serial_number" => "example_terminal_serial_number", "terminalid" => 1, "vu_nummer" => "example_vu_nummer", "zipcode" => "example_zipcode"]);
 
 ```
@@ -122,7 +122,8 @@ $client = BluefinTecsMerchantPortalSDK::test([
     "entity" => ["outputdetail" => ["test01" => ["id" => "test01"]]],
 ]);
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $outputdetail = $client->OutputDetail()->load(["id" => "test01"]);
 print_r($outputdetail);
 ```
@@ -240,7 +241,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -314,7 +315,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -324,9 +325,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -336,15 +337,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: Create.
 
@@ -354,10 +355,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: Create.
 
@@ -368,29 +369,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -402,15 +403,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -422,14 +423,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -441,10 +442,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -454,20 +455,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: Create.
 
@@ -477,9 +478,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: Load.
 
@@ -489,10 +490,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -503,8 +504,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -514,11 +515,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: Create.
 
@@ -528,10 +529,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -542,8 +543,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -554,8 +555,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Load.
@@ -566,19 +567,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: Create.
 
@@ -676,7 +677,7 @@ Create an instance: `$merchant_portal_common_controller = $client->MerchantPorta
 #### Example: Load
 
 ```php
-// load() returns the bare MerchantPortalCommonController record (throws on error).
+// load() returns the ENTITY — call data_get() for the MerchantPortalCommonController record (throws on error).
 $merchant_portal_common_controller = $client->MerchantPortalCommonController()->load();
 ```
 
@@ -696,14 +697,14 @@ Create an instance: `$merchant_portal_pam_contract_controller = $client->Merchan
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```php
 $merchant_portal_pam_contract_controller = $client->MerchantPortalPamContractController()->create([
     "language" => null, // string
-    "product_order_uuid" => null, // string
+    "productOrderUUID" => null, // string
 ]);
 ```
 
@@ -722,15 +723,15 @@ Create an instance: `$merchant_portal_pam_document_controller = $client->Merchan
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `appFormFieldDescUUID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```php
 $merchant_portal_pam_document_controller = $client->MerchantPortalPamDocumentController()->create([
-    "app_form_field_desc_uuid" => null, // string
+    "appFormFieldDescUUID" => null, // string
 ]);
 ```
 
@@ -749,24 +750,24 @@ Create an instance: `$merchant_portal_pam_form_controller = $client->MerchantPor
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `string` |  |
+| `appFormFieldsDescUUID` | `string` |  |
 | `filter` | `array` |  |
 | `language` | `string` |  |
-| `package_order` | `array` |  |
-| `package_order_uuid` | `string` |  |
-| `package_uuid` | `string` |  |
-| `product_order` | `array` |  |
-| `product_order_uuid` | `string` |  |
-| `reason_of_reopening` | `string` |  |
+| `packageOrder` | `array` |  |
+| `packageOrderUUID` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productOrders` | `array` |  |
+| `reasonOfReopening` | `string` |  |
 
 #### Example: Create
 
 ```php
 $merchant_portal_pam_form_controller = $client->MerchantPortalPamFormController()->create([
-    "app_form_fields_desc_uuid" => null, // string
+    "appFormFieldsDescUUID" => null, // string
     "language" => null, // string
-    "package_order_uuid" => null, // string
-    "reason_of_reopening" => null, // string
+    "packageOrderUUID" => null, // string
+    "reasonOfReopening" => null, // string
 ]);
 ```
 
@@ -785,17 +786,17 @@ Create an instance: `$merchant_portal_pam_mandator_controller = $client->Merchan
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `string` |  |
-| `mandator_name` | `string` |  |
-| `notification_email` | `string` |  |
-| `package_uuid` | `string` |  |
+| `clientSecret` | `string` |  |
+| `mandatorName` | `string` |  |
+| `notificationEmail` | `string` |  |
+| `packageUUID` | `string` |  |
 
 #### Example: Create
 
 ```php
 $merchant_portal_pam_mandator_controller = $client->MerchantPortalPamMandatorController()->create([
-    "mandator_name" => null, // string
-    "package_uuid" => null, // string
+    "mandatorName" => null, // string
+    "packageUUID" => null, // string
 ]);
 ```
 
@@ -815,29 +816,29 @@ Create an instance: `$merchant_portal_pam_merchant_controller = $client->Merchan
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `array` |  |
-| `business_registration_number` | `string` |  |
+| `businessRegistrationNumber` | `string` |  |
 | `city` | `string` |  |
-| `company_name` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `companyName` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
 | `currency` | `string` |  |
 | `email` | `string` |  |
 | `language` | `string` |  |
 | `login` | `string` |  |
 | `mandator` | `string` |  |
+| `merchantContractNumber` | `string` |  |
+| `merchantName` | `string` |  |
 | `merchant_category_code` | `string` |  |
-| `merchant_contract_number` | `string` |  |
-| `merchant_name` | `string` |  |
-| `package_uuid` | `string` |  |
+| `packageUUID` | `string` |  |
 | `packageorderuuid` | `string` |  |
-| `phone_number` | `string` |  |
-| `postal_code` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `postalCode` | `string` |  |
 | `productid_acquirer` | `string` |  |
 | `region` | `string` |  |
-| `registration_number` | `string` |  |
+| `registrationNumber` | `string` |  |
 | `signature` | `string` |  |
 | `street` | `string` |  |
-| `terminal_id` | `array` |  |
+| `terminalIds` | `array` |  |
 | `terminalid_acquirer` | `string` |  |
 | `vu_nummer` | `string` |  |
 
@@ -845,17 +846,17 @@ Create an instance: `$merchant_portal_pam_merchant_controller = $client->Merchan
 
 ```php
 $merchant_portal_pam_merchant_controller = $client->MerchantPortalPamMerchantController()->create([
-    "business_registration_number" => null, // string
-    "company_name" => null, // string
-    "corporate_uuid" => null, // string
+    "businessRegistrationNumber" => null, // string
+    "companyName" => null, // string
+    "corporateUUID" => null, // string
     "currency" => null, // string
     "email" => null, // string
     "language" => null, // string
     "login" => null, // string
     "mandator" => null, // string
-    "merchant_contract_number" => null, // string
+    "merchantContractNumber" => null, // string
     "packageorderuuid" => null, // string
-    "phone_number" => null, // string
+    "phoneNumber" => null, // string
     "productid_acquirer" => null, // string
     "vu_nummer" => null, // string
 ]);
@@ -876,15 +877,15 @@ Create an instance: `$merchant_portal_pam_package_controller = $client->Merchant
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
-| `description_key` | `string` |  |
+| `descriptionKey` | `string` |  |
 | `filter` | `array` |  |
 | `language` | `string` |  |
-| `name_key` | `string` |  |
-| `package_status` | `string` |  |
-| `package_uuid` | `string` |  |
+| `nameKey` | `string` |  |
+| `packageStatus` | `string` |  |
+| `packageUUID` | `string` |  |
 | `pagination` | `array` |  |
 | `sorting` | `array` |  |
 
@@ -893,7 +894,7 @@ Create an instance: `$merchant_portal_pam_package_controller = $client->Merchant
 ```php
 $merchant_portal_pam_package_controller = $client->MerchantPortalPamPackageController()->create([
     "language" => null, // string
-    "package_uuid" => null, // string
+    "packageUUID" => null, // string
 ]);
 ```
 
@@ -912,14 +913,14 @@ Create an instance: `$merchant_portal_pam_product_controller = $client->Merchant
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
 | `filter` | `array` |  |
 | `language` | `string` |  |
-| `merchant_id` | `string` |  |
-| `package_order_uuid` | `string` |  |
+| `merchantID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
 | `pagination` | `array` |  |
-| `product_order_uuid` | `string` |  |
-| `product_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productUUID` | `string` |  |
 | `reason_decline` | `string` |  |
 | `sorting` | `array` |  |
 
@@ -927,9 +928,9 @@ Create an instance: `$merchant_portal_pam_product_controller = $client->Merchant
 
 ```php
 $merchant_portal_pam_product_controller = $client->MerchantPortalPamProductController()->create([
-    "package_order_uuid" => null, // string
-    "product_order_uuid" => null, // string
-    "product_uuid" => null, // string
+    "packageOrderUUID" => null, // string
+    "productOrderUUID" => null, // string
+    "productUUID" => null, // string
     "reason_decline" => null, // string
 ]);
 ```
@@ -949,19 +950,19 @@ Create an instance: `$output_add_product = $client->OutputAddProduct();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `array` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `array` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```php
 $output_add_product = $client->OutputAddProduct()->create([
-    "package_uuid" => null, // string
-    "product_uui_d" => null, // array
-    "response_code" => null, // int
-    "response_message" => null, // string
+    "packageUUID" => null, // string
+    "productUUIDs" => null, // array
+    "responseCode" => null, // int
+    "responseMessage" => null, // string
 ]);
 ```
 
@@ -980,37 +981,37 @@ Create an instance: `$output_create_product = $client->OutputCreateProduct();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `string` |  |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_template_name` | `string` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_template_name` | `string` |  |
-| `vendor_name` | `string` |  |
-| `xml_template_file` | `string` |  |
+| `acquirerId` | `string` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormTemplateName` | `string` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalTemplateName` | `string` |  |
+| `vendorName` | `string` |  |
+| `xmlTemplateFile` | `string` |  |
 
 #### Example: Create
 
 ```php
 $output_create_product = $client->OutputCreateProduct()->create([
-    "allow_multiple_order" => null, // bool
-    "app_form_template_name" => null, // string
-    "contract_needed" => null, // bool
-    "description_key" => null, // string
-    "name_key" => null, // string
-    "prescreening_allowed" => null, // bool
-    "product_name" => null, // string
-    "response_code" => null, // int
-    "response_message" => null, // string
-    "terminal_template_name" => null, // string
-    "vendor_name" => null, // string
-    "xml_template_file" => null, // string
+    "allowMultipleOrders" => null, // bool
+    "appFormTemplateName" => null, // string
+    "contractNeeded" => null, // bool
+    "descriptionKey" => null, // string
+    "nameKey" => null, // string
+    "prescreeningAllowed" => null, // bool
+    "productName" => null, // string
+    "responseCode" => null, // int
+    "responseMessage" => null, // string
+    "terminalTemplateName" => null, // string
+    "vendorName" => null, // string
+    "xmlTemplateFile" => null, // string
 ]);
 ```
 
@@ -1029,14 +1030,14 @@ Create an instance: `$output_detail = $client->OutputDetail();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `array` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `batch` | `array` |  |
+| `lines` | `array` |  |
+| `progress` | `array` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare OutputDetail record (throws on error).
+// load() returns the ENTITY — call data_get() for the OutputDetail record (throws on error).
 $output_detail = $client->OutputDetail()->load(["id" => "output_detail_id"]);
 ```
 
@@ -1055,10 +1056,10 @@ Create an instance: `$output_list = $client->OutputList();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `array` |  |
+| `items` | `array` |  |
 | `pagination` | `array` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `array` |  |
 
 #### Example: Create
@@ -1066,8 +1067,8 @@ Create an instance: `$output_list = $client->OutputList();`
 ```php
 $output_list = $client->OutputList()->create([
     "pagination" => null, // array
-    "response_code" => null, // int
-    "response_message" => null, // string
+    "responseCode" => null, // int
+    "responseMessage" => null, // string
 ]);
 ```
 
@@ -1086,13 +1087,13 @@ Create an instance: `$output_message = $client->OutputMessage();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare OutputMessage record (throws on error).
+// load() returns the ENTITY — call data_get() for the OutputMessage record (throws on error).
 $output_message = $client->OutputMessage()->load(["id" => "output_message_id"]);
 ```
 
@@ -1111,21 +1112,21 @@ Create an instance: `$output_move_tid = $client->OutputMoveTid();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `array` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `target_package_order_uuid` | `string` |  |
-| `target_product_order_uuid` | `string` |  |
+| `productOrderUUIDs` | `array` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `targetPackageOrderUUID` | `string` |  |
+| `targetProductOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```php
 $output_move_tid = $client->OutputMoveTid()->create([
-    "product_order_uui_d" => null, // array
-    "response_code" => null, // int
-    "response_message" => null, // string
-    "target_package_order_uuid" => null, // string
-    "target_product_order_uuid" => null, // string
+    "productOrderUUIDs" => null, // array
+    "responseCode" => null, // int
+    "responseMessage" => null, // string
+    "targetPackageOrderUUID" => null, // string
+    "targetProductOrderUUID" => null, // string
 ]);
 ```
 
@@ -1144,19 +1145,19 @@ Create an instance: `$output_remove_product = $client->OutputRemoveProduct();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `array` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `array` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```php
 $output_remove_product = $client->OutputRemoveProduct()->create([
-    "package_uuid" => null, // string
-    "product_uui_d" => null, // array
-    "response_code" => null, // int
-    "response_message" => null, // string
+    "packageUUID" => null, // string
+    "productUUIDs" => null, // array
+    "responseCode" => null, // int
+    "responseMessage" => null, // string
 ]);
 ```
 
@@ -1176,15 +1177,15 @@ Create an instance: `$output_start = $client->OutputStart();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```php
 $output_start = $client->OutputStart()->create([
-    "response_code" => null, // int
-    "response_message" => null, // string
+    "responseCode" => null, // int
+    "responseMessage" => null, // string
 ]);
 ```
 
@@ -1204,14 +1205,14 @@ Create an instance: `$output_status = $client->OutputStatus();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `int` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `status` | `string` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare OutputStatus record (throws on error).
+// load() returns the ENTITY — call data_get() for the OutputStatus record (throws on error).
 $output_status = $client->OutputStatus()->load(["id" => "output_status_id"]);
 ```
 
@@ -1230,27 +1231,27 @@ Create an instance: `$output_update_product = $client->OutputUpdateProduct();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_name` | `string` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `string` |  |
-| `product_status` | `string` |  |
-| `product_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `vendor_name` | `string` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormName` | `string` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `string` |  |
+| `productStatus` | `string` |  |
+| `productUUID` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `vendorName` | `string` |  |
 
 #### Example: Create
 
 ```php
 $output_update_product = $client->OutputUpdateProduct()->create([
-    "product_uuid" => null, // string
-    "response_code" => null, // int
-    "response_message" => null, // string
+    "productUUID" => null, // string
+    "responseCode" => null, // int
+    "responseMessage" => null, // string
 ]);
 ```
 

@@ -3,26 +3,26 @@
     "output_start": {
       "OUTPUT_START00": {
         "id": "OUTPUT_START00",
-        "response_code": "s1f",
-        "response_message": "s20"
+        "responseCode": "s1f",
+        "responseMessage": "s20"
       },
       "OUTPUT_START01": {
         "id": "OUTPUT_START01",
-        "response_code": "s3d",
-        "response_message": "s3e"
+        "responseCode": "s3d",
+        "responseMessage": "s3e"
       },
       "OUTPUT_START02": {
         "id": "OUTPUT_START02",
-        "response_code": "s5b",
-        "response_message": "s5c"
+        "responseCode": "s5b",
+        "responseMessage": "s5c"
       }
     }
   },
   "new": {
     "output_start": {
       "output_start_ref01": {
-        "response_code": "s79",
-        "response_message": "s7a"
+        "responseCode": "s79",
+        "responseMessage": "s7a"
       }
     }
   }

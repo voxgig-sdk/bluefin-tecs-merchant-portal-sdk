@@ -47,7 +47,7 @@ public class OutputStatusEntityTest {
     // The basic flow consumes synthetic IDs from the fixture. In live mode
     // without an *_ENTID env override, those IDs hit the live API and 4xx.
     Assumptions.assumeFalse(setup.syntheticOnly,
-        "live entity test uses synthetic IDs from fixture — set BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_STATUS_ENTID JSON to run live");
+        "live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_STATUS_ENTID JSON to run live");
     BluefinTecsMerchantPortalSDK client = setup.client;
 
     // Bootstrap entity data from existing test data (no create step in flow).
@@ -97,22 +97,22 @@ public class OutputStatusEntityTest {
     // mode is on without a real override, the basic test runs against
     // synthetic IDs from the fixture and 4xx's. Surface this so the test
     // can skip.
-    String entidEnvRaw = RunnerSupport.getenv("BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_STATUS_ENTID");
+    String entidEnvRaw = RunnerSupport.getenv("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_STATUS_ENTID");
     boolean idmapOverridden = entidEnvRaw != null
         && entidEnvRaw.trim().startsWith("{");
 
     Map<String, Object> envm = new LinkedHashMap<>();
-    envm.put("BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_STATUS_ENTID", idmap);
-    envm.put("BLUEFINTECSMERCHANTPORTAL_TEST_LIVE", "FALSE");
-    envm.put("BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN", "FALSE");
+    envm.put("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_STATUS_ENTID", idmap);
+    envm.put("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE", "FALSE");
+    envm.put("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN", "FALSE");
     Map<String, Object> env = RunnerSupport.envOverride(envm);
 
-    Map<String, Object> idmapResolved = Helpers.toMapAny(env.get("BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_STATUS_ENTID"));
+    Map<String, Object> idmapResolved = Helpers.toMapAny(env.get("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_STATUS_ENTID"));
     if (idmapResolved == null) {
       idmapResolved = Helpers.toMapAny(idmap);
     }
 
-    boolean live = "TRUE".equals(env.get("BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"));
+    boolean live = "TRUE".equals(env.get("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"));
     if (live) {
       Map<String, Object> liveOpts = new LinkedHashMap<>();
       Object mergedOpts = Struct.merge(Struct.jt(liveOpts, extra));
@@ -124,7 +124,7 @@ public class OutputStatusEntityTest {
     setup.data = entityData;
     setup.idmap = idmapResolved;
     setup.env = env;
-    setup.explain = "TRUE".equals(env.get("BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN"));
+    setup.explain = "TRUE".equals(env.get("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN"));
     setup.live = live;
     setup.syntheticOnly = live && !idmapOverridden;
     setup.now = System.currentTimeMillis();

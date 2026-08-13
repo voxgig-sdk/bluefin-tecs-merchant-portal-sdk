@@ -518,16 +518,16 @@ class MerchantPortalPamContractController {
   /// STRING (required at the API)
   String? language;
   /// STRING (required at the API)
-  String? product_order_uuid;
+  String? productOrderUUID;
 
   MerchantPortalPamContractController({
     this.language,
-    this.product_order_uuid,
+    this.productOrderUUID,
   });
 
   factory MerchantPortalPamContractController.fromMap(Map<String, dynamic> m) => MerchantPortalPamContractController(
         language: m['language'] is String ? m['language'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
+        productOrderUUID: m['productOrderUUID'] is String ? m['productOrderUUID'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -535,8 +535,8 @@ class MerchantPortalPamContractController {
     if (null != language) {
       m['language'] = language;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUUID) {
+      m['productOrderUUID'] = productOrderUUID;
     }
     return m;
   }
@@ -546,16 +546,16 @@ class MerchantPortalPamContractControllerCreateData {
   /// STRING (required at the API)
   String? language;
   /// STRING (required at the API)
-  String? product_order_uuid;
+  String? productOrderUUID;
 
   MerchantPortalPamContractControllerCreateData({
     this.language,
-    this.product_order_uuid,
+    this.productOrderUUID,
   });
 
   factory MerchantPortalPamContractControllerCreateData.fromMap(Map<String, dynamic> m) => MerchantPortalPamContractControllerCreateData(
         language: m['language'] is String ? m['language'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
+        productOrderUUID: m['productOrderUUID'] is String ? m['productOrderUUID'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -563,8 +563,8 @@ class MerchantPortalPamContractControllerCreateData {
     if (null != language) {
       m['language'] = language;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUUID) {
+      m['productOrderUUID'] = productOrderUUID;
     }
     return m;
   }
@@ -572,34 +572,34 @@ class MerchantPortalPamContractControllerCreateData {
 
 class MerchantPortalPamDocumentController {
   /// STRING (required at the API)
-  String? app_form_field_desc_uuid;
+  String? appFormFieldDescUUID;
   /// STRING
-  String? package_order_uuid;
+  String? packageOrderUUID;
   /// STRING
-  String? product_order_uuid;
+  String? productOrderUUID;
 
   MerchantPortalPamDocumentController({
-    this.app_form_field_desc_uuid,
-    this.package_order_uuid,
-    this.product_order_uuid,
+    this.appFormFieldDescUUID,
+    this.packageOrderUUID,
+    this.productOrderUUID,
   });
 
   factory MerchantPortalPamDocumentController.fromMap(Map<String, dynamic> m) => MerchantPortalPamDocumentController(
-        app_form_field_desc_uuid: m['app_form_field_desc_uuid'] is String ? m['app_form_field_desc_uuid'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
+        appFormFieldDescUUID: m['appFormFieldDescUUID'] is String ? m['appFormFieldDescUUID'] : null,
+        packageOrderUUID: m['packageOrderUUID'] is String ? m['packageOrderUUID'] : null,
+        productOrderUUID: m['productOrderUUID'] is String ? m['productOrderUUID'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != app_form_field_desc_uuid) {
-      m['app_form_field_desc_uuid'] = app_form_field_desc_uuid;
+    if (null != appFormFieldDescUUID) {
+      m['appFormFieldDescUUID'] = appFormFieldDescUUID;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUUID) {
+      m['packageOrderUUID'] = packageOrderUUID;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUUID) {
+      m['productOrderUUID'] = productOrderUUID;
     }
     return m;
   }
@@ -607,34 +607,34 @@ class MerchantPortalPamDocumentController {
 
 class MerchantPortalPamDocumentControllerCreateData {
   /// STRING (required at the API)
-  String? app_form_field_desc_uuid;
+  String? appFormFieldDescUUID;
   /// STRING
-  String? package_order_uuid;
+  String? packageOrderUUID;
   /// STRING
-  String? product_order_uuid;
+  String? productOrderUUID;
 
   MerchantPortalPamDocumentControllerCreateData({
-    this.app_form_field_desc_uuid,
-    this.package_order_uuid,
-    this.product_order_uuid,
+    this.appFormFieldDescUUID,
+    this.packageOrderUUID,
+    this.productOrderUUID,
   });
 
   factory MerchantPortalPamDocumentControllerCreateData.fromMap(Map<String, dynamic> m) => MerchantPortalPamDocumentControllerCreateData(
-        app_form_field_desc_uuid: m['app_form_field_desc_uuid'] is String ? m['app_form_field_desc_uuid'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
+        appFormFieldDescUUID: m['appFormFieldDescUUID'] is String ? m['appFormFieldDescUUID'] : null,
+        packageOrderUUID: m['packageOrderUUID'] is String ? m['packageOrderUUID'] : null,
+        productOrderUUID: m['productOrderUUID'] is String ? m['productOrderUUID'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != app_form_field_desc_uuid) {
-      m['app_form_field_desc_uuid'] = app_form_field_desc_uuid;
+    if (null != appFormFieldDescUUID) {
+      m['appFormFieldDescUUID'] = appFormFieldDescUUID;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUUID) {
+      m['packageOrderUUID'] = packageOrderUUID;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUUID) {
+      m['productOrderUUID'] = productOrderUUID;
     }
     return m;
   }
@@ -642,52 +642,52 @@ class MerchantPortalPamDocumentControllerCreateData {
 
 class MerchantPortalPamFormController {
   /// STRING (required at the API)
-  String? app_form_fields_desc_uuid;
+  String? appFormFieldsDescUUID;
   /// OBJECT
   Map<String, dynamic>? filter;
   /// STRING (required at the API)
   String? language;
   /// OBJECT
-  Map<String, dynamic>? package_order;
+  Map<String, dynamic>? packageOrder;
   /// STRING (required at the API)
-  String? package_order_uuid;
+  String? packageOrderUUID;
   /// STRING
-  String? package_uuid;
+  String? packageUUID;
+  /// STRING
+  String? productOrderUUID;
   /// ARRAY
-  List<dynamic>? product_order;
-  /// STRING
-  String? product_order_uuid;
+  List<dynamic>? productOrders;
   /// STRING (required at the API)
-  String? reason_of_reopening;
+  String? reasonOfReopening;
 
   MerchantPortalPamFormController({
-    this.app_form_fields_desc_uuid,
+    this.appFormFieldsDescUUID,
     this.filter,
     this.language,
-    this.package_order,
-    this.package_order_uuid,
-    this.package_uuid,
-    this.product_order,
-    this.product_order_uuid,
-    this.reason_of_reopening,
+    this.packageOrder,
+    this.packageOrderUUID,
+    this.packageUUID,
+    this.productOrderUUID,
+    this.productOrders,
+    this.reasonOfReopening,
   });
 
   factory MerchantPortalPamFormController.fromMap(Map<String, dynamic> m) => MerchantPortalPamFormController(
-        app_form_fields_desc_uuid: m['app_form_fields_desc_uuid'] is String ? m['app_form_fields_desc_uuid'] : null,
+        appFormFieldsDescUUID: m['appFormFieldsDescUUID'] is String ? m['appFormFieldsDescUUID'] : null,
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
         language: m['language'] is String ? m['language'] : null,
-        package_order: m['package_order'] is Map<String, dynamic> ? m['package_order'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
-        package_uuid: m['package_uuid'] is String ? m['package_uuid'] : null,
-        product_order: m['product_order'] is List<dynamic> ? m['product_order'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
-        reason_of_reopening: m['reason_of_reopening'] is String ? m['reason_of_reopening'] : null,
+        packageOrder: m['packageOrder'] is Map<String, dynamic> ? m['packageOrder'] : null,
+        packageOrderUUID: m['packageOrderUUID'] is String ? m['packageOrderUUID'] : null,
+        packageUUID: m['packageUUID'] is String ? m['packageUUID'] : null,
+        productOrderUUID: m['productOrderUUID'] is String ? m['productOrderUUID'] : null,
+        productOrders: m['productOrders'] is List<dynamic> ? m['productOrders'] : null,
+        reasonOfReopening: m['reasonOfReopening'] is String ? m['reasonOfReopening'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != app_form_fields_desc_uuid) {
-      m['app_form_fields_desc_uuid'] = app_form_fields_desc_uuid;
+    if (null != appFormFieldsDescUUID) {
+      m['appFormFieldsDescUUID'] = appFormFieldsDescUUID;
     }
     if (null != filter) {
       m['filter'] = filter;
@@ -695,23 +695,23 @@ class MerchantPortalPamFormController {
     if (null != language) {
       m['language'] = language;
     }
-    if (null != package_order) {
-      m['package_order'] = package_order;
+    if (null != packageOrder) {
+      m['packageOrder'] = packageOrder;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUUID) {
+      m['packageOrderUUID'] = packageOrderUUID;
     }
-    if (null != package_uuid) {
-      m['package_uuid'] = package_uuid;
+    if (null != packageUUID) {
+      m['packageUUID'] = packageUUID;
     }
-    if (null != product_order) {
-      m['product_order'] = product_order;
+    if (null != productOrderUUID) {
+      m['productOrderUUID'] = productOrderUUID;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrders) {
+      m['productOrders'] = productOrders;
     }
-    if (null != reason_of_reopening) {
-      m['reason_of_reopening'] = reason_of_reopening;
+    if (null != reasonOfReopening) {
+      m['reasonOfReopening'] = reasonOfReopening;
     }
     return m;
   }
@@ -719,52 +719,52 @@ class MerchantPortalPamFormController {
 
 class MerchantPortalPamFormControllerCreateData {
   /// STRING (required at the API)
-  String? app_form_fields_desc_uuid;
+  String? appFormFieldsDescUUID;
   /// OBJECT
   Map<String, dynamic>? filter;
   /// STRING (required at the API)
   String? language;
   /// OBJECT
-  Map<String, dynamic>? package_order;
+  Map<String, dynamic>? packageOrder;
   /// STRING (required at the API)
-  String? package_order_uuid;
+  String? packageOrderUUID;
   /// STRING
-  String? package_uuid;
+  String? packageUUID;
+  /// STRING
+  String? productOrderUUID;
   /// ARRAY
-  List<dynamic>? product_order;
-  /// STRING
-  String? product_order_uuid;
+  List<dynamic>? productOrders;
   /// STRING (required at the API)
-  String? reason_of_reopening;
+  String? reasonOfReopening;
 
   MerchantPortalPamFormControllerCreateData({
-    this.app_form_fields_desc_uuid,
+    this.appFormFieldsDescUUID,
     this.filter,
     this.language,
-    this.package_order,
-    this.package_order_uuid,
-    this.package_uuid,
-    this.product_order,
-    this.product_order_uuid,
-    this.reason_of_reopening,
+    this.packageOrder,
+    this.packageOrderUUID,
+    this.packageUUID,
+    this.productOrderUUID,
+    this.productOrders,
+    this.reasonOfReopening,
   });
 
   factory MerchantPortalPamFormControllerCreateData.fromMap(Map<String, dynamic> m) => MerchantPortalPamFormControllerCreateData(
-        app_form_fields_desc_uuid: m['app_form_fields_desc_uuid'] is String ? m['app_form_fields_desc_uuid'] : null,
+        appFormFieldsDescUUID: m['appFormFieldsDescUUID'] is String ? m['appFormFieldsDescUUID'] : null,
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
         language: m['language'] is String ? m['language'] : null,
-        package_order: m['package_order'] is Map<String, dynamic> ? m['package_order'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
-        package_uuid: m['package_uuid'] is String ? m['package_uuid'] : null,
-        product_order: m['product_order'] is List<dynamic> ? m['product_order'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
-        reason_of_reopening: m['reason_of_reopening'] is String ? m['reason_of_reopening'] : null,
+        packageOrder: m['packageOrder'] is Map<String, dynamic> ? m['packageOrder'] : null,
+        packageOrderUUID: m['packageOrderUUID'] is String ? m['packageOrderUUID'] : null,
+        packageUUID: m['packageUUID'] is String ? m['packageUUID'] : null,
+        productOrderUUID: m['productOrderUUID'] is String ? m['productOrderUUID'] : null,
+        productOrders: m['productOrders'] is List<dynamic> ? m['productOrders'] : null,
+        reasonOfReopening: m['reasonOfReopening'] is String ? m['reasonOfReopening'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != app_form_fields_desc_uuid) {
-      m['app_form_fields_desc_uuid'] = app_form_fields_desc_uuid;
+    if (null != appFormFieldsDescUUID) {
+      m['appFormFieldsDescUUID'] = appFormFieldsDescUUID;
     }
     if (null != filter) {
       m['filter'] = filter;
@@ -772,23 +772,23 @@ class MerchantPortalPamFormControllerCreateData {
     if (null != language) {
       m['language'] = language;
     }
-    if (null != package_order) {
-      m['package_order'] = package_order;
+    if (null != packageOrder) {
+      m['packageOrder'] = packageOrder;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUUID) {
+      m['packageOrderUUID'] = packageOrderUUID;
     }
-    if (null != package_uuid) {
-      m['package_uuid'] = package_uuid;
+    if (null != packageUUID) {
+      m['packageUUID'] = packageUUID;
     }
-    if (null != product_order) {
-      m['product_order'] = product_order;
+    if (null != productOrderUUID) {
+      m['productOrderUUID'] = productOrderUUID;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrders) {
+      m['productOrders'] = productOrders;
     }
-    if (null != reason_of_reopening) {
-      m['reason_of_reopening'] = reason_of_reopening;
+    if (null != reasonOfReopening) {
+      m['reasonOfReopening'] = reasonOfReopening;
     }
     return m;
   }
@@ -796,41 +796,41 @@ class MerchantPortalPamFormControllerCreateData {
 
 class MerchantPortalPamMandatorController {
   /// STRING
-  String? client_secret;
+  String? clientSecret;
   /// STRING (required at the API)
-  String? mandator_name;
+  String? mandatorName;
   /// STRING
-  String? notification_email;
+  String? notificationEmail;
   /// STRING (required at the API)
-  String? package_uuid;
+  String? packageUUID;
 
   MerchantPortalPamMandatorController({
-    this.client_secret,
-    this.mandator_name,
-    this.notification_email,
-    this.package_uuid,
+    this.clientSecret,
+    this.mandatorName,
+    this.notificationEmail,
+    this.packageUUID,
   });
 
   factory MerchantPortalPamMandatorController.fromMap(Map<String, dynamic> m) => MerchantPortalPamMandatorController(
-        client_secret: m['client_secret'] is String ? m['client_secret'] : null,
-        mandator_name: m['mandator_name'] is String ? m['mandator_name'] : null,
-        notification_email: m['notification_email'] is String ? m['notification_email'] : null,
-        package_uuid: m['package_uuid'] is String ? m['package_uuid'] : null,
+        clientSecret: m['clientSecret'] is String ? m['clientSecret'] : null,
+        mandatorName: m['mandatorName'] is String ? m['mandatorName'] : null,
+        notificationEmail: m['notificationEmail'] is String ? m['notificationEmail'] : null,
+        packageUUID: m['packageUUID'] is String ? m['packageUUID'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != client_secret) {
-      m['client_secret'] = client_secret;
+    if (null != clientSecret) {
+      m['clientSecret'] = clientSecret;
     }
-    if (null != mandator_name) {
-      m['mandator_name'] = mandator_name;
+    if (null != mandatorName) {
+      m['mandatorName'] = mandatorName;
     }
-    if (null != notification_email) {
-      m['notification_email'] = notification_email;
+    if (null != notificationEmail) {
+      m['notificationEmail'] = notificationEmail;
     }
-    if (null != package_uuid) {
-      m['package_uuid'] = package_uuid;
+    if (null != packageUUID) {
+      m['packageUUID'] = packageUUID;
     }
     return m;
   }
@@ -838,41 +838,41 @@ class MerchantPortalPamMandatorController {
 
 class MerchantPortalPamMandatorControllerCreateData {
   /// STRING
-  String? client_secret;
+  String? clientSecret;
   /// STRING (required at the API)
-  String? mandator_name;
+  String? mandatorName;
   /// STRING
-  String? notification_email;
+  String? notificationEmail;
   /// STRING (required at the API)
-  String? package_uuid;
+  String? packageUUID;
 
   MerchantPortalPamMandatorControllerCreateData({
-    this.client_secret,
-    this.mandator_name,
-    this.notification_email,
-    this.package_uuid,
+    this.clientSecret,
+    this.mandatorName,
+    this.notificationEmail,
+    this.packageUUID,
   });
 
   factory MerchantPortalPamMandatorControllerCreateData.fromMap(Map<String, dynamic> m) => MerchantPortalPamMandatorControllerCreateData(
-        client_secret: m['client_secret'] is String ? m['client_secret'] : null,
-        mandator_name: m['mandator_name'] is String ? m['mandator_name'] : null,
-        notification_email: m['notification_email'] is String ? m['notification_email'] : null,
-        package_uuid: m['package_uuid'] is String ? m['package_uuid'] : null,
+        clientSecret: m['clientSecret'] is String ? m['clientSecret'] : null,
+        mandatorName: m['mandatorName'] is String ? m['mandatorName'] : null,
+        notificationEmail: m['notificationEmail'] is String ? m['notificationEmail'] : null,
+        packageUUID: m['packageUUID'] is String ? m['packageUUID'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != client_secret) {
-      m['client_secret'] = client_secret;
+    if (null != clientSecret) {
+      m['clientSecret'] = clientSecret;
     }
-    if (null != mandator_name) {
-      m['mandator_name'] = mandator_name;
+    if (null != mandatorName) {
+      m['mandatorName'] = mandatorName;
     }
-    if (null != notification_email) {
-      m['notification_email'] = notification_email;
+    if (null != notificationEmail) {
+      m['notificationEmail'] = notificationEmail;
     }
-    if (null != package_uuid) {
-      m['package_uuid'] = package_uuid;
+    if (null != packageUUID) {
+      m['packageUUID'] = packageUUID;
     }
     return m;
   }
@@ -882,13 +882,13 @@ class MerchantPortalPamMerchantController {
   /// OBJECT
   Map<String, dynamic>? additional_data;
   /// STRING (required at the API)
-  String? business_registration_number;
+  String? businessRegistrationNumber;
   /// STRING
   String? city;
   /// STRING (required at the API)
-  String? company_name;
+  String? companyName;
   /// STRING (required at the API)
-  String? corporate_uuid;
+  String? corporateUUID;
   /// STRING
   String? country;
   /// STRING (required at the API)
@@ -901,32 +901,32 @@ class MerchantPortalPamMerchantController {
   String? login;
   /// STRING (required at the API)
   String? mandator;
+  /// STRING (required at the API)
+  String? merchantContractNumber;
+  /// STRING
+  String? merchantName;
   /// STRING
   String? merchant_category_code;
-  /// STRING (required at the API)
-  String? merchant_contract_number;
   /// STRING
-  String? merchant_name;
-  /// STRING
-  String? package_uuid;
+  String? packageUUID;
   /// STRING (required at the API)
   String? packageorderuuid;
   /// STRING (required at the API)
-  String? phone_number;
+  String? phoneNumber;
   /// STRING
-  String? postal_code;
+  String? postalCode;
   /// STRING (required at the API)
   String? productid_acquirer;
   /// STRING
   String? region;
   /// STRING
-  String? registration_number;
+  String? registrationNumber;
   /// STRING
   String? signature;
   /// STRING
   String? street;
   /// ARRAY
-  List<dynamic>? terminal_id;
+  List<dynamic>? terminalIds;
   /// STRING
   String? terminalid_acquirer;
   /// STRING (required at the API)
@@ -934,58 +934,58 @@ class MerchantPortalPamMerchantController {
 
   MerchantPortalPamMerchantController({
     this.additional_data,
-    this.business_registration_number,
+    this.businessRegistrationNumber,
     this.city,
-    this.company_name,
-    this.corporate_uuid,
+    this.companyName,
+    this.corporateUUID,
     this.country,
     this.currency,
     this.email,
     this.language,
     this.login,
     this.mandator,
+    this.merchantContractNumber,
+    this.merchantName,
     this.merchant_category_code,
-    this.merchant_contract_number,
-    this.merchant_name,
-    this.package_uuid,
+    this.packageUUID,
     this.packageorderuuid,
-    this.phone_number,
-    this.postal_code,
+    this.phoneNumber,
+    this.postalCode,
     this.productid_acquirer,
     this.region,
-    this.registration_number,
+    this.registrationNumber,
     this.signature,
     this.street,
-    this.terminal_id,
+    this.terminalIds,
     this.terminalid_acquirer,
     this.vu_nummer,
   });
 
   factory MerchantPortalPamMerchantController.fromMap(Map<String, dynamic> m) => MerchantPortalPamMerchantController(
         additional_data: m['additional_data'] is Map<String, dynamic> ? m['additional_data'] : null,
-        business_registration_number: m['business_registration_number'] is String ? m['business_registration_number'] : null,
+        businessRegistrationNumber: m['businessRegistrationNumber'] is String ? m['businessRegistrationNumber'] : null,
         city: m['city'] is String ? m['city'] : null,
-        company_name: m['company_name'] is String ? m['company_name'] : null,
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
+        companyName: m['companyName'] is String ? m['companyName'] : null,
+        corporateUUID: m['corporateUUID'] is String ? m['corporateUUID'] : null,
         country: m['country'] is String ? m['country'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
         email: m['email'] is String ? m['email'] : null,
         language: m['language'] is String ? m['language'] : null,
         login: m['login'] is String ? m['login'] : null,
         mandator: m['mandator'] is String ? m['mandator'] : null,
+        merchantContractNumber: m['merchantContractNumber'] is String ? m['merchantContractNumber'] : null,
+        merchantName: m['merchantName'] is String ? m['merchantName'] : null,
         merchant_category_code: m['merchant_category_code'] is String ? m['merchant_category_code'] : null,
-        merchant_contract_number: m['merchant_contract_number'] is String ? m['merchant_contract_number'] : null,
-        merchant_name: m['merchant_name'] is String ? m['merchant_name'] : null,
-        package_uuid: m['package_uuid'] is String ? m['package_uuid'] : null,
+        packageUUID: m['packageUUID'] is String ? m['packageUUID'] : null,
         packageorderuuid: m['packageorderuuid'] is String ? m['packageorderuuid'] : null,
-        phone_number: m['phone_number'] is String ? m['phone_number'] : null,
-        postal_code: m['postal_code'] is String ? m['postal_code'] : null,
+        phoneNumber: m['phoneNumber'] is String ? m['phoneNumber'] : null,
+        postalCode: m['postalCode'] is String ? m['postalCode'] : null,
         productid_acquirer: m['productid_acquirer'] is String ? m['productid_acquirer'] : null,
         region: m['region'] is String ? m['region'] : null,
-        registration_number: m['registration_number'] is String ? m['registration_number'] : null,
+        registrationNumber: m['registrationNumber'] is String ? m['registrationNumber'] : null,
         signature: m['signature'] is String ? m['signature'] : null,
         street: m['street'] is String ? m['street'] : null,
-        terminal_id: m['terminal_id'] is List<dynamic> ? m['terminal_id'] : null,
+        terminalIds: m['terminalIds'] is List<dynamic> ? m['terminalIds'] : null,
         terminalid_acquirer: m['terminalid_acquirer'] is String ? m['terminalid_acquirer'] : null,
         vu_nummer: m['vu_nummer'] is String ? m['vu_nummer'] : null,
       );
@@ -995,17 +995,17 @@ class MerchantPortalPamMerchantController {
     if (null != additional_data) {
       m['additional_data'] = additional_data;
     }
-    if (null != business_registration_number) {
-      m['business_registration_number'] = business_registration_number;
+    if (null != businessRegistrationNumber) {
+      m['businessRegistrationNumber'] = businessRegistrationNumber;
     }
     if (null != city) {
       m['city'] = city;
     }
-    if (null != company_name) {
-      m['company_name'] = company_name;
+    if (null != companyName) {
+      m['companyName'] = companyName;
     }
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUUID) {
+      m['corporateUUID'] = corporateUUID;
     }
     if (null != country) {
       m['country'] = country;
@@ -1025,26 +1025,26 @@ class MerchantPortalPamMerchantController {
     if (null != mandator) {
       m['mandator'] = mandator;
     }
+    if (null != merchantContractNumber) {
+      m['merchantContractNumber'] = merchantContractNumber;
+    }
+    if (null != merchantName) {
+      m['merchantName'] = merchantName;
+    }
     if (null != merchant_category_code) {
       m['merchant_category_code'] = merchant_category_code;
     }
-    if (null != merchant_contract_number) {
-      m['merchant_contract_number'] = merchant_contract_number;
-    }
-    if (null != merchant_name) {
-      m['merchant_name'] = merchant_name;
-    }
-    if (null != package_uuid) {
-      m['package_uuid'] = package_uuid;
+    if (null != packageUUID) {
+      m['packageUUID'] = packageUUID;
     }
     if (null != packageorderuuid) {
       m['packageorderuuid'] = packageorderuuid;
     }
-    if (null != phone_number) {
-      m['phone_number'] = phone_number;
+    if (null != phoneNumber) {
+      m['phoneNumber'] = phoneNumber;
     }
-    if (null != postal_code) {
-      m['postal_code'] = postal_code;
+    if (null != postalCode) {
+      m['postalCode'] = postalCode;
     }
     if (null != productid_acquirer) {
       m['productid_acquirer'] = productid_acquirer;
@@ -1052,8 +1052,8 @@ class MerchantPortalPamMerchantController {
     if (null != region) {
       m['region'] = region;
     }
-    if (null != registration_number) {
-      m['registration_number'] = registration_number;
+    if (null != registrationNumber) {
+      m['registrationNumber'] = registrationNumber;
     }
     if (null != signature) {
       m['signature'] = signature;
@@ -1061,8 +1061,8 @@ class MerchantPortalPamMerchantController {
     if (null != street) {
       m['street'] = street;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalIds) {
+      m['terminalIds'] = terminalIds;
     }
     if (null != terminalid_acquirer) {
       m['terminalid_acquirer'] = terminalid_acquirer;
@@ -1078,13 +1078,13 @@ class MerchantPortalPamMerchantControllerCreateData {
   /// OBJECT
   Map<String, dynamic>? additional_data;
   /// STRING (required at the API)
-  String? business_registration_number;
+  String? businessRegistrationNumber;
   /// STRING
   String? city;
   /// STRING (required at the API)
-  String? company_name;
+  String? companyName;
   /// STRING (required at the API)
-  String? corporate_uuid;
+  String? corporateUUID;
   /// STRING
   String? country;
   /// STRING (required at the API)
@@ -1097,32 +1097,32 @@ class MerchantPortalPamMerchantControllerCreateData {
   String? login;
   /// STRING (required at the API)
   String? mandator;
+  /// STRING (required at the API)
+  String? merchantContractNumber;
+  /// STRING
+  String? merchantName;
   /// STRING
   String? merchant_category_code;
-  /// STRING (required at the API)
-  String? merchant_contract_number;
   /// STRING
-  String? merchant_name;
-  /// STRING
-  String? package_uuid;
+  String? packageUUID;
   /// STRING (required at the API)
   String? packageorderuuid;
   /// STRING (required at the API)
-  String? phone_number;
+  String? phoneNumber;
   /// STRING
-  String? postal_code;
+  String? postalCode;
   /// STRING (required at the API)
   String? productid_acquirer;
   /// STRING
   String? region;
   /// STRING
-  String? registration_number;
+  String? registrationNumber;
   /// STRING
   String? signature;
   /// STRING
   String? street;
   /// ARRAY
-  List<dynamic>? terminal_id;
+  List<dynamic>? terminalIds;
   /// STRING
   String? terminalid_acquirer;
   /// STRING (required at the API)
@@ -1130,58 +1130,58 @@ class MerchantPortalPamMerchantControllerCreateData {
 
   MerchantPortalPamMerchantControllerCreateData({
     this.additional_data,
-    this.business_registration_number,
+    this.businessRegistrationNumber,
     this.city,
-    this.company_name,
-    this.corporate_uuid,
+    this.companyName,
+    this.corporateUUID,
     this.country,
     this.currency,
     this.email,
     this.language,
     this.login,
     this.mandator,
+    this.merchantContractNumber,
+    this.merchantName,
     this.merchant_category_code,
-    this.merchant_contract_number,
-    this.merchant_name,
-    this.package_uuid,
+    this.packageUUID,
     this.packageorderuuid,
-    this.phone_number,
-    this.postal_code,
+    this.phoneNumber,
+    this.postalCode,
     this.productid_acquirer,
     this.region,
-    this.registration_number,
+    this.registrationNumber,
     this.signature,
     this.street,
-    this.terminal_id,
+    this.terminalIds,
     this.terminalid_acquirer,
     this.vu_nummer,
   });
 
   factory MerchantPortalPamMerchantControllerCreateData.fromMap(Map<String, dynamic> m) => MerchantPortalPamMerchantControllerCreateData(
         additional_data: m['additional_data'] is Map<String, dynamic> ? m['additional_data'] : null,
-        business_registration_number: m['business_registration_number'] is String ? m['business_registration_number'] : null,
+        businessRegistrationNumber: m['businessRegistrationNumber'] is String ? m['businessRegistrationNumber'] : null,
         city: m['city'] is String ? m['city'] : null,
-        company_name: m['company_name'] is String ? m['company_name'] : null,
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
+        companyName: m['companyName'] is String ? m['companyName'] : null,
+        corporateUUID: m['corporateUUID'] is String ? m['corporateUUID'] : null,
         country: m['country'] is String ? m['country'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
         email: m['email'] is String ? m['email'] : null,
         language: m['language'] is String ? m['language'] : null,
         login: m['login'] is String ? m['login'] : null,
         mandator: m['mandator'] is String ? m['mandator'] : null,
+        merchantContractNumber: m['merchantContractNumber'] is String ? m['merchantContractNumber'] : null,
+        merchantName: m['merchantName'] is String ? m['merchantName'] : null,
         merchant_category_code: m['merchant_category_code'] is String ? m['merchant_category_code'] : null,
-        merchant_contract_number: m['merchant_contract_number'] is String ? m['merchant_contract_number'] : null,
-        merchant_name: m['merchant_name'] is String ? m['merchant_name'] : null,
-        package_uuid: m['package_uuid'] is String ? m['package_uuid'] : null,
+        packageUUID: m['packageUUID'] is String ? m['packageUUID'] : null,
         packageorderuuid: m['packageorderuuid'] is String ? m['packageorderuuid'] : null,
-        phone_number: m['phone_number'] is String ? m['phone_number'] : null,
-        postal_code: m['postal_code'] is String ? m['postal_code'] : null,
+        phoneNumber: m['phoneNumber'] is String ? m['phoneNumber'] : null,
+        postalCode: m['postalCode'] is String ? m['postalCode'] : null,
         productid_acquirer: m['productid_acquirer'] is String ? m['productid_acquirer'] : null,
         region: m['region'] is String ? m['region'] : null,
-        registration_number: m['registration_number'] is String ? m['registration_number'] : null,
+        registrationNumber: m['registrationNumber'] is String ? m['registrationNumber'] : null,
         signature: m['signature'] is String ? m['signature'] : null,
         street: m['street'] is String ? m['street'] : null,
-        terminal_id: m['terminal_id'] is List<dynamic> ? m['terminal_id'] : null,
+        terminalIds: m['terminalIds'] is List<dynamic> ? m['terminalIds'] : null,
         terminalid_acquirer: m['terminalid_acquirer'] is String ? m['terminalid_acquirer'] : null,
         vu_nummer: m['vu_nummer'] is String ? m['vu_nummer'] : null,
       );
@@ -1191,17 +1191,17 @@ class MerchantPortalPamMerchantControllerCreateData {
     if (null != additional_data) {
       m['additional_data'] = additional_data;
     }
-    if (null != business_registration_number) {
-      m['business_registration_number'] = business_registration_number;
+    if (null != businessRegistrationNumber) {
+      m['businessRegistrationNumber'] = businessRegistrationNumber;
     }
     if (null != city) {
       m['city'] = city;
     }
-    if (null != company_name) {
-      m['company_name'] = company_name;
+    if (null != companyName) {
+      m['companyName'] = companyName;
     }
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUUID) {
+      m['corporateUUID'] = corporateUUID;
     }
     if (null != country) {
       m['country'] = country;
@@ -1221,26 +1221,26 @@ class MerchantPortalPamMerchantControllerCreateData {
     if (null != mandator) {
       m['mandator'] = mandator;
     }
+    if (null != merchantContractNumber) {
+      m['merchantContractNumber'] = merchantContractNumber;
+    }
+    if (null != merchantName) {
+      m['merchantName'] = merchantName;
+    }
     if (null != merchant_category_code) {
       m['merchant_category_code'] = merchant_category_code;
     }
-    if (null != merchant_contract_number) {
-      m['merchant_contract_number'] = merchant_contract_number;
-    }
-    if (null != merchant_name) {
-      m['merchant_name'] = merchant_name;
-    }
-    if (null != package_uuid) {
-      m['package_uuid'] = package_uuid;
+    if (null != packageUUID) {
+      m['packageUUID'] = packageUUID;
     }
     if (null != packageorderuuid) {
       m['packageorderuuid'] = packageorderuuid;
     }
-    if (null != phone_number) {
-      m['phone_number'] = phone_number;
+    if (null != phoneNumber) {
+      m['phoneNumber'] = phoneNumber;
     }
-    if (null != postal_code) {
-      m['postal_code'] = postal_code;
+    if (null != postalCode) {
+      m['postalCode'] = postalCode;
     }
     if (null != productid_acquirer) {
       m['productid_acquirer'] = productid_acquirer;
@@ -1248,8 +1248,8 @@ class MerchantPortalPamMerchantControllerCreateData {
     if (null != region) {
       m['region'] = region;
     }
-    if (null != registration_number) {
-      m['registration_number'] = registration_number;
+    if (null != registrationNumber) {
+      m['registrationNumber'] = registrationNumber;
     }
     if (null != signature) {
       m['signature'] = signature;
@@ -1257,8 +1257,8 @@ class MerchantPortalPamMerchantControllerCreateData {
     if (null != street) {
       m['street'] = street;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalIds) {
+      m['terminalIds'] = terminalIds;
     }
     if (null != terminalid_acquirer) {
       m['terminalid_acquirer'] = terminalid_acquirer;
@@ -1272,69 +1272,69 @@ class MerchantPortalPamMerchantControllerCreateData {
 
 class MerchantPortalPamPackageController {
   /// STRING
-  String? consumer_uuid;
+  String? consumerUUID;
   /// STRING
-  String? corporate_uuid;
+  String? corporateUUID;
   /// STRING
   String? country;
   /// STRING
-  String? description_key;
+  String? descriptionKey;
   /// OBJECT
   Map<String, dynamic>? filter;
   /// STRING (required at the API)
   String? language;
   /// STRING
-  String? name_key;
+  String? nameKey;
   /// STRING
-  String? package_status;
+  String? packageStatus;
   /// STRING (required at the API)
-  String? package_uuid;
+  String? packageUUID;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// OBJECT
   Map<String, dynamic>? sorting;
 
   MerchantPortalPamPackageController({
-    this.consumer_uuid,
-    this.corporate_uuid,
+    this.consumerUUID,
+    this.corporateUUID,
     this.country,
-    this.description_key,
+    this.descriptionKey,
     this.filter,
     this.language,
-    this.name_key,
-    this.package_status,
-    this.package_uuid,
+    this.nameKey,
+    this.packageStatus,
+    this.packageUUID,
     this.pagination,
     this.sorting,
   });
 
   factory MerchantPortalPamPackageController.fromMap(Map<String, dynamic> m) => MerchantPortalPamPackageController(
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
+        consumerUUID: m['consumerUUID'] is String ? m['consumerUUID'] : null,
+        corporateUUID: m['corporateUUID'] is String ? m['corporateUUID'] : null,
         country: m['country'] is String ? m['country'] : null,
-        description_key: m['description_key'] is String ? m['description_key'] : null,
+        descriptionKey: m['descriptionKey'] is String ? m['descriptionKey'] : null,
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
         language: m['language'] is String ? m['language'] : null,
-        name_key: m['name_key'] is String ? m['name_key'] : null,
-        package_status: m['package_status'] is String ? m['package_status'] : null,
-        package_uuid: m['package_uuid'] is String ? m['package_uuid'] : null,
+        nameKey: m['nameKey'] is String ? m['nameKey'] : null,
+        packageStatus: m['packageStatus'] is String ? m['packageStatus'] : null,
+        packageUUID: m['packageUUID'] is String ? m['packageUUID'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
         sorting: m['sorting'] is Map<String, dynamic> ? m['sorting'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUUID) {
+      m['consumerUUID'] = consumerUUID;
     }
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUUID) {
+      m['corporateUUID'] = corporateUUID;
     }
     if (null != country) {
       m['country'] = country;
     }
-    if (null != description_key) {
-      m['description_key'] = description_key;
+    if (null != descriptionKey) {
+      m['descriptionKey'] = descriptionKey;
     }
     if (null != filter) {
       m['filter'] = filter;
@@ -1342,14 +1342,14 @@ class MerchantPortalPamPackageController {
     if (null != language) {
       m['language'] = language;
     }
-    if (null != name_key) {
-      m['name_key'] = name_key;
+    if (null != nameKey) {
+      m['nameKey'] = nameKey;
     }
-    if (null != package_status) {
-      m['package_status'] = package_status;
+    if (null != packageStatus) {
+      m['packageStatus'] = packageStatus;
     }
-    if (null != package_uuid) {
-      m['package_uuid'] = package_uuid;
+    if (null != packageUUID) {
+      m['packageUUID'] = packageUUID;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
@@ -1363,69 +1363,69 @@ class MerchantPortalPamPackageController {
 
 class MerchantPortalPamPackageControllerCreateData {
   /// STRING
-  String? consumer_uuid;
+  String? consumerUUID;
   /// STRING
-  String? corporate_uuid;
+  String? corporateUUID;
   /// STRING
   String? country;
   /// STRING
-  String? description_key;
+  String? descriptionKey;
   /// OBJECT
   Map<String, dynamic>? filter;
   /// STRING (required at the API)
   String? language;
   /// STRING
-  String? name_key;
+  String? nameKey;
   /// STRING
-  String? package_status;
+  String? packageStatus;
   /// STRING (required at the API)
-  String? package_uuid;
+  String? packageUUID;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// OBJECT
   Map<String, dynamic>? sorting;
 
   MerchantPortalPamPackageControllerCreateData({
-    this.consumer_uuid,
-    this.corporate_uuid,
+    this.consumerUUID,
+    this.corporateUUID,
     this.country,
-    this.description_key,
+    this.descriptionKey,
     this.filter,
     this.language,
-    this.name_key,
-    this.package_status,
-    this.package_uuid,
+    this.nameKey,
+    this.packageStatus,
+    this.packageUUID,
     this.pagination,
     this.sorting,
   });
 
   factory MerchantPortalPamPackageControllerCreateData.fromMap(Map<String, dynamic> m) => MerchantPortalPamPackageControllerCreateData(
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
+        consumerUUID: m['consumerUUID'] is String ? m['consumerUUID'] : null,
+        corporateUUID: m['corporateUUID'] is String ? m['corporateUUID'] : null,
         country: m['country'] is String ? m['country'] : null,
-        description_key: m['description_key'] is String ? m['description_key'] : null,
+        descriptionKey: m['descriptionKey'] is String ? m['descriptionKey'] : null,
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
         language: m['language'] is String ? m['language'] : null,
-        name_key: m['name_key'] is String ? m['name_key'] : null,
-        package_status: m['package_status'] is String ? m['package_status'] : null,
-        package_uuid: m['package_uuid'] is String ? m['package_uuid'] : null,
+        nameKey: m['nameKey'] is String ? m['nameKey'] : null,
+        packageStatus: m['packageStatus'] is String ? m['packageStatus'] : null,
+        packageUUID: m['packageUUID'] is String ? m['packageUUID'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
         sorting: m['sorting'] is Map<String, dynamic> ? m['sorting'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUUID) {
+      m['consumerUUID'] = consumerUUID;
     }
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUUID) {
+      m['corporateUUID'] = corporateUUID;
     }
     if (null != country) {
       m['country'] = country;
     }
-    if (null != description_key) {
-      m['description_key'] = description_key;
+    if (null != descriptionKey) {
+      m['descriptionKey'] = descriptionKey;
     }
     if (null != filter) {
       m['filter'] = filter;
@@ -1433,14 +1433,14 @@ class MerchantPortalPamPackageControllerCreateData {
     if (null != language) {
       m['language'] = language;
     }
-    if (null != name_key) {
-      m['name_key'] = name_key;
+    if (null != nameKey) {
+      m['nameKey'] = nameKey;
     }
-    if (null != package_status) {
-      m['package_status'] = package_status;
+    if (null != packageStatus) {
+      m['packageStatus'] = packageStatus;
     }
-    if (null != package_uuid) {
-      m['package_uuid'] = package_uuid;
+    if (null != packageUUID) {
+      m['packageUUID'] = packageUUID;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
@@ -1454,56 +1454,56 @@ class MerchantPortalPamPackageControllerCreateData {
 
 class MerchantPortalPamProductController {
   /// STRING
-  String? consumer_uuid;
+  String? consumerUUID;
   /// OBJECT
   Map<String, dynamic>? filter;
   /// STRING
   String? language;
   /// STRING
-  String? merchant_id;
+  String? merchantID;
   /// STRING (required at the API)
-  String? package_order_uuid;
+  String? packageOrderUUID;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// STRING (required at the API)
-  String? product_order_uuid;
+  String? productOrderUUID;
   /// STRING (required at the API)
-  String? product_uuid;
+  String? productUUID;
   /// STRING (required at the API)
   String? reason_decline;
   /// OBJECT
   Map<String, dynamic>? sorting;
 
   MerchantPortalPamProductController({
-    this.consumer_uuid,
+    this.consumerUUID,
     this.filter,
     this.language,
-    this.merchant_id,
-    this.package_order_uuid,
+    this.merchantID,
+    this.packageOrderUUID,
     this.pagination,
-    this.product_order_uuid,
-    this.product_uuid,
+    this.productOrderUUID,
+    this.productUUID,
     this.reason_decline,
     this.sorting,
   });
 
   factory MerchantPortalPamProductController.fromMap(Map<String, dynamic> m) => MerchantPortalPamProductController(
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
+        consumerUUID: m['consumerUUID'] is String ? m['consumerUUID'] : null,
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
         language: m['language'] is String ? m['language'] : null,
-        merchant_id: m['merchant_id'] is String ? m['merchant_id'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
+        merchantID: m['merchantID'] is String ? m['merchantID'] : null,
+        packageOrderUUID: m['packageOrderUUID'] is String ? m['packageOrderUUID'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
-        product_uuid: m['product_uuid'] is String ? m['product_uuid'] : null,
+        productOrderUUID: m['productOrderUUID'] is String ? m['productOrderUUID'] : null,
+        productUUID: m['productUUID'] is String ? m['productUUID'] : null,
         reason_decline: m['reason_decline'] is String ? m['reason_decline'] : null,
         sorting: m['sorting'] is Map<String, dynamic> ? m['sorting'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUUID) {
+      m['consumerUUID'] = consumerUUID;
     }
     if (null != filter) {
       m['filter'] = filter;
@@ -1511,20 +1511,20 @@ class MerchantPortalPamProductController {
     if (null != language) {
       m['language'] = language;
     }
-    if (null != merchant_id) {
-      m['merchant_id'] = merchant_id;
+    if (null != merchantID) {
+      m['merchantID'] = merchantID;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUUID) {
+      m['packageOrderUUID'] = packageOrderUUID;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUUID) {
+      m['productOrderUUID'] = productOrderUUID;
     }
-    if (null != product_uuid) {
-      m['product_uuid'] = product_uuid;
+    if (null != productUUID) {
+      m['productUUID'] = productUUID;
     }
     if (null != reason_decline) {
       m['reason_decline'] = reason_decline;
@@ -1538,56 +1538,56 @@ class MerchantPortalPamProductController {
 
 class MerchantPortalPamProductControllerCreateData {
   /// STRING
-  String? consumer_uuid;
+  String? consumerUUID;
   /// OBJECT
   Map<String, dynamic>? filter;
   /// STRING
   String? language;
   /// STRING
-  String? merchant_id;
+  String? merchantID;
   /// STRING (required at the API)
-  String? package_order_uuid;
+  String? packageOrderUUID;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// STRING (required at the API)
-  String? product_order_uuid;
+  String? productOrderUUID;
   /// STRING (required at the API)
-  String? product_uuid;
+  String? productUUID;
   /// STRING (required at the API)
   String? reason_decline;
   /// OBJECT
   Map<String, dynamic>? sorting;
 
   MerchantPortalPamProductControllerCreateData({
-    this.consumer_uuid,
+    this.consumerUUID,
     this.filter,
     this.language,
-    this.merchant_id,
-    this.package_order_uuid,
+    this.merchantID,
+    this.packageOrderUUID,
     this.pagination,
-    this.product_order_uuid,
-    this.product_uuid,
+    this.productOrderUUID,
+    this.productUUID,
     this.reason_decline,
     this.sorting,
   });
 
   factory MerchantPortalPamProductControllerCreateData.fromMap(Map<String, dynamic> m) => MerchantPortalPamProductControllerCreateData(
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
+        consumerUUID: m['consumerUUID'] is String ? m['consumerUUID'] : null,
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
         language: m['language'] is String ? m['language'] : null,
-        merchant_id: m['merchant_id'] is String ? m['merchant_id'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
+        merchantID: m['merchantID'] is String ? m['merchantID'] : null,
+        packageOrderUUID: m['packageOrderUUID'] is String ? m['packageOrderUUID'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
-        product_uuid: m['product_uuid'] is String ? m['product_uuid'] : null,
+        productOrderUUID: m['productOrderUUID'] is String ? m['productOrderUUID'] : null,
+        productUUID: m['productUUID'] is String ? m['productUUID'] : null,
         reason_decline: m['reason_decline'] is String ? m['reason_decline'] : null,
         sorting: m['sorting'] is Map<String, dynamic> ? m['sorting'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUUID) {
+      m['consumerUUID'] = consumerUUID;
     }
     if (null != filter) {
       m['filter'] = filter;
@@ -1595,20 +1595,20 @@ class MerchantPortalPamProductControllerCreateData {
     if (null != language) {
       m['language'] = language;
     }
-    if (null != merchant_id) {
-      m['merchant_id'] = merchant_id;
+    if (null != merchantID) {
+      m['merchantID'] = merchantID;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUUID) {
+      m['packageOrderUUID'] = packageOrderUUID;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUUID) {
+      m['productOrderUUID'] = productOrderUUID;
     }
-    if (null != product_uuid) {
-      m['product_uuid'] = product_uuid;
+    if (null != productUUID) {
+      m['productUUID'] = productUUID;
     }
     if (null != reason_decline) {
       m['reason_decline'] = reason_decline;
@@ -1622,41 +1622,41 @@ class MerchantPortalPamProductControllerCreateData {
 
 class OutputAddProduct {
   /// STRING (required at the API)
-  String? package_uuid;
+  String? packageUUID;
   /// ARRAY (required at the API)
-  List<dynamic>? product_uui_d;
+  List<dynamic>? productUUIDs;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
 
   OutputAddProduct({
-    this.package_uuid,
-    this.product_uui_d,
-    this.response_code,
-    this.response_message,
+    this.packageUUID,
+    this.productUUIDs,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputAddProduct.fromMap(Map<String, dynamic> m) => OutputAddProduct(
-        package_uuid: m['package_uuid'] is String ? m['package_uuid'] : null,
-        product_uui_d: m['product_uui_d'] is List<dynamic> ? m['product_uui_d'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        packageUUID: m['packageUUID'] is String ? m['packageUUID'] : null,
+        productUUIDs: m['productUUIDs'] is List<dynamic> ? m['productUUIDs'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != package_uuid) {
-      m['package_uuid'] = package_uuid;
+    if (null != packageUUID) {
+      m['packageUUID'] = packageUUID;
     }
-    if (null != product_uui_d) {
-      m['product_uui_d'] = product_uui_d;
+    if (null != productUUIDs) {
+      m['productUUIDs'] = productUUIDs;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -1664,41 +1664,41 @@ class OutputAddProduct {
 
 class OutputAddProductCreateData {
   /// STRING (required at the API)
-  String? package_uuid;
+  String? packageUUID;
   /// ARRAY (required at the API)
-  List<dynamic>? product_uui_d;
+  List<dynamic>? productUUIDs;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
 
   OutputAddProductCreateData({
-    this.package_uuid,
-    this.product_uui_d,
-    this.response_code,
-    this.response_message,
+    this.packageUUID,
+    this.productUUIDs,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputAddProductCreateData.fromMap(Map<String, dynamic> m) => OutputAddProductCreateData(
-        package_uuid: m['package_uuid'] is String ? m['package_uuid'] : null,
-        product_uui_d: m['product_uui_d'] is List<dynamic> ? m['product_uui_d'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        packageUUID: m['packageUUID'] is String ? m['packageUUID'] : null,
+        productUUIDs: m['productUUIDs'] is List<dynamic> ? m['productUUIDs'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != package_uuid) {
-      m['package_uuid'] = package_uuid;
+    if (null != packageUUID) {
+      m['packageUUID'] = packageUUID;
     }
-    if (null != product_uui_d) {
-      m['product_uui_d'] = product_uui_d;
+    if (null != productUUIDs) {
+      m['productUUIDs'] = productUUIDs;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -1706,111 +1706,111 @@ class OutputAddProductCreateData {
 
 class OutputCreateProduct {
   /// STRING
-  String? acquirer_id;
+  String? acquirerId;
   /// BOOLEAN (required at the API)
-  bool? allow_multiple_order;
+  bool? allowMultipleOrders;
   /// STRING (required at the API)
-  String? app_form_template_name;
+  String? appFormTemplateName;
   /// BOOLEAN (required at the API)
-  bool? contract_needed;
+  bool? contractNeeded;
   /// BOOLEAN
-  bool? credentials_needed;
+  bool? credentialsNeeded;
   /// STRING (required at the API)
-  String? description_key;
+  String? descriptionKey;
   /// STRING (required at the API)
-  String? name_key;
+  String? nameKey;
   /// BOOLEAN (required at the API)
-  bool? prescreening_allowed;
+  bool? prescreeningAllowed;
   /// STRING (required at the API)
-  String? product_name;
+  String? productName;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? terminal_template_name;
+  String? terminalTemplateName;
   /// STRING (required at the API)
-  String? vendor_name;
+  String? vendorName;
   /// STRING (required at the API)
-  String? xml_template_file;
+  String? xmlTemplateFile;
 
   OutputCreateProduct({
-    this.acquirer_id,
-    this.allow_multiple_order,
-    this.app_form_template_name,
-    this.contract_needed,
-    this.credentials_needed,
-    this.description_key,
-    this.name_key,
-    this.prescreening_allowed,
-    this.product_name,
-    this.response_code,
-    this.response_message,
-    this.terminal_template_name,
-    this.vendor_name,
-    this.xml_template_file,
+    this.acquirerId,
+    this.allowMultipleOrders,
+    this.appFormTemplateName,
+    this.contractNeeded,
+    this.credentialsNeeded,
+    this.descriptionKey,
+    this.nameKey,
+    this.prescreeningAllowed,
+    this.productName,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalTemplateName,
+    this.vendorName,
+    this.xmlTemplateFile,
   });
 
   factory OutputCreateProduct.fromMap(Map<String, dynamic> m) => OutputCreateProduct(
-        acquirer_id: m['acquirer_id'] is String ? m['acquirer_id'] : null,
-        allow_multiple_order: m['allow_multiple_order'] is bool ? m['allow_multiple_order'] : null,
-        app_form_template_name: m['app_form_template_name'] is String ? m['app_form_template_name'] : null,
-        contract_needed: m['contract_needed'] is bool ? m['contract_needed'] : null,
-        credentials_needed: m['credentials_needed'] is bool ? m['credentials_needed'] : null,
-        description_key: m['description_key'] is String ? m['description_key'] : null,
-        name_key: m['name_key'] is String ? m['name_key'] : null,
-        prescreening_allowed: m['prescreening_allowed'] is bool ? m['prescreening_allowed'] : null,
-        product_name: m['product_name'] is String ? m['product_name'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_template_name: m['terminal_template_name'] is String ? m['terminal_template_name'] : null,
-        vendor_name: m['vendor_name'] is String ? m['vendor_name'] : null,
-        xml_template_file: m['xml_template_file'] is String ? m['xml_template_file'] : null,
+        acquirerId: m['acquirerId'] is String ? m['acquirerId'] : null,
+        allowMultipleOrders: m['allowMultipleOrders'] is bool ? m['allowMultipleOrders'] : null,
+        appFormTemplateName: m['appFormTemplateName'] is String ? m['appFormTemplateName'] : null,
+        contractNeeded: m['contractNeeded'] is bool ? m['contractNeeded'] : null,
+        credentialsNeeded: m['credentialsNeeded'] is bool ? m['credentialsNeeded'] : null,
+        descriptionKey: m['descriptionKey'] is String ? m['descriptionKey'] : null,
+        nameKey: m['nameKey'] is String ? m['nameKey'] : null,
+        prescreeningAllowed: m['prescreeningAllowed'] is bool ? m['prescreeningAllowed'] : null,
+        productName: m['productName'] is String ? m['productName'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalTemplateName: m['terminalTemplateName'] is String ? m['terminalTemplateName'] : null,
+        vendorName: m['vendorName'] is String ? m['vendorName'] : null,
+        xmlTemplateFile: m['xmlTemplateFile'] is String ? m['xmlTemplateFile'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_id) {
-      m['acquirer_id'] = acquirer_id;
+    if (null != acquirerId) {
+      m['acquirerId'] = acquirerId;
     }
-    if (null != allow_multiple_order) {
-      m['allow_multiple_order'] = allow_multiple_order;
+    if (null != allowMultipleOrders) {
+      m['allowMultipleOrders'] = allowMultipleOrders;
     }
-    if (null != app_form_template_name) {
-      m['app_form_template_name'] = app_form_template_name;
+    if (null != appFormTemplateName) {
+      m['appFormTemplateName'] = appFormTemplateName;
     }
-    if (null != contract_needed) {
-      m['contract_needed'] = contract_needed;
+    if (null != contractNeeded) {
+      m['contractNeeded'] = contractNeeded;
     }
-    if (null != credentials_needed) {
-      m['credentials_needed'] = credentials_needed;
+    if (null != credentialsNeeded) {
+      m['credentialsNeeded'] = credentialsNeeded;
     }
-    if (null != description_key) {
-      m['description_key'] = description_key;
+    if (null != descriptionKey) {
+      m['descriptionKey'] = descriptionKey;
     }
-    if (null != name_key) {
-      m['name_key'] = name_key;
+    if (null != nameKey) {
+      m['nameKey'] = nameKey;
     }
-    if (null != prescreening_allowed) {
-      m['prescreening_allowed'] = prescreening_allowed;
+    if (null != prescreeningAllowed) {
+      m['prescreeningAllowed'] = prescreeningAllowed;
     }
-    if (null != product_name) {
-      m['product_name'] = product_name;
+    if (null != productName) {
+      m['productName'] = productName;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_template_name) {
-      m['terminal_template_name'] = terminal_template_name;
+    if (null != terminalTemplateName) {
+      m['terminalTemplateName'] = terminalTemplateName;
     }
-    if (null != vendor_name) {
-      m['vendor_name'] = vendor_name;
+    if (null != vendorName) {
+      m['vendorName'] = vendorName;
     }
-    if (null != xml_template_file) {
-      m['xml_template_file'] = xml_template_file;
+    if (null != xmlTemplateFile) {
+      m['xmlTemplateFile'] = xmlTemplateFile;
     }
     return m;
   }
@@ -1818,111 +1818,111 @@ class OutputCreateProduct {
 
 class OutputCreateProductCreateData {
   /// STRING
-  String? acquirer_id;
+  String? acquirerId;
   /// BOOLEAN (required at the API)
-  bool? allow_multiple_order;
+  bool? allowMultipleOrders;
   /// STRING (required at the API)
-  String? app_form_template_name;
+  String? appFormTemplateName;
   /// BOOLEAN (required at the API)
-  bool? contract_needed;
+  bool? contractNeeded;
   /// BOOLEAN
-  bool? credentials_needed;
+  bool? credentialsNeeded;
   /// STRING (required at the API)
-  String? description_key;
+  String? descriptionKey;
   /// STRING (required at the API)
-  String? name_key;
+  String? nameKey;
   /// BOOLEAN (required at the API)
-  bool? prescreening_allowed;
+  bool? prescreeningAllowed;
   /// STRING (required at the API)
-  String? product_name;
+  String? productName;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? terminal_template_name;
+  String? terminalTemplateName;
   /// STRING (required at the API)
-  String? vendor_name;
+  String? vendorName;
   /// STRING (required at the API)
-  String? xml_template_file;
+  String? xmlTemplateFile;
 
   OutputCreateProductCreateData({
-    this.acquirer_id,
-    this.allow_multiple_order,
-    this.app_form_template_name,
-    this.contract_needed,
-    this.credentials_needed,
-    this.description_key,
-    this.name_key,
-    this.prescreening_allowed,
-    this.product_name,
-    this.response_code,
-    this.response_message,
-    this.terminal_template_name,
-    this.vendor_name,
-    this.xml_template_file,
+    this.acquirerId,
+    this.allowMultipleOrders,
+    this.appFormTemplateName,
+    this.contractNeeded,
+    this.credentialsNeeded,
+    this.descriptionKey,
+    this.nameKey,
+    this.prescreeningAllowed,
+    this.productName,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalTemplateName,
+    this.vendorName,
+    this.xmlTemplateFile,
   });
 
   factory OutputCreateProductCreateData.fromMap(Map<String, dynamic> m) => OutputCreateProductCreateData(
-        acquirer_id: m['acquirer_id'] is String ? m['acquirer_id'] : null,
-        allow_multiple_order: m['allow_multiple_order'] is bool ? m['allow_multiple_order'] : null,
-        app_form_template_name: m['app_form_template_name'] is String ? m['app_form_template_name'] : null,
-        contract_needed: m['contract_needed'] is bool ? m['contract_needed'] : null,
-        credentials_needed: m['credentials_needed'] is bool ? m['credentials_needed'] : null,
-        description_key: m['description_key'] is String ? m['description_key'] : null,
-        name_key: m['name_key'] is String ? m['name_key'] : null,
-        prescreening_allowed: m['prescreening_allowed'] is bool ? m['prescreening_allowed'] : null,
-        product_name: m['product_name'] is String ? m['product_name'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_template_name: m['terminal_template_name'] is String ? m['terminal_template_name'] : null,
-        vendor_name: m['vendor_name'] is String ? m['vendor_name'] : null,
-        xml_template_file: m['xml_template_file'] is String ? m['xml_template_file'] : null,
+        acquirerId: m['acquirerId'] is String ? m['acquirerId'] : null,
+        allowMultipleOrders: m['allowMultipleOrders'] is bool ? m['allowMultipleOrders'] : null,
+        appFormTemplateName: m['appFormTemplateName'] is String ? m['appFormTemplateName'] : null,
+        contractNeeded: m['contractNeeded'] is bool ? m['contractNeeded'] : null,
+        credentialsNeeded: m['credentialsNeeded'] is bool ? m['credentialsNeeded'] : null,
+        descriptionKey: m['descriptionKey'] is String ? m['descriptionKey'] : null,
+        nameKey: m['nameKey'] is String ? m['nameKey'] : null,
+        prescreeningAllowed: m['prescreeningAllowed'] is bool ? m['prescreeningAllowed'] : null,
+        productName: m['productName'] is String ? m['productName'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalTemplateName: m['terminalTemplateName'] is String ? m['terminalTemplateName'] : null,
+        vendorName: m['vendorName'] is String ? m['vendorName'] : null,
+        xmlTemplateFile: m['xmlTemplateFile'] is String ? m['xmlTemplateFile'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_id) {
-      m['acquirer_id'] = acquirer_id;
+    if (null != acquirerId) {
+      m['acquirerId'] = acquirerId;
     }
-    if (null != allow_multiple_order) {
-      m['allow_multiple_order'] = allow_multiple_order;
+    if (null != allowMultipleOrders) {
+      m['allowMultipleOrders'] = allowMultipleOrders;
     }
-    if (null != app_form_template_name) {
-      m['app_form_template_name'] = app_form_template_name;
+    if (null != appFormTemplateName) {
+      m['appFormTemplateName'] = appFormTemplateName;
     }
-    if (null != contract_needed) {
-      m['contract_needed'] = contract_needed;
+    if (null != contractNeeded) {
+      m['contractNeeded'] = contractNeeded;
     }
-    if (null != credentials_needed) {
-      m['credentials_needed'] = credentials_needed;
+    if (null != credentialsNeeded) {
+      m['credentialsNeeded'] = credentialsNeeded;
     }
-    if (null != description_key) {
-      m['description_key'] = description_key;
+    if (null != descriptionKey) {
+      m['descriptionKey'] = descriptionKey;
     }
-    if (null != name_key) {
-      m['name_key'] = name_key;
+    if (null != nameKey) {
+      m['nameKey'] = nameKey;
     }
-    if (null != prescreening_allowed) {
-      m['prescreening_allowed'] = prescreening_allowed;
+    if (null != prescreeningAllowed) {
+      m['prescreeningAllowed'] = prescreeningAllowed;
     }
-    if (null != product_name) {
-      m['product_name'] = product_name;
+    if (null != productName) {
+      m['productName'] = productName;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_template_name) {
-      m['terminal_template_name'] = terminal_template_name;
+    if (null != terminalTemplateName) {
+      m['terminalTemplateName'] = terminalTemplateName;
     }
-    if (null != vendor_name) {
-      m['vendor_name'] = vendor_name;
+    if (null != vendorName) {
+      m['vendorName'] = vendorName;
     }
-    if (null != xml_template_file) {
-      m['xml_template_file'] = xml_template_file;
+    if (null != xmlTemplateFile) {
+      m['xmlTemplateFile'] = xmlTemplateFile;
     }
     return m;
   }
@@ -1930,34 +1930,34 @@ class OutputCreateProductCreateData {
 
 class OutputDetail {
   /// OBJECT
-  Map<String, dynamic>? detail;
-  /// INTEGER (required at the API)
-  int? response_code;
-  /// STRING (required at the API)
-  String? response_message;
+  Map<String, dynamic>? batch;
+  /// OBJECT
+  Map<String, dynamic>? lines;
+  /// OBJECT
+  Map<String, dynamic>? progress;
 
   OutputDetail({
-    this.detail,
-    this.response_code,
-    this.response_message,
+    this.batch,
+    this.lines,
+    this.progress,
   });
 
   factory OutputDetail.fromMap(Map<String, dynamic> m) => OutputDetail(
-        detail: m['detail'] is Map<String, dynamic> ? m['detail'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        batch: m['batch'] is Map<String, dynamic> ? m['batch'] : null,
+        lines: m['lines'] is Map<String, dynamic> ? m['lines'] : null,
+        progress: m['progress'] is Map<String, dynamic> ? m['progress'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != detail) {
-      m['detail'] = detail;
+    if (null != batch) {
+      m['batch'] = batch;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != lines) {
+      m['lines'] = lines;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != progress) {
+      m['progress'] = progress;
     }
     return m;
   }
@@ -1986,45 +1986,45 @@ class OutputDetailLoadMatch {
 
 class OutputList {
   /// ARRAY
-  List<dynamic>? item;
+  List<dynamic>? items;
   /// OBJECT (required at the API)
   Map<String, dynamic>? pagination;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
   /// OBJECT
   Map<String, dynamic>? sorting;
 
   OutputList({
-    this.item,
+    this.items,
     this.pagination,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.sorting,
   });
 
   factory OutputList.fromMap(Map<String, dynamic> m) => OutputList(
-        item: m['item'] is List<dynamic> ? m['item'] : null,
+        items: m['items'] is List<dynamic> ? m['items'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         sorting: m['sorting'] is Map<String, dynamic> ? m['sorting'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != item) {
-      m['item'] = item;
+    if (null != items) {
+      m['items'] = items;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != sorting) {
       m['sorting'] = sorting;
@@ -2035,45 +2035,45 @@ class OutputList {
 
 class OutputListCreateData {
   /// ARRAY
-  List<dynamic>? item;
+  List<dynamic>? items;
   /// OBJECT (required at the API)
   Map<String, dynamic>? pagination;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
   /// OBJECT
   Map<String, dynamic>? sorting;
 
   OutputListCreateData({
-    this.item,
+    this.items,
     this.pagination,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.sorting,
   });
 
   factory OutputListCreateData.fromMap(Map<String, dynamic> m) => OutputListCreateData(
-        item: m['item'] is List<dynamic> ? m['item'] : null,
+        items: m['items'] is List<dynamic> ? m['items'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         sorting: m['sorting'] is Map<String, dynamic> ? m['sorting'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != item) {
-      m['item'] = item;
+    if (null != items) {
+      m['items'] = items;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != sorting) {
       m['sorting'] = sorting;
@@ -2084,27 +2084,27 @@ class OutputListCreateData {
 
 class OutputMessage {
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
 
   OutputMessage({
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputMessage.fromMap(Map<String, dynamic> m) => OutputMessage(
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2133,48 +2133,48 @@ class OutputMessageLoadMatch {
 
 class OutputMoveTid {
   /// ARRAY (required at the API)
-  List<dynamic>? product_order_uui_d;
+  List<dynamic>? productOrderUUIDs;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? target_package_order_uuid;
+  String? targetPackageOrderUUID;
   /// STRING (required at the API)
-  String? target_product_order_uuid;
+  String? targetProductOrderUUID;
 
   OutputMoveTid({
-    this.product_order_uui_d,
-    this.response_code,
-    this.response_message,
-    this.target_package_order_uuid,
-    this.target_product_order_uuid,
+    this.productOrderUUIDs,
+    this.responseCode,
+    this.responseMessage,
+    this.targetPackageOrderUUID,
+    this.targetProductOrderUUID,
   });
 
   factory OutputMoveTid.fromMap(Map<String, dynamic> m) => OutputMoveTid(
-        product_order_uui_d: m['product_order_uui_d'] is List<dynamic> ? m['product_order_uui_d'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        target_package_order_uuid: m['target_package_order_uuid'] is String ? m['target_package_order_uuid'] : null,
-        target_product_order_uuid: m['target_product_order_uuid'] is String ? m['target_product_order_uuid'] : null,
+        productOrderUUIDs: m['productOrderUUIDs'] is List<dynamic> ? m['productOrderUUIDs'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        targetPackageOrderUUID: m['targetPackageOrderUUID'] is String ? m['targetPackageOrderUUID'] : null,
+        targetProductOrderUUID: m['targetProductOrderUUID'] is String ? m['targetProductOrderUUID'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != product_order_uui_d) {
-      m['product_order_uui_d'] = product_order_uui_d;
+    if (null != productOrderUUIDs) {
+      m['productOrderUUIDs'] = productOrderUUIDs;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != target_package_order_uuid) {
-      m['target_package_order_uuid'] = target_package_order_uuid;
+    if (null != targetPackageOrderUUID) {
+      m['targetPackageOrderUUID'] = targetPackageOrderUUID;
     }
-    if (null != target_product_order_uuid) {
-      m['target_product_order_uuid'] = target_product_order_uuid;
+    if (null != targetProductOrderUUID) {
+      m['targetProductOrderUUID'] = targetProductOrderUUID;
     }
     return m;
   }
@@ -2182,48 +2182,48 @@ class OutputMoveTid {
 
 class OutputMoveTidCreateData {
   /// ARRAY (required at the API)
-  List<dynamic>? product_order_uui_d;
+  List<dynamic>? productOrderUUIDs;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? target_package_order_uuid;
+  String? targetPackageOrderUUID;
   /// STRING (required at the API)
-  String? target_product_order_uuid;
+  String? targetProductOrderUUID;
 
   OutputMoveTidCreateData({
-    this.product_order_uui_d,
-    this.response_code,
-    this.response_message,
-    this.target_package_order_uuid,
-    this.target_product_order_uuid,
+    this.productOrderUUIDs,
+    this.responseCode,
+    this.responseMessage,
+    this.targetPackageOrderUUID,
+    this.targetProductOrderUUID,
   });
 
   factory OutputMoveTidCreateData.fromMap(Map<String, dynamic> m) => OutputMoveTidCreateData(
-        product_order_uui_d: m['product_order_uui_d'] is List<dynamic> ? m['product_order_uui_d'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        target_package_order_uuid: m['target_package_order_uuid'] is String ? m['target_package_order_uuid'] : null,
-        target_product_order_uuid: m['target_product_order_uuid'] is String ? m['target_product_order_uuid'] : null,
+        productOrderUUIDs: m['productOrderUUIDs'] is List<dynamic> ? m['productOrderUUIDs'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        targetPackageOrderUUID: m['targetPackageOrderUUID'] is String ? m['targetPackageOrderUUID'] : null,
+        targetProductOrderUUID: m['targetProductOrderUUID'] is String ? m['targetProductOrderUUID'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != product_order_uui_d) {
-      m['product_order_uui_d'] = product_order_uui_d;
+    if (null != productOrderUUIDs) {
+      m['productOrderUUIDs'] = productOrderUUIDs;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != target_package_order_uuid) {
-      m['target_package_order_uuid'] = target_package_order_uuid;
+    if (null != targetPackageOrderUUID) {
+      m['targetPackageOrderUUID'] = targetPackageOrderUUID;
     }
-    if (null != target_product_order_uuid) {
-      m['target_product_order_uuid'] = target_product_order_uuid;
+    if (null != targetProductOrderUUID) {
+      m['targetProductOrderUUID'] = targetProductOrderUUID;
     }
     return m;
   }
@@ -2231,41 +2231,41 @@ class OutputMoveTidCreateData {
 
 class OutputRemoveProduct {
   /// STRING (required at the API)
-  String? package_uuid;
+  String? packageUUID;
   /// ARRAY (required at the API)
-  List<dynamic>? product_uui_d;
+  List<dynamic>? productUUIDs;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
 
   OutputRemoveProduct({
-    this.package_uuid,
-    this.product_uui_d,
-    this.response_code,
-    this.response_message,
+    this.packageUUID,
+    this.productUUIDs,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputRemoveProduct.fromMap(Map<String, dynamic> m) => OutputRemoveProduct(
-        package_uuid: m['package_uuid'] is String ? m['package_uuid'] : null,
-        product_uui_d: m['product_uui_d'] is List<dynamic> ? m['product_uui_d'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        packageUUID: m['packageUUID'] is String ? m['packageUUID'] : null,
+        productUUIDs: m['productUUIDs'] is List<dynamic> ? m['productUUIDs'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != package_uuid) {
-      m['package_uuid'] = package_uuid;
+    if (null != packageUUID) {
+      m['packageUUID'] = packageUUID;
     }
-    if (null != product_uui_d) {
-      m['product_uui_d'] = product_uui_d;
+    if (null != productUUIDs) {
+      m['productUUIDs'] = productUUIDs;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2273,41 +2273,41 @@ class OutputRemoveProduct {
 
 class OutputRemoveProductCreateData {
   /// STRING (required at the API)
-  String? package_uuid;
+  String? packageUUID;
   /// ARRAY (required at the API)
-  List<dynamic>? product_uui_d;
+  List<dynamic>? productUUIDs;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
 
   OutputRemoveProductCreateData({
-    this.package_uuid,
-    this.product_uui_d,
-    this.response_code,
-    this.response_message,
+    this.packageUUID,
+    this.productUUIDs,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputRemoveProductCreateData.fromMap(Map<String, dynamic> m) => OutputRemoveProductCreateData(
-        package_uuid: m['package_uuid'] is String ? m['package_uuid'] : null,
-        product_uui_d: m['product_uui_d'] is List<dynamic> ? m['product_uui_d'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        packageUUID: m['packageUUID'] is String ? m['packageUUID'] : null,
+        productUUIDs: m['productUUIDs'] is List<dynamic> ? m['productUUIDs'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != package_uuid) {
-      m['package_uuid'] = package_uuid;
+    if (null != packageUUID) {
+      m['packageUUID'] = packageUUID;
     }
-    if (null != product_uui_d) {
-      m['product_uui_d'] = product_uui_d;
+    if (null != productUUIDs) {
+      m['productUUIDs'] = productUUIDs;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2317,20 +2317,20 @@ class OutputStart {
   /// STRING
   String? id;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
 
   OutputStart({
     this.id,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputStart.fromMap(Map<String, dynamic> m) => OutputStart(
         id: m['id'] is String ? m['id'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -2338,11 +2338,11 @@ class OutputStart {
     if (null != id) {
       m['id'] = id;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2352,20 +2352,20 @@ class OutputStartCreateData {
   /// STRING
   String? id;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
 
   OutputStartCreateData({
     this.id,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputStartCreateData.fromMap(Map<String, dynamic> m) => OutputStartCreateData(
         id: m['id'] is String ? m['id'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -2373,11 +2373,11 @@ class OutputStartCreateData {
     if (null != id) {
       m['id'] = id;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2387,23 +2387,23 @@ class OutputStatus {
   /// INTEGER
   int? percentage;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
   /// STRING
   String? status;
 
   OutputStatus({
     this.percentage,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.status,
   });
 
   factory OutputStatus.fromMap(Map<String, dynamic> m) => OutputStatus(
         percentage: m['percentage'] is int ? m['percentage'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         status: m['status'] is String ? m['status'] : null,
       );
 
@@ -2412,11 +2412,11 @@ class OutputStatus {
     if (null != percentage) {
       m['percentage'] = percentage;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != status) {
       m['status'] = status;
@@ -2448,104 +2448,104 @@ class OutputStatusLoadMatch {
 
 class OutputUpdateProduct {
   /// BOOLEAN
-  bool? allow_multiple_order;
+  bool? allowMultipleOrders;
   /// STRING
-  String? app_form_name;
+  String? appFormName;
   /// BOOLEAN
-  bool? contract_needed;
+  bool? contractNeeded;
   /// BOOLEAN
-  bool? credentials_needed;
+  bool? credentialsNeeded;
   /// STRING
-  String? description_key;
+  String? descriptionKey;
   /// STRING
-  String? name_key;
+  String? nameKey;
   /// BOOLEAN
-  bool? prescreening_allowed;
+  bool? prescreeningAllowed;
   /// STRING
-  String? product_name;
+  String? productName;
   /// STRING
-  String? product_status;
+  String? productStatus;
   /// STRING (required at the API)
-  String? product_uuid;
+  String? productUUID;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? vendor_name;
+  String? vendorName;
 
   OutputUpdateProduct({
-    this.allow_multiple_order,
-    this.app_form_name,
-    this.contract_needed,
-    this.credentials_needed,
-    this.description_key,
-    this.name_key,
-    this.prescreening_allowed,
-    this.product_name,
-    this.product_status,
-    this.product_uuid,
-    this.response_code,
-    this.response_message,
-    this.vendor_name,
+    this.allowMultipleOrders,
+    this.appFormName,
+    this.contractNeeded,
+    this.credentialsNeeded,
+    this.descriptionKey,
+    this.nameKey,
+    this.prescreeningAllowed,
+    this.productName,
+    this.productStatus,
+    this.productUUID,
+    this.responseCode,
+    this.responseMessage,
+    this.vendorName,
   });
 
   factory OutputUpdateProduct.fromMap(Map<String, dynamic> m) => OutputUpdateProduct(
-        allow_multiple_order: m['allow_multiple_order'] is bool ? m['allow_multiple_order'] : null,
-        app_form_name: m['app_form_name'] is String ? m['app_form_name'] : null,
-        contract_needed: m['contract_needed'] is bool ? m['contract_needed'] : null,
-        credentials_needed: m['credentials_needed'] is bool ? m['credentials_needed'] : null,
-        description_key: m['description_key'] is String ? m['description_key'] : null,
-        name_key: m['name_key'] is String ? m['name_key'] : null,
-        prescreening_allowed: m['prescreening_allowed'] is bool ? m['prescreening_allowed'] : null,
-        product_name: m['product_name'] is String ? m['product_name'] : null,
-        product_status: m['product_status'] is String ? m['product_status'] : null,
-        product_uuid: m['product_uuid'] is String ? m['product_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        vendor_name: m['vendor_name'] is String ? m['vendor_name'] : null,
+        allowMultipleOrders: m['allowMultipleOrders'] is bool ? m['allowMultipleOrders'] : null,
+        appFormName: m['appFormName'] is String ? m['appFormName'] : null,
+        contractNeeded: m['contractNeeded'] is bool ? m['contractNeeded'] : null,
+        credentialsNeeded: m['credentialsNeeded'] is bool ? m['credentialsNeeded'] : null,
+        descriptionKey: m['descriptionKey'] is String ? m['descriptionKey'] : null,
+        nameKey: m['nameKey'] is String ? m['nameKey'] : null,
+        prescreeningAllowed: m['prescreeningAllowed'] is bool ? m['prescreeningAllowed'] : null,
+        productName: m['productName'] is String ? m['productName'] : null,
+        productStatus: m['productStatus'] is String ? m['productStatus'] : null,
+        productUUID: m['productUUID'] is String ? m['productUUID'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        vendorName: m['vendorName'] is String ? m['vendorName'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != allow_multiple_order) {
-      m['allow_multiple_order'] = allow_multiple_order;
+    if (null != allowMultipleOrders) {
+      m['allowMultipleOrders'] = allowMultipleOrders;
     }
-    if (null != app_form_name) {
-      m['app_form_name'] = app_form_name;
+    if (null != appFormName) {
+      m['appFormName'] = appFormName;
     }
-    if (null != contract_needed) {
-      m['contract_needed'] = contract_needed;
+    if (null != contractNeeded) {
+      m['contractNeeded'] = contractNeeded;
     }
-    if (null != credentials_needed) {
-      m['credentials_needed'] = credentials_needed;
+    if (null != credentialsNeeded) {
+      m['credentialsNeeded'] = credentialsNeeded;
     }
-    if (null != description_key) {
-      m['description_key'] = description_key;
+    if (null != descriptionKey) {
+      m['descriptionKey'] = descriptionKey;
     }
-    if (null != name_key) {
-      m['name_key'] = name_key;
+    if (null != nameKey) {
+      m['nameKey'] = nameKey;
     }
-    if (null != prescreening_allowed) {
-      m['prescreening_allowed'] = prescreening_allowed;
+    if (null != prescreeningAllowed) {
+      m['prescreeningAllowed'] = prescreeningAllowed;
     }
-    if (null != product_name) {
-      m['product_name'] = product_name;
+    if (null != productName) {
+      m['productName'] = productName;
     }
-    if (null != product_status) {
-      m['product_status'] = product_status;
+    if (null != productStatus) {
+      m['productStatus'] = productStatus;
     }
-    if (null != product_uuid) {
-      m['product_uuid'] = product_uuid;
+    if (null != productUUID) {
+      m['productUUID'] = productUUID;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != vendor_name) {
-      m['vendor_name'] = vendor_name;
+    if (null != vendorName) {
+      m['vendorName'] = vendorName;
     }
     return m;
   }
@@ -2553,104 +2553,104 @@ class OutputUpdateProduct {
 
 class OutputUpdateProductCreateData {
   /// BOOLEAN
-  bool? allow_multiple_order;
+  bool? allowMultipleOrders;
   /// STRING
-  String? app_form_name;
+  String? appFormName;
   /// BOOLEAN
-  bool? contract_needed;
+  bool? contractNeeded;
   /// BOOLEAN
-  bool? credentials_needed;
+  bool? credentialsNeeded;
   /// STRING
-  String? description_key;
+  String? descriptionKey;
   /// STRING
-  String? name_key;
+  String? nameKey;
   /// BOOLEAN
-  bool? prescreening_allowed;
+  bool? prescreeningAllowed;
   /// STRING
-  String? product_name;
+  String? productName;
   /// STRING
-  String? product_status;
+  String? productStatus;
   /// STRING (required at the API)
-  String? product_uuid;
+  String? productUUID;
   /// INTEGER (required at the API)
-  int? response_code;
+  int? responseCode;
   /// STRING (required at the API)
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? vendor_name;
+  String? vendorName;
 
   OutputUpdateProductCreateData({
-    this.allow_multiple_order,
-    this.app_form_name,
-    this.contract_needed,
-    this.credentials_needed,
-    this.description_key,
-    this.name_key,
-    this.prescreening_allowed,
-    this.product_name,
-    this.product_status,
-    this.product_uuid,
-    this.response_code,
-    this.response_message,
-    this.vendor_name,
+    this.allowMultipleOrders,
+    this.appFormName,
+    this.contractNeeded,
+    this.credentialsNeeded,
+    this.descriptionKey,
+    this.nameKey,
+    this.prescreeningAllowed,
+    this.productName,
+    this.productStatus,
+    this.productUUID,
+    this.responseCode,
+    this.responseMessage,
+    this.vendorName,
   });
 
   factory OutputUpdateProductCreateData.fromMap(Map<String, dynamic> m) => OutputUpdateProductCreateData(
-        allow_multiple_order: m['allow_multiple_order'] is bool ? m['allow_multiple_order'] : null,
-        app_form_name: m['app_form_name'] is String ? m['app_form_name'] : null,
-        contract_needed: m['contract_needed'] is bool ? m['contract_needed'] : null,
-        credentials_needed: m['credentials_needed'] is bool ? m['credentials_needed'] : null,
-        description_key: m['description_key'] is String ? m['description_key'] : null,
-        name_key: m['name_key'] is String ? m['name_key'] : null,
-        prescreening_allowed: m['prescreening_allowed'] is bool ? m['prescreening_allowed'] : null,
-        product_name: m['product_name'] is String ? m['product_name'] : null,
-        product_status: m['product_status'] is String ? m['product_status'] : null,
-        product_uuid: m['product_uuid'] is String ? m['product_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        vendor_name: m['vendor_name'] is String ? m['vendor_name'] : null,
+        allowMultipleOrders: m['allowMultipleOrders'] is bool ? m['allowMultipleOrders'] : null,
+        appFormName: m['appFormName'] is String ? m['appFormName'] : null,
+        contractNeeded: m['contractNeeded'] is bool ? m['contractNeeded'] : null,
+        credentialsNeeded: m['credentialsNeeded'] is bool ? m['credentialsNeeded'] : null,
+        descriptionKey: m['descriptionKey'] is String ? m['descriptionKey'] : null,
+        nameKey: m['nameKey'] is String ? m['nameKey'] : null,
+        prescreeningAllowed: m['prescreeningAllowed'] is bool ? m['prescreeningAllowed'] : null,
+        productName: m['productName'] is String ? m['productName'] : null,
+        productStatus: m['productStatus'] is String ? m['productStatus'] : null,
+        productUUID: m['productUUID'] is String ? m['productUUID'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        vendorName: m['vendorName'] is String ? m['vendorName'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != allow_multiple_order) {
-      m['allow_multiple_order'] = allow_multiple_order;
+    if (null != allowMultipleOrders) {
+      m['allowMultipleOrders'] = allowMultipleOrders;
     }
-    if (null != app_form_name) {
-      m['app_form_name'] = app_form_name;
+    if (null != appFormName) {
+      m['appFormName'] = appFormName;
     }
-    if (null != contract_needed) {
-      m['contract_needed'] = contract_needed;
+    if (null != contractNeeded) {
+      m['contractNeeded'] = contractNeeded;
     }
-    if (null != credentials_needed) {
-      m['credentials_needed'] = credentials_needed;
+    if (null != credentialsNeeded) {
+      m['credentialsNeeded'] = credentialsNeeded;
     }
-    if (null != description_key) {
-      m['description_key'] = description_key;
+    if (null != descriptionKey) {
+      m['descriptionKey'] = descriptionKey;
     }
-    if (null != name_key) {
-      m['name_key'] = name_key;
+    if (null != nameKey) {
+      m['nameKey'] = nameKey;
     }
-    if (null != prescreening_allowed) {
-      m['prescreening_allowed'] = prescreening_allowed;
+    if (null != prescreeningAllowed) {
+      m['prescreeningAllowed'] = prescreeningAllowed;
     }
-    if (null != product_name) {
-      m['product_name'] = product_name;
+    if (null != productName) {
+      m['productName'] = productName;
     }
-    if (null != product_status) {
-      m['product_status'] = product_status;
+    if (null != productStatus) {
+      m['productStatus'] = productStatus;
     }
-    if (null != product_uuid) {
-      m['product_uuid'] = product_uuid;
+    if (null != productUUID) {
+      m['productUUID'] = productUUID;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != vendor_name) {
-      m['vendor_name'] = vendor_name;
+    if (null != vendorName) {
+      m['vendorName'] = vendorName;
     }
     return m;
   }

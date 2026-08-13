@@ -320,7 +320,7 @@ const merchant_portal_pam_contract_controller = client.merchant_portal_pam_contr
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `language` | `[]const u8` | Yes |  |
-| `product_order_uuid` | `[]const u8` | Yes |  |
+| `productOrderUUID` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -331,7 +331,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 ```zig
 switch (client.merchant_portal_pam_contract_controller(h.vnull()).create(h.jo(&.{
     .{ "language", h.vstr("example_language") }, // []const u8
-    .{ "product_order_uuid", h.vstr("example_product_order_uuid") }, // []const u8
+    .{ "productOrderUUID", h.vstr("example_productOrderUUID") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -369,9 +369,9 @@ const merchant_portal_pam_document_controller = client.merchant_portal_pam_docum
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_field_desc_uuid` | `[]const u8` | Yes |  |
-| `package_order_uuid` | `[]const u8` | No |  |
-| `product_order_uuid` | `[]const u8` | No |  |
+| `appFormFieldDescUUID` | `[]const u8` | Yes |  |
+| `packageOrderUUID` | `[]const u8` | No |  |
+| `productOrderUUID` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -381,7 +381,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.merchant_portal_pam_document_controller(h.vnull()).create(h.jo(&.{
-    .{ "app_form_field_desc_uuid", h.vstr("example_app_form_field_desc_uuid") }, // []const u8
+    .{ "appFormFieldDescUUID", h.vstr("example_appFormFieldDescUUID") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -419,29 +419,29 @@ const merchant_portal_pam_form_controller = client.merchant_portal_pam_form_cont
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `[]const u8` | Yes |  |
+| `appFormFieldsDescUUID` | `[]const u8` | Yes |  |
 | `filter` | `Value (object)` | No |  |
 | `language` | `[]const u8` | Yes |  |
-| `package_order` | `Value (object)` | No |  |
-| `package_order_uuid` | `[]const u8` | Yes |  |
-| `package_uuid` | `[]const u8` | No |  |
-| `product_order` | `Value (array)` | No |  |
-| `product_order_uuid` | `[]const u8` | No |  |
-| `reason_of_reopening` | `[]const u8` | Yes |  |
+| `packageOrder` | `Value (object)` | No |  |
+| `packageOrderUUID` | `[]const u8` | Yes |  |
+| `packageUUID` | `[]const u8` | No |  |
+| `productOrderUUID` | `[]const u8` | No |  |
+| `productOrders` | `Value (array)` | No |  |
+| `reasonOfReopening` | `[]const u8` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `app_form_fields_desc_uuid` | - |
+| `appFormFieldsDescUUID` | - |
 | `filter` | - |
 | `language` | Yes |
-| `package_order` | - |
-| `package_order_uuid` | Yes |
-| `package_uuid` | - |
-| `product_order` | - |
-| `product_order_uuid` | Yes |
-| `reason_of_reopening` | - |
+| `packageOrder` | - |
+| `packageOrderUUID` | Yes |
+| `packageUUID` | - |
+| `productOrderUUID` | Yes |
+| `productOrders` | - |
+| `reasonOfReopening` | - |
 
 ### Operations
 
@@ -451,10 +451,10 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.merchant_portal_pam_form_controller(h.vnull()).create(h.jo(&.{
-    .{ "app_form_fields_desc_uuid", h.vstr("example_app_form_fields_desc_uuid") }, // []const u8
+    .{ "appFormFieldsDescUUID", h.vstr("example_appFormFieldsDescUUID") }, // []const u8
     .{ "language", h.vstr("example_language") }, // []const u8
-    .{ "package_order_uuid", h.vstr("example_package_order_uuid") }, // []const u8
-    .{ "reason_of_reopening", h.vstr("example_reason_of_reopening") }, // []const u8
+    .{ "packageOrderUUID", h.vstr("example_packageOrderUUID") }, // []const u8
+    .{ "reasonOfReopening", h.vstr("example_reasonOfReopening") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -492,10 +492,10 @@ const merchant_portal_pam_mandator_controller = client.merchant_portal_pam_manda
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `[]const u8` | No |  |
-| `mandator_name` | `[]const u8` | Yes |  |
-| `notification_email` | `[]const u8` | No |  |
-| `package_uuid` | `[]const u8` | Yes |  |
+| `clientSecret` | `[]const u8` | No |  |
+| `mandatorName` | `[]const u8` | Yes |  |
+| `notificationEmail` | `[]const u8` | No |  |
+| `packageUUID` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -505,8 +505,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.merchant_portal_pam_mandator_controller(h.vnull()).create(h.jo(&.{
-    .{ "mandator_name", h.vstr("example_mandator_name") }, // []const u8
-    .{ "package_uuid", h.vstr("example_package_uuid") }, // []const u8
+    .{ "mandatorName", h.vstr("example_mandatorName") }, // []const u8
+    .{ "packageUUID", h.vstr("example_packageUUID") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -545,29 +545,29 @@ const merchant_portal_pam_merchant_controller = client.merchant_portal_pam_merch
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `additional_data` | `Value (object)` | No |  |
-| `business_registration_number` | `[]const u8` | Yes |  |
+| `businessRegistrationNumber` | `[]const u8` | Yes |  |
 | `city` | `[]const u8` | No |  |
-| `company_name` | `[]const u8` | Yes |  |
-| `corporate_uuid` | `[]const u8` | Yes |  |
+| `companyName` | `[]const u8` | Yes |  |
+| `corporateUUID` | `[]const u8` | Yes |  |
 | `country` | `[]const u8` | No |  |
 | `currency` | `[]const u8` | Yes |  |
 | `email` | `[]const u8` | Yes |  |
 | `language` | `[]const u8` | Yes |  |
 | `login` | `[]const u8` | Yes |  |
 | `mandator` | `[]const u8` | Yes |  |
+| `merchantContractNumber` | `[]const u8` | Yes |  |
+| `merchantName` | `[]const u8` | No |  |
 | `merchant_category_code` | `[]const u8` | No |  |
-| `merchant_contract_number` | `[]const u8` | Yes |  |
-| `merchant_name` | `[]const u8` | No |  |
-| `package_uuid` | `[]const u8` | No |  |
+| `packageUUID` | `[]const u8` | No |  |
 | `packageorderuuid` | `[]const u8` | Yes |  |
-| `phone_number` | `[]const u8` | Yes |  |
-| `postal_code` | `[]const u8` | No |  |
+| `phoneNumber` | `[]const u8` | Yes |  |
+| `postalCode` | `[]const u8` | No |  |
 | `productid_acquirer` | `[]const u8` | Yes |  |
 | `region` | `[]const u8` | No |  |
-| `registration_number` | `[]const u8` | No |  |
+| `registrationNumber` | `[]const u8` | No |  |
 | `signature` | `[]const u8` | No |  |
 | `street` | `[]const u8` | No |  |
-| `terminal_id` | `Value (array)` | No |  |
+| `terminalIds` | `Value (array)` | No |  |
 | `terminalid_acquirer` | `[]const u8` | No |  |
 | `vu_nummer` | `[]const u8` | Yes |  |
 
@@ -576,29 +576,29 @@ const merchant_portal_pam_merchant_controller = client.merchant_portal_pam_merch
 | Field | create |
 | --- | --- |
 | `additional_data` | - |
-| `business_registration_number` | - |
+| `businessRegistrationNumber` | - |
 | `city` | - |
-| `company_name` | - |
-| `corporate_uuid` | - |
+| `companyName` | - |
+| `corporateUUID` | - |
 | `country` | - |
 | `currency` | - |
 | `email` | - |
 | `language` | - |
 | `login` | - |
 | `mandator` | - |
+| `merchantContractNumber` | Yes |
+| `merchantName` | - |
 | `merchant_category_code` | - |
-| `merchant_contract_number` | Yes |
-| `merchant_name` | - |
-| `package_uuid` | - |
+| `packageUUID` | - |
 | `packageorderuuid` | - |
-| `phone_number` | - |
-| `postal_code` | - |
+| `phoneNumber` | - |
+| `postalCode` | - |
 | `productid_acquirer` | - |
 | `region` | - |
-| `registration_number` | - |
+| `registrationNumber` | - |
 | `signature` | - |
 | `street` | - |
-| `terminal_id` | - |
+| `terminalIds` | - |
 | `terminalid_acquirer` | - |
 | `vu_nummer` | - |
 
@@ -610,17 +610,17 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.merchant_portal_pam_merchant_controller(h.vnull()).create(h.jo(&.{
-    .{ "business_registration_number", h.vstr("example_business_registration_number") }, // []const u8
-    .{ "company_name", h.vstr("example_company_name") }, // []const u8
-    .{ "corporate_uuid", h.vstr("example_corporate_uuid") }, // []const u8
+    .{ "businessRegistrationNumber", h.vstr("example_businessRegistrationNumber") }, // []const u8
+    .{ "companyName", h.vstr("example_companyName") }, // []const u8
+    .{ "corporateUUID", h.vstr("example_corporateUUID") }, // []const u8
     .{ "currency", h.vstr("example_currency") }, // []const u8
     .{ "email", h.vstr("example_email") }, // []const u8
     .{ "language", h.vstr("example_language") }, // []const u8
     .{ "login", h.vstr("example_login") }, // []const u8
     .{ "mandator", h.vstr("example_mandator") }, // []const u8
-    .{ "merchant_contract_number", h.vstr("example_merchant_contract_number") }, // []const u8
+    .{ "merchantContractNumber", h.vstr("example_merchantContractNumber") }, // []const u8
     .{ "packageorderuuid", h.vstr("example_packageorderuuid") }, // []const u8
-    .{ "phone_number", h.vstr("example_phone_number") }, // []const u8
+    .{ "phoneNumber", h.vstr("example_phoneNumber") }, // []const u8
     .{ "productid_acquirer", h.vstr("example_productid_acquirer") }, // []const u8
     .{ "vu_nummer", h.vstr("example_vu_nummer") }, // []const u8
 }), h.vnull())) {
@@ -660,15 +660,15 @@ const merchant_portal_pam_package_controller = client.merchant_portal_pam_packag
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `[]const u8` | No |  |
-| `corporate_uuid` | `[]const u8` | No |  |
+| `consumerUUID` | `[]const u8` | No |  |
+| `corporateUUID` | `[]const u8` | No |  |
 | `country` | `[]const u8` | No |  |
-| `description_key` | `[]const u8` | No |  |
+| `descriptionKey` | `[]const u8` | No |  |
 | `filter` | `Value (object)` | No |  |
 | `language` | `[]const u8` | Yes |  |
-| `name_key` | `[]const u8` | No |  |
-| `package_status` | `[]const u8` | No |  |
-| `package_uuid` | `[]const u8` | Yes |  |
+| `nameKey` | `[]const u8` | No |  |
+| `packageStatus` | `[]const u8` | No |  |
+| `packageUUID` | `[]const u8` | Yes |  |
 | `pagination` | `Value (object)` | No |  |
 | `sorting` | `Value (object)` | No |  |
 
@@ -676,15 +676,15 @@ const merchant_portal_pam_package_controller = client.merchant_portal_pam_packag
 
 | Field | create |
 | --- | --- |
-| `consumer_uuid` | - |
-| `corporate_uuid` | - |
+| `consumerUUID` | - |
+| `corporateUUID` | - |
 | `country` | - |
-| `description_key` | - |
+| `descriptionKey` | - |
 | `filter` | - |
 | `language` | Yes |
-| `name_key` | - |
-| `package_status` | - |
-| `package_uuid` | - |
+| `nameKey` | - |
+| `packageStatus` | - |
+| `packageUUID` | - |
 | `pagination` | - |
 | `sorting` | - |
 
@@ -697,7 +697,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 ```zig
 switch (client.merchant_portal_pam_package_controller(h.vnull()).create(h.jo(&.{
     .{ "language", h.vstr("example_language") }, // []const u8
-    .{ "package_uuid", h.vstr("example_package_uuid") }, // []const u8
+    .{ "packageUUID", h.vstr("example_packageUUID") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -735,14 +735,14 @@ const merchant_portal_pam_product_controller = client.merchant_portal_pam_produc
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `[]const u8` | No |  |
+| `consumerUUID` | `[]const u8` | No |  |
 | `filter` | `Value (object)` | No |  |
 | `language` | `[]const u8` | No |  |
-| `merchant_id` | `[]const u8` | No |  |
-| `package_order_uuid` | `[]const u8` | Yes |  |
+| `merchantID` | `[]const u8` | No |  |
+| `packageOrderUUID` | `[]const u8` | Yes |  |
 | `pagination` | `Value (object)` | No |  |
-| `product_order_uuid` | `[]const u8` | Yes |  |
-| `product_uuid` | `[]const u8` | Yes |  |
+| `productOrderUUID` | `[]const u8` | Yes |  |
+| `productUUID` | `[]const u8` | Yes |  |
 | `reason_decline` | `[]const u8` | Yes |  |
 | `sorting` | `Value (object)` | No |  |
 
@@ -754,9 +754,9 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.merchant_portal_pam_product_controller(h.vnull()).create(h.jo(&.{
-    .{ "package_order_uuid", h.vstr("example_package_order_uuid") }, // []const u8
-    .{ "product_order_uuid", h.vstr("example_product_order_uuid") }, // []const u8
-    .{ "product_uuid", h.vstr("example_product_uuid") }, // []const u8
+    .{ "packageOrderUUID", h.vstr("example_packageOrderUUID") }, // []const u8
+    .{ "productOrderUUID", h.vstr("example_productOrderUUID") }, // []const u8
+    .{ "productUUID", h.vstr("example_productUUID") }, // []const u8
     .{ "reason_decline", h.vstr("example_reason_decline") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
@@ -795,10 +795,10 @@ const output_add_product = client.output_add_product(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `[]const u8` | Yes |  |
-| `product_uui_d` | `Value (array)` | Yes |  |
-| `response_code` | `i64` | Yes |  |
-| `response_message` | `[]const u8` | Yes |  |
+| `packageUUID` | `[]const u8` | Yes |  |
+| `productUUIDs` | `Value (array)` | Yes |  |
+| `responseCode` | `i64` | Yes |  |
+| `responseMessage` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -808,10 +808,10 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.output_add_product(h.vnull()).create(h.jo(&.{
-    .{ "package_uuid", h.vstr("example_package_uuid") }, // []const u8
-    .{ "product_uui_d", h.olist() }, // Value (array)
-    .{ "response_code", h.vnum(1) }, // i64
-    .{ "response_message", h.vstr("example_response_message") }, // []const u8
+    .{ "packageUUID", h.vstr("example_packageUUID") }, // []const u8
+    .{ "productUUIDs", h.olist() }, // Value (array)
+    .{ "responseCode", h.vnum(1) }, // i64
+    .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -849,20 +849,20 @@ const output_create_product = client.output_create_product(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `[]const u8` | No |  |
-| `allow_multiple_order` | `bool` | Yes |  |
-| `app_form_template_name` | `[]const u8` | Yes |  |
-| `contract_needed` | `bool` | Yes |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `[]const u8` | Yes |  |
-| `name_key` | `[]const u8` | Yes |  |
-| `prescreening_allowed` | `bool` | Yes |  |
-| `product_name` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | Yes |  |
-| `response_message` | `[]const u8` | Yes |  |
-| `terminal_template_name` | `[]const u8` | Yes |  |
-| `vendor_name` | `[]const u8` | Yes |  |
-| `xml_template_file` | `[]const u8` | Yes |  |
+| `acquirerId` | `[]const u8` | No |  |
+| `allowMultipleOrders` | `bool` | Yes |  |
+| `appFormTemplateName` | `[]const u8` | Yes |  |
+| `contractNeeded` | `bool` | Yes |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `[]const u8` | Yes |  |
+| `nameKey` | `[]const u8` | Yes |  |
+| `prescreeningAllowed` | `bool` | Yes |  |
+| `productName` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | Yes |  |
+| `responseMessage` | `[]const u8` | Yes |  |
+| `terminalTemplateName` | `[]const u8` | Yes |  |
+| `vendorName` | `[]const u8` | Yes |  |
+| `xmlTemplateFile` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -872,18 +872,18 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.output_create_product(h.vnull()).create(h.jo(&.{
-    .{ "allow_multiple_order", h.vbool(true) }, // bool
-    .{ "app_form_template_name", h.vstr("example_app_form_template_name") }, // []const u8
-    .{ "contract_needed", h.vbool(true) }, // bool
-    .{ "description_key", h.vstr("example_description_key") }, // []const u8
-    .{ "name_key", h.vstr("example_name_key") }, // []const u8
-    .{ "prescreening_allowed", h.vbool(true) }, // bool
-    .{ "product_name", h.vstr("example_product_name") }, // []const u8
-    .{ "response_code", h.vnum(1) }, // i64
-    .{ "response_message", h.vstr("example_response_message") }, // []const u8
-    .{ "terminal_template_name", h.vstr("example_terminal_template_name") }, // []const u8
-    .{ "vendor_name", h.vstr("example_vendor_name") }, // []const u8
-    .{ "xml_template_file", h.vstr("example_xml_template_file") }, // []const u8
+    .{ "allowMultipleOrders", h.vbool(true) }, // bool
+    .{ "appFormTemplateName", h.vstr("example_appFormTemplateName") }, // []const u8
+    .{ "contractNeeded", h.vbool(true) }, // bool
+    .{ "descriptionKey", h.vstr("example_descriptionKey") }, // []const u8
+    .{ "nameKey", h.vstr("example_nameKey") }, // []const u8
+    .{ "prescreeningAllowed", h.vbool(true) }, // bool
+    .{ "productName", h.vstr("example_productName") }, // []const u8
+    .{ "responseCode", h.vnum(1) }, // i64
+    .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
+    .{ "terminalTemplateName", h.vstr("example_terminalTemplateName") }, // []const u8
+    .{ "vendorName", h.vstr("example_vendorName") }, // []const u8
+    .{ "xmlTemplateFile", h.vstr("example_xmlTemplateFile") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -921,9 +921,9 @@ const output_detail = client.output_detail(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `detail` | `Value (object)` | No |  |
-| `response_code` | `i64` | Yes |  |
-| `response_message` | `[]const u8` | Yes |  |
+| `batch` | `Value (object)` | No |  |
+| `lines` | `Value (object)` | No |  |
+| `progress` | `Value (object)` | No |  |
 
 ### Operations
 
@@ -969,20 +969,20 @@ const output_list = client.output_list(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `item` | `Value (array)` | No |  |
+| `items` | `Value (array)` | No |  |
 | `pagination` | `Value (object)` | Yes |  |
-| `response_code` | `i64` | Yes |  |
-| `response_message` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | Yes |  |
+| `responseMessage` | `[]const u8` | Yes |  |
 | `sorting` | `Value (object)` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `item` | - |
+| `items` | - |
 | `pagination` | Yes |
-| `response_code` | - |
-| `response_message` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
 | `sorting` | - |
 
 ### Operations
@@ -994,8 +994,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 ```zig
 switch (client.output_list(h.vnull()).create(h.jo(&.{
     .{ "pagination", h.omap() }, // Value (object)
-    .{ "response_code", h.vnum(1) }, // i64
-    .{ "response_message", h.vstr("example_response_message") }, // []const u8
+    .{ "responseCode", h.vnum(1) }, // i64
+    .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1033,8 +1033,8 @@ const output_message = client.output_message(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `i64` | Yes |  |
-| `response_message` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | Yes |  |
+| `responseMessage` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -1080,11 +1080,11 @@ const output_move_tid = client.output_move_tid(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `product_order_uui_d` | `Value (array)` | Yes |  |
-| `response_code` | `i64` | Yes |  |
-| `response_message` | `[]const u8` | Yes |  |
-| `target_package_order_uuid` | `[]const u8` | Yes |  |
-| `target_product_order_uuid` | `[]const u8` | Yes |  |
+| `productOrderUUIDs` | `Value (array)` | Yes |  |
+| `responseCode` | `i64` | Yes |  |
+| `responseMessage` | `[]const u8` | Yes |  |
+| `targetPackageOrderUUID` | `[]const u8` | Yes |  |
+| `targetProductOrderUUID` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -1094,11 +1094,11 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.output_move_tid(h.vnull()).create(h.jo(&.{
-    .{ "product_order_uui_d", h.olist() }, // Value (array)
-    .{ "response_code", h.vnum(1) }, // i64
-    .{ "response_message", h.vstr("example_response_message") }, // []const u8
-    .{ "target_package_order_uuid", h.vstr("example_target_package_order_uuid") }, // []const u8
-    .{ "target_product_order_uuid", h.vstr("example_target_product_order_uuid") }, // []const u8
+    .{ "productOrderUUIDs", h.olist() }, // Value (array)
+    .{ "responseCode", h.vnum(1) }, // i64
+    .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
+    .{ "targetPackageOrderUUID", h.vstr("example_targetPackageOrderUUID") }, // []const u8
+    .{ "targetProductOrderUUID", h.vstr("example_targetProductOrderUUID") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1136,10 +1136,10 @@ const output_remove_product = client.output_remove_product(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `[]const u8` | Yes |  |
-| `product_uui_d` | `Value (array)` | Yes |  |
-| `response_code` | `i64` | Yes |  |
-| `response_message` | `[]const u8` | Yes |  |
+| `packageUUID` | `[]const u8` | Yes |  |
+| `productUUIDs` | `Value (array)` | Yes |  |
+| `responseCode` | `i64` | Yes |  |
+| `responseMessage` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -1149,10 +1149,10 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.output_remove_product(h.vnull()).create(h.jo(&.{
-    .{ "package_uuid", h.vstr("example_package_uuid") }, // []const u8
-    .{ "product_uui_d", h.olist() }, // Value (array)
-    .{ "response_code", h.vnum(1) }, // i64
-    .{ "response_message", h.vstr("example_response_message") }, // []const u8
+    .{ "packageUUID", h.vstr("example_packageUUID") }, // []const u8
+    .{ "productUUIDs", h.olist() }, // Value (array)
+    .{ "responseCode", h.vnum(1) }, // i64
+    .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1191,8 +1191,8 @@ const output_start = client.output_start(h.vnull());
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `[]const u8` | No |  |
-| `response_code` | `i64` | Yes |  |
-| `response_message` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | Yes |  |
+| `responseMessage` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -1202,8 +1202,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.output_start(h.vnull()).create(h.jo(&.{
-    .{ "response_code", h.vnum(1) }, // i64
-    .{ "response_message", h.vstr("example_response_message") }, // []const u8
+    .{ "responseCode", h.vnum(1) }, // i64
+    .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1242,8 +1242,8 @@ const output_status = client.output_status(h.vnull());
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `i64` | No |  |
-| `response_code` | `i64` | Yes |  |
-| `response_message` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | Yes |  |
+| `responseMessage` | `[]const u8` | Yes |  |
 | `status` | `[]const u8` | No |  |
 
 ### Operations
@@ -1290,19 +1290,19 @@ const output_update_product = client.output_update_product(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allow_multiple_order` | `bool` | No |  |
-| `app_form_name` | `[]const u8` | No |  |
-| `contract_needed` | `bool` | No |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `[]const u8` | No |  |
-| `name_key` | `[]const u8` | No |  |
-| `prescreening_allowed` | `bool` | No |  |
-| `product_name` | `[]const u8` | No |  |
-| `product_status` | `[]const u8` | No |  |
-| `product_uuid` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | Yes |  |
-| `response_message` | `[]const u8` | Yes |  |
-| `vendor_name` | `[]const u8` | No |  |
+| `allowMultipleOrders` | `bool` | No |  |
+| `appFormName` | `[]const u8` | No |  |
+| `contractNeeded` | `bool` | No |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `[]const u8` | No |  |
+| `nameKey` | `[]const u8` | No |  |
+| `prescreeningAllowed` | `bool` | No |  |
+| `productName` | `[]const u8` | No |  |
+| `productStatus` | `[]const u8` | No |  |
+| `productUUID` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | Yes |  |
+| `responseMessage` | `[]const u8` | Yes |  |
+| `vendorName` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -1312,9 +1312,9 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.output_update_product(h.vnull()).create(h.jo(&.{
-    .{ "product_uuid", h.vstr("example_product_uuid") }, // []const u8
-    .{ "response_code", h.vnum(1) }, // i64
-    .{ "response_message", h.vstr("example_response_message") }, // []const u8
+    .{ "productUUID", h.vstr("example_productUUID") }, // []const u8
+    .{ "responseCode", h.vnum(1) }, // i64
+    .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),

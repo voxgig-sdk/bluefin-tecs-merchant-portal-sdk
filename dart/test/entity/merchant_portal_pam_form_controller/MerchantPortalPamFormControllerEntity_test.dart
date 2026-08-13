@@ -47,7 +47,7 @@ void tests() {
       final merchant_portal_pam_form_controller_ref01_ent = client.MerchantPortalPamFormController();
       dynamic merchant_portal_pam_form_controller_ref01_data = setup['data']['new']['merchant_portal_pam_form_controller']['merchant_portal_pam_form_controller_ref01'];
 
-      merchant_portal_pam_form_controller_ref01_data = await merchant_portal_pam_form_controller_ref01_ent.create(merchant_portal_pam_form_controller_ref01_data);
+      merchant_portal_pam_form_controller_ref01_data = (await merchant_portal_pam_form_controller_ref01_ent.create(merchant_portal_pam_form_controller_ref01_data)).data();
       ok(null != merchant_portal_pam_form_controller_ref01_data);
 
 

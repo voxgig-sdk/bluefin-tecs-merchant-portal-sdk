@@ -6,12 +6,12 @@ main: kit: entity: merchant_portal_pam_package_controller: {
 
   fields: [
     {
-      name: "consumer_uuid"
+      name: "consumerUUID"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "corporate_uuid"
+      name: "corporateUUID"
       req: false
       type: "`$STRING`"
     }
@@ -21,7 +21,7 @@ main: kit: entity: merchant_portal_pam_package_controller: {
       type: "`$STRING`"
     }
     {
-      name: "description_key"
+      name: "descriptionKey"
       req: false
       type: "`$STRING`"
     }
@@ -42,17 +42,17 @@ main: kit: entity: merchant_portal_pam_package_controller: {
       type: "`$STRING`"
     }
     {
-      name: "name_key"
+      name: "nameKey"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "package_status"
+      name: "packageStatus"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "package_uuid"
+      name: "packageUUID"
       req: true
       type: "`$STRING`"
     }

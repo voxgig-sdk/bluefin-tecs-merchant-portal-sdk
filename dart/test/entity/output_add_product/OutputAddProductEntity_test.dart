@@ -47,7 +47,7 @@ void tests() {
       final output_add_product_ref01_ent = client.OutputAddProduct();
       dynamic output_add_product_ref01_data = setup['data']['new']['output_add_product']['output_add_product_ref01'];
 
-      output_add_product_ref01_data = await output_add_product_ref01_ent.create(output_add_product_ref01_data);
+      output_add_product_ref01_data = (await output_add_product_ref01_ent.create(output_add_product_ref01_data)).data();
       ok(null != output_add_product_ref01_data);
 
 

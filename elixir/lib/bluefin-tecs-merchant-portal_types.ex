@@ -110,7 +110,7 @@ defmodule BluefinTecsMerchantPortal.Types do
 
   Members:
     * `"language"` — String.t() (required)
-    * `"product_order_uuid"` — String.t() (required)
+    * `"productOrderUUID"` — String.t() (required)
   """
   @type merchant_portal_pam_contract_controller :: %{optional(String.t()) => any()}
 
@@ -119,7 +119,7 @@ defmodule BluefinTecsMerchantPortal.Types do
 
   Members:
     * `"language"` — String.t() (required)
-    * `"product_order_uuid"` — String.t() (required)
+    * `"productOrderUUID"` — String.t() (required)
   """
   @type merchant_portal_pam_contract_controller_create_data :: %{optional(String.t()) => any()}
 
@@ -127,9 +127,9 @@ defmodule BluefinTecsMerchantPortal.Types do
   MerchantPortalPamDocumentController entity data model.
 
   Members:
-    * `"app_form_field_desc_uuid"` — String.t() (required)
-    * `"package_order_uuid"` — String.t() (optional)
-    * `"product_order_uuid"` — String.t() (optional)
+    * `"appFormFieldDescUUID"` — String.t() (required)
+    * `"packageOrderUUID"` — String.t() (optional)
+    * `"productOrderUUID"` — String.t() (optional)
   """
   @type merchant_portal_pam_document_controller :: %{optional(String.t()) => any()}
 
@@ -137,9 +137,9 @@ defmodule BluefinTecsMerchantPortal.Types do
   Request payload for MerchantPortalPamDocumentController create.
 
   Members:
-    * `"app_form_field_desc_uuid"` — String.t() (required)
-    * `"package_order_uuid"` — String.t() (optional)
-    * `"product_order_uuid"` — String.t() (optional)
+    * `"appFormFieldDescUUID"` — String.t() (required)
+    * `"packageOrderUUID"` — String.t() (optional)
+    * `"productOrderUUID"` — String.t() (optional)
   """
   @type merchant_portal_pam_document_controller_create_data :: %{optional(String.t()) => any()}
 
@@ -147,15 +147,15 @@ defmodule BluefinTecsMerchantPortal.Types do
   MerchantPortalPamFormController entity data model.
 
   Members:
-    * `"app_form_fields_desc_uuid"` — String.t() (required)
+    * `"appFormFieldsDescUUID"` — String.t() (required)
     * `"filter"` — map() (optional)
     * `"language"` — String.t() (required)
-    * `"package_order"` — map() (optional)
-    * `"package_order_uuid"` — String.t() (required)
-    * `"package_uuid"` — String.t() (optional)
-    * `"product_order"` — list() (optional)
-    * `"product_order_uuid"` — String.t() (optional)
-    * `"reason_of_reopening"` — String.t() (required)
+    * `"packageOrder"` — map() (optional)
+    * `"packageOrderUUID"` — String.t() (required)
+    * `"packageUUID"` — String.t() (optional)
+    * `"productOrderUUID"` — String.t() (optional)
+    * `"productOrders"` — list() (optional)
+    * `"reasonOfReopening"` — String.t() (required)
   """
   @type merchant_portal_pam_form_controller :: %{optional(String.t()) => any()}
 
@@ -163,15 +163,15 @@ defmodule BluefinTecsMerchantPortal.Types do
   Request payload for MerchantPortalPamFormController create.
 
   Members:
-    * `"app_form_fields_desc_uuid"` — String.t() (required)
+    * `"appFormFieldsDescUUID"` — String.t() (required)
     * `"filter"` — map() (optional)
     * `"language"` — String.t() (required)
-    * `"package_order"` — map() (optional)
-    * `"package_order_uuid"` — String.t() (required)
-    * `"package_uuid"` — String.t() (optional)
-    * `"product_order"` — list() (optional)
-    * `"product_order_uuid"` — String.t() (optional)
-    * `"reason_of_reopening"` — String.t() (required)
+    * `"packageOrder"` — map() (optional)
+    * `"packageOrderUUID"` — String.t() (required)
+    * `"packageUUID"` — String.t() (optional)
+    * `"productOrderUUID"` — String.t() (optional)
+    * `"productOrders"` — list() (optional)
+    * `"reasonOfReopening"` — String.t() (required)
   """
   @type merchant_portal_pam_form_controller_create_data :: %{optional(String.t()) => any()}
 
@@ -179,10 +179,10 @@ defmodule BluefinTecsMerchantPortal.Types do
   MerchantPortalPamMandatorController entity data model.
 
   Members:
-    * `"client_secret"` — String.t() (optional)
-    * `"mandator_name"` — String.t() (required)
-    * `"notification_email"` — String.t() (optional)
-    * `"package_uuid"` — String.t() (required)
+    * `"clientSecret"` — String.t() (optional)
+    * `"mandatorName"` — String.t() (required)
+    * `"notificationEmail"` — String.t() (optional)
+    * `"packageUUID"` — String.t() (required)
   """
   @type merchant_portal_pam_mandator_controller :: %{optional(String.t()) => any()}
 
@@ -190,10 +190,10 @@ defmodule BluefinTecsMerchantPortal.Types do
   Request payload for MerchantPortalPamMandatorController create.
 
   Members:
-    * `"client_secret"` — String.t() (optional)
-    * `"mandator_name"` — String.t() (required)
-    * `"notification_email"` — String.t() (optional)
-    * `"package_uuid"` — String.t() (required)
+    * `"clientSecret"` — String.t() (optional)
+    * `"mandatorName"` — String.t() (required)
+    * `"notificationEmail"` — String.t() (optional)
+    * `"packageUUID"` — String.t() (required)
   """
   @type merchant_portal_pam_mandator_controller_create_data :: %{optional(String.t()) => any()}
 
@@ -202,29 +202,29 @@ defmodule BluefinTecsMerchantPortal.Types do
 
   Members:
     * `"additional_data"` — map() (optional)
-    * `"business_registration_number"` — String.t() (required)
+    * `"businessRegistrationNumber"` — String.t() (required)
     * `"city"` — String.t() (optional)
-    * `"company_name"` — String.t() (required)
-    * `"corporate_uuid"` — String.t() (required)
+    * `"companyName"` — String.t() (required)
+    * `"corporateUUID"` — String.t() (required)
     * `"country"` — String.t() (optional)
     * `"currency"` — String.t() (required)
     * `"email"` — String.t() (required)
     * `"language"` — String.t() (required)
     * `"login"` — String.t() (required)
     * `"mandator"` — String.t() (required)
+    * `"merchantContractNumber"` — String.t() (required)
+    * `"merchantName"` — String.t() (optional)
     * `"merchant_category_code"` — String.t() (optional)
-    * `"merchant_contract_number"` — String.t() (required)
-    * `"merchant_name"` — String.t() (optional)
-    * `"package_uuid"` — String.t() (optional)
+    * `"packageUUID"` — String.t() (optional)
     * `"packageorderuuid"` — String.t() (required)
-    * `"phone_number"` — String.t() (required)
-    * `"postal_code"` — String.t() (optional)
+    * `"phoneNumber"` — String.t() (required)
+    * `"postalCode"` — String.t() (optional)
     * `"productid_acquirer"` — String.t() (required)
     * `"region"` — String.t() (optional)
-    * `"registration_number"` — String.t() (optional)
+    * `"registrationNumber"` — String.t() (optional)
     * `"signature"` — String.t() (optional)
     * `"street"` — String.t() (optional)
-    * `"terminal_id"` — list() (optional)
+    * `"terminalIds"` — list() (optional)
     * `"terminalid_acquirer"` — String.t() (optional)
     * `"vu_nummer"` — String.t() (required)
   """
@@ -235,29 +235,29 @@ defmodule BluefinTecsMerchantPortal.Types do
 
   Members:
     * `"additional_data"` — map() (optional)
-    * `"business_registration_number"` — String.t() (required)
+    * `"businessRegistrationNumber"` — String.t() (required)
     * `"city"` — String.t() (optional)
-    * `"company_name"` — String.t() (required)
-    * `"corporate_uuid"` — String.t() (required)
+    * `"companyName"` — String.t() (required)
+    * `"corporateUUID"` — String.t() (required)
     * `"country"` — String.t() (optional)
     * `"currency"` — String.t() (required)
     * `"email"` — String.t() (required)
     * `"language"` — String.t() (required)
     * `"login"` — String.t() (required)
     * `"mandator"` — String.t() (required)
+    * `"merchantContractNumber"` — String.t() (required)
+    * `"merchantName"` — String.t() (optional)
     * `"merchant_category_code"` — String.t() (optional)
-    * `"merchant_contract_number"` — String.t() (required)
-    * `"merchant_name"` — String.t() (optional)
-    * `"package_uuid"` — String.t() (optional)
+    * `"packageUUID"` — String.t() (optional)
     * `"packageorderuuid"` — String.t() (required)
-    * `"phone_number"` — String.t() (required)
-    * `"postal_code"` — String.t() (optional)
+    * `"phoneNumber"` — String.t() (required)
+    * `"postalCode"` — String.t() (optional)
     * `"productid_acquirer"` — String.t() (required)
     * `"region"` — String.t() (optional)
-    * `"registration_number"` — String.t() (optional)
+    * `"registrationNumber"` — String.t() (optional)
     * `"signature"` — String.t() (optional)
     * `"street"` — String.t() (optional)
-    * `"terminal_id"` — list() (optional)
+    * `"terminalIds"` — list() (optional)
     * `"terminalid_acquirer"` — String.t() (optional)
     * `"vu_nummer"` — String.t() (required)
   """
@@ -267,15 +267,15 @@ defmodule BluefinTecsMerchantPortal.Types do
   MerchantPortalPamPackageController entity data model.
 
   Members:
-    * `"consumer_uuid"` — String.t() (optional)
-    * `"corporate_uuid"` — String.t() (optional)
+    * `"consumerUUID"` — String.t() (optional)
+    * `"corporateUUID"` — String.t() (optional)
     * `"country"` — String.t() (optional)
-    * `"description_key"` — String.t() (optional)
+    * `"descriptionKey"` — String.t() (optional)
     * `"filter"` — map() (optional)
     * `"language"` — String.t() (required)
-    * `"name_key"` — String.t() (optional)
-    * `"package_status"` — String.t() (optional)
-    * `"package_uuid"` — String.t() (required)
+    * `"nameKey"` — String.t() (optional)
+    * `"packageStatus"` — String.t() (optional)
+    * `"packageUUID"` — String.t() (required)
     * `"pagination"` — map() (optional)
     * `"sorting"` — map() (optional)
   """
@@ -285,15 +285,15 @@ defmodule BluefinTecsMerchantPortal.Types do
   Request payload for MerchantPortalPamPackageController create.
 
   Members:
-    * `"consumer_uuid"` — String.t() (optional)
-    * `"corporate_uuid"` — String.t() (optional)
+    * `"consumerUUID"` — String.t() (optional)
+    * `"corporateUUID"` — String.t() (optional)
     * `"country"` — String.t() (optional)
-    * `"description_key"` — String.t() (optional)
+    * `"descriptionKey"` — String.t() (optional)
     * `"filter"` — map() (optional)
     * `"language"` — String.t() (required)
-    * `"name_key"` — String.t() (optional)
-    * `"package_status"` — String.t() (optional)
-    * `"package_uuid"` — String.t() (required)
+    * `"nameKey"` — String.t() (optional)
+    * `"packageStatus"` — String.t() (optional)
+    * `"packageUUID"` — String.t() (required)
     * `"pagination"` — map() (optional)
     * `"sorting"` — map() (optional)
   """
@@ -303,14 +303,14 @@ defmodule BluefinTecsMerchantPortal.Types do
   MerchantPortalPamProductController entity data model.
 
   Members:
-    * `"consumer_uuid"` — String.t() (optional)
+    * `"consumerUUID"` — String.t() (optional)
     * `"filter"` — map() (optional)
     * `"language"` — String.t() (optional)
-    * `"merchant_id"` — String.t() (optional)
-    * `"package_order_uuid"` — String.t() (required)
+    * `"merchantID"` — String.t() (optional)
+    * `"packageOrderUUID"` — String.t() (required)
     * `"pagination"` — map() (optional)
-    * `"product_order_uuid"` — String.t() (required)
-    * `"product_uuid"` — String.t() (required)
+    * `"productOrderUUID"` — String.t() (required)
+    * `"productUUID"` — String.t() (required)
     * `"reason_decline"` — String.t() (required)
     * `"sorting"` — map() (optional)
   """
@@ -320,14 +320,14 @@ defmodule BluefinTecsMerchantPortal.Types do
   Request payload for MerchantPortalPamProductController create.
 
   Members:
-    * `"consumer_uuid"` — String.t() (optional)
+    * `"consumerUUID"` — String.t() (optional)
     * `"filter"` — map() (optional)
     * `"language"` — String.t() (optional)
-    * `"merchant_id"` — String.t() (optional)
-    * `"package_order_uuid"` — String.t() (required)
+    * `"merchantID"` — String.t() (optional)
+    * `"packageOrderUUID"` — String.t() (required)
     * `"pagination"` — map() (optional)
-    * `"product_order_uuid"` — String.t() (required)
-    * `"product_uuid"` — String.t() (required)
+    * `"productOrderUUID"` — String.t() (required)
+    * `"productUUID"` — String.t() (required)
     * `"reason_decline"` — String.t() (required)
     * `"sorting"` — map() (optional)
   """
@@ -337,10 +337,10 @@ defmodule BluefinTecsMerchantPortal.Types do
   OutputAddProduct entity data model.
 
   Members:
-    * `"package_uuid"` — String.t() (required)
-    * `"product_uui_d"` — list() (required)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
+    * `"packageUUID"` — String.t() (required)
+    * `"productUUIDs"` — list() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
   """
   @type output_add_product :: %{optional(String.t()) => any()}
 
@@ -348,10 +348,10 @@ defmodule BluefinTecsMerchantPortal.Types do
   Request payload for OutputAddProduct create.
 
   Members:
-    * `"package_uuid"` — String.t() (required)
-    * `"product_uui_d"` — list() (required)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
+    * `"packageUUID"` — String.t() (required)
+    * `"productUUIDs"` — list() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
   """
   @type output_add_product_create_data :: %{optional(String.t()) => any()}
 
@@ -359,20 +359,20 @@ defmodule BluefinTecsMerchantPortal.Types do
   OutputCreateProduct entity data model.
 
   Members:
-    * `"acquirer_id"` — String.t() (optional)
-    * `"allow_multiple_order"` — boolean() (required)
-    * `"app_form_template_name"` — String.t() (required)
-    * `"contract_needed"` — boolean() (required)
-    * `"credentials_needed"` — boolean() (optional)
-    * `"description_key"` — String.t() (required)
-    * `"name_key"` — String.t() (required)
-    * `"prescreening_allowed"` — boolean() (required)
-    * `"product_name"` — String.t() (required)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
-    * `"terminal_template_name"` — String.t() (required)
-    * `"vendor_name"` — String.t() (required)
-    * `"xml_template_file"` — String.t() (required)
+    * `"acquirerId"` — String.t() (optional)
+    * `"allowMultipleOrders"` — boolean() (required)
+    * `"appFormTemplateName"` — String.t() (required)
+    * `"contractNeeded"` — boolean() (required)
+    * `"credentialsNeeded"` — boolean() (optional)
+    * `"descriptionKey"` — String.t() (required)
+    * `"nameKey"` — String.t() (required)
+    * `"prescreeningAllowed"` — boolean() (required)
+    * `"productName"` — String.t() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
+    * `"terminalTemplateName"` — String.t() (required)
+    * `"vendorName"` — String.t() (required)
+    * `"xmlTemplateFile"` — String.t() (required)
   """
   @type output_create_product :: %{optional(String.t()) => any()}
 
@@ -380,20 +380,20 @@ defmodule BluefinTecsMerchantPortal.Types do
   Request payload for OutputCreateProduct create.
 
   Members:
-    * `"acquirer_id"` — String.t() (optional)
-    * `"allow_multiple_order"` — boolean() (required)
-    * `"app_form_template_name"` — String.t() (required)
-    * `"contract_needed"` — boolean() (required)
-    * `"credentials_needed"` — boolean() (optional)
-    * `"description_key"` — String.t() (required)
-    * `"name_key"` — String.t() (required)
-    * `"prescreening_allowed"` — boolean() (required)
-    * `"product_name"` — String.t() (required)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
-    * `"terminal_template_name"` — String.t() (required)
-    * `"vendor_name"` — String.t() (required)
-    * `"xml_template_file"` — String.t() (required)
+    * `"acquirerId"` — String.t() (optional)
+    * `"allowMultipleOrders"` — boolean() (required)
+    * `"appFormTemplateName"` — String.t() (required)
+    * `"contractNeeded"` — boolean() (required)
+    * `"credentialsNeeded"` — boolean() (optional)
+    * `"descriptionKey"` — String.t() (required)
+    * `"nameKey"` — String.t() (required)
+    * `"prescreeningAllowed"` — boolean() (required)
+    * `"productName"` — String.t() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
+    * `"terminalTemplateName"` — String.t() (required)
+    * `"vendorName"` — String.t() (required)
+    * `"xmlTemplateFile"` — String.t() (required)
   """
   @type output_create_product_create_data :: %{optional(String.t()) => any()}
 
@@ -401,9 +401,9 @@ defmodule BluefinTecsMerchantPortal.Types do
   OutputDetail entity data model.
 
   Members:
-    * `"detail"` — map() (optional)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
+    * `"batch"` — map() (optional)
+    * `"lines"` — map() (optional)
+    * `"progress"` — map() (optional)
   """
   @type output_detail :: %{optional(String.t()) => any()}
 
@@ -419,10 +419,10 @@ defmodule BluefinTecsMerchantPortal.Types do
   OutputList entity data model.
 
   Members:
-    * `"item"` — list() (optional)
+    * `"items"` — list() (optional)
     * `"pagination"` — map() (required)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
     * `"sorting"` — map() (optional)
   """
   @type output_list :: %{optional(String.t()) => any()}
@@ -431,10 +431,10 @@ defmodule BluefinTecsMerchantPortal.Types do
   Request payload for OutputList create.
 
   Members:
-    * `"item"` — list() (optional)
+    * `"items"` — list() (optional)
     * `"pagination"` — map() (required)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
     * `"sorting"` — map() (optional)
   """
   @type output_list_create_data :: %{optional(String.t()) => any()}
@@ -443,8 +443,8 @@ defmodule BluefinTecsMerchantPortal.Types do
   OutputMessage entity data model.
 
   Members:
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
   """
   @type output_message :: %{optional(String.t()) => any()}
 
@@ -460,11 +460,11 @@ defmodule BluefinTecsMerchantPortal.Types do
   OutputMoveTid entity data model.
 
   Members:
-    * `"product_order_uui_d"` — list() (required)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
-    * `"target_package_order_uuid"` — String.t() (required)
-    * `"target_product_order_uuid"` — String.t() (required)
+    * `"productOrderUUIDs"` — list() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
+    * `"targetPackageOrderUUID"` — String.t() (required)
+    * `"targetProductOrderUUID"` — String.t() (required)
   """
   @type output_move_tid :: %{optional(String.t()) => any()}
 
@@ -472,11 +472,11 @@ defmodule BluefinTecsMerchantPortal.Types do
   Request payload for OutputMoveTid create.
 
   Members:
-    * `"product_order_uui_d"` — list() (required)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
-    * `"target_package_order_uuid"` — String.t() (required)
-    * `"target_product_order_uuid"` — String.t() (required)
+    * `"productOrderUUIDs"` — list() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
+    * `"targetPackageOrderUUID"` — String.t() (required)
+    * `"targetProductOrderUUID"` — String.t() (required)
   """
   @type output_move_tid_create_data :: %{optional(String.t()) => any()}
 
@@ -484,10 +484,10 @@ defmodule BluefinTecsMerchantPortal.Types do
   OutputRemoveProduct entity data model.
 
   Members:
-    * `"package_uuid"` — String.t() (required)
-    * `"product_uui_d"` — list() (required)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
+    * `"packageUUID"` — String.t() (required)
+    * `"productUUIDs"` — list() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
   """
   @type output_remove_product :: %{optional(String.t()) => any()}
 
@@ -495,10 +495,10 @@ defmodule BluefinTecsMerchantPortal.Types do
   Request payload for OutputRemoveProduct create.
 
   Members:
-    * `"package_uuid"` — String.t() (required)
-    * `"product_uui_d"` — list() (required)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
+    * `"packageUUID"` — String.t() (required)
+    * `"productUUIDs"` — list() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
   """
   @type output_remove_product_create_data :: %{optional(String.t()) => any()}
 
@@ -507,8 +507,8 @@ defmodule BluefinTecsMerchantPortal.Types do
 
   Members:
     * `"id"` — String.t() (optional)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
   """
   @type output_start :: %{optional(String.t()) => any()}
 
@@ -517,8 +517,8 @@ defmodule BluefinTecsMerchantPortal.Types do
 
   Members:
     * `"id"` — String.t() (optional)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
   """
   @type output_start_create_data :: %{optional(String.t()) => any()}
 
@@ -527,8 +527,8 @@ defmodule BluefinTecsMerchantPortal.Types do
 
   Members:
     * `"percentage"` — integer() (optional)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
     * `"status"` — String.t() (optional)
   """
   @type output_status :: %{optional(String.t()) => any()}
@@ -545,19 +545,19 @@ defmodule BluefinTecsMerchantPortal.Types do
   OutputUpdateProduct entity data model.
 
   Members:
-    * `"allow_multiple_order"` — boolean() (optional)
-    * `"app_form_name"` — String.t() (optional)
-    * `"contract_needed"` — boolean() (optional)
-    * `"credentials_needed"` — boolean() (optional)
-    * `"description_key"` — String.t() (optional)
-    * `"name_key"` — String.t() (optional)
-    * `"prescreening_allowed"` — boolean() (optional)
-    * `"product_name"` — String.t() (optional)
-    * `"product_status"` — String.t() (optional)
-    * `"product_uuid"` — String.t() (required)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
-    * `"vendor_name"` — String.t() (optional)
+    * `"allowMultipleOrders"` — boolean() (optional)
+    * `"appFormName"` — String.t() (optional)
+    * `"contractNeeded"` — boolean() (optional)
+    * `"credentialsNeeded"` — boolean() (optional)
+    * `"descriptionKey"` — String.t() (optional)
+    * `"nameKey"` — String.t() (optional)
+    * `"prescreeningAllowed"` — boolean() (optional)
+    * `"productName"` — String.t() (optional)
+    * `"productStatus"` — String.t() (optional)
+    * `"productUUID"` — String.t() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
+    * `"vendorName"` — String.t() (optional)
   """
   @type output_update_product :: %{optional(String.t()) => any()}
 
@@ -565,19 +565,19 @@ defmodule BluefinTecsMerchantPortal.Types do
   Request payload for OutputUpdateProduct create.
 
   Members:
-    * `"allow_multiple_order"` — boolean() (optional)
-    * `"app_form_name"` — String.t() (optional)
-    * `"contract_needed"` — boolean() (optional)
-    * `"credentials_needed"` — boolean() (optional)
-    * `"description_key"` — String.t() (optional)
-    * `"name_key"` — String.t() (optional)
-    * `"prescreening_allowed"` — boolean() (optional)
-    * `"product_name"` — String.t() (optional)
-    * `"product_status"` — String.t() (optional)
-    * `"product_uuid"` — String.t() (required)
-    * `"response_code"` — integer() (required)
-    * `"response_message"` — String.t() (required)
-    * `"vendor_name"` — String.t() (optional)
+    * `"allowMultipleOrders"` — boolean() (optional)
+    * `"appFormName"` — String.t() (optional)
+    * `"contractNeeded"` — boolean() (optional)
+    * `"credentialsNeeded"` — boolean() (optional)
+    * `"descriptionKey"` — String.t() (optional)
+    * `"nameKey"` — String.t() (optional)
+    * `"prescreeningAllowed"` — boolean() (optional)
+    * `"productName"` — String.t() (optional)
+    * `"productStatus"` — String.t() (optional)
+    * `"productUUID"` — String.t() (required)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
+    * `"vendorName"` — String.t() (optional)
   """
   @type output_update_product_create_data :: %{optional(String.t()) => any()}
 

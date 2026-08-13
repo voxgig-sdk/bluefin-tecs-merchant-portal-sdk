@@ -47,7 +47,7 @@ void tests() {
       final output_list_ref01_ent = client.OutputList();
       dynamic output_list_ref01_data = setup['data']['new']['output_list']['output_list_ref01'];
 
-      output_list_ref01_data = await output_list_ref01_ent.create(output_list_ref01_data);
+      output_list_ref01_data = (await output_list_ref01_ent.create(output_list_ref01_data)).data();
       ok(null != output_list_ref01_data);
 
 

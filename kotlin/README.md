@@ -39,7 +39,7 @@ val client = BluefinTecsMerchantPortalSDK()
 ### 4. Create, update, and remove
 
 ```kotlin
-// Create — returns the bare created record (as Any?)
+// Create — returns the ENTITY (call data() for the record)
 val created = client.merchantPortalApiController(null).create(mutableMapOf<String, Any?>("business_reg_number" to "example_business_reg_number", "city" to "example_city", "country" to "example_country", "currency" to "example_currency", "merchant_category_code" to 1L, "merchant_name" to "example_merchant_name", "packageid" to "example_packageid", "packageorderuuid" to "example_packageorderuuid", "reason_deactivation" to "example_reason_deactivation", "reason_reactivation" to "example_reason_reactivation", "street" to "example_street", "terminal_country_code" to "example_terminal_country_code", "terminal_language_code" to "example_terminal_language_code", "terminal_location" to "example_terminal_location", "terminal_serial_number" to "example_terminal_serial_number", "terminalid" to 1L, "vu_nummer" to "example_vu_nummer", "zipcode" to "example_zipcode"), null)
 
 ```
@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```kotlin
 val client = BluefinTecsMerchantPortalSDK.testSDK(null, null)
 
-// Entity ops return the bare record and raise on error.
+// Entity ops return the ENTITY and raises on error;
+// call data() for the record.
 val outputDetail = client.outputDetail(null).load(mutableMapOf<String, Any?>("id" to "test01"), null)
 // outputDetail holds the mock response record
 println(outputDetail)
@@ -230,7 +231,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `Map` for single-entity
+Entity operations return the ENTITY (call data() for the record) (a `Map` for single-entity
 ops, an aggregate `List` for `list`) as `Any?` and raise on error. Wrap
 calls in `try`/`catch` to handle failures.
 
@@ -304,7 +305,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: create.
 
@@ -314,9 +315,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: create.
 
@@ -326,15 +327,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: create.
 
@@ -344,10 +345,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: create.
 
@@ -358,29 +359,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -392,15 +393,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -412,14 +413,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -431,10 +432,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -444,20 +445,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: create.
 
@@ -467,9 +468,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: load.
 
@@ -479,10 +480,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: create.
@@ -493,8 +494,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: load.
 
@@ -504,11 +505,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: create.
 
@@ -518,10 +519,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -532,8 +533,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -544,8 +545,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: load.
@@ -556,19 +557,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: create.
 
@@ -685,14 +686,14 @@ Create an instance: `val merchantPortalPamContractController = client.merchantPo
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `String?` |  |
-| `product_order_uuid` | `String?` |  |
+| `productOrderUUID` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val merchantPortalPamContractController = client.merchantPortalPamContractController(null).create(mutableMapOf<String, Any?>(
     "language" to "example_language",  // String?
-    "product_order_uuid" to "example_product_order_uuid"  // String?
+    "productOrderUUID" to "example_productOrderUUID"  // String?
 ), null)
 ```
 
@@ -711,15 +712,15 @@ Create an instance: `val merchantPortalPamDocumentController = client.merchantPo
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `String?` |  |
-| `package_order_uuid` | `String?` |  |
-| `product_order_uuid` | `String?` |  |
+| `appFormFieldDescUUID` | `String?` |  |
+| `packageOrderUUID` | `String?` |  |
+| `productOrderUUID` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val merchantPortalPamDocumentController = client.merchantPortalPamDocumentController(null).create(mutableMapOf<String, Any?>(
-    "app_form_field_desc_uuid" to "example_app_form_field_desc_uuid"  // String?
+    "appFormFieldDescUUID" to "example_appFormFieldDescUUID"  // String?
 ), null)
 ```
 
@@ -738,24 +739,24 @@ Create an instance: `val merchantPortalPamFormController = client.merchantPortal
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `String?` |  |
+| `appFormFieldsDescUUID` | `String?` |  |
 | `filter` | `Map<String, Any?>?` |  |
 | `language` | `String?` |  |
-| `package_order` | `Map<String, Any?>?` |  |
-| `package_order_uuid` | `String?` |  |
-| `package_uuid` | `String?` |  |
-| `product_order` | `List<Any?>?` |  |
-| `product_order_uuid` | `String?` |  |
-| `reason_of_reopening` | `String?` |  |
+| `packageOrder` | `Map<String, Any?>?` |  |
+| `packageOrderUUID` | `String?` |  |
+| `packageUUID` | `String?` |  |
+| `productOrderUUID` | `String?` |  |
+| `productOrders` | `List<Any?>?` |  |
+| `reasonOfReopening` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val merchantPortalPamFormController = client.merchantPortalPamFormController(null).create(mutableMapOf<String, Any?>(
-    "app_form_fields_desc_uuid" to "example_app_form_fields_desc_uuid",  // String?
+    "appFormFieldsDescUUID" to "example_appFormFieldsDescUUID",  // String?
     "language" to "example_language",  // String?
-    "package_order_uuid" to "example_package_order_uuid",  // String?
-    "reason_of_reopening" to "example_reason_of_reopening"  // String?
+    "packageOrderUUID" to "example_packageOrderUUID",  // String?
+    "reasonOfReopening" to "example_reasonOfReopening"  // String?
 ), null)
 ```
 
@@ -774,17 +775,17 @@ Create an instance: `val merchantPortalPamMandatorController = client.merchantPo
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `String?` |  |
-| `mandator_name` | `String?` |  |
-| `notification_email` | `String?` |  |
-| `package_uuid` | `String?` |  |
+| `clientSecret` | `String?` |  |
+| `mandatorName` | `String?` |  |
+| `notificationEmail` | `String?` |  |
+| `packageUUID` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val merchantPortalPamMandatorController = client.merchantPortalPamMandatorController(null).create(mutableMapOf<String, Any?>(
-    "mandator_name" to "example_mandator_name",  // String?
-    "package_uuid" to "example_package_uuid"  // String?
+    "mandatorName" to "example_mandatorName",  // String?
+    "packageUUID" to "example_packageUUID"  // String?
 ), null)
 ```
 
@@ -804,29 +805,29 @@ Create an instance: `val merchantPortalPamMerchantController = client.merchantPo
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `Map<String, Any?>?` |  |
-| `business_registration_number` | `String?` |  |
+| `businessRegistrationNumber` | `String?` |  |
 | `city` | `String?` |  |
-| `company_name` | `String?` |  |
-| `corporate_uuid` | `String?` |  |
+| `companyName` | `String?` |  |
+| `corporateUUID` | `String?` |  |
 | `country` | `String?` |  |
 | `currency` | `String?` |  |
 | `email` | `String?` |  |
 | `language` | `String?` |  |
 | `login` | `String?` |  |
 | `mandator` | `String?` |  |
+| `merchantContractNumber` | `String?` |  |
+| `merchantName` | `String?` |  |
 | `merchant_category_code` | `String?` |  |
-| `merchant_contract_number` | `String?` |  |
-| `merchant_name` | `String?` |  |
-| `package_uuid` | `String?` |  |
+| `packageUUID` | `String?` |  |
 | `packageorderuuid` | `String?` |  |
-| `phone_number` | `String?` |  |
-| `postal_code` | `String?` |  |
+| `phoneNumber` | `String?` |  |
+| `postalCode` | `String?` |  |
 | `productid_acquirer` | `String?` |  |
 | `region` | `String?` |  |
-| `registration_number` | `String?` |  |
+| `registrationNumber` | `String?` |  |
 | `signature` | `String?` |  |
 | `street` | `String?` |  |
-| `terminal_id` | `List<Any?>?` |  |
+| `terminalIds` | `List<Any?>?` |  |
 | `terminalid_acquirer` | `String?` |  |
 | `vu_nummer` | `String?` |  |
 
@@ -834,17 +835,17 @@ Create an instance: `val merchantPortalPamMerchantController = client.merchantPo
 
 ```kotlin
 val merchantPortalPamMerchantController = client.merchantPortalPamMerchantController(null).create(mutableMapOf<String, Any?>(
-    "business_registration_number" to "example_business_registration_number",  // String?
-    "company_name" to "example_company_name",  // String?
-    "corporate_uuid" to "example_corporate_uuid",  // String?
+    "businessRegistrationNumber" to "example_businessRegistrationNumber",  // String?
+    "companyName" to "example_companyName",  // String?
+    "corporateUUID" to "example_corporateUUID",  // String?
     "currency" to "example_currency",  // String?
     "email" to "example_email",  // String?
     "language" to "example_language",  // String?
     "login" to "example_login",  // String?
     "mandator" to "example_mandator",  // String?
-    "merchant_contract_number" to "example_merchant_contract_number",  // String?
+    "merchantContractNumber" to "example_merchantContractNumber",  // String?
     "packageorderuuid" to "example_packageorderuuid",  // String?
-    "phone_number" to "example_phone_number",  // String?
+    "phoneNumber" to "example_phoneNumber",  // String?
     "productid_acquirer" to "example_productid_acquirer",  // String?
     "vu_nummer" to "example_vu_nummer"  // String?
 ), null)
@@ -865,15 +866,15 @@ Create an instance: `val merchantPortalPamPackageController = client.merchantPor
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String?` |  |
-| `corporate_uuid` | `String?` |  |
+| `consumerUUID` | `String?` |  |
+| `corporateUUID` | `String?` |  |
 | `country` | `String?` |  |
-| `description_key` | `String?` |  |
+| `descriptionKey` | `String?` |  |
 | `filter` | `Map<String, Any?>?` |  |
 | `language` | `String?` |  |
-| `name_key` | `String?` |  |
-| `package_status` | `String?` |  |
-| `package_uuid` | `String?` |  |
+| `nameKey` | `String?` |  |
+| `packageStatus` | `String?` |  |
+| `packageUUID` | `String?` |  |
 | `pagination` | `Map<String, Any?>?` |  |
 | `sorting` | `Map<String, Any?>?` |  |
 
@@ -882,7 +883,7 @@ Create an instance: `val merchantPortalPamPackageController = client.merchantPor
 ```kotlin
 val merchantPortalPamPackageController = client.merchantPortalPamPackageController(null).create(mutableMapOf<String, Any?>(
     "language" to "example_language",  // String?
-    "package_uuid" to "example_package_uuid"  // String?
+    "packageUUID" to "example_packageUUID"  // String?
 ), null)
 ```
 
@@ -901,14 +902,14 @@ Create an instance: `val merchantPortalPamProductController = client.merchantPor
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String?` |  |
+| `consumerUUID` | `String?` |  |
 | `filter` | `Map<String, Any?>?` |  |
 | `language` | `String?` |  |
-| `merchant_id` | `String?` |  |
-| `package_order_uuid` | `String?` |  |
+| `merchantID` | `String?` |  |
+| `packageOrderUUID` | `String?` |  |
 | `pagination` | `Map<String, Any?>?` |  |
-| `product_order_uuid` | `String?` |  |
-| `product_uuid` | `String?` |  |
+| `productOrderUUID` | `String?` |  |
+| `productUUID` | `String?` |  |
 | `reason_decline` | `String?` |  |
 | `sorting` | `Map<String, Any?>?` |  |
 
@@ -916,9 +917,9 @@ Create an instance: `val merchantPortalPamProductController = client.merchantPor
 
 ```kotlin
 val merchantPortalPamProductController = client.merchantPortalPamProductController(null).create(mutableMapOf<String, Any?>(
-    "package_order_uuid" to "example_package_order_uuid",  // String?
-    "product_order_uuid" to "example_product_order_uuid",  // String?
-    "product_uuid" to "example_product_uuid",  // String?
+    "packageOrderUUID" to "example_packageOrderUUID",  // String?
+    "productOrderUUID" to "example_productOrderUUID",  // String?
+    "productUUID" to "example_productUUID",  // String?
     "reason_decline" to "example_reason_decline"  // String?
 ), null)
 ```
@@ -938,19 +939,19 @@ Create an instance: `val outputAddProduct = client.outputAddProduct(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `String?` |  |
-| `product_uui_d` | `List<Any?>?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `packageUUID` | `String?` |  |
+| `productUUIDs` | `List<Any?>?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val outputAddProduct = client.outputAddProduct(null).create(mutableMapOf<String, Any?>(
-    "package_uuid" to "example_package_uuid",  // String?
-    "product_uui_d" to listOf<Any?>(),  // List<Any?>?
-    "response_code" to 1L,  // Long?
-    "response_message" to "example_response_message"  // String?
+    "packageUUID" to "example_packageUUID",  // String?
+    "productUUIDs" to listOf<Any?>(),  // List<Any?>?
+    "responseCode" to 1L,  // Long?
+    "responseMessage" to "example_responseMessage"  // String?
 ), null)
 ```
 
@@ -969,37 +970,37 @@ Create an instance: `val outputCreateProduct = client.outputCreateProduct(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String?` |  |
-| `allow_multiple_order` | `Boolean?` |  |
-| `app_form_template_name` | `String?` |  |
-| `contract_needed` | `Boolean?` |  |
-| `credentials_needed` | `Boolean?` |  |
-| `description_key` | `String?` |  |
-| `name_key` | `String?` |  |
-| `prescreening_allowed` | `Boolean?` |  |
-| `product_name` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
-| `terminal_template_name` | `String?` |  |
-| `vendor_name` | `String?` |  |
-| `xml_template_file` | `String?` |  |
+| `acquirerId` | `String?` |  |
+| `allowMultipleOrders` | `Boolean?` |  |
+| `appFormTemplateName` | `String?` |  |
+| `contractNeeded` | `Boolean?` |  |
+| `credentialsNeeded` | `Boolean?` |  |
+| `descriptionKey` | `String?` |  |
+| `nameKey` | `String?` |  |
+| `prescreeningAllowed` | `Boolean?` |  |
+| `productName` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
+| `terminalTemplateName` | `String?` |  |
+| `vendorName` | `String?` |  |
+| `xmlTemplateFile` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val outputCreateProduct = client.outputCreateProduct(null).create(mutableMapOf<String, Any?>(
-    "allow_multiple_order" to true,  // Boolean?
-    "app_form_template_name" to "example_app_form_template_name",  // String?
-    "contract_needed" to true,  // Boolean?
-    "description_key" to "example_description_key",  // String?
-    "name_key" to "example_name_key",  // String?
-    "prescreening_allowed" to true,  // Boolean?
-    "product_name" to "example_product_name",  // String?
-    "response_code" to 1L,  // Long?
-    "response_message" to "example_response_message",  // String?
-    "terminal_template_name" to "example_terminal_template_name",  // String?
-    "vendor_name" to "example_vendor_name",  // String?
-    "xml_template_file" to "example_xml_template_file"  // String?
+    "allowMultipleOrders" to true,  // Boolean?
+    "appFormTemplateName" to "example_appFormTemplateName",  // String?
+    "contractNeeded" to true,  // Boolean?
+    "descriptionKey" to "example_descriptionKey",  // String?
+    "nameKey" to "example_nameKey",  // String?
+    "prescreeningAllowed" to true,  // Boolean?
+    "productName" to "example_productName",  // String?
+    "responseCode" to 1L,  // Long?
+    "responseMessage" to "example_responseMessage",  // String?
+    "terminalTemplateName" to "example_terminalTemplateName",  // String?
+    "vendorName" to "example_vendorName",  // String?
+    "xmlTemplateFile" to "example_xmlTemplateFile"  // String?
 ), null)
 ```
 
@@ -1018,9 +1019,9 @@ Create an instance: `val outputDetail = client.outputDetail(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `Map<String, Any?>?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `batch` | `Map<String, Any?>?` |  |
+| `lines` | `Map<String, Any?>?` |  |
+| `progress` | `Map<String, Any?>?` |  |
 
 #### Example: Load
 
@@ -1043,10 +1044,10 @@ Create an instance: `val outputList = client.outputList(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `List<Any?>?` |  |
+| `items` | `List<Any?>?` |  |
 | `pagination` | `Map<String, Any?>?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 | `sorting` | `Map<String, Any?>?` |  |
 
 #### Example: Create
@@ -1054,8 +1055,8 @@ Create an instance: `val outputList = client.outputList(null)`
 ```kotlin
 val outputList = client.outputList(null).create(mutableMapOf<String, Any?>(
     "pagination" to mapOf<String, Any?>(),  // Map<String, Any?>?
-    "response_code" to 1L,  // Long?
-    "response_message" to "example_response_message"  // String?
+    "responseCode" to 1L,  // Long?
+    "responseMessage" to "example_responseMessage"  // String?
 ), null)
 ```
 
@@ -1074,8 +1075,8 @@ Create an instance: `val outputMessage = client.outputMessage(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Load
 
@@ -1098,21 +1099,21 @@ Create an instance: `val outputMoveTid = client.outputMoveTid(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `List<Any?>?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
-| `target_package_order_uuid` | `String?` |  |
-| `target_product_order_uuid` | `String?` |  |
+| `productOrderUUIDs` | `List<Any?>?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
+| `targetPackageOrderUUID` | `String?` |  |
+| `targetProductOrderUUID` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val outputMoveTid = client.outputMoveTid(null).create(mutableMapOf<String, Any?>(
-    "product_order_uui_d" to listOf<Any?>(),  // List<Any?>?
-    "response_code" to 1L,  // Long?
-    "response_message" to "example_response_message",  // String?
-    "target_package_order_uuid" to "example_target_package_order_uuid",  // String?
-    "target_product_order_uuid" to "example_target_product_order_uuid"  // String?
+    "productOrderUUIDs" to listOf<Any?>(),  // List<Any?>?
+    "responseCode" to 1L,  // Long?
+    "responseMessage" to "example_responseMessage",  // String?
+    "targetPackageOrderUUID" to "example_targetPackageOrderUUID",  // String?
+    "targetProductOrderUUID" to "example_targetProductOrderUUID"  // String?
 ), null)
 ```
 
@@ -1131,19 +1132,19 @@ Create an instance: `val outputRemoveProduct = client.outputRemoveProduct(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `String?` |  |
-| `product_uui_d` | `List<Any?>?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `packageUUID` | `String?` |  |
+| `productUUIDs` | `List<Any?>?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val outputRemoveProduct = client.outputRemoveProduct(null).create(mutableMapOf<String, Any?>(
-    "package_uuid" to "example_package_uuid",  // String?
-    "product_uui_d" to listOf<Any?>(),  // List<Any?>?
-    "response_code" to 1L,  // Long?
-    "response_message" to "example_response_message"  // String?
+    "packageUUID" to "example_packageUUID",  // String?
+    "productUUIDs" to listOf<Any?>(),  // List<Any?>?
+    "responseCode" to 1L,  // Long?
+    "responseMessage" to "example_responseMessage"  // String?
 ), null)
 ```
 
@@ -1163,15 +1164,15 @@ Create an instance: `val outputStart = client.outputStart(null)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val outputStart = client.outputStart(null).create(mutableMapOf<String, Any?>(
-    "response_code" to 1L,  // Long?
-    "response_message" to "example_response_message"  // String?
+    "responseCode" to 1L,  // Long?
+    "responseMessage" to "example_responseMessage"  // String?
 ), null)
 ```
 
@@ -1191,8 +1192,8 @@ Create an instance: `val outputStatus = client.outputStatus(null)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `Long?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 | `status` | `String?` |  |
 
 #### Example: Load
@@ -1216,27 +1217,27 @@ Create an instance: `val outputUpdateProduct = client.outputUpdateProduct(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `Boolean?` |  |
-| `app_form_name` | `String?` |  |
-| `contract_needed` | `Boolean?` |  |
-| `credentials_needed` | `Boolean?` |  |
-| `description_key` | `String?` |  |
-| `name_key` | `String?` |  |
-| `prescreening_allowed` | `Boolean?` |  |
-| `product_name` | `String?` |  |
-| `product_status` | `String?` |  |
-| `product_uuid` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
-| `vendor_name` | `String?` |  |
+| `allowMultipleOrders` | `Boolean?` |  |
+| `appFormName` | `String?` |  |
+| `contractNeeded` | `Boolean?` |  |
+| `credentialsNeeded` | `Boolean?` |  |
+| `descriptionKey` | `String?` |  |
+| `nameKey` | `String?` |  |
+| `prescreeningAllowed` | `Boolean?` |  |
+| `productName` | `String?` |  |
+| `productStatus` | `String?` |  |
+| `productUUID` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
+| `vendorName` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val outputUpdateProduct = client.outputUpdateProduct(null).create(mutableMapOf<String, Any?>(
-    "product_uuid" to "example_product_uuid",  // String?
-    "response_code" to 1L,  // Long?
-    "response_message" to "example_response_message"  // String?
+    "productUUID" to "example_productUUID",  // String?
+    "responseCode" to 1L,  // Long?
+    "responseMessage" to "example_responseMessage"  // String?
 ), null)
 ```
 

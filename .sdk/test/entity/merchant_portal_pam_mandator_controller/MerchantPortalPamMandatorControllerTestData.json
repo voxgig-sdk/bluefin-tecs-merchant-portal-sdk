@@ -2,24 +2,24 @@
   "existing": {
     "merchant_portal_pam_mandator_controller": {
       "MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER00": {
-        "client_secret": "s28",
-        "mandator_name": "s29",
-        "notification_email": "s2a",
-        "package_uuid": "s2b",
+        "clientSecret": "s28",
+        "mandatorName": "s29",
+        "notificationEmail": "s2a",
+        "packageUUID": "s2b",
         "id": "MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER00"
       },
       "MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER01": {
-        "client_secret": "s50",
-        "mandator_name": "s51",
-        "notification_email": "s52",
-        "package_uuid": "s53",
+        "clientSecret": "s50",
+        "mandatorName": "s51",
+        "notificationEmail": "s52",
+        "packageUUID": "s53",
         "id": "MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER01"
       },
       "MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER02": {
-        "client_secret": "s78",
-        "mandator_name": "s79",
-        "notification_email": "s7a",
-        "package_uuid": "s7b",
+        "clientSecret": "s78",
+        "mandatorName": "s79",
+        "notificationEmail": "s7a",
+        "packageUUID": "s7b",
         "id": "MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER02"
       }
     }
@@ -27,10 +27,10 @@
   "new": {
     "merchant_portal_pam_mandator_controller": {
       "merchant_portal_pam_mandator_controller_ref01": {
-        "client_secret": "sa0",
-        "mandator_name": "sa1",
-        "notification_email": "sa2",
-        "package_uuid": "sa3"
+        "clientSecret": "sa0",
+        "mandatorName": "sa1",
+        "notificationEmail": "sa2",
+        "packageUUID": "sa3"
       }
     }
   }

@@ -26,7 +26,7 @@ class MerchantPortalPamMandatorControllerEntityTest < Minitest::Test
     # The basic flow consumes synthetic IDs from the fixture. In live mode
     # without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup[:synthetic_only]
-      skip "live entity test uses synthetic IDs from fixture — set BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER_ENTID JSON to run live"
+      skip "live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER_ENTID JSON to run live"
       return
     end
     client = setup[:client]
@@ -37,7 +37,7 @@ class MerchantPortalPamMandatorControllerEntityTest < Minitest::Test
       Vs.getpath(setup[:data], "new.merchant_portal_pam_mandator_controller"), "merchant_portal_pam_mandator_controller_ref01"))
 
     merchant_portal_pam_mandator_controller_ref01_data_result = merchant_portal_pam_mandator_controller_ref01_ent.create(merchant_portal_pam_mandator_controller_ref01_data, nil)
-    merchant_portal_pam_mandator_controller_ref01_data = Helpers.to_map(merchant_portal_pam_mandator_controller_ref01_data_result)
+    merchant_portal_pam_mandator_controller_ref01_data = Helpers.to_map(merchant_portal_pam_mandator_controller_ref01_data_result.respond_to?(:data_get) ? merchant_portal_pam_mandator_controller_ref01_data_result.data_get : merchant_portal_pam_mandator_controller_ref01_data_result)
     assert !merchant_portal_pam_mandator_controller_ref01_data.nil?
 
   end
@@ -69,22 +69,22 @@ def merchant_portal_pam_mandator_controller_basic_setup(extra)
   # Detect ENTID env override before envOverride consumes it. When live
   # mode is on without a real override, the basic test runs against synthetic
   # IDs from the fixture and 4xx's. Surface this so the test can skip.
-  entid_env_raw = ENV["BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER_ENTID"]
+  entid_env_raw = ENV["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER_ENTID"]
   idmap_overridden = !entid_env_raw.nil? && entid_env_raw.strip.start_with?("{")
 
   env = Runner.env_override({
-    "BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER_ENTID" => idmap,
-    "BLUEFINTECSMERCHANTPORTAL_TEST_LIVE" => "FALSE",
-    "BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN" => "FALSE",
+    "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER_ENTID" => idmap,
+    "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE" => "FALSE",
+    "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN" => "FALSE",
   })
 
   idmap_resolved = Helpers.to_map(
-    env["BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER_ENTID"])
+    env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER_ENTID"])
   if idmap_resolved.nil?
     idmap_resolved = Helpers.to_map(idmap)
   end
 
-  if env["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"] == "TRUE"
+  if env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
       },
@@ -93,13 +93,13 @@ def merchant_portal_pam_mandator_controller_basic_setup(extra)
     client = BluefinTecsMerchantPortalSDK.new(Helpers.to_map(merged_opts))
   end
 
-  live = env["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"] == "TRUE"
+  live = env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"] == "TRUE"
   {
     client: client,
     data: entity_data,
     idmap: idmap_resolved,
     env: env,
-    explain: env["BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN"] == "TRUE",
+    explain: env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN"] == "TRUE",
     live: live,
     synthetic_only: live && !idmap_overridden,
     now: (Time.now.to_f * 1000).to_i,

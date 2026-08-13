@@ -315,7 +315,7 @@ var merchantPortalPamContractController = client.MerchantPortalPamContractContro
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `language` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
+| `productOrderUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -327,7 +327,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 var result = client.MerchantPortalPamContractController().Create(new Dictionary<string, object?>
 {
     ["language"] = "example_language",  // string
-    ["product_order_uuid"] = "example_product_order_uuid",  // string
+    ["productOrderUUID"] = "example_productOrderUUID",  // string
 });
 ```
 
@@ -362,9 +362,9 @@ var merchantPortalPamDocumentController = client.MerchantPortalPamDocumentContro
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_field_desc_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
+| `appFormFieldDescUUID` | `string` | Yes |  |
+| `packageOrderUUID` | `string` | No |  |
+| `productOrderUUID` | `string` | No |  |
 
 ### Operations
 
@@ -375,7 +375,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.MerchantPortalPamDocumentController().Create(new Dictionary<string, object?>
 {
-    ["app_form_field_desc_uuid"] = "example_app_form_field_desc_uuid",  // string
+    ["appFormFieldDescUUID"] = "example_appFormFieldDescUUID",  // string
 });
 ```
 
@@ -410,29 +410,29 @@ var merchantPortalPamFormController = client.MerchantPortalPamFormController();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `string` | Yes |  |
+| `appFormFieldsDescUUID` | `string` | Yes |  |
 | `filter` | `Dictionary<string, object?>` | No |  |
 | `language` | `string` | Yes |  |
-| `package_order` | `Dictionary<string, object?>` | No |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `package_uuid` | `string` | No |  |
-| `product_order` | `List<object?>` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `reason_of_reopening` | `string` | Yes |  |
+| `packageOrder` | `Dictionary<string, object?>` | No |  |
+| `packageOrderUUID` | `string` | Yes |  |
+| `packageUUID` | `string` | No |  |
+| `productOrderUUID` | `string` | No |  |
+| `productOrders` | `List<object?>` | No |  |
+| `reasonOfReopening` | `string` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `app_form_fields_desc_uuid` | - |
+| `appFormFieldsDescUUID` | - |
 | `filter` | - |
 | `language` | Yes |
-| `package_order` | - |
-| `package_order_uuid` | Yes |
-| `package_uuid` | - |
-| `product_order` | - |
-| `product_order_uuid` | Yes |
-| `reason_of_reopening` | - |
+| `packageOrder` | - |
+| `packageOrderUUID` | Yes |
+| `packageUUID` | - |
+| `productOrderUUID` | Yes |
+| `productOrders` | - |
+| `reasonOfReopening` | - |
 
 ### Operations
 
@@ -443,10 +443,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.MerchantPortalPamFormController().Create(new Dictionary<string, object?>
 {
-    ["app_form_fields_desc_uuid"] = "example_app_form_fields_desc_uuid",  // string
+    ["appFormFieldsDescUUID"] = "example_appFormFieldsDescUUID",  // string
     ["language"] = "example_language",  // string
-    ["package_order_uuid"] = "example_package_order_uuid",  // string
-    ["reason_of_reopening"] = "example_reason_of_reopening",  // string
+    ["packageOrderUUID"] = "example_packageOrderUUID",  // string
+    ["reasonOfReopening"] = "example_reasonOfReopening",  // string
 });
 ```
 
@@ -481,10 +481,10 @@ var merchantPortalPamMandatorController = client.MerchantPortalPamMandatorContro
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `string` | No |  |
-| `mandator_name` | `string` | Yes |  |
-| `notification_email` | `string` | No |  |
-| `package_uuid` | `string` | Yes |  |
+| `clientSecret` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `notificationEmail` | `string` | No |  |
+| `packageUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -495,8 +495,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.MerchantPortalPamMandatorController().Create(new Dictionary<string, object?>
 {
-    ["mandator_name"] = "example_mandator_name",  // string
-    ["package_uuid"] = "example_package_uuid",  // string
+    ["mandatorName"] = "example_mandatorName",  // string
+    ["packageUUID"] = "example_packageUUID",  // string
 });
 ```
 
@@ -532,29 +532,29 @@ var merchantPortalPamMerchantController = client.MerchantPortalPamMerchantContro
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `additional_data` | `Dictionary<string, object?>` | No |  |
-| `business_registration_number` | `string` | Yes |  |
+| `businessRegistrationNumber` | `string` | Yes |  |
 | `city` | `string` | No |  |
-| `company_name` | `string` | Yes |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `companyName` | `string` | Yes |  |
+| `corporateUUID` | `string` | Yes |  |
 | `country` | `string` | No |  |
 | `currency` | `string` | Yes |  |
 | `email` | `string` | Yes |  |
 | `language` | `string` | Yes |  |
 | `login` | `string` | Yes |  |
 | `mandator` | `string` | Yes |  |
+| `merchantContractNumber` | `string` | Yes |  |
+| `merchantName` | `string` | No |  |
 | `merchant_category_code` | `string` | No |  |
-| `merchant_contract_number` | `string` | Yes |  |
-| `merchant_name` | `string` | No |  |
-| `package_uuid` | `string` | No |  |
+| `packageUUID` | `string` | No |  |
 | `packageorderuuid` | `string` | Yes |  |
-| `phone_number` | `string` | Yes |  |
-| `postal_code` | `string` | No |  |
+| `phoneNumber` | `string` | Yes |  |
+| `postalCode` | `string` | No |  |
 | `productid_acquirer` | `string` | Yes |  |
 | `region` | `string` | No |  |
-| `registration_number` | `string` | No |  |
+| `registrationNumber` | `string` | No |  |
 | `signature` | `string` | No |  |
 | `street` | `string` | No |  |
-| `terminal_id` | `List<object?>` | No |  |
+| `terminalIds` | `List<object?>` | No |  |
 | `terminalid_acquirer` | `string` | No |  |
 | `vu_nummer` | `string` | Yes |  |
 
@@ -563,29 +563,29 @@ var merchantPortalPamMerchantController = client.MerchantPortalPamMerchantContro
 | Field | create |
 | --- | --- |
 | `additional_data` | - |
-| `business_registration_number` | - |
+| `businessRegistrationNumber` | - |
 | `city` | - |
-| `company_name` | - |
-| `corporate_uuid` | - |
+| `companyName` | - |
+| `corporateUUID` | - |
 | `country` | - |
 | `currency` | - |
 | `email` | - |
 | `language` | - |
 | `login` | - |
 | `mandator` | - |
+| `merchantContractNumber` | Yes |
+| `merchantName` | - |
 | `merchant_category_code` | - |
-| `merchant_contract_number` | Yes |
-| `merchant_name` | - |
-| `package_uuid` | - |
+| `packageUUID` | - |
 | `packageorderuuid` | - |
-| `phone_number` | - |
-| `postal_code` | - |
+| `phoneNumber` | - |
+| `postalCode` | - |
 | `productid_acquirer` | - |
 | `region` | - |
-| `registration_number` | - |
+| `registrationNumber` | - |
 | `signature` | - |
 | `street` | - |
-| `terminal_id` | - |
+| `terminalIds` | - |
 | `terminalid_acquirer` | - |
 | `vu_nummer` | - |
 
@@ -598,17 +598,17 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.MerchantPortalPamMerchantController().Create(new Dictionary<string, object?>
 {
-    ["business_registration_number"] = "example_business_registration_number",  // string
-    ["company_name"] = "example_company_name",  // string
-    ["corporate_uuid"] = "example_corporate_uuid",  // string
+    ["businessRegistrationNumber"] = "example_businessRegistrationNumber",  // string
+    ["companyName"] = "example_companyName",  // string
+    ["corporateUUID"] = "example_corporateUUID",  // string
     ["currency"] = "example_currency",  // string
     ["email"] = "example_email",  // string
     ["language"] = "example_language",  // string
     ["login"] = "example_login",  // string
     ["mandator"] = "example_mandator",  // string
-    ["merchant_contract_number"] = "example_merchant_contract_number",  // string
+    ["merchantContractNumber"] = "example_merchantContractNumber",  // string
     ["packageorderuuid"] = "example_packageorderuuid",  // string
-    ["phone_number"] = "example_phone_number",  // string
+    ["phoneNumber"] = "example_phoneNumber",  // string
     ["productid_acquirer"] = "example_productid_acquirer",  // string
     ["vu_nummer"] = "example_vu_nummer",  // string
 });
@@ -645,15 +645,15 @@ var merchantPortalPamPackageController = client.MerchantPortalPamPackageControll
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
 | `country` | `string` | No |  |
-| `description_key` | `string` | No |  |
+| `descriptionKey` | `string` | No |  |
 | `filter` | `Dictionary<string, object?>` | No |  |
 | `language` | `string` | Yes |  |
-| `name_key` | `string` | No |  |
-| `package_status` | `string` | No |  |
-| `package_uuid` | `string` | Yes |  |
+| `nameKey` | `string` | No |  |
+| `packageStatus` | `string` | No |  |
+| `packageUUID` | `string` | Yes |  |
 | `pagination` | `Dictionary<string, object?>` | No |  |
 | `sorting` | `Dictionary<string, object?>` | No |  |
 
@@ -661,15 +661,15 @@ var merchantPortalPamPackageController = client.MerchantPortalPamPackageControll
 
 | Field | create |
 | --- | --- |
-| `consumer_uuid` | - |
-| `corporate_uuid` | - |
+| `consumerUUID` | - |
+| `corporateUUID` | - |
 | `country` | - |
-| `description_key` | - |
+| `descriptionKey` | - |
 | `filter` | - |
 | `language` | Yes |
-| `name_key` | - |
-| `package_status` | - |
-| `package_uuid` | - |
+| `nameKey` | - |
+| `packageStatus` | - |
+| `packageUUID` | - |
 | `pagination` | - |
 | `sorting` | - |
 
@@ -683,7 +683,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 var result = client.MerchantPortalPamPackageController().Create(new Dictionary<string, object?>
 {
     ["language"] = "example_language",  // string
-    ["package_uuid"] = "example_package_uuid",  // string
+    ["packageUUID"] = "example_packageUUID",  // string
 });
 ```
 
@@ -718,14 +718,14 @@ var merchantPortalPamProductController = client.MerchantPortalPamProductControll
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
 | `filter` | `Dictionary<string, object?>` | No |  |
 | `language` | `string` | No |  |
-| `merchant_id` | `string` | No |  |
-| `package_order_uuid` | `string` | Yes |  |
+| `merchantID` | `string` | No |  |
+| `packageOrderUUID` | `string` | Yes |  |
 | `pagination` | `Dictionary<string, object?>` | No |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `product_uuid` | `string` | Yes |  |
+| `productOrderUUID` | `string` | Yes |  |
+| `productUUID` | `string` | Yes |  |
 | `reason_decline` | `string` | Yes |  |
 | `sorting` | `Dictionary<string, object?>` | No |  |
 
@@ -738,9 +738,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.MerchantPortalPamProductController().Create(new Dictionary<string, object?>
 {
-    ["package_order_uuid"] = "example_package_order_uuid",  // string
-    ["product_order_uuid"] = "example_product_order_uuid",  // string
-    ["product_uuid"] = "example_product_uuid",  // string
+    ["packageOrderUUID"] = "example_packageOrderUUID",  // string
+    ["productOrderUUID"] = "example_productOrderUUID",  // string
+    ["productUUID"] = "example_productUUID",  // string
     ["reason_decline"] = "example_reason_decline",  // string
 });
 ```
@@ -776,10 +776,10 @@ var outputAddProduct = client.OutputAddProduct();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `string` | Yes |  |
-| `product_uui_d` | `List<object?>` | Yes |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `packageUUID` | `string` | Yes |  |
+| `productUUIDs` | `List<object?>` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -790,10 +790,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.OutputAddProduct().Create(new Dictionary<string, object?>
 {
-    ["package_uuid"] = "example_package_uuid",  // string
-    ["product_uui_d"] = new List<object?>(),  // List<object?>
-    ["response_code"] = 1L,  // long
-    ["response_message"] = "example_response_message",  // string
+    ["packageUUID"] = "example_packageUUID",  // string
+    ["productUUIDs"] = new List<object?>(),  // List<object?>
+    ["responseCode"] = 1L,  // long
+    ["responseMessage"] = "example_responseMessage",  // string
 });
 ```
 
@@ -828,20 +828,20 @@ var outputCreateProduct = client.OutputCreateProduct();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `allow_multiple_order` | `bool` | Yes |  |
-| `app_form_template_name` | `string` | Yes |  |
-| `contract_needed` | `bool` | Yes |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `string` | Yes |  |
-| `name_key` | `string` | Yes |  |
-| `prescreening_allowed` | `bool` | Yes |  |
-| `product_name` | `string` | Yes |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `terminal_template_name` | `string` | Yes |  |
-| `vendor_name` | `string` | Yes |  |
-| `xml_template_file` | `string` | Yes |  |
+| `acquirerId` | `string` | No |  |
+| `allowMultipleOrders` | `bool` | Yes |  |
+| `appFormTemplateName` | `string` | Yes |  |
+| `contractNeeded` | `bool` | Yes |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `string` | Yes |  |
+| `nameKey` | `string` | Yes |  |
+| `prescreeningAllowed` | `bool` | Yes |  |
+| `productName` | `string` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `terminalTemplateName` | `string` | Yes |  |
+| `vendorName` | `string` | Yes |  |
+| `xmlTemplateFile` | `string` | Yes |  |
 
 ### Operations
 
@@ -852,18 +852,18 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.OutputCreateProduct().Create(new Dictionary<string, object?>
 {
-    ["allow_multiple_order"] = true,  // bool
-    ["app_form_template_name"] = "example_app_form_template_name",  // string
-    ["contract_needed"] = true,  // bool
-    ["description_key"] = "example_description_key",  // string
-    ["name_key"] = "example_name_key",  // string
-    ["prescreening_allowed"] = true,  // bool
-    ["product_name"] = "example_product_name",  // string
-    ["response_code"] = 1L,  // long
-    ["response_message"] = "example_response_message",  // string
-    ["terminal_template_name"] = "example_terminal_template_name",  // string
-    ["vendor_name"] = "example_vendor_name",  // string
-    ["xml_template_file"] = "example_xml_template_file",  // string
+    ["allowMultipleOrders"] = true,  // bool
+    ["appFormTemplateName"] = "example_appFormTemplateName",  // string
+    ["contractNeeded"] = true,  // bool
+    ["descriptionKey"] = "example_descriptionKey",  // string
+    ["nameKey"] = "example_nameKey",  // string
+    ["prescreeningAllowed"] = true,  // bool
+    ["productName"] = "example_productName",  // string
+    ["responseCode"] = 1L,  // long
+    ["responseMessage"] = "example_responseMessage",  // string
+    ["terminalTemplateName"] = "example_terminalTemplateName",  // string
+    ["vendorName"] = "example_vendorName",  // string
+    ["xmlTemplateFile"] = "example_xmlTemplateFile",  // string
 });
 ```
 
@@ -898,9 +898,9 @@ var outputDetail = client.OutputDetail();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `detail` | `Dictionary<string, object?>` | No |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `batch` | `Dictionary<string, object?>` | No |  |
+| `lines` | `Dictionary<string, object?>` | No |  |
+| `progress` | `Dictionary<string, object?>` | No |  |
 
 ### Operations
 
@@ -943,20 +943,20 @@ var outputList = client.OutputList();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `item` | `List<object?>` | No |  |
+| `items` | `List<object?>` | No |  |
 | `pagination` | `Dictionary<string, object?>` | Yes |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 | `sorting` | `Dictionary<string, object?>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `item` | - |
+| `items` | - |
 | `pagination` | Yes |
-| `response_code` | - |
-| `response_message` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
 | `sorting` | - |
 
 ### Operations
@@ -969,8 +969,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 var result = client.OutputList().Create(new Dictionary<string, object?>
 {
     ["pagination"] = new Dictionary<string, object?>(),  // Dictionary<string, object?>
-    ["response_code"] = 1L,  // long
-    ["response_message"] = "example_response_message",  // string
+    ["responseCode"] = 1L,  // long
+    ["responseMessage"] = "example_responseMessage",  // string
 });
 ```
 
@@ -1005,8 +1005,8 @@ var outputMessage = client.OutputMessage();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1049,11 +1049,11 @@ var outputMoveTid = client.OutputMoveTid();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `product_order_uui_d` | `List<object?>` | Yes |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `target_package_order_uuid` | `string` | Yes |  |
-| `target_product_order_uuid` | `string` | Yes |  |
+| `productOrderUUIDs` | `List<object?>` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `targetPackageOrderUUID` | `string` | Yes |  |
+| `targetProductOrderUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -1064,11 +1064,11 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.OutputMoveTid().Create(new Dictionary<string, object?>
 {
-    ["product_order_uui_d"] = new List<object?>(),  // List<object?>
-    ["response_code"] = 1L,  // long
-    ["response_message"] = "example_response_message",  // string
-    ["target_package_order_uuid"] = "example_target_package_order_uuid",  // string
-    ["target_product_order_uuid"] = "example_target_product_order_uuid",  // string
+    ["productOrderUUIDs"] = new List<object?>(),  // List<object?>
+    ["responseCode"] = 1L,  // long
+    ["responseMessage"] = "example_responseMessage",  // string
+    ["targetPackageOrderUUID"] = "example_targetPackageOrderUUID",  // string
+    ["targetProductOrderUUID"] = "example_targetProductOrderUUID",  // string
 });
 ```
 
@@ -1103,10 +1103,10 @@ var outputRemoveProduct = client.OutputRemoveProduct();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `string` | Yes |  |
-| `product_uui_d` | `List<object?>` | Yes |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `packageUUID` | `string` | Yes |  |
+| `productUUIDs` | `List<object?>` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1117,10 +1117,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.OutputRemoveProduct().Create(new Dictionary<string, object?>
 {
-    ["package_uuid"] = "example_package_uuid",  // string
-    ["product_uui_d"] = new List<object?>(),  // List<object?>
-    ["response_code"] = 1L,  // long
-    ["response_message"] = "example_response_message",  // string
+    ["packageUUID"] = "example_packageUUID",  // string
+    ["productUUIDs"] = new List<object?>(),  // List<object?>
+    ["responseCode"] = 1L,  // long
+    ["responseMessage"] = "example_responseMessage",  // string
 });
 ```
 
@@ -1156,8 +1156,8 @@ var outputStart = client.OutputStart();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `string` | No |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1168,8 +1168,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.OutputStart().Create(new Dictionary<string, object?>
 {
-    ["response_code"] = 1L,  // long
-    ["response_message"] = "example_response_message",  // string
+    ["responseCode"] = 1L,  // long
+    ["responseMessage"] = "example_responseMessage",  // string
 });
 ```
 
@@ -1205,8 +1205,8 @@ var outputStatus = client.OutputStatus();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `long` | No |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 | `status` | `string` | No |  |
 
 ### Operations
@@ -1250,19 +1250,19 @@ var outputUpdateProduct = client.OutputUpdateProduct();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allow_multiple_order` | `bool` | No |  |
-| `app_form_name` | `string` | No |  |
-| `contract_needed` | `bool` | No |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `string` | No |  |
-| `name_key` | `string` | No |  |
-| `prescreening_allowed` | `bool` | No |  |
-| `product_name` | `string` | No |  |
-| `product_status` | `string` | No |  |
-| `product_uuid` | `string` | Yes |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `vendor_name` | `string` | No |  |
+| `allowMultipleOrders` | `bool` | No |  |
+| `appFormName` | `string` | No |  |
+| `contractNeeded` | `bool` | No |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `string` | No |  |
+| `nameKey` | `string` | No |  |
+| `prescreeningAllowed` | `bool` | No |  |
+| `productName` | `string` | No |  |
+| `productStatus` | `string` | No |  |
+| `productUUID` | `string` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `vendorName` | `string` | No |  |
 
 ### Operations
 
@@ -1273,9 +1273,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.OutputUpdateProduct().Create(new Dictionary<string, object?>
 {
-    ["product_uuid"] = "example_product_uuid",  // string
-    ["response_code"] = 1L,  // long
-    ["response_message"] = "example_response_message",  // string
+    ["productUUID"] = "example_productUUID",  // string
+    ["responseCode"] = 1L,  // long
+    ["responseMessage"] = "example_responseMessage",  // string
 });
 ```
 

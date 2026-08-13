@@ -6,7 +6,11 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
 
-import "encoding/json"
+import (
+	"encoding/json"
+
+	"github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/go/core"
+)
 
 // MerchantPortalApiController is the typed data model for the merchant_portal_api_controller entity.
 type MerchantPortalApiController struct {
@@ -93,97 +97,97 @@ type MerchantPortalCommonControllerLoadMatch struct {
 // MerchantPortalPamContractController is the typed data model for the merchant_portal_pam_contract_controller entity.
 type MerchantPortalPamContractController struct {
 	Language string `json:"language"`
-	ProductOrderUuid string `json:"product_order_uuid"`
+	ProductOrderUUID string `json:"productOrderUUID"`
 }
 
 // MerchantPortalPamContractControllerCreateData is the typed request payload for MerchantPortalPamContractController.CreateTyped.
 type MerchantPortalPamContractControllerCreateData struct {
 	Language string `json:"language"`
-	ProductOrderUuid string `json:"product_order_uuid"`
+	ProductOrderUUID string `json:"productOrderUUID"`
 }
 
 // MerchantPortalPamDocumentController is the typed data model for the merchant_portal_pam_document_controller entity.
 type MerchantPortalPamDocumentController struct {
-	AppFormFieldDescUuid string `json:"app_form_field_desc_uuid"`
-	PackageOrderUuid *string `json:"package_order_uuid,omitempty"`
-	ProductOrderUuid *string `json:"product_order_uuid,omitempty"`
+	AppFormFieldDescUUID string `json:"appFormFieldDescUUID"`
+	PackageOrderUUID *string `json:"packageOrderUUID,omitempty"`
+	ProductOrderUUID *string `json:"productOrderUUID,omitempty"`
 }
 
 // MerchantPortalPamDocumentControllerCreateData is the typed request payload for MerchantPortalPamDocumentController.CreateTyped.
 type MerchantPortalPamDocumentControllerCreateData struct {
-	AppFormFieldDescUuid string `json:"app_form_field_desc_uuid"`
-	PackageOrderUuid *string `json:"package_order_uuid,omitempty"`
-	ProductOrderUuid *string `json:"product_order_uuid,omitempty"`
+	AppFormFieldDescUUID string `json:"appFormFieldDescUUID"`
+	PackageOrderUUID *string `json:"packageOrderUUID,omitempty"`
+	ProductOrderUUID *string `json:"productOrderUUID,omitempty"`
 }
 
 // MerchantPortalPamFormController is the typed data model for the merchant_portal_pam_form_controller entity.
 type MerchantPortalPamFormController struct {
-	AppFormFieldsDescUuid string `json:"app_form_fields_desc_uuid"`
+	AppFormFieldsDescUUID string `json:"appFormFieldsDescUUID"`
 	Filter *map[string]any `json:"filter,omitempty"`
 	Language string `json:"language"`
-	PackageOrder *map[string]any `json:"package_order,omitempty"`
-	PackageOrderUuid string `json:"package_order_uuid"`
-	PackageUuid *string `json:"package_uuid,omitempty"`
-	ProductOrder *[]any `json:"product_order,omitempty"`
-	ProductOrderUuid *string `json:"product_order_uuid,omitempty"`
-	ReasonOfReopening string `json:"reason_of_reopening"`
+	PackageOrder *map[string]any `json:"packageOrder,omitempty"`
+	PackageOrderUUID string `json:"packageOrderUUID"`
+	PackageUUID *string `json:"packageUUID,omitempty"`
+	ProductOrderUUID *string `json:"productOrderUUID,omitempty"`
+	ProductOrders *[]any `json:"productOrders,omitempty"`
+	ReasonOfReopening string `json:"reasonOfReopening"`
 }
 
 // MerchantPortalPamFormControllerCreateData is the typed request payload for MerchantPortalPamFormController.CreateTyped.
 type MerchantPortalPamFormControllerCreateData struct {
-	AppFormFieldsDescUuid string `json:"app_form_fields_desc_uuid"`
+	AppFormFieldsDescUUID string `json:"appFormFieldsDescUUID"`
 	Filter *map[string]any `json:"filter,omitempty"`
 	Language string `json:"language"`
-	PackageOrder *map[string]any `json:"package_order,omitempty"`
-	PackageOrderUuid string `json:"package_order_uuid"`
-	PackageUuid *string `json:"package_uuid,omitempty"`
-	ProductOrder *[]any `json:"product_order,omitempty"`
-	ProductOrderUuid *string `json:"product_order_uuid,omitempty"`
-	ReasonOfReopening string `json:"reason_of_reopening"`
+	PackageOrder *map[string]any `json:"packageOrder,omitempty"`
+	PackageOrderUUID string `json:"packageOrderUUID"`
+	PackageUUID *string `json:"packageUUID,omitempty"`
+	ProductOrderUUID *string `json:"productOrderUUID,omitempty"`
+	ProductOrders *[]any `json:"productOrders,omitempty"`
+	ReasonOfReopening string `json:"reasonOfReopening"`
 }
 
 // MerchantPortalPamMandatorController is the typed data model for the merchant_portal_pam_mandator_controller entity.
 type MerchantPortalPamMandatorController struct {
-	ClientSecret *string `json:"client_secret,omitempty"`
-	MandatorName string `json:"mandator_name"`
-	NotificationEmail *string `json:"notification_email,omitempty"`
-	PackageUuid string `json:"package_uuid"`
+	ClientSecret *string `json:"clientSecret,omitempty"`
+	MandatorName string `json:"mandatorName"`
+	NotificationEmail *string `json:"notificationEmail,omitempty"`
+	PackageUUID string `json:"packageUUID"`
 }
 
 // MerchantPortalPamMandatorControllerCreateData is the typed request payload for MerchantPortalPamMandatorController.CreateTyped.
 type MerchantPortalPamMandatorControllerCreateData struct {
-	ClientSecret *string `json:"client_secret,omitempty"`
-	MandatorName string `json:"mandator_name"`
-	NotificationEmail *string `json:"notification_email,omitempty"`
-	PackageUuid string `json:"package_uuid"`
+	ClientSecret *string `json:"clientSecret,omitempty"`
+	MandatorName string `json:"mandatorName"`
+	NotificationEmail *string `json:"notificationEmail,omitempty"`
+	PackageUUID string `json:"packageUUID"`
 }
 
 // MerchantPortalPamMerchantController is the typed data model for the merchant_portal_pam_merchant_controller entity.
 type MerchantPortalPamMerchantController struct {
 	AdditionalData *map[string]any `json:"additional_data,omitempty"`
-	BusinessRegistrationNumber string `json:"business_registration_number"`
+	BusinessRegistrationNumber string `json:"businessRegistrationNumber"`
 	City *string `json:"city,omitempty"`
-	CompanyName string `json:"company_name"`
-	CorporateUuid string `json:"corporate_uuid"`
+	CompanyName string `json:"companyName"`
+	CorporateUUID string `json:"corporateUUID"`
 	Country *string `json:"country,omitempty"`
 	Currency string `json:"currency"`
 	Email string `json:"email"`
 	Language string `json:"language"`
 	Login string `json:"login"`
 	Mandator string `json:"mandator"`
+	MerchantContractNumber string `json:"merchantContractNumber"`
+	MerchantName *string `json:"merchantName,omitempty"`
 	MerchantCategoryCode *string `json:"merchant_category_code,omitempty"`
-	MerchantContractNumber string `json:"merchant_contract_number"`
-	MerchantName *string `json:"merchant_name,omitempty"`
-	PackageUuid *string `json:"package_uuid,omitempty"`
+	PackageUUID *string `json:"packageUUID,omitempty"`
 	Packageorderuuid string `json:"packageorderuuid"`
-	PhoneNumber string `json:"phone_number"`
-	PostalCode *string `json:"postal_code,omitempty"`
+	PhoneNumber string `json:"phoneNumber"`
+	PostalCode *string `json:"postalCode,omitempty"`
 	ProductidAcquirer string `json:"productid_acquirer"`
 	Region *string `json:"region,omitempty"`
-	RegistrationNumber *string `json:"registration_number,omitempty"`
+	RegistrationNumber *string `json:"registrationNumber,omitempty"`
 	Signature *string `json:"signature,omitempty"`
 	Street *string `json:"street,omitempty"`
-	TerminalId *[]any `json:"terminal_id,omitempty"`
+	TerminalIds *[]any `json:"terminalIds,omitempty"`
 	TerminalidAcquirer *string `json:"terminalid_acquirer,omitempty"`
 	VuNummer string `json:"vu_nummer"`
 }
@@ -191,148 +195,148 @@ type MerchantPortalPamMerchantController struct {
 // MerchantPortalPamMerchantControllerCreateData is the typed request payload for MerchantPortalPamMerchantController.CreateTyped.
 type MerchantPortalPamMerchantControllerCreateData struct {
 	AdditionalData *map[string]any `json:"additional_data,omitempty"`
-	BusinessRegistrationNumber string `json:"business_registration_number"`
+	BusinessRegistrationNumber string `json:"businessRegistrationNumber"`
 	City *string `json:"city,omitempty"`
-	CompanyName string `json:"company_name"`
-	CorporateUuid string `json:"corporate_uuid"`
+	CompanyName string `json:"companyName"`
+	CorporateUUID string `json:"corporateUUID"`
 	Country *string `json:"country,omitempty"`
 	Currency string `json:"currency"`
 	Email string `json:"email"`
 	Language string `json:"language"`
 	Login string `json:"login"`
 	Mandator string `json:"mandator"`
+	MerchantContractNumber string `json:"merchantContractNumber"`
+	MerchantName *string `json:"merchantName,omitempty"`
 	MerchantCategoryCode *string `json:"merchant_category_code,omitempty"`
-	MerchantContractNumber string `json:"merchant_contract_number"`
-	MerchantName *string `json:"merchant_name,omitempty"`
-	PackageUuid *string `json:"package_uuid,omitempty"`
+	PackageUUID *string `json:"packageUUID,omitempty"`
 	Packageorderuuid string `json:"packageorderuuid"`
-	PhoneNumber string `json:"phone_number"`
-	PostalCode *string `json:"postal_code,omitempty"`
+	PhoneNumber string `json:"phoneNumber"`
+	PostalCode *string `json:"postalCode,omitempty"`
 	ProductidAcquirer string `json:"productid_acquirer"`
 	Region *string `json:"region,omitempty"`
-	RegistrationNumber *string `json:"registration_number,omitempty"`
+	RegistrationNumber *string `json:"registrationNumber,omitempty"`
 	Signature *string `json:"signature,omitempty"`
 	Street *string `json:"street,omitempty"`
-	TerminalId *[]any `json:"terminal_id,omitempty"`
+	TerminalIds *[]any `json:"terminalIds,omitempty"`
 	TerminalidAcquirer *string `json:"terminalid_acquirer,omitempty"`
 	VuNummer string `json:"vu_nummer"`
 }
 
 // MerchantPortalPamPackageController is the typed data model for the merchant_portal_pam_package_controller entity.
 type MerchantPortalPamPackageController struct {
-	ConsumerUuid *string `json:"consumer_uuid,omitempty"`
-	CorporateUuid *string `json:"corporate_uuid,omitempty"`
+	ConsumerUUID *string `json:"consumerUUID,omitempty"`
+	CorporateUUID *string `json:"corporateUUID,omitempty"`
 	Country *string `json:"country,omitempty"`
-	DescriptionKey *string `json:"description_key,omitempty"`
+	DescriptionKey *string `json:"descriptionKey,omitempty"`
 	Filter *map[string]any `json:"filter,omitempty"`
 	Language string `json:"language"`
-	NameKey *string `json:"name_key,omitempty"`
-	PackageStatus *string `json:"package_status,omitempty"`
-	PackageUuid string `json:"package_uuid"`
+	NameKey *string `json:"nameKey,omitempty"`
+	PackageStatus *string `json:"packageStatus,omitempty"`
+	PackageUUID string `json:"packageUUID"`
 	Pagination *map[string]any `json:"pagination,omitempty"`
 	Sorting *map[string]any `json:"sorting,omitempty"`
 }
 
 // MerchantPortalPamPackageControllerCreateData is the typed request payload for MerchantPortalPamPackageController.CreateTyped.
 type MerchantPortalPamPackageControllerCreateData struct {
-	ConsumerUuid *string `json:"consumer_uuid,omitempty"`
-	CorporateUuid *string `json:"corporate_uuid,omitempty"`
+	ConsumerUUID *string `json:"consumerUUID,omitempty"`
+	CorporateUUID *string `json:"corporateUUID,omitempty"`
 	Country *string `json:"country,omitempty"`
-	DescriptionKey *string `json:"description_key,omitempty"`
+	DescriptionKey *string `json:"descriptionKey,omitempty"`
 	Filter *map[string]any `json:"filter,omitempty"`
 	Language string `json:"language"`
-	NameKey *string `json:"name_key,omitempty"`
-	PackageStatus *string `json:"package_status,omitempty"`
-	PackageUuid string `json:"package_uuid"`
+	NameKey *string `json:"nameKey,omitempty"`
+	PackageStatus *string `json:"packageStatus,omitempty"`
+	PackageUUID string `json:"packageUUID"`
 	Pagination *map[string]any `json:"pagination,omitempty"`
 	Sorting *map[string]any `json:"sorting,omitempty"`
 }
 
 // MerchantPortalPamProductController is the typed data model for the merchant_portal_pam_product_controller entity.
 type MerchantPortalPamProductController struct {
-	ConsumerUuid *string `json:"consumer_uuid,omitempty"`
+	ConsumerUUID *string `json:"consumerUUID,omitempty"`
 	Filter *map[string]any `json:"filter,omitempty"`
 	Language *string `json:"language,omitempty"`
-	MerchantId *string `json:"merchant_id,omitempty"`
-	PackageOrderUuid string `json:"package_order_uuid"`
+	MerchantID *string `json:"merchantID,omitempty"`
+	PackageOrderUUID string `json:"packageOrderUUID"`
 	Pagination *map[string]any `json:"pagination,omitempty"`
-	ProductOrderUuid string `json:"product_order_uuid"`
-	ProductUuid string `json:"product_uuid"`
+	ProductOrderUUID string `json:"productOrderUUID"`
+	ProductUUID string `json:"productUUID"`
 	ReasonDecline string `json:"reason_decline"`
 	Sorting *map[string]any `json:"sorting,omitempty"`
 }
 
 // MerchantPortalPamProductControllerCreateData is the typed request payload for MerchantPortalPamProductController.CreateTyped.
 type MerchantPortalPamProductControllerCreateData struct {
-	ConsumerUuid *string `json:"consumer_uuid,omitempty"`
+	ConsumerUUID *string `json:"consumerUUID,omitempty"`
 	Filter *map[string]any `json:"filter,omitempty"`
 	Language *string `json:"language,omitempty"`
-	MerchantId *string `json:"merchant_id,omitempty"`
-	PackageOrderUuid string `json:"package_order_uuid"`
+	MerchantID *string `json:"merchantID,omitempty"`
+	PackageOrderUUID string `json:"packageOrderUUID"`
 	Pagination *map[string]any `json:"pagination,omitempty"`
-	ProductOrderUuid string `json:"product_order_uuid"`
-	ProductUuid string `json:"product_uuid"`
+	ProductOrderUUID string `json:"productOrderUUID"`
+	ProductUUID string `json:"productUUID"`
 	ReasonDecline string `json:"reason_decline"`
 	Sorting *map[string]any `json:"sorting,omitempty"`
 }
 
 // OutputAddProduct is the typed data model for the output_add_product entity.
 type OutputAddProduct struct {
-	PackageUuid string `json:"package_uuid"`
-	ProductUuiD []any `json:"product_uui_d"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
+	PackageUUID string `json:"packageUUID"`
+	ProductUUIDs []any `json:"productUUIDs"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
 }
 
 // OutputAddProductCreateData is the typed request payload for OutputAddProduct.CreateTyped.
 type OutputAddProductCreateData struct {
-	PackageUuid string `json:"package_uuid"`
-	ProductUuiD []any `json:"product_uui_d"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
+	PackageUUID string `json:"packageUUID"`
+	ProductUUIDs []any `json:"productUUIDs"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
 }
 
 // OutputCreateProduct is the typed data model for the output_create_product entity.
 type OutputCreateProduct struct {
-	AcquirerId *string `json:"acquirer_id,omitempty"`
-	AllowMultipleOrder bool `json:"allow_multiple_order"`
-	AppFormTemplateName string `json:"app_form_template_name"`
-	ContractNeeded bool `json:"contract_needed"`
-	CredentialsNeeded *bool `json:"credentials_needed,omitempty"`
-	DescriptionKey string `json:"description_key"`
-	NameKey string `json:"name_key"`
-	PrescreeningAllowed bool `json:"prescreening_allowed"`
-	ProductName string `json:"product_name"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
-	TerminalTemplateName string `json:"terminal_template_name"`
-	VendorName string `json:"vendor_name"`
-	XmlTemplateFile string `json:"xml_template_file"`
+	AcquirerId *string `json:"acquirerId,omitempty"`
+	AllowMultipleOrders bool `json:"allowMultipleOrders"`
+	AppFormTemplateName string `json:"appFormTemplateName"`
+	ContractNeeded bool `json:"contractNeeded"`
+	CredentialsNeeded *bool `json:"credentialsNeeded,omitempty"`
+	DescriptionKey string `json:"descriptionKey"`
+	NameKey string `json:"nameKey"`
+	PrescreeningAllowed bool `json:"prescreeningAllowed"`
+	ProductName string `json:"productName"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
+	TerminalTemplateName string `json:"terminalTemplateName"`
+	VendorName string `json:"vendorName"`
+	XmlTemplateFile string `json:"xmlTemplateFile"`
 }
 
 // OutputCreateProductCreateData is the typed request payload for OutputCreateProduct.CreateTyped.
 type OutputCreateProductCreateData struct {
-	AcquirerId *string `json:"acquirer_id,omitempty"`
-	AllowMultipleOrder bool `json:"allow_multiple_order"`
-	AppFormTemplateName string `json:"app_form_template_name"`
-	ContractNeeded bool `json:"contract_needed"`
-	CredentialsNeeded *bool `json:"credentials_needed,omitempty"`
-	DescriptionKey string `json:"description_key"`
-	NameKey string `json:"name_key"`
-	PrescreeningAllowed bool `json:"prescreening_allowed"`
-	ProductName string `json:"product_name"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
-	TerminalTemplateName string `json:"terminal_template_name"`
-	VendorName string `json:"vendor_name"`
-	XmlTemplateFile string `json:"xml_template_file"`
+	AcquirerId *string `json:"acquirerId,omitempty"`
+	AllowMultipleOrders bool `json:"allowMultipleOrders"`
+	AppFormTemplateName string `json:"appFormTemplateName"`
+	ContractNeeded bool `json:"contractNeeded"`
+	CredentialsNeeded *bool `json:"credentialsNeeded,omitempty"`
+	DescriptionKey string `json:"descriptionKey"`
+	NameKey string `json:"nameKey"`
+	PrescreeningAllowed bool `json:"prescreeningAllowed"`
+	ProductName string `json:"productName"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
+	TerminalTemplateName string `json:"terminalTemplateName"`
+	VendorName string `json:"vendorName"`
+	XmlTemplateFile string `json:"xmlTemplateFile"`
 }
 
 // OutputDetail is the typed data model for the output_detail entity.
 type OutputDetail struct {
-	Detail *map[string]any `json:"detail,omitempty"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
+	Batch *map[string]any `json:"batch,omitempty"`
+	Lines *map[string]any `json:"lines,omitempty"`
+	Progress *map[string]any `json:"progress,omitempty"`
 }
 
 // OutputDetailLoadMatch is the typed request payload for OutputDetail.LoadTyped.
@@ -342,26 +346,26 @@ type OutputDetailLoadMatch struct {
 
 // OutputList is the typed data model for the output_list entity.
 type OutputList struct {
-	Item *[]any `json:"item,omitempty"`
+	Items *[]any `json:"items,omitempty"`
 	Pagination map[string]any `json:"pagination"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
 	Sorting *map[string]any `json:"sorting,omitempty"`
 }
 
 // OutputListCreateData is the typed request payload for OutputList.CreateTyped.
 type OutputListCreateData struct {
-	Item *[]any `json:"item,omitempty"`
+	Items *[]any `json:"items,omitempty"`
 	Pagination map[string]any `json:"pagination"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
 	Sorting *map[string]any `json:"sorting,omitempty"`
 }
 
 // OutputMessage is the typed data model for the output_message entity.
 type OutputMessage struct {
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
 }
 
 // OutputMessageLoadMatch is the typed request payload for OutputMessage.LoadTyped.
@@ -371,57 +375,57 @@ type OutputMessageLoadMatch struct {
 
 // OutputMoveTid is the typed data model for the output_move_tid entity.
 type OutputMoveTid struct {
-	ProductOrderUuiD []any `json:"product_order_uui_d"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
-	TargetPackageOrderUuid string `json:"target_package_order_uuid"`
-	TargetProductOrderUuid string `json:"target_product_order_uuid"`
+	ProductOrderUUIDs []any `json:"productOrderUUIDs"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
+	TargetPackageOrderUUID string `json:"targetPackageOrderUUID"`
+	TargetProductOrderUUID string `json:"targetProductOrderUUID"`
 }
 
 // OutputMoveTidCreateData is the typed request payload for OutputMoveTid.CreateTyped.
 type OutputMoveTidCreateData struct {
-	ProductOrderUuiD []any `json:"product_order_uui_d"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
-	TargetPackageOrderUuid string `json:"target_package_order_uuid"`
-	TargetProductOrderUuid string `json:"target_product_order_uuid"`
+	ProductOrderUUIDs []any `json:"productOrderUUIDs"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
+	TargetPackageOrderUUID string `json:"targetPackageOrderUUID"`
+	TargetProductOrderUUID string `json:"targetProductOrderUUID"`
 }
 
 // OutputRemoveProduct is the typed data model for the output_remove_product entity.
 type OutputRemoveProduct struct {
-	PackageUuid string `json:"package_uuid"`
-	ProductUuiD []any `json:"product_uui_d"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
+	PackageUUID string `json:"packageUUID"`
+	ProductUUIDs []any `json:"productUUIDs"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
 }
 
 // OutputRemoveProductCreateData is the typed request payload for OutputRemoveProduct.CreateTyped.
 type OutputRemoveProductCreateData struct {
-	PackageUuid string `json:"package_uuid"`
-	ProductUuiD []any `json:"product_uui_d"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
+	PackageUUID string `json:"packageUUID"`
+	ProductUUIDs []any `json:"productUUIDs"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
 }
 
 // OutputStart is the typed data model for the output_start entity.
 type OutputStart struct {
 	Id *string `json:"id,omitempty"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
 }
 
 // OutputStartCreateData is the typed request payload for OutputStart.CreateTyped.
 type OutputStartCreateData struct {
 	Id *string `json:"id,omitempty"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
 }
 
 // OutputStatus is the typed data model for the output_status entity.
 type OutputStatus struct {
 	Percentage *int `json:"percentage,omitempty"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
 	Status *string `json:"status,omitempty"`
 }
 
@@ -432,36 +436,36 @@ type OutputStatusLoadMatch struct {
 
 // OutputUpdateProduct is the typed data model for the output_update_product entity.
 type OutputUpdateProduct struct {
-	AllowMultipleOrder *bool `json:"allow_multiple_order,omitempty"`
-	AppFormName *string `json:"app_form_name,omitempty"`
-	ContractNeeded *bool `json:"contract_needed,omitempty"`
-	CredentialsNeeded *bool `json:"credentials_needed,omitempty"`
-	DescriptionKey *string `json:"description_key,omitempty"`
-	NameKey *string `json:"name_key,omitempty"`
-	PrescreeningAllowed *bool `json:"prescreening_allowed,omitempty"`
-	ProductName *string `json:"product_name,omitempty"`
-	ProductStatus *string `json:"product_status,omitempty"`
-	ProductUuid string `json:"product_uuid"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
-	VendorName *string `json:"vendor_name,omitempty"`
+	AllowMultipleOrders *bool `json:"allowMultipleOrders,omitempty"`
+	AppFormName *string `json:"appFormName,omitempty"`
+	ContractNeeded *bool `json:"contractNeeded,omitempty"`
+	CredentialsNeeded *bool `json:"credentialsNeeded,omitempty"`
+	DescriptionKey *string `json:"descriptionKey,omitempty"`
+	NameKey *string `json:"nameKey,omitempty"`
+	PrescreeningAllowed *bool `json:"prescreeningAllowed,omitempty"`
+	ProductName *string `json:"productName,omitempty"`
+	ProductStatus *string `json:"productStatus,omitempty"`
+	ProductUUID string `json:"productUUID"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
+	VendorName *string `json:"vendorName,omitempty"`
 }
 
 // OutputUpdateProductCreateData is the typed request payload for OutputUpdateProduct.CreateTyped.
 type OutputUpdateProductCreateData struct {
-	AllowMultipleOrder *bool `json:"allow_multiple_order,omitempty"`
-	AppFormName *string `json:"app_form_name,omitempty"`
-	ContractNeeded *bool `json:"contract_needed,omitempty"`
-	CredentialsNeeded *bool `json:"credentials_needed,omitempty"`
-	DescriptionKey *string `json:"description_key,omitempty"`
-	NameKey *string `json:"name_key,omitempty"`
-	PrescreeningAllowed *bool `json:"prescreening_allowed,omitempty"`
-	ProductName *string `json:"product_name,omitempty"`
-	ProductStatus *string `json:"product_status,omitempty"`
-	ProductUuid string `json:"product_uuid"`
-	ResponseCode int `json:"response_code"`
-	ResponseMessage string `json:"response_message"`
-	VendorName *string `json:"vendor_name,omitempty"`
+	AllowMultipleOrders *bool `json:"allowMultipleOrders,omitempty"`
+	AppFormName *string `json:"appFormName,omitempty"`
+	ContractNeeded *bool `json:"contractNeeded,omitempty"`
+	CredentialsNeeded *bool `json:"credentialsNeeded,omitempty"`
+	DescriptionKey *string `json:"descriptionKey,omitempty"`
+	NameKey *string `json:"nameKey,omitempty"`
+	PrescreeningAllowed *bool `json:"prescreeningAllowed,omitempty"`
+	ProductName *string `json:"productName,omitempty"`
+	ProductStatus *string `json:"productStatus,omitempty"`
+	ProductUUID string `json:"productUUID"`
+	ResponseCode int `json:"responseCode"`
+	ResponseMessage string `json:"responseMessage"`
+	VendorName *string `json:"vendorName,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the
@@ -476,12 +480,26 @@ func asMap(v any) map[string]any {
 	return out
 }
 
-// typedFrom decodes a runtime value (a map[string]any produced by the op
-// pipeline) into a typed model T via a JSON round-trip. On any error it
-// returns the zero value of T; the op's own (value, error) tuple carries the
-// real error.
+// entityData unwraps an entity to its data map.
+//
+// Operations resolve to the ENTITY, not the raw data (see AGENTS.md), and an
+// entity's fields are UNEXPORTED — marshalling one directly yields `{}`, so
+// every typed accessor would silently hand back a zero-valued struct. The
+// typed boundary therefore takes the data hop first.
+func entityData(v any) any {
+	if ent, ok := v.(core.Entity); ok {
+		return ent.Data()
+	}
+	return v
+}
+
+// typedFrom decodes a runtime value (an entity, or the map[string]any the op
+// pipeline produced) into a typed model T via a JSON round-trip. On any error
+// it returns the zero value of T; the op's own (value, error) tuple carries
+// the real error.
 func typedFrom[T any](v any) T {
 	var out T
+	v = entityData(v)
 	if v == nil {
 		return out
 	}
@@ -493,12 +511,20 @@ func typedFrom[T any](v any) T {
 	return out
 }
 
-// typedSliceFrom decodes a runtime list value ([]any of maps) into a typed
-// slice []T via a JSON round-trip, for list ops.
+// typedSliceFrom decodes a runtime list value into a typed slice []T via a
+// JSON round-trip, for list ops. `list` resolves to a slice of ENTITY
+// instances, so each element takes the data hop.
 func typedSliceFrom[T any](v any) []T {
 	var out []T
 	if v == nil {
 		return out
+	}
+	if list, ok := v.([]any); ok {
+		unwrapped := make([]any, 0, len(list))
+		for _, item := range list {
+			unwrapped = append(unwrapped, entityData(item))
+		}
+		v = unwrapped
 	}
 	b, err := json.Marshal(v)
 	if err != nil {

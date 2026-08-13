@@ -48,7 +48,7 @@ void tests() {
       // LOAD
       final merchant_portal_common_controller_ref01_ent = client.MerchantPortalCommonController();
       final merchant_portal_common_controller_ref01_match_dt0 = <String, dynamic>{};
-      final merchant_portal_common_controller_ref01_data_dt0 = await merchant_portal_common_controller_ref01_ent.load(merchant_portal_common_controller_ref01_match_dt0);
+      final merchant_portal_common_controller_ref01_data_dt0 = (await merchant_portal_common_controller_ref01_ent.load(merchant_portal_common_controller_ref01_match_dt0)).data();
       ok(null != merchant_portal_common_controller_ref01_data_dt0);
 
 

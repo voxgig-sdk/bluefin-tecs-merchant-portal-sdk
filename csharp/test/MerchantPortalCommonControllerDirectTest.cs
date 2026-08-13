@@ -86,11 +86,11 @@ public class MerchantPortalCommonControllerDirectTest
 
         var env = TestRunner.EnvOverride(new Dictionary<string, object?>
         {
-            ["BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID"] = new Dictionary<string, object?>(),
-            ["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"] = "FALSE",
+            ["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID"] = new Dictionary<string, object?>(),
+            ["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"] = "FALSE",
         });
 
-        var live = Equals(env["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"], "TRUE");
+        var live = Equals(env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"], "TRUE");
 
         if (live)
         {
@@ -99,7 +99,7 @@ public class MerchantPortalCommonControllerDirectTest
             });
 
             var idmap = new Dictionary<string, object?>();
-            var entidRaw = env["BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID"];
+            var entidRaw = env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID"];
             if (entidRaw is string entidStr && entidStr.StartsWith("{"))
             {
                 try

@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import BluefinTecsMerchantPortalSDK
-from core.error import BluefinTecsMerchantPortalError
-from core.result import BluefinTecsMerchantPortalResult
-from core.response import BluefinTecsMerchantPortalResponse
-from core.spec import BluefinTecsMerchantPortalSpec
-from feature.base_feature import BluefinTecsMerchantPortalBaseFeature
+from projectname_sdk.core.error import BluefinTecsMerchantPortalError
+from projectname_sdk.core.result import BluefinTecsMerchantPortalResult
+from projectname_sdk.core.response import BluefinTecsMerchantPortalResponse
+from projectname_sdk.core.spec import BluefinTecsMerchantPortalSpec
+from projectname_sdk.feature.base_feature import BluefinTecsMerchantPortalBaseFeature
 
 
 def _client():

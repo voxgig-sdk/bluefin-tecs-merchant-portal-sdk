@@ -33,7 +33,7 @@ client = BluefinTecsMerchantPortalSDK.new
 ### 4. Create, update, and remove
 
 ```ruby
-# create returns the bare created MerchantPortalApiController record.
+# create returns the ENTITY — call data_get for the created MerchantPortalApiController record.
 created = client.MerchantPortalApiController.create({ "business_reg_number" => "example_business_reg_number", "city" => "example_city", "country" => "example_country", "currency" => "example_currency", "merchant_category_code" => 1, "merchant_name" => "example_merchant_name", "packageid" => "example_packageid", "packageorderuuid" => "example_packageorderuuid", "reason_deactivation" => "example_reason_deactivation", "reason_reactivation" => "example_reason_reactivation", "street" => "example_street", "terminal_country_code" => "example_terminal_country_code", "terminal_language_code" => "example_terminal_language_code", "terminal_location" => "example_terminal_location", "terminal_serial_number" => "example_terminal_serial_number", "terminalid" => 1, "vu_nummer" => "example_vu_nummer", "zipcode" => "example_zipcode" })
 
 ```
@@ -116,7 +116,8 @@ client = BluefinTecsMerchantPortalSDK.test({
   "entity" => { "outputdetail" => { "test01" => { "id" => "test01" } } },
 })
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 outputdetail = client.OutputDetail.load({ "id" => "test01" })
 puts outputdetail
 ```
@@ -304,7 +305,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -314,9 +315,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -326,15 +327,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: Create.
 
@@ -344,10 +345,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: Create.
 
@@ -358,29 +359,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -392,15 +393,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -412,14 +413,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -431,10 +432,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -444,20 +445,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: Create.
 
@@ -467,9 +468,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: Load.
 
@@ -479,10 +480,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -493,8 +494,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -504,11 +505,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: Create.
 
@@ -518,10 +519,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -532,8 +533,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -544,8 +545,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Load.
@@ -556,19 +557,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: Create.
 
@@ -666,7 +667,7 @@ Create an instance: `merchant_portal_common_controller = client.MerchantPortalCo
 #### Example: Load
 
 ```ruby
-# load returns the bare MerchantPortalCommonController record (raises on error).
+# load returns the ENTITY — call data_get for the MerchantPortalCommonController record (raises on error).
 merchant_portal_common_controller = client.MerchantPortalCommonController.load()
 ```
 
@@ -686,14 +687,14 @@ Create an instance: `merchant_portal_pam_contract_controller = client.MerchantPo
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `String` |  |
-| `product_order_uuid` | `String` |  |
+| `productOrderUUID` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 merchant_portal_pam_contract_controller = client.MerchantPortalPamContractController.create({
   "language" => "example_language", # String
-  "product_order_uuid" => "example_product_order_uuid", # String
+  "productOrderUUID" => "example_productOrderUUID", # String
 })
 ```
 
@@ -712,15 +713,15 @@ Create an instance: `merchant_portal_pam_document_controller = client.MerchantPo
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
+| `appFormFieldDescUUID` | `String` |  |
+| `packageOrderUUID` | `String` |  |
+| `productOrderUUID` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 merchant_portal_pam_document_controller = client.MerchantPortalPamDocumentController.create({
-  "app_form_field_desc_uuid" => "example_app_form_field_desc_uuid", # String
+  "appFormFieldDescUUID" => "example_appFormFieldDescUUID", # String
 })
 ```
 
@@ -739,24 +740,24 @@ Create an instance: `merchant_portal_pam_form_controller = client.MerchantPortal
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `String` |  |
+| `appFormFieldsDescUUID` | `String` |  |
 | `filter` | `Hash` |  |
 | `language` | `String` |  |
-| `package_order` | `Hash` |  |
-| `package_order_uuid` | `String` |  |
-| `package_uuid` | `String` |  |
-| `product_order` | `Array` |  |
-| `product_order_uuid` | `String` |  |
-| `reason_of_reopening` | `String` |  |
+| `packageOrder` | `Hash` |  |
+| `packageOrderUUID` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productOrderUUID` | `String` |  |
+| `productOrders` | `Array` |  |
+| `reasonOfReopening` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 merchant_portal_pam_form_controller = client.MerchantPortalPamFormController.create({
-  "app_form_fields_desc_uuid" => "example_app_form_fields_desc_uuid", # String
+  "appFormFieldsDescUUID" => "example_appFormFieldsDescUUID", # String
   "language" => "example_language", # String
-  "package_order_uuid" => "example_package_order_uuid", # String
-  "reason_of_reopening" => "example_reason_of_reopening", # String
+  "packageOrderUUID" => "example_packageOrderUUID", # String
+  "reasonOfReopening" => "example_reasonOfReopening", # String
 })
 ```
 
@@ -775,17 +776,17 @@ Create an instance: `merchant_portal_pam_mandator_controller = client.MerchantPo
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `String` |  |
-| `mandator_name` | `String` |  |
-| `notification_email` | `String` |  |
-| `package_uuid` | `String` |  |
+| `clientSecret` | `String` |  |
+| `mandatorName` | `String` |  |
+| `notificationEmail` | `String` |  |
+| `packageUUID` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 merchant_portal_pam_mandator_controller = client.MerchantPortalPamMandatorController.create({
-  "mandator_name" => "example_mandator_name", # String
-  "package_uuid" => "example_package_uuid", # String
+  "mandatorName" => "example_mandatorName", # String
+  "packageUUID" => "example_packageUUID", # String
 })
 ```
 
@@ -805,29 +806,29 @@ Create an instance: `merchant_portal_pam_merchant_controller = client.MerchantPo
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `Hash` |  |
-| `business_registration_number` | `String` |  |
+| `businessRegistrationNumber` | `String` |  |
 | `city` | `String` |  |
-| `company_name` | `String` |  |
-| `corporate_uuid` | `String` |  |
+| `companyName` | `String` |  |
+| `corporateUUID` | `String` |  |
 | `country` | `String` |  |
 | `currency` | `String` |  |
 | `email` | `String` |  |
 | `language` | `String` |  |
 | `login` | `String` |  |
 | `mandator` | `String` |  |
+| `merchantContractNumber` | `String` |  |
+| `merchantName` | `String` |  |
 | `merchant_category_code` | `String` |  |
-| `merchant_contract_number` | `String` |  |
-| `merchant_name` | `String` |  |
-| `package_uuid` | `String` |  |
+| `packageUUID` | `String` |  |
 | `packageorderuuid` | `String` |  |
-| `phone_number` | `String` |  |
-| `postal_code` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `postalCode` | `String` |  |
 | `productid_acquirer` | `String` |  |
 | `region` | `String` |  |
-| `registration_number` | `String` |  |
+| `registrationNumber` | `String` |  |
 | `signature` | `String` |  |
 | `street` | `String` |  |
-| `terminal_id` | `Array` |  |
+| `terminalIds` | `Array` |  |
 | `terminalid_acquirer` | `String` |  |
 | `vu_nummer` | `String` |  |
 
@@ -835,17 +836,17 @@ Create an instance: `merchant_portal_pam_merchant_controller = client.MerchantPo
 
 ```ruby
 merchant_portal_pam_merchant_controller = client.MerchantPortalPamMerchantController.create({
-  "business_registration_number" => "example_business_registration_number", # String
-  "company_name" => "example_company_name", # String
-  "corporate_uuid" => "example_corporate_uuid", # String
+  "businessRegistrationNumber" => "example_businessRegistrationNumber", # String
+  "companyName" => "example_companyName", # String
+  "corporateUUID" => "example_corporateUUID", # String
   "currency" => "example_currency", # String
   "email" => "example_email", # String
   "language" => "example_language", # String
   "login" => "example_login", # String
   "mandator" => "example_mandator", # String
-  "merchant_contract_number" => "example_merchant_contract_number", # String
+  "merchantContractNumber" => "example_merchantContractNumber", # String
   "packageorderuuid" => "example_packageorderuuid", # String
-  "phone_number" => "example_phone_number", # String
+  "phoneNumber" => "example_phoneNumber", # String
   "productid_acquirer" => "example_productid_acquirer", # String
   "vu_nummer" => "example_vu_nummer", # String
 })
@@ -866,15 +867,15 @@ Create an instance: `merchant_portal_pam_package_controller = client.MerchantPor
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `corporate_uuid` | `String` |  |
+| `consumerUUID` | `String` |  |
+| `corporateUUID` | `String` |  |
 | `country` | `String` |  |
-| `description_key` | `String` |  |
+| `descriptionKey` | `String` |  |
 | `filter` | `Hash` |  |
 | `language` | `String` |  |
-| `name_key` | `String` |  |
-| `package_status` | `String` |  |
-| `package_uuid` | `String` |  |
+| `nameKey` | `String` |  |
+| `packageStatus` | `String` |  |
+| `packageUUID` | `String` |  |
 | `pagination` | `Hash` |  |
 | `sorting` | `Hash` |  |
 
@@ -883,7 +884,7 @@ Create an instance: `merchant_portal_pam_package_controller = client.MerchantPor
 ```ruby
 merchant_portal_pam_package_controller = client.MerchantPortalPamPackageController.create({
   "language" => "example_language", # String
-  "package_uuid" => "example_package_uuid", # String
+  "packageUUID" => "example_packageUUID", # String
 })
 ```
 
@@ -902,14 +903,14 @@ Create an instance: `merchant_portal_pam_product_controller = client.MerchantPor
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
+| `consumerUUID` | `String` |  |
 | `filter` | `Hash` |  |
 | `language` | `String` |  |
-| `merchant_id` | `String` |  |
-| `package_order_uuid` | `String` |  |
+| `merchantID` | `String` |  |
+| `packageOrderUUID` | `String` |  |
 | `pagination` | `Hash` |  |
-| `product_order_uuid` | `String` |  |
-| `product_uuid` | `String` |  |
+| `productOrderUUID` | `String` |  |
+| `productUUID` | `String` |  |
 | `reason_decline` | `String` |  |
 | `sorting` | `Hash` |  |
 
@@ -917,9 +918,9 @@ Create an instance: `merchant_portal_pam_product_controller = client.MerchantPor
 
 ```ruby
 merchant_portal_pam_product_controller = client.MerchantPortalPamProductController.create({
-  "package_order_uuid" => "example_package_order_uuid", # String
-  "product_order_uuid" => "example_product_order_uuid", # String
-  "product_uuid" => "example_product_uuid", # String
+  "packageOrderUUID" => "example_packageOrderUUID", # String
+  "productOrderUUID" => "example_productOrderUUID", # String
+  "productUUID" => "example_productUUID", # String
   "reason_decline" => "example_reason_decline", # String
 })
 ```
@@ -939,19 +940,19 @@ Create an instance: `output_add_product = client.OutputAddProduct`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `String` |  |
-| `product_uui_d` | `Array` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productUUIDs` | `Array` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 output_add_product = client.OutputAddProduct.create({
-  "package_uuid" => "example_package_uuid", # String
-  "product_uui_d" => [], # Array
-  "response_code" => 1, # Integer
-  "response_message" => "example_response_message", # String
+  "packageUUID" => "example_packageUUID", # String
+  "productUUIDs" => [], # Array
+  "responseCode" => 1, # Integer
+  "responseMessage" => "example_responseMessage", # String
 })
 ```
 
@@ -970,37 +971,37 @@ Create an instance: `output_create_product = client.OutputCreateProduct`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `allow_multiple_order` | `Boolean` |  |
-| `app_form_template_name` | `String` |  |
-| `contract_needed` | `Boolean` |  |
-| `credentials_needed` | `Boolean` |  |
-| `description_key` | `String` |  |
-| `name_key` | `String` |  |
-| `prescreening_allowed` | `Boolean` |  |
-| `product_name` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `terminal_template_name` | `String` |  |
-| `vendor_name` | `String` |  |
-| `xml_template_file` | `String` |  |
+| `acquirerId` | `String` |  |
+| `allowMultipleOrders` | `Boolean` |  |
+| `appFormTemplateName` | `String` |  |
+| `contractNeeded` | `Boolean` |  |
+| `credentialsNeeded` | `Boolean` |  |
+| `descriptionKey` | `String` |  |
+| `nameKey` | `String` |  |
+| `prescreeningAllowed` | `Boolean` |  |
+| `productName` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `terminalTemplateName` | `String` |  |
+| `vendorName` | `String` |  |
+| `xmlTemplateFile` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 output_create_product = client.OutputCreateProduct.create({
-  "allow_multiple_order" => true, # Boolean
-  "app_form_template_name" => "example_app_form_template_name", # String
-  "contract_needed" => true, # Boolean
-  "description_key" => "example_description_key", # String
-  "name_key" => "example_name_key", # String
-  "prescreening_allowed" => true, # Boolean
-  "product_name" => "example_product_name", # String
-  "response_code" => 1, # Integer
-  "response_message" => "example_response_message", # String
-  "terminal_template_name" => "example_terminal_template_name", # String
-  "vendor_name" => "example_vendor_name", # String
-  "xml_template_file" => "example_xml_template_file", # String
+  "allowMultipleOrders" => true, # Boolean
+  "appFormTemplateName" => "example_appFormTemplateName", # String
+  "contractNeeded" => true, # Boolean
+  "descriptionKey" => "example_descriptionKey", # String
+  "nameKey" => "example_nameKey", # String
+  "prescreeningAllowed" => true, # Boolean
+  "productName" => "example_productName", # String
+  "responseCode" => 1, # Integer
+  "responseMessage" => "example_responseMessage", # String
+  "terminalTemplateName" => "example_terminalTemplateName", # String
+  "vendorName" => "example_vendorName", # String
+  "xmlTemplateFile" => "example_xmlTemplateFile", # String
 })
 ```
 
@@ -1019,14 +1020,14 @@ Create an instance: `output_detail = client.OutputDetail`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `Hash` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
+| `batch` | `Hash` |  |
+| `lines` | `Hash` |  |
+| `progress` | `Hash` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare OutputDetail record (raises on error).
+# load returns the ENTITY — call data_get for the OutputDetail record (raises on error).
 output_detail = client.OutputDetail.load({ "id" => "output_detail_id" })
 ```
 
@@ -1045,10 +1046,10 @@ Create an instance: `output_list = client.OutputList`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `Array` |  |
+| `items` | `Array` |  |
 | `pagination` | `Hash` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `Hash` |  |
 
 #### Example: Create
@@ -1056,8 +1057,8 @@ Create an instance: `output_list = client.OutputList`
 ```ruby
 output_list = client.OutputList.create({
   "pagination" => {}, # Hash
-  "response_code" => 1, # Integer
-  "response_message" => "example_response_message", # String
+  "responseCode" => 1, # Integer
+  "responseMessage" => "example_responseMessage", # String
 })
 ```
 
@@ -1076,13 +1077,13 @@ Create an instance: `output_message = client.OutputMessage`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare OutputMessage record (raises on error).
+# load returns the ENTITY — call data_get for the OutputMessage record (raises on error).
 output_message = client.OutputMessage.load({ "id" => "output_message_id" })
 ```
 
@@ -1101,21 +1102,21 @@ Create an instance: `output_move_tid = client.OutputMoveTid`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `Array` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `target_package_order_uuid` | `String` |  |
-| `target_product_order_uuid` | `String` |  |
+| `productOrderUUIDs` | `Array` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `targetPackageOrderUUID` | `String` |  |
+| `targetProductOrderUUID` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 output_move_tid = client.OutputMoveTid.create({
-  "product_order_uui_d" => [], # Array
-  "response_code" => 1, # Integer
-  "response_message" => "example_response_message", # String
-  "target_package_order_uuid" => "example_target_package_order_uuid", # String
-  "target_product_order_uuid" => "example_target_product_order_uuid", # String
+  "productOrderUUIDs" => [], # Array
+  "responseCode" => 1, # Integer
+  "responseMessage" => "example_responseMessage", # String
+  "targetPackageOrderUUID" => "example_targetPackageOrderUUID", # String
+  "targetProductOrderUUID" => "example_targetProductOrderUUID", # String
 })
 ```
 
@@ -1134,19 +1135,19 @@ Create an instance: `output_remove_product = client.OutputRemoveProduct`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `String` |  |
-| `product_uui_d` | `Array` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productUUIDs` | `Array` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 output_remove_product = client.OutputRemoveProduct.create({
-  "package_uuid" => "example_package_uuid", # String
-  "product_uui_d" => [], # Array
-  "response_code" => 1, # Integer
-  "response_message" => "example_response_message", # String
+  "packageUUID" => "example_packageUUID", # String
+  "productUUIDs" => [], # Array
+  "responseCode" => 1, # Integer
+  "responseMessage" => "example_responseMessage", # String
 })
 ```
 
@@ -1166,15 +1167,15 @@ Create an instance: `output_start = client.OutputStart`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 output_start = client.OutputStart.create({
-  "response_code" => 1, # Integer
-  "response_message" => "example_response_message", # String
+  "responseCode" => 1, # Integer
+  "responseMessage" => "example_responseMessage", # String
 })
 ```
 
@@ -1194,14 +1195,14 @@ Create an instance: `output_status = client.OutputStatus`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `Integer` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
 | `status` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare OutputStatus record (raises on error).
+# load returns the ENTITY — call data_get for the OutputStatus record (raises on error).
 output_status = client.OutputStatus.load({ "id" => "output_status_id" })
 ```
 
@@ -1220,27 +1221,27 @@ Create an instance: `output_update_product = client.OutputUpdateProduct`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `Boolean` |  |
-| `app_form_name` | `String` |  |
-| `contract_needed` | `Boolean` |  |
-| `credentials_needed` | `Boolean` |  |
-| `description_key` | `String` |  |
-| `name_key` | `String` |  |
-| `prescreening_allowed` | `Boolean` |  |
-| `product_name` | `String` |  |
-| `product_status` | `String` |  |
-| `product_uuid` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `vendor_name` | `String` |  |
+| `allowMultipleOrders` | `Boolean` |  |
+| `appFormName` | `String` |  |
+| `contractNeeded` | `Boolean` |  |
+| `credentialsNeeded` | `Boolean` |  |
+| `descriptionKey` | `String` |  |
+| `nameKey` | `String` |  |
+| `prescreeningAllowed` | `Boolean` |  |
+| `productName` | `String` |  |
+| `productStatus` | `String` |  |
+| `productUUID` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `vendorName` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 output_update_product = client.OutputUpdateProduct.create({
-  "product_uuid" => "example_product_uuid", # String
-  "response_code" => 1, # Integer
-  "response_message" => "example_response_message", # String
+  "productUUID" => "example_productUUID", # String
+  "responseCode" => 1, # Integer
+  "responseMessage" => "example_responseMessage", # String
 })
 ```
 

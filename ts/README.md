@@ -36,7 +36,7 @@ const client = new BluefinTecsMerchantPortalSDK()
 ### 4. Create, update, and remove
 
 ```ts
-// Create — returns the created MerchantPortalApiController
+// Create — returns the created MerchantPortalApiController ENTITY (.data() for the record)
 const created = await client.MerchantPortalApiController().create({
   business_reg_number: 'example_business_reg_number',
   city: 'example_city',
@@ -135,7 +135,8 @@ Create a mock client for unit testing — no server required:
 const client = BluefinTecsMerchantPortalSDK.test()
 
 const outputdetail = await client.OutputDetail().load({ id: 'test01' })
-// outputdetail is a bare entity populated with mock response data
+// outputdetail is the entity, populated with mock response data
+// — call outputdetail.data() for the record itself
 console.log(outputdetail)
 ```
 
@@ -369,7 +370,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: create.
 
@@ -379,9 +380,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: create.
 
@@ -391,15 +392,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: create.
 
@@ -409,10 +410,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: create.
 
@@ -423,29 +424,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -457,15 +458,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -477,14 +478,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -496,10 +497,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -509,20 +510,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: create.
 
@@ -532,9 +533,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: load.
 
@@ -544,10 +545,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: create.
@@ -558,8 +559,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: load.
 
@@ -569,11 +570,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: create.
 
@@ -583,10 +584,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -597,8 +598,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -609,8 +610,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: load.
@@ -621,19 +622,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: create.
 
@@ -750,14 +751,14 @@ Create an instance: `const merchant_portal_pam_contract_controller = client.Merc
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const merchant_portal_pam_contract_controller = await client.MerchantPortalPamContractController().create({
   language: 'example_language',
-  product_order_uuid: 'example_product_order_uuid',
+  productOrderUUID: 'example_productOrderUUID',
 })
 ```
 
@@ -776,15 +777,15 @@ Create an instance: `const merchant_portal_pam_document_controller = client.Merc
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `appFormFieldDescUUID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const merchant_portal_pam_document_controller = await client.MerchantPortalPamDocumentController().create({
-  app_form_field_desc_uuid: 'example_app_form_field_desc_uuid',
+  appFormFieldDescUUID: 'example_appFormFieldDescUUID',
 })
 ```
 
@@ -803,24 +804,24 @@ Create an instance: `const merchant_portal_pam_form_controller = client.Merchant
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `string` |  |
+| `appFormFieldsDescUUID` | `string` |  |
 | `filter` | `Record<string, any>` |  |
 | `language` | `string` |  |
-| `package_order` | `Record<string, any>` |  |
-| `package_order_uuid` | `string` |  |
-| `package_uuid` | `string` |  |
-| `product_order` | `any[]` |  |
-| `product_order_uuid` | `string` |  |
-| `reason_of_reopening` | `string` |  |
+| `packageOrder` | `Record<string, any>` |  |
+| `packageOrderUUID` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productOrders` | `any[]` |  |
+| `reasonOfReopening` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const merchant_portal_pam_form_controller = await client.MerchantPortalPamFormController().create({
-  app_form_fields_desc_uuid: 'example_app_form_fields_desc_uuid',
+  appFormFieldsDescUUID: 'example_appFormFieldsDescUUID',
   language: 'example_language',
-  package_order_uuid: 'example_package_order_uuid',
-  reason_of_reopening: 'example_reason_of_reopening',
+  packageOrderUUID: 'example_packageOrderUUID',
+  reasonOfReopening: 'example_reasonOfReopening',
 })
 ```
 
@@ -839,17 +840,17 @@ Create an instance: `const merchant_portal_pam_mandator_controller = client.Merc
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `string` |  |
-| `mandator_name` | `string` |  |
-| `notification_email` | `string` |  |
-| `package_uuid` | `string` |  |
+| `clientSecret` | `string` |  |
+| `mandatorName` | `string` |  |
+| `notificationEmail` | `string` |  |
+| `packageUUID` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const merchant_portal_pam_mandator_controller = await client.MerchantPortalPamMandatorController().create({
-  mandator_name: 'example_mandator_name',
-  package_uuid: 'example_package_uuid',
+  mandatorName: 'example_mandatorName',
+  packageUUID: 'example_packageUUID',
 })
 ```
 
@@ -869,29 +870,29 @@ Create an instance: `const merchant_portal_pam_merchant_controller = client.Merc
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `Record<string, any>` |  |
-| `business_registration_number` | `string` |  |
+| `businessRegistrationNumber` | `string` |  |
 | `city` | `string` |  |
-| `company_name` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `companyName` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
 | `currency` | `string` |  |
 | `email` | `string` |  |
 | `language` | `string` |  |
 | `login` | `string` |  |
 | `mandator` | `string` |  |
+| `merchantContractNumber` | `string` |  |
+| `merchantName` | `string` |  |
 | `merchant_category_code` | `string` |  |
-| `merchant_contract_number` | `string` |  |
-| `merchant_name` | `string` |  |
-| `package_uuid` | `string` |  |
+| `packageUUID` | `string` |  |
 | `packageorderuuid` | `string` |  |
-| `phone_number` | `string` |  |
-| `postal_code` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `postalCode` | `string` |  |
 | `productid_acquirer` | `string` |  |
 | `region` | `string` |  |
-| `registration_number` | `string` |  |
+| `registrationNumber` | `string` |  |
 | `signature` | `string` |  |
 | `street` | `string` |  |
-| `terminal_id` | `any[]` |  |
+| `terminalIds` | `any[]` |  |
 | `terminalid_acquirer` | `string` |  |
 | `vu_nummer` | `string` |  |
 
@@ -899,17 +900,17 @@ Create an instance: `const merchant_portal_pam_merchant_controller = client.Merc
 
 ```ts
 const merchant_portal_pam_merchant_controller = await client.MerchantPortalPamMerchantController().create({
-  business_registration_number: 'example_business_registration_number',
-  company_name: 'example_company_name',
-  corporate_uuid: 'example_corporate_uuid',
+  businessRegistrationNumber: 'example_businessRegistrationNumber',
+  companyName: 'example_companyName',
+  corporateUUID: 'example_corporateUUID',
   currency: 'example_currency',
   email: 'example_email',
   language: 'example_language',
   login: 'example_login',
   mandator: 'example_mandator',
-  merchant_contract_number: 'example_merchant_contract_number',
+  merchantContractNumber: 'example_merchantContractNumber',
   packageorderuuid: 'example_packageorderuuid',
-  phone_number: 'example_phone_number',
+  phoneNumber: 'example_phoneNumber',
   productid_acquirer: 'example_productid_acquirer',
   vu_nummer: 'example_vu_nummer',
 })
@@ -930,15 +931,15 @@ Create an instance: `const merchant_portal_pam_package_controller = client.Merch
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
-| `description_key` | `string` |  |
+| `descriptionKey` | `string` |  |
 | `filter` | `Record<string, any>` |  |
 | `language` | `string` |  |
-| `name_key` | `string` |  |
-| `package_status` | `string` |  |
-| `package_uuid` | `string` |  |
+| `nameKey` | `string` |  |
+| `packageStatus` | `string` |  |
+| `packageUUID` | `string` |  |
 | `pagination` | `Record<string, any>` |  |
 | `sorting` | `Record<string, any>` |  |
 
@@ -947,7 +948,7 @@ Create an instance: `const merchant_portal_pam_package_controller = client.Merch
 ```ts
 const merchant_portal_pam_package_controller = await client.MerchantPortalPamPackageController().create({
   language: 'example_language',
-  package_uuid: 'example_package_uuid',
+  packageUUID: 'example_packageUUID',
 })
 ```
 
@@ -966,14 +967,14 @@ Create an instance: `const merchant_portal_pam_product_controller = client.Merch
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
 | `filter` | `Record<string, any>` |  |
 | `language` | `string` |  |
-| `merchant_id` | `string` |  |
-| `package_order_uuid` | `string` |  |
+| `merchantID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
 | `pagination` | `Record<string, any>` |  |
-| `product_order_uuid` | `string` |  |
-| `product_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productUUID` | `string` |  |
 | `reason_decline` | `string` |  |
 | `sorting` | `Record<string, any>` |  |
 
@@ -981,9 +982,9 @@ Create an instance: `const merchant_portal_pam_product_controller = client.Merch
 
 ```ts
 const merchant_portal_pam_product_controller = await client.MerchantPortalPamProductController().create({
-  package_order_uuid: 'example_package_order_uuid',
-  product_order_uuid: 'example_product_order_uuid',
-  product_uuid: 'example_product_uuid',
+  packageOrderUUID: 'example_packageOrderUUID',
+  productOrderUUID: 'example_productOrderUUID',
+  productUUID: 'example_productUUID',
   reason_decline: 'example_reason_decline',
 })
 ```
@@ -1003,19 +1004,19 @@ Create an instance: `const output_add_product = client.OutputAddProduct()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `any[]` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `any[]` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const output_add_product = await client.OutputAddProduct().create({
-  package_uuid: 'example_package_uuid',
-  product_uui_d: [],
-  response_code: 1,
-  response_message: 'example_response_message',
+  packageUUID: 'example_packageUUID',
+  productUUIDs: [],
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
 })
 ```
 
@@ -1034,37 +1035,37 @@ Create an instance: `const output_create_product = client.OutputCreateProduct()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `string` |  |
-| `allow_multiple_order` | `boolean` |  |
-| `app_form_template_name` | `string` |  |
-| `contract_needed` | `boolean` |  |
-| `credentials_needed` | `boolean` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `boolean` |  |
-| `product_name` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
-| `terminal_template_name` | `string` |  |
-| `vendor_name` | `string` |  |
-| `xml_template_file` | `string` |  |
+| `acquirerId` | `string` |  |
+| `allowMultipleOrders` | `boolean` |  |
+| `appFormTemplateName` | `string` |  |
+| `contractNeeded` | `boolean` |  |
+| `credentialsNeeded` | `boolean` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `boolean` |  |
+| `productName` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
+| `terminalTemplateName` | `string` |  |
+| `vendorName` | `string` |  |
+| `xmlTemplateFile` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const output_create_product = await client.OutputCreateProduct().create({
-  allow_multiple_order: true,
-  app_form_template_name: 'example_app_form_template_name',
-  contract_needed: true,
-  description_key: 'example_description_key',
-  name_key: 'example_name_key',
-  prescreening_allowed: true,
-  product_name: 'example_product_name',
-  response_code: 1,
-  response_message: 'example_response_message',
-  terminal_template_name: 'example_terminal_template_name',
-  vendor_name: 'example_vendor_name',
-  xml_template_file: 'example_xml_template_file',
+  allowMultipleOrders: true,
+  appFormTemplateName: 'example_appFormTemplateName',
+  contractNeeded: true,
+  descriptionKey: 'example_descriptionKey',
+  nameKey: 'example_nameKey',
+  prescreeningAllowed: true,
+  productName: 'example_productName',
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
+  terminalTemplateName: 'example_terminalTemplateName',
+  vendorName: 'example_vendorName',
+  xmlTemplateFile: 'example_xmlTemplateFile',
 })
 ```
 
@@ -1083,9 +1084,9 @@ Create an instance: `const output_detail = client.OutputDetail()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `Record<string, any>` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `batch` | `Record<string, any>` |  |
+| `lines` | `Record<string, any>` |  |
+| `progress` | `Record<string, any>` |  |
 
 #### Example: Load
 
@@ -1108,10 +1109,10 @@ Create an instance: `const output_list = client.OutputList()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `any[]` |  |
+| `items` | `any[]` |  |
 | `pagination` | `Record<string, any>` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `Record<string, any>` |  |
 
 #### Example: Create
@@ -1119,8 +1120,8 @@ Create an instance: `const output_list = client.OutputList()`
 ```ts
 const output_list = await client.OutputList().create({
   pagination: {},
-  response_code: 1,
-  response_message: 'example_response_message',
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
 })
 ```
 
@@ -1139,8 +1140,8 @@ Create an instance: `const output_message = client.OutputMessage()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Load
 
@@ -1163,21 +1164,21 @@ Create an instance: `const output_move_tid = client.OutputMoveTid()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `any[]` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
-| `target_package_order_uuid` | `string` |  |
-| `target_product_order_uuid` | `string` |  |
+| `productOrderUUIDs` | `any[]` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
+| `targetPackageOrderUUID` | `string` |  |
+| `targetProductOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const output_move_tid = await client.OutputMoveTid().create({
-  product_order_uui_d: [],
-  response_code: 1,
-  response_message: 'example_response_message',
-  target_package_order_uuid: 'example_target_package_order_uuid',
-  target_product_order_uuid: 'example_target_product_order_uuid',
+  productOrderUUIDs: [],
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
+  targetPackageOrderUUID: 'example_targetPackageOrderUUID',
+  targetProductOrderUUID: 'example_targetProductOrderUUID',
 })
 ```
 
@@ -1196,19 +1197,19 @@ Create an instance: `const output_remove_product = client.OutputRemoveProduct()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `any[]` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `any[]` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const output_remove_product = await client.OutputRemoveProduct().create({
-  package_uuid: 'example_package_uuid',
-  product_uui_d: [],
-  response_code: 1,
-  response_message: 'example_response_message',
+  packageUUID: 'example_packageUUID',
+  productUUIDs: [],
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
 })
 ```
 
@@ -1228,15 +1229,15 @@ Create an instance: `const output_start = client.OutputStart()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const output_start = await client.OutputStart().create({
-  response_code: 1,
-  response_message: 'example_response_message',
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
 })
 ```
 
@@ -1256,8 +1257,8 @@ Create an instance: `const output_status = client.OutputStatus()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `number` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `status` | `string` |  |
 
 #### Example: Load
@@ -1281,27 +1282,27 @@ Create an instance: `const output_update_product = client.OutputUpdateProduct()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `boolean` |  |
-| `app_form_name` | `string` |  |
-| `contract_needed` | `boolean` |  |
-| `credentials_needed` | `boolean` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `boolean` |  |
-| `product_name` | `string` |  |
-| `product_status` | `string` |  |
-| `product_uuid` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
-| `vendor_name` | `string` |  |
+| `allowMultipleOrders` | `boolean` |  |
+| `appFormName` | `string` |  |
+| `contractNeeded` | `boolean` |  |
+| `credentialsNeeded` | `boolean` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `boolean` |  |
+| `productName` | `string` |  |
+| `productStatus` | `string` |  |
+| `productUUID` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
+| `vendorName` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const output_update_product = await client.OutputUpdateProduct().create({
-  product_uuid: 'example_product_uuid',
-  response_code: 1,
-  response_message: 'example_response_message',
+  productUUID: 'example_productUUID',
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
 })
 ```
 

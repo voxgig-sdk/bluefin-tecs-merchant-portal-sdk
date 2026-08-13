@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from bluefintecsmerchantportal_sdk.utility.voxgig_struct import voxgig_struct as vs
 from bluefintecsmerchantportal_sdk import BluefinTecsMerchantPortalSDK
-from core import helpers
+from bluefintecsmerchantportal_sdk.core import helpers
 from test import runner
 
 
@@ -56,11 +56,11 @@ def _merchant_portal_common_controller_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID": {},
-        "BLUEFINTECSMERCHANTPORTAL_TEST_LIVE": "FALSE",
+        "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID": {},
+        "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("BLUEFINTECSMERCHANTPORTAL_TEST_LIVE") == "TRUE"
+    live = env.get("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

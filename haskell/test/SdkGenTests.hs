@@ -120,8 +120,9 @@ merchant_portal_api_controllerBasicTest c = do
     d <- newRefData fixture "merchant_portal_api_controller"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 merchant_portal_api_controllerDirectTest :: Counters -> IO ()
 merchant_portal_api_controllerDirectTest c = runTest c "merchant_portal_api_controller.direct" $ do
@@ -163,8 +164,9 @@ merchant_portal_common_controllerBasicTest c = do
       (id0 : _) -> do
         m <- jo [("id", VStr id0)]; ctrl <- emptyMap
         loaded <- eLoad ent m ctrl
-        lid <- getp loaded "id"
-        pure (ismap loaded && vstring lid == id0)
+        ld <- eDataGet loaded
+        lid <- getp ld "id"
+        pure (ismap ld && vstring lid == id0)
 
 merchant_portal_common_controllerDirectTest :: Counters -> IO ()
 merchant_portal_common_controllerDirectTest c = runTest c "merchant_portal_common_controller.direct" $ do
@@ -202,8 +204,9 @@ merchant_portal_pam_contract_controllerBasicTest c = do
     d <- newRefData fixture "merchant_portal_pam_contract_controller"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 merchant_portal_pam_contract_controllerDirectTest :: Counters -> IO ()
 merchant_portal_pam_contract_controllerDirectTest c = runTest c "merchant_portal_pam_contract_controller.direct" $ do
@@ -241,8 +244,9 @@ merchant_portal_pam_document_controllerBasicTest c = do
     d <- newRefData fixture "merchant_portal_pam_document_controller"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 merchant_portal_pam_document_controllerDirectTest :: Counters -> IO ()
 merchant_portal_pam_document_controllerDirectTest c = runTest c "merchant_portal_pam_document_controller.direct" $ do
@@ -280,8 +284,9 @@ merchant_portal_pam_form_controllerBasicTest c = do
     d <- newRefData fixture "merchant_portal_pam_form_controller"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 merchant_portal_pam_form_controllerDirectTest :: Counters -> IO ()
 merchant_portal_pam_form_controllerDirectTest c = runTest c "merchant_portal_pam_form_controller.direct" $ do
@@ -319,8 +324,9 @@ merchant_portal_pam_mandator_controllerBasicTest c = do
     d <- newRefData fixture "merchant_portal_pam_mandator_controller"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 merchant_portal_pam_mandator_controllerDirectTest :: Counters -> IO ()
 merchant_portal_pam_mandator_controllerDirectTest c = runTest c "merchant_portal_pam_mandator_controller.direct" $ do
@@ -358,8 +364,9 @@ merchant_portal_pam_merchant_controllerBasicTest c = do
     d <- newRefData fixture "merchant_portal_pam_merchant_controller"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 merchant_portal_pam_merchant_controllerDirectTest :: Counters -> IO ()
 merchant_portal_pam_merchant_controllerDirectTest c = runTest c "merchant_portal_pam_merchant_controller.direct" $ do
@@ -397,8 +404,9 @@ merchant_portal_pam_package_controllerBasicTest c = do
     d <- newRefData fixture "merchant_portal_pam_package_controller"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 merchant_portal_pam_package_controllerDirectTest :: Counters -> IO ()
 merchant_portal_pam_package_controllerDirectTest c = runTest c "merchant_portal_pam_package_controller.direct" $ do
@@ -436,8 +444,9 @@ merchant_portal_pam_product_controllerBasicTest c = do
     d <- newRefData fixture "merchant_portal_pam_product_controller"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 merchant_portal_pam_product_controllerDirectTest :: Counters -> IO ()
 merchant_portal_pam_product_controllerDirectTest c = runTest c "merchant_portal_pam_product_controller.direct" $ do
@@ -475,8 +484,9 @@ output_add_productBasicTest c = do
     d <- newRefData fixture "output_add_product"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_add_productDirectTest :: Counters -> IO ()
 output_add_productDirectTest c = runTest c "output_add_product.direct" $ do
@@ -514,8 +524,9 @@ output_create_productBasicTest c = do
     d <- newRefData fixture "output_create_product"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_create_productDirectTest :: Counters -> IO ()
 output_create_productDirectTest c = runTest c "output_create_product.direct" $ do
@@ -557,8 +568,9 @@ output_detailBasicTest c = do
       (id0 : _) -> do
         m <- jo [("id", VStr id0)]; ctrl <- emptyMap
         loaded <- eLoad ent m ctrl
-        lid <- getp loaded "id"
-        pure (ismap loaded && vstring lid == id0)
+        ld <- eDataGet loaded
+        lid <- getp ld "id"
+        pure (ismap ld && vstring lid == id0)
 
 output_detailDirectTest :: Counters -> IO ()
 output_detailDirectTest c = runTest c "output_detail.direct" $ do
@@ -596,8 +608,9 @@ output_listBasicTest c = do
     d <- newRefData fixture "output_list"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_listDirectTest :: Counters -> IO ()
 output_listDirectTest c = runTest c "output_list.direct" $ do
@@ -639,8 +652,9 @@ output_messageBasicTest c = do
       (id0 : _) -> do
         m <- jo [("id", VStr id0)]; ctrl <- emptyMap
         loaded <- eLoad ent m ctrl
-        lid <- getp loaded "id"
-        pure (ismap loaded && vstring lid == id0)
+        ld <- eDataGet loaded
+        lid <- getp ld "id"
+        pure (ismap ld && vstring lid == id0)
 
 output_messageDirectTest :: Counters -> IO ()
 output_messageDirectTest c = runTest c "output_message.direct" $ do
@@ -678,8 +692,9 @@ output_move_tidBasicTest c = do
     d <- newRefData fixture "output_move_tid"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_move_tidDirectTest :: Counters -> IO ()
 output_move_tidDirectTest c = runTest c "output_move_tid.direct" $ do
@@ -717,8 +732,9 @@ output_remove_productBasicTest c = do
     d <- newRefData fixture "output_remove_product"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_remove_productDirectTest :: Counters -> IO ()
 output_remove_productDirectTest c = runTest c "output_remove_product.direct" $ do
@@ -756,8 +772,9 @@ output_startBasicTest c = do
     d <- newRefData fixture "output_start"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_startDirectTest :: Counters -> IO ()
 output_startDirectTest c = runTest c "output_start.direct" $ do
@@ -799,8 +816,9 @@ output_statusBasicTest c = do
       (id0 : _) -> do
         m <- jo [("id", VStr id0)]; ctrl <- emptyMap
         loaded <- eLoad ent m ctrl
-        lid <- getp loaded "id"
-        pure (ismap loaded && vstring lid == id0)
+        ld <- eDataGet loaded
+        lid <- getp ld "id"
+        pure (ismap ld && vstring lid == id0)
 
 output_statusDirectTest :: Counters -> IO ()
 output_statusDirectTest c = runTest c "output_status.direct" $ do
@@ -838,8 +856,9 @@ output_update_productBasicTest c = do
     d <- newRefData fixture "output_update_product"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_update_productDirectTest :: Counters -> IO ()
 output_update_productDirectTest c = runTest c "output_update_product.direct" $ do

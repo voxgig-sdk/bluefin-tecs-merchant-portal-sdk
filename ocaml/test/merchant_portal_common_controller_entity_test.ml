@@ -20,5 +20,6 @@ let () =
       let ent = Sdk_client.merchant_portal_common_controller client Noval in
       ignore ent;
       let loaded = ent.e_load (jo [("id", Str "merchant_portal_common_controller01")]) Noval in
-      check "load is a map" (ismap loaded);
+      let loaded_data = loaded.e_data_get () in
+      check "load data is a map" (ismap loaded_data);
       ())

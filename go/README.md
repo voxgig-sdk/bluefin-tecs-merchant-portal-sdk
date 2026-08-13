@@ -329,7 +329,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `"language"` |  |
-| `"product_order_uuid"` |  |
+| `"productOrderUUID"` |  |
 
 Operations: Create.
 
@@ -339,9 +339,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `"app_form_field_desc_uuid"` |  |
-| `"package_order_uuid"` |  |
-| `"product_order_uuid"` |  |
+| `"appFormFieldDescUUID"` |  |
+| `"packageOrderUUID"` |  |
+| `"productOrderUUID"` |  |
 
 Operations: Create.
 
@@ -351,15 +351,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `"app_form_fields_desc_uuid"` |  |
+| `"appFormFieldsDescUUID"` |  |
 | `"filter"` |  |
 | `"language"` |  |
-| `"package_order"` |  |
-| `"package_order_uuid"` |  |
-| `"package_uuid"` |  |
-| `"product_order"` |  |
-| `"product_order_uuid"` |  |
-| `"reason_of_reopening"` |  |
+| `"packageOrder"` |  |
+| `"packageOrderUUID"` |  |
+| `"packageUUID"` |  |
+| `"productOrderUUID"` |  |
+| `"productOrders"` |  |
+| `"reasonOfReopening"` |  |
 
 Operations: Create.
 
@@ -369,10 +369,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `"client_secret"` |  |
-| `"mandator_name"` |  |
-| `"notification_email"` |  |
-| `"package_uuid"` |  |
+| `"clientSecret"` |  |
+| `"mandatorName"` |  |
+| `"notificationEmail"` |  |
+| `"packageUUID"` |  |
 
 Operations: Create.
 
@@ -383,29 +383,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `"additional_data"` |  |
-| `"business_registration_number"` |  |
+| `"businessRegistrationNumber"` |  |
 | `"city"` |  |
-| `"company_name"` |  |
-| `"corporate_uuid"` |  |
+| `"companyName"` |  |
+| `"corporateUUID"` |  |
 | `"country"` |  |
 | `"currency"` |  |
 | `"email"` |  |
 | `"language"` |  |
 | `"login"` |  |
 | `"mandator"` |  |
+| `"merchantContractNumber"` |  |
+| `"merchantName"` |  |
 | `"merchant_category_code"` |  |
-| `"merchant_contract_number"` |  |
-| `"merchant_name"` |  |
-| `"package_uuid"` |  |
+| `"packageUUID"` |  |
 | `"packageorderuuid"` |  |
-| `"phone_number"` |  |
-| `"postal_code"` |  |
+| `"phoneNumber"` |  |
+| `"postalCode"` |  |
 | `"productid_acquirer"` |  |
 | `"region"` |  |
-| `"registration_number"` |  |
+| `"registrationNumber"` |  |
 | `"signature"` |  |
 | `"street"` |  |
-| `"terminal_id"` |  |
+| `"terminalIds"` |  |
 | `"terminalid_acquirer"` |  |
 | `"vu_nummer"` |  |
 
@@ -417,15 +417,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `"consumer_uuid"` |  |
-| `"corporate_uuid"` |  |
+| `"consumerUUID"` |  |
+| `"corporateUUID"` |  |
 | `"country"` |  |
-| `"description_key"` |  |
+| `"descriptionKey"` |  |
 | `"filter"` |  |
 | `"language"` |  |
-| `"name_key"` |  |
-| `"package_status"` |  |
-| `"package_uuid"` |  |
+| `"nameKey"` |  |
+| `"packageStatus"` |  |
+| `"packageUUID"` |  |
 | `"pagination"` |  |
 | `"sorting"` |  |
 
@@ -437,14 +437,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `"consumer_uuid"` |  |
+| `"consumerUUID"` |  |
 | `"filter"` |  |
 | `"language"` |  |
-| `"merchant_id"` |  |
-| `"package_order_uuid"` |  |
+| `"merchantID"` |  |
+| `"packageOrderUUID"` |  |
 | `"pagination"` |  |
-| `"product_order_uuid"` |  |
-| `"product_uuid"` |  |
+| `"productOrderUUID"` |  |
+| `"productUUID"` |  |
 | `"reason_decline"` |  |
 | `"sorting"` |  |
 
@@ -456,10 +456,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `"package_uuid"` |  |
-| `"product_uui_d"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"packageUUID"` |  |
+| `"productUUIDs"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -469,20 +469,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `"acquirer_id"` |  |
-| `"allow_multiple_order"` |  |
-| `"app_form_template_name"` |  |
-| `"contract_needed"` |  |
-| `"credentials_needed"` |  |
-| `"description_key"` |  |
-| `"name_key"` |  |
-| `"prescreening_allowed"` |  |
-| `"product_name"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
-| `"terminal_template_name"` |  |
-| `"vendor_name"` |  |
-| `"xml_template_file"` |  |
+| `"acquirerId"` |  |
+| `"allowMultipleOrders"` |  |
+| `"appFormTemplateName"` |  |
+| `"contractNeeded"` |  |
+| `"credentialsNeeded"` |  |
+| `"descriptionKey"` |  |
+| `"nameKey"` |  |
+| `"prescreeningAllowed"` |  |
+| `"productName"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
+| `"terminalTemplateName"` |  |
+| `"vendorName"` |  |
+| `"xmlTemplateFile"` |  |
 
 Operations: Create.
 
@@ -492,9 +492,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `"detail"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"batch"` |  |
+| `"lines"` |  |
+| `"progress"` |  |
 
 Operations: Load.
 
@@ -504,10 +504,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `"item"` |  |
+| `"items"` |  |
 | `"pagination"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 | `"sorting"` |  |
 
 Operations: Create.
@@ -518,8 +518,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Load.
 
@@ -529,11 +529,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `"product_order_uui_d"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
-| `"target_package_order_uuid"` |  |
-| `"target_product_order_uuid"` |  |
+| `"productOrderUUIDs"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
+| `"targetPackageOrderUUID"` |  |
+| `"targetProductOrderUUID"` |  |
 
 Operations: Create.
 
@@ -543,10 +543,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `"package_uuid"` |  |
-| `"product_uui_d"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"packageUUID"` |  |
+| `"productUUIDs"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -557,8 +557,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `"id"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -569,8 +569,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `"percentage"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 | `"status"` |  |
 
 Operations: Load.
@@ -581,19 +581,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `"allow_multiple_order"` |  |
-| `"app_form_name"` |  |
-| `"contract_needed"` |  |
-| `"credentials_needed"` |  |
-| `"description_key"` |  |
-| `"name_key"` |  |
-| `"prescreening_allowed"` |  |
-| `"product_name"` |  |
-| `"product_status"` |  |
-| `"product_uuid"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
-| `"vendor_name"` |  |
+| `"allowMultipleOrders"` |  |
+| `"appFormName"` |  |
+| `"contractNeeded"` |  |
+| `"credentialsNeeded"` |  |
+| `"descriptionKey"` |  |
+| `"nameKey"` |  |
+| `"prescreeningAllowed"` |  |
+| `"productName"` |  |
+| `"productStatus"` |  |
+| `"productUUID"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
+| `"vendorName"` |  |
 
 Operations: Create.
 
@@ -718,14 +718,14 @@ Create an instance: `merchantPortalPamContractController := client.MerchantPorta
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.MerchantPortalPamContractController(nil).Create(map[string]any{
     "language": "example_language",
-    "product_order_uuid": "example_product_order_uuid",
+    "productOrderUUID": "example_productOrderUUID",
 }, nil)
 if err != nil {
     panic(err)
@@ -748,15 +748,15 @@ Create an instance: `merchantPortalPamDocumentController := client.MerchantPorta
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `appFormFieldDescUUID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.MerchantPortalPamDocumentController(nil).Create(map[string]any{
-    "app_form_field_desc_uuid": "example_app_form_field_desc_uuid",
+    "appFormFieldDescUUID": "example_appFormFieldDescUUID",
 }, nil)
 if err != nil {
     panic(err)
@@ -779,24 +779,24 @@ Create an instance: `merchantPortalPamFormController := client.MerchantPortalPam
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `string` |  |
+| `appFormFieldsDescUUID` | `string` |  |
 | `filter` | `map[string]any` |  |
 | `language` | `string` |  |
-| `package_order` | `map[string]any` |  |
-| `package_order_uuid` | `string` |  |
-| `package_uuid` | `string` |  |
-| `product_order` | `[]any` |  |
-| `product_order_uuid` | `string` |  |
-| `reason_of_reopening` | `string` |  |
+| `packageOrder` | `map[string]any` |  |
+| `packageOrderUUID` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productOrders` | `[]any` |  |
+| `reasonOfReopening` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.MerchantPortalPamFormController(nil).Create(map[string]any{
-    "app_form_fields_desc_uuid": "example_app_form_fields_desc_uuid",
+    "appFormFieldsDescUUID": "example_appFormFieldsDescUUID",
     "language": "example_language",
-    "package_order_uuid": "example_package_order_uuid",
-    "reason_of_reopening": "example_reason_of_reopening",
+    "packageOrderUUID": "example_packageOrderUUID",
+    "reasonOfReopening": "example_reasonOfReopening",
 }, nil)
 if err != nil {
     panic(err)
@@ -819,17 +819,17 @@ Create an instance: `merchantPortalPamMandatorController := client.MerchantPorta
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `string` |  |
-| `mandator_name` | `string` |  |
-| `notification_email` | `string` |  |
-| `package_uuid` | `string` |  |
+| `clientSecret` | `string` |  |
+| `mandatorName` | `string` |  |
+| `notificationEmail` | `string` |  |
+| `packageUUID` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.MerchantPortalPamMandatorController(nil).Create(map[string]any{
-    "mandator_name": "example_mandator_name",
-    "package_uuid": "example_package_uuid",
+    "mandatorName": "example_mandatorName",
+    "packageUUID": "example_packageUUID",
 }, nil)
 if err != nil {
     panic(err)
@@ -853,29 +853,29 @@ Create an instance: `merchantPortalPamMerchantController := client.MerchantPorta
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `map[string]any` |  |
-| `business_registration_number` | `string` |  |
+| `businessRegistrationNumber` | `string` |  |
 | `city` | `string` |  |
-| `company_name` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `companyName` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
 | `currency` | `string` |  |
 | `email` | `string` |  |
 | `language` | `string` |  |
 | `login` | `string` |  |
 | `mandator` | `string` |  |
+| `merchantContractNumber` | `string` |  |
+| `merchantName` | `string` |  |
 | `merchant_category_code` | `string` |  |
-| `merchant_contract_number` | `string` |  |
-| `merchant_name` | `string` |  |
-| `package_uuid` | `string` |  |
+| `packageUUID` | `string` |  |
 | `packageorderuuid` | `string` |  |
-| `phone_number` | `string` |  |
-| `postal_code` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `postalCode` | `string` |  |
 | `productid_acquirer` | `string` |  |
 | `region` | `string` |  |
-| `registration_number` | `string` |  |
+| `registrationNumber` | `string` |  |
 | `signature` | `string` |  |
 | `street` | `string` |  |
-| `terminal_id` | `[]any` |  |
+| `terminalIds` | `[]any` |  |
 | `terminalid_acquirer` | `string` |  |
 | `vu_nummer` | `string` |  |
 
@@ -883,17 +883,17 @@ Create an instance: `merchantPortalPamMerchantController := client.MerchantPorta
 
 ```go
 result, err := client.MerchantPortalPamMerchantController(nil).Create(map[string]any{
-    "business_registration_number": "example_business_registration_number",
-    "company_name": "example_company_name",
-    "corporate_uuid": "example_corporate_uuid",
+    "businessRegistrationNumber": "example_businessRegistrationNumber",
+    "companyName": "example_companyName",
+    "corporateUUID": "example_corporateUUID",
     "currency": "example_currency",
     "email": "example_email",
     "language": "example_language",
     "login": "example_login",
     "mandator": "example_mandator",
-    "merchant_contract_number": "example_merchant_contract_number",
+    "merchantContractNumber": "example_merchantContractNumber",
     "packageorderuuid": "example_packageorderuuid",
-    "phone_number": "example_phone_number",
+    "phoneNumber": "example_phoneNumber",
     "productid_acquirer": "example_productid_acquirer",
     "vu_nummer": "example_vu_nummer",
 }, nil)
@@ -918,15 +918,15 @@ Create an instance: `merchantPortalPamPackageController := client.MerchantPortal
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
-| `description_key` | `string` |  |
+| `descriptionKey` | `string` |  |
 | `filter` | `map[string]any` |  |
 | `language` | `string` |  |
-| `name_key` | `string` |  |
-| `package_status` | `string` |  |
-| `package_uuid` | `string` |  |
+| `nameKey` | `string` |  |
+| `packageStatus` | `string` |  |
+| `packageUUID` | `string` |  |
 | `pagination` | `map[string]any` |  |
 | `sorting` | `map[string]any` |  |
 
@@ -935,7 +935,7 @@ Create an instance: `merchantPortalPamPackageController := client.MerchantPortal
 ```go
 result, err := client.MerchantPortalPamPackageController(nil).Create(map[string]any{
     "language": "example_language",
-    "package_uuid": "example_package_uuid",
+    "packageUUID": "example_packageUUID",
 }, nil)
 if err != nil {
     panic(err)
@@ -958,14 +958,14 @@ Create an instance: `merchantPortalPamProductController := client.MerchantPortal
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
 | `filter` | `map[string]any` |  |
 | `language` | `string` |  |
-| `merchant_id` | `string` |  |
-| `package_order_uuid` | `string` |  |
+| `merchantID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
 | `pagination` | `map[string]any` |  |
-| `product_order_uuid` | `string` |  |
-| `product_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productUUID` | `string` |  |
 | `reason_decline` | `string` |  |
 | `sorting` | `map[string]any` |  |
 
@@ -973,9 +973,9 @@ Create an instance: `merchantPortalPamProductController := client.MerchantPortal
 
 ```go
 result, err := client.MerchantPortalPamProductController(nil).Create(map[string]any{
-    "package_order_uuid": "example_package_order_uuid",
-    "product_order_uuid": "example_product_order_uuid",
-    "product_uuid": "example_product_uuid",
+    "packageOrderUUID": "example_packageOrderUUID",
+    "productOrderUUID": "example_productOrderUUID",
+    "productUUID": "example_productUUID",
     "reason_decline": "example_reason_decline",
 }, nil)
 if err != nil {
@@ -999,19 +999,19 @@ Create an instance: `outputAddProduct := client.OutputAddProduct(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `[]any` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `[]any` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.OutputAddProduct(nil).Create(map[string]any{
-    "package_uuid": "example_package_uuid",
-    "product_uui_d": []any{},
-    "response_code": 1,
-    "response_message": "example_response_message",
+    "packageUUID": "example_packageUUID",
+    "productUUIDs": []any{},
+    "responseCode": 1,
+    "responseMessage": "example_responseMessage",
 }, nil)
 if err != nil {
     panic(err)
@@ -1034,37 +1034,37 @@ Create an instance: `outputCreateProduct := client.OutputCreateProduct(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `string` |  |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_template_name` | `string` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_template_name` | `string` |  |
-| `vendor_name` | `string` |  |
-| `xml_template_file` | `string` |  |
+| `acquirerId` | `string` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormTemplateName` | `string` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalTemplateName` | `string` |  |
+| `vendorName` | `string` |  |
+| `xmlTemplateFile` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.OutputCreateProduct(nil).Create(map[string]any{
-    "allow_multiple_order": true,
-    "app_form_template_name": "example_app_form_template_name",
-    "contract_needed": true,
-    "description_key": "example_description_key",
-    "name_key": "example_name_key",
-    "prescreening_allowed": true,
-    "product_name": "example_product_name",
-    "response_code": 1,
-    "response_message": "example_response_message",
-    "terminal_template_name": "example_terminal_template_name",
-    "vendor_name": "example_vendor_name",
-    "xml_template_file": "example_xml_template_file",
+    "allowMultipleOrders": true,
+    "appFormTemplateName": "example_appFormTemplateName",
+    "contractNeeded": true,
+    "descriptionKey": "example_descriptionKey",
+    "nameKey": "example_nameKey",
+    "prescreeningAllowed": true,
+    "productName": "example_productName",
+    "responseCode": 1,
+    "responseMessage": "example_responseMessage",
+    "terminalTemplateName": "example_terminalTemplateName",
+    "vendorName": "example_vendorName",
+    "xmlTemplateFile": "example_xmlTemplateFile",
 }, nil)
 if err != nil {
     panic(err)
@@ -1087,9 +1087,9 @@ Create an instance: `outputDetail := client.OutputDetail(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `map[string]any` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `batch` | `map[string]any` |  |
+| `lines` | `map[string]any` |  |
+| `progress` | `map[string]any` |  |
 
 #### Example: Load
 
@@ -1116,10 +1116,10 @@ Create an instance: `outputList := client.OutputList(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `[]any` |  |
+| `items` | `[]any` |  |
 | `pagination` | `map[string]any` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `map[string]any` |  |
 
 #### Example: Create
@@ -1127,8 +1127,8 @@ Create an instance: `outputList := client.OutputList(nil)`
 ```go
 result, err := client.OutputList(nil).Create(map[string]any{
     "pagination": map[string]any{},
-    "response_code": 1,
-    "response_message": "example_response_message",
+    "responseCode": 1,
+    "responseMessage": "example_responseMessage",
 }, nil)
 if err != nil {
     panic(err)
@@ -1151,8 +1151,8 @@ Create an instance: `outputMessage := client.OutputMessage(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Load
 
@@ -1179,21 +1179,21 @@ Create an instance: `outputMoveTid := client.OutputMoveTid(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `[]any` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `target_package_order_uuid` | `string` |  |
-| `target_product_order_uuid` | `string` |  |
+| `productOrderUUIDs` | `[]any` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `targetPackageOrderUUID` | `string` |  |
+| `targetProductOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.OutputMoveTid(nil).Create(map[string]any{
-    "product_order_uui_d": []any{},
-    "response_code": 1,
-    "response_message": "example_response_message",
-    "target_package_order_uuid": "example_target_package_order_uuid",
-    "target_product_order_uuid": "example_target_product_order_uuid",
+    "productOrderUUIDs": []any{},
+    "responseCode": 1,
+    "responseMessage": "example_responseMessage",
+    "targetPackageOrderUUID": "example_targetPackageOrderUUID",
+    "targetProductOrderUUID": "example_targetProductOrderUUID",
 }, nil)
 if err != nil {
     panic(err)
@@ -1216,19 +1216,19 @@ Create an instance: `outputRemoveProduct := client.OutputRemoveProduct(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `[]any` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `[]any` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.OutputRemoveProduct(nil).Create(map[string]any{
-    "package_uuid": "example_package_uuid",
-    "product_uui_d": []any{},
-    "response_code": 1,
-    "response_message": "example_response_message",
+    "packageUUID": "example_packageUUID",
+    "productUUIDs": []any{},
+    "responseCode": 1,
+    "responseMessage": "example_responseMessage",
 }, nil)
 if err != nil {
     panic(err)
@@ -1252,15 +1252,15 @@ Create an instance: `outputStart := client.OutputStart(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.OutputStart(nil).Create(map[string]any{
-    "response_code": 1,
-    "response_message": "example_response_message",
+    "responseCode": 1,
+    "responseMessage": "example_responseMessage",
 }, nil)
 if err != nil {
     panic(err)
@@ -1284,8 +1284,8 @@ Create an instance: `outputStatus := client.OutputStatus(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `int` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `status` | `string` |  |
 
 #### Example: Load
@@ -1313,27 +1313,27 @@ Create an instance: `outputUpdateProduct := client.OutputUpdateProduct(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_name` | `string` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `string` |  |
-| `product_status` | `string` |  |
-| `product_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `vendor_name` | `string` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormName` | `string` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `string` |  |
+| `productStatus` | `string` |  |
+| `productUUID` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `vendorName` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.OutputUpdateProduct(nil).Create(map[string]any{
-    "product_uuid": "example_product_uuid",
-    "response_code": 1,
-    "response_message": "example_response_message",
+    "productUUID": "example_productUUID",
+    "responseCode": 1,
+    "responseMessage": "example_responseMessage",
 }, nil)
 if err != nil {
     panic(err)

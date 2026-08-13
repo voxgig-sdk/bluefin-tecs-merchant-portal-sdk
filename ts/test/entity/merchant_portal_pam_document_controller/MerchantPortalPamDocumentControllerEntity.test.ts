@@ -26,8 +26,8 @@ import {
 describe('MerchantPortalPamDocumentControllerEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTPORTAL_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTPORTAL_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantPortalSDK.test()
@@ -62,7 +62,7 @@ describe('MerchantPortalPamDocumentControllerEntity', async () => {
     const merchant_portal_pam_document_controller_ref01_ent = client.MerchantPortalPamDocumentController()
     let merchant_portal_pam_document_controller_ref01_data = setup.data.new.merchant_portal_pam_document_controller['merchant_portal_pam_document_controller_ref01']
 
-    merchant_portal_pam_document_controller_ref01_data = await merchant_portal_pam_document_controller_ref01_ent.create(merchant_portal_pam_document_controller_ref01_data)
+    merchant_portal_pam_document_controller_ref01_data = (await merchant_portal_pam_document_controller_ref01_ent.create(merchant_portal_pam_document_controller_ref01_data)).data()
     assert(null != merchant_portal_pam_document_controller_ref01_data)
 
 

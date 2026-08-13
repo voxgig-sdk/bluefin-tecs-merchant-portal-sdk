@@ -6,27 +6,27 @@ main: kit: entity: output_move_tid: {
 
   fields: [
     {
-      name: "product_order_uui_d"
+      name: "productOrderUUIDs"
       req: true
       type: "`$ARRAY`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: true
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "target_package_order_uuid"
+      name: "targetPackageOrderUUID"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "target_product_order_uuid"
+      name: "targetProductOrderUUID"
       req: true
       type: "`$STRING`"
     }

@@ -101,105 +101,105 @@ pub struct MerchantPortalCommonControllerLoadMatch {
 #[derive(Debug, Clone)]
 pub struct MerchantPortalPamContractController {
     pub language: String,
-    pub product_order_uuid: String,
+    pub productorderuuid: String,
 }
 
 /// MerchantPortalPamContractControllerCreateData is the typed request payload for MerchantPortalPamContractController.create.
 #[derive(Debug, Clone)]
 pub struct MerchantPortalPamContractControllerCreateData {
     pub language: String,
-    pub product_order_uuid: String,
+    pub productorderuuid: String,
 }
 
 /// MerchantPortalPamDocumentController is the typed data model for the merchant_portal_pam_document_controller entity.
 #[derive(Debug, Clone)]
 pub struct MerchantPortalPamDocumentController {
-    pub app_form_field_desc_uuid: String,
-    pub package_order_uuid: Option<String>,
-    pub product_order_uuid: Option<String>,
+    pub appformfielddescuuid: String,
+    pub packageorderuuid: Option<String>,
+    pub productorderuuid: Option<String>,
 }
 
 /// MerchantPortalPamDocumentControllerCreateData is the typed request payload for MerchantPortalPamDocumentController.create.
 #[derive(Debug, Clone)]
 pub struct MerchantPortalPamDocumentControllerCreateData {
-    pub app_form_field_desc_uuid: String,
-    pub package_order_uuid: Option<String>,
-    pub product_order_uuid: Option<String>,
+    pub appformfielddescuuid: String,
+    pub packageorderuuid: Option<String>,
+    pub productorderuuid: Option<String>,
 }
 
 /// MerchantPortalPamFormController is the typed data model for the merchant_portal_pam_form_controller entity.
 #[derive(Debug, Clone)]
 pub struct MerchantPortalPamFormController {
-    pub app_form_fields_desc_uuid: String,
+    pub appformfieldsdescuuid: String,
     pub filter: Option<std::collections::HashMap<String, Value>>,
     pub language: String,
-    pub package_order: Option<std::collections::HashMap<String, Value>>,
-    pub package_order_uuid: String,
-    pub package_uuid: Option<String>,
-    pub product_order: Option<Vec<Value>>,
-    pub product_order_uuid: Option<String>,
-    pub reason_of_reopening: String,
+    pub packageorder: Option<std::collections::HashMap<String, Value>>,
+    pub packageorderuuid: String,
+    pub packageuuid: Option<String>,
+    pub productorderuuid: Option<String>,
+    pub productorders: Option<Vec<Value>>,
+    pub reasonofreopening: String,
 }
 
 /// MerchantPortalPamFormControllerCreateData is the typed request payload for MerchantPortalPamFormController.create.
 #[derive(Debug, Clone)]
 pub struct MerchantPortalPamFormControllerCreateData {
-    pub app_form_fields_desc_uuid: String,
+    pub appformfieldsdescuuid: String,
     pub filter: Option<std::collections::HashMap<String, Value>>,
     pub language: String,
-    pub package_order: Option<std::collections::HashMap<String, Value>>,
-    pub package_order_uuid: String,
-    pub package_uuid: Option<String>,
-    pub product_order: Option<Vec<Value>>,
-    pub product_order_uuid: Option<String>,
-    pub reason_of_reopening: String,
+    pub packageorder: Option<std::collections::HashMap<String, Value>>,
+    pub packageorderuuid: String,
+    pub packageuuid: Option<String>,
+    pub productorderuuid: Option<String>,
+    pub productorders: Option<Vec<Value>>,
+    pub reasonofreopening: String,
 }
 
 /// MerchantPortalPamMandatorController is the typed data model for the merchant_portal_pam_mandator_controller entity.
 #[derive(Debug, Clone)]
 pub struct MerchantPortalPamMandatorController {
-    pub client_secret: Option<String>,
-    pub mandator_name: String,
-    pub notification_email: Option<String>,
-    pub package_uuid: String,
+    pub clientsecret: Option<String>,
+    pub mandatorname: String,
+    pub notificationemail: Option<String>,
+    pub packageuuid: String,
 }
 
 /// MerchantPortalPamMandatorControllerCreateData is the typed request payload for MerchantPortalPamMandatorController.create.
 #[derive(Debug, Clone)]
 pub struct MerchantPortalPamMandatorControllerCreateData {
-    pub client_secret: Option<String>,
-    pub mandator_name: String,
-    pub notification_email: Option<String>,
-    pub package_uuid: String,
+    pub clientsecret: Option<String>,
+    pub mandatorname: String,
+    pub notificationemail: Option<String>,
+    pub packageuuid: String,
 }
 
 /// MerchantPortalPamMerchantController is the typed data model for the merchant_portal_pam_merchant_controller entity.
 #[derive(Debug, Clone)]
 pub struct MerchantPortalPamMerchantController {
     pub additional_data: Option<std::collections::HashMap<String, Value>>,
-    pub business_registration_number: String,
+    pub businessregistrationnumber: String,
     pub city: Option<String>,
-    pub company_name: String,
-    pub corporate_uuid: String,
+    pub companyname: String,
+    pub corporateuuid: String,
     pub country: Option<String>,
     pub currency: String,
     pub email: String,
     pub language: String,
     pub login: String,
     pub mandator: String,
+    pub merchantcontractnumber: String,
+    pub merchantname: Option<String>,
     pub merchant_category_code: Option<String>,
-    pub merchant_contract_number: String,
-    pub merchant_name: Option<String>,
-    pub package_uuid: Option<String>,
+    pub packageuuid: Option<String>,
     pub packageorderuuid: String,
-    pub phone_number: String,
-    pub postal_code: Option<String>,
+    pub phonenumber: String,
+    pub postalcode: Option<String>,
     pub productid_acquirer: String,
     pub region: Option<String>,
-    pub registration_number: Option<String>,
+    pub registrationnumber: Option<String>,
     pub signature: Option<String>,
     pub street: Option<String>,
-    pub terminal_id: Option<Vec<Value>>,
+    pub terminalids: Option<Vec<Value>>,
     pub terminalid_acquirer: Option<String>,
     pub vu_nummer: String,
 }
@@ -208,29 +208,29 @@ pub struct MerchantPortalPamMerchantController {
 #[derive(Debug, Clone)]
 pub struct MerchantPortalPamMerchantControllerCreateData {
     pub additional_data: Option<std::collections::HashMap<String, Value>>,
-    pub business_registration_number: String,
+    pub businessregistrationnumber: String,
     pub city: Option<String>,
-    pub company_name: String,
-    pub corporate_uuid: String,
+    pub companyname: String,
+    pub corporateuuid: String,
     pub country: Option<String>,
     pub currency: String,
     pub email: String,
     pub language: String,
     pub login: String,
     pub mandator: String,
+    pub merchantcontractnumber: String,
+    pub merchantname: Option<String>,
     pub merchant_category_code: Option<String>,
-    pub merchant_contract_number: String,
-    pub merchant_name: Option<String>,
-    pub package_uuid: Option<String>,
+    pub packageuuid: Option<String>,
     pub packageorderuuid: String,
-    pub phone_number: String,
-    pub postal_code: Option<String>,
+    pub phonenumber: String,
+    pub postalcode: Option<String>,
     pub productid_acquirer: String,
     pub region: Option<String>,
-    pub registration_number: Option<String>,
+    pub registrationnumber: Option<String>,
     pub signature: Option<String>,
     pub street: Option<String>,
-    pub terminal_id: Option<Vec<Value>>,
+    pub terminalids: Option<Vec<Value>>,
     pub terminalid_acquirer: Option<String>,
     pub vu_nummer: String,
 }
@@ -238,15 +238,15 @@ pub struct MerchantPortalPamMerchantControllerCreateData {
 /// MerchantPortalPamPackageController is the typed data model for the merchant_portal_pam_package_controller entity.
 #[derive(Debug, Clone)]
 pub struct MerchantPortalPamPackageController {
-    pub consumer_uuid: Option<String>,
-    pub corporate_uuid: Option<String>,
+    pub consumeruuid: Option<String>,
+    pub corporateuuid: Option<String>,
     pub country: Option<String>,
-    pub description_key: Option<String>,
+    pub descriptionkey: Option<String>,
     pub filter: Option<std::collections::HashMap<String, Value>>,
     pub language: String,
-    pub name_key: Option<String>,
-    pub package_status: Option<String>,
-    pub package_uuid: String,
+    pub namekey: Option<String>,
+    pub packagestatus: Option<String>,
+    pub packageuuid: String,
     pub pagination: Option<std::collections::HashMap<String, Value>>,
     pub sorting: Option<std::collections::HashMap<String, Value>>,
 }
@@ -254,15 +254,15 @@ pub struct MerchantPortalPamPackageController {
 /// MerchantPortalPamPackageControllerCreateData is the typed request payload for MerchantPortalPamPackageController.create.
 #[derive(Debug, Clone)]
 pub struct MerchantPortalPamPackageControllerCreateData {
-    pub consumer_uuid: Option<String>,
-    pub corporate_uuid: Option<String>,
+    pub consumeruuid: Option<String>,
+    pub corporateuuid: Option<String>,
     pub country: Option<String>,
-    pub description_key: Option<String>,
+    pub descriptionkey: Option<String>,
     pub filter: Option<std::collections::HashMap<String, Value>>,
     pub language: String,
-    pub name_key: Option<String>,
-    pub package_status: Option<String>,
-    pub package_uuid: String,
+    pub namekey: Option<String>,
+    pub packagestatus: Option<String>,
+    pub packageuuid: String,
     pub pagination: Option<std::collections::HashMap<String, Value>>,
     pub sorting: Option<std::collections::HashMap<String, Value>>,
 }
@@ -270,14 +270,14 @@ pub struct MerchantPortalPamPackageControllerCreateData {
 /// MerchantPortalPamProductController is the typed data model for the merchant_portal_pam_product_controller entity.
 #[derive(Debug, Clone)]
 pub struct MerchantPortalPamProductController {
-    pub consumer_uuid: Option<String>,
+    pub consumeruuid: Option<String>,
     pub filter: Option<std::collections::HashMap<String, Value>>,
     pub language: Option<String>,
-    pub merchant_id: Option<String>,
-    pub package_order_uuid: String,
+    pub merchantid: Option<String>,
+    pub packageorderuuid: String,
     pub pagination: Option<std::collections::HashMap<String, Value>>,
-    pub product_order_uuid: String,
-    pub product_uuid: String,
+    pub productorderuuid: String,
+    pub productuuid: String,
     pub reason_decline: String,
     pub sorting: Option<std::collections::HashMap<String, Value>>,
 }
@@ -285,14 +285,14 @@ pub struct MerchantPortalPamProductController {
 /// MerchantPortalPamProductControllerCreateData is the typed request payload for MerchantPortalPamProductController.create.
 #[derive(Debug, Clone)]
 pub struct MerchantPortalPamProductControllerCreateData {
-    pub consumer_uuid: Option<String>,
+    pub consumeruuid: Option<String>,
     pub filter: Option<std::collections::HashMap<String, Value>>,
     pub language: Option<String>,
-    pub merchant_id: Option<String>,
-    pub package_order_uuid: String,
+    pub merchantid: Option<String>,
+    pub packageorderuuid: String,
     pub pagination: Option<std::collections::HashMap<String, Value>>,
-    pub product_order_uuid: String,
-    pub product_uuid: String,
+    pub productorderuuid: String,
+    pub productuuid: String,
     pub reason_decline: String,
     pub sorting: Option<std::collections::HashMap<String, Value>>,
 }
@@ -300,65 +300,65 @@ pub struct MerchantPortalPamProductControllerCreateData {
 /// OutputAddProduct is the typed data model for the output_add_product entity.
 #[derive(Debug, Clone)]
 pub struct OutputAddProduct {
-    pub package_uuid: String,
-    pub product_uui_d: Vec<Value>,
-    pub response_code: i64,
-    pub response_message: String,
+    pub packageuuid: String,
+    pub productuuids: Vec<Value>,
+    pub responsecode: i64,
+    pub responsemessage: String,
 }
 
 /// OutputAddProductCreateData is the typed request payload for OutputAddProduct.create.
 #[derive(Debug, Clone)]
 pub struct OutputAddProductCreateData {
-    pub package_uuid: String,
-    pub product_uui_d: Vec<Value>,
-    pub response_code: i64,
-    pub response_message: String,
+    pub packageuuid: String,
+    pub productuuids: Vec<Value>,
+    pub responsecode: i64,
+    pub responsemessage: String,
 }
 
 /// OutputCreateProduct is the typed data model for the output_create_product entity.
 #[derive(Debug, Clone)]
 pub struct OutputCreateProduct {
-    pub acquirer_id: Option<String>,
-    pub allow_multiple_order: bool,
-    pub app_form_template_name: String,
-    pub contract_needed: bool,
-    pub credentials_needed: Option<bool>,
-    pub description_key: String,
-    pub name_key: String,
-    pub prescreening_allowed: bool,
-    pub product_name: String,
-    pub response_code: i64,
-    pub response_message: String,
-    pub terminal_template_name: String,
-    pub vendor_name: String,
-    pub xml_template_file: String,
+    pub acquirerid: Option<String>,
+    pub allowmultipleorders: bool,
+    pub appformtemplatename: String,
+    pub contractneeded: bool,
+    pub credentialsneeded: Option<bool>,
+    pub descriptionkey: String,
+    pub namekey: String,
+    pub prescreeningallowed: bool,
+    pub productname: String,
+    pub responsecode: i64,
+    pub responsemessage: String,
+    pub terminaltemplatename: String,
+    pub vendorname: String,
+    pub xmltemplatefile: String,
 }
 
 /// OutputCreateProductCreateData is the typed request payload for OutputCreateProduct.create.
 #[derive(Debug, Clone)]
 pub struct OutputCreateProductCreateData {
-    pub acquirer_id: Option<String>,
-    pub allow_multiple_order: bool,
-    pub app_form_template_name: String,
-    pub contract_needed: bool,
-    pub credentials_needed: Option<bool>,
-    pub description_key: String,
-    pub name_key: String,
-    pub prescreening_allowed: bool,
-    pub product_name: String,
-    pub response_code: i64,
-    pub response_message: String,
-    pub terminal_template_name: String,
-    pub vendor_name: String,
-    pub xml_template_file: String,
+    pub acquirerid: Option<String>,
+    pub allowmultipleorders: bool,
+    pub appformtemplatename: String,
+    pub contractneeded: bool,
+    pub credentialsneeded: Option<bool>,
+    pub descriptionkey: String,
+    pub namekey: String,
+    pub prescreeningallowed: bool,
+    pub productname: String,
+    pub responsecode: i64,
+    pub responsemessage: String,
+    pub terminaltemplatename: String,
+    pub vendorname: String,
+    pub xmltemplatefile: String,
 }
 
 /// OutputDetail is the typed data model for the output_detail entity.
 #[derive(Debug, Clone)]
 pub struct OutputDetail {
-    pub detail: Option<std::collections::HashMap<String, Value>>,
-    pub response_code: i64,
-    pub response_message: String,
+    pub batch: Option<std::collections::HashMap<String, Value>>,
+    pub lines: Option<std::collections::HashMap<String, Value>>,
+    pub progress: Option<std::collections::HashMap<String, Value>>,
 }
 
 /// OutputDetailLoadMatch is the typed request payload for OutputDetail.load.
@@ -370,28 +370,28 @@ pub struct OutputDetailLoadMatch {
 /// OutputList is the typed data model for the output_list entity.
 #[derive(Debug, Clone)]
 pub struct OutputList {
-    pub item: Option<Vec<Value>>,
+    pub items: Option<Vec<Value>>,
     pub pagination: std::collections::HashMap<String, Value>,
-    pub response_code: i64,
-    pub response_message: String,
+    pub responsecode: i64,
+    pub responsemessage: String,
     pub sorting: Option<std::collections::HashMap<String, Value>>,
 }
 
 /// OutputListCreateData is the typed request payload for OutputList.create.
 #[derive(Debug, Clone)]
 pub struct OutputListCreateData {
-    pub item: Option<Vec<Value>>,
+    pub items: Option<Vec<Value>>,
     pub pagination: std::collections::HashMap<String, Value>,
-    pub response_code: i64,
-    pub response_message: String,
+    pub responsecode: i64,
+    pub responsemessage: String,
     pub sorting: Option<std::collections::HashMap<String, Value>>,
 }
 
 /// OutputMessage is the typed data model for the output_message entity.
 #[derive(Debug, Clone)]
 pub struct OutputMessage {
-    pub response_code: i64,
-    pub response_message: String,
+    pub responsecode: i64,
+    pub responsemessage: String,
 }
 
 /// OutputMessageLoadMatch is the typed request payload for OutputMessage.load.
@@ -403,63 +403,63 @@ pub struct OutputMessageLoadMatch {
 /// OutputMoveTid is the typed data model for the output_move_tid entity.
 #[derive(Debug, Clone)]
 pub struct OutputMoveTid {
-    pub product_order_uui_d: Vec<Value>,
-    pub response_code: i64,
-    pub response_message: String,
-    pub target_package_order_uuid: String,
-    pub target_product_order_uuid: String,
+    pub productorderuuids: Vec<Value>,
+    pub responsecode: i64,
+    pub responsemessage: String,
+    pub targetpackageorderuuid: String,
+    pub targetproductorderuuid: String,
 }
 
 /// OutputMoveTidCreateData is the typed request payload for OutputMoveTid.create.
 #[derive(Debug, Clone)]
 pub struct OutputMoveTidCreateData {
-    pub product_order_uui_d: Vec<Value>,
-    pub response_code: i64,
-    pub response_message: String,
-    pub target_package_order_uuid: String,
-    pub target_product_order_uuid: String,
+    pub productorderuuids: Vec<Value>,
+    pub responsecode: i64,
+    pub responsemessage: String,
+    pub targetpackageorderuuid: String,
+    pub targetproductorderuuid: String,
 }
 
 /// OutputRemoveProduct is the typed data model for the output_remove_product entity.
 #[derive(Debug, Clone)]
 pub struct OutputRemoveProduct {
-    pub package_uuid: String,
-    pub product_uui_d: Vec<Value>,
-    pub response_code: i64,
-    pub response_message: String,
+    pub packageuuid: String,
+    pub productuuids: Vec<Value>,
+    pub responsecode: i64,
+    pub responsemessage: String,
 }
 
 /// OutputRemoveProductCreateData is the typed request payload for OutputRemoveProduct.create.
 #[derive(Debug, Clone)]
 pub struct OutputRemoveProductCreateData {
-    pub package_uuid: String,
-    pub product_uui_d: Vec<Value>,
-    pub response_code: i64,
-    pub response_message: String,
+    pub packageuuid: String,
+    pub productuuids: Vec<Value>,
+    pub responsecode: i64,
+    pub responsemessage: String,
 }
 
 /// OutputStart is the typed data model for the output_start entity.
 #[derive(Debug, Clone)]
 pub struct OutputStart {
     pub id: Option<String>,
-    pub response_code: i64,
-    pub response_message: String,
+    pub responsecode: i64,
+    pub responsemessage: String,
 }
 
 /// OutputStartCreateData is the typed request payload for OutputStart.create.
 #[derive(Debug, Clone)]
 pub struct OutputStartCreateData {
     pub id: Option<String>,
-    pub response_code: i64,
-    pub response_message: String,
+    pub responsecode: i64,
+    pub responsemessage: String,
 }
 
 /// OutputStatus is the typed data model for the output_status entity.
 #[derive(Debug, Clone)]
 pub struct OutputStatus {
     pub percentage: Option<i64>,
-    pub response_code: i64,
-    pub response_message: String,
+    pub responsecode: i64,
+    pub responsemessage: String,
     pub status: Option<String>,
 }
 
@@ -472,36 +472,36 @@ pub struct OutputStatusLoadMatch {
 /// OutputUpdateProduct is the typed data model for the output_update_product entity.
 #[derive(Debug, Clone)]
 pub struct OutputUpdateProduct {
-    pub allow_multiple_order: Option<bool>,
-    pub app_form_name: Option<String>,
-    pub contract_needed: Option<bool>,
-    pub credentials_needed: Option<bool>,
-    pub description_key: Option<String>,
-    pub name_key: Option<String>,
-    pub prescreening_allowed: Option<bool>,
-    pub product_name: Option<String>,
-    pub product_status: Option<String>,
-    pub product_uuid: String,
-    pub response_code: i64,
-    pub response_message: String,
-    pub vendor_name: Option<String>,
+    pub allowmultipleorders: Option<bool>,
+    pub appformname: Option<String>,
+    pub contractneeded: Option<bool>,
+    pub credentialsneeded: Option<bool>,
+    pub descriptionkey: Option<String>,
+    pub namekey: Option<String>,
+    pub prescreeningallowed: Option<bool>,
+    pub productname: Option<String>,
+    pub productstatus: Option<String>,
+    pub productuuid: String,
+    pub responsecode: i64,
+    pub responsemessage: String,
+    pub vendorname: Option<String>,
 }
 
 /// OutputUpdateProductCreateData is the typed request payload for OutputUpdateProduct.create.
 #[derive(Debug, Clone)]
 pub struct OutputUpdateProductCreateData {
-    pub allow_multiple_order: Option<bool>,
-    pub app_form_name: Option<String>,
-    pub contract_needed: Option<bool>,
-    pub credentials_needed: Option<bool>,
-    pub description_key: Option<String>,
-    pub name_key: Option<String>,
-    pub prescreening_allowed: Option<bool>,
-    pub product_name: Option<String>,
-    pub product_status: Option<String>,
-    pub product_uuid: String,
-    pub response_code: i64,
-    pub response_message: String,
-    pub vendor_name: Option<String>,
+    pub allowmultipleorders: Option<bool>,
+    pub appformname: Option<String>,
+    pub contractneeded: Option<bool>,
+    pub credentialsneeded: Option<bool>,
+    pub descriptionkey: Option<String>,
+    pub namekey: Option<String>,
+    pub prescreeningallowed: Option<bool>,
+    pub productname: Option<String>,
+    pub productstatus: Option<String>,
+    pub productuuid: String,
+    pub responsecode: i64,
+    pub responsemessage: String,
+    pub vendorname: Option<String>,
 }
 

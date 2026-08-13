@@ -31,7 +31,8 @@ defmodule BluefinTecsMerchantPortal.OutputStartEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsMerchantPortal.test(S.jm(["entity", S.jm(["output_start", S.jm([])])]))
     ent = BluefinTecsMerchantPortal.output_start(sdk)
-    made = BluefinTecsMerchantPortal.Entity.OutputStart.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsMerchantPortal.Entity.OutputStart.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsMerchantPortal.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

@@ -38,15 +38,15 @@ static MerchantPortalPamMerchantControllerSetup merchant_portal_pam_merchant_con
   if (!idmap.is_map()) idmap = vmap();
 
   Value env = env_override(vmap({
-    {"BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_PAM_MERCHANT_CONTROLLER_ENTID", idmap},
-    {"BLUEFINTECSMERCHANTPORTAL_TEST_LIVE", Value("FALSE")},
-    {"BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN", Value("FALSE")}
+    {"BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_MERCHANT_CONTROLLER_ENTID", idmap},
+    {"BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE", Value("FALSE")},
+    {"BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN", Value("FALSE")}
   }));
 
-  Value idmap_resolved = Helpers::toMapAny(getp(env, "BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_PAM_MERCHANT_CONTROLLER_ENTID"));
+  Value idmap_resolved = Helpers::toMapAny(getp(env, "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_MERCHANT_CONTROLLER_ENTID"));
   if (!idmap_resolved.is_map()) idmap_resolved = idmap;
 
-  bool live = getp(env, "BLUEFINTECSMERCHANTPORTAL_TEST_LIVE") == Value("TRUE");
+  bool live = getp(env, "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE") == Value("TRUE");
 
   MerchantPortalPamMerchantControllerSetup s;
   s.client = client;
@@ -65,27 +65,6 @@ static void merchant_portal_pam_merchant_controller_entity_instance() {
   ASSERT_EQ(ent->getName(), std::string("merchant_portal_pam_merchant_controller"), "entity name");
 }
 
-static void merchant_portal_pam_merchant_controller_entity_stream() {
-  // stream() runs the list op through the full pipeline and returns the
-  // result items. Seed two entities via test mode; with the streaming feature
-  // active it yields the feature's incremental items, else it falls back to
-  // the materialised items — either way every item is yielded.
-  Value seed = vmap({{"entity", vmap({{"merchant_portal_pam_merchant_controller", vmap({
-      {"strm01", vmap({{"id", Value("strm01")}})},
-      {"strm02", vmap({{"id", Value("strm02")}})}})}})}});
-  Value sdkopts = vmap({{"feature",
-      vmap({{"streaming", vmap({{"active", Value(true)}})}})}});
-
-  auto strsdk = BluefinTecsMerchantPortalSDK::testSDK(seed, sdkopts);
-  auto se = strsdk->merchant_portal_pam_merchant_controller();
-  std::vector<Value> items = se->stream("list", Value::undef(), Value::undef());
-  ASSERT_EQ((int)items.size(), 2, "stream yields both seeded items");
-
-  auto plainsdk = BluefinTecsMerchantPortalSDK::testSDK(seed, Value::undef());
-  auto pe = plainsdk->merchant_portal_pam_merchant_controller();
-  std::vector<Value> pitems = pe->stream("list", Value::undef(), Value::undef());
-  ASSERT_EQ((int)pitems.size(), 2, "fallback stream yields both items");
-}
 
 static void merchant_portal_pam_merchant_controller_entity_basic() {
   auto setup = merchant_portal_pam_merchant_controller_basic_setup(Value::undef());
@@ -100,7 +79,7 @@ static void merchant_portal_pam_merchant_controller_entity_basic() {
   Value merchant_portal_pam_merchant_controller_ref01_data = Helpers::toMapAny(getp(Struct::getpath(setup.data, {"new", "merchant_portal_pam_merchant_controller"}), "merchant_portal_pam_merchant_controller_ref01"));
   if (!merchant_portal_pam_merchant_controller_ref01_data.is_map()) merchant_portal_pam_merchant_controller_ref01_data = vmap();
   {
-    Value merchant_portal_pam_merchant_controller_ref01_data_result = merchant_portal_pam_merchant_controller_ref01_ent->create(Struct::clone(merchant_portal_pam_merchant_controller_ref01_data), Value::undef());
+    Value merchant_portal_pam_merchant_controller_ref01_data_result = merchant_portal_pam_merchant_controller_ref01_ent->create(Struct::clone(merchant_portal_pam_merchant_controller_ref01_data), Value::undef())->data();
     merchant_portal_pam_merchant_controller_ref01_data = Helpers::toMapAny(merchant_portal_pam_merchant_controller_ref01_data_result);
     if (!merchant_portal_pam_merchant_controller_ref01_data.is_map()) merchant_portal_pam_merchant_controller_ref01_data = vmap();
     ASSERT_TRUE(merchant_portal_pam_merchant_controller_ref01_data.is_map(), "expected create result to be a map");
@@ -110,7 +89,6 @@ static void merchant_portal_pam_merchant_controller_entity_basic() {
 
 int main() {
   T_RUN(merchant_portal_pam_merchant_controller_entity_instance);
-  T_RUN(merchant_portal_pam_merchant_controller_entity_stream);
   T_RUN(merchant_portal_pam_merchant_controller_entity_basic);
   return sdktest::summary("merchant_portal_pam_merchant_controller_entity_test");
 }

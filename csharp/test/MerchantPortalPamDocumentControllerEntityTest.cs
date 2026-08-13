@@ -35,7 +35,7 @@ public class MerchantPortalPamDocumentControllerEntityTest
         }
         // The basic flow consumes synthetic IDs from the fixture. In live
         // mode without an *_ENTID env override, those IDs hit the live API
-        // and 4xx; set BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER_ENTID JSON to run live.
+        // and 4xx; set BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER_ENTID JSON to run live.
         if (setup.SyntheticOnly)
         {
             return;
@@ -49,7 +49,7 @@ public class MerchantPortalPamDocumentControllerEntityTest
             "merchant_portal_pam_document_controller_ref01"));
 
         var merchantPortalPamDocumentControllerRef01DataResult = merchantPortalPamDocumentControllerRef01Ent.Create(merchantPortalPamDocumentControllerRef01Data, null);
-        merchantPortalPamDocumentControllerRef01Data = Helpers.ToMapAny(merchantPortalPamDocumentControllerRef01DataResult);
+        merchantPortalPamDocumentControllerRef01Data = Helpers.ToMapAny(merchantPortalPamDocumentControllerRef01DataResult is IEntity ce ? ce.Data() : merchantPortalPamDocumentControllerRef01DataResult);
         Assert.True(merchantPortalPamDocumentControllerRef01Data != null, "expected create result to be a map");
 
     }
@@ -97,22 +97,22 @@ public class MerchantPortalPamDocumentControllerEntityTest
         // live mode is on without a real override, the basic test runs
         // against synthetic IDs from the fixture and 4xx's.
         var entidEnvRaw = Environment.GetEnvironmentVariable(
-            "BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER_ENTID") ?? "";
+            "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER_ENTID") ?? "";
         var idmapOverridden = entidEnvRaw != "" &&
             entidEnvRaw.Trim().StartsWith("{");
 
         var env = TestRunner.EnvOverride(new Dictionary<string, object?>
         {
-            ["BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER_ENTID"] = idmap,
-            ["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"] = "FALSE",
-            ["BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN"] = "FALSE",
+            ["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER_ENTID"] = idmap,
+            ["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"] = "FALSE",
+            ["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN"] = "FALSE",
         });
 
-        var idmapResolved = Helpers.ToMapAny(env["BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER_ENTID"])
+        var idmapResolved = Helpers.ToMapAny(env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER_ENTID"])
             ?? Helpers.ToMapAny(idmap)
             ?? new Dictionary<string, object?>();
 
-        if (Equals(env["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"], "TRUE"))
+        if (Equals(env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"], "TRUE"))
         {
             var mergedOpts = StructUtils.Merge(new List<object?>
             {
@@ -124,14 +124,14 @@ public class MerchantPortalPamDocumentControllerEntityTest
             client = new BluefinTecsMerchantPortalSDK(Helpers.ToMapAny(mergedOpts));
         }
 
-        var live = Equals(env["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"], "TRUE");
+        var live = Equals(env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"], "TRUE");
         return new EntityTestSetup
         {
             Client = client,
             Data = entityData,
             Idmap = idmapResolved,
             Env = env,
-            Explain = Equals(env["BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN"], "TRUE"),
+            Explain = Equals(env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN"], "TRUE"),
             Live = live,
             SyntheticOnly = live && !idmapOverridden,
             Now = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),

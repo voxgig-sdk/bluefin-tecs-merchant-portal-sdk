@@ -6,7 +6,7 @@ main: kit: entity: output_list: {
 
   fields: [
     {
-      name: "item"
+      name: "items"
       req: false
       type: "`$ARRAY`"
     }
@@ -22,12 +22,12 @@ main: kit: entity: output_list: {
       type: "`$OBJECT`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: true
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: true
       type: "`$STRING`"
     }

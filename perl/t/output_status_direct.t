@@ -81,11 +81,11 @@ sub output_status_direct_setup {
   my $calls = [];
 
   my $env = BluefinTecsMerchantPortalTestRunner::env_override({
-    'BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_STATUS_ENTID' => {},
-    'BLUEFINTECSMERCHANTPORTAL_TEST_LIVE' => 'FALSE',
+    'BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_STATUS_ENTID' => {},
+    'BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE' => 'FALSE',
   });
 
-  my $live = ((($env->{'BLUEFINTECSMERCHANTPORTAL_TEST_LIVE'}) || '') eq 'TRUE') ? 1 : 0;
+  my $live = ((($env->{'BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE'}) || '') eq 'TRUE') ? 1 : 0;
 
   if ($live) {
     my $client = BluefinTecsMerchantPortalSDK->new({

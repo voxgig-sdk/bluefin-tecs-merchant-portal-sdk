@@ -330,7 +330,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -340,9 +340,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -352,15 +352,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: Create.
 
@@ -370,10 +370,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: Create.
 
@@ -384,29 +384,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -418,15 +418,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -438,14 +438,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -457,10 +457,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -470,20 +470,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: Create.
 
@@ -493,9 +493,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: Load.
 
@@ -505,10 +505,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -519,8 +519,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -530,11 +530,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: Create.
 
@@ -544,10 +544,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -558,8 +558,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -570,8 +570,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Load.
@@ -582,19 +582,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: Create.
 
@@ -713,7 +713,7 @@ Create an instance: `Entity* merchant_portal_pam_contract_controller = bluefinte
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `char*` |  |
-| `product_order_uuid` | `char*` |  |
+| `productOrderUUID` | `char*` |  |
 
 #### Example: Create
 
@@ -721,7 +721,7 @@ Create an instance: `Entity* merchant_portal_pam_contract_controller = bluefinte
 Entity* merchant_portal_pam_contract_controller = bluefintecsmerchantportal_merchant_portal_pam_contract_controller(client, NULL);
 voxgig_value* merchant_portal_pam_contract_controller_rec = merchant_portal_pam_contract_controller->vt->create(merchant_portal_pam_contract_controller, cmap(2,
     "language", v_str("example_language"),  // char*
-    "product_order_uuid", v_str("example_product_order_uuid"))  // char*
+    "productOrderUUID", v_str("example_productOrderUUID"))  // char*
 , NULL, &err);
 ```
 
@@ -740,16 +740,16 @@ Create an instance: `Entity* merchant_portal_pam_document_controller = bluefinte
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `char*` |  |
-| `package_order_uuid` | `char*` |  |
-| `product_order_uuid` | `char*` |  |
+| `appFormFieldDescUUID` | `char*` |  |
+| `packageOrderUUID` | `char*` |  |
+| `productOrderUUID` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* merchant_portal_pam_document_controller = bluefintecsmerchantportal_merchant_portal_pam_document_controller(client, NULL);
 voxgig_value* merchant_portal_pam_document_controller_rec = merchant_portal_pam_document_controller->vt->create(merchant_portal_pam_document_controller, cmap(1,
-    "app_form_field_desc_uuid", v_str("example_app_form_field_desc_uuid"))  // char*
+    "appFormFieldDescUUID", v_str("example_appFormFieldDescUUID"))  // char*
 , NULL, &err);
 ```
 
@@ -768,25 +768,25 @@ Create an instance: `Entity* merchant_portal_pam_form_controller = bluefintecsme
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `char*` |  |
+| `appFormFieldsDescUUID` | `char*` |  |
 | `filter` | `voxgig_value* (map)` |  |
 | `language` | `char*` |  |
-| `package_order` | `voxgig_value* (map)` |  |
-| `package_order_uuid` | `char*` |  |
-| `package_uuid` | `char*` |  |
-| `product_order` | `voxgig_value* (list)` |  |
-| `product_order_uuid` | `char*` |  |
-| `reason_of_reopening` | `char*` |  |
+| `packageOrder` | `voxgig_value* (map)` |  |
+| `packageOrderUUID` | `char*` |  |
+| `packageUUID` | `char*` |  |
+| `productOrderUUID` | `char*` |  |
+| `productOrders` | `voxgig_value* (list)` |  |
+| `reasonOfReopening` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* merchant_portal_pam_form_controller = bluefintecsmerchantportal_merchant_portal_pam_form_controller(client, NULL);
 voxgig_value* merchant_portal_pam_form_controller_rec = merchant_portal_pam_form_controller->vt->create(merchant_portal_pam_form_controller, cmap(4,
-    "app_form_fields_desc_uuid", v_str("example_app_form_fields_desc_uuid"),  // char*
+    "appFormFieldsDescUUID", v_str("example_appFormFieldsDescUUID"),  // char*
     "language", v_str("example_language"),  // char*
-    "package_order_uuid", v_str("example_package_order_uuid"),  // char*
-    "reason_of_reopening", v_str("example_reason_of_reopening"))  // char*
+    "packageOrderUUID", v_str("example_packageOrderUUID"),  // char*
+    "reasonOfReopening", v_str("example_reasonOfReopening"))  // char*
 , NULL, &err);
 ```
 
@@ -805,18 +805,18 @@ Create an instance: `Entity* merchant_portal_pam_mandator_controller = bluefinte
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `char*` |  |
-| `mandator_name` | `char*` |  |
-| `notification_email` | `char*` |  |
-| `package_uuid` | `char*` |  |
+| `clientSecret` | `char*` |  |
+| `mandatorName` | `char*` |  |
+| `notificationEmail` | `char*` |  |
+| `packageUUID` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* merchant_portal_pam_mandator_controller = bluefintecsmerchantportal_merchant_portal_pam_mandator_controller(client, NULL);
 voxgig_value* merchant_portal_pam_mandator_controller_rec = merchant_portal_pam_mandator_controller->vt->create(merchant_portal_pam_mandator_controller, cmap(2,
-    "mandator_name", v_str("example_mandator_name"),  // char*
-    "package_uuid", v_str("example_package_uuid"))  // char*
+    "mandatorName", v_str("example_mandatorName"),  // char*
+    "packageUUID", v_str("example_packageUUID"))  // char*
 , NULL, &err);
 ```
 
@@ -836,29 +836,29 @@ Create an instance: `Entity* merchant_portal_pam_merchant_controller = bluefinte
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `voxgig_value* (map)` |  |
-| `business_registration_number` | `char*` |  |
+| `businessRegistrationNumber` | `char*` |  |
 | `city` | `char*` |  |
-| `company_name` | `char*` |  |
-| `corporate_uuid` | `char*` |  |
+| `companyName` | `char*` |  |
+| `corporateUUID` | `char*` |  |
 | `country` | `char*` |  |
 | `currency` | `char*` |  |
 | `email` | `char*` |  |
 | `language` | `char*` |  |
 | `login` | `char*` |  |
 | `mandator` | `char*` |  |
+| `merchantContractNumber` | `char*` |  |
+| `merchantName` | `char*` |  |
 | `merchant_category_code` | `char*` |  |
-| `merchant_contract_number` | `char*` |  |
-| `merchant_name` | `char*` |  |
-| `package_uuid` | `char*` |  |
+| `packageUUID` | `char*` |  |
 | `packageorderuuid` | `char*` |  |
-| `phone_number` | `char*` |  |
-| `postal_code` | `char*` |  |
+| `phoneNumber` | `char*` |  |
+| `postalCode` | `char*` |  |
 | `productid_acquirer` | `char*` |  |
 | `region` | `char*` |  |
-| `registration_number` | `char*` |  |
+| `registrationNumber` | `char*` |  |
 | `signature` | `char*` |  |
 | `street` | `char*` |  |
-| `terminal_id` | `voxgig_value* (list)` |  |
+| `terminalIds` | `voxgig_value* (list)` |  |
 | `terminalid_acquirer` | `char*` |  |
 | `vu_nummer` | `char*` |  |
 
@@ -867,17 +867,17 @@ Create an instance: `Entity* merchant_portal_pam_merchant_controller = bluefinte
 ```c
 Entity* merchant_portal_pam_merchant_controller = bluefintecsmerchantportal_merchant_portal_pam_merchant_controller(client, NULL);
 voxgig_value* merchant_portal_pam_merchant_controller_rec = merchant_portal_pam_merchant_controller->vt->create(merchant_portal_pam_merchant_controller, cmap(13,
-    "business_registration_number", v_str("example_business_registration_number"),  // char*
-    "company_name", v_str("example_company_name"),  // char*
-    "corporate_uuid", v_str("example_corporate_uuid"),  // char*
+    "businessRegistrationNumber", v_str("example_businessRegistrationNumber"),  // char*
+    "companyName", v_str("example_companyName"),  // char*
+    "corporateUUID", v_str("example_corporateUUID"),  // char*
     "currency", v_str("example_currency"),  // char*
     "email", v_str("example_email"),  // char*
     "language", v_str("example_language"),  // char*
     "login", v_str("example_login"),  // char*
     "mandator", v_str("example_mandator"),  // char*
-    "merchant_contract_number", v_str("example_merchant_contract_number"),  // char*
+    "merchantContractNumber", v_str("example_merchantContractNumber"),  // char*
     "packageorderuuid", v_str("example_packageorderuuid"),  // char*
-    "phone_number", v_str("example_phone_number"),  // char*
+    "phoneNumber", v_str("example_phoneNumber"),  // char*
     "productid_acquirer", v_str("example_productid_acquirer"),  // char*
     "vu_nummer", v_str("example_vu_nummer"))  // char*
 , NULL, &err);
@@ -898,15 +898,15 @@ Create an instance: `Entity* merchant_portal_pam_package_controller = bluefintec
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `char*` |  |
-| `corporate_uuid` | `char*` |  |
+| `consumerUUID` | `char*` |  |
+| `corporateUUID` | `char*` |  |
 | `country` | `char*` |  |
-| `description_key` | `char*` |  |
+| `descriptionKey` | `char*` |  |
 | `filter` | `voxgig_value* (map)` |  |
 | `language` | `char*` |  |
-| `name_key` | `char*` |  |
-| `package_status` | `char*` |  |
-| `package_uuid` | `char*` |  |
+| `nameKey` | `char*` |  |
+| `packageStatus` | `char*` |  |
+| `packageUUID` | `char*` |  |
 | `pagination` | `voxgig_value* (map)` |  |
 | `sorting` | `voxgig_value* (map)` |  |
 
@@ -916,7 +916,7 @@ Create an instance: `Entity* merchant_portal_pam_package_controller = bluefintec
 Entity* merchant_portal_pam_package_controller = bluefintecsmerchantportal_merchant_portal_pam_package_controller(client, NULL);
 voxgig_value* merchant_portal_pam_package_controller_rec = merchant_portal_pam_package_controller->vt->create(merchant_portal_pam_package_controller, cmap(2,
     "language", v_str("example_language"),  // char*
-    "package_uuid", v_str("example_package_uuid"))  // char*
+    "packageUUID", v_str("example_packageUUID"))  // char*
 , NULL, &err);
 ```
 
@@ -935,14 +935,14 @@ Create an instance: `Entity* merchant_portal_pam_product_controller = bluefintec
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `char*` |  |
+| `consumerUUID` | `char*` |  |
 | `filter` | `voxgig_value* (map)` |  |
 | `language` | `char*` |  |
-| `merchant_id` | `char*` |  |
-| `package_order_uuid` | `char*` |  |
+| `merchantID` | `char*` |  |
+| `packageOrderUUID` | `char*` |  |
 | `pagination` | `voxgig_value* (map)` |  |
-| `product_order_uuid` | `char*` |  |
-| `product_uuid` | `char*` |  |
+| `productOrderUUID` | `char*` |  |
+| `productUUID` | `char*` |  |
 | `reason_decline` | `char*` |  |
 | `sorting` | `voxgig_value* (map)` |  |
 
@@ -951,9 +951,9 @@ Create an instance: `Entity* merchant_portal_pam_product_controller = bluefintec
 ```c
 Entity* merchant_portal_pam_product_controller = bluefintecsmerchantportal_merchant_portal_pam_product_controller(client, NULL);
 voxgig_value* merchant_portal_pam_product_controller_rec = merchant_portal_pam_product_controller->vt->create(merchant_portal_pam_product_controller, cmap(4,
-    "package_order_uuid", v_str("example_package_order_uuid"),  // char*
-    "product_order_uuid", v_str("example_product_order_uuid"),  // char*
-    "product_uuid", v_str("example_product_uuid"),  // char*
+    "packageOrderUUID", v_str("example_packageOrderUUID"),  // char*
+    "productOrderUUID", v_str("example_productOrderUUID"),  // char*
+    "productUUID", v_str("example_productUUID"),  // char*
     "reason_decline", v_str("example_reason_decline"))  // char*
 , NULL, &err);
 ```
@@ -973,20 +973,20 @@ Create an instance: `Entity* output_add_product = bluefintecsmerchantportal_outp
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `char*` |  |
-| `product_uui_d` | `voxgig_value* (list)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `packageUUID` | `char*` |  |
+| `productUUIDs` | `voxgig_value* (list)` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* output_add_product = bluefintecsmerchantportal_output_add_product(client, NULL);
 voxgig_value* output_add_product_rec = output_add_product->vt->create(output_add_product, cmap(4,
-    "package_uuid", v_str("example_package_uuid"),  // char*
-    "product_uui_d", v_list(),  // voxgig_value* (list)
-    "response_code", v_num(1),  // int64_t
-    "response_message", v_str("example_response_message"))  // char*
+    "packageUUID", v_str("example_packageUUID"),  // char*
+    "productUUIDs", v_list(),  // voxgig_value* (list)
+    "responseCode", v_num(1),  // int64_t
+    "responseMessage", v_str("example_responseMessage"))  // char*
 , NULL, &err);
 ```
 
@@ -1005,38 +1005,38 @@ Create an instance: `Entity* output_create_product = bluefintecsmerchantportal_o
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `char*` |  |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_template_name` | `char*` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `char*` |  |
-| `name_key` | `char*` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `terminal_template_name` | `char*` |  |
-| `vendor_name` | `char*` |  |
-| `xml_template_file` | `char*` |  |
+| `acquirerId` | `char*` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormTemplateName` | `char*` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `char*` |  |
+| `nameKey` | `char*` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `terminalTemplateName` | `char*` |  |
+| `vendorName` | `char*` |  |
+| `xmlTemplateFile` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* output_create_product = bluefintecsmerchantportal_output_create_product(client, NULL);
 voxgig_value* output_create_product_rec = output_create_product->vt->create(output_create_product, cmap(12,
-    "allow_multiple_order", v_bool(true),  // bool
-    "app_form_template_name", v_str("example_app_form_template_name"),  // char*
-    "contract_needed", v_bool(true),  // bool
-    "description_key", v_str("example_description_key"),  // char*
-    "name_key", v_str("example_name_key"),  // char*
-    "prescreening_allowed", v_bool(true),  // bool
-    "product_name", v_str("example_product_name"),  // char*
-    "response_code", v_num(1),  // int64_t
-    "response_message", v_str("example_response_message"),  // char*
-    "terminal_template_name", v_str("example_terminal_template_name"),  // char*
-    "vendor_name", v_str("example_vendor_name"),  // char*
-    "xml_template_file", v_str("example_xml_template_file"))  // char*
+    "allowMultipleOrders", v_bool(true),  // bool
+    "appFormTemplateName", v_str("example_appFormTemplateName"),  // char*
+    "contractNeeded", v_bool(true),  // bool
+    "descriptionKey", v_str("example_descriptionKey"),  // char*
+    "nameKey", v_str("example_nameKey"),  // char*
+    "prescreeningAllowed", v_bool(true),  // bool
+    "productName", v_str("example_productName"),  // char*
+    "responseCode", v_num(1),  // int64_t
+    "responseMessage", v_str("example_responseMessage"),  // char*
+    "terminalTemplateName", v_str("example_terminalTemplateName"),  // char*
+    "vendorName", v_str("example_vendorName"),  // char*
+    "xmlTemplateFile", v_str("example_xmlTemplateFile"))  // char*
 , NULL, &err);
 ```
 
@@ -1055,9 +1055,9 @@ Create an instance: `Entity* output_detail = bluefintecsmerchantportal_output_de
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `voxgig_value* (map)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `batch` | `voxgig_value* (map)` |  |
+| `lines` | `voxgig_value* (map)` |  |
+| `progress` | `voxgig_value* (map)` |  |
 
 #### Example: Load
 
@@ -1081,10 +1081,10 @@ Create an instance: `Entity* output_list = bluefintecsmerchantportal_output_list
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `voxgig_value* (list)` |  |
+| `items` | `voxgig_value* (list)` |  |
 | `pagination` | `voxgig_value* (map)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 | `sorting` | `voxgig_value* (map)` |  |
 
 #### Example: Create
@@ -1093,8 +1093,8 @@ Create an instance: `Entity* output_list = bluefintecsmerchantportal_output_list
 Entity* output_list = bluefintecsmerchantportal_output_list(client, NULL);
 voxgig_value* output_list_rec = output_list->vt->create(output_list, cmap(3,
     "pagination", v_map(),  // voxgig_value* (map)
-    "response_code", v_num(1),  // int64_t
-    "response_message", v_str("example_response_message"))  // char*
+    "responseCode", v_num(1),  // int64_t
+    "responseMessage", v_str("example_responseMessage"))  // char*
 , NULL, &err);
 ```
 
@@ -1113,8 +1113,8 @@ Create an instance: `Entity* output_message = bluefintecsmerchantportal_output_m
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Load
 
@@ -1138,22 +1138,22 @@ Create an instance: `Entity* output_move_tid = bluefintecsmerchantportal_output_
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `voxgig_value* (list)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `target_package_order_uuid` | `char*` |  |
-| `target_product_order_uuid` | `char*` |  |
+| `productOrderUUIDs` | `voxgig_value* (list)` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `targetPackageOrderUUID` | `char*` |  |
+| `targetProductOrderUUID` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* output_move_tid = bluefintecsmerchantportal_output_move_tid(client, NULL);
 voxgig_value* output_move_tid_rec = output_move_tid->vt->create(output_move_tid, cmap(5,
-    "product_order_uui_d", v_list(),  // voxgig_value* (list)
-    "response_code", v_num(1),  // int64_t
-    "response_message", v_str("example_response_message"),  // char*
-    "target_package_order_uuid", v_str("example_target_package_order_uuid"),  // char*
-    "target_product_order_uuid", v_str("example_target_product_order_uuid"))  // char*
+    "productOrderUUIDs", v_list(),  // voxgig_value* (list)
+    "responseCode", v_num(1),  // int64_t
+    "responseMessage", v_str("example_responseMessage"),  // char*
+    "targetPackageOrderUUID", v_str("example_targetPackageOrderUUID"),  // char*
+    "targetProductOrderUUID", v_str("example_targetProductOrderUUID"))  // char*
 , NULL, &err);
 ```
 
@@ -1172,20 +1172,20 @@ Create an instance: `Entity* output_remove_product = bluefintecsmerchantportal_o
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `char*` |  |
-| `product_uui_d` | `voxgig_value* (list)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `packageUUID` | `char*` |  |
+| `productUUIDs` | `voxgig_value* (list)` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* output_remove_product = bluefintecsmerchantportal_output_remove_product(client, NULL);
 voxgig_value* output_remove_product_rec = output_remove_product->vt->create(output_remove_product, cmap(4,
-    "package_uuid", v_str("example_package_uuid"),  // char*
-    "product_uui_d", v_list(),  // voxgig_value* (list)
-    "response_code", v_num(1),  // int64_t
-    "response_message", v_str("example_response_message"))  // char*
+    "packageUUID", v_str("example_packageUUID"),  // char*
+    "productUUIDs", v_list(),  // voxgig_value* (list)
+    "responseCode", v_num(1),  // int64_t
+    "responseMessage", v_str("example_responseMessage"))  // char*
 , NULL, &err);
 ```
 
@@ -1205,16 +1205,16 @@ Create an instance: `Entity* output_start = bluefintecsmerchantportal_output_sta
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* output_start = bluefintecsmerchantportal_output_start(client, NULL);
 voxgig_value* output_start_rec = output_start->vt->create(output_start, cmap(2,
-    "response_code", v_num(1),  // int64_t
-    "response_message", v_str("example_response_message"))  // char*
+    "responseCode", v_num(1),  // int64_t
+    "responseMessage", v_str("example_responseMessage"))  // char*
 , NULL, &err);
 ```
 
@@ -1234,8 +1234,8 @@ Create an instance: `Entity* output_status = bluefintecsmerchantportal_output_st
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `int64_t` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 | `status` | `char*` |  |
 
 #### Example: Load
@@ -1260,28 +1260,28 @@ Create an instance: `Entity* output_update_product = bluefintecsmerchantportal_o
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_name` | `char*` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `char*` |  |
-| `name_key` | `char*` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `char*` |  |
-| `product_status` | `char*` |  |
-| `product_uuid` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `vendor_name` | `char*` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormName` | `char*` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `char*` |  |
+| `nameKey` | `char*` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `char*` |  |
+| `productStatus` | `char*` |  |
+| `productUUID` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `vendorName` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* output_update_product = bluefintecsmerchantportal_output_update_product(client, NULL);
 voxgig_value* output_update_product_rec = output_update_product->vt->create(output_update_product, cmap(3,
-    "product_uuid", v_str("example_product_uuid"),  // char*
-    "response_code", v_num(1),  // int64_t
-    "response_message", v_str("example_response_message"))  // char*
+    "productUUID", v_str("example_productUUID"),  // char*
+    "responseCode", v_num(1),  // int64_t
+    "responseMessage", v_str("example_responseMessage"))  // char*
 , NULL, &err);
 ```
 

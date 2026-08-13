@@ -27,15 +27,15 @@ fn merchant_portal_common_controller_direct_setup(mockres: Value) -> MerchantPor
     let calls: Rc<RefCell<Vec<Value>>> = Rc::new(RefCell::new(Vec::new()));
 
     let env = env_override(jo(vec![
-        ("BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID", Value::empty_map()),
-        ("BLUEFINTECSMERCHANTPORTAL_TEST_LIVE", Value::str("FALSE")),
+        ("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID", Value::empty_map()),
+        ("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE", Value::str("FALSE")),
     ]));
 
-    let live = getp(&env, "BLUEFINTECSMERCHANTPORTAL_TEST_LIVE") == Value::str("TRUE");
+    let live = getp(&env, "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE") == Value::str("TRUE");
 
     if live {
         let client = BluefinTecsMerchantPortalSDK::new(jo(vec![]));
-        let idmap = match to_map(&getp(&env, "BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID")) {
+        let idmap = match to_map(&getp(&env, "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID")) {
             Value::Map(m) => Value::Map(m),
             _ => Value::empty_map(),
         };

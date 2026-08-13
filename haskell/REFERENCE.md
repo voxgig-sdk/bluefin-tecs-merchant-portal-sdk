@@ -200,9 +200,9 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_api_controller sdk VNoval
@@ -227,7 +227,8 @@ Create a new entity with the given data. Returns the created entity data and rai
     , ("zipcode", VStr "example_zipcode")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields
@@ -263,9 +264,9 @@ The entity name.
 
 ### Operations
 
-#### `eLoad ent match ctrl :: IO Value`
+#### `eLoad ent match ctrl :: IO Entity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_common_controller sdk VNoval
@@ -310,22 +311,23 @@ The entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `language` | `String` | Yes |  |
-| `product_order_uuid` | `String` | Yes |  |
+| `productOrderUUID` | `String` | Yes |  |
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_contract_controller sdk VNoval
   d <- jo
     [ ("language", VStr "example_language")   -- String
-    , ("product_order_uuid", VStr "example_product_order_uuid")   -- String
+    , ("productOrderUUID", VStr "example_productOrderUUID")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields
@@ -363,23 +365,24 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_field_desc_uuid` | `String` | Yes |  |
-| `package_order_uuid` | `String` | No |  |
-| `product_order_uuid` | `String` | No |  |
+| `appFormFieldDescUUID` | `String` | Yes |  |
+| `packageOrderUUID` | `String` | No |  |
+| `productOrderUUID` | `String` | No |  |
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_document_controller sdk VNoval
   d <- jo
-    [ ("app_form_field_desc_uuid", VStr "example_app_form_field_desc_uuid")   -- String
+    [ ("appFormFieldDescUUID", VStr "example_appFormFieldDescUUID")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields
@@ -417,46 +420,47 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `String` | Yes |  |
+| `appFormFieldsDescUUID` | `String` | Yes |  |
 | `filter` | `Value` | No |  |
 | `language` | `String` | Yes |  |
-| `package_order` | `Value` | No |  |
-| `package_order_uuid` | `String` | Yes |  |
-| `package_uuid` | `String` | No |  |
-| `product_order` | `[Value]` | No |  |
-| `product_order_uuid` | `String` | No |  |
-| `reason_of_reopening` | `String` | Yes |  |
+| `packageOrder` | `Value` | No |  |
+| `packageOrderUUID` | `String` | Yes |  |
+| `packageUUID` | `String` | No |  |
+| `productOrderUUID` | `String` | No |  |
+| `productOrders` | `[Value]` | No |  |
+| `reasonOfReopening` | `String` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `app_form_fields_desc_uuid` | - |
+| `appFormFieldsDescUUID` | - |
 | `filter` | - |
 | `language` | Yes |
-| `package_order` | - |
-| `package_order_uuid` | Yes |
-| `package_uuid` | - |
-| `product_order` | - |
-| `product_order_uuid` | Yes |
-| `reason_of_reopening` | - |
+| `packageOrder` | - |
+| `packageOrderUUID` | Yes |
+| `packageUUID` | - |
+| `productOrderUUID` | Yes |
+| `productOrders` | - |
+| `reasonOfReopening` | - |
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_form_controller sdk VNoval
   d <- jo
-    [ ("app_form_fields_desc_uuid", VStr "example_app_form_fields_desc_uuid")   -- String
+    [ ("appFormFieldsDescUUID", VStr "example_appFormFieldsDescUUID")   -- String
     , ("language", VStr "example_language")   -- String
-    , ("package_order_uuid", VStr "example_package_order_uuid")   -- String
-    , ("reason_of_reopening", VStr "example_reason_of_reopening")   -- String
+    , ("packageOrderUUID", VStr "example_packageOrderUUID")   -- String
+    , ("reasonOfReopening", VStr "example_reasonOfReopening")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields
@@ -494,25 +498,26 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `String` | No |  |
-| `mandator_name` | `String` | Yes |  |
-| `notification_email` | `String` | No |  |
-| `package_uuid` | `String` | Yes |  |
+| `clientSecret` | `String` | No |  |
+| `mandatorName` | `String` | Yes |  |
+| `notificationEmail` | `String` | No |  |
+| `packageUUID` | `String` | Yes |  |
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_mandator_controller sdk VNoval
   d <- jo
-    [ ("mandator_name", VStr "example_mandator_name")   -- String
-    , ("package_uuid", VStr "example_package_uuid")   -- String
+    [ ("mandatorName", VStr "example_mandatorName")   -- String
+    , ("packageUUID", VStr "example_packageUUID")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields
@@ -551,29 +556,29 @@ The entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `additional_data` | `Value` | No |  |
-| `business_registration_number` | `String` | Yes |  |
+| `businessRegistrationNumber` | `String` | Yes |  |
 | `city` | `String` | No |  |
-| `company_name` | `String` | Yes |  |
-| `corporate_uuid` | `String` | Yes |  |
+| `companyName` | `String` | Yes |  |
+| `corporateUUID` | `String` | Yes |  |
 | `country` | `String` | No |  |
 | `currency` | `String` | Yes |  |
 | `email` | `String` | Yes |  |
 | `language` | `String` | Yes |  |
 | `login` | `String` | Yes |  |
 | `mandator` | `String` | Yes |  |
+| `merchantContractNumber` | `String` | Yes |  |
+| `merchantName` | `String` | No |  |
 | `merchant_category_code` | `String` | No |  |
-| `merchant_contract_number` | `String` | Yes |  |
-| `merchant_name` | `String` | No |  |
-| `package_uuid` | `String` | No |  |
+| `packageUUID` | `String` | No |  |
 | `packageorderuuid` | `String` | Yes |  |
-| `phone_number` | `String` | Yes |  |
-| `postal_code` | `String` | No |  |
+| `phoneNumber` | `String` | Yes |  |
+| `postalCode` | `String` | No |  |
 | `productid_acquirer` | `String` | Yes |  |
 | `region` | `String` | No |  |
-| `registration_number` | `String` | No |  |
+| `registrationNumber` | `String` | No |  |
 | `signature` | `String` | No |  |
 | `street` | `String` | No |  |
-| `terminal_id` | `[Value]` | No |  |
+| `terminalIds` | `[Value]` | No |  |
 | `terminalid_acquirer` | `String` | No |  |
 | `vu_nummer` | `String` | Yes |  |
 
@@ -582,57 +587,58 @@ The entity name.
 | Field | create |
 | --- | --- |
 | `additional_data` | - |
-| `business_registration_number` | - |
+| `businessRegistrationNumber` | - |
 | `city` | - |
-| `company_name` | - |
-| `corporate_uuid` | - |
+| `companyName` | - |
+| `corporateUUID` | - |
 | `country` | - |
 | `currency` | - |
 | `email` | - |
 | `language` | - |
 | `login` | - |
 | `mandator` | - |
+| `merchantContractNumber` | Yes |
+| `merchantName` | - |
 | `merchant_category_code` | - |
-| `merchant_contract_number` | Yes |
-| `merchant_name` | - |
-| `package_uuid` | - |
+| `packageUUID` | - |
 | `packageorderuuid` | - |
-| `phone_number` | - |
-| `postal_code` | - |
+| `phoneNumber` | - |
+| `postalCode` | - |
 | `productid_acquirer` | - |
 | `region` | - |
-| `registration_number` | - |
+| `registrationNumber` | - |
 | `signature` | - |
 | `street` | - |
-| `terminal_id` | - |
+| `terminalIds` | - |
 | `terminalid_acquirer` | - |
 | `vu_nummer` | - |
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_merchant_controller sdk VNoval
   d <- jo
-    [ ("business_registration_number", VStr "example_business_registration_number")   -- String
-    , ("company_name", VStr "example_company_name")   -- String
-    , ("corporate_uuid", VStr "example_corporate_uuid")   -- String
+    [ ("businessRegistrationNumber", VStr "example_businessRegistrationNumber")   -- String
+    , ("companyName", VStr "example_companyName")   -- String
+    , ("corporateUUID", VStr "example_corporateUUID")   -- String
     , ("currency", VStr "example_currency")   -- String
     , ("email", VStr "example_email")   -- String
     , ("language", VStr "example_language")   -- String
     , ("login", VStr "example_login")   -- String
     , ("mandator", VStr "example_mandator")   -- String
-    , ("merchant_contract_number", VStr "example_merchant_contract_number")   -- String
+    , ("merchantContractNumber", VStr "example_merchantContractNumber")   -- String
     , ("packageorderuuid", VStr "example_packageorderuuid")   -- String
-    , ("phone_number", VStr "example_phone_number")   -- String
+    , ("phoneNumber", VStr "example_phoneNumber")   -- String
     , ("productid_acquirer", VStr "example_productid_acquirer")   -- String
     , ("vu_nummer", VStr "example_vu_nummer")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields
@@ -670,15 +676,15 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `corporate_uuid` | `String` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `corporateUUID` | `String` | No |  |
 | `country` | `String` | No |  |
-| `description_key` | `String` | No |  |
+| `descriptionKey` | `String` | No |  |
 | `filter` | `Value` | No |  |
 | `language` | `String` | Yes |  |
-| `name_key` | `String` | No |  |
-| `package_status` | `String` | No |  |
-| `package_uuid` | `String` | Yes |  |
+| `nameKey` | `String` | No |  |
+| `packageStatus` | `String` | No |  |
+| `packageUUID` | `String` | Yes |  |
 | `pagination` | `Value` | No |  |
 | `sorting` | `Value` | No |  |
 
@@ -686,32 +692,33 @@ The entity name.
 
 | Field | create |
 | --- | --- |
-| `consumer_uuid` | - |
-| `corporate_uuid` | - |
+| `consumerUUID` | - |
+| `corporateUUID` | - |
 | `country` | - |
-| `description_key` | - |
+| `descriptionKey` | - |
 | `filter` | - |
 | `language` | Yes |
-| `name_key` | - |
-| `package_status` | - |
-| `package_uuid` | - |
+| `nameKey` | - |
+| `packageStatus` | - |
+| `packageUUID` | - |
 | `pagination` | - |
 | `sorting` | - |
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_package_controller sdk VNoval
   d <- jo
     [ ("language", VStr "example_language")   -- String
-    , ("package_uuid", VStr "example_package_uuid")   -- String
+    , ("packageUUID", VStr "example_packageUUID")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields
@@ -749,33 +756,34 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
+| `consumerUUID` | `String` | No |  |
 | `filter` | `Value` | No |  |
 | `language` | `String` | No |  |
-| `merchant_id` | `String` | No |  |
-| `package_order_uuid` | `String` | Yes |  |
+| `merchantID` | `String` | No |  |
+| `packageOrderUUID` | `String` | Yes |  |
 | `pagination` | `Value` | No |  |
-| `product_order_uuid` | `String` | Yes |  |
-| `product_uuid` | `String` | Yes |  |
+| `productOrderUUID` | `String` | Yes |  |
+| `productUUID` | `String` | Yes |  |
 | `reason_decline` | `String` | Yes |  |
 | `sorting` | `Value` | No |  |
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_product_controller sdk VNoval
   d <- jo
-    [ ("package_order_uuid", VStr "example_package_order_uuid")   -- String
-    , ("product_order_uuid", VStr "example_product_order_uuid")   -- String
-    , ("product_uuid", VStr "example_product_uuid")   -- String
+    [ ("packageOrderUUID", VStr "example_packageOrderUUID")   -- String
+    , ("productOrderUUID", VStr "example_productOrderUUID")   -- String
+    , ("productUUID", VStr "example_productUUID")   -- String
     , ("reason_decline", VStr "example_reason_decline")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields
@@ -813,27 +821,28 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `String` | Yes |  |
-| `product_uui_d` | `[Value]` | Yes |  |
-| `response_code` | `Int` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `packageUUID` | `String` | Yes |  |
+| `productUUIDs` | `[Value]` | Yes |  |
+| `responseCode` | `Int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.output_add_product sdk VNoval
   d <- jo
-    [ ("package_uuid", VStr "example_package_uuid")   -- String
-    , ("product_uui_d", VNoval)   -- [Value]
-    , ("response_code", VNum 1)   -- Int
-    , ("response_message", VStr "example_response_message")   -- String
+    [ ("packageUUID", VStr "example_packageUUID")   -- String
+    , ("productUUIDs", VNoval)   -- [Value]
+    , ("responseCode", VNum 1)   -- Int
+    , ("responseMessage", VStr "example_responseMessage")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields
@@ -871,45 +880,46 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String` | No |  |
-| `allow_multiple_order` | `Bool` | Yes |  |
-| `app_form_template_name` | `String` | Yes |  |
-| `contract_needed` | `Bool` | Yes |  |
-| `credentials_needed` | `Bool` | No |  |
-| `description_key` | `String` | Yes |  |
-| `name_key` | `String` | Yes |  |
-| `prescreening_allowed` | `Bool` | Yes |  |
-| `product_name` | `String` | Yes |  |
-| `response_code` | `Int` | Yes |  |
-| `response_message` | `String` | Yes |  |
-| `terminal_template_name` | `String` | Yes |  |
-| `vendor_name` | `String` | Yes |  |
-| `xml_template_file` | `String` | Yes |  |
+| `acquirerId` | `String` | No |  |
+| `allowMultipleOrders` | `Bool` | Yes |  |
+| `appFormTemplateName` | `String` | Yes |  |
+| `contractNeeded` | `Bool` | Yes |  |
+| `credentialsNeeded` | `Bool` | No |  |
+| `descriptionKey` | `String` | Yes |  |
+| `nameKey` | `String` | Yes |  |
+| `prescreeningAllowed` | `Bool` | Yes |  |
+| `productName` | `String` | Yes |  |
+| `responseCode` | `Int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
+| `terminalTemplateName` | `String` | Yes |  |
+| `vendorName` | `String` | Yes |  |
+| `xmlTemplateFile` | `String` | Yes |  |
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.output_create_product sdk VNoval
   d <- jo
-    [ ("allow_multiple_order", VBool True)   -- Bool
-    , ("app_form_template_name", VStr "example_app_form_template_name")   -- String
-    , ("contract_needed", VBool True)   -- Bool
-    , ("description_key", VStr "example_description_key")   -- String
-    , ("name_key", VStr "example_name_key")   -- String
-    , ("prescreening_allowed", VBool True)   -- Bool
-    , ("product_name", VStr "example_product_name")   -- String
-    , ("response_code", VNum 1)   -- Int
-    , ("response_message", VStr "example_response_message")   -- String
-    , ("terminal_template_name", VStr "example_terminal_template_name")   -- String
-    , ("vendor_name", VStr "example_vendor_name")   -- String
-    , ("xml_template_file", VStr "example_xml_template_file")   -- String
+    [ ("allowMultipleOrders", VBool True)   -- Bool
+    , ("appFormTemplateName", VStr "example_appFormTemplateName")   -- String
+    , ("contractNeeded", VBool True)   -- Bool
+    , ("descriptionKey", VStr "example_descriptionKey")   -- String
+    , ("nameKey", VStr "example_nameKey")   -- String
+    , ("prescreeningAllowed", VBool True)   -- Bool
+    , ("productName", VStr "example_productName")   -- String
+    , ("responseCode", VNum 1)   -- Int
+    , ("responseMessage", VStr "example_responseMessage")   -- String
+    , ("terminalTemplateName", VStr "example_terminalTemplateName")   -- String
+    , ("vendorName", VStr "example_vendorName")   -- String
+    , ("xmlTemplateFile", VStr "example_xmlTemplateFile")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields
@@ -947,15 +957,15 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `detail` | `Value` | No |  |
-| `response_code` | `Int` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `batch` | `Value` | No |  |
+| `lines` | `Value` | No |  |
+| `progress` | `Value` | No |  |
 
 ### Operations
 
-#### `eLoad ent match ctrl :: IO Value`
+#### `eLoad ent match ctrl :: IO Entity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.output_detail sdk VNoval
@@ -999,37 +1009,38 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `item` | `[Value]` | No |  |
+| `items` | `[Value]` | No |  |
 | `pagination` | `Value` | Yes |  |
-| `response_code` | `Int` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `responseCode` | `Int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 | `sorting` | `Value` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `item` | - |
+| `items` | - |
 | `pagination` | Yes |
-| `response_code` | - |
-| `response_message` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
 | `sorting` | - |
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.output_list sdk VNoval
   d <- jo
     [ ("pagination", VNoval)   -- Value
-    , ("response_code", VNum 1)   -- Int
-    , ("response_message", VStr "example_response_message")   -- String
+    , ("responseCode", VNum 1)   -- Int
+    , ("responseMessage", VStr "example_responseMessage")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields
@@ -1067,14 +1078,14 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Int` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `responseCode` | `Int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 
 ### Operations
 
-#### `eLoad ent match ctrl :: IO Value`
+#### `eLoad ent match ctrl :: IO Entity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.output_message sdk VNoval
@@ -1118,29 +1129,30 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `product_order_uui_d` | `[Value]` | Yes |  |
-| `response_code` | `Int` | Yes |  |
-| `response_message` | `String` | Yes |  |
-| `target_package_order_uuid` | `String` | Yes |  |
-| `target_product_order_uuid` | `String` | Yes |  |
+| `productOrderUUIDs` | `[Value]` | Yes |  |
+| `responseCode` | `Int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
+| `targetPackageOrderUUID` | `String` | Yes |  |
+| `targetProductOrderUUID` | `String` | Yes |  |
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.output_move_tid sdk VNoval
   d <- jo
-    [ ("product_order_uui_d", VNoval)   -- [Value]
-    , ("response_code", VNum 1)   -- Int
-    , ("response_message", VStr "example_response_message")   -- String
-    , ("target_package_order_uuid", VStr "example_target_package_order_uuid")   -- String
-    , ("target_product_order_uuid", VStr "example_target_product_order_uuid")   -- String
+    [ ("productOrderUUIDs", VNoval)   -- [Value]
+    , ("responseCode", VNum 1)   -- Int
+    , ("responseMessage", VStr "example_responseMessage")   -- String
+    , ("targetPackageOrderUUID", VStr "example_targetPackageOrderUUID")   -- String
+    , ("targetProductOrderUUID", VStr "example_targetProductOrderUUID")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields
@@ -1178,27 +1190,28 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `String` | Yes |  |
-| `product_uui_d` | `[Value]` | Yes |  |
-| `response_code` | `Int` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `packageUUID` | `String` | Yes |  |
+| `productUUIDs` | `[Value]` | Yes |  |
+| `responseCode` | `Int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.output_remove_product sdk VNoval
   d <- jo
-    [ ("package_uuid", VStr "example_package_uuid")   -- String
-    , ("product_uui_d", VNoval)   -- [Value]
-    , ("response_code", VNum 1)   -- Int
-    , ("response_message", VStr "example_response_message")   -- String
+    [ ("packageUUID", VStr "example_packageUUID")   -- String
+    , ("productUUIDs", VNoval)   -- [Value]
+    , ("responseCode", VNum 1)   -- Int
+    , ("responseMessage", VStr "example_responseMessage")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields
@@ -1237,23 +1250,24 @@ The entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `String` | No |  |
-| `response_code` | `Int` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `responseCode` | `Int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.output_start sdk VNoval
   d <- jo
-    [ ("response_code", VNum 1)   -- Int
-    , ("response_message", VStr "example_response_message")   -- String
+    [ ("responseCode", VNum 1)   -- Int
+    , ("responseMessage", VStr "example_responseMessage")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields
@@ -1292,15 +1306,15 @@ The entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `Int` | No |  |
-| `response_code` | `Int` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `responseCode` | `Int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 | `status` | `String` | No |  |
 
 ### Operations
 
-#### `eLoad ent match ctrl :: IO Value`
+#### `eLoad ent match ctrl :: IO Entity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.output_status sdk VNoval
@@ -1344,35 +1358,36 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allow_multiple_order` | `Bool` | No |  |
-| `app_form_name` | `String` | No |  |
-| `contract_needed` | `Bool` | No |  |
-| `credentials_needed` | `Bool` | No |  |
-| `description_key` | `String` | No |  |
-| `name_key` | `String` | No |  |
-| `prescreening_allowed` | `Bool` | No |  |
-| `product_name` | `String` | No |  |
-| `product_status` | `String` | No |  |
-| `product_uuid` | `String` | Yes |  |
-| `response_code` | `Int` | Yes |  |
-| `response_message` | `String` | Yes |  |
-| `vendor_name` | `String` | No |  |
+| `allowMultipleOrders` | `Bool` | No |  |
+| `appFormName` | `String` | No |  |
+| `contractNeeded` | `Bool` | No |  |
+| `credentialsNeeded` | `Bool` | No |  |
+| `descriptionKey` | `String` | No |  |
+| `nameKey` | `String` | No |  |
+| `prescreeningAllowed` | `Bool` | No |  |
+| `productName` | `String` | No |  |
+| `productStatus` | `String` | No |  |
+| `productUUID` | `String` | Yes |  |
+| `responseCode` | `Int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
+| `vendorName` | `String` | No |  |
 
 ### Operations
 
-#### `eCreate ent data ctrl :: IO Value`
+#### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
 
 ```haskell
   ent <- Sdk.output_update_product sdk VNoval
   d <- jo
-    [ ("product_uuid", VStr "example_product_uuid")   -- String
-    , ("response_code", VNum 1)   -- Int
-    , ("response_message", VStr "example_response_message")   -- String
+    [ ("productUUID", VStr "example_productUUID")   -- String
+    , ("responseCode", VNum 1)   -- Int
+    , ("responseMessage", VStr "example_responseMessage")   -- String
     ]
   ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
 ```
 
 ### Common Fields

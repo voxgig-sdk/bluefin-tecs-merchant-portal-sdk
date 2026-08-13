@@ -306,7 +306,7 @@ merchant_portal_pam_contract_controller = BluefinTecsMerchantPortal.merchant_por
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `language` | `String.t()` | Yes |  |
-| `product_order_uuid` | `String.t()` | Yes |  |
+| `productOrderUUID` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -317,7 +317,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```elixir
 record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamContractController.create(merchant_portal_pam_contract_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "language" => "example_language",  # String.t()
-  "product_order_uuid" => "example_product_order_uuid",  # String.t()
+  "productOrderUUID" => "example_productOrderUUID",  # String.t()
 }))
 ```
 
@@ -360,9 +360,9 @@ merchant_portal_pam_document_controller = BluefinTecsMerchantPortal.merchant_por
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_field_desc_uuid` | `String.t()` | Yes |  |
-| `package_order_uuid` | `String.t()` | No |  |
-| `product_order_uuid` | `String.t()` | No |  |
+| `appFormFieldDescUUID` | `String.t()` | Yes |  |
+| `packageOrderUUID` | `String.t()` | No |  |
+| `productOrderUUID` | `String.t()` | No |  |
 
 ### Operations
 
@@ -372,7 +372,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamDocumentController.create(merchant_portal_pam_document_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "app_form_field_desc_uuid" => "example_app_form_field_desc_uuid",  # String.t()
+  "appFormFieldDescUUID" => "example_appFormFieldDescUUID",  # String.t()
 }))
 ```
 
@@ -415,15 +415,15 @@ merchant_portal_pam_form_controller = BluefinTecsMerchantPortal.merchant_portal_
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `String.t()` | Yes |  |
+| `appFormFieldsDescUUID` | `String.t()` | Yes |  |
 | `filter` | `map()` | No |  |
 | `language` | `String.t()` | Yes |  |
-| `package_order` | `map()` | No |  |
-| `package_order_uuid` | `String.t()` | Yes |  |
-| `package_uuid` | `String.t()` | No |  |
-| `product_order` | `list()` | No |  |
-| `product_order_uuid` | `String.t()` | No |  |
-| `reason_of_reopening` | `String.t()` | Yes |  |
+| `packageOrder` | `map()` | No |  |
+| `packageOrderUUID` | `String.t()` | Yes |  |
+| `packageUUID` | `String.t()` | No |  |
+| `productOrderUUID` | `String.t()` | No |  |
+| `productOrders` | `list()` | No |  |
+| `reasonOfReopening` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -433,10 +433,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamFormController.create(merchant_portal_pam_form_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "app_form_fields_desc_uuid" => "example_app_form_fields_desc_uuid",  # String.t()
+  "appFormFieldsDescUUID" => "example_appFormFieldsDescUUID",  # String.t()
   "language" => "example_language",  # String.t()
-  "package_order_uuid" => "example_package_order_uuid",  # String.t()
-  "reason_of_reopening" => "example_reason_of_reopening",  # String.t()
+  "packageOrderUUID" => "example_packageOrderUUID",  # String.t()
+  "reasonOfReopening" => "example_reasonOfReopening",  # String.t()
 }))
 ```
 
@@ -479,10 +479,10 @@ merchant_portal_pam_mandator_controller = BluefinTecsMerchantPortal.merchant_por
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `String.t()` | No |  |
-| `mandator_name` | `String.t()` | Yes |  |
-| `notification_email` | `String.t()` | No |  |
-| `package_uuid` | `String.t()` | Yes |  |
+| `clientSecret` | `String.t()` | No |  |
+| `mandatorName` | `String.t()` | Yes |  |
+| `notificationEmail` | `String.t()` | No |  |
+| `packageUUID` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -492,8 +492,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamMandatorController.create(merchant_portal_pam_mandator_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "mandator_name" => "example_mandator_name",  # String.t()
-  "package_uuid" => "example_package_uuid",  # String.t()
+  "mandatorName" => "example_mandatorName",  # String.t()
+  "packageUUID" => "example_packageUUID",  # String.t()
 }))
 ```
 
@@ -537,29 +537,29 @@ merchant_portal_pam_merchant_controller = BluefinTecsMerchantPortal.merchant_por
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `additional_data` | `map()` | No |  |
-| `business_registration_number` | `String.t()` | Yes |  |
+| `businessRegistrationNumber` | `String.t()` | Yes |  |
 | `city` | `String.t()` | No |  |
-| `company_name` | `String.t()` | Yes |  |
-| `corporate_uuid` | `String.t()` | Yes |  |
+| `companyName` | `String.t()` | Yes |  |
+| `corporateUUID` | `String.t()` | Yes |  |
 | `country` | `String.t()` | No |  |
 | `currency` | `String.t()` | Yes |  |
 | `email` | `String.t()` | Yes |  |
 | `language` | `String.t()` | Yes |  |
 | `login` | `String.t()` | Yes |  |
 | `mandator` | `String.t()` | Yes |  |
+| `merchantContractNumber` | `String.t()` | Yes |  |
+| `merchantName` | `String.t()` | No |  |
 | `merchant_category_code` | `String.t()` | No |  |
-| `merchant_contract_number` | `String.t()` | Yes |  |
-| `merchant_name` | `String.t()` | No |  |
-| `package_uuid` | `String.t()` | No |  |
+| `packageUUID` | `String.t()` | No |  |
 | `packageorderuuid` | `String.t()` | Yes |  |
-| `phone_number` | `String.t()` | Yes |  |
-| `postal_code` | `String.t()` | No |  |
+| `phoneNumber` | `String.t()` | Yes |  |
+| `postalCode` | `String.t()` | No |  |
 | `productid_acquirer` | `String.t()` | Yes |  |
 | `region` | `String.t()` | No |  |
-| `registration_number` | `String.t()` | No |  |
+| `registrationNumber` | `String.t()` | No |  |
 | `signature` | `String.t()` | No |  |
 | `street` | `String.t()` | No |  |
-| `terminal_id` | `list()` | No |  |
+| `terminalIds` | `list()` | No |  |
 | `terminalid_acquirer` | `String.t()` | No |  |
 | `vu_nummer` | `String.t()` | Yes |  |
 
@@ -571,17 +571,17 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamMerchantController.create(merchant_portal_pam_merchant_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "business_registration_number" => "example_business_registration_number",  # String.t()
-  "company_name" => "example_company_name",  # String.t()
-  "corporate_uuid" => "example_corporate_uuid",  # String.t()
+  "businessRegistrationNumber" => "example_businessRegistrationNumber",  # String.t()
+  "companyName" => "example_companyName",  # String.t()
+  "corporateUUID" => "example_corporateUUID",  # String.t()
   "currency" => "example_currency",  # String.t()
   "email" => "example_email",  # String.t()
   "language" => "example_language",  # String.t()
   "login" => "example_login",  # String.t()
   "mandator" => "example_mandator",  # String.t()
-  "merchant_contract_number" => "example_merchant_contract_number",  # String.t()
+  "merchantContractNumber" => "example_merchantContractNumber",  # String.t()
   "packageorderuuid" => "example_packageorderuuid",  # String.t()
-  "phone_number" => "example_phone_number",  # String.t()
+  "phoneNumber" => "example_phoneNumber",  # String.t()
   "productid_acquirer" => "example_productid_acquirer",  # String.t()
   "vu_nummer" => "example_vu_nummer",  # String.t()
 }))
@@ -626,15 +626,15 @@ merchant_portal_pam_package_controller = BluefinTecsMerchantPortal.merchant_port
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String.t()` | No |  |
-| `corporate_uuid` | `String.t()` | No |  |
+| `consumerUUID` | `String.t()` | No |  |
+| `corporateUUID` | `String.t()` | No |  |
 | `country` | `String.t()` | No |  |
-| `description_key` | `String.t()` | No |  |
+| `descriptionKey` | `String.t()` | No |  |
 | `filter` | `map()` | No |  |
 | `language` | `String.t()` | Yes |  |
-| `name_key` | `String.t()` | No |  |
-| `package_status` | `String.t()` | No |  |
-| `package_uuid` | `String.t()` | Yes |  |
+| `nameKey` | `String.t()` | No |  |
+| `packageStatus` | `String.t()` | No |  |
+| `packageUUID` | `String.t()` | Yes |  |
 | `pagination` | `map()` | No |  |
 | `sorting` | `map()` | No |  |
 
@@ -647,7 +647,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```elixir
 record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamPackageController.create(merchant_portal_pam_package_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "language" => "example_language",  # String.t()
-  "package_uuid" => "example_package_uuid",  # String.t()
+  "packageUUID" => "example_packageUUID",  # String.t()
 }))
 ```
 
@@ -690,14 +690,14 @@ merchant_portal_pam_product_controller = BluefinTecsMerchantPortal.merchant_port
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String.t()` | No |  |
+| `consumerUUID` | `String.t()` | No |  |
 | `filter` | `map()` | No |  |
 | `language` | `String.t()` | No |  |
-| `merchant_id` | `String.t()` | No |  |
-| `package_order_uuid` | `String.t()` | Yes |  |
+| `merchantID` | `String.t()` | No |  |
+| `packageOrderUUID` | `String.t()` | Yes |  |
 | `pagination` | `map()` | No |  |
-| `product_order_uuid` | `String.t()` | Yes |  |
-| `product_uuid` | `String.t()` | Yes |  |
+| `productOrderUUID` | `String.t()` | Yes |  |
+| `productUUID` | `String.t()` | Yes |  |
 | `reason_decline` | `String.t()` | Yes |  |
 | `sorting` | `map()` | No |  |
 
@@ -709,9 +709,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamProductController.create(merchant_portal_pam_product_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "package_order_uuid" => "example_package_order_uuid",  # String.t()
-  "product_order_uuid" => "example_product_order_uuid",  # String.t()
-  "product_uuid" => "example_product_uuid",  # String.t()
+  "packageOrderUUID" => "example_packageOrderUUID",  # String.t()
+  "productOrderUUID" => "example_productOrderUUID",  # String.t()
+  "productUUID" => "example_productUUID",  # String.t()
   "reason_decline" => "example_reason_decline",  # String.t()
 }))
 ```
@@ -755,10 +755,10 @@ output_add_product = BluefinTecsMerchantPortal.output_add_product(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `String.t()` | Yes |  |
-| `product_uui_d` | `list()` | Yes |  |
-| `response_code` | `integer()` | Yes |  |
-| `response_message` | `String.t()` | Yes |  |
+| `packageUUID` | `String.t()` | Yes |  |
+| `productUUIDs` | `list()` | Yes |  |
+| `responseCode` | `integer()` | Yes |  |
+| `responseMessage` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -768,10 +768,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantPortal.Entity.OutputAddProduct.create(output_add_product, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "package_uuid" => "example_package_uuid",  # String.t()
-  "product_uui_d" => [],  # list()
-  "response_code" => 1,  # integer()
-  "response_message" => "example_response_message",  # String.t()
+  "packageUUID" => "example_packageUUID",  # String.t()
+  "productUUIDs" => [],  # list()
+  "responseCode" => 1,  # integer()
+  "responseMessage" => "example_responseMessage",  # String.t()
 }))
 ```
 
@@ -814,20 +814,20 @@ output_create_product = BluefinTecsMerchantPortal.output_create_product(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String.t()` | No |  |
-| `allow_multiple_order` | `boolean()` | Yes |  |
-| `app_form_template_name` | `String.t()` | Yes |  |
-| `contract_needed` | `boolean()` | Yes |  |
-| `credentials_needed` | `boolean()` | No |  |
-| `description_key` | `String.t()` | Yes |  |
-| `name_key` | `String.t()` | Yes |  |
-| `prescreening_allowed` | `boolean()` | Yes |  |
-| `product_name` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | Yes |  |
-| `response_message` | `String.t()` | Yes |  |
-| `terminal_template_name` | `String.t()` | Yes |  |
-| `vendor_name` | `String.t()` | Yes |  |
-| `xml_template_file` | `String.t()` | Yes |  |
+| `acquirerId` | `String.t()` | No |  |
+| `allowMultipleOrders` | `boolean()` | Yes |  |
+| `appFormTemplateName` | `String.t()` | Yes |  |
+| `contractNeeded` | `boolean()` | Yes |  |
+| `credentialsNeeded` | `boolean()` | No |  |
+| `descriptionKey` | `String.t()` | Yes |  |
+| `nameKey` | `String.t()` | Yes |  |
+| `prescreeningAllowed` | `boolean()` | Yes |  |
+| `productName` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | Yes |  |
+| `responseMessage` | `String.t()` | Yes |  |
+| `terminalTemplateName` | `String.t()` | Yes |  |
+| `vendorName` | `String.t()` | Yes |  |
+| `xmlTemplateFile` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -837,18 +837,18 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantPortal.Entity.OutputCreateProduct.create(output_create_product, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "allow_multiple_order" => true,  # boolean()
-  "app_form_template_name" => "example_app_form_template_name",  # String.t()
-  "contract_needed" => true,  # boolean()
-  "description_key" => "example_description_key",  # String.t()
-  "name_key" => "example_name_key",  # String.t()
-  "prescreening_allowed" => true,  # boolean()
-  "product_name" => "example_product_name",  # String.t()
-  "response_code" => 1,  # integer()
-  "response_message" => "example_response_message",  # String.t()
-  "terminal_template_name" => "example_terminal_template_name",  # String.t()
-  "vendor_name" => "example_vendor_name",  # String.t()
-  "xml_template_file" => "example_xml_template_file",  # String.t()
+  "allowMultipleOrders" => true,  # boolean()
+  "appFormTemplateName" => "example_appFormTemplateName",  # String.t()
+  "contractNeeded" => true,  # boolean()
+  "descriptionKey" => "example_descriptionKey",  # String.t()
+  "nameKey" => "example_nameKey",  # String.t()
+  "prescreeningAllowed" => true,  # boolean()
+  "productName" => "example_productName",  # String.t()
+  "responseCode" => 1,  # integer()
+  "responseMessage" => "example_responseMessage",  # String.t()
+  "terminalTemplateName" => "example_terminalTemplateName",  # String.t()
+  "vendorName" => "example_vendorName",  # String.t()
+  "xmlTemplateFile" => "example_xmlTemplateFile",  # String.t()
 }))
 ```
 
@@ -891,9 +891,9 @@ output_detail = BluefinTecsMerchantPortal.output_detail(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `detail` | `map()` | No |  |
-| `response_code` | `integer()` | Yes |  |
-| `response_message` | `String.t()` | Yes |  |
+| `batch` | `map()` | No |  |
+| `lines` | `map()` | No |  |
+| `progress` | `map()` | No |  |
 
 ### Operations
 
@@ -944,10 +944,10 @@ output_list = BluefinTecsMerchantPortal.output_list(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `item` | `list()` | No |  |
+| `items` | `list()` | No |  |
 | `pagination` | `map()` | Yes |  |
-| `response_code` | `integer()` | Yes |  |
-| `response_message` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | Yes |  |
+| `responseMessage` | `String.t()` | Yes |  |
 | `sorting` | `map()` | No |  |
 
 ### Operations
@@ -959,8 +959,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```elixir
 record = BluefinTecsMerchantPortal.Entity.OutputList.create(output_list, BluefinTecsMerchantPortal.Helpers.deep(%{
   "pagination" => %{},  # map()
-  "response_code" => 1,  # integer()
-  "response_message" => "example_response_message",  # String.t()
+  "responseCode" => 1,  # integer()
+  "responseMessage" => "example_responseMessage",  # String.t()
 }))
 ```
 
@@ -1003,8 +1003,8 @@ output_message = BluefinTecsMerchantPortal.output_message(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `integer()` | Yes |  |
-| `response_message` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | Yes |  |
+| `responseMessage` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -1055,11 +1055,11 @@ output_move_tid = BluefinTecsMerchantPortal.output_move_tid(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `product_order_uui_d` | `list()` | Yes |  |
-| `response_code` | `integer()` | Yes |  |
-| `response_message` | `String.t()` | Yes |  |
-| `target_package_order_uuid` | `String.t()` | Yes |  |
-| `target_product_order_uuid` | `String.t()` | Yes |  |
+| `productOrderUUIDs` | `list()` | Yes |  |
+| `responseCode` | `integer()` | Yes |  |
+| `responseMessage` | `String.t()` | Yes |  |
+| `targetPackageOrderUUID` | `String.t()` | Yes |  |
+| `targetProductOrderUUID` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -1069,11 +1069,11 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantPortal.Entity.OutputMoveTid.create(output_move_tid, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "product_order_uui_d" => [],  # list()
-  "response_code" => 1,  # integer()
-  "response_message" => "example_response_message",  # String.t()
-  "target_package_order_uuid" => "example_target_package_order_uuid",  # String.t()
-  "target_product_order_uuid" => "example_target_product_order_uuid",  # String.t()
+  "productOrderUUIDs" => [],  # list()
+  "responseCode" => 1,  # integer()
+  "responseMessage" => "example_responseMessage",  # String.t()
+  "targetPackageOrderUUID" => "example_targetPackageOrderUUID",  # String.t()
+  "targetProductOrderUUID" => "example_targetProductOrderUUID",  # String.t()
 }))
 ```
 
@@ -1116,10 +1116,10 @@ output_remove_product = BluefinTecsMerchantPortal.output_remove_product(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `String.t()` | Yes |  |
-| `product_uui_d` | `list()` | Yes |  |
-| `response_code` | `integer()` | Yes |  |
-| `response_message` | `String.t()` | Yes |  |
+| `packageUUID` | `String.t()` | Yes |  |
+| `productUUIDs` | `list()` | Yes |  |
+| `responseCode` | `integer()` | Yes |  |
+| `responseMessage` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -1129,10 +1129,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantPortal.Entity.OutputRemoveProduct.create(output_remove_product, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "package_uuid" => "example_package_uuid",  # String.t()
-  "product_uui_d" => [],  # list()
-  "response_code" => 1,  # integer()
-  "response_message" => "example_response_message",  # String.t()
+  "packageUUID" => "example_packageUUID",  # String.t()
+  "productUUIDs" => [],  # list()
+  "responseCode" => 1,  # integer()
+  "responseMessage" => "example_responseMessage",  # String.t()
 }))
 ```
 
@@ -1176,8 +1176,8 @@ output_start = BluefinTecsMerchantPortal.output_start(sdk)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `String.t()` | No |  |
-| `response_code` | `integer()` | Yes |  |
-| `response_message` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | Yes |  |
+| `responseMessage` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -1187,8 +1187,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantPortal.Entity.OutputStart.create(output_start, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "response_code" => 1,  # integer()
-  "response_message" => "example_response_message",  # String.t()
+  "responseCode" => 1,  # integer()
+  "responseMessage" => "example_responseMessage",  # String.t()
 }))
 ```
 
@@ -1232,8 +1232,8 @@ output_status = BluefinTecsMerchantPortal.output_status(sdk)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `integer()` | No |  |
-| `response_code` | `integer()` | Yes |  |
-| `response_message` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | Yes |  |
+| `responseMessage` | `String.t()` | Yes |  |
 | `status` | `String.t()` | No |  |
 
 ### Operations
@@ -1285,19 +1285,19 @@ output_update_product = BluefinTecsMerchantPortal.output_update_product(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allow_multiple_order` | `boolean()` | No |  |
-| `app_form_name` | `String.t()` | No |  |
-| `contract_needed` | `boolean()` | No |  |
-| `credentials_needed` | `boolean()` | No |  |
-| `description_key` | `String.t()` | No |  |
-| `name_key` | `String.t()` | No |  |
-| `prescreening_allowed` | `boolean()` | No |  |
-| `product_name` | `String.t()` | No |  |
-| `product_status` | `String.t()` | No |  |
-| `product_uuid` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | Yes |  |
-| `response_message` | `String.t()` | Yes |  |
-| `vendor_name` | `String.t()` | No |  |
+| `allowMultipleOrders` | `boolean()` | No |  |
+| `appFormName` | `String.t()` | No |  |
+| `contractNeeded` | `boolean()` | No |  |
+| `credentialsNeeded` | `boolean()` | No |  |
+| `descriptionKey` | `String.t()` | No |  |
+| `nameKey` | `String.t()` | No |  |
+| `prescreeningAllowed` | `boolean()` | No |  |
+| `productName` | `String.t()` | No |  |
+| `productStatus` | `String.t()` | No |  |
+| `productUUID` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | Yes |  |
+| `responseMessage` | `String.t()` | Yes |  |
+| `vendorName` | `String.t()` | No |  |
 
 ### Operations
 
@@ -1307,9 +1307,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantPortal.Entity.OutputUpdateProduct.create(output_update_product, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "product_uuid" => "example_product_uuid",  # String.t()
-  "response_code" => 1,  # integer()
-  "response_message" => "example_response_message",  # String.t()
+  "productUUID" => "example_productUUID",  # String.t()
+  "responseCode" => 1,  # integer()
+  "responseMessage" => "example_responseMessage",  # String.t()
 }))
 ```
 

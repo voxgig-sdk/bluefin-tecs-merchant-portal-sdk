@@ -50,7 +50,7 @@ let client = BluefinTecsMerchantPortalSDK()
 ### 4. Create, update, and remove
 
 ```swift
-// Create — returns the bare created record (a Value)
+// Create — returns the ENTITY (call data() for the record)
 let created = try client.MerchantPortalApiController().create(VMap([("business_reg_number", .string("example_business_reg_number")), ("city", .string("example_city")), ("country", .string("example_country")), ("currency", .string("example_currency")), ("merchant_category_code", .int(1)), ("merchant_name", .string("example_merchant_name")), ("packageid", .string("example_packageid")), ("packageorderuuid", .string("example_packageorderuuid")), ("reason_deactivation", .string("example_reason_deactivation")), ("reason_reactivation", .string("example_reason_reactivation")), ("street", .string("example_street")), ("terminal_country_code", .string("example_terminal_country_code")), ("terminal_language_code", .string("example_terminal_language_code")), ("terminal_location", .string("example_terminal_location")), ("terminal_serial_number", .string("example_terminal_serial_number")), ("terminalid", .int(1)), ("vu_nummer", .string("example_vu_nummer")), ("zipcode", .string("example_zipcode"))]), nil)
 
 ```
@@ -132,7 +132,8 @@ Create a mock client for unit testing — no server required:
 ```swift
 let client = BluefinTecsMerchantPortalSDK.testSDK(nil, nil)
 
-// Entity ops return the bare record and throw on error.
+// Entity ops return the ENTITY and throws on error;
+// call data() for the record.
 let outputDetail = try client.OutputDetail().load(VMap([("id", .string("test01"))]), nil)
 // outputDetail holds the mock response record
 print(outputDetail)
@@ -245,7 +246,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `Value` map for
+Entity operations return the ENTITY (call data() for the record) (a `Value` map for
 single-entity ops, a `Value` list for `list`) and throw on error. Wrap
 calls in `do`/`catch` to handle failures.
 
@@ -319,7 +320,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -329,9 +330,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -341,15 +342,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: Create.
 
@@ -359,10 +360,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: Create.
 
@@ -373,29 +374,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -407,15 +408,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -427,14 +428,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -446,10 +447,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -459,20 +460,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: Create.
 
@@ -482,9 +483,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: Load.
 
@@ -494,10 +495,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -508,8 +509,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -519,11 +520,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: Create.
 
@@ -533,10 +534,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -547,8 +548,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -559,8 +560,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Load.
@@ -571,19 +572,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: Create.
 
@@ -700,14 +701,14 @@ Create an instance: `let merchantPortalPamContractController = client.MerchantPo
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `String` |  |
-| `product_order_uuid` | `String` |  |
+| `productOrderUUID` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let merchantPortalPamContractController = try client.MerchantPortalPamContractController().create(VMap([
     ("language", .string("example_language")),  // String
-    ("product_order_uuid", .string("example_product_order_uuid"))  // String
+    ("productOrderUUID", .string("example_productOrderUUID"))  // String
 ]), nil)
 ```
 
@@ -726,15 +727,15 @@ Create an instance: `let merchantPortalPamDocumentController = client.MerchantPo
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
+| `appFormFieldDescUUID` | `String` |  |
+| `packageOrderUUID` | `String` |  |
+| `productOrderUUID` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let merchantPortalPamDocumentController = try client.MerchantPortalPamDocumentController().create(VMap([
-    ("app_form_field_desc_uuid", .string("example_app_form_field_desc_uuid"))  // String
+    ("appFormFieldDescUUID", .string("example_appFormFieldDescUUID"))  // String
 ]), nil)
 ```
 
@@ -753,24 +754,24 @@ Create an instance: `let merchantPortalPamFormController = client.MerchantPortal
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `String` |  |
+| `appFormFieldsDescUUID` | `String` |  |
 | `filter` | `VMap` |  |
 | `language` | `String` |  |
-| `package_order` | `VMap` |  |
-| `package_order_uuid` | `String` |  |
-| `package_uuid` | `String` |  |
-| `product_order` | `[Value]` |  |
-| `product_order_uuid` | `String` |  |
-| `reason_of_reopening` | `String` |  |
+| `packageOrder` | `VMap` |  |
+| `packageOrderUUID` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productOrderUUID` | `String` |  |
+| `productOrders` | `[Value]` |  |
+| `reasonOfReopening` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let merchantPortalPamFormController = try client.MerchantPortalPamFormController().create(VMap([
-    ("app_form_fields_desc_uuid", .string("example_app_form_fields_desc_uuid")),  // String
+    ("appFormFieldsDescUUID", .string("example_appFormFieldsDescUUID")),  // String
     ("language", .string("example_language")),  // String
-    ("package_order_uuid", .string("example_package_order_uuid")),  // String
-    ("reason_of_reopening", .string("example_reason_of_reopening"))  // String
+    ("packageOrderUUID", .string("example_packageOrderUUID")),  // String
+    ("reasonOfReopening", .string("example_reasonOfReopening"))  // String
 ]), nil)
 ```
 
@@ -789,17 +790,17 @@ Create an instance: `let merchantPortalPamMandatorController = client.MerchantPo
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `String` |  |
-| `mandator_name` | `String` |  |
-| `notification_email` | `String` |  |
-| `package_uuid` | `String` |  |
+| `clientSecret` | `String` |  |
+| `mandatorName` | `String` |  |
+| `notificationEmail` | `String` |  |
+| `packageUUID` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let merchantPortalPamMandatorController = try client.MerchantPortalPamMandatorController().create(VMap([
-    ("mandator_name", .string("example_mandator_name")),  // String
-    ("package_uuid", .string("example_package_uuid"))  // String
+    ("mandatorName", .string("example_mandatorName")),  // String
+    ("packageUUID", .string("example_packageUUID"))  // String
 ]), nil)
 ```
 
@@ -819,29 +820,29 @@ Create an instance: `let merchantPortalPamMerchantController = client.MerchantPo
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `VMap` |  |
-| `business_registration_number` | `String` |  |
+| `businessRegistrationNumber` | `String` |  |
 | `city` | `String` |  |
-| `company_name` | `String` |  |
-| `corporate_uuid` | `String` |  |
+| `companyName` | `String` |  |
+| `corporateUUID` | `String` |  |
 | `country` | `String` |  |
 | `currency` | `String` |  |
 | `email` | `String` |  |
 | `language` | `String` |  |
 | `login` | `String` |  |
 | `mandator` | `String` |  |
+| `merchantContractNumber` | `String` |  |
+| `merchantName` | `String` |  |
 | `merchant_category_code` | `String` |  |
-| `merchant_contract_number` | `String` |  |
-| `merchant_name` | `String` |  |
-| `package_uuid` | `String` |  |
+| `packageUUID` | `String` |  |
 | `packageorderuuid` | `String` |  |
-| `phone_number` | `String` |  |
-| `postal_code` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `postalCode` | `String` |  |
 | `productid_acquirer` | `String` |  |
 | `region` | `String` |  |
-| `registration_number` | `String` |  |
+| `registrationNumber` | `String` |  |
 | `signature` | `String` |  |
 | `street` | `String` |  |
-| `terminal_id` | `[Value]` |  |
+| `terminalIds` | `[Value]` |  |
 | `terminalid_acquirer` | `String` |  |
 | `vu_nummer` | `String` |  |
 
@@ -849,17 +850,17 @@ Create an instance: `let merchantPortalPamMerchantController = client.MerchantPo
 
 ```swift
 let merchantPortalPamMerchantController = try client.MerchantPortalPamMerchantController().create(VMap([
-    ("business_registration_number", .string("example_business_registration_number")),  // String
-    ("company_name", .string("example_company_name")),  // String
-    ("corporate_uuid", .string("example_corporate_uuid")),  // String
+    ("businessRegistrationNumber", .string("example_businessRegistrationNumber")),  // String
+    ("companyName", .string("example_companyName")),  // String
+    ("corporateUUID", .string("example_corporateUUID")),  // String
     ("currency", .string("example_currency")),  // String
     ("email", .string("example_email")),  // String
     ("language", .string("example_language")),  // String
     ("login", .string("example_login")),  // String
     ("mandator", .string("example_mandator")),  // String
-    ("merchant_contract_number", .string("example_merchant_contract_number")),  // String
+    ("merchantContractNumber", .string("example_merchantContractNumber")),  // String
     ("packageorderuuid", .string("example_packageorderuuid")),  // String
-    ("phone_number", .string("example_phone_number")),  // String
+    ("phoneNumber", .string("example_phoneNumber")),  // String
     ("productid_acquirer", .string("example_productid_acquirer")),  // String
     ("vu_nummer", .string("example_vu_nummer"))  // String
 ]), nil)
@@ -880,15 +881,15 @@ Create an instance: `let merchantPortalPamPackageController = client.MerchantPor
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `corporate_uuid` | `String` |  |
+| `consumerUUID` | `String` |  |
+| `corporateUUID` | `String` |  |
 | `country` | `String` |  |
-| `description_key` | `String` |  |
+| `descriptionKey` | `String` |  |
 | `filter` | `VMap` |  |
 | `language` | `String` |  |
-| `name_key` | `String` |  |
-| `package_status` | `String` |  |
-| `package_uuid` | `String` |  |
+| `nameKey` | `String` |  |
+| `packageStatus` | `String` |  |
+| `packageUUID` | `String` |  |
 | `pagination` | `VMap` |  |
 | `sorting` | `VMap` |  |
 
@@ -897,7 +898,7 @@ Create an instance: `let merchantPortalPamPackageController = client.MerchantPor
 ```swift
 let merchantPortalPamPackageController = try client.MerchantPortalPamPackageController().create(VMap([
     ("language", .string("example_language")),  // String
-    ("package_uuid", .string("example_package_uuid"))  // String
+    ("packageUUID", .string("example_packageUUID"))  // String
 ]), nil)
 ```
 
@@ -916,14 +917,14 @@ Create an instance: `let merchantPortalPamProductController = client.MerchantPor
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
+| `consumerUUID` | `String` |  |
 | `filter` | `VMap` |  |
 | `language` | `String` |  |
-| `merchant_id` | `String` |  |
-| `package_order_uuid` | `String` |  |
+| `merchantID` | `String` |  |
+| `packageOrderUUID` | `String` |  |
 | `pagination` | `VMap` |  |
-| `product_order_uuid` | `String` |  |
-| `product_uuid` | `String` |  |
+| `productOrderUUID` | `String` |  |
+| `productUUID` | `String` |  |
 | `reason_decline` | `String` |  |
 | `sorting` | `VMap` |  |
 
@@ -931,9 +932,9 @@ Create an instance: `let merchantPortalPamProductController = client.MerchantPor
 
 ```swift
 let merchantPortalPamProductController = try client.MerchantPortalPamProductController().create(VMap([
-    ("package_order_uuid", .string("example_package_order_uuid")),  // String
-    ("product_order_uuid", .string("example_product_order_uuid")),  // String
-    ("product_uuid", .string("example_product_uuid")),  // String
+    ("packageOrderUUID", .string("example_packageOrderUUID")),  // String
+    ("productOrderUUID", .string("example_productOrderUUID")),  // String
+    ("productUUID", .string("example_productUUID")),  // String
     ("reason_decline", .string("example_reason_decline"))  // String
 ]), nil)
 ```
@@ -953,19 +954,19 @@ Create an instance: `let outputAddProduct = client.OutputAddProduct()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `String` |  |
-| `product_uui_d` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productUUIDs` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let outputAddProduct = try client.OutputAddProduct().create(VMap([
-    ("package_uuid", .string("example_package_uuid")),  // String
-    ("product_uui_d", .list([])),  // [Value]
-    ("response_code", .int(1)),  // Int
-    ("response_message", .string("example_response_message"))  // String
+    ("packageUUID", .string("example_packageUUID")),  // String
+    ("productUUIDs", .list([])),  // [Value]
+    ("responseCode", .int(1)),  // Int
+    ("responseMessage", .string("example_responseMessage"))  // String
 ]), nil)
 ```
 
@@ -984,37 +985,37 @@ Create an instance: `let outputCreateProduct = client.OutputCreateProduct()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `allow_multiple_order` | `Bool` |  |
-| `app_form_template_name` | `String` |  |
-| `contract_needed` | `Bool` |  |
-| `credentials_needed` | `Bool` |  |
-| `description_key` | `String` |  |
-| `name_key` | `String` |  |
-| `prescreening_allowed` | `Bool` |  |
-| `product_name` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_template_name` | `String` |  |
-| `vendor_name` | `String` |  |
-| `xml_template_file` | `String` |  |
+| `acquirerId` | `String` |  |
+| `allowMultipleOrders` | `Bool` |  |
+| `appFormTemplateName` | `String` |  |
+| `contractNeeded` | `Bool` |  |
+| `credentialsNeeded` | `Bool` |  |
+| `descriptionKey` | `String` |  |
+| `nameKey` | `String` |  |
+| `prescreeningAllowed` | `Bool` |  |
+| `productName` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalTemplateName` | `String` |  |
+| `vendorName` | `String` |  |
+| `xmlTemplateFile` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let outputCreateProduct = try client.OutputCreateProduct().create(VMap([
-    ("allow_multiple_order", .bool(true)),  // Bool
-    ("app_form_template_name", .string("example_app_form_template_name")),  // String
-    ("contract_needed", .bool(true)),  // Bool
-    ("description_key", .string("example_description_key")),  // String
-    ("name_key", .string("example_name_key")),  // String
-    ("prescreening_allowed", .bool(true)),  // Bool
-    ("product_name", .string("example_product_name")),  // String
-    ("response_code", .int(1)),  // Int
-    ("response_message", .string("example_response_message")),  // String
-    ("terminal_template_name", .string("example_terminal_template_name")),  // String
-    ("vendor_name", .string("example_vendor_name")),  // String
-    ("xml_template_file", .string("example_xml_template_file"))  // String
+    ("allowMultipleOrders", .bool(true)),  // Bool
+    ("appFormTemplateName", .string("example_appFormTemplateName")),  // String
+    ("contractNeeded", .bool(true)),  // Bool
+    ("descriptionKey", .string("example_descriptionKey")),  // String
+    ("nameKey", .string("example_nameKey")),  // String
+    ("prescreeningAllowed", .bool(true)),  // Bool
+    ("productName", .string("example_productName")),  // String
+    ("responseCode", .int(1)),  // Int
+    ("responseMessage", .string("example_responseMessage")),  // String
+    ("terminalTemplateName", .string("example_terminalTemplateName")),  // String
+    ("vendorName", .string("example_vendorName")),  // String
+    ("xmlTemplateFile", .string("example_xmlTemplateFile"))  // String
 ]), nil)
 ```
 
@@ -1033,9 +1034,9 @@ Create an instance: `let outputDetail = client.OutputDetail()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `VMap` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `batch` | `VMap` |  |
+| `lines` | `VMap` |  |
+| `progress` | `VMap` |  |
 
 #### Example: Load
 
@@ -1058,10 +1059,10 @@ Create an instance: `let outputList = client.OutputList()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `[Value]` |  |
+| `items` | `[Value]` |  |
 | `pagination` | `VMap` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `VMap` |  |
 
 #### Example: Create
@@ -1069,8 +1070,8 @@ Create an instance: `let outputList = client.OutputList()`
 ```swift
 let outputList = try client.OutputList().create(VMap([
     ("pagination", .map(VMap())),  // VMap
-    ("response_code", .int(1)),  // Int
-    ("response_message", .string("example_response_message"))  // String
+    ("responseCode", .int(1)),  // Int
+    ("responseMessage", .string("example_responseMessage"))  // String
 ]), nil)
 ```
 
@@ -1089,8 +1090,8 @@ Create an instance: `let outputMessage = client.OutputMessage()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Load
 
@@ -1113,21 +1114,21 @@ Create an instance: `let outputMoveTid = client.OutputMoveTid()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `target_package_order_uuid` | `String` |  |
-| `target_product_order_uuid` | `String` |  |
+| `productOrderUUIDs` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `targetPackageOrderUUID` | `String` |  |
+| `targetProductOrderUUID` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let outputMoveTid = try client.OutputMoveTid().create(VMap([
-    ("product_order_uui_d", .list([])),  // [Value]
-    ("response_code", .int(1)),  // Int
-    ("response_message", .string("example_response_message")),  // String
-    ("target_package_order_uuid", .string("example_target_package_order_uuid")),  // String
-    ("target_product_order_uuid", .string("example_target_product_order_uuid"))  // String
+    ("productOrderUUIDs", .list([])),  // [Value]
+    ("responseCode", .int(1)),  // Int
+    ("responseMessage", .string("example_responseMessage")),  // String
+    ("targetPackageOrderUUID", .string("example_targetPackageOrderUUID")),  // String
+    ("targetProductOrderUUID", .string("example_targetProductOrderUUID"))  // String
 ]), nil)
 ```
 
@@ -1146,19 +1147,19 @@ Create an instance: `let outputRemoveProduct = client.OutputRemoveProduct()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `String` |  |
-| `product_uui_d` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productUUIDs` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let outputRemoveProduct = try client.OutputRemoveProduct().create(VMap([
-    ("package_uuid", .string("example_package_uuid")),  // String
-    ("product_uui_d", .list([])),  // [Value]
-    ("response_code", .int(1)),  // Int
-    ("response_message", .string("example_response_message"))  // String
+    ("packageUUID", .string("example_packageUUID")),  // String
+    ("productUUIDs", .list([])),  // [Value]
+    ("responseCode", .int(1)),  // Int
+    ("responseMessage", .string("example_responseMessage"))  // String
 ]), nil)
 ```
 
@@ -1178,15 +1179,15 @@ Create an instance: `let outputStart = client.OutputStart()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let outputStart = try client.OutputStart().create(VMap([
-    ("response_code", .int(1)),  // Int
-    ("response_message", .string("example_response_message"))  // String
+    ("responseCode", .int(1)),  // Int
+    ("responseMessage", .string("example_responseMessage"))  // String
 ]), nil)
 ```
 
@@ -1206,8 +1207,8 @@ Create an instance: `let outputStatus = client.OutputStatus()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `Int` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `status` | `String` |  |
 
 #### Example: Load
@@ -1231,27 +1232,27 @@ Create an instance: `let outputUpdateProduct = client.OutputUpdateProduct()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `Bool` |  |
-| `app_form_name` | `String` |  |
-| `contract_needed` | `Bool` |  |
-| `credentials_needed` | `Bool` |  |
-| `description_key` | `String` |  |
-| `name_key` | `String` |  |
-| `prescreening_allowed` | `Bool` |  |
-| `product_name` | `String` |  |
-| `product_status` | `String` |  |
-| `product_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `vendor_name` | `String` |  |
+| `allowMultipleOrders` | `Bool` |  |
+| `appFormName` | `String` |  |
+| `contractNeeded` | `Bool` |  |
+| `credentialsNeeded` | `Bool` |  |
+| `descriptionKey` | `String` |  |
+| `nameKey` | `String` |  |
+| `prescreeningAllowed` | `Bool` |  |
+| `productName` | `String` |  |
+| `productStatus` | `String` |  |
+| `productUUID` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `vendorName` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let outputUpdateProduct = try client.OutputUpdateProduct().create(VMap([
-    ("product_uuid", .string("example_product_uuid")),  // String
-    ("response_code", .int(1)),  // Int
-    ("response_message", .string("example_response_message"))  // String
+    ("productUUID", .string("example_productUUID")),  // String
+    ("responseCode", .int(1)),  // Int
+    ("responseMessage", .string("example_responseMessage"))  // String
 ]), nil)
 ```
 

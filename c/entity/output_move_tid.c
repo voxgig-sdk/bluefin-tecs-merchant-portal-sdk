@@ -14,6 +14,8 @@ typedef struct output_move_tid_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } output_move_tid_entity;
 
 typedef void (*output_move_tid_postdone_fn)(output_move_tid_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* output_move_tid_get_name(Entity* e);
 static Entity* output_move_tid_make(Entity* e);
 static voxgig_value* output_move_tid_data(Entity* e, voxgig_value* args);
 static voxgig_value* output_move_tid_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* output_move_tid_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_move_tid_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_move_tid_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_move_tid_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_move_tid_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* output_move_tid_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** output_move_tid_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* output_move_tid_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_move_tid_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_move_tid_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void output_move_tid_mark_deleted(Entity* e);
+static bool output_move_tid_deleted(Entity* e);
 
 static Context* output_move_tid_ent_ctx(output_move_tid_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* output_move_tid_matchv(Entity* e, voxgig_value* args) {
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* output_move_tid_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_move_tid_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "output_move_tid");
   return NULL;
 }
 
-static voxgig_value* output_move_tid_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** output_move_tid_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "output_move_tid");
   return NULL;
@@ -260,7 +265,7 @@ static void output_move_tid_create_postdone(output_move_tid_entity* self, Contex
   }
 }
 
-static voxgig_value* output_move_tid_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* output_move_tid_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   output_move_tid_entity* self = (output_move_tid_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* output_move_tid_create(Entity* e, voxgig_value* reqdata, vo
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, output_move_tid_ent_ctx(self));
-  return output_move_tid_run_op(self, ctx, output_move_tid_create_postdone, err);
+  output_move_tid_run_op(self, ctx, output_move_tid_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* output_move_tid_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_move_tid_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "output_move_tid");
   return NULL;
 }
 
-static voxgig_value* output_move_tid_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_move_tid_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "output_move_tid");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void output_move_tid_mark_deleted(Entity* e) {
+  ((output_move_tid_entity*)e)->deleted = true;
+}
+
+static bool output_move_tid_deleted(Entity* e) {
+  return ((output_move_tid_entity*)e)->deleted;
 }
 
 static const EntityVT output_move_tid_VT = {
@@ -291,6 +314,8 @@ static const EntityVT output_move_tid_VT = {
   output_move_tid_make,
   output_move_tid_data,
   output_move_tid_matchv,
+  output_move_tid_mark_deleted,
+  output_move_tid_deleted,
   output_move_tid_load,
   output_move_tid_list,
   output_move_tid_create,

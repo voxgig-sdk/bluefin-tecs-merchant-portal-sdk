@@ -45,7 +45,7 @@ my $client = BluefinTecsMerchantPortalSDK->new;
 ### 4. Create, update, and remove
 
 ```perl
-# Create — returns the bare created record (a hashref)
+# Create — returns the ENTITY (call data_get for the record)
 my $created = $client->MerchantPortalApiController->create({ 'business_reg_number' => 'example_business_reg_number', 'city' => 'example_city', 'country' => 'example_country', 'currency' => 'example_currency', 'merchant_category_code' => 1, 'merchant_name' => 'example_merchant_name', 'packageid' => 'example_packageid', 'packageorderuuid' => 'example_packageorderuuid', 'reason_deactivation' => 'example_reason_deactivation', 'reason_reactivation' => 'example_reason_reactivation', 'street' => 'example_street', 'terminal_country_code' => 'example_terminal_country_code', 'terminal_language_code' => 'example_terminal_language_code', 'terminal_location' => 'example_terminal_location', 'terminal_serial_number' => 'example_terminal_serial_number', 'terminalid' => 1, 'vu_nummer' => 'example_vu_nummer', 'zipcode' => 'example_zipcode' });
 
 ```
@@ -127,7 +127,8 @@ Create a mock client for unit testing — no server required:
 ```perl
 my $client = BluefinTecsMerchantPortalSDK->test(undef, undef);
 
-# Entity ops return the bare record and die on error.
+# Entity ops return the ENTITY and dies on error;
+# call data_get for the record.
 my $outputdetail = $client->OutputDetail->load({ 'id' => 'test01' });
 # $outputdetail contains the mock response record
 ```
@@ -243,7 +244,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `hashref` for single-entity
+Entity operations return the ENTITY (call data_get for the record) (a `hashref` for single-entity
 ops, an `arrayref` for `list`) and die on error. Wrap calls in
 `eval { ... }` and inspect `$@` to handle failures.
 
@@ -317,7 +318,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -327,9 +328,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -339,15 +340,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: Create.
 
@@ -357,10 +358,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: Create.
 
@@ -371,29 +372,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -405,15 +406,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -425,14 +426,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -444,10 +445,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -457,20 +458,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: Create.
 
@@ -480,9 +481,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: Load.
 
@@ -492,10 +493,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -506,8 +507,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -517,11 +518,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: Create.
 
@@ -531,10 +532,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -545,8 +546,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -557,8 +558,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Load.
@@ -569,19 +570,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: Create.
 
@@ -698,14 +699,14 @@ Create an instance: `my $merchant_portal_pam_contract_controller = $client->Merc
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $merchant_portal_pam_contract_controller = $client->MerchantPortalPamContractController->create({
     'language' => 'example_language',  # string
-    'product_order_uuid' => 'example_product_order_uuid',  # string
+    'productOrderUUID' => 'example_productOrderUUID',  # string
 });
 ```
 
@@ -724,15 +725,15 @@ Create an instance: `my $merchant_portal_pam_document_controller = $client->Merc
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `appFormFieldDescUUID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $merchant_portal_pam_document_controller = $client->MerchantPortalPamDocumentController->create({
-    'app_form_field_desc_uuid' => 'example_app_form_field_desc_uuid',  # string
+    'appFormFieldDescUUID' => 'example_appFormFieldDescUUID',  # string
 });
 ```
 
@@ -751,24 +752,24 @@ Create an instance: `my $merchant_portal_pam_form_controller = $client->Merchant
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `string` |  |
+| `appFormFieldsDescUUID` | `string` |  |
 | `filter` | `hashref` |  |
 | `language` | `string` |  |
-| `package_order` | `hashref` |  |
-| `package_order_uuid` | `string` |  |
-| `package_uuid` | `string` |  |
-| `product_order` | `arrayref` |  |
-| `product_order_uuid` | `string` |  |
-| `reason_of_reopening` | `string` |  |
+| `packageOrder` | `hashref` |  |
+| `packageOrderUUID` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productOrders` | `arrayref` |  |
+| `reasonOfReopening` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $merchant_portal_pam_form_controller = $client->MerchantPortalPamFormController->create({
-    'app_form_fields_desc_uuid' => 'example_app_form_fields_desc_uuid',  # string
+    'appFormFieldsDescUUID' => 'example_appFormFieldsDescUUID',  # string
     'language' => 'example_language',  # string
-    'package_order_uuid' => 'example_package_order_uuid',  # string
-    'reason_of_reopening' => 'example_reason_of_reopening',  # string
+    'packageOrderUUID' => 'example_packageOrderUUID',  # string
+    'reasonOfReopening' => 'example_reasonOfReopening',  # string
 });
 ```
 
@@ -787,17 +788,17 @@ Create an instance: `my $merchant_portal_pam_mandator_controller = $client->Merc
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `string` |  |
-| `mandator_name` | `string` |  |
-| `notification_email` | `string` |  |
-| `package_uuid` | `string` |  |
+| `clientSecret` | `string` |  |
+| `mandatorName` | `string` |  |
+| `notificationEmail` | `string` |  |
+| `packageUUID` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $merchant_portal_pam_mandator_controller = $client->MerchantPortalPamMandatorController->create({
-    'mandator_name' => 'example_mandator_name',  # string
-    'package_uuid' => 'example_package_uuid',  # string
+    'mandatorName' => 'example_mandatorName',  # string
+    'packageUUID' => 'example_packageUUID',  # string
 });
 ```
 
@@ -817,29 +818,29 @@ Create an instance: `my $merchant_portal_pam_merchant_controller = $client->Merc
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `hashref` |  |
-| `business_registration_number` | `string` |  |
+| `businessRegistrationNumber` | `string` |  |
 | `city` | `string` |  |
-| `company_name` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `companyName` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
 | `currency` | `string` |  |
 | `email` | `string` |  |
 | `language` | `string` |  |
 | `login` | `string` |  |
 | `mandator` | `string` |  |
+| `merchantContractNumber` | `string` |  |
+| `merchantName` | `string` |  |
 | `merchant_category_code` | `string` |  |
-| `merchant_contract_number` | `string` |  |
-| `merchant_name` | `string` |  |
-| `package_uuid` | `string` |  |
+| `packageUUID` | `string` |  |
 | `packageorderuuid` | `string` |  |
-| `phone_number` | `string` |  |
-| `postal_code` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `postalCode` | `string` |  |
 | `productid_acquirer` | `string` |  |
 | `region` | `string` |  |
-| `registration_number` | `string` |  |
+| `registrationNumber` | `string` |  |
 | `signature` | `string` |  |
 | `street` | `string` |  |
-| `terminal_id` | `arrayref` |  |
+| `terminalIds` | `arrayref` |  |
 | `terminalid_acquirer` | `string` |  |
 | `vu_nummer` | `string` |  |
 
@@ -847,17 +848,17 @@ Create an instance: `my $merchant_portal_pam_merchant_controller = $client->Merc
 
 ```perl
 my $merchant_portal_pam_merchant_controller = $client->MerchantPortalPamMerchantController->create({
-    'business_registration_number' => 'example_business_registration_number',  # string
-    'company_name' => 'example_company_name',  # string
-    'corporate_uuid' => 'example_corporate_uuid',  # string
+    'businessRegistrationNumber' => 'example_businessRegistrationNumber',  # string
+    'companyName' => 'example_companyName',  # string
+    'corporateUUID' => 'example_corporateUUID',  # string
     'currency' => 'example_currency',  # string
     'email' => 'example_email',  # string
     'language' => 'example_language',  # string
     'login' => 'example_login',  # string
     'mandator' => 'example_mandator',  # string
-    'merchant_contract_number' => 'example_merchant_contract_number',  # string
+    'merchantContractNumber' => 'example_merchantContractNumber',  # string
     'packageorderuuid' => 'example_packageorderuuid',  # string
-    'phone_number' => 'example_phone_number',  # string
+    'phoneNumber' => 'example_phoneNumber',  # string
     'productid_acquirer' => 'example_productid_acquirer',  # string
     'vu_nummer' => 'example_vu_nummer',  # string
 });
@@ -878,15 +879,15 @@ Create an instance: `my $merchant_portal_pam_package_controller = $client->Merch
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
-| `description_key` | `string` |  |
+| `descriptionKey` | `string` |  |
 | `filter` | `hashref` |  |
 | `language` | `string` |  |
-| `name_key` | `string` |  |
-| `package_status` | `string` |  |
-| `package_uuid` | `string` |  |
+| `nameKey` | `string` |  |
+| `packageStatus` | `string` |  |
+| `packageUUID` | `string` |  |
 | `pagination` | `hashref` |  |
 | `sorting` | `hashref` |  |
 
@@ -895,7 +896,7 @@ Create an instance: `my $merchant_portal_pam_package_controller = $client->Merch
 ```perl
 my $merchant_portal_pam_package_controller = $client->MerchantPortalPamPackageController->create({
     'language' => 'example_language',  # string
-    'package_uuid' => 'example_package_uuid',  # string
+    'packageUUID' => 'example_packageUUID',  # string
 });
 ```
 
@@ -914,14 +915,14 @@ Create an instance: `my $merchant_portal_pam_product_controller = $client->Merch
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
 | `filter` | `hashref` |  |
 | `language` | `string` |  |
-| `merchant_id` | `string` |  |
-| `package_order_uuid` | `string` |  |
+| `merchantID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
 | `pagination` | `hashref` |  |
-| `product_order_uuid` | `string` |  |
-| `product_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productUUID` | `string` |  |
 | `reason_decline` | `string` |  |
 | `sorting` | `hashref` |  |
 
@@ -929,9 +930,9 @@ Create an instance: `my $merchant_portal_pam_product_controller = $client->Merch
 
 ```perl
 my $merchant_portal_pam_product_controller = $client->MerchantPortalPamProductController->create({
-    'package_order_uuid' => 'example_package_order_uuid',  # string
-    'product_order_uuid' => 'example_product_order_uuid',  # string
-    'product_uuid' => 'example_product_uuid',  # string
+    'packageOrderUUID' => 'example_packageOrderUUID',  # string
+    'productOrderUUID' => 'example_productOrderUUID',  # string
+    'productUUID' => 'example_productUUID',  # string
     'reason_decline' => 'example_reason_decline',  # string
 });
 ```
@@ -951,19 +952,19 @@ Create an instance: `my $output_add_product = $client->OutputAddProduct;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `arrayref` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `arrayref` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $output_add_product = $client->OutputAddProduct->create({
-    'package_uuid' => 'example_package_uuid',  # string
-    'product_uui_d' => [],  # arrayref
-    'response_code' => 1,  # integer
-    'response_message' => 'example_response_message',  # string
+    'packageUUID' => 'example_packageUUID',  # string
+    'productUUIDs' => [],  # arrayref
+    'responseCode' => 1,  # integer
+    'responseMessage' => 'example_responseMessage',  # string
 });
 ```
 
@@ -982,37 +983,37 @@ Create an instance: `my $output_create_product = $client->OutputCreateProduct;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `string` |  |
-| `allow_multiple_order` | `boolean` |  |
-| `app_form_template_name` | `string` |  |
-| `contract_needed` | `boolean` |  |
-| `credentials_needed` | `boolean` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `boolean` |  |
-| `product_name` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
-| `terminal_template_name` | `string` |  |
-| `vendor_name` | `string` |  |
-| `xml_template_file` | `string` |  |
+| `acquirerId` | `string` |  |
+| `allowMultipleOrders` | `boolean` |  |
+| `appFormTemplateName` | `string` |  |
+| `contractNeeded` | `boolean` |  |
+| `credentialsNeeded` | `boolean` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `boolean` |  |
+| `productName` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
+| `terminalTemplateName` | `string` |  |
+| `vendorName` | `string` |  |
+| `xmlTemplateFile` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $output_create_product = $client->OutputCreateProduct->create({
-    'allow_multiple_order' => 1,  # boolean
-    'app_form_template_name' => 'example_app_form_template_name',  # string
-    'contract_needed' => 1,  # boolean
-    'description_key' => 'example_description_key',  # string
-    'name_key' => 'example_name_key',  # string
-    'prescreening_allowed' => 1,  # boolean
-    'product_name' => 'example_product_name',  # string
-    'response_code' => 1,  # integer
-    'response_message' => 'example_response_message',  # string
-    'terminal_template_name' => 'example_terminal_template_name',  # string
-    'vendor_name' => 'example_vendor_name',  # string
-    'xml_template_file' => 'example_xml_template_file',  # string
+    'allowMultipleOrders' => 1,  # boolean
+    'appFormTemplateName' => 'example_appFormTemplateName',  # string
+    'contractNeeded' => 1,  # boolean
+    'descriptionKey' => 'example_descriptionKey',  # string
+    'nameKey' => 'example_nameKey',  # string
+    'prescreeningAllowed' => 1,  # boolean
+    'productName' => 'example_productName',  # string
+    'responseCode' => 1,  # integer
+    'responseMessage' => 'example_responseMessage',  # string
+    'terminalTemplateName' => 'example_terminalTemplateName',  # string
+    'vendorName' => 'example_vendorName',  # string
+    'xmlTemplateFile' => 'example_xmlTemplateFile',  # string
 });
 ```
 
@@ -1031,9 +1032,9 @@ Create an instance: `my $output_detail = $client->OutputDetail;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `hashref` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `batch` | `hashref` |  |
+| `lines` | `hashref` |  |
+| `progress` | `hashref` |  |
 
 #### Example: Load
 
@@ -1056,10 +1057,10 @@ Create an instance: `my $output_list = $client->OutputList;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `arrayref` |  |
+| `items` | `arrayref` |  |
 | `pagination` | `hashref` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `hashref` |  |
 
 #### Example: Create
@@ -1067,8 +1068,8 @@ Create an instance: `my $output_list = $client->OutputList;`
 ```perl
 my $output_list = $client->OutputList->create({
     'pagination' => {},  # hashref
-    'response_code' => 1,  # integer
-    'response_message' => 'example_response_message',  # string
+    'responseCode' => 1,  # integer
+    'responseMessage' => 'example_responseMessage',  # string
 });
 ```
 
@@ -1087,8 +1088,8 @@ Create an instance: `my $output_message = $client->OutputMessage;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Load
 
@@ -1111,21 +1112,21 @@ Create an instance: `my $output_move_tid = $client->OutputMoveTid;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `arrayref` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
-| `target_package_order_uuid` | `string` |  |
-| `target_product_order_uuid` | `string` |  |
+| `productOrderUUIDs` | `arrayref` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
+| `targetPackageOrderUUID` | `string` |  |
+| `targetProductOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $output_move_tid = $client->OutputMoveTid->create({
-    'product_order_uui_d' => [],  # arrayref
-    'response_code' => 1,  # integer
-    'response_message' => 'example_response_message',  # string
-    'target_package_order_uuid' => 'example_target_package_order_uuid',  # string
-    'target_product_order_uuid' => 'example_target_product_order_uuid',  # string
+    'productOrderUUIDs' => [],  # arrayref
+    'responseCode' => 1,  # integer
+    'responseMessage' => 'example_responseMessage',  # string
+    'targetPackageOrderUUID' => 'example_targetPackageOrderUUID',  # string
+    'targetProductOrderUUID' => 'example_targetProductOrderUUID',  # string
 });
 ```
 
@@ -1144,19 +1145,19 @@ Create an instance: `my $output_remove_product = $client->OutputRemoveProduct;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `arrayref` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `arrayref` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $output_remove_product = $client->OutputRemoveProduct->create({
-    'package_uuid' => 'example_package_uuid',  # string
-    'product_uui_d' => [],  # arrayref
-    'response_code' => 1,  # integer
-    'response_message' => 'example_response_message',  # string
+    'packageUUID' => 'example_packageUUID',  # string
+    'productUUIDs' => [],  # arrayref
+    'responseCode' => 1,  # integer
+    'responseMessage' => 'example_responseMessage',  # string
 });
 ```
 
@@ -1176,15 +1177,15 @@ Create an instance: `my $output_start = $client->OutputStart;`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $output_start = $client->OutputStart->create({
-    'response_code' => 1,  # integer
-    'response_message' => 'example_response_message',  # string
+    'responseCode' => 1,  # integer
+    'responseMessage' => 'example_responseMessage',  # string
 });
 ```
 
@@ -1204,8 +1205,8 @@ Create an instance: `my $output_status = $client->OutputStatus;`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `integer` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 | `status` | `string` |  |
 
 #### Example: Load
@@ -1229,27 +1230,27 @@ Create an instance: `my $output_update_product = $client->OutputUpdateProduct;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `boolean` |  |
-| `app_form_name` | `string` |  |
-| `contract_needed` | `boolean` |  |
-| `credentials_needed` | `boolean` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `boolean` |  |
-| `product_name` | `string` |  |
-| `product_status` | `string` |  |
-| `product_uuid` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
-| `vendor_name` | `string` |  |
+| `allowMultipleOrders` | `boolean` |  |
+| `appFormName` | `string` |  |
+| `contractNeeded` | `boolean` |  |
+| `credentialsNeeded` | `boolean` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `boolean` |  |
+| `productName` | `string` |  |
+| `productStatus` | `string` |  |
+| `productUUID` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
+| `vendorName` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $output_update_product = $client->OutputUpdateProduct->create({
-    'product_uuid' => 'example_product_uuid',  # string
-    'response_code' => 1,  # integer
-    'response_message' => 'example_response_message',  # string
+    'productUUID' => 'example_productUUID',  # string
+    'responseCode' => 1,  # integer
+    'responseMessage' => 'example_responseMessage',  # string
 });
 ```
 

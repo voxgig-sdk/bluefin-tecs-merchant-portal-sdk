@@ -14,6 +14,8 @@ typedef struct output_status_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } output_status_entity;
 
 typedef void (*output_status_postdone_fn)(output_status_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* output_status_get_name(Entity* e);
 static Entity* output_status_make(Entity* e);
 static voxgig_value* output_status_data(Entity* e, voxgig_value* args);
 static voxgig_value* output_status_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* output_status_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_status_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_status_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_status_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_status_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* output_status_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** output_status_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* output_status_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_status_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_status_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void output_status_mark_deleted(Entity* e);
+static bool output_status_deleted(Entity* e);
 
 static Context* output_status_ent_ctx(output_status_entity* self) {
   return self->entctx;
@@ -250,7 +255,7 @@ static void output_status_load_postdone(output_status_entity* self, Context* ctx
   }
 }
 
-static voxgig_value* output_status_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err) {
+static Entity* output_status_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err) {
   output_status_entity* self = (output_status_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -260,32 +265,50 @@ static voxgig_value* output_status_load(Entity* e, voxgig_value* reqmatch, voxgi
   cs.data = self->data;
   cs.reqmatch = reqmatch;
   Context* ctx = make_context_util(cs, output_status_ent_ctx(self));
-  return output_status_run_op(self, ctx, output_status_load_postdone, err);
+  output_status_run_op(self, ctx, output_status_load_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* output_status_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** output_status_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "output_status");
   return NULL;
 }
 
-static voxgig_value* output_status_create(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_status_create(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("create", "output_status");
   return NULL;
 }
 
-static voxgig_value* output_status_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_status_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "output_status");
   return NULL;
 }
 
-static voxgig_value* output_status_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_status_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "output_status");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void output_status_mark_deleted(Entity* e) {
+  ((output_status_entity*)e)->deleted = true;
+}
+
+static bool output_status_deleted(Entity* e) {
+  return ((output_status_entity*)e)->deleted;
 }
 
 static const EntityVT output_status_VT = {
@@ -293,6 +316,8 @@ static const EntityVT output_status_VT = {
   output_status_make,
   output_status_data,
   output_status_matchv,
+  output_status_mark_deleted,
+  output_status_deleted,
   output_status_load,
   output_status_list,
   output_status_create,

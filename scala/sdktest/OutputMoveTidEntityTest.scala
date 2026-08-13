@@ -35,7 +35,7 @@ object OutputMoveTidEntityTest {
       var outputMoveTidRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_move_tid"), "output_move_tid_ref01"))
       val outputMoveTidRef01DataResult = outputMoveTidRef01Ent.create(outputMoveTidRef01Data, null)
-      outputMoveTidRef01Data = Helpers.toMapAny(outputMoveTidRef01DataResult)
+      outputMoveTidRef01Data = Helpers.toMapAny(outputMoveTidRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_move_tid.create.map", outputMoveTidRef01Data != null, "expected create result to be a map")
     }
   }

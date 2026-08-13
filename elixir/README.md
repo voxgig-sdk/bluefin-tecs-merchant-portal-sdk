@@ -338,7 +338,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -348,9 +348,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -360,15 +360,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: Create.
 
@@ -378,10 +378,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: Create.
 
@@ -392,29 +392,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -426,15 +426,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -446,14 +446,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -465,10 +465,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -478,20 +478,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: Create.
 
@@ -501,9 +501,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: Load.
 
@@ -513,10 +513,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -527,8 +527,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -538,11 +538,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: Create.
 
@@ -552,10 +552,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -566,8 +566,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -578,8 +578,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Load.
@@ -590,19 +590,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: Create.
 
@@ -724,7 +724,7 @@ Create a handle: `merchant_portal_pam_contract_controller = BluefinTecsMerchantP
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `String.t()` |  |
-| `product_order_uuid` | `String.t()` |  |
+| `productOrderUUID` | `String.t()` |  |
 
 #### Example: Create
 
@@ -732,7 +732,7 @@ Create a handle: `merchant_portal_pam_contract_controller = BluefinTecsMerchantP
 merchant_portal_pam_contract_controller = BluefinTecsMerchantPortal.merchant_portal_pam_contract_controller(sdk)
 record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamContractController.create(merchant_portal_pam_contract_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "language" => "example_language",  # String.t()
-  "product_order_uuid" => "example_product_order_uuid",  # String.t()
+  "productOrderUUID" => "example_productOrderUUID",  # String.t()
 }))
 ```
 
@@ -751,16 +751,16 @@ Create a handle: `merchant_portal_pam_document_controller = BluefinTecsMerchantP
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `String.t()` |  |
-| `package_order_uuid` | `String.t()` |  |
-| `product_order_uuid` | `String.t()` |  |
+| `appFormFieldDescUUID` | `String.t()` |  |
+| `packageOrderUUID` | `String.t()` |  |
+| `productOrderUUID` | `String.t()` |  |
 
 #### Example: Create
 
 ```elixir
 merchant_portal_pam_document_controller = BluefinTecsMerchantPortal.merchant_portal_pam_document_controller(sdk)
 record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamDocumentController.create(merchant_portal_pam_document_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "app_form_field_desc_uuid" => "example_app_form_field_desc_uuid",  # String.t()
+  "appFormFieldDescUUID" => "example_appFormFieldDescUUID",  # String.t()
 }))
 ```
 
@@ -779,25 +779,25 @@ Create a handle: `merchant_portal_pam_form_controller = BluefinTecsMerchantPorta
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `String.t()` |  |
+| `appFormFieldsDescUUID` | `String.t()` |  |
 | `filter` | `map()` |  |
 | `language` | `String.t()` |  |
-| `package_order` | `map()` |  |
-| `package_order_uuid` | `String.t()` |  |
-| `package_uuid` | `String.t()` |  |
-| `product_order` | `list()` |  |
-| `product_order_uuid` | `String.t()` |  |
-| `reason_of_reopening` | `String.t()` |  |
+| `packageOrder` | `map()` |  |
+| `packageOrderUUID` | `String.t()` |  |
+| `packageUUID` | `String.t()` |  |
+| `productOrderUUID` | `String.t()` |  |
+| `productOrders` | `list()` |  |
+| `reasonOfReopening` | `String.t()` |  |
 
 #### Example: Create
 
 ```elixir
 merchant_portal_pam_form_controller = BluefinTecsMerchantPortal.merchant_portal_pam_form_controller(sdk)
 record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamFormController.create(merchant_portal_pam_form_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "app_form_fields_desc_uuid" => "example_app_form_fields_desc_uuid",  # String.t()
+  "appFormFieldsDescUUID" => "example_appFormFieldsDescUUID",  # String.t()
   "language" => "example_language",  # String.t()
-  "package_order_uuid" => "example_package_order_uuid",  # String.t()
-  "reason_of_reopening" => "example_reason_of_reopening",  # String.t()
+  "packageOrderUUID" => "example_packageOrderUUID",  # String.t()
+  "reasonOfReopening" => "example_reasonOfReopening",  # String.t()
 }))
 ```
 
@@ -816,18 +816,18 @@ Create a handle: `merchant_portal_pam_mandator_controller = BluefinTecsMerchantP
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `String.t()` |  |
-| `mandator_name` | `String.t()` |  |
-| `notification_email` | `String.t()` |  |
-| `package_uuid` | `String.t()` |  |
+| `clientSecret` | `String.t()` |  |
+| `mandatorName` | `String.t()` |  |
+| `notificationEmail` | `String.t()` |  |
+| `packageUUID` | `String.t()` |  |
 
 #### Example: Create
 
 ```elixir
 merchant_portal_pam_mandator_controller = BluefinTecsMerchantPortal.merchant_portal_pam_mandator_controller(sdk)
 record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamMandatorController.create(merchant_portal_pam_mandator_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "mandator_name" => "example_mandator_name",  # String.t()
-  "package_uuid" => "example_package_uuid",  # String.t()
+  "mandatorName" => "example_mandatorName",  # String.t()
+  "packageUUID" => "example_packageUUID",  # String.t()
 }))
 ```
 
@@ -847,29 +847,29 @@ Create a handle: `merchant_portal_pam_merchant_controller = BluefinTecsMerchantP
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `map()` |  |
-| `business_registration_number` | `String.t()` |  |
+| `businessRegistrationNumber` | `String.t()` |  |
 | `city` | `String.t()` |  |
-| `company_name` | `String.t()` |  |
-| `corporate_uuid` | `String.t()` |  |
+| `companyName` | `String.t()` |  |
+| `corporateUUID` | `String.t()` |  |
 | `country` | `String.t()` |  |
 | `currency` | `String.t()` |  |
 | `email` | `String.t()` |  |
 | `language` | `String.t()` |  |
 | `login` | `String.t()` |  |
 | `mandator` | `String.t()` |  |
+| `merchantContractNumber` | `String.t()` |  |
+| `merchantName` | `String.t()` |  |
 | `merchant_category_code` | `String.t()` |  |
-| `merchant_contract_number` | `String.t()` |  |
-| `merchant_name` | `String.t()` |  |
-| `package_uuid` | `String.t()` |  |
+| `packageUUID` | `String.t()` |  |
 | `packageorderuuid` | `String.t()` |  |
-| `phone_number` | `String.t()` |  |
-| `postal_code` | `String.t()` |  |
+| `phoneNumber` | `String.t()` |  |
+| `postalCode` | `String.t()` |  |
 | `productid_acquirer` | `String.t()` |  |
 | `region` | `String.t()` |  |
-| `registration_number` | `String.t()` |  |
+| `registrationNumber` | `String.t()` |  |
 | `signature` | `String.t()` |  |
 | `street` | `String.t()` |  |
-| `terminal_id` | `list()` |  |
+| `terminalIds` | `list()` |  |
 | `terminalid_acquirer` | `String.t()` |  |
 | `vu_nummer` | `String.t()` |  |
 
@@ -878,17 +878,17 @@ Create a handle: `merchant_portal_pam_merchant_controller = BluefinTecsMerchantP
 ```elixir
 merchant_portal_pam_merchant_controller = BluefinTecsMerchantPortal.merchant_portal_pam_merchant_controller(sdk)
 record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamMerchantController.create(merchant_portal_pam_merchant_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "business_registration_number" => "example_business_registration_number",  # String.t()
-  "company_name" => "example_company_name",  # String.t()
-  "corporate_uuid" => "example_corporate_uuid",  # String.t()
+  "businessRegistrationNumber" => "example_businessRegistrationNumber",  # String.t()
+  "companyName" => "example_companyName",  # String.t()
+  "corporateUUID" => "example_corporateUUID",  # String.t()
   "currency" => "example_currency",  # String.t()
   "email" => "example_email",  # String.t()
   "language" => "example_language",  # String.t()
   "login" => "example_login",  # String.t()
   "mandator" => "example_mandator",  # String.t()
-  "merchant_contract_number" => "example_merchant_contract_number",  # String.t()
+  "merchantContractNumber" => "example_merchantContractNumber",  # String.t()
   "packageorderuuid" => "example_packageorderuuid",  # String.t()
-  "phone_number" => "example_phone_number",  # String.t()
+  "phoneNumber" => "example_phoneNumber",  # String.t()
   "productid_acquirer" => "example_productid_acquirer",  # String.t()
   "vu_nummer" => "example_vu_nummer",  # String.t()
 }))
@@ -909,15 +909,15 @@ Create a handle: `merchant_portal_pam_package_controller = BluefinTecsMerchantPo
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String.t()` |  |
-| `corporate_uuid` | `String.t()` |  |
+| `consumerUUID` | `String.t()` |  |
+| `corporateUUID` | `String.t()` |  |
 | `country` | `String.t()` |  |
-| `description_key` | `String.t()` |  |
+| `descriptionKey` | `String.t()` |  |
 | `filter` | `map()` |  |
 | `language` | `String.t()` |  |
-| `name_key` | `String.t()` |  |
-| `package_status` | `String.t()` |  |
-| `package_uuid` | `String.t()` |  |
+| `nameKey` | `String.t()` |  |
+| `packageStatus` | `String.t()` |  |
+| `packageUUID` | `String.t()` |  |
 | `pagination` | `map()` |  |
 | `sorting` | `map()` |  |
 
@@ -927,7 +927,7 @@ Create a handle: `merchant_portal_pam_package_controller = BluefinTecsMerchantPo
 merchant_portal_pam_package_controller = BluefinTecsMerchantPortal.merchant_portal_pam_package_controller(sdk)
 record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamPackageController.create(merchant_portal_pam_package_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "language" => "example_language",  # String.t()
-  "package_uuid" => "example_package_uuid",  # String.t()
+  "packageUUID" => "example_packageUUID",  # String.t()
 }))
 ```
 
@@ -946,14 +946,14 @@ Create a handle: `merchant_portal_pam_product_controller = BluefinTecsMerchantPo
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String.t()` |  |
+| `consumerUUID` | `String.t()` |  |
 | `filter` | `map()` |  |
 | `language` | `String.t()` |  |
-| `merchant_id` | `String.t()` |  |
-| `package_order_uuid` | `String.t()` |  |
+| `merchantID` | `String.t()` |  |
+| `packageOrderUUID` | `String.t()` |  |
 | `pagination` | `map()` |  |
-| `product_order_uuid` | `String.t()` |  |
-| `product_uuid` | `String.t()` |  |
+| `productOrderUUID` | `String.t()` |  |
+| `productUUID` | `String.t()` |  |
 | `reason_decline` | `String.t()` |  |
 | `sorting` | `map()` |  |
 
@@ -962,9 +962,9 @@ Create a handle: `merchant_portal_pam_product_controller = BluefinTecsMerchantPo
 ```elixir
 merchant_portal_pam_product_controller = BluefinTecsMerchantPortal.merchant_portal_pam_product_controller(sdk)
 record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamProductController.create(merchant_portal_pam_product_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "package_order_uuid" => "example_package_order_uuid",  # String.t()
-  "product_order_uuid" => "example_product_order_uuid",  # String.t()
-  "product_uuid" => "example_product_uuid",  # String.t()
+  "packageOrderUUID" => "example_packageOrderUUID",  # String.t()
+  "productOrderUUID" => "example_productOrderUUID",  # String.t()
+  "productUUID" => "example_productUUID",  # String.t()
   "reason_decline" => "example_reason_decline",  # String.t()
 }))
 ```
@@ -984,20 +984,20 @@ Create a handle: `output_add_product = BluefinTecsMerchantPortal.output_add_prod
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `String.t()` |  |
-| `product_uui_d` | `list()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `packageUUID` | `String.t()` |  |
+| `productUUIDs` | `list()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
 ```elixir
 output_add_product = BluefinTecsMerchantPortal.output_add_product(sdk)
 record = BluefinTecsMerchantPortal.Entity.OutputAddProduct.create(output_add_product, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "package_uuid" => "example_package_uuid",  # String.t()
-  "product_uui_d" => [],  # list()
-  "response_code" => 1,  # integer()
-  "response_message" => "example_response_message",  # String.t()
+  "packageUUID" => "example_packageUUID",  # String.t()
+  "productUUIDs" => [],  # list()
+  "responseCode" => 1,  # integer()
+  "responseMessage" => "example_responseMessage",  # String.t()
 }))
 ```
 
@@ -1016,38 +1016,38 @@ Create a handle: `output_create_product = BluefinTecsMerchantPortal.output_creat
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String.t()` |  |
-| `allow_multiple_order` | `boolean()` |  |
-| `app_form_template_name` | `String.t()` |  |
-| `contract_needed` | `boolean()` |  |
-| `credentials_needed` | `boolean()` |  |
-| `description_key` | `String.t()` |  |
-| `name_key` | `String.t()` |  |
-| `prescreening_allowed` | `boolean()` |  |
-| `product_name` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
-| `terminal_template_name` | `String.t()` |  |
-| `vendor_name` | `String.t()` |  |
-| `xml_template_file` | `String.t()` |  |
+| `acquirerId` | `String.t()` |  |
+| `allowMultipleOrders` | `boolean()` |  |
+| `appFormTemplateName` | `String.t()` |  |
+| `contractNeeded` | `boolean()` |  |
+| `credentialsNeeded` | `boolean()` |  |
+| `descriptionKey` | `String.t()` |  |
+| `nameKey` | `String.t()` |  |
+| `prescreeningAllowed` | `boolean()` |  |
+| `productName` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
+| `terminalTemplateName` | `String.t()` |  |
+| `vendorName` | `String.t()` |  |
+| `xmlTemplateFile` | `String.t()` |  |
 
 #### Example: Create
 
 ```elixir
 output_create_product = BluefinTecsMerchantPortal.output_create_product(sdk)
 record = BluefinTecsMerchantPortal.Entity.OutputCreateProduct.create(output_create_product, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "allow_multiple_order" => true,  # boolean()
-  "app_form_template_name" => "example_app_form_template_name",  # String.t()
-  "contract_needed" => true,  # boolean()
-  "description_key" => "example_description_key",  # String.t()
-  "name_key" => "example_name_key",  # String.t()
-  "prescreening_allowed" => true,  # boolean()
-  "product_name" => "example_product_name",  # String.t()
-  "response_code" => 1,  # integer()
-  "response_message" => "example_response_message",  # String.t()
-  "terminal_template_name" => "example_terminal_template_name",  # String.t()
-  "vendor_name" => "example_vendor_name",  # String.t()
-  "xml_template_file" => "example_xml_template_file",  # String.t()
+  "allowMultipleOrders" => true,  # boolean()
+  "appFormTemplateName" => "example_appFormTemplateName",  # String.t()
+  "contractNeeded" => true,  # boolean()
+  "descriptionKey" => "example_descriptionKey",  # String.t()
+  "nameKey" => "example_nameKey",  # String.t()
+  "prescreeningAllowed" => true,  # boolean()
+  "productName" => "example_productName",  # String.t()
+  "responseCode" => 1,  # integer()
+  "responseMessage" => "example_responseMessage",  # String.t()
+  "terminalTemplateName" => "example_terminalTemplateName",  # String.t()
+  "vendorName" => "example_vendorName",  # String.t()
+  "xmlTemplateFile" => "example_xmlTemplateFile",  # String.t()
 }))
 ```
 
@@ -1066,9 +1066,9 @@ Create a handle: `output_detail = BluefinTecsMerchantPortal.output_detail(sdk)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `map()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `batch` | `map()` |  |
+| `lines` | `map()` |  |
+| `progress` | `map()` |  |
 
 #### Example: Load
 
@@ -1092,10 +1092,10 @@ Create a handle: `output_list = BluefinTecsMerchantPortal.output_list(sdk)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `list()` |  |
+| `items` | `list()` |  |
 | `pagination` | `map()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 | `sorting` | `map()` |  |
 
 #### Example: Create
@@ -1104,8 +1104,8 @@ Create a handle: `output_list = BluefinTecsMerchantPortal.output_list(sdk)`
 output_list = BluefinTecsMerchantPortal.output_list(sdk)
 record = BluefinTecsMerchantPortal.Entity.OutputList.create(output_list, BluefinTecsMerchantPortal.Helpers.deep(%{
   "pagination" => %{},  # map()
-  "response_code" => 1,  # integer()
-  "response_message" => "example_response_message",  # String.t()
+  "responseCode" => 1,  # integer()
+  "responseMessage" => "example_responseMessage",  # String.t()
 }))
 ```
 
@@ -1124,8 +1124,8 @@ Create a handle: `output_message = BluefinTecsMerchantPortal.output_message(sdk)
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Load
 
@@ -1149,22 +1149,22 @@ Create a handle: `output_move_tid = BluefinTecsMerchantPortal.output_move_tid(sd
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `list()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
-| `target_package_order_uuid` | `String.t()` |  |
-| `target_product_order_uuid` | `String.t()` |  |
+| `productOrderUUIDs` | `list()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
+| `targetPackageOrderUUID` | `String.t()` |  |
+| `targetProductOrderUUID` | `String.t()` |  |
 
 #### Example: Create
 
 ```elixir
 output_move_tid = BluefinTecsMerchantPortal.output_move_tid(sdk)
 record = BluefinTecsMerchantPortal.Entity.OutputMoveTid.create(output_move_tid, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "product_order_uui_d" => [],  # list()
-  "response_code" => 1,  # integer()
-  "response_message" => "example_response_message",  # String.t()
-  "target_package_order_uuid" => "example_target_package_order_uuid",  # String.t()
-  "target_product_order_uuid" => "example_target_product_order_uuid",  # String.t()
+  "productOrderUUIDs" => [],  # list()
+  "responseCode" => 1,  # integer()
+  "responseMessage" => "example_responseMessage",  # String.t()
+  "targetPackageOrderUUID" => "example_targetPackageOrderUUID",  # String.t()
+  "targetProductOrderUUID" => "example_targetProductOrderUUID",  # String.t()
 }))
 ```
 
@@ -1183,20 +1183,20 @@ Create a handle: `output_remove_product = BluefinTecsMerchantPortal.output_remov
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `String.t()` |  |
-| `product_uui_d` | `list()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `packageUUID` | `String.t()` |  |
+| `productUUIDs` | `list()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
 ```elixir
 output_remove_product = BluefinTecsMerchantPortal.output_remove_product(sdk)
 record = BluefinTecsMerchantPortal.Entity.OutputRemoveProduct.create(output_remove_product, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "package_uuid" => "example_package_uuid",  # String.t()
-  "product_uui_d" => [],  # list()
-  "response_code" => 1,  # integer()
-  "response_message" => "example_response_message",  # String.t()
+  "packageUUID" => "example_packageUUID",  # String.t()
+  "productUUIDs" => [],  # list()
+  "responseCode" => 1,  # integer()
+  "responseMessage" => "example_responseMessage",  # String.t()
 }))
 ```
 
@@ -1216,16 +1216,16 @@ Create a handle: `output_start = BluefinTecsMerchantPortal.output_start(sdk)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
 ```elixir
 output_start = BluefinTecsMerchantPortal.output_start(sdk)
 record = BluefinTecsMerchantPortal.Entity.OutputStart.create(output_start, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "response_code" => 1,  # integer()
-  "response_message" => "example_response_message",  # String.t()
+  "responseCode" => 1,  # integer()
+  "responseMessage" => "example_responseMessage",  # String.t()
 }))
 ```
 
@@ -1245,8 +1245,8 @@ Create a handle: `output_status = BluefinTecsMerchantPortal.output_status(sdk)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `integer()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 | `status` | `String.t()` |  |
 
 #### Example: Load
@@ -1271,28 +1271,28 @@ Create a handle: `output_update_product = BluefinTecsMerchantPortal.output_updat
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `boolean()` |  |
-| `app_form_name` | `String.t()` |  |
-| `contract_needed` | `boolean()` |  |
-| `credentials_needed` | `boolean()` |  |
-| `description_key` | `String.t()` |  |
-| `name_key` | `String.t()` |  |
-| `prescreening_allowed` | `boolean()` |  |
-| `product_name` | `String.t()` |  |
-| `product_status` | `String.t()` |  |
-| `product_uuid` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
-| `vendor_name` | `String.t()` |  |
+| `allowMultipleOrders` | `boolean()` |  |
+| `appFormName` | `String.t()` |  |
+| `contractNeeded` | `boolean()` |  |
+| `credentialsNeeded` | `boolean()` |  |
+| `descriptionKey` | `String.t()` |  |
+| `nameKey` | `String.t()` |  |
+| `prescreeningAllowed` | `boolean()` |  |
+| `productName` | `String.t()` |  |
+| `productStatus` | `String.t()` |  |
+| `productUUID` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
+| `vendorName` | `String.t()` |  |
 
 #### Example: Create
 
 ```elixir
 output_update_product = BluefinTecsMerchantPortal.output_update_product(sdk)
 record = BluefinTecsMerchantPortal.Entity.OutputUpdateProduct.create(output_update_product, BluefinTecsMerchantPortal.Helpers.deep(%{
-  "product_uuid" => "example_product_uuid",  # String.t()
-  "response_code" => 1,  # integer()
-  "response_message" => "example_response_message",  # String.t()
+  "productUUID" => "example_productUUID",  # String.t()
+  "responseCode" => 1,  # integer()
+  "responseMessage" => "example_responseMessage",  # String.t()
 }))
 ```
 

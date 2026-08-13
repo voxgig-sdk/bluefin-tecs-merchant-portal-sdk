@@ -91,97 +91,97 @@
 /**
  * @typedef {Object} MerchantPortalPamContractController
  * @property {string} language
- * @property {string} product_order_uuid
+ * @property {string} productOrderUUID
  */
 
 /**
  * @typedef {Object} MerchantPortalPamContractControllerCreateData
  * @property {string} language
- * @property {string} product_order_uuid
+ * @property {string} productOrderUUID
  */
 
 /**
  * @typedef {Object} MerchantPortalPamDocumentController
- * @property {string} app_form_field_desc_uuid
- * @property {string} [package_order_uuid]
- * @property {string} [product_order_uuid]
+ * @property {string} appFormFieldDescUUID
+ * @property {string} [packageOrderUUID]
+ * @property {string} [productOrderUUID]
  */
 
 /**
  * @typedef {Object} MerchantPortalPamDocumentControllerCreateData
- * @property {string} app_form_field_desc_uuid
- * @property {string} [package_order_uuid]
- * @property {string} [product_order_uuid]
+ * @property {string} appFormFieldDescUUID
+ * @property {string} [packageOrderUUID]
+ * @property {string} [productOrderUUID]
  */
 
 /**
  * @typedef {Object} MerchantPortalPamFormController
- * @property {string} app_form_fields_desc_uuid
+ * @property {string} appFormFieldsDescUUID
  * @property {Object} [filter]
  * @property {string} language
- * @property {Object} [package_order]
- * @property {string} package_order_uuid
- * @property {string} [package_uuid]
- * @property {Array} [product_order]
- * @property {string} [product_order_uuid]
- * @property {string} reason_of_reopening
+ * @property {Object} [packageOrder]
+ * @property {string} packageOrderUUID
+ * @property {string} [packageUUID]
+ * @property {string} [productOrderUUID]
+ * @property {Array} [productOrders]
+ * @property {string} reasonOfReopening
  */
 
 /**
  * @typedef {Object} MerchantPortalPamFormControllerCreateData
- * @property {string} app_form_fields_desc_uuid
+ * @property {string} appFormFieldsDescUUID
  * @property {Object} [filter]
  * @property {string} language
- * @property {Object} [package_order]
- * @property {string} package_order_uuid
- * @property {string} [package_uuid]
- * @property {Array} [product_order]
- * @property {string} [product_order_uuid]
- * @property {string} reason_of_reopening
+ * @property {Object} [packageOrder]
+ * @property {string} packageOrderUUID
+ * @property {string} [packageUUID]
+ * @property {string} [productOrderUUID]
+ * @property {Array} [productOrders]
+ * @property {string} reasonOfReopening
  */
 
 /**
  * @typedef {Object} MerchantPortalPamMandatorController
- * @property {string} [client_secret]
- * @property {string} mandator_name
- * @property {string} [notification_email]
- * @property {string} package_uuid
+ * @property {string} [clientSecret]
+ * @property {string} mandatorName
+ * @property {string} [notificationEmail]
+ * @property {string} packageUUID
  */
 
 /**
  * @typedef {Object} MerchantPortalPamMandatorControllerCreateData
- * @property {string} [client_secret]
- * @property {string} mandator_name
- * @property {string} [notification_email]
- * @property {string} package_uuid
+ * @property {string} [clientSecret]
+ * @property {string} mandatorName
+ * @property {string} [notificationEmail]
+ * @property {string} packageUUID
  */
 
 /**
  * @typedef {Object} MerchantPortalPamMerchantController
  * @property {Object} [additional_data]
- * @property {string} business_registration_number
+ * @property {string} businessRegistrationNumber
  * @property {string} [city]
- * @property {string} company_name
- * @property {string} corporate_uuid
+ * @property {string} companyName
+ * @property {string} corporateUUID
  * @property {string} [country]
  * @property {string} currency
  * @property {string} email
  * @property {string} language
  * @property {string} login
  * @property {string} mandator
+ * @property {string} merchantContractNumber
+ * @property {string} [merchantName]
  * @property {string} [merchant_category_code]
- * @property {string} merchant_contract_number
- * @property {string} [merchant_name]
- * @property {string} [package_uuid]
+ * @property {string} [packageUUID]
  * @property {string} packageorderuuid
- * @property {string} phone_number
- * @property {string} [postal_code]
+ * @property {string} phoneNumber
+ * @property {string} [postalCode]
  * @property {string} productid_acquirer
  * @property {string} [region]
- * @property {string} [registration_number]
+ * @property {string} [registrationNumber]
  * @property {string} [signature]
  * @property {string} [street]
- * @property {Array} [terminal_id]
+ * @property {Array} [terminalIds]
  * @property {string} [terminalid_acquirer]
  * @property {string} vu_nummer
  */
@@ -189,148 +189,148 @@
 /**
  * @typedef {Object} MerchantPortalPamMerchantControllerCreateData
  * @property {Object} [additional_data]
- * @property {string} business_registration_number
+ * @property {string} businessRegistrationNumber
  * @property {string} [city]
- * @property {string} company_name
- * @property {string} corporate_uuid
+ * @property {string} companyName
+ * @property {string} corporateUUID
  * @property {string} [country]
  * @property {string} currency
  * @property {string} email
  * @property {string} language
  * @property {string} login
  * @property {string} mandator
+ * @property {string} merchantContractNumber
+ * @property {string} [merchantName]
  * @property {string} [merchant_category_code]
- * @property {string} merchant_contract_number
- * @property {string} [merchant_name]
- * @property {string} [package_uuid]
+ * @property {string} [packageUUID]
  * @property {string} packageorderuuid
- * @property {string} phone_number
- * @property {string} [postal_code]
+ * @property {string} phoneNumber
+ * @property {string} [postalCode]
  * @property {string} productid_acquirer
  * @property {string} [region]
- * @property {string} [registration_number]
+ * @property {string} [registrationNumber]
  * @property {string} [signature]
  * @property {string} [street]
- * @property {Array} [terminal_id]
+ * @property {Array} [terminalIds]
  * @property {string} [terminalid_acquirer]
  * @property {string} vu_nummer
  */
 
 /**
  * @typedef {Object} MerchantPortalPamPackageController
- * @property {string} [consumer_uuid]
- * @property {string} [corporate_uuid]
+ * @property {string} [consumerUUID]
+ * @property {string} [corporateUUID]
  * @property {string} [country]
- * @property {string} [description_key]
+ * @property {string} [descriptionKey]
  * @property {Object} [filter]
  * @property {string} language
- * @property {string} [name_key]
- * @property {string} [package_status]
- * @property {string} package_uuid
+ * @property {string} [nameKey]
+ * @property {string} [packageStatus]
+ * @property {string} packageUUID
  * @property {Object} [pagination]
  * @property {Object} [sorting]
  */
 
 /**
  * @typedef {Object} MerchantPortalPamPackageControllerCreateData
- * @property {string} [consumer_uuid]
- * @property {string} [corporate_uuid]
+ * @property {string} [consumerUUID]
+ * @property {string} [corporateUUID]
  * @property {string} [country]
- * @property {string} [description_key]
+ * @property {string} [descriptionKey]
  * @property {Object} [filter]
  * @property {string} language
- * @property {string} [name_key]
- * @property {string} [package_status]
- * @property {string} package_uuid
+ * @property {string} [nameKey]
+ * @property {string} [packageStatus]
+ * @property {string} packageUUID
  * @property {Object} [pagination]
  * @property {Object} [sorting]
  */
 
 /**
  * @typedef {Object} MerchantPortalPamProductController
- * @property {string} [consumer_uuid]
+ * @property {string} [consumerUUID]
  * @property {Object} [filter]
  * @property {string} [language]
- * @property {string} [merchant_id]
- * @property {string} package_order_uuid
+ * @property {string} [merchantID]
+ * @property {string} packageOrderUUID
  * @property {Object} [pagination]
- * @property {string} product_order_uuid
- * @property {string} product_uuid
+ * @property {string} productOrderUUID
+ * @property {string} productUUID
  * @property {string} reason_decline
  * @property {Object} [sorting]
  */
 
 /**
  * @typedef {Object} MerchantPortalPamProductControllerCreateData
- * @property {string} [consumer_uuid]
+ * @property {string} [consumerUUID]
  * @property {Object} [filter]
  * @property {string} [language]
- * @property {string} [merchant_id]
- * @property {string} package_order_uuid
+ * @property {string} [merchantID]
+ * @property {string} packageOrderUUID
  * @property {Object} [pagination]
- * @property {string} product_order_uuid
- * @property {string} product_uuid
+ * @property {string} productOrderUUID
+ * @property {string} productUUID
  * @property {string} reason_decline
  * @property {Object} [sorting]
  */
 
 /**
  * @typedef {Object} OutputAddProduct
- * @property {string} package_uuid
- * @property {Array} product_uui_d
- * @property {number} response_code
- * @property {string} response_message
+ * @property {string} packageUUID
+ * @property {Array} productUUIDs
+ * @property {number} responseCode
+ * @property {string} responseMessage
  */
 
 /**
  * @typedef {Object} OutputAddProductCreateData
- * @property {string} package_uuid
- * @property {Array} product_uui_d
- * @property {number} response_code
- * @property {string} response_message
+ * @property {string} packageUUID
+ * @property {Array} productUUIDs
+ * @property {number} responseCode
+ * @property {string} responseMessage
  */
 
 /**
  * @typedef {Object} OutputCreateProduct
- * @property {string} [acquirer_id]
- * @property {boolean} allow_multiple_order
- * @property {string} app_form_template_name
- * @property {boolean} contract_needed
- * @property {boolean} [credentials_needed]
- * @property {string} description_key
- * @property {string} name_key
- * @property {boolean} prescreening_allowed
- * @property {string} product_name
- * @property {number} response_code
- * @property {string} response_message
- * @property {string} terminal_template_name
- * @property {string} vendor_name
- * @property {string} xml_template_file
+ * @property {string} [acquirerId]
+ * @property {boolean} allowMultipleOrders
+ * @property {string} appFormTemplateName
+ * @property {boolean} contractNeeded
+ * @property {boolean} [credentialsNeeded]
+ * @property {string} descriptionKey
+ * @property {string} nameKey
+ * @property {boolean} prescreeningAllowed
+ * @property {string} productName
+ * @property {number} responseCode
+ * @property {string} responseMessage
+ * @property {string} terminalTemplateName
+ * @property {string} vendorName
+ * @property {string} xmlTemplateFile
  */
 
 /**
  * @typedef {Object} OutputCreateProductCreateData
- * @property {string} [acquirer_id]
- * @property {boolean} allow_multiple_order
- * @property {string} app_form_template_name
- * @property {boolean} contract_needed
- * @property {boolean} [credentials_needed]
- * @property {string} description_key
- * @property {string} name_key
- * @property {boolean} prescreening_allowed
- * @property {string} product_name
- * @property {number} response_code
- * @property {string} response_message
- * @property {string} terminal_template_name
- * @property {string} vendor_name
- * @property {string} xml_template_file
+ * @property {string} [acquirerId]
+ * @property {boolean} allowMultipleOrders
+ * @property {string} appFormTemplateName
+ * @property {boolean} contractNeeded
+ * @property {boolean} [credentialsNeeded]
+ * @property {string} descriptionKey
+ * @property {string} nameKey
+ * @property {boolean} prescreeningAllowed
+ * @property {string} productName
+ * @property {number} responseCode
+ * @property {string} responseMessage
+ * @property {string} terminalTemplateName
+ * @property {string} vendorName
+ * @property {string} xmlTemplateFile
  */
 
 /**
  * @typedef {Object} OutputDetail
- * @property {Object} [detail]
- * @property {number} response_code
- * @property {string} response_message
+ * @property {Object} [batch]
+ * @property {Object} [lines]
+ * @property {Object} [progress]
  */
 
 /**
@@ -340,26 +340,26 @@
 
 /**
  * @typedef {Object} OutputList
- * @property {Array} [item]
+ * @property {Array} [items]
  * @property {Object} pagination
- * @property {number} response_code
- * @property {string} response_message
+ * @property {number} responseCode
+ * @property {string} responseMessage
  * @property {Object} [sorting]
  */
 
 /**
  * @typedef {Object} OutputListCreateData
- * @property {Array} [item]
+ * @property {Array} [items]
  * @property {Object} pagination
- * @property {number} response_code
- * @property {string} response_message
+ * @property {number} responseCode
+ * @property {string} responseMessage
  * @property {Object} [sorting]
  */
 
 /**
  * @typedef {Object} OutputMessage
- * @property {number} response_code
- * @property {string} response_message
+ * @property {number} responseCode
+ * @property {string} responseMessage
  */
 
 /**
@@ -369,57 +369,57 @@
 
 /**
  * @typedef {Object} OutputMoveTid
- * @property {Array} product_order_uui_d
- * @property {number} response_code
- * @property {string} response_message
- * @property {string} target_package_order_uuid
- * @property {string} target_product_order_uuid
+ * @property {Array} productOrderUUIDs
+ * @property {number} responseCode
+ * @property {string} responseMessage
+ * @property {string} targetPackageOrderUUID
+ * @property {string} targetProductOrderUUID
  */
 
 /**
  * @typedef {Object} OutputMoveTidCreateData
- * @property {Array} product_order_uui_d
- * @property {number} response_code
- * @property {string} response_message
- * @property {string} target_package_order_uuid
- * @property {string} target_product_order_uuid
+ * @property {Array} productOrderUUIDs
+ * @property {number} responseCode
+ * @property {string} responseMessage
+ * @property {string} targetPackageOrderUUID
+ * @property {string} targetProductOrderUUID
  */
 
 /**
  * @typedef {Object} OutputRemoveProduct
- * @property {string} package_uuid
- * @property {Array} product_uui_d
- * @property {number} response_code
- * @property {string} response_message
+ * @property {string} packageUUID
+ * @property {Array} productUUIDs
+ * @property {number} responseCode
+ * @property {string} responseMessage
  */
 
 /**
  * @typedef {Object} OutputRemoveProductCreateData
- * @property {string} package_uuid
- * @property {Array} product_uui_d
- * @property {number} response_code
- * @property {string} response_message
+ * @property {string} packageUUID
+ * @property {Array} productUUIDs
+ * @property {number} responseCode
+ * @property {string} responseMessage
  */
 
 /**
  * @typedef {Object} OutputStart
  * @property {string} [id]
- * @property {number} response_code
- * @property {string} response_message
+ * @property {number} responseCode
+ * @property {string} responseMessage
  */
 
 /**
  * @typedef {Object} OutputStartCreateData
  * @property {string} [id]
- * @property {number} response_code
- * @property {string} response_message
+ * @property {number} responseCode
+ * @property {string} responseMessage
  */
 
 /**
  * @typedef {Object} OutputStatus
  * @property {number} [percentage]
- * @property {number} response_code
- * @property {string} response_message
+ * @property {number} responseCode
+ * @property {string} responseMessage
  * @property {string} [status]
  */
 
@@ -430,35 +430,35 @@
 
 /**
  * @typedef {Object} OutputUpdateProduct
- * @property {boolean} [allow_multiple_order]
- * @property {string} [app_form_name]
- * @property {boolean} [contract_needed]
- * @property {boolean} [credentials_needed]
- * @property {string} [description_key]
- * @property {string} [name_key]
- * @property {boolean} [prescreening_allowed]
- * @property {string} [product_name]
- * @property {string} [product_status]
- * @property {string} product_uuid
- * @property {number} response_code
- * @property {string} response_message
- * @property {string} [vendor_name]
+ * @property {boolean} [allowMultipleOrders]
+ * @property {string} [appFormName]
+ * @property {boolean} [contractNeeded]
+ * @property {boolean} [credentialsNeeded]
+ * @property {string} [descriptionKey]
+ * @property {string} [nameKey]
+ * @property {boolean} [prescreeningAllowed]
+ * @property {string} [productName]
+ * @property {string} [productStatus]
+ * @property {string} productUUID
+ * @property {number} responseCode
+ * @property {string} responseMessage
+ * @property {string} [vendorName]
  */
 
 /**
  * @typedef {Object} OutputUpdateProductCreateData
- * @property {boolean} [allow_multiple_order]
- * @property {string} [app_form_name]
- * @property {boolean} [contract_needed]
- * @property {boolean} [credentials_needed]
- * @property {string} [description_key]
- * @property {string} [name_key]
- * @property {boolean} [prescreening_allowed]
- * @property {string} [product_name]
- * @property {string} [product_status]
- * @property {string} product_uuid
- * @property {number} response_code
- * @property {string} response_message
- * @property {string} [vendor_name]
+ * @property {boolean} [allowMultipleOrders]
+ * @property {string} [appFormName]
+ * @property {boolean} [contractNeeded]
+ * @property {boolean} [credentialsNeeded]
+ * @property {string} [descriptionKey]
+ * @property {string} [nameKey]
+ * @property {boolean} [prescreeningAllowed]
+ * @property {string} [productName]
+ * @property {string} [productStatus]
+ * @property {string} productUUID
+ * @property {number} responseCode
+ * @property {string} responseMessage
+ * @property {string} [vendorName]
  */
 

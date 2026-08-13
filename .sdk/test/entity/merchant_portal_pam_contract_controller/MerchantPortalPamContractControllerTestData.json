@@ -3,17 +3,17 @@
     "merchant_portal_pam_contract_controller": {
       "MERCHANT_PORTAL_PAM_CONTRACT_CONTROLLER00": {
         "language": "s14",
-        "product_order_uuid": "s15",
+        "productOrderUUID": "s15",
         "id": "MERCHANT_PORTAL_PAM_CONTRACT_CONTROLLER00"
       },
       "MERCHANT_PORTAL_PAM_CONTRACT_CONTROLLER01": {
         "language": "s28",
-        "product_order_uuid": "s29",
+        "productOrderUUID": "s29",
         "id": "MERCHANT_PORTAL_PAM_CONTRACT_CONTROLLER01"
       },
       "MERCHANT_PORTAL_PAM_CONTRACT_CONTROLLER02": {
         "language": "s3c",
-        "product_order_uuid": "s3d",
+        "productOrderUUID": "s3d",
         "id": "MERCHANT_PORTAL_PAM_CONTRACT_CONTROLLER02"
       }
     }
@@ -22,7 +22,7 @@
     "merchant_portal_pam_contract_controller": {
       "merchant_portal_pam_contract_controller_ref01": {
         "language": "s50",
-        "product_order_uuid": "s51"
+        "productOrderUUID": "s51"
       }
     }
   }

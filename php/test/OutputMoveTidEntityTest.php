@@ -33,7 +33,7 @@ class OutputMoveTidEntityTest extends TestCase
         // The basic flow consumes synthetic IDs from the fixture. In live mode
         // without an *_ENTID env override, those IDs hit the live API and 4xx.
         if (!empty($setup["synthetic_only"])) {
-            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_MOVE_TID_ENTID JSON to run live");
+            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_MOVE_TID_ENTID JSON to run live");
             return;
         }
         $client = $setup["client"];
@@ -44,7 +44,7 @@ class OutputMoveTidEntityTest extends TestCase
             Vs::getpath($setup["data"], "new.output_move_tid"), "output_move_tid_ref01"));
 
         $output_move_tid_ref01_data_result = $output_move_tid_ref01_ent->create($output_move_tid_ref01_data, null);
-        $output_move_tid_ref01_data = Helpers::to_map($output_move_tid_ref01_data_result);
+        $output_move_tid_ref01_data = Helpers::to_map(is_object($output_move_tid_ref01_data_result) && method_exists($output_move_tid_ref01_data_result, 'data_get') ? $output_move_tid_ref01_data_result->data_get() : $output_move_tid_ref01_data_result);
         $this->assertNotNull($output_move_tid_ref01_data);
 
     }
@@ -72,22 +72,22 @@ function output_move_tid_basic_setup($extra)
     // Detect ENTID env override before envOverride consumes it. When live
     // mode is on without a real override, the basic test runs against synthetic
     // IDs from the fixture and 4xx's. Surface this so the test can skip.
-    $entid_env_raw = getenv("BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_MOVE_TID_ENTID");
+    $entid_env_raw = getenv("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_MOVE_TID_ENTID");
     $idmap_overridden = $entid_env_raw !== false && str_starts_with(trim($entid_env_raw), "{");
 
     $env = Runner::env_override([
-        "BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_MOVE_TID_ENTID" => $idmap,
-        "BLUEFINTECSMERCHANTPORTAL_TEST_LIVE" => "FALSE",
-        "BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN" => "FALSE",
+        "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_MOVE_TID_ENTID" => $idmap,
+        "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE" => "FALSE",
+        "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN" => "FALSE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
-        $env["BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_MOVE_TID_ENTID"]);
+        $env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_MOVE_TID_ENTID"]);
     if ($idmap_resolved === null) {
         $idmap_resolved = Helpers::to_map($idmap);
     }
 
-    if ($env["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"] === "TRUE") {
+    if ($env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
             ],
@@ -96,13 +96,13 @@ function output_move_tid_basic_setup($extra)
         $client = new BluefinTecsMerchantPortalSDK(Helpers::to_map($merged_opts));
     }
 
-    $live = $env["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"] === "TRUE";
+    $live = $env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"] === "TRUE";
     return [
         "client" => $client,
         "data" => $entity_data,
         "idmap" => $idmap_resolved,
         "env" => $env,
-        "explain" => $env["BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN"] === "TRUE",
+        "explain" => $env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN"] === "TRUE",
         "live" => $live,
         "synthetic_only" => $live && !$idmap_overridden,
         "now" => (int)(microtime(true) * 1000),

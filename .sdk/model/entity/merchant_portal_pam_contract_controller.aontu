@@ -11,7 +11,7 @@ main: kit: entity: merchant_portal_pam_contract_controller: {
       type: "`$STRING`"
     }
     {
-      name: "product_order_uuid"
+      name: "productOrderUUID"
       req: true
       type: "`$STRING`"
     }

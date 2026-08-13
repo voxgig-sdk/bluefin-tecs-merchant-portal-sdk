@@ -59,7 +59,7 @@ to recover from failures.
   d <- jo [("business_reg_number", VStr "example_business_reg_number"), ("city", VStr "example_city"), ("country", VStr "example_country"), ("currency", VStr "example_currency"), ("merchant_category_code", VNum 1), ("merchant_name", VStr "example_merchant_name"), ("packageid", VStr "example_packageid"), ("packageorderuuid", VStr "example_packageorderuuid"), ("reason_deactivation", VStr "example_reason_deactivation"), ("reason_reactivation", VStr "example_reason_reactivation"), ("street", VStr "example_street"), ("terminal_country_code", VStr "example_terminal_country_code"), ("terminal_language_code", VStr "example_terminal_language_code"), ("terminal_location", VStr "example_terminal_location"), ("terminal_serial_number", VStr "example_terminal_serial_number"), ("terminalid", VNum 1), ("vu_nummer", VStr "example_vu_nummer"), ("zipcode", VStr "example_zipcode")]
   cctrl <- emptyMap
   created <- Sdk.eCreate createEnt d cctrl
-  print created
+  print =<< Sdk.eDataGet created
 ```
 
 
@@ -272,8 +272,8 @@ All entities share the same record interface (fields of the `Entity` type).
 
 | Field | Signature | Description |
 | --- | --- | --- |
-| `eLoad` | `Value -> Value -> IO Value` | Load a single entity by match criteria. Raises on error. |
-| `eCreate` | `Value -> Value -> IO Value` | Create a new entity. Raises on error. |
+| `eLoad` | `Value -> Value -> IO Entity` | Load a single entity by match criteria. Resolves to the entity. Raises on error. |
+| `eCreate` | `Value -> Value -> IO Entity` | Create a new entity. Resolves to the entity. Raises on error. |
 | `eDataGet` | `IO Value` | Get entity data. |
 | `eDataSet` | `Value -> IO ()` | Set entity data. |
 | `eStream` | `String -> Value -> Value -> IO [Value]` | Run an op as a lazy stream of items. |
@@ -282,9 +282,11 @@ All entities share the same record interface (fields of the `Entity` type).
 
 ### Result shape
 
-Entity operations return the bare result `Value` (a map for single-entity
-ops, a list for `eList`) and raise on error. Wrap calls in
-`Control.Exception.try` to handle failures.
+Entity operations resolve to the ENTITY, not the raw record — `eList` to
+one entity per record — and raise on error. The record is reached through
+`eDataGet`, which returns the entity's data container. `eRemove` resolves to
+the entity marked deleted (`eDeleted`); it keeps the data it held. Wrap calls
+in `Control.Exception.try` to handle failures.
 
 The `direct` escape hatch never raises — it returns a result `Value`
 you branch on via its `ok` field (read with `getp result "ok"`):
@@ -356,7 +358,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -366,9 +368,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -378,15 +380,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: Create.
 
@@ -396,10 +398,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: Create.
 
@@ -410,29 +412,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -444,15 +446,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -464,14 +466,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -483,10 +485,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -496,20 +498,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: Create.
 
@@ -519,9 +521,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: Load.
 
@@ -531,10 +533,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -545,8 +547,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -556,11 +558,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: Create.
 
@@ -570,10 +572,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -584,8 +586,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -596,8 +598,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Load.
@@ -608,19 +610,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: Create.
 
@@ -639,7 +641,7 @@ Create an instance: `merchant_portal_api_controller <- Sdk.merchant_portal_api_c
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
@@ -705,6 +707,7 @@ Create an instance: `merchant_portal_api_controller <- Sdk.merchant_portal_api_c
     ]
   ctrl <- emptyMap
   merchant_portal_api_controller <- Sdk.eCreate ent d ctrl
+  merchant_portal_api_controllerData <- Sdk.eDataGet merchant_portal_api_controller
 ```
 
 
@@ -716,7 +719,7 @@ Create an instance: `merchant_portal_common_controller <- Sdk.merchant_portal_co
 
 | Method | Description |
 | --- | --- |
-| `eLoad ent match ctrl` | Load a single entity by match criteria. |
+| `eLoad ent match ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Example: Load
 
@@ -725,6 +728,8 @@ Create an instance: `merchant_portal_common_controller <- Sdk.merchant_portal_co
   match <- jo []
   ctrl <- emptyMap
   merchant_portal_common_controller <- Sdk.eLoad ent match ctrl
+  -- The op resolves to the ENTITY; the record is inside it.
+  merchant_portal_common_controllerData <- Sdk.eDataGet merchant_portal_common_controller
 ```
 
 
@@ -736,14 +741,14 @@ Create an instance: `merchant_portal_pam_contract_controller <- Sdk.merchant_por
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `String` |  |
-| `product_order_uuid` | `String` |  |
+| `productOrderUUID` | `String` |  |
 
 #### Example: Create
 
@@ -751,10 +756,11 @@ Create an instance: `merchant_portal_pam_contract_controller <- Sdk.merchant_por
   ent <- Sdk.merchant_portal_pam_contract_controller sdk VNoval
   d <- jo
     [ ("language", VStr "example_language")   -- String
-    , ("product_order_uuid", VStr "example_product_order_uuid")   -- String
+    , ("productOrderUUID", VStr "example_productOrderUUID")   -- String
     ]
   ctrl <- emptyMap
   merchant_portal_pam_contract_controller <- Sdk.eCreate ent d ctrl
+  merchant_portal_pam_contract_controllerData <- Sdk.eDataGet merchant_portal_pam_contract_controller
 ```
 
 
@@ -766,25 +772,26 @@ Create an instance: `merchant_portal_pam_document_controller <- Sdk.merchant_por
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
+| `appFormFieldDescUUID` | `String` |  |
+| `packageOrderUUID` | `String` |  |
+| `productOrderUUID` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_document_controller sdk VNoval
   d <- jo
-    [ ("app_form_field_desc_uuid", VStr "example_app_form_field_desc_uuid")   -- String
+    [ ("appFormFieldDescUUID", VStr "example_appFormFieldDescUUID")   -- String
     ]
   ctrl <- emptyMap
   merchant_portal_pam_document_controller <- Sdk.eCreate ent d ctrl
+  merchant_portal_pam_document_controllerData <- Sdk.eDataGet merchant_portal_pam_document_controller
 ```
 
 
@@ -796,34 +803,35 @@ Create an instance: `merchant_portal_pam_form_controller <- Sdk.merchant_portal_
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `String` |  |
+| `appFormFieldsDescUUID` | `String` |  |
 | `filter` | `Value` |  |
 | `language` | `String` |  |
-| `package_order` | `Value` |  |
-| `package_order_uuid` | `String` |  |
-| `package_uuid` | `String` |  |
-| `product_order` | `[Value]` |  |
-| `product_order_uuid` | `String` |  |
-| `reason_of_reopening` | `String` |  |
+| `packageOrder` | `Value` |  |
+| `packageOrderUUID` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productOrderUUID` | `String` |  |
+| `productOrders` | `[Value]` |  |
+| `reasonOfReopening` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_form_controller sdk VNoval
   d <- jo
-    [ ("app_form_fields_desc_uuid", VStr "example_app_form_fields_desc_uuid")   -- String
+    [ ("appFormFieldsDescUUID", VStr "example_appFormFieldsDescUUID")   -- String
     , ("language", VStr "example_language")   -- String
-    , ("package_order_uuid", VStr "example_package_order_uuid")   -- String
-    , ("reason_of_reopening", VStr "example_reason_of_reopening")   -- String
+    , ("packageOrderUUID", VStr "example_packageOrderUUID")   -- String
+    , ("reasonOfReopening", VStr "example_reasonOfReopening")   -- String
     ]
   ctrl <- emptyMap
   merchant_portal_pam_form_controller <- Sdk.eCreate ent d ctrl
+  merchant_portal_pam_form_controllerData <- Sdk.eDataGet merchant_portal_pam_form_controller
 ```
 
 
@@ -835,27 +843,28 @@ Create an instance: `merchant_portal_pam_mandator_controller <- Sdk.merchant_por
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `String` |  |
-| `mandator_name` | `String` |  |
-| `notification_email` | `String` |  |
-| `package_uuid` | `String` |  |
+| `clientSecret` | `String` |  |
+| `mandatorName` | `String` |  |
+| `notificationEmail` | `String` |  |
+| `packageUUID` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_mandator_controller sdk VNoval
   d <- jo
-    [ ("mandator_name", VStr "example_mandator_name")   -- String
-    , ("package_uuid", VStr "example_package_uuid")   -- String
+    [ ("mandatorName", VStr "example_mandatorName")   -- String
+    , ("packageUUID", VStr "example_packageUUID")   -- String
     ]
   ctrl <- emptyMap
   merchant_portal_pam_mandator_controller <- Sdk.eCreate ent d ctrl
+  merchant_portal_pam_mandator_controllerData <- Sdk.eDataGet merchant_portal_pam_mandator_controller
 ```
 
 
@@ -867,36 +876,36 @@ Create an instance: `merchant_portal_pam_merchant_controller <- Sdk.merchant_por
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `Value` |  |
-| `business_registration_number` | `String` |  |
+| `businessRegistrationNumber` | `String` |  |
 | `city` | `String` |  |
-| `company_name` | `String` |  |
-| `corporate_uuid` | `String` |  |
+| `companyName` | `String` |  |
+| `corporateUUID` | `String` |  |
 | `country` | `String` |  |
 | `currency` | `String` |  |
 | `email` | `String` |  |
 | `language` | `String` |  |
 | `login` | `String` |  |
 | `mandator` | `String` |  |
+| `merchantContractNumber` | `String` |  |
+| `merchantName` | `String` |  |
 | `merchant_category_code` | `String` |  |
-| `merchant_contract_number` | `String` |  |
-| `merchant_name` | `String` |  |
-| `package_uuid` | `String` |  |
+| `packageUUID` | `String` |  |
 | `packageorderuuid` | `String` |  |
-| `phone_number` | `String` |  |
-| `postal_code` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `postalCode` | `String` |  |
 | `productid_acquirer` | `String` |  |
 | `region` | `String` |  |
-| `registration_number` | `String` |  |
+| `registrationNumber` | `String` |  |
 | `signature` | `String` |  |
 | `street` | `String` |  |
-| `terminal_id` | `[Value]` |  |
+| `terminalIds` | `[Value]` |  |
 | `terminalid_acquirer` | `String` |  |
 | `vu_nummer` | `String` |  |
 
@@ -905,22 +914,23 @@ Create an instance: `merchant_portal_pam_merchant_controller <- Sdk.merchant_por
 ```haskell
   ent <- Sdk.merchant_portal_pam_merchant_controller sdk VNoval
   d <- jo
-    [ ("business_registration_number", VStr "example_business_registration_number")   -- String
-    , ("company_name", VStr "example_company_name")   -- String
-    , ("corporate_uuid", VStr "example_corporate_uuid")   -- String
+    [ ("businessRegistrationNumber", VStr "example_businessRegistrationNumber")   -- String
+    , ("companyName", VStr "example_companyName")   -- String
+    , ("corporateUUID", VStr "example_corporateUUID")   -- String
     , ("currency", VStr "example_currency")   -- String
     , ("email", VStr "example_email")   -- String
     , ("language", VStr "example_language")   -- String
     , ("login", VStr "example_login")   -- String
     , ("mandator", VStr "example_mandator")   -- String
-    , ("merchant_contract_number", VStr "example_merchant_contract_number")   -- String
+    , ("merchantContractNumber", VStr "example_merchantContractNumber")   -- String
     , ("packageorderuuid", VStr "example_packageorderuuid")   -- String
-    , ("phone_number", VStr "example_phone_number")   -- String
+    , ("phoneNumber", VStr "example_phoneNumber")   -- String
     , ("productid_acquirer", VStr "example_productid_acquirer")   -- String
     , ("vu_nummer", VStr "example_vu_nummer")   -- String
     ]
   ctrl <- emptyMap
   merchant_portal_pam_merchant_controller <- Sdk.eCreate ent d ctrl
+  merchant_portal_pam_merchant_controllerData <- Sdk.eDataGet merchant_portal_pam_merchant_controller
 ```
 
 
@@ -932,21 +942,21 @@ Create an instance: `merchant_portal_pam_package_controller <- Sdk.merchant_port
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `corporate_uuid` | `String` |  |
+| `consumerUUID` | `String` |  |
+| `corporateUUID` | `String` |  |
 | `country` | `String` |  |
-| `description_key` | `String` |  |
+| `descriptionKey` | `String` |  |
 | `filter` | `Value` |  |
 | `language` | `String` |  |
-| `name_key` | `String` |  |
-| `package_status` | `String` |  |
-| `package_uuid` | `String` |  |
+| `nameKey` | `String` |  |
+| `packageStatus` | `String` |  |
+| `packageUUID` | `String` |  |
 | `pagination` | `Value` |  |
 | `sorting` | `Value` |  |
 
@@ -956,10 +966,11 @@ Create an instance: `merchant_portal_pam_package_controller <- Sdk.merchant_port
   ent <- Sdk.merchant_portal_pam_package_controller sdk VNoval
   d <- jo
     [ ("language", VStr "example_language")   -- String
-    , ("package_uuid", VStr "example_package_uuid")   -- String
+    , ("packageUUID", VStr "example_packageUUID")   -- String
     ]
   ctrl <- emptyMap
   merchant_portal_pam_package_controller <- Sdk.eCreate ent d ctrl
+  merchant_portal_pam_package_controllerData <- Sdk.eDataGet merchant_portal_pam_package_controller
 ```
 
 
@@ -971,20 +982,20 @@ Create an instance: `merchant_portal_pam_product_controller <- Sdk.merchant_port
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
+| `consumerUUID` | `String` |  |
 | `filter` | `Value` |  |
 | `language` | `String` |  |
-| `merchant_id` | `String` |  |
-| `package_order_uuid` | `String` |  |
+| `merchantID` | `String` |  |
+| `packageOrderUUID` | `String` |  |
 | `pagination` | `Value` |  |
-| `product_order_uuid` | `String` |  |
-| `product_uuid` | `String` |  |
+| `productOrderUUID` | `String` |  |
+| `productUUID` | `String` |  |
 | `reason_decline` | `String` |  |
 | `sorting` | `Value` |  |
 
@@ -993,13 +1004,14 @@ Create an instance: `merchant_portal_pam_product_controller <- Sdk.merchant_port
 ```haskell
   ent <- Sdk.merchant_portal_pam_product_controller sdk VNoval
   d <- jo
-    [ ("package_order_uuid", VStr "example_package_order_uuid")   -- String
-    , ("product_order_uuid", VStr "example_product_order_uuid")   -- String
-    , ("product_uuid", VStr "example_product_uuid")   -- String
+    [ ("packageOrderUUID", VStr "example_packageOrderUUID")   -- String
+    , ("productOrderUUID", VStr "example_productOrderUUID")   -- String
+    , ("productUUID", VStr "example_productUUID")   -- String
     , ("reason_decline", VStr "example_reason_decline")   -- String
     ]
   ctrl <- emptyMap
   merchant_portal_pam_product_controller <- Sdk.eCreate ent d ctrl
+  merchant_portal_pam_product_controllerData <- Sdk.eDataGet merchant_portal_pam_product_controller
 ```
 
 
@@ -1011,29 +1023,30 @@ Create an instance: `output_add_product <- Sdk.output_add_product sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `String` |  |
-| `product_uui_d` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productUUIDs` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.output_add_product sdk VNoval
   d <- jo
-    [ ("package_uuid", VStr "example_package_uuid")   -- String
-    , ("product_uui_d", VNoval)   -- [Value]
-    , ("response_code", VNum 1)   -- Int
-    , ("response_message", VStr "example_response_message")   -- String
+    [ ("packageUUID", VStr "example_packageUUID")   -- String
+    , ("productUUIDs", VNoval)   -- [Value]
+    , ("responseCode", VNum 1)   -- Int
+    , ("responseMessage", VStr "example_responseMessage")   -- String
     ]
   ctrl <- emptyMap
   output_add_product <- Sdk.eCreate ent d ctrl
+  output_add_productData <- Sdk.eDataGet output_add_product
 ```
 
 
@@ -1045,47 +1058,48 @@ Create an instance: `output_create_product <- Sdk.output_create_product sdk VNov
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `allow_multiple_order` | `Bool` |  |
-| `app_form_template_name` | `String` |  |
-| `contract_needed` | `Bool` |  |
-| `credentials_needed` | `Bool` |  |
-| `description_key` | `String` |  |
-| `name_key` | `String` |  |
-| `prescreening_allowed` | `Bool` |  |
-| `product_name` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_template_name` | `String` |  |
-| `vendor_name` | `String` |  |
-| `xml_template_file` | `String` |  |
+| `acquirerId` | `String` |  |
+| `allowMultipleOrders` | `Bool` |  |
+| `appFormTemplateName` | `String` |  |
+| `contractNeeded` | `Bool` |  |
+| `credentialsNeeded` | `Bool` |  |
+| `descriptionKey` | `String` |  |
+| `nameKey` | `String` |  |
+| `prescreeningAllowed` | `Bool` |  |
+| `productName` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalTemplateName` | `String` |  |
+| `vendorName` | `String` |  |
+| `xmlTemplateFile` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.output_create_product sdk VNoval
   d <- jo
-    [ ("allow_multiple_order", VBool True)   -- Bool
-    , ("app_form_template_name", VStr "example_app_form_template_name")   -- String
-    , ("contract_needed", VBool True)   -- Bool
-    , ("description_key", VStr "example_description_key")   -- String
-    , ("name_key", VStr "example_name_key")   -- String
-    , ("prescreening_allowed", VBool True)   -- Bool
-    , ("product_name", VStr "example_product_name")   -- String
-    , ("response_code", VNum 1)   -- Int
-    , ("response_message", VStr "example_response_message")   -- String
-    , ("terminal_template_name", VStr "example_terminal_template_name")   -- String
-    , ("vendor_name", VStr "example_vendor_name")   -- String
-    , ("xml_template_file", VStr "example_xml_template_file")   -- String
+    [ ("allowMultipleOrders", VBool True)   -- Bool
+    , ("appFormTemplateName", VStr "example_appFormTemplateName")   -- String
+    , ("contractNeeded", VBool True)   -- Bool
+    , ("descriptionKey", VStr "example_descriptionKey")   -- String
+    , ("nameKey", VStr "example_nameKey")   -- String
+    , ("prescreeningAllowed", VBool True)   -- Bool
+    , ("productName", VStr "example_productName")   -- String
+    , ("responseCode", VNum 1)   -- Int
+    , ("responseMessage", VStr "example_responseMessage")   -- String
+    , ("terminalTemplateName", VStr "example_terminalTemplateName")   -- String
+    , ("vendorName", VStr "example_vendorName")   -- String
+    , ("xmlTemplateFile", VStr "example_xmlTemplateFile")   -- String
     ]
   ctrl <- emptyMap
   output_create_product <- Sdk.eCreate ent d ctrl
+  output_create_productData <- Sdk.eDataGet output_create_product
 ```
 
 
@@ -1097,15 +1111,15 @@ Create an instance: `output_detail <- Sdk.output_detail sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eLoad ent match ctrl` | Load a single entity by match criteria. |
+| `eLoad ent match ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `Value` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `batch` | `Value` |  |
+| `lines` | `Value` |  |
+| `progress` | `Value` |  |
 
 #### Example: Load
 
@@ -1114,6 +1128,8 @@ Create an instance: `output_detail <- Sdk.output_detail sdk VNoval`
   match <- jo [("id", VStr "output_detail_id")]
   ctrl <- emptyMap
   output_detail <- Sdk.eLoad ent match ctrl
+  -- The op resolves to the ENTITY; the record is inside it.
+  output_detailData <- Sdk.eDataGet output_detail
 ```
 
 
@@ -1125,16 +1141,16 @@ Create an instance: `output_list <- Sdk.output_list sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `[Value]` |  |
+| `items` | `[Value]` |  |
 | `pagination` | `Value` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `Value` |  |
 
 #### Example: Create
@@ -1143,11 +1159,12 @@ Create an instance: `output_list <- Sdk.output_list sdk VNoval`
   ent <- Sdk.output_list sdk VNoval
   d <- jo
     [ ("pagination", VNoval)   -- Value
-    , ("response_code", VNum 1)   -- Int
-    , ("response_message", VStr "example_response_message")   -- String
+    , ("responseCode", VNum 1)   -- Int
+    , ("responseMessage", VStr "example_responseMessage")   -- String
     ]
   ctrl <- emptyMap
   output_list <- Sdk.eCreate ent d ctrl
+  output_listData <- Sdk.eDataGet output_list
 ```
 
 
@@ -1159,14 +1176,14 @@ Create an instance: `output_message <- Sdk.output_message sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eLoad ent match ctrl` | Load a single entity by match criteria. |
+| `eLoad ent match ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Load
 
@@ -1175,6 +1192,8 @@ Create an instance: `output_message <- Sdk.output_message sdk VNoval`
   match <- jo [("id", VStr "output_message_id")]
   ctrl <- emptyMap
   output_message <- Sdk.eLoad ent match ctrl
+  -- The op resolves to the ENTITY; the record is inside it.
+  output_messageData <- Sdk.eDataGet output_message
 ```
 
 
@@ -1186,31 +1205,32 @@ Create an instance: `output_move_tid <- Sdk.output_move_tid sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `target_package_order_uuid` | `String` |  |
-| `target_product_order_uuid` | `String` |  |
+| `productOrderUUIDs` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `targetPackageOrderUUID` | `String` |  |
+| `targetProductOrderUUID` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.output_move_tid sdk VNoval
   d <- jo
-    [ ("product_order_uui_d", VNoval)   -- [Value]
-    , ("response_code", VNum 1)   -- Int
-    , ("response_message", VStr "example_response_message")   -- String
-    , ("target_package_order_uuid", VStr "example_target_package_order_uuid")   -- String
-    , ("target_product_order_uuid", VStr "example_target_product_order_uuid")   -- String
+    [ ("productOrderUUIDs", VNoval)   -- [Value]
+    , ("responseCode", VNum 1)   -- Int
+    , ("responseMessage", VStr "example_responseMessage")   -- String
+    , ("targetPackageOrderUUID", VStr "example_targetPackageOrderUUID")   -- String
+    , ("targetProductOrderUUID", VStr "example_targetProductOrderUUID")   -- String
     ]
   ctrl <- emptyMap
   output_move_tid <- Sdk.eCreate ent d ctrl
+  output_move_tidData <- Sdk.eDataGet output_move_tid
 ```
 
 
@@ -1222,29 +1242,30 @@ Create an instance: `output_remove_product <- Sdk.output_remove_product sdk VNov
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `String` |  |
-| `product_uui_d` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `packageUUID` | `String` |  |
+| `productUUIDs` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.output_remove_product sdk VNoval
   d <- jo
-    [ ("package_uuid", VStr "example_package_uuid")   -- String
-    , ("product_uui_d", VNoval)   -- [Value]
-    , ("response_code", VNum 1)   -- Int
-    , ("response_message", VStr "example_response_message")   -- String
+    [ ("packageUUID", VStr "example_packageUUID")   -- String
+    , ("productUUIDs", VNoval)   -- [Value]
+    , ("responseCode", VNum 1)   -- Int
+    , ("responseMessage", VStr "example_responseMessage")   -- String
     ]
   ctrl <- emptyMap
   output_remove_product <- Sdk.eCreate ent d ctrl
+  output_remove_productData <- Sdk.eDataGet output_remove_product
 ```
 
 
@@ -1256,26 +1277,27 @@ Create an instance: `output_start <- Sdk.output_start sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.output_start sdk VNoval
   d <- jo
-    [ ("response_code", VNum 1)   -- Int
-    , ("response_message", VStr "example_response_message")   -- String
+    [ ("responseCode", VNum 1)   -- Int
+    , ("responseMessage", VStr "example_responseMessage")   -- String
     ]
   ctrl <- emptyMap
   output_start <- Sdk.eCreate ent d ctrl
+  output_startData <- Sdk.eDataGet output_start
 ```
 
 
@@ -1287,15 +1309,15 @@ Create an instance: `output_status <- Sdk.output_status sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eLoad ent match ctrl` | Load a single entity by match criteria. |
+| `eLoad ent match ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `Int` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `status` | `String` |  |
 
 #### Example: Load
@@ -1305,6 +1327,8 @@ Create an instance: `output_status <- Sdk.output_status sdk VNoval`
   match <- jo [("id", VStr "output_status_id")]
   ctrl <- emptyMap
   output_status <- Sdk.eLoad ent match ctrl
+  -- The op resolves to the ENTITY; the record is inside it.
+  output_statusData <- Sdk.eDataGet output_status
 ```
 
 
@@ -1316,37 +1340,38 @@ Create an instance: `output_update_product <- Sdk.output_update_product sdk VNov
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `Bool` |  |
-| `app_form_name` | `String` |  |
-| `contract_needed` | `Bool` |  |
-| `credentials_needed` | `Bool` |  |
-| `description_key` | `String` |  |
-| `name_key` | `String` |  |
-| `prescreening_allowed` | `Bool` |  |
-| `product_name` | `String` |  |
-| `product_status` | `String` |  |
-| `product_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `vendor_name` | `String` |  |
+| `allowMultipleOrders` | `Bool` |  |
+| `appFormName` | `String` |  |
+| `contractNeeded` | `Bool` |  |
+| `credentialsNeeded` | `Bool` |  |
+| `descriptionKey` | `String` |  |
+| `nameKey` | `String` |  |
+| `prescreeningAllowed` | `Bool` |  |
+| `productName` | `String` |  |
+| `productStatus` | `String` |  |
+| `productUUID` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `vendorName` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.output_update_product sdk VNoval
   d <- jo
-    [ ("product_uuid", VStr "example_product_uuid")   -- String
-    , ("response_code", VNum 1)   -- Int
-    , ("response_message", VStr "example_response_message")   -- String
+    [ ("productUUID", VStr "example_productUUID")   -- String
+    , ("responseCode", VNum 1)   -- Int
+    , ("responseMessage", VStr "example_responseMessage")   -- String
     ]
   ctrl <- emptyMap
   output_update_product <- Sdk.eCreate ent d ctrl
+  output_update_productData <- Sdk.eDataGet output_update_product
 ```
 
 

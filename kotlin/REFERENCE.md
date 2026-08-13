@@ -311,7 +311,7 @@ val merchantPortalPamContractController = client.merchantPortalPamContractContro
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `language` | `String?` | Yes |  |
-| `product_order_uuid` | `String?` | Yes |  |
+| `productOrderUUID` | `String?` | Yes |  |
 
 ### Operations
 
@@ -322,7 +322,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```kotlin
 val result = client.merchantPortalPamContractController(null).create(mutableMapOf<String, Any?>(
     "language" to "example_language",  // String?
-    "product_order_uuid" to "example_product_order_uuid"  // String?
+    "productOrderUUID" to "example_productOrderUUID"  // String?
 ), null)
 ```
 
@@ -357,9 +357,9 @@ val merchantPortalPamDocumentController = client.merchantPortalPamDocumentContro
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_field_desc_uuid` | `String?` | Yes |  |
-| `package_order_uuid` | `String?` | No |  |
-| `product_order_uuid` | `String?` | No |  |
+| `appFormFieldDescUUID` | `String?` | Yes |  |
+| `packageOrderUUID` | `String?` | No |  |
+| `productOrderUUID` | `String?` | No |  |
 
 ### Operations
 
@@ -369,7 +369,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.merchantPortalPamDocumentController(null).create(mutableMapOf<String, Any?>(
-    "app_form_field_desc_uuid" to "example_app_form_field_desc_uuid"  // String?
+    "appFormFieldDescUUID" to "example_appFormFieldDescUUID"  // String?
 ), null)
 ```
 
@@ -404,29 +404,29 @@ val merchantPortalPamFormController = client.merchantPortalPamFormController(nul
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `String?` | Yes |  |
+| `appFormFieldsDescUUID` | `String?` | Yes |  |
 | `filter` | `Map<String, Any?>?` | No |  |
 | `language` | `String?` | Yes |  |
-| `package_order` | `Map<String, Any?>?` | No |  |
-| `package_order_uuid` | `String?` | Yes |  |
-| `package_uuid` | `String?` | No |  |
-| `product_order` | `List<Any?>?` | No |  |
-| `product_order_uuid` | `String?` | No |  |
-| `reason_of_reopening` | `String?` | Yes |  |
+| `packageOrder` | `Map<String, Any?>?` | No |  |
+| `packageOrderUUID` | `String?` | Yes |  |
+| `packageUUID` | `String?` | No |  |
+| `productOrderUUID` | `String?` | No |  |
+| `productOrders` | `List<Any?>?` | No |  |
+| `reasonOfReopening` | `String?` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `app_form_fields_desc_uuid` | - |
+| `appFormFieldsDescUUID` | - |
 | `filter` | - |
 | `language` | Yes |
-| `package_order` | - |
-| `package_order_uuid` | Yes |
-| `package_uuid` | - |
-| `product_order` | - |
-| `product_order_uuid` | Yes |
-| `reason_of_reopening` | - |
+| `packageOrder` | - |
+| `packageOrderUUID` | Yes |
+| `packageUUID` | - |
+| `productOrderUUID` | Yes |
+| `productOrders` | - |
+| `reasonOfReopening` | - |
 
 ### Operations
 
@@ -436,10 +436,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.merchantPortalPamFormController(null).create(mutableMapOf<String, Any?>(
-    "app_form_fields_desc_uuid" to "example_app_form_fields_desc_uuid",  // String?
+    "appFormFieldsDescUUID" to "example_appFormFieldsDescUUID",  // String?
     "language" to "example_language",  // String?
-    "package_order_uuid" to "example_package_order_uuid",  // String?
-    "reason_of_reopening" to "example_reason_of_reopening"  // String?
+    "packageOrderUUID" to "example_packageOrderUUID",  // String?
+    "reasonOfReopening" to "example_reasonOfReopening"  // String?
 ), null)
 ```
 
@@ -474,10 +474,10 @@ val merchantPortalPamMandatorController = client.merchantPortalPamMandatorContro
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `String?` | No |  |
-| `mandator_name` | `String?` | Yes |  |
-| `notification_email` | `String?` | No |  |
-| `package_uuid` | `String?` | Yes |  |
+| `clientSecret` | `String?` | No |  |
+| `mandatorName` | `String?` | Yes |  |
+| `notificationEmail` | `String?` | No |  |
+| `packageUUID` | `String?` | Yes |  |
 
 ### Operations
 
@@ -487,8 +487,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.merchantPortalPamMandatorController(null).create(mutableMapOf<String, Any?>(
-    "mandator_name" to "example_mandator_name",  // String?
-    "package_uuid" to "example_package_uuid"  // String?
+    "mandatorName" to "example_mandatorName",  // String?
+    "packageUUID" to "example_packageUUID"  // String?
 ), null)
 ```
 
@@ -524,29 +524,29 @@ val merchantPortalPamMerchantController = client.merchantPortalPamMerchantContro
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `additional_data` | `Map<String, Any?>?` | No |  |
-| `business_registration_number` | `String?` | Yes |  |
+| `businessRegistrationNumber` | `String?` | Yes |  |
 | `city` | `String?` | No |  |
-| `company_name` | `String?` | Yes |  |
-| `corporate_uuid` | `String?` | Yes |  |
+| `companyName` | `String?` | Yes |  |
+| `corporateUUID` | `String?` | Yes |  |
 | `country` | `String?` | No |  |
 | `currency` | `String?` | Yes |  |
 | `email` | `String?` | Yes |  |
 | `language` | `String?` | Yes |  |
 | `login` | `String?` | Yes |  |
 | `mandator` | `String?` | Yes |  |
+| `merchantContractNumber` | `String?` | Yes |  |
+| `merchantName` | `String?` | No |  |
 | `merchant_category_code` | `String?` | No |  |
-| `merchant_contract_number` | `String?` | Yes |  |
-| `merchant_name` | `String?` | No |  |
-| `package_uuid` | `String?` | No |  |
+| `packageUUID` | `String?` | No |  |
 | `packageorderuuid` | `String?` | Yes |  |
-| `phone_number` | `String?` | Yes |  |
-| `postal_code` | `String?` | No |  |
+| `phoneNumber` | `String?` | Yes |  |
+| `postalCode` | `String?` | No |  |
 | `productid_acquirer` | `String?` | Yes |  |
 | `region` | `String?` | No |  |
-| `registration_number` | `String?` | No |  |
+| `registrationNumber` | `String?` | No |  |
 | `signature` | `String?` | No |  |
 | `street` | `String?` | No |  |
-| `terminal_id` | `List<Any?>?` | No |  |
+| `terminalIds` | `List<Any?>?` | No |  |
 | `terminalid_acquirer` | `String?` | No |  |
 | `vu_nummer` | `String?` | Yes |  |
 
@@ -555,29 +555,29 @@ val merchantPortalPamMerchantController = client.merchantPortalPamMerchantContro
 | Field | create |
 | --- | --- |
 | `additional_data` | - |
-| `business_registration_number` | - |
+| `businessRegistrationNumber` | - |
 | `city` | - |
-| `company_name` | - |
-| `corporate_uuid` | - |
+| `companyName` | - |
+| `corporateUUID` | - |
 | `country` | - |
 | `currency` | - |
 | `email` | - |
 | `language` | - |
 | `login` | - |
 | `mandator` | - |
+| `merchantContractNumber` | Yes |
+| `merchantName` | - |
 | `merchant_category_code` | - |
-| `merchant_contract_number` | Yes |
-| `merchant_name` | - |
-| `package_uuid` | - |
+| `packageUUID` | - |
 | `packageorderuuid` | - |
-| `phone_number` | - |
-| `postal_code` | - |
+| `phoneNumber` | - |
+| `postalCode` | - |
 | `productid_acquirer` | - |
 | `region` | - |
-| `registration_number` | - |
+| `registrationNumber` | - |
 | `signature` | - |
 | `street` | - |
-| `terminal_id` | - |
+| `terminalIds` | - |
 | `terminalid_acquirer` | - |
 | `vu_nummer` | - |
 
@@ -589,17 +589,17 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.merchantPortalPamMerchantController(null).create(mutableMapOf<String, Any?>(
-    "business_registration_number" to "example_business_registration_number",  // String?
-    "company_name" to "example_company_name",  // String?
-    "corporate_uuid" to "example_corporate_uuid",  // String?
+    "businessRegistrationNumber" to "example_businessRegistrationNumber",  // String?
+    "companyName" to "example_companyName",  // String?
+    "corporateUUID" to "example_corporateUUID",  // String?
     "currency" to "example_currency",  // String?
     "email" to "example_email",  // String?
     "language" to "example_language",  // String?
     "login" to "example_login",  // String?
     "mandator" to "example_mandator",  // String?
-    "merchant_contract_number" to "example_merchant_contract_number",  // String?
+    "merchantContractNumber" to "example_merchantContractNumber",  // String?
     "packageorderuuid" to "example_packageorderuuid",  // String?
-    "phone_number" to "example_phone_number",  // String?
+    "phoneNumber" to "example_phoneNumber",  // String?
     "productid_acquirer" to "example_productid_acquirer",  // String?
     "vu_nummer" to "example_vu_nummer"  // String?
 ), null)
@@ -636,15 +636,15 @@ val merchantPortalPamPackageController = client.merchantPortalPamPackageControll
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String?` | No |  |
-| `corporate_uuid` | `String?` | No |  |
+| `consumerUUID` | `String?` | No |  |
+| `corporateUUID` | `String?` | No |  |
 | `country` | `String?` | No |  |
-| `description_key` | `String?` | No |  |
+| `descriptionKey` | `String?` | No |  |
 | `filter` | `Map<String, Any?>?` | No |  |
 | `language` | `String?` | Yes |  |
-| `name_key` | `String?` | No |  |
-| `package_status` | `String?` | No |  |
-| `package_uuid` | `String?` | Yes |  |
+| `nameKey` | `String?` | No |  |
+| `packageStatus` | `String?` | No |  |
+| `packageUUID` | `String?` | Yes |  |
 | `pagination` | `Map<String, Any?>?` | No |  |
 | `sorting` | `Map<String, Any?>?` | No |  |
 
@@ -652,15 +652,15 @@ val merchantPortalPamPackageController = client.merchantPortalPamPackageControll
 
 | Field | create |
 | --- | --- |
-| `consumer_uuid` | - |
-| `corporate_uuid` | - |
+| `consumerUUID` | - |
+| `corporateUUID` | - |
 | `country` | - |
-| `description_key` | - |
+| `descriptionKey` | - |
 | `filter` | - |
 | `language` | Yes |
-| `name_key` | - |
-| `package_status` | - |
-| `package_uuid` | - |
+| `nameKey` | - |
+| `packageStatus` | - |
+| `packageUUID` | - |
 | `pagination` | - |
 | `sorting` | - |
 
@@ -673,7 +673,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```kotlin
 val result = client.merchantPortalPamPackageController(null).create(mutableMapOf<String, Any?>(
     "language" to "example_language",  // String?
-    "package_uuid" to "example_package_uuid"  // String?
+    "packageUUID" to "example_packageUUID"  // String?
 ), null)
 ```
 
@@ -708,14 +708,14 @@ val merchantPortalPamProductController = client.merchantPortalPamProductControll
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String?` | No |  |
+| `consumerUUID` | `String?` | No |  |
 | `filter` | `Map<String, Any?>?` | No |  |
 | `language` | `String?` | No |  |
-| `merchant_id` | `String?` | No |  |
-| `package_order_uuid` | `String?` | Yes |  |
+| `merchantID` | `String?` | No |  |
+| `packageOrderUUID` | `String?` | Yes |  |
 | `pagination` | `Map<String, Any?>?` | No |  |
-| `product_order_uuid` | `String?` | Yes |  |
-| `product_uuid` | `String?` | Yes |  |
+| `productOrderUUID` | `String?` | Yes |  |
+| `productUUID` | `String?` | Yes |  |
 | `reason_decline` | `String?` | Yes |  |
 | `sorting` | `Map<String, Any?>?` | No |  |
 
@@ -727,9 +727,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.merchantPortalPamProductController(null).create(mutableMapOf<String, Any?>(
-    "package_order_uuid" to "example_package_order_uuid",  // String?
-    "product_order_uuid" to "example_product_order_uuid",  // String?
-    "product_uuid" to "example_product_uuid",  // String?
+    "packageOrderUUID" to "example_packageOrderUUID",  // String?
+    "productOrderUUID" to "example_productOrderUUID",  // String?
+    "productUUID" to "example_productUUID",  // String?
     "reason_decline" to "example_reason_decline"  // String?
 ), null)
 ```
@@ -765,10 +765,10 @@ val outputAddProduct = client.outputAddProduct(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `String?` | Yes |  |
-| `product_uui_d` | `List<Any?>?` | Yes |  |
-| `response_code` | `Long?` | Yes |  |
-| `response_message` | `String?` | Yes |  |
+| `packageUUID` | `String?` | Yes |  |
+| `productUUIDs` | `List<Any?>?` | Yes |  |
+| `responseCode` | `Long?` | Yes |  |
+| `responseMessage` | `String?` | Yes |  |
 
 ### Operations
 
@@ -778,10 +778,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.outputAddProduct(null).create(mutableMapOf<String, Any?>(
-    "package_uuid" to "example_package_uuid",  // String?
-    "product_uui_d" to listOf<Any?>(),  // List<Any?>?
-    "response_code" to 1L,  // Long?
-    "response_message" to "example_response_message"  // String?
+    "packageUUID" to "example_packageUUID",  // String?
+    "productUUIDs" to listOf<Any?>(),  // List<Any?>?
+    "responseCode" to 1L,  // Long?
+    "responseMessage" to "example_responseMessage"  // String?
 ), null)
 ```
 
@@ -816,20 +816,20 @@ val outputCreateProduct = client.outputCreateProduct(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String?` | No |  |
-| `allow_multiple_order` | `Boolean?` | Yes |  |
-| `app_form_template_name` | `String?` | Yes |  |
-| `contract_needed` | `Boolean?` | Yes |  |
-| `credentials_needed` | `Boolean?` | No |  |
-| `description_key` | `String?` | Yes |  |
-| `name_key` | `String?` | Yes |  |
-| `prescreening_allowed` | `Boolean?` | Yes |  |
-| `product_name` | `String?` | Yes |  |
-| `response_code` | `Long?` | Yes |  |
-| `response_message` | `String?` | Yes |  |
-| `terminal_template_name` | `String?` | Yes |  |
-| `vendor_name` | `String?` | Yes |  |
-| `xml_template_file` | `String?` | Yes |  |
+| `acquirerId` | `String?` | No |  |
+| `allowMultipleOrders` | `Boolean?` | Yes |  |
+| `appFormTemplateName` | `String?` | Yes |  |
+| `contractNeeded` | `Boolean?` | Yes |  |
+| `credentialsNeeded` | `Boolean?` | No |  |
+| `descriptionKey` | `String?` | Yes |  |
+| `nameKey` | `String?` | Yes |  |
+| `prescreeningAllowed` | `Boolean?` | Yes |  |
+| `productName` | `String?` | Yes |  |
+| `responseCode` | `Long?` | Yes |  |
+| `responseMessage` | `String?` | Yes |  |
+| `terminalTemplateName` | `String?` | Yes |  |
+| `vendorName` | `String?` | Yes |  |
+| `xmlTemplateFile` | `String?` | Yes |  |
 
 ### Operations
 
@@ -839,18 +839,18 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.outputCreateProduct(null).create(mutableMapOf<String, Any?>(
-    "allow_multiple_order" to true,  // Boolean?
-    "app_form_template_name" to "example_app_form_template_name",  // String?
-    "contract_needed" to true,  // Boolean?
-    "description_key" to "example_description_key",  // String?
-    "name_key" to "example_name_key",  // String?
-    "prescreening_allowed" to true,  // Boolean?
-    "product_name" to "example_product_name",  // String?
-    "response_code" to 1L,  // Long?
-    "response_message" to "example_response_message",  // String?
-    "terminal_template_name" to "example_terminal_template_name",  // String?
-    "vendor_name" to "example_vendor_name",  // String?
-    "xml_template_file" to "example_xml_template_file"  // String?
+    "allowMultipleOrders" to true,  // Boolean?
+    "appFormTemplateName" to "example_appFormTemplateName",  // String?
+    "contractNeeded" to true,  // Boolean?
+    "descriptionKey" to "example_descriptionKey",  // String?
+    "nameKey" to "example_nameKey",  // String?
+    "prescreeningAllowed" to true,  // Boolean?
+    "productName" to "example_productName",  // String?
+    "responseCode" to 1L,  // Long?
+    "responseMessage" to "example_responseMessage",  // String?
+    "terminalTemplateName" to "example_terminalTemplateName",  // String?
+    "vendorName" to "example_vendorName",  // String?
+    "xmlTemplateFile" to "example_xmlTemplateFile"  // String?
 ), null)
 ```
 
@@ -885,9 +885,9 @@ val outputDetail = client.outputDetail(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `detail` | `Map<String, Any?>?` | No |  |
-| `response_code` | `Long?` | Yes |  |
-| `response_message` | `String?` | Yes |  |
+| `batch` | `Map<String, Any?>?` | No |  |
+| `lines` | `Map<String, Any?>?` | No |  |
+| `progress` | `Map<String, Any?>?` | No |  |
 
 ### Operations
 
@@ -930,20 +930,20 @@ val outputList = client.outputList(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `item` | `List<Any?>?` | No |  |
+| `items` | `List<Any?>?` | No |  |
 | `pagination` | `Map<String, Any?>?` | Yes |  |
-| `response_code` | `Long?` | Yes |  |
-| `response_message` | `String?` | Yes |  |
+| `responseCode` | `Long?` | Yes |  |
+| `responseMessage` | `String?` | Yes |  |
 | `sorting` | `Map<String, Any?>?` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `item` | - |
+| `items` | - |
 | `pagination` | Yes |
-| `response_code` | - |
-| `response_message` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
 | `sorting` | - |
 
 ### Operations
@@ -955,8 +955,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```kotlin
 val result = client.outputList(null).create(mutableMapOf<String, Any?>(
     "pagination" to mapOf<String, Any?>(),  // Map<String, Any?>?
-    "response_code" to 1L,  // Long?
-    "response_message" to "example_response_message"  // String?
+    "responseCode" to 1L,  // Long?
+    "responseMessage" to "example_responseMessage"  // String?
 ), null)
 ```
 
@@ -991,8 +991,8 @@ val outputMessage = client.outputMessage(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Long?` | Yes |  |
-| `response_message` | `String?` | Yes |  |
+| `responseCode` | `Long?` | Yes |  |
+| `responseMessage` | `String?` | Yes |  |
 
 ### Operations
 
@@ -1035,11 +1035,11 @@ val outputMoveTid = client.outputMoveTid(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `product_order_uui_d` | `List<Any?>?` | Yes |  |
-| `response_code` | `Long?` | Yes |  |
-| `response_message` | `String?` | Yes |  |
-| `target_package_order_uuid` | `String?` | Yes |  |
-| `target_product_order_uuid` | `String?` | Yes |  |
+| `productOrderUUIDs` | `List<Any?>?` | Yes |  |
+| `responseCode` | `Long?` | Yes |  |
+| `responseMessage` | `String?` | Yes |  |
+| `targetPackageOrderUUID` | `String?` | Yes |  |
+| `targetProductOrderUUID` | `String?` | Yes |  |
 
 ### Operations
 
@@ -1049,11 +1049,11 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.outputMoveTid(null).create(mutableMapOf<String, Any?>(
-    "product_order_uui_d" to listOf<Any?>(),  // List<Any?>?
-    "response_code" to 1L,  // Long?
-    "response_message" to "example_response_message",  // String?
-    "target_package_order_uuid" to "example_target_package_order_uuid",  // String?
-    "target_product_order_uuid" to "example_target_product_order_uuid"  // String?
+    "productOrderUUIDs" to listOf<Any?>(),  // List<Any?>?
+    "responseCode" to 1L,  // Long?
+    "responseMessage" to "example_responseMessage",  // String?
+    "targetPackageOrderUUID" to "example_targetPackageOrderUUID",  // String?
+    "targetProductOrderUUID" to "example_targetProductOrderUUID"  // String?
 ), null)
 ```
 
@@ -1088,10 +1088,10 @@ val outputRemoveProduct = client.outputRemoveProduct(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `String?` | Yes |  |
-| `product_uui_d` | `List<Any?>?` | Yes |  |
-| `response_code` | `Long?` | Yes |  |
-| `response_message` | `String?` | Yes |  |
+| `packageUUID` | `String?` | Yes |  |
+| `productUUIDs` | `List<Any?>?` | Yes |  |
+| `responseCode` | `Long?` | Yes |  |
+| `responseMessage` | `String?` | Yes |  |
 
 ### Operations
 
@@ -1101,10 +1101,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.outputRemoveProduct(null).create(mutableMapOf<String, Any?>(
-    "package_uuid" to "example_package_uuid",  // String?
-    "product_uui_d" to listOf<Any?>(),  // List<Any?>?
-    "response_code" to 1L,  // Long?
-    "response_message" to "example_response_message"  // String?
+    "packageUUID" to "example_packageUUID",  // String?
+    "productUUIDs" to listOf<Any?>(),  // List<Any?>?
+    "responseCode" to 1L,  // Long?
+    "responseMessage" to "example_responseMessage"  // String?
 ), null)
 ```
 
@@ -1140,8 +1140,8 @@ val outputStart = client.outputStart(null)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `String?` | No |  |
-| `response_code` | `Long?` | Yes |  |
-| `response_message` | `String?` | Yes |  |
+| `responseCode` | `Long?` | Yes |  |
+| `responseMessage` | `String?` | Yes |  |
 
 ### Operations
 
@@ -1151,8 +1151,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.outputStart(null).create(mutableMapOf<String, Any?>(
-    "response_code" to 1L,  // Long?
-    "response_message" to "example_response_message"  // String?
+    "responseCode" to 1L,  // Long?
+    "responseMessage" to "example_responseMessage"  // String?
 ), null)
 ```
 
@@ -1188,8 +1188,8 @@ val outputStatus = client.outputStatus(null)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `Long?` | No |  |
-| `response_code` | `Long?` | Yes |  |
-| `response_message` | `String?` | Yes |  |
+| `responseCode` | `Long?` | Yes |  |
+| `responseMessage` | `String?` | Yes |  |
 | `status` | `String?` | No |  |
 
 ### Operations
@@ -1233,19 +1233,19 @@ val outputUpdateProduct = client.outputUpdateProduct(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allow_multiple_order` | `Boolean?` | No |  |
-| `app_form_name` | `String?` | No |  |
-| `contract_needed` | `Boolean?` | No |  |
-| `credentials_needed` | `Boolean?` | No |  |
-| `description_key` | `String?` | No |  |
-| `name_key` | `String?` | No |  |
-| `prescreening_allowed` | `Boolean?` | No |  |
-| `product_name` | `String?` | No |  |
-| `product_status` | `String?` | No |  |
-| `product_uuid` | `String?` | Yes |  |
-| `response_code` | `Long?` | Yes |  |
-| `response_message` | `String?` | Yes |  |
-| `vendor_name` | `String?` | No |  |
+| `allowMultipleOrders` | `Boolean?` | No |  |
+| `appFormName` | `String?` | No |  |
+| `contractNeeded` | `Boolean?` | No |  |
+| `credentialsNeeded` | `Boolean?` | No |  |
+| `descriptionKey` | `String?` | No |  |
+| `nameKey` | `String?` | No |  |
+| `prescreeningAllowed` | `Boolean?` | No |  |
+| `productName` | `String?` | No |  |
+| `productStatus` | `String?` | No |  |
+| `productUUID` | `String?` | Yes |  |
+| `responseCode` | `Long?` | Yes |  |
+| `responseMessage` | `String?` | Yes |  |
+| `vendorName` | `String?` | No |  |
 
 ### Operations
 
@@ -1255,9 +1255,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.outputUpdateProduct(null).create(mutableMapOf<String, Any?>(
-    "product_uuid" to "example_product_uuid",  // String?
-    "response_code" to 1L,  // Long?
-    "response_message" to "example_response_message"  // String?
+    "productUUID" to "example_productUUID",  // String?
+    "responseCode" to 1L,  // Long?
+    "responseMessage" to "example_responseMessage"  // String?
 ), null)
 ```
 

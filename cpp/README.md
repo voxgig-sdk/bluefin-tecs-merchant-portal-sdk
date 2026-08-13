@@ -316,7 +316,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -326,9 +326,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -338,15 +338,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: Create.
 
@@ -356,10 +356,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: Create.
 
@@ -370,29 +370,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -404,15 +404,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -424,14 +424,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -443,10 +443,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -456,20 +456,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: Create.
 
@@ -479,9 +479,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: Load.
 
@@ -491,10 +491,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -505,8 +505,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -516,11 +516,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: Create.
 
@@ -530,10 +530,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -544,8 +544,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -556,8 +556,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Load.
@@ -568,19 +568,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: Create.
 
@@ -697,14 +697,14 @@ Create an instance: `auto merchant_portal_pam_contract_controller = client->merc
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `std::string` |  |
-| `product_order_uuid` | `std::string` |  |
+| `productOrderUUID` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value merchant_portal_pam_contract_controller = client->merchant_portal_pam_contract_controller()->create(vmap({
     {"language", Value("example_language")},  // std::string
-    {"product_order_uuid", Value("example_product_order_uuid")},  // std::string
+    {"productOrderUUID", Value("example_productOrderUUID")},  // std::string
 }), Value::undef());
 ```
 
@@ -723,15 +723,15 @@ Create an instance: `auto merchant_portal_pam_document_controller = client->merc
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `std::string` |  |
-| `package_order_uuid` | `std::string` |  |
-| `product_order_uuid` | `std::string` |  |
+| `appFormFieldDescUUID` | `std::string` |  |
+| `packageOrderUUID` | `std::string` |  |
+| `productOrderUUID` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value merchant_portal_pam_document_controller = client->merchant_portal_pam_document_controller()->create(vmap({
-    {"app_form_field_desc_uuid", Value("example_app_form_field_desc_uuid")},  // std::string
+    {"appFormFieldDescUUID", Value("example_appFormFieldDescUUID")},  // std::string
 }), Value::undef());
 ```
 
@@ -750,24 +750,24 @@ Create an instance: `auto merchant_portal_pam_form_controller = client->merchant
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `std::string` |  |
+| `appFormFieldsDescUUID` | `std::string` |  |
 | `filter` | `std::map<std::string, Value>` |  |
 | `language` | `std::string` |  |
-| `package_order` | `std::map<std::string, Value>` |  |
-| `package_order_uuid` | `std::string` |  |
-| `package_uuid` | `std::string` |  |
-| `product_order` | `std::vector<Value>` |  |
-| `product_order_uuid` | `std::string` |  |
-| `reason_of_reopening` | `std::string` |  |
+| `packageOrder` | `std::map<std::string, Value>` |  |
+| `packageOrderUUID` | `std::string` |  |
+| `packageUUID` | `std::string` |  |
+| `productOrderUUID` | `std::string` |  |
+| `productOrders` | `std::vector<Value>` |  |
+| `reasonOfReopening` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value merchant_portal_pam_form_controller = client->merchant_portal_pam_form_controller()->create(vmap({
-    {"app_form_fields_desc_uuid", Value("example_app_form_fields_desc_uuid")},  // std::string
+    {"appFormFieldsDescUUID", Value("example_appFormFieldsDescUUID")},  // std::string
     {"language", Value("example_language")},  // std::string
-    {"package_order_uuid", Value("example_package_order_uuid")},  // std::string
-    {"reason_of_reopening", Value("example_reason_of_reopening")},  // std::string
+    {"packageOrderUUID", Value("example_packageOrderUUID")},  // std::string
+    {"reasonOfReopening", Value("example_reasonOfReopening")},  // std::string
 }), Value::undef());
 ```
 
@@ -786,17 +786,17 @@ Create an instance: `auto merchant_portal_pam_mandator_controller = client->merc
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `std::string` |  |
-| `mandator_name` | `std::string` |  |
-| `notification_email` | `std::string` |  |
-| `package_uuid` | `std::string` |  |
+| `clientSecret` | `std::string` |  |
+| `mandatorName` | `std::string` |  |
+| `notificationEmail` | `std::string` |  |
+| `packageUUID` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value merchant_portal_pam_mandator_controller = client->merchant_portal_pam_mandator_controller()->create(vmap({
-    {"mandator_name", Value("example_mandator_name")},  // std::string
-    {"package_uuid", Value("example_package_uuid")},  // std::string
+    {"mandatorName", Value("example_mandatorName")},  // std::string
+    {"packageUUID", Value("example_packageUUID")},  // std::string
 }), Value::undef());
 ```
 
@@ -816,29 +816,29 @@ Create an instance: `auto merchant_portal_pam_merchant_controller = client->merc
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `std::map<std::string, Value>` |  |
-| `business_registration_number` | `std::string` |  |
+| `businessRegistrationNumber` | `std::string` |  |
 | `city` | `std::string` |  |
-| `company_name` | `std::string` |  |
-| `corporate_uuid` | `std::string` |  |
+| `companyName` | `std::string` |  |
+| `corporateUUID` | `std::string` |  |
 | `country` | `std::string` |  |
 | `currency` | `std::string` |  |
 | `email` | `std::string` |  |
 | `language` | `std::string` |  |
 | `login` | `std::string` |  |
 | `mandator` | `std::string` |  |
+| `merchantContractNumber` | `std::string` |  |
+| `merchantName` | `std::string` |  |
 | `merchant_category_code` | `std::string` |  |
-| `merchant_contract_number` | `std::string` |  |
-| `merchant_name` | `std::string` |  |
-| `package_uuid` | `std::string` |  |
+| `packageUUID` | `std::string` |  |
 | `packageorderuuid` | `std::string` |  |
-| `phone_number` | `std::string` |  |
-| `postal_code` | `std::string` |  |
+| `phoneNumber` | `std::string` |  |
+| `postalCode` | `std::string` |  |
 | `productid_acquirer` | `std::string` |  |
 | `region` | `std::string` |  |
-| `registration_number` | `std::string` |  |
+| `registrationNumber` | `std::string` |  |
 | `signature` | `std::string` |  |
 | `street` | `std::string` |  |
-| `terminal_id` | `std::vector<Value>` |  |
+| `terminalIds` | `std::vector<Value>` |  |
 | `terminalid_acquirer` | `std::string` |  |
 | `vu_nummer` | `std::string` |  |
 
@@ -846,17 +846,17 @@ Create an instance: `auto merchant_portal_pam_merchant_controller = client->merc
 
 ```cpp
 Value merchant_portal_pam_merchant_controller = client->merchant_portal_pam_merchant_controller()->create(vmap({
-    {"business_registration_number", Value("example_business_registration_number")},  // std::string
-    {"company_name", Value("example_company_name")},  // std::string
-    {"corporate_uuid", Value("example_corporate_uuid")},  // std::string
+    {"businessRegistrationNumber", Value("example_businessRegistrationNumber")},  // std::string
+    {"companyName", Value("example_companyName")},  // std::string
+    {"corporateUUID", Value("example_corporateUUID")},  // std::string
     {"currency", Value("example_currency")},  // std::string
     {"email", Value("example_email")},  // std::string
     {"language", Value("example_language")},  // std::string
     {"login", Value("example_login")},  // std::string
     {"mandator", Value("example_mandator")},  // std::string
-    {"merchant_contract_number", Value("example_merchant_contract_number")},  // std::string
+    {"merchantContractNumber", Value("example_merchantContractNumber")},  // std::string
     {"packageorderuuid", Value("example_packageorderuuid")},  // std::string
-    {"phone_number", Value("example_phone_number")},  // std::string
+    {"phoneNumber", Value("example_phoneNumber")},  // std::string
     {"productid_acquirer", Value("example_productid_acquirer")},  // std::string
     {"vu_nummer", Value("example_vu_nummer")},  // std::string
 }), Value::undef());
@@ -877,15 +877,15 @@ Create an instance: `auto merchant_portal_pam_package_controller = client->merch
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `std::string` |  |
-| `corporate_uuid` | `std::string` |  |
+| `consumerUUID` | `std::string` |  |
+| `corporateUUID` | `std::string` |  |
 | `country` | `std::string` |  |
-| `description_key` | `std::string` |  |
+| `descriptionKey` | `std::string` |  |
 | `filter` | `std::map<std::string, Value>` |  |
 | `language` | `std::string` |  |
-| `name_key` | `std::string` |  |
-| `package_status` | `std::string` |  |
-| `package_uuid` | `std::string` |  |
+| `nameKey` | `std::string` |  |
+| `packageStatus` | `std::string` |  |
+| `packageUUID` | `std::string` |  |
 | `pagination` | `std::map<std::string, Value>` |  |
 | `sorting` | `std::map<std::string, Value>` |  |
 
@@ -894,7 +894,7 @@ Create an instance: `auto merchant_portal_pam_package_controller = client->merch
 ```cpp
 Value merchant_portal_pam_package_controller = client->merchant_portal_pam_package_controller()->create(vmap({
     {"language", Value("example_language")},  // std::string
-    {"package_uuid", Value("example_package_uuid")},  // std::string
+    {"packageUUID", Value("example_packageUUID")},  // std::string
 }), Value::undef());
 ```
 
@@ -913,14 +913,14 @@ Create an instance: `auto merchant_portal_pam_product_controller = client->merch
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `std::string` |  |
+| `consumerUUID` | `std::string` |  |
 | `filter` | `std::map<std::string, Value>` |  |
 | `language` | `std::string` |  |
-| `merchant_id` | `std::string` |  |
-| `package_order_uuid` | `std::string` |  |
+| `merchantID` | `std::string` |  |
+| `packageOrderUUID` | `std::string` |  |
 | `pagination` | `std::map<std::string, Value>` |  |
-| `product_order_uuid` | `std::string` |  |
-| `product_uuid` | `std::string` |  |
+| `productOrderUUID` | `std::string` |  |
+| `productUUID` | `std::string` |  |
 | `reason_decline` | `std::string` |  |
 | `sorting` | `std::map<std::string, Value>` |  |
 
@@ -928,9 +928,9 @@ Create an instance: `auto merchant_portal_pam_product_controller = client->merch
 
 ```cpp
 Value merchant_portal_pam_product_controller = client->merchant_portal_pam_product_controller()->create(vmap({
-    {"package_order_uuid", Value("example_package_order_uuid")},  // std::string
-    {"product_order_uuid", Value("example_product_order_uuid")},  // std::string
-    {"product_uuid", Value("example_product_uuid")},  // std::string
+    {"packageOrderUUID", Value("example_packageOrderUUID")},  // std::string
+    {"productOrderUUID", Value("example_productOrderUUID")},  // std::string
+    {"productUUID", Value("example_productUUID")},  // std::string
     {"reason_decline", Value("example_reason_decline")},  // std::string
 }), Value::undef());
 ```
@@ -950,19 +950,19 @@ Create an instance: `auto output_add_product = client->output_add_product();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `std::string` |  |
-| `product_uui_d` | `std::vector<Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `packageUUID` | `std::string` |  |
+| `productUUIDs` | `std::vector<Value>` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value output_add_product = client->output_add_product()->create(vmap({
-    {"package_uuid", Value("example_package_uuid")},  // std::string
-    {"product_uui_d", vlist()},  // std::vector<Value>
-    {"response_code", Value(1)},  // int64_t
-    {"response_message", Value("example_response_message")},  // std::string
+    {"packageUUID", Value("example_packageUUID")},  // std::string
+    {"productUUIDs", vlist()},  // std::vector<Value>
+    {"responseCode", Value(1)},  // int64_t
+    {"responseMessage", Value("example_responseMessage")},  // std::string
 }), Value::undef());
 ```
 
@@ -981,37 +981,37 @@ Create an instance: `auto output_create_product = client->output_create_product(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `std::string` |  |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_template_name` | `std::string` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `std::string` |  |
-| `name_key` | `std::string` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `terminal_template_name` | `std::string` |  |
-| `vendor_name` | `std::string` |  |
-| `xml_template_file` | `std::string` |  |
+| `acquirerId` | `std::string` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormTemplateName` | `std::string` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `std::string` |  |
+| `nameKey` | `std::string` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `terminalTemplateName` | `std::string` |  |
+| `vendorName` | `std::string` |  |
+| `xmlTemplateFile` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value output_create_product = client->output_create_product()->create(vmap({
-    {"allow_multiple_order", Value(true)},  // bool
-    {"app_form_template_name", Value("example_app_form_template_name")},  // std::string
-    {"contract_needed", Value(true)},  // bool
-    {"description_key", Value("example_description_key")},  // std::string
-    {"name_key", Value("example_name_key")},  // std::string
-    {"prescreening_allowed", Value(true)},  // bool
-    {"product_name", Value("example_product_name")},  // std::string
-    {"response_code", Value(1)},  // int64_t
-    {"response_message", Value("example_response_message")},  // std::string
-    {"terminal_template_name", Value("example_terminal_template_name")},  // std::string
-    {"vendor_name", Value("example_vendor_name")},  // std::string
-    {"xml_template_file", Value("example_xml_template_file")},  // std::string
+    {"allowMultipleOrders", Value(true)},  // bool
+    {"appFormTemplateName", Value("example_appFormTemplateName")},  // std::string
+    {"contractNeeded", Value(true)},  // bool
+    {"descriptionKey", Value("example_descriptionKey")},  // std::string
+    {"nameKey", Value("example_nameKey")},  // std::string
+    {"prescreeningAllowed", Value(true)},  // bool
+    {"productName", Value("example_productName")},  // std::string
+    {"responseCode", Value(1)},  // int64_t
+    {"responseMessage", Value("example_responseMessage")},  // std::string
+    {"terminalTemplateName", Value("example_terminalTemplateName")},  // std::string
+    {"vendorName", Value("example_vendorName")},  // std::string
+    {"xmlTemplateFile", Value("example_xmlTemplateFile")},  // std::string
 }), Value::undef());
 ```
 
@@ -1030,9 +1030,9 @@ Create an instance: `auto output_detail = client->output_detail();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `std::map<std::string, Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `batch` | `std::map<std::string, Value>` |  |
+| `lines` | `std::map<std::string, Value>` |  |
+| `progress` | `std::map<std::string, Value>` |  |
 
 #### Example: Load
 
@@ -1055,10 +1055,10 @@ Create an instance: `auto output_list = client->output_list();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `std::vector<Value>` |  |
+| `items` | `std::vector<Value>` |  |
 | `pagination` | `std::map<std::string, Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 | `sorting` | `std::map<std::string, Value>` |  |
 
 #### Example: Create
@@ -1066,8 +1066,8 @@ Create an instance: `auto output_list = client->output_list();`
 ```cpp
 Value output_list = client->output_list()->create(vmap({
     {"pagination", vmap()},  // std::map<std::string, Value>
-    {"response_code", Value(1)},  // int64_t
-    {"response_message", Value("example_response_message")},  // std::string
+    {"responseCode", Value(1)},  // int64_t
+    {"responseMessage", Value("example_responseMessage")},  // std::string
 }), Value::undef());
 ```
 
@@ -1086,8 +1086,8 @@ Create an instance: `auto output_message = client->output_message();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Load
 
@@ -1110,21 +1110,21 @@ Create an instance: `auto output_move_tid = client->output_move_tid();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `std::vector<Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `target_package_order_uuid` | `std::string` |  |
-| `target_product_order_uuid` | `std::string` |  |
+| `productOrderUUIDs` | `std::vector<Value>` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `targetPackageOrderUUID` | `std::string` |  |
+| `targetProductOrderUUID` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value output_move_tid = client->output_move_tid()->create(vmap({
-    {"product_order_uui_d", vlist()},  // std::vector<Value>
-    {"response_code", Value(1)},  // int64_t
-    {"response_message", Value("example_response_message")},  // std::string
-    {"target_package_order_uuid", Value("example_target_package_order_uuid")},  // std::string
-    {"target_product_order_uuid", Value("example_target_product_order_uuid")},  // std::string
+    {"productOrderUUIDs", vlist()},  // std::vector<Value>
+    {"responseCode", Value(1)},  // int64_t
+    {"responseMessage", Value("example_responseMessage")},  // std::string
+    {"targetPackageOrderUUID", Value("example_targetPackageOrderUUID")},  // std::string
+    {"targetProductOrderUUID", Value("example_targetProductOrderUUID")},  // std::string
 }), Value::undef());
 ```
 
@@ -1143,19 +1143,19 @@ Create an instance: `auto output_remove_product = client->output_remove_product(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `std::string` |  |
-| `product_uui_d` | `std::vector<Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `packageUUID` | `std::string` |  |
+| `productUUIDs` | `std::vector<Value>` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value output_remove_product = client->output_remove_product()->create(vmap({
-    {"package_uuid", Value("example_package_uuid")},  // std::string
-    {"product_uui_d", vlist()},  // std::vector<Value>
-    {"response_code", Value(1)},  // int64_t
-    {"response_message", Value("example_response_message")},  // std::string
+    {"packageUUID", Value("example_packageUUID")},  // std::string
+    {"productUUIDs", vlist()},  // std::vector<Value>
+    {"responseCode", Value(1)},  // int64_t
+    {"responseMessage", Value("example_responseMessage")},  // std::string
 }), Value::undef());
 ```
 
@@ -1175,15 +1175,15 @@ Create an instance: `auto output_start = client->output_start();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value output_start = client->output_start()->create(vmap({
-    {"response_code", Value(1)},  // int64_t
-    {"response_message", Value("example_response_message")},  // std::string
+    {"responseCode", Value(1)},  // int64_t
+    {"responseMessage", Value("example_responseMessage")},  // std::string
 }), Value::undef());
 ```
 
@@ -1203,8 +1203,8 @@ Create an instance: `auto output_status = client->output_status();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `int64_t` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 | `status` | `std::string` |  |
 
 #### Example: Load
@@ -1228,27 +1228,27 @@ Create an instance: `auto output_update_product = client->output_update_product(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_name` | `std::string` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `std::string` |  |
-| `name_key` | `std::string` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `std::string` |  |
-| `product_status` | `std::string` |  |
-| `product_uuid` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `vendor_name` | `std::string` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormName` | `std::string` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `std::string` |  |
+| `nameKey` | `std::string` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `std::string` |  |
+| `productStatus` | `std::string` |  |
+| `productUUID` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `vendorName` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value output_update_product = client->output_update_product()->create(vmap({
-    {"product_uuid", Value("example_product_uuid")},  // std::string
-    {"response_code", Value(1)},  // int64_t
-    {"response_message", Value("example_response_message")},  // std::string
+    {"productUUID", Value("example_productUUID")},  // std::string
+    {"responseCode", Value(1)},  // int64_t
+    {"responseMessage", Value("example_responseMessage")},  // std::string
 }), Value::undef());
 ```
 

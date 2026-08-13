@@ -307,7 +307,7 @@ merchant_portal_pam_contract_controller = client.MerchantPortalPamContractContro
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `language` | `str` | Yes |  |
-| `product_order_uuid` | `str` | Yes |  |
+| `productOrderUUID` | `str` | Yes |  |
 
 ### Operations
 
@@ -318,7 +318,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```python
 result = client.MerchantPortalPamContractController().create({
     "language": "example_language",  # str
-    "product_order_uuid": "example_product_order_uuid",  # str
+    "productOrderUUID": "example_productOrderUUID",  # str
 })
 ```
 
@@ -361,9 +361,9 @@ merchant_portal_pam_document_controller = client.MerchantPortalPamDocumentContro
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_field_desc_uuid` | `str` | Yes |  |
-| `package_order_uuid` | `str` | No |  |
-| `product_order_uuid` | `str` | No |  |
+| `appFormFieldDescUUID` | `str` | Yes |  |
+| `packageOrderUUID` | `str` | No |  |
+| `productOrderUUID` | `str` | No |  |
 
 ### Operations
 
@@ -373,7 +373,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.MerchantPortalPamDocumentController().create({
-    "app_form_field_desc_uuid": "example_app_form_field_desc_uuid",  # str
+    "appFormFieldDescUUID": "example_appFormFieldDescUUID",  # str
 })
 ```
 
@@ -416,29 +416,29 @@ merchant_portal_pam_form_controller = client.MerchantPortalPamFormController()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `str` | Yes |  |
+| `appFormFieldsDescUUID` | `str` | Yes |  |
 | `filter` | `dict` | No |  |
 | `language` | `str` | Yes |  |
-| `package_order` | `dict` | No |  |
-| `package_order_uuid` | `str` | Yes |  |
-| `package_uuid` | `str` | No |  |
-| `product_order` | `list` | No |  |
-| `product_order_uuid` | `str` | No |  |
-| `reason_of_reopening` | `str` | Yes |  |
+| `packageOrder` | `dict` | No |  |
+| `packageOrderUUID` | `str` | Yes |  |
+| `packageUUID` | `str` | No |  |
+| `productOrderUUID` | `str` | No |  |
+| `productOrders` | `list` | No |  |
+| `reasonOfReopening` | `str` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `app_form_fields_desc_uuid` | - |
+| `appFormFieldsDescUUID` | - |
 | `filter` | - |
 | `language` | Yes |
-| `package_order` | - |
-| `package_order_uuid` | Yes |
-| `package_uuid` | - |
-| `product_order` | - |
-| `product_order_uuid` | Yes |
-| `reason_of_reopening` | - |
+| `packageOrder` | - |
+| `packageOrderUUID` | Yes |
+| `packageUUID` | - |
+| `productOrderUUID` | Yes |
+| `productOrders` | - |
+| `reasonOfReopening` | - |
 
 ### Operations
 
@@ -448,10 +448,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.MerchantPortalPamFormController().create({
-    "app_form_fields_desc_uuid": "example_app_form_fields_desc_uuid",  # str
+    "appFormFieldsDescUUID": "example_appFormFieldsDescUUID",  # str
     "language": "example_language",  # str
-    "package_order_uuid": "example_package_order_uuid",  # str
-    "reason_of_reopening": "example_reason_of_reopening",  # str
+    "packageOrderUUID": "example_packageOrderUUID",  # str
+    "reasonOfReopening": "example_reasonOfReopening",  # str
 })
 ```
 
@@ -494,10 +494,10 @@ merchant_portal_pam_mandator_controller = client.MerchantPortalPamMandatorContro
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `str` | No |  |
-| `mandator_name` | `str` | Yes |  |
-| `notification_email` | `str` | No |  |
-| `package_uuid` | `str` | Yes |  |
+| `clientSecret` | `str` | No |  |
+| `mandatorName` | `str` | Yes |  |
+| `notificationEmail` | `str` | No |  |
+| `packageUUID` | `str` | Yes |  |
 
 ### Operations
 
@@ -507,8 +507,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.MerchantPortalPamMandatorController().create({
-    "mandator_name": "example_mandator_name",  # str
-    "package_uuid": "example_package_uuid",  # str
+    "mandatorName": "example_mandatorName",  # str
+    "packageUUID": "example_packageUUID",  # str
 })
 ```
 
@@ -552,29 +552,29 @@ merchant_portal_pam_merchant_controller = client.MerchantPortalPamMerchantContro
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `additional_data` | `dict` | No |  |
-| `business_registration_number` | `str` | Yes |  |
+| `businessRegistrationNumber` | `str` | Yes |  |
 | `city` | `str` | No |  |
-| `company_name` | `str` | Yes |  |
-| `corporate_uuid` | `str` | Yes |  |
+| `companyName` | `str` | Yes |  |
+| `corporateUUID` | `str` | Yes |  |
 | `country` | `str` | No |  |
 | `currency` | `str` | Yes |  |
 | `email` | `str` | Yes |  |
 | `language` | `str` | Yes |  |
 | `login` | `str` | Yes |  |
 | `mandator` | `str` | Yes |  |
+| `merchantContractNumber` | `str` | Yes |  |
+| `merchantName` | `str` | No |  |
 | `merchant_category_code` | `str` | No |  |
-| `merchant_contract_number` | `str` | Yes |  |
-| `merchant_name` | `str` | No |  |
-| `package_uuid` | `str` | No |  |
+| `packageUUID` | `str` | No |  |
 | `packageorderuuid` | `str` | Yes |  |
-| `phone_number` | `str` | Yes |  |
-| `postal_code` | `str` | No |  |
+| `phoneNumber` | `str` | Yes |  |
+| `postalCode` | `str` | No |  |
 | `productid_acquirer` | `str` | Yes |  |
 | `region` | `str` | No |  |
-| `registration_number` | `str` | No |  |
+| `registrationNumber` | `str` | No |  |
 | `signature` | `str` | No |  |
 | `street` | `str` | No |  |
-| `terminal_id` | `list` | No |  |
+| `terminalIds` | `list` | No |  |
 | `terminalid_acquirer` | `str` | No |  |
 | `vu_nummer` | `str` | Yes |  |
 
@@ -583,29 +583,29 @@ merchant_portal_pam_merchant_controller = client.MerchantPortalPamMerchantContro
 | Field | create |
 | --- | --- |
 | `additional_data` | - |
-| `business_registration_number` | - |
+| `businessRegistrationNumber` | - |
 | `city` | - |
-| `company_name` | - |
-| `corporate_uuid` | - |
+| `companyName` | - |
+| `corporateUUID` | - |
 | `country` | - |
 | `currency` | - |
 | `email` | - |
 | `language` | - |
 | `login` | - |
 | `mandator` | - |
+| `merchantContractNumber` | Yes |
+| `merchantName` | - |
 | `merchant_category_code` | - |
-| `merchant_contract_number` | Yes |
-| `merchant_name` | - |
-| `package_uuid` | - |
+| `packageUUID` | - |
 | `packageorderuuid` | - |
-| `phone_number` | - |
-| `postal_code` | - |
+| `phoneNumber` | - |
+| `postalCode` | - |
 | `productid_acquirer` | - |
 | `region` | - |
-| `registration_number` | - |
+| `registrationNumber` | - |
 | `signature` | - |
 | `street` | - |
-| `terminal_id` | - |
+| `terminalIds` | - |
 | `terminalid_acquirer` | - |
 | `vu_nummer` | - |
 
@@ -617,17 +617,17 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.MerchantPortalPamMerchantController().create({
-    "business_registration_number": "example_business_registration_number",  # str
-    "company_name": "example_company_name",  # str
-    "corporate_uuid": "example_corporate_uuid",  # str
+    "businessRegistrationNumber": "example_businessRegistrationNumber",  # str
+    "companyName": "example_companyName",  # str
+    "corporateUUID": "example_corporateUUID",  # str
     "currency": "example_currency",  # str
     "email": "example_email",  # str
     "language": "example_language",  # str
     "login": "example_login",  # str
     "mandator": "example_mandator",  # str
-    "merchant_contract_number": "example_merchant_contract_number",  # str
+    "merchantContractNumber": "example_merchantContractNumber",  # str
     "packageorderuuid": "example_packageorderuuid",  # str
-    "phone_number": "example_phone_number",  # str
+    "phoneNumber": "example_phoneNumber",  # str
     "productid_acquirer": "example_productid_acquirer",  # str
     "vu_nummer": "example_vu_nummer",  # str
 })
@@ -672,15 +672,15 @@ merchant_portal_pam_package_controller = client.MerchantPortalPamPackageControll
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `str` | No |  |
-| `corporate_uuid` | `str` | No |  |
+| `consumerUUID` | `str` | No |  |
+| `corporateUUID` | `str` | No |  |
 | `country` | `str` | No |  |
-| `description_key` | `str` | No |  |
+| `descriptionKey` | `str` | No |  |
 | `filter` | `dict` | No |  |
 | `language` | `str` | Yes |  |
-| `name_key` | `str` | No |  |
-| `package_status` | `str` | No |  |
-| `package_uuid` | `str` | Yes |  |
+| `nameKey` | `str` | No |  |
+| `packageStatus` | `str` | No |  |
+| `packageUUID` | `str` | Yes |  |
 | `pagination` | `dict` | No |  |
 | `sorting` | `dict` | No |  |
 
@@ -688,15 +688,15 @@ merchant_portal_pam_package_controller = client.MerchantPortalPamPackageControll
 
 | Field | create |
 | --- | --- |
-| `consumer_uuid` | - |
-| `corporate_uuid` | - |
+| `consumerUUID` | - |
+| `corporateUUID` | - |
 | `country` | - |
-| `description_key` | - |
+| `descriptionKey` | - |
 | `filter` | - |
 | `language` | Yes |
-| `name_key` | - |
-| `package_status` | - |
-| `package_uuid` | - |
+| `nameKey` | - |
+| `packageStatus` | - |
+| `packageUUID` | - |
 | `pagination` | - |
 | `sorting` | - |
 
@@ -709,7 +709,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```python
 result = client.MerchantPortalPamPackageController().create({
     "language": "example_language",  # str
-    "package_uuid": "example_package_uuid",  # str
+    "packageUUID": "example_packageUUID",  # str
 })
 ```
 
@@ -752,14 +752,14 @@ merchant_portal_pam_product_controller = client.MerchantPortalPamProductControll
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `str` | No |  |
+| `consumerUUID` | `str` | No |  |
 | `filter` | `dict` | No |  |
 | `language` | `str` | No |  |
-| `merchant_id` | `str` | No |  |
-| `package_order_uuid` | `str` | Yes |  |
+| `merchantID` | `str` | No |  |
+| `packageOrderUUID` | `str` | Yes |  |
 | `pagination` | `dict` | No |  |
-| `product_order_uuid` | `str` | Yes |  |
-| `product_uuid` | `str` | Yes |  |
+| `productOrderUUID` | `str` | Yes |  |
+| `productUUID` | `str` | Yes |  |
 | `reason_decline` | `str` | Yes |  |
 | `sorting` | `dict` | No |  |
 
@@ -771,9 +771,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.MerchantPortalPamProductController().create({
-    "package_order_uuid": "example_package_order_uuid",  # str
-    "product_order_uuid": "example_product_order_uuid",  # str
-    "product_uuid": "example_product_uuid",  # str
+    "packageOrderUUID": "example_packageOrderUUID",  # str
+    "productOrderUUID": "example_productOrderUUID",  # str
+    "productUUID": "example_productUUID",  # str
     "reason_decline": "example_reason_decline",  # str
 })
 ```
@@ -817,10 +817,10 @@ output_add_product = client.OutputAddProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `str` | Yes |  |
-| `product_uui_d` | `list` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `str` | Yes |  |
+| `packageUUID` | `str` | Yes |  |
+| `productUUIDs` | `list` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `str` | Yes |  |
 
 ### Operations
 
@@ -830,10 +830,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.OutputAddProduct().create({
-    "package_uuid": "example_package_uuid",  # str
-    "product_uui_d": [],  # list
-    "response_code": 1,  # int
-    "response_message": "example_response_message",  # str
+    "packageUUID": "example_packageUUID",  # str
+    "productUUIDs": [],  # list
+    "responseCode": 1,  # int
+    "responseMessage": "example_responseMessage",  # str
 })
 ```
 
@@ -876,20 +876,20 @@ output_create_product = client.OutputCreateProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `str` | No |  |
-| `allow_multiple_order` | `bool` | Yes |  |
-| `app_form_template_name` | `str` | Yes |  |
-| `contract_needed` | `bool` | Yes |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `str` | Yes |  |
-| `name_key` | `str` | Yes |  |
-| `prescreening_allowed` | `bool` | Yes |  |
-| `product_name` | `str` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `str` | Yes |  |
-| `terminal_template_name` | `str` | Yes |  |
-| `vendor_name` | `str` | Yes |  |
-| `xml_template_file` | `str` | Yes |  |
+| `acquirerId` | `str` | No |  |
+| `allowMultipleOrders` | `bool` | Yes |  |
+| `appFormTemplateName` | `str` | Yes |  |
+| `contractNeeded` | `bool` | Yes |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `str` | Yes |  |
+| `nameKey` | `str` | Yes |  |
+| `prescreeningAllowed` | `bool` | Yes |  |
+| `productName` | `str` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `str` | Yes |  |
+| `terminalTemplateName` | `str` | Yes |  |
+| `vendorName` | `str` | Yes |  |
+| `xmlTemplateFile` | `str` | Yes |  |
 
 ### Operations
 
@@ -899,18 +899,18 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.OutputCreateProduct().create({
-    "allow_multiple_order": True,  # bool
-    "app_form_template_name": "example_app_form_template_name",  # str
-    "contract_needed": True,  # bool
-    "description_key": "example_description_key",  # str
-    "name_key": "example_name_key",  # str
-    "prescreening_allowed": True,  # bool
-    "product_name": "example_product_name",  # str
-    "response_code": 1,  # int
-    "response_message": "example_response_message",  # str
-    "terminal_template_name": "example_terminal_template_name",  # str
-    "vendor_name": "example_vendor_name",  # str
-    "xml_template_file": "example_xml_template_file",  # str
+    "allowMultipleOrders": True,  # bool
+    "appFormTemplateName": "example_appFormTemplateName",  # str
+    "contractNeeded": True,  # bool
+    "descriptionKey": "example_descriptionKey",  # str
+    "nameKey": "example_nameKey",  # str
+    "prescreeningAllowed": True,  # bool
+    "productName": "example_productName",  # str
+    "responseCode": 1,  # int
+    "responseMessage": "example_responseMessage",  # str
+    "terminalTemplateName": "example_terminalTemplateName",  # str
+    "vendorName": "example_vendorName",  # str
+    "xmlTemplateFile": "example_xmlTemplateFile",  # str
 })
 ```
 
@@ -953,9 +953,9 @@ output_detail = client.OutputDetail()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `detail` | `dict` | No |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `str` | Yes |  |
+| `batch` | `dict` | No |  |
+| `lines` | `dict` | No |  |
+| `progress` | `dict` | No |  |
 
 ### Operations
 
@@ -1006,20 +1006,20 @@ output_list = client.OutputList()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `item` | `list` | No |  |
+| `items` | `list` | No |  |
 | `pagination` | `dict` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `str` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `str` | Yes |  |
 | `sorting` | `dict` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `item` | - |
+| `items` | - |
 | `pagination` | Yes |
-| `response_code` | - |
-| `response_message` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
 | `sorting` | - |
 
 ### Operations
@@ -1031,8 +1031,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```python
 result = client.OutputList().create({
     "pagination": {},  # dict
-    "response_code": 1,  # int
-    "response_message": "example_response_message",  # str
+    "responseCode": 1,  # int
+    "responseMessage": "example_responseMessage",  # str
 })
 ```
 
@@ -1075,8 +1075,8 @@ output_message = client.OutputMessage()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `str` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `str` | Yes |  |
 
 ### Operations
 
@@ -1127,11 +1127,11 @@ output_move_tid = client.OutputMoveTid()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `product_order_uui_d` | `list` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `str` | Yes |  |
-| `target_package_order_uuid` | `str` | Yes |  |
-| `target_product_order_uuid` | `str` | Yes |  |
+| `productOrderUUIDs` | `list` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `str` | Yes |  |
+| `targetPackageOrderUUID` | `str` | Yes |  |
+| `targetProductOrderUUID` | `str` | Yes |  |
 
 ### Operations
 
@@ -1141,11 +1141,11 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.OutputMoveTid().create({
-    "product_order_uui_d": [],  # list
-    "response_code": 1,  # int
-    "response_message": "example_response_message",  # str
-    "target_package_order_uuid": "example_target_package_order_uuid",  # str
-    "target_product_order_uuid": "example_target_product_order_uuid",  # str
+    "productOrderUUIDs": [],  # list
+    "responseCode": 1,  # int
+    "responseMessage": "example_responseMessage",  # str
+    "targetPackageOrderUUID": "example_targetPackageOrderUUID",  # str
+    "targetProductOrderUUID": "example_targetProductOrderUUID",  # str
 })
 ```
 
@@ -1188,10 +1188,10 @@ output_remove_product = client.OutputRemoveProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `str` | Yes |  |
-| `product_uui_d` | `list` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `str` | Yes |  |
+| `packageUUID` | `str` | Yes |  |
+| `productUUIDs` | `list` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `str` | Yes |  |
 
 ### Operations
 
@@ -1201,10 +1201,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.OutputRemoveProduct().create({
-    "package_uuid": "example_package_uuid",  # str
-    "product_uui_d": [],  # list
-    "response_code": 1,  # int
-    "response_message": "example_response_message",  # str
+    "packageUUID": "example_packageUUID",  # str
+    "productUUIDs": [],  # list
+    "responseCode": 1,  # int
+    "responseMessage": "example_responseMessage",  # str
 })
 ```
 
@@ -1248,8 +1248,8 @@ output_start = client.OutputStart()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `str` | No |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `str` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `str` | Yes |  |
 
 ### Operations
 
@@ -1259,8 +1259,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.OutputStart().create({
-    "response_code": 1,  # int
-    "response_message": "example_response_message",  # str
+    "responseCode": 1,  # int
+    "responseMessage": "example_responseMessage",  # str
 })
 ```
 
@@ -1304,8 +1304,8 @@ output_status = client.OutputStatus()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `int` | No |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `str` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `str` | Yes |  |
 | `status` | `str` | No |  |
 
 ### Operations
@@ -1357,19 +1357,19 @@ output_update_product = client.OutputUpdateProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allow_multiple_order` | `bool` | No |  |
-| `app_form_name` | `str` | No |  |
-| `contract_needed` | `bool` | No |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `str` | No |  |
-| `name_key` | `str` | No |  |
-| `prescreening_allowed` | `bool` | No |  |
-| `product_name` | `str` | No |  |
-| `product_status` | `str` | No |  |
-| `product_uuid` | `str` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `str` | Yes |  |
-| `vendor_name` | `str` | No |  |
+| `allowMultipleOrders` | `bool` | No |  |
+| `appFormName` | `str` | No |  |
+| `contractNeeded` | `bool` | No |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `str` | No |  |
+| `nameKey` | `str` | No |  |
+| `prescreeningAllowed` | `bool` | No |  |
+| `productName` | `str` | No |  |
+| `productStatus` | `str` | No |  |
+| `productUUID` | `str` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `str` | Yes |  |
+| `vendorName` | `str` | No |  |
 
 ### Operations
 
@@ -1379,9 +1379,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.OutputUpdateProduct().create({
-    "product_uuid": "example_product_uuid",  # str
-    "response_code": 1,  # int
-    "response_message": "example_response_message",  # str
+    "productUUID": "example_productUUID",  # str
+    "responseCode": 1,  # int
+    "responseMessage": "example_responseMessage",  # str
 })
 ```
 

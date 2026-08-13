@@ -311,7 +311,7 @@ SdkEntity merchantPortalPamContractController = client.merchantPortalPamContract
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `language` | `String` | Yes |  |
-| `product_order_uuid` | `String` | Yes |  |
+| `productOrderUUID` | `String` | Yes |  |
 
 ### Operations
 
@@ -322,7 +322,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```java
 Object result = client.merchantPortalPamContractController(null).create(Map.of(
     "language", "example_language",  // String
-    "product_order_uuid", "example_product_order_uuid"  // String
+    "productOrderUUID", "example_productOrderUUID"  // String
 ), null);
 ```
 
@@ -357,9 +357,9 @@ SdkEntity merchantPortalPamDocumentController = client.merchantPortalPamDocument
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_field_desc_uuid` | `String` | Yes |  |
-| `package_order_uuid` | `String` | No |  |
-| `product_order_uuid` | `String` | No |  |
+| `appFormFieldDescUUID` | `String` | Yes |  |
+| `packageOrderUUID` | `String` | No |  |
+| `productOrderUUID` | `String` | No |  |
 
 ### Operations
 
@@ -369,7 +369,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.merchantPortalPamDocumentController(null).create(Map.of(
-    "app_form_field_desc_uuid", "example_app_form_field_desc_uuid"  // String
+    "appFormFieldDescUUID", "example_appFormFieldDescUUID"  // String
 ), null);
 ```
 
@@ -404,29 +404,29 @@ SdkEntity merchantPortalPamFormController = client.merchantPortalPamFormControll
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `String` | Yes |  |
+| `appFormFieldsDescUUID` | `String` | Yes |  |
 | `filter` | `Map<String, Object>` | No |  |
 | `language` | `String` | Yes |  |
-| `package_order` | `Map<String, Object>` | No |  |
-| `package_order_uuid` | `String` | Yes |  |
-| `package_uuid` | `String` | No |  |
-| `product_order` | `List<Object>` | No |  |
-| `product_order_uuid` | `String` | No |  |
-| `reason_of_reopening` | `String` | Yes |  |
+| `packageOrder` | `Map<String, Object>` | No |  |
+| `packageOrderUUID` | `String` | Yes |  |
+| `packageUUID` | `String` | No |  |
+| `productOrderUUID` | `String` | No |  |
+| `productOrders` | `List<Object>` | No |  |
+| `reasonOfReopening` | `String` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `app_form_fields_desc_uuid` | - |
+| `appFormFieldsDescUUID` | - |
 | `filter` | - |
 | `language` | Yes |
-| `package_order` | - |
-| `package_order_uuid` | Yes |
-| `package_uuid` | - |
-| `product_order` | - |
-| `product_order_uuid` | Yes |
-| `reason_of_reopening` | - |
+| `packageOrder` | - |
+| `packageOrderUUID` | Yes |
+| `packageUUID` | - |
+| `productOrderUUID` | Yes |
+| `productOrders` | - |
+| `reasonOfReopening` | - |
 
 ### Operations
 
@@ -436,10 +436,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.merchantPortalPamFormController(null).create(Map.of(
-    "app_form_fields_desc_uuid", "example_app_form_fields_desc_uuid",  // String
+    "appFormFieldsDescUUID", "example_appFormFieldsDescUUID",  // String
     "language", "example_language",  // String
-    "package_order_uuid", "example_package_order_uuid",  // String
-    "reason_of_reopening", "example_reason_of_reopening"  // String
+    "packageOrderUUID", "example_packageOrderUUID",  // String
+    "reasonOfReopening", "example_reasonOfReopening"  // String
 ), null);
 ```
 
@@ -474,10 +474,10 @@ SdkEntity merchantPortalPamMandatorController = client.merchantPortalPamMandator
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `String` | No |  |
-| `mandator_name` | `String` | Yes |  |
-| `notification_email` | `String` | No |  |
-| `package_uuid` | `String` | Yes |  |
+| `clientSecret` | `String` | No |  |
+| `mandatorName` | `String` | Yes |  |
+| `notificationEmail` | `String` | No |  |
+| `packageUUID` | `String` | Yes |  |
 
 ### Operations
 
@@ -487,8 +487,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.merchantPortalPamMandatorController(null).create(Map.of(
-    "mandator_name", "example_mandator_name",  // String
-    "package_uuid", "example_package_uuid"  // String
+    "mandatorName", "example_mandatorName",  // String
+    "packageUUID", "example_packageUUID"  // String
 ), null);
 ```
 
@@ -524,29 +524,29 @@ SdkEntity merchantPortalPamMerchantController = client.merchantPortalPamMerchant
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `additional_data` | `Map<String, Object>` | No |  |
-| `business_registration_number` | `String` | Yes |  |
+| `businessRegistrationNumber` | `String` | Yes |  |
 | `city` | `String` | No |  |
-| `company_name` | `String` | Yes |  |
-| `corporate_uuid` | `String` | Yes |  |
+| `companyName` | `String` | Yes |  |
+| `corporateUUID` | `String` | Yes |  |
 | `country` | `String` | No |  |
 | `currency` | `String` | Yes |  |
 | `email` | `String` | Yes |  |
 | `language` | `String` | Yes |  |
 | `login` | `String` | Yes |  |
 | `mandator` | `String` | Yes |  |
+| `merchantContractNumber` | `String` | Yes |  |
+| `merchantName` | `String` | No |  |
 | `merchant_category_code` | `String` | No |  |
-| `merchant_contract_number` | `String` | Yes |  |
-| `merchant_name` | `String` | No |  |
-| `package_uuid` | `String` | No |  |
+| `packageUUID` | `String` | No |  |
 | `packageorderuuid` | `String` | Yes |  |
-| `phone_number` | `String` | Yes |  |
-| `postal_code` | `String` | No |  |
+| `phoneNumber` | `String` | Yes |  |
+| `postalCode` | `String` | No |  |
 | `productid_acquirer` | `String` | Yes |  |
 | `region` | `String` | No |  |
-| `registration_number` | `String` | No |  |
+| `registrationNumber` | `String` | No |  |
 | `signature` | `String` | No |  |
 | `street` | `String` | No |  |
-| `terminal_id` | `List<Object>` | No |  |
+| `terminalIds` | `List<Object>` | No |  |
 | `terminalid_acquirer` | `String` | No |  |
 | `vu_nummer` | `String` | Yes |  |
 
@@ -555,29 +555,29 @@ SdkEntity merchantPortalPamMerchantController = client.merchantPortalPamMerchant
 | Field | create |
 | --- | --- |
 | `additional_data` | - |
-| `business_registration_number` | - |
+| `businessRegistrationNumber` | - |
 | `city` | - |
-| `company_name` | - |
-| `corporate_uuid` | - |
+| `companyName` | - |
+| `corporateUUID` | - |
 | `country` | - |
 | `currency` | - |
 | `email` | - |
 | `language` | - |
 | `login` | - |
 | `mandator` | - |
+| `merchantContractNumber` | Yes |
+| `merchantName` | - |
 | `merchant_category_code` | - |
-| `merchant_contract_number` | Yes |
-| `merchant_name` | - |
-| `package_uuid` | - |
+| `packageUUID` | - |
 | `packageorderuuid` | - |
-| `phone_number` | - |
-| `postal_code` | - |
+| `phoneNumber` | - |
+| `postalCode` | - |
 | `productid_acquirer` | - |
 | `region` | - |
-| `registration_number` | - |
+| `registrationNumber` | - |
 | `signature` | - |
 | `street` | - |
-| `terminal_id` | - |
+| `terminalIds` | - |
 | `terminalid_acquirer` | - |
 | `vu_nummer` | - |
 
@@ -589,17 +589,17 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.merchantPortalPamMerchantController(null).create(Map.of(
-    "business_registration_number", "example_business_registration_number",  // String
-    "company_name", "example_company_name",  // String
-    "corporate_uuid", "example_corporate_uuid",  // String
+    "businessRegistrationNumber", "example_businessRegistrationNumber",  // String
+    "companyName", "example_companyName",  // String
+    "corporateUUID", "example_corporateUUID",  // String
     "currency", "example_currency",  // String
     "email", "example_email",  // String
     "language", "example_language",  // String
     "login", "example_login",  // String
     "mandator", "example_mandator",  // String
-    "merchant_contract_number", "example_merchant_contract_number",  // String
+    "merchantContractNumber", "example_merchantContractNumber",  // String
     "packageorderuuid", "example_packageorderuuid",  // String
-    "phone_number", "example_phone_number",  // String
+    "phoneNumber", "example_phoneNumber",  // String
     "productid_acquirer", "example_productid_acquirer",  // String
     "vu_nummer", "example_vu_nummer"  // String
 ), null);
@@ -636,15 +636,15 @@ SdkEntity merchantPortalPamPackageController = client.merchantPortalPamPackageCo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `corporate_uuid` | `String` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `corporateUUID` | `String` | No |  |
 | `country` | `String` | No |  |
-| `description_key` | `String` | No |  |
+| `descriptionKey` | `String` | No |  |
 | `filter` | `Map<String, Object>` | No |  |
 | `language` | `String` | Yes |  |
-| `name_key` | `String` | No |  |
-| `package_status` | `String` | No |  |
-| `package_uuid` | `String` | Yes |  |
+| `nameKey` | `String` | No |  |
+| `packageStatus` | `String` | No |  |
+| `packageUUID` | `String` | Yes |  |
 | `pagination` | `Map<String, Object>` | No |  |
 | `sorting` | `Map<String, Object>` | No |  |
 
@@ -652,15 +652,15 @@ SdkEntity merchantPortalPamPackageController = client.merchantPortalPamPackageCo
 
 | Field | create |
 | --- | --- |
-| `consumer_uuid` | - |
-| `corporate_uuid` | - |
+| `consumerUUID` | - |
+| `corporateUUID` | - |
 | `country` | - |
-| `description_key` | - |
+| `descriptionKey` | - |
 | `filter` | - |
 | `language` | Yes |
-| `name_key` | - |
-| `package_status` | - |
-| `package_uuid` | - |
+| `nameKey` | - |
+| `packageStatus` | - |
+| `packageUUID` | - |
 | `pagination` | - |
 | `sorting` | - |
 
@@ -673,7 +673,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```java
 Object result = client.merchantPortalPamPackageController(null).create(Map.of(
     "language", "example_language",  // String
-    "package_uuid", "example_package_uuid"  // String
+    "packageUUID", "example_packageUUID"  // String
 ), null);
 ```
 
@@ -708,14 +708,14 @@ SdkEntity merchantPortalPamProductController = client.merchantPortalPamProductCo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
+| `consumerUUID` | `String` | No |  |
 | `filter` | `Map<String, Object>` | No |  |
 | `language` | `String` | No |  |
-| `merchant_id` | `String` | No |  |
-| `package_order_uuid` | `String` | Yes |  |
+| `merchantID` | `String` | No |  |
+| `packageOrderUUID` | `String` | Yes |  |
 | `pagination` | `Map<String, Object>` | No |  |
-| `product_order_uuid` | `String` | Yes |  |
-| `product_uuid` | `String` | Yes |  |
+| `productOrderUUID` | `String` | Yes |  |
+| `productUUID` | `String` | Yes |  |
 | `reason_decline` | `String` | Yes |  |
 | `sorting` | `Map<String, Object>` | No |  |
 
@@ -727,9 +727,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.merchantPortalPamProductController(null).create(Map.of(
-    "package_order_uuid", "example_package_order_uuid",  // String
-    "product_order_uuid", "example_product_order_uuid",  // String
-    "product_uuid", "example_product_uuid",  // String
+    "packageOrderUUID", "example_packageOrderUUID",  // String
+    "productOrderUUID", "example_productOrderUUID",  // String
+    "productUUID", "example_productUUID",  // String
     "reason_decline", "example_reason_decline"  // String
 ), null);
 ```
@@ -765,10 +765,10 @@ SdkEntity outputAddProduct = client.outputAddProduct(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `String` | Yes |  |
-| `product_uui_d` | `List<Object>` | Yes |  |
-| `response_code` | `Long` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `packageUUID` | `String` | Yes |  |
+| `productUUIDs` | `List<Object>` | Yes |  |
+| `responseCode` | `Long` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 
 ### Operations
 
@@ -778,10 +778,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.outputAddProduct(null).create(Map.of(
-    "package_uuid", "example_package_uuid",  // String
-    "product_uui_d", List.of(),  // List<Object>
-    "response_code", 1L,  // Long
-    "response_message", "example_response_message"  // String
+    "packageUUID", "example_packageUUID",  // String
+    "productUUIDs", List.of(),  // List<Object>
+    "responseCode", 1L,  // Long
+    "responseMessage", "example_responseMessage"  // String
 ), null);
 ```
 
@@ -816,20 +816,20 @@ SdkEntity outputCreateProduct = client.outputCreateProduct(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String` | No |  |
-| `allow_multiple_order` | `Boolean` | Yes |  |
-| `app_form_template_name` | `String` | Yes |  |
-| `contract_needed` | `Boolean` | Yes |  |
-| `credentials_needed` | `Boolean` | No |  |
-| `description_key` | `String` | Yes |  |
-| `name_key` | `String` | Yes |  |
-| `prescreening_allowed` | `Boolean` | Yes |  |
-| `product_name` | `String` | Yes |  |
-| `response_code` | `Long` | Yes |  |
-| `response_message` | `String` | Yes |  |
-| `terminal_template_name` | `String` | Yes |  |
-| `vendor_name` | `String` | Yes |  |
-| `xml_template_file` | `String` | Yes |  |
+| `acquirerId` | `String` | No |  |
+| `allowMultipleOrders` | `Boolean` | Yes |  |
+| `appFormTemplateName` | `String` | Yes |  |
+| `contractNeeded` | `Boolean` | Yes |  |
+| `credentialsNeeded` | `Boolean` | No |  |
+| `descriptionKey` | `String` | Yes |  |
+| `nameKey` | `String` | Yes |  |
+| `prescreeningAllowed` | `Boolean` | Yes |  |
+| `productName` | `String` | Yes |  |
+| `responseCode` | `Long` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
+| `terminalTemplateName` | `String` | Yes |  |
+| `vendorName` | `String` | Yes |  |
+| `xmlTemplateFile` | `String` | Yes |  |
 
 ### Operations
 
@@ -839,18 +839,18 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.outputCreateProduct(null).create(Map.of(
-    "allow_multiple_order", true,  // Boolean
-    "app_form_template_name", "example_app_form_template_name",  // String
-    "contract_needed", true,  // Boolean
-    "description_key", "example_description_key",  // String
-    "name_key", "example_name_key",  // String
-    "prescreening_allowed", true,  // Boolean
-    "product_name", "example_product_name",  // String
-    "response_code", 1L,  // Long
-    "response_message", "example_response_message",  // String
-    "terminal_template_name", "example_terminal_template_name",  // String
-    "vendor_name", "example_vendor_name",  // String
-    "xml_template_file", "example_xml_template_file"  // String
+    "allowMultipleOrders", true,  // Boolean
+    "appFormTemplateName", "example_appFormTemplateName",  // String
+    "contractNeeded", true,  // Boolean
+    "descriptionKey", "example_descriptionKey",  // String
+    "nameKey", "example_nameKey",  // String
+    "prescreeningAllowed", true,  // Boolean
+    "productName", "example_productName",  // String
+    "responseCode", 1L,  // Long
+    "responseMessage", "example_responseMessage",  // String
+    "terminalTemplateName", "example_terminalTemplateName",  // String
+    "vendorName", "example_vendorName",  // String
+    "xmlTemplateFile", "example_xmlTemplateFile"  // String
 ), null);
 ```
 
@@ -885,9 +885,9 @@ SdkEntity outputDetail = client.outputDetail(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `detail` | `Map<String, Object>` | No |  |
-| `response_code` | `Long` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `batch` | `Map<String, Object>` | No |  |
+| `lines` | `Map<String, Object>` | No |  |
+| `progress` | `Map<String, Object>` | No |  |
 
 ### Operations
 
@@ -930,20 +930,20 @@ SdkEntity outputList = client.outputList(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `item` | `List<Object>` | No |  |
+| `items` | `List<Object>` | No |  |
 | `pagination` | `Map<String, Object>` | Yes |  |
-| `response_code` | `Long` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `responseCode` | `Long` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 | `sorting` | `Map<String, Object>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `item` | - |
+| `items` | - |
 | `pagination` | Yes |
-| `response_code` | - |
-| `response_message` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
 | `sorting` | - |
 
 ### Operations
@@ -955,8 +955,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```java
 Object result = client.outputList(null).create(Map.of(
     "pagination", Map.of(),  // Map<String, Object>
-    "response_code", 1L,  // Long
-    "response_message", "example_response_message"  // String
+    "responseCode", 1L,  // Long
+    "responseMessage", "example_responseMessage"  // String
 ), null);
 ```
 
@@ -991,8 +991,8 @@ SdkEntity outputMessage = client.outputMessage(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Long` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `responseCode` | `Long` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 
 ### Operations
 
@@ -1035,11 +1035,11 @@ SdkEntity outputMoveTid = client.outputMoveTid(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `product_order_uui_d` | `List<Object>` | Yes |  |
-| `response_code` | `Long` | Yes |  |
-| `response_message` | `String` | Yes |  |
-| `target_package_order_uuid` | `String` | Yes |  |
-| `target_product_order_uuid` | `String` | Yes |  |
+| `productOrderUUIDs` | `List<Object>` | Yes |  |
+| `responseCode` | `Long` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
+| `targetPackageOrderUUID` | `String` | Yes |  |
+| `targetProductOrderUUID` | `String` | Yes |  |
 
 ### Operations
 
@@ -1049,11 +1049,11 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.outputMoveTid(null).create(Map.of(
-    "product_order_uui_d", List.of(),  // List<Object>
-    "response_code", 1L,  // Long
-    "response_message", "example_response_message",  // String
-    "target_package_order_uuid", "example_target_package_order_uuid",  // String
-    "target_product_order_uuid", "example_target_product_order_uuid"  // String
+    "productOrderUUIDs", List.of(),  // List<Object>
+    "responseCode", 1L,  // Long
+    "responseMessage", "example_responseMessage",  // String
+    "targetPackageOrderUUID", "example_targetPackageOrderUUID",  // String
+    "targetProductOrderUUID", "example_targetProductOrderUUID"  // String
 ), null);
 ```
 
@@ -1088,10 +1088,10 @@ SdkEntity outputRemoveProduct = client.outputRemoveProduct(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `String` | Yes |  |
-| `product_uui_d` | `List<Object>` | Yes |  |
-| `response_code` | `Long` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `packageUUID` | `String` | Yes |  |
+| `productUUIDs` | `List<Object>` | Yes |  |
+| `responseCode` | `Long` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 
 ### Operations
 
@@ -1101,10 +1101,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.outputRemoveProduct(null).create(Map.of(
-    "package_uuid", "example_package_uuid",  // String
-    "product_uui_d", List.of(),  // List<Object>
-    "response_code", 1L,  // Long
-    "response_message", "example_response_message"  // String
+    "packageUUID", "example_packageUUID",  // String
+    "productUUIDs", List.of(),  // List<Object>
+    "responseCode", 1L,  // Long
+    "responseMessage", "example_responseMessage"  // String
 ), null);
 ```
 
@@ -1140,8 +1140,8 @@ SdkEntity outputStart = client.outputStart(null);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `String` | No |  |
-| `response_code` | `Long` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `responseCode` | `Long` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 
 ### Operations
 
@@ -1151,8 +1151,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.outputStart(null).create(Map.of(
-    "response_code", 1L,  // Long
-    "response_message", "example_response_message"  // String
+    "responseCode", 1L,  // Long
+    "responseMessage", "example_responseMessage"  // String
 ), null);
 ```
 
@@ -1188,8 +1188,8 @@ SdkEntity outputStatus = client.outputStatus(null);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `Long` | No |  |
-| `response_code` | `Long` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `responseCode` | `Long` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 | `status` | `String` | No |  |
 
 ### Operations
@@ -1233,19 +1233,19 @@ SdkEntity outputUpdateProduct = client.outputUpdateProduct(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allow_multiple_order` | `Boolean` | No |  |
-| `app_form_name` | `String` | No |  |
-| `contract_needed` | `Boolean` | No |  |
-| `credentials_needed` | `Boolean` | No |  |
-| `description_key` | `String` | No |  |
-| `name_key` | `String` | No |  |
-| `prescreening_allowed` | `Boolean` | No |  |
-| `product_name` | `String` | No |  |
-| `product_status` | `String` | No |  |
-| `product_uuid` | `String` | Yes |  |
-| `response_code` | `Long` | Yes |  |
-| `response_message` | `String` | Yes |  |
-| `vendor_name` | `String` | No |  |
+| `allowMultipleOrders` | `Boolean` | No |  |
+| `appFormName` | `String` | No |  |
+| `contractNeeded` | `Boolean` | No |  |
+| `credentialsNeeded` | `Boolean` | No |  |
+| `descriptionKey` | `String` | No |  |
+| `nameKey` | `String` | No |  |
+| `prescreeningAllowed` | `Boolean` | No |  |
+| `productName` | `String` | No |  |
+| `productStatus` | `String` | No |  |
+| `productUUID` | `String` | Yes |  |
+| `responseCode` | `Long` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
+| `vendorName` | `String` | No |  |
 
 ### Operations
 
@@ -1255,9 +1255,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.outputUpdateProduct(null).create(Map.of(
-    "product_uuid", "example_product_uuid",  // String
-    "response_code", 1L,  // Long
-    "response_message", "example_response_message"  // String
+    "productUUID", "example_productUUID",  // String
+    "responseCode", 1L,  // Long
+    "responseMessage", "example_responseMessage"  // String
 ), null);
 ```
 

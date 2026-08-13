@@ -14,6 +14,8 @@ typedef struct output_remove_product_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } output_remove_product_entity;
 
 typedef void (*output_remove_product_postdone_fn)(output_remove_product_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* output_remove_product_get_name(Entity* e);
 static Entity* output_remove_product_make(Entity* e);
 static voxgig_value* output_remove_product_data(Entity* e, voxgig_value* args);
 static voxgig_value* output_remove_product_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* output_remove_product_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_remove_product_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_remove_product_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_remove_product_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_remove_product_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* output_remove_product_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** output_remove_product_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* output_remove_product_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_remove_product_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_remove_product_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void output_remove_product_mark_deleted(Entity* e);
+static bool output_remove_product_deleted(Entity* e);
 
 static Context* output_remove_product_ent_ctx(output_remove_product_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* output_remove_product_matchv(Entity* e, voxgig_value* args)
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* output_remove_product_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_remove_product_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "output_remove_product");
   return NULL;
 }
 
-static voxgig_value* output_remove_product_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** output_remove_product_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "output_remove_product");
   return NULL;
@@ -260,7 +265,7 @@ static void output_remove_product_create_postdone(output_remove_product_entity* 
   }
 }
 
-static voxgig_value* output_remove_product_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* output_remove_product_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   output_remove_product_entity* self = (output_remove_product_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* output_remove_product_create(Entity* e, voxgig_value* reqda
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, output_remove_product_ent_ctx(self));
-  return output_remove_product_run_op(self, ctx, output_remove_product_create_postdone, err);
+  output_remove_product_run_op(self, ctx, output_remove_product_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* output_remove_product_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_remove_product_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "output_remove_product");
   return NULL;
 }
 
-static voxgig_value* output_remove_product_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_remove_product_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "output_remove_product");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void output_remove_product_mark_deleted(Entity* e) {
+  ((output_remove_product_entity*)e)->deleted = true;
+}
+
+static bool output_remove_product_deleted(Entity* e) {
+  return ((output_remove_product_entity*)e)->deleted;
 }
 
 static const EntityVT output_remove_product_VT = {
@@ -291,6 +314,8 @@ static const EntityVT output_remove_product_VT = {
   output_remove_product_make,
   output_remove_product_data,
   output_remove_product_matchv,
+  output_remove_product_mark_deleted,
+  output_remove_product_deleted,
   output_remove_product_load,
   output_remove_product_list,
   output_remove_product_create,

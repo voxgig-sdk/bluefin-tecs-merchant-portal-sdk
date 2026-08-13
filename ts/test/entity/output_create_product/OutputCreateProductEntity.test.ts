@@ -26,8 +26,8 @@ import {
 describe('OutputCreateProductEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTPORTAL_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTPORTAL_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantPortalSDK.test()
@@ -62,7 +62,7 @@ describe('OutputCreateProductEntity', async () => {
     const output_create_product_ref01_ent = client.OutputCreateProduct()
     let output_create_product_ref01_data = setup.data.new.output_create_product['output_create_product_ref01']
 
-    output_create_product_ref01_data = await output_create_product_ref01_ent.create(output_create_product_ref01_data)
+    output_create_product_ref01_data = (await output_create_product_ref01_ent.create(output_create_product_ref01_data)).data()
     assert(null != output_create_product_ref01_data)
 
 

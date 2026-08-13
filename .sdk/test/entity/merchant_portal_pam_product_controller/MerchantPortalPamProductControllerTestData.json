@@ -2,40 +2,40 @@
   "existing": {
     "merchant_portal_pam_product_controller": {
       "MERCHANT_PORTAL_PAM_PRODUCT_CONTROLLER00": {
-        "consumer_uuid": "s64",
+        "consumerUUID": "s64",
         "filter": {},
         "language": "s66",
-        "merchant_id": "MERCHANT01",
-        "package_order_uuid": "s68",
+        "merchantID": "s67",
+        "packageOrderUUID": "s68",
         "pagination": {},
-        "product_order_uuid": "s6a",
-        "product_uuid": "s6b",
+        "productOrderUUID": "s6a",
+        "productUUID": "s6b",
         "reason_decline": "s6c",
         "sorting": {},
         "id": "MERCHANT_PORTAL_PAM_PRODUCT_CONTROLLER00"
       },
       "MERCHANT_PORTAL_PAM_PRODUCT_CONTROLLER01": {
-        "consumer_uuid": "sc8",
+        "consumerUUID": "sc8",
         "filter": {},
         "language": "sca",
-        "merchant_id": "MERCHANT01",
-        "package_order_uuid": "scc",
+        "merchantID": "scb",
+        "packageOrderUUID": "scc",
         "pagination": {},
-        "product_order_uuid": "sce",
-        "product_uuid": "scf",
+        "productOrderUUID": "sce",
+        "productUUID": "scf",
         "reason_decline": "sd0",
         "sorting": {},
         "id": "MERCHANT_PORTAL_PAM_PRODUCT_CONTROLLER01"
       },
       "MERCHANT_PORTAL_PAM_PRODUCT_CONTROLLER02": {
-        "consumer_uuid": "s12c",
+        "consumerUUID": "s12c",
         "filter": {},
         "language": "s12e",
-        "merchant_id": "MERCHANT01",
-        "package_order_uuid": "s130",
+        "merchantID": "s12f",
+        "packageOrderUUID": "s130",
         "pagination": {},
-        "product_order_uuid": "s132",
-        "product_uuid": "s133",
+        "productOrderUUID": "s132",
+        "productUUID": "s133",
         "reason_decline": "s134",
         "sorting": {},
         "id": "MERCHANT_PORTAL_PAM_PRODUCT_CONTROLLER02"
@@ -45,14 +45,14 @@
   "new": {
     "merchant_portal_pam_product_controller": {
       "merchant_portal_pam_product_controller_ref01": {
-        "consumer_uuid": "s190",
+        "consumerUUID": "s190",
         "filter": {},
         "language": "s192",
-        "merchant_id": "MERCHANT01",
-        "package_order_uuid": "s194",
+        "merchantID": "s193",
+        "packageOrderUUID": "s194",
         "pagination": {},
-        "product_order_uuid": "s196",
-        "product_uuid": "s197",
+        "productOrderUUID": "s196",
+        "productUUID": "s197",
         "reason_decline": "s198",
         "sorting": {}
       }

@@ -11,12 +11,12 @@ main: kit: entity: output_start: {
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: true
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: true
       type: "`$STRING`"
     }

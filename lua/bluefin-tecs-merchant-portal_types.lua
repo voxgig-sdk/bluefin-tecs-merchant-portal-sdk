@@ -82,309 +82,309 @@
 
 ---@class MerchantPortalPamContractController
 ---@field language string
----@field product_order_uuid string
+---@field productOrderUUID string
 
 ---@class MerchantPortalPamContractControllerCreateData
 ---@field language string
----@field product_order_uuid string
+---@field productOrderUUID string
 
 ---@class MerchantPortalPamDocumentController
----@field app_form_field_desc_uuid string
----@field package_order_uuid? string
----@field product_order_uuid? string
+---@field appFormFieldDescUUID string
+---@field packageOrderUUID? string
+---@field productOrderUUID? string
 
 ---@class MerchantPortalPamDocumentControllerCreateData
----@field app_form_field_desc_uuid string
----@field package_order_uuid? string
----@field product_order_uuid? string
+---@field appFormFieldDescUUID string
+---@field packageOrderUUID? string
+---@field productOrderUUID? string
 
 ---@class MerchantPortalPamFormController
----@field app_form_fields_desc_uuid string
+---@field appFormFieldsDescUUID string
 ---@field filter? table
 ---@field language string
----@field package_order? table
----@field package_order_uuid string
----@field package_uuid? string
----@field product_order? table
----@field product_order_uuid? string
----@field reason_of_reopening string
+---@field packageOrder? table
+---@field packageOrderUUID string
+---@field packageUUID? string
+---@field productOrderUUID? string
+---@field productOrders? table
+---@field reasonOfReopening string
 
 ---@class MerchantPortalPamFormControllerCreateData
----@field app_form_fields_desc_uuid string
+---@field appFormFieldsDescUUID string
 ---@field filter? table
 ---@field language string
----@field package_order? table
----@field package_order_uuid string
----@field package_uuid? string
----@field product_order? table
----@field product_order_uuid? string
----@field reason_of_reopening string
+---@field packageOrder? table
+---@field packageOrderUUID string
+---@field packageUUID? string
+---@field productOrderUUID? string
+---@field productOrders? table
+---@field reasonOfReopening string
 
 ---@class MerchantPortalPamMandatorController
----@field client_secret? string
----@field mandator_name string
----@field notification_email? string
----@field package_uuid string
+---@field clientSecret? string
+---@field mandatorName string
+---@field notificationEmail? string
+---@field packageUUID string
 
 ---@class MerchantPortalPamMandatorControllerCreateData
----@field client_secret? string
----@field mandator_name string
----@field notification_email? string
----@field package_uuid string
+---@field clientSecret? string
+---@field mandatorName string
+---@field notificationEmail? string
+---@field packageUUID string
 
 ---@class MerchantPortalPamMerchantController
 ---@field additional_data? table
----@field business_registration_number string
+---@field businessRegistrationNumber string
 ---@field city? string
----@field company_name string
----@field corporate_uuid string
+---@field companyName string
+---@field corporateUUID string
 ---@field country? string
 ---@field currency string
 ---@field email string
 ---@field language string
 ---@field login string
 ---@field mandator string
+---@field merchantContractNumber string
+---@field merchantName? string
 ---@field merchant_category_code? string
----@field merchant_contract_number string
----@field merchant_name? string
----@field package_uuid? string
+---@field packageUUID? string
 ---@field packageorderuuid string
----@field phone_number string
----@field postal_code? string
+---@field phoneNumber string
+---@field postalCode? string
 ---@field productid_acquirer string
 ---@field region? string
----@field registration_number? string
+---@field registrationNumber? string
 ---@field signature? string
 ---@field street? string
----@field terminal_id? table
+---@field terminalIds? table
 ---@field terminalid_acquirer? string
 ---@field vu_nummer string
 
 ---@class MerchantPortalPamMerchantControllerCreateData
 ---@field additional_data? table
----@field business_registration_number string
+---@field businessRegistrationNumber string
 ---@field city? string
----@field company_name string
----@field corporate_uuid string
+---@field companyName string
+---@field corporateUUID string
 ---@field country? string
 ---@field currency string
 ---@field email string
 ---@field language string
 ---@field login string
 ---@field mandator string
+---@field merchantContractNumber string
+---@field merchantName? string
 ---@field merchant_category_code? string
----@field merchant_contract_number string
----@field merchant_name? string
----@field package_uuid? string
+---@field packageUUID? string
 ---@field packageorderuuid string
----@field phone_number string
----@field postal_code? string
+---@field phoneNumber string
+---@field postalCode? string
 ---@field productid_acquirer string
 ---@field region? string
----@field registration_number? string
+---@field registrationNumber? string
 ---@field signature? string
 ---@field street? string
----@field terminal_id? table
+---@field terminalIds? table
 ---@field terminalid_acquirer? string
 ---@field vu_nummer string
 
 ---@class MerchantPortalPamPackageController
----@field consumer_uuid? string
----@field corporate_uuid? string
+---@field consumerUUID? string
+---@field corporateUUID? string
 ---@field country? string
----@field description_key? string
+---@field descriptionKey? string
 ---@field filter? table
 ---@field language string
----@field name_key? string
----@field package_status? string
----@field package_uuid string
+---@field nameKey? string
+---@field packageStatus? string
+---@field packageUUID string
 ---@field pagination? table
 ---@field sorting? table
 
 ---@class MerchantPortalPamPackageControllerCreateData
----@field consumer_uuid? string
----@field corporate_uuid? string
+---@field consumerUUID? string
+---@field corporateUUID? string
 ---@field country? string
----@field description_key? string
+---@field descriptionKey? string
 ---@field filter? table
 ---@field language string
----@field name_key? string
----@field package_status? string
----@field package_uuid string
+---@field nameKey? string
+---@field packageStatus? string
+---@field packageUUID string
 ---@field pagination? table
 ---@field sorting? table
 
 ---@class MerchantPortalPamProductController
----@field consumer_uuid? string
+---@field consumerUUID? string
 ---@field filter? table
 ---@field language? string
----@field merchant_id? string
----@field package_order_uuid string
+---@field merchantID? string
+---@field packageOrderUUID string
 ---@field pagination? table
----@field product_order_uuid string
----@field product_uuid string
+---@field productOrderUUID string
+---@field productUUID string
 ---@field reason_decline string
 ---@field sorting? table
 
 ---@class MerchantPortalPamProductControllerCreateData
----@field consumer_uuid? string
+---@field consumerUUID? string
 ---@field filter? table
 ---@field language? string
----@field merchant_id? string
----@field package_order_uuid string
+---@field merchantID? string
+---@field packageOrderUUID string
 ---@field pagination? table
----@field product_order_uuid string
----@field product_uuid string
+---@field productOrderUUID string
+---@field productUUID string
 ---@field reason_decline string
 ---@field sorting? table
 
 ---@class OutputAddProduct
----@field package_uuid string
----@field product_uui_d table
----@field response_code number
----@field response_message string
+---@field packageUUID string
+---@field productUUIDs table
+---@field responseCode number
+---@field responseMessage string
 
 ---@class OutputAddProductCreateData
----@field package_uuid string
----@field product_uui_d table
----@field response_code number
----@field response_message string
+---@field packageUUID string
+---@field productUUIDs table
+---@field responseCode number
+---@field responseMessage string
 
 ---@class OutputCreateProduct
----@field acquirer_id? string
----@field allow_multiple_order boolean
----@field app_form_template_name string
----@field contract_needed boolean
----@field credentials_needed? boolean
----@field description_key string
----@field name_key string
----@field prescreening_allowed boolean
----@field product_name string
----@field response_code number
----@field response_message string
----@field terminal_template_name string
----@field vendor_name string
----@field xml_template_file string
+---@field acquirerId? string
+---@field allowMultipleOrders boolean
+---@field appFormTemplateName string
+---@field contractNeeded boolean
+---@field credentialsNeeded? boolean
+---@field descriptionKey string
+---@field nameKey string
+---@field prescreeningAllowed boolean
+---@field productName string
+---@field responseCode number
+---@field responseMessage string
+---@field terminalTemplateName string
+---@field vendorName string
+---@field xmlTemplateFile string
 
 ---@class OutputCreateProductCreateData
----@field acquirer_id? string
----@field allow_multiple_order boolean
----@field app_form_template_name string
----@field contract_needed boolean
----@field credentials_needed? boolean
----@field description_key string
----@field name_key string
----@field prescreening_allowed boolean
----@field product_name string
----@field response_code number
----@field response_message string
----@field terminal_template_name string
----@field vendor_name string
----@field xml_template_file string
+---@field acquirerId? string
+---@field allowMultipleOrders boolean
+---@field appFormTemplateName string
+---@field contractNeeded boolean
+---@field credentialsNeeded? boolean
+---@field descriptionKey string
+---@field nameKey string
+---@field prescreeningAllowed boolean
+---@field productName string
+---@field responseCode number
+---@field responseMessage string
+---@field terminalTemplateName string
+---@field vendorName string
+---@field xmlTemplateFile string
 
 ---@class OutputDetail
----@field detail? table
----@field response_code number
----@field response_message string
+---@field batch? table
+---@field lines? table
+---@field progress? table
 
 ---@class OutputDetailLoadMatch
 ---@field id string
 
 ---@class OutputList
----@field item? table
+---@field items? table
 ---@field pagination table
----@field response_code number
----@field response_message string
+---@field responseCode number
+---@field responseMessage string
 ---@field sorting? table
 
 ---@class OutputListCreateData
----@field item? table
+---@field items? table
 ---@field pagination table
----@field response_code number
----@field response_message string
+---@field responseCode number
+---@field responseMessage string
 ---@field sorting? table
 
 ---@class OutputMessage
----@field response_code number
----@field response_message string
+---@field responseCode number
+---@field responseMessage string
 
 ---@class OutputMessageLoadMatch
 ---@field id string
 
 ---@class OutputMoveTid
----@field product_order_uui_d table
----@field response_code number
----@field response_message string
----@field target_package_order_uuid string
----@field target_product_order_uuid string
+---@field productOrderUUIDs table
+---@field responseCode number
+---@field responseMessage string
+---@field targetPackageOrderUUID string
+---@field targetProductOrderUUID string
 
 ---@class OutputMoveTidCreateData
----@field product_order_uui_d table
----@field response_code number
----@field response_message string
----@field target_package_order_uuid string
----@field target_product_order_uuid string
+---@field productOrderUUIDs table
+---@field responseCode number
+---@field responseMessage string
+---@field targetPackageOrderUUID string
+---@field targetProductOrderUUID string
 
 ---@class OutputRemoveProduct
----@field package_uuid string
----@field product_uui_d table
----@field response_code number
----@field response_message string
+---@field packageUUID string
+---@field productUUIDs table
+---@field responseCode number
+---@field responseMessage string
 
 ---@class OutputRemoveProductCreateData
----@field package_uuid string
----@field product_uui_d table
----@field response_code number
----@field response_message string
+---@field packageUUID string
+---@field productUUIDs table
+---@field responseCode number
+---@field responseMessage string
 
 ---@class OutputStart
 ---@field id? string
----@field response_code number
----@field response_message string
+---@field responseCode number
+---@field responseMessage string
 
 ---@class OutputStartCreateData
 ---@field id? string
----@field response_code number
----@field response_message string
+---@field responseCode number
+---@field responseMessage string
 
 ---@class OutputStatus
 ---@field percentage? number
----@field response_code number
----@field response_message string
+---@field responseCode number
+---@field responseMessage string
 ---@field status? string
 
 ---@class OutputStatusLoadMatch
 ---@field id string
 
 ---@class OutputUpdateProduct
----@field allow_multiple_order? boolean
----@field app_form_name? string
----@field contract_needed? boolean
----@field credentials_needed? boolean
----@field description_key? string
----@field name_key? string
----@field prescreening_allowed? boolean
----@field product_name? string
----@field product_status? string
----@field product_uuid string
----@field response_code number
----@field response_message string
----@field vendor_name? string
+---@field allowMultipleOrders? boolean
+---@field appFormName? string
+---@field contractNeeded? boolean
+---@field credentialsNeeded? boolean
+---@field descriptionKey? string
+---@field nameKey? string
+---@field prescreeningAllowed? boolean
+---@field productName? string
+---@field productStatus? string
+---@field productUUID string
+---@field responseCode number
+---@field responseMessage string
+---@field vendorName? string
 
 ---@class OutputUpdateProductCreateData
----@field allow_multiple_order? boolean
----@field app_form_name? string
----@field contract_needed? boolean
----@field credentials_needed? boolean
----@field description_key? string
----@field name_key? string
----@field prescreening_allowed? boolean
----@field product_name? string
----@field product_status? string
----@field product_uuid string
----@field response_code number
----@field response_message string
----@field vendor_name? string
+---@field allowMultipleOrders? boolean
+---@field appFormName? string
+---@field contractNeeded? boolean
+---@field credentialsNeeded? boolean
+---@field descriptionKey? string
+---@field nameKey? string
+---@field prescreeningAllowed? boolean
+---@field productName? string
+---@field productStatus? string
+---@field productUUID string
+---@field responseCode number
+---@field responseMessage string
+---@field vendorName? string
 
 local M = {}
 

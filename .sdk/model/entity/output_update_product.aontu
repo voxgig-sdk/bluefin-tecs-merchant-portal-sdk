@@ -6,67 +6,67 @@ main: kit: entity: output_update_product: {
 
   fields: [
     {
-      name: "allow_multiple_order"
+      name: "allowMultipleOrders"
       req: false
       type: "`$BOOLEAN`"
     }
     {
-      name: "app_form_name"
+      name: "appFormName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "contract_needed"
+      name: "contractNeeded"
       req: false
       type: "`$BOOLEAN`"
     }
     {
-      name: "credentials_needed"
+      name: "credentialsNeeded"
       req: false
       type: "`$BOOLEAN`"
     }
     {
-      name: "description_key"
+      name: "descriptionKey"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "name_key"
+      name: "nameKey"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "prescreening_allowed"
+      name: "prescreeningAllowed"
       req: false
       type: "`$BOOLEAN`"
     }
     {
-      name: "product_name"
+      name: "productName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "product_status"
+      name: "productStatus"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "product_uuid"
+      name: "productUUID"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: true
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "vendor_name"
+      name: "vendorName"
       req: false
       type: "`$STRING`"
     }

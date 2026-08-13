@@ -43,8 +43,8 @@ class BluefinTecsMerchantPortalTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('BLUEFINTECSMERCHANTPORTAL_TEST_LIVE');
-        $override = self::getenv('BLUEFINTECSMERCHANTPORTAL_TEST_OVERRIDE');
+        $live = self::getenv('BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE');
+        $override = self::getenv('BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class BluefinTecsMerchantPortalTestRunner
             }
         }
 
-        $explain = self::getenv('BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN');
+        $explain = self::getenv('BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN'] = $explain;
+            $m['BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

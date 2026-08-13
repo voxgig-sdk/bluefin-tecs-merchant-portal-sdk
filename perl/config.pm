@@ -308,6 +308,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/deactivateTerminal",
               "parts": [
@@ -339,6 +340,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/reactivateTerminal",
               "parts": [
@@ -370,6 +372,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/registerAdditionalTerminal",
               "parts": [
@@ -401,6 +404,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/registerNewMerchant",
               "parts": [
@@ -437,6 +441,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/merchantportalws/logDeveloperInfo",
               "parts": [
@@ -453,6 +458,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/merchantportalws/version",
               "parts": [
@@ -485,7 +491,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "product_order_uuid",
+          "name": "productOrderUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
@@ -511,6 +517,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/generateContract",
               "parts": [
@@ -542,6 +549,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/uploadContract",
               "parts": [
@@ -571,21 +579,21 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "app_form_field_desc_uuid",
+          "name": "appFormFieldDescUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "package_order_uuid",
+          "name": "packageOrderUUID",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "product_order_uuid",
+          "name": "productOrderUUID",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -611,6 +619,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/documentsList",
               "parts": [
@@ -642,6 +651,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/downloadDocument",
               "parts": [
@@ -671,7 +681,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "app_form_fields_desc_uuid",
+          "name": "appFormFieldsDescUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
@@ -698,14 +708,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "package_order",
+          "name": "packageOrder",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "package_order_uuid",
+          "name": "packageOrderUUID",
           "op": {
             "create": {
               "req": false,
@@ -718,21 +728,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "package_uuid",
+          "name": "packageUUID",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "product_order",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 6
-        },
-        {
-          "active": true,
-          "name": "product_order_uuid",
+          "name": "productOrderUUID",
           "op": {
             "create": {
               "req": true,
@@ -741,11 +744,18 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           },
           "req": false,
           "type": "`$STRING`",
+          "index$": 6
+        },
+        {
+          "active": true,
+          "name": "productOrders",
+          "req": false,
+          "type": "`$ARRAY`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "reason_of_reopening",
+          "name": "reasonOfReopening",
           "req": true,
           "type": "`$STRING`",
           "index$": 8
@@ -771,6 +781,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/applicationForm",
               "parts": [
@@ -802,6 +813,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/packageForm",
               "parts": [
@@ -833,6 +845,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/reopenForm",
               "parts": [
@@ -864,6 +877,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/secretKey",
               "parts": [
@@ -895,6 +909,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/submitForm",
               "parts": [
@@ -926,6 +941,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/submitValues",
               "parts": [
@@ -955,28 +971,28 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "client_secret",
+          "name": "clientSecret",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "mandator_name",
+          "name": "mandatorName",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "notification_email",
+          "name": "notificationEmail",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "package_uuid",
+          "name": "packageUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 3
@@ -1002,6 +1018,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/createMandatorConfig",
               "parts": [
@@ -1033,6 +1050,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/introduceMandatorPackage",
               "parts": [
@@ -1064,6 +1082,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/selfRegistrationLink",
               "parts": [
@@ -1100,7 +1119,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "business_registration_number",
+          "name": "businessRegistrationNumber",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
@@ -1114,14 +1133,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "company_name",
+          "name": "companyName",
           "req": true,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "corporate_uuid",
+          "name": "corporateUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 4
@@ -1170,14 +1189,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "merchant_category_code",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 11
-        },
-        {
-          "active": true,
-          "name": "merchant_contract_number",
+          "name": "merchantContractNumber",
           "op": {
             "create": {
               "req": false,
@@ -1186,18 +1198,25 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           },
           "req": true,
           "type": "`$STRING`",
+          "index$": 11
+        },
+        {
+          "active": true,
+          "name": "merchantName",
+          "req": false,
+          "type": "`$STRING`",
           "index$": 12
         },
         {
           "active": true,
-          "name": "merchant_name",
+          "name": "merchant_category_code",
           "req": false,
           "type": "`$STRING`",
           "index$": 13
         },
         {
           "active": true,
-          "name": "package_uuid",
+          "name": "packageUUID",
           "req": false,
           "type": "`$STRING`",
           "index$": 14
@@ -1211,14 +1230,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "phone_number",
+          "name": "phoneNumber",
           "req": true,
           "type": "`$STRING`",
           "index$": 16
         },
         {
           "active": true,
-          "name": "postal_code",
+          "name": "postalCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 17
@@ -1239,7 +1258,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "registration_number",
+          "name": "registrationNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 20
@@ -1260,7 +1279,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalIds",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 23
@@ -1300,6 +1319,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/contractNumber",
               "parts": [
@@ -1331,6 +1351,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/registerAdditionalAcquiring",
               "parts": [
@@ -1362,6 +1383,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/updateMerchant",
               "parts": [
@@ -1382,6 +1404,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/registerMerchant",
               "parts": [
@@ -1407,14 +1430,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "consumer_uuid",
+          "name": "consumerUUID",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "corporate_uuid",
+          "name": "corporateUUID",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
@@ -1428,7 +1451,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "description_key",
+          "name": "descriptionKey",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
@@ -1455,21 +1478,21 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "name_key",
+          "name": "nameKey",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "package_status",
+          "name": "packageStatus",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "package_uuid",
+          "name": "packageUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 8
@@ -1509,6 +1532,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/availablePackages",
               "parts": [
@@ -1540,6 +1564,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/orderPackage",
               "parts": [
@@ -1571,6 +1596,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/orderedPackages",
               "parts": [
@@ -1602,6 +1628,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/packageTemplates",
               "parts": [
@@ -1633,6 +1660,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/updatePackageData",
               "parts": [
@@ -1662,7 +1690,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "consumer_uuid",
+          "name": "consumerUUID",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
@@ -1683,14 +1711,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "merchant_id",
+          "name": "merchantID",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "package_order_uuid",
+          "name": "packageOrderUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 4
@@ -1704,14 +1732,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "product_order_uuid",
+          "name": "productOrderUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "product_uuid",
+          "name": "productUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 7
@@ -1751,6 +1779,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/approveProduct",
               "parts": [
@@ -1782,6 +1811,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/declineProduct",
               "parts": [
@@ -1813,6 +1843,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/orderAdditionalProduct",
               "parts": [
@@ -1844,6 +1875,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/productsList",
               "parts": [
@@ -1873,28 +1905,28 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "package_uuid",
+          "name": "packageUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "product_uui_d",
+          "name": "productUUIDs",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": true,
           "type": "`$STRING`",
           "index$": 3
@@ -1920,6 +1952,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/addProductsToPackage",
               "parts": [
@@ -1949,98 +1982,98 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "acquirer_id",
+          "name": "acquirerId",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "allow_multiple_order",
+          "name": "allowMultipleOrders",
           "req": true,
           "type": "`$BOOLEAN`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "app_form_template_name",
+          "name": "appFormTemplateName",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "contract_needed",
+          "name": "contractNeeded",
           "req": true,
           "type": "`$BOOLEAN`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "credentials_needed",
+          "name": "credentialsNeeded",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "description_key",
+          "name": "descriptionKey",
           "req": true,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "name_key",
+          "name": "nameKey",
           "req": true,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "prescreening_allowed",
+          "name": "prescreeningAllowed",
           "req": true,
           "type": "`$BOOLEAN`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "product_name",
+          "name": "productName",
           "req": true,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 9
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": true,
           "type": "`$STRING`",
           "index$": 10
         },
         {
           "active": true,
-          "name": "terminal_template_name",
+          "name": "terminalTemplateName",
           "req": true,
           "type": "`$STRING`",
           "index$": 11
         },
         {
           "active": true,
-          "name": "vendor_name",
+          "name": "vendorName",
           "req": true,
           "type": "`$STRING`",
           "index$": 12
         },
         {
           "active": true,
-          "name": "xml_template_file",
+          "name": "xmlTemplateFile",
           "req": true,
           "type": "`$STRING`",
           "index$": 13
@@ -2066,6 +2099,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/createNewProduct",
               "parts": [
@@ -2095,23 +2129,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "detail",
+          "name": "batch",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
-          "req": true,
-          "type": "`$INTEGER`",
+          "name": "lines",
+          "req": false,
+          "type": "`$OBJECT`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
-          "req": true,
-          "type": "`$STRING`",
+          "name": "progress",
+          "req": false,
+          "type": "`$OBJECT`",
           "index$": 2
         }
       ],
@@ -2146,6 +2180,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/merchantportalws/batch/registerAdditionalTerminal/details/{id}",
               "parts": [
@@ -2179,7 +2214,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "item",
+          "name": "items",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 0
@@ -2199,14 +2234,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": true,
           "type": "`$STRING`",
           "index$": 3
@@ -2239,6 +2274,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/batch/registerAdditionalTerminal/list",
               "parts": [
@@ -2270,14 +2306,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
@@ -2314,6 +2350,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}",
               "parts": [
@@ -2360,6 +2397,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}",
               "parts": [
@@ -2393,35 +2431,35 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "product_order_uui_d",
+          "name": "productOrderUUIDs",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "target_package_order_uuid",
+          "name": "targetPackageOrderUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "target_product_order_uuid",
+          "name": "targetProductOrderUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 4
@@ -2447,6 +2485,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/moveTid",
               "parts": [
@@ -2476,28 +2515,28 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "package_uuid",
+          "name": "packageUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "product_uui_d",
+          "name": "productUUIDs",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": true,
           "type": "`$STRING`",
           "index$": 3
@@ -2523,6 +2562,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/removeProductsFromPackage",
               "parts": [
@@ -2559,14 +2599,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -2592,6 +2632,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/batch/registerAdditionalTerminal/start",
               "parts": [
@@ -2630,14 +2671,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -2681,6 +2722,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/merchantportalws/batch/registerAdditionalTerminal/status/{id}",
               "parts": [
@@ -2714,91 +2756,91 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "allow_multiple_order",
+          "name": "allowMultipleOrders",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "app_form_name",
+          "name": "appFormName",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "contract_needed",
+          "name": "contractNeeded",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "credentials_needed",
+          "name": "credentialsNeeded",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "description_key",
+          "name": "descriptionKey",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "name_key",
+          "name": "nameKey",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "prescreening_allowed",
+          "name": "prescreeningAllowed",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "product_name",
+          "name": "productName",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "product_status",
+          "name": "productStatus",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "product_uuid",
+          "name": "productUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 9
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 10
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": true,
           "type": "`$STRING`",
           "index$": 11
         },
         {
           "active": true,
-          "name": "vendor_name",
+          "name": "vendorName",
           "req": false,
           "type": "`$STRING`",
           "index$": 12
@@ -2824,6 +2866,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/merchantportalws/updateProduct",
               "parts": [

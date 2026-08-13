@@ -89,11 +89,11 @@ public class MerchantPortalCommonControllerDirectTest {
     final List<Map<String, Object>> calls = new ArrayList<>();
 
     Map<String, Object> envm = new LinkedHashMap<>();
-    envm.put("BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID", new LinkedHashMap<>());
-    envm.put("BLUEFINTECSMERCHANTPORTAL_TEST_LIVE", "FALSE");
+    envm.put("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID", new LinkedHashMap<>());
+    envm.put("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE", "FALSE");
     Map<String, Object> env = RunnerSupport.envOverride(envm);
 
-    boolean live = "TRUE".equals(env.get("BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"));
+    boolean live = "TRUE".equals(env.get("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"));
 
     DirectSetup setup = new DirectSetup();
     setup.calls = calls;
@@ -104,7 +104,7 @@ public class MerchantPortalCommonControllerDirectTest {
       setup.live = true;
 
       Map<String, Object> idmap = new LinkedHashMap<>();
-      Object entidRaw = env.get("BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID");
+      Object entidRaw = env.get("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID");
       if (entidRaw instanceof String && ((String) entidRaw).startsWith("{")) {
         Map<String, Object> parsed = Helpers.toMapAny(Json.parseOrNull((String) entidRaw));
         if (parsed != null) {

@@ -26,8 +26,8 @@ import {
 describe('OutputRemoveProductEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTPORTAL_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTPORTAL_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantPortalSDK.test()
@@ -62,7 +62,7 @@ describe('OutputRemoveProductEntity', async () => {
     const output_remove_product_ref01_ent = client.OutputRemoveProduct()
     let output_remove_product_ref01_data = setup.data.new.output_remove_product['output_remove_product_ref01']
 
-    output_remove_product_ref01_data = await output_remove_product_ref01_ent.create(output_remove_product_ref01_data)
+    output_remove_product_ref01_data = (await output_remove_product_ref01_ent.create(output_remove_product_ref01_data)).data()
     assert(null != output_remove_product_ref01_data)
 
 

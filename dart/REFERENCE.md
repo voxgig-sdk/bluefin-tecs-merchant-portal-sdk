@@ -290,7 +290,7 @@ final merchant_portal_pam_contract_controller = client.MerchantPortalPamContract
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `language` | `String` | Yes |  |
-| `product_order_uuid` | `String` | Yes |  |
+| `productOrderUUID` | `String` | Yes |  |
 
 ### Operations
 
@@ -301,7 +301,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 ```dart
 final result = await client.MerchantPortalPamContractController().create({
   'language': 'example_language',  // String
-  'product_order_uuid': 'example_product_order_uuid',  // String
+  'productOrderUUID': 'example_productOrderUUID',  // String
 });
 ```
 
@@ -336,9 +336,9 @@ final merchant_portal_pam_document_controller = client.MerchantPortalPamDocument
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_field_desc_uuid` | `String` | Yes |  |
-| `package_order_uuid` | `String` | No |  |
-| `product_order_uuid` | `String` | No |  |
+| `appFormFieldDescUUID` | `String` | Yes |  |
+| `packageOrderUUID` | `String` | No |  |
+| `productOrderUUID` | `String` | No |  |
 
 ### Operations
 
@@ -348,7 +348,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```dart
 final result = await client.MerchantPortalPamDocumentController().create({
-  'app_form_field_desc_uuid': 'example_app_form_field_desc_uuid',  // String
+  'appFormFieldDescUUID': 'example_appFormFieldDescUUID',  // String
 });
 ```
 
@@ -383,29 +383,29 @@ final merchant_portal_pam_form_controller = client.MerchantPortalPamFormControll
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `String` | Yes |  |
+| `appFormFieldsDescUUID` | `String` | Yes |  |
 | `filter` | `Map<String, dynamic>` | No |  |
 | `language` | `String` | Yes |  |
-| `package_order` | `Map<String, dynamic>` | No |  |
-| `package_order_uuid` | `String` | Yes |  |
-| `package_uuid` | `String` | No |  |
-| `product_order` | `List<dynamic>` | No |  |
-| `product_order_uuid` | `String` | No |  |
-| `reason_of_reopening` | `String` | Yes |  |
+| `packageOrder` | `Map<String, dynamic>` | No |  |
+| `packageOrderUUID` | `String` | Yes |  |
+| `packageUUID` | `String` | No |  |
+| `productOrderUUID` | `String` | No |  |
+| `productOrders` | `List<dynamic>` | No |  |
+| `reasonOfReopening` | `String` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `app_form_fields_desc_uuid` | - |
+| `appFormFieldsDescUUID` | - |
 | `filter` | - |
 | `language` | Yes |
-| `package_order` | - |
-| `package_order_uuid` | Yes |
-| `package_uuid` | - |
-| `product_order` | - |
-| `product_order_uuid` | Yes |
-| `reason_of_reopening` | - |
+| `packageOrder` | - |
+| `packageOrderUUID` | Yes |
+| `packageUUID` | - |
+| `productOrderUUID` | Yes |
+| `productOrders` | - |
+| `reasonOfReopening` | - |
 
 ### Operations
 
@@ -415,10 +415,10 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```dart
 final result = await client.MerchantPortalPamFormController().create({
-  'app_form_fields_desc_uuid': 'example_app_form_fields_desc_uuid',  // String
+  'appFormFieldsDescUUID': 'example_appFormFieldsDescUUID',  // String
   'language': 'example_language',  // String
-  'package_order_uuid': 'example_package_order_uuid',  // String
-  'reason_of_reopening': 'example_reason_of_reopening',  // String
+  'packageOrderUUID': 'example_packageOrderUUID',  // String
+  'reasonOfReopening': 'example_reasonOfReopening',  // String
 });
 ```
 
@@ -453,10 +453,10 @@ final merchant_portal_pam_mandator_controller = client.MerchantPortalPamMandator
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `String` | No |  |
-| `mandator_name` | `String` | Yes |  |
-| `notification_email` | `String` | No |  |
-| `package_uuid` | `String` | Yes |  |
+| `clientSecret` | `String` | No |  |
+| `mandatorName` | `String` | Yes |  |
+| `notificationEmail` | `String` | No |  |
+| `packageUUID` | `String` | Yes |  |
 
 ### Operations
 
@@ -466,8 +466,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```dart
 final result = await client.MerchantPortalPamMandatorController().create({
-  'mandator_name': 'example_mandator_name',  // String
-  'package_uuid': 'example_package_uuid',  // String
+  'mandatorName': 'example_mandatorName',  // String
+  'packageUUID': 'example_packageUUID',  // String
 });
 ```
 
@@ -503,29 +503,29 @@ final merchant_portal_pam_merchant_controller = client.MerchantPortalPamMerchant
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `additional_data` | `Map<String, dynamic>` | No |  |
-| `business_registration_number` | `String` | Yes |  |
+| `businessRegistrationNumber` | `String` | Yes |  |
 | `city` | `String` | No |  |
-| `company_name` | `String` | Yes |  |
-| `corporate_uuid` | `String` | Yes |  |
+| `companyName` | `String` | Yes |  |
+| `corporateUUID` | `String` | Yes |  |
 | `country` | `String` | No |  |
 | `currency` | `String` | Yes |  |
 | `email` | `String` | Yes |  |
 | `language` | `String` | Yes |  |
 | `login` | `String` | Yes |  |
 | `mandator` | `String` | Yes |  |
+| `merchantContractNumber` | `String` | Yes |  |
+| `merchantName` | `String` | No |  |
 | `merchant_category_code` | `String` | No |  |
-| `merchant_contract_number` | `String` | Yes |  |
-| `merchant_name` | `String` | No |  |
-| `package_uuid` | `String` | No |  |
+| `packageUUID` | `String` | No |  |
 | `packageorderuuid` | `String` | Yes |  |
-| `phone_number` | `String` | Yes |  |
-| `postal_code` | `String` | No |  |
+| `phoneNumber` | `String` | Yes |  |
+| `postalCode` | `String` | No |  |
 | `productid_acquirer` | `String` | Yes |  |
 | `region` | `String` | No |  |
-| `registration_number` | `String` | No |  |
+| `registrationNumber` | `String` | No |  |
 | `signature` | `String` | No |  |
 | `street` | `String` | No |  |
-| `terminal_id` | `List<dynamic>` | No |  |
+| `terminalIds` | `List<dynamic>` | No |  |
 | `terminalid_acquirer` | `String` | No |  |
 | `vu_nummer` | `String` | Yes |  |
 
@@ -534,29 +534,29 @@ final merchant_portal_pam_merchant_controller = client.MerchantPortalPamMerchant
 | Field | create |
 | --- | --- |
 | `additional_data` | - |
-| `business_registration_number` | - |
+| `businessRegistrationNumber` | - |
 | `city` | - |
-| `company_name` | - |
-| `corporate_uuid` | - |
+| `companyName` | - |
+| `corporateUUID` | - |
 | `country` | - |
 | `currency` | - |
 | `email` | - |
 | `language` | - |
 | `login` | - |
 | `mandator` | - |
+| `merchantContractNumber` | Yes |
+| `merchantName` | - |
 | `merchant_category_code` | - |
-| `merchant_contract_number` | Yes |
-| `merchant_name` | - |
-| `package_uuid` | - |
+| `packageUUID` | - |
 | `packageorderuuid` | - |
-| `phone_number` | - |
-| `postal_code` | - |
+| `phoneNumber` | - |
+| `postalCode` | - |
 | `productid_acquirer` | - |
 | `region` | - |
-| `registration_number` | - |
+| `registrationNumber` | - |
 | `signature` | - |
 | `street` | - |
-| `terminal_id` | - |
+| `terminalIds` | - |
 | `terminalid_acquirer` | - |
 | `vu_nummer` | - |
 
@@ -568,17 +568,17 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```dart
 final result = await client.MerchantPortalPamMerchantController().create({
-  'business_registration_number': 'example_business_registration_number',  // String
-  'company_name': 'example_company_name',  // String
-  'corporate_uuid': 'example_corporate_uuid',  // String
+  'businessRegistrationNumber': 'example_businessRegistrationNumber',  // String
+  'companyName': 'example_companyName',  // String
+  'corporateUUID': 'example_corporateUUID',  // String
   'currency': 'example_currency',  // String
   'email': 'example_email',  // String
   'language': 'example_language',  // String
   'login': 'example_login',  // String
   'mandator': 'example_mandator',  // String
-  'merchant_contract_number': 'example_merchant_contract_number',  // String
+  'merchantContractNumber': 'example_merchantContractNumber',  // String
   'packageorderuuid': 'example_packageorderuuid',  // String
-  'phone_number': 'example_phone_number',  // String
+  'phoneNumber': 'example_phoneNumber',  // String
   'productid_acquirer': 'example_productid_acquirer',  // String
   'vu_nummer': 'example_vu_nummer',  // String
 });
@@ -615,15 +615,15 @@ final merchant_portal_pam_package_controller = client.MerchantPortalPamPackageCo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `corporate_uuid` | `String` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `corporateUUID` | `String` | No |  |
 | `country` | `String` | No |  |
-| `description_key` | `String` | No |  |
+| `descriptionKey` | `String` | No |  |
 | `filter` | `Map<String, dynamic>` | No |  |
 | `language` | `String` | Yes |  |
-| `name_key` | `String` | No |  |
-| `package_status` | `String` | No |  |
-| `package_uuid` | `String` | Yes |  |
+| `nameKey` | `String` | No |  |
+| `packageStatus` | `String` | No |  |
+| `packageUUID` | `String` | Yes |  |
 | `pagination` | `Map<String, dynamic>` | No |  |
 | `sorting` | `Map<String, dynamic>` | No |  |
 
@@ -631,15 +631,15 @@ final merchant_portal_pam_package_controller = client.MerchantPortalPamPackageCo
 
 | Field | create |
 | --- | --- |
-| `consumer_uuid` | - |
-| `corporate_uuid` | - |
+| `consumerUUID` | - |
+| `corporateUUID` | - |
 | `country` | - |
-| `description_key` | - |
+| `descriptionKey` | - |
 | `filter` | - |
 | `language` | Yes |
-| `name_key` | - |
-| `package_status` | - |
-| `package_uuid` | - |
+| `nameKey` | - |
+| `packageStatus` | - |
+| `packageUUID` | - |
 | `pagination` | - |
 | `sorting` | - |
 
@@ -652,7 +652,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 ```dart
 final result = await client.MerchantPortalPamPackageController().create({
   'language': 'example_language',  // String
-  'package_uuid': 'example_package_uuid',  // String
+  'packageUUID': 'example_packageUUID',  // String
 });
 ```
 
@@ -687,14 +687,14 @@ final merchant_portal_pam_product_controller = client.MerchantPortalPamProductCo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
+| `consumerUUID` | `String` | No |  |
 | `filter` | `Map<String, dynamic>` | No |  |
 | `language` | `String` | No |  |
-| `merchant_id` | `String` | No |  |
-| `package_order_uuid` | `String` | Yes |  |
+| `merchantID` | `String` | No |  |
+| `packageOrderUUID` | `String` | Yes |  |
 | `pagination` | `Map<String, dynamic>` | No |  |
-| `product_order_uuid` | `String` | Yes |  |
-| `product_uuid` | `String` | Yes |  |
+| `productOrderUUID` | `String` | Yes |  |
+| `productUUID` | `String` | Yes |  |
 | `reason_decline` | `String` | Yes |  |
 | `sorting` | `Map<String, dynamic>` | No |  |
 
@@ -706,9 +706,9 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```dart
 final result = await client.MerchantPortalPamProductController().create({
-  'package_order_uuid': 'example_package_order_uuid',  // String
-  'product_order_uuid': 'example_product_order_uuid',  // String
-  'product_uuid': 'example_product_uuid',  // String
+  'packageOrderUUID': 'example_packageOrderUUID',  // String
+  'productOrderUUID': 'example_productOrderUUID',  // String
+  'productUUID': 'example_productUUID',  // String
   'reason_decline': 'example_reason_decline',  // String
 });
 ```
@@ -744,10 +744,10 @@ final output_add_product = client.OutputAddProduct();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `String` | Yes |  |
-| `product_uui_d` | `List<dynamic>` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `packageUUID` | `String` | Yes |  |
+| `productUUIDs` | `List<dynamic>` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 
 ### Operations
 
@@ -757,10 +757,10 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```dart
 final result = await client.OutputAddProduct().create({
-  'package_uuid': 'example_package_uuid',  // String
-  'product_uui_d': <dynamic>[],  // List<dynamic>
-  'response_code': 1,  // int
-  'response_message': 'example_response_message',  // String
+  'packageUUID': 'example_packageUUID',  // String
+  'productUUIDs': <dynamic>[],  // List<dynamic>
+  'responseCode': 1,  // int
+  'responseMessage': 'example_responseMessage',  // String
 });
 ```
 
@@ -795,20 +795,20 @@ final output_create_product = client.OutputCreateProduct();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String` | No |  |
-| `allow_multiple_order` | `bool` | Yes |  |
-| `app_form_template_name` | `String` | Yes |  |
-| `contract_needed` | `bool` | Yes |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `String` | Yes |  |
-| `name_key` | `String` | Yes |  |
-| `prescreening_allowed` | `bool` | Yes |  |
-| `product_name` | `String` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `String` | Yes |  |
-| `terminal_template_name` | `String` | Yes |  |
-| `vendor_name` | `String` | Yes |  |
-| `xml_template_file` | `String` | Yes |  |
+| `acquirerId` | `String` | No |  |
+| `allowMultipleOrders` | `bool` | Yes |  |
+| `appFormTemplateName` | `String` | Yes |  |
+| `contractNeeded` | `bool` | Yes |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `String` | Yes |  |
+| `nameKey` | `String` | Yes |  |
+| `prescreeningAllowed` | `bool` | Yes |  |
+| `productName` | `String` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
+| `terminalTemplateName` | `String` | Yes |  |
+| `vendorName` | `String` | Yes |  |
+| `xmlTemplateFile` | `String` | Yes |  |
 
 ### Operations
 
@@ -818,18 +818,18 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```dart
 final result = await client.OutputCreateProduct().create({
-  'allow_multiple_order': true,  // bool
-  'app_form_template_name': 'example_app_form_template_name',  // String
-  'contract_needed': true,  // bool
-  'description_key': 'example_description_key',  // String
-  'name_key': 'example_name_key',  // String
-  'prescreening_allowed': true,  // bool
-  'product_name': 'example_product_name',  // String
-  'response_code': 1,  // int
-  'response_message': 'example_response_message',  // String
-  'terminal_template_name': 'example_terminal_template_name',  // String
-  'vendor_name': 'example_vendor_name',  // String
-  'xml_template_file': 'example_xml_template_file',  // String
+  'allowMultipleOrders': true,  // bool
+  'appFormTemplateName': 'example_appFormTemplateName',  // String
+  'contractNeeded': true,  // bool
+  'descriptionKey': 'example_descriptionKey',  // String
+  'nameKey': 'example_nameKey',  // String
+  'prescreeningAllowed': true,  // bool
+  'productName': 'example_productName',  // String
+  'responseCode': 1,  // int
+  'responseMessage': 'example_responseMessage',  // String
+  'terminalTemplateName': 'example_terminalTemplateName',  // String
+  'vendorName': 'example_vendorName',  // String
+  'xmlTemplateFile': 'example_xmlTemplateFile',  // String
 });
 ```
 
@@ -864,9 +864,9 @@ final output_detail = client.OutputDetail();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `detail` | `Map<String, dynamic>` | No |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `batch` | `Map<String, dynamic>` | No |  |
+| `lines` | `Map<String, dynamic>` | No |  |
+| `progress` | `Map<String, dynamic>` | No |  |
 
 ### Operations
 
@@ -909,20 +909,20 @@ final output_list = client.OutputList();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `item` | `List<dynamic>` | No |  |
+| `items` | `List<dynamic>` | No |  |
 | `pagination` | `Map<String, dynamic>` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 | `sorting` | `Map<String, dynamic>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `item` | - |
+| `items` | - |
 | `pagination` | Yes |
-| `response_code` | - |
-| `response_message` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
 | `sorting` | - |
 
 ### Operations
@@ -934,8 +934,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 ```dart
 final result = await client.OutputList().create({
   'pagination': <String, dynamic>{},  // Map<String, dynamic>
-  'response_code': 1,  // int
-  'response_message': 'example_response_message',  // String
+  'responseCode': 1,  // int
+  'responseMessage': 'example_responseMessage',  // String
 });
 ```
 
@@ -970,8 +970,8 @@ final output_message = client.OutputMessage();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 
 ### Operations
 
@@ -1014,11 +1014,11 @@ final output_move_tid = client.OutputMoveTid();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `product_order_uui_d` | `List<dynamic>` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `String` | Yes |  |
-| `target_package_order_uuid` | `String` | Yes |  |
-| `target_product_order_uuid` | `String` | Yes |  |
+| `productOrderUUIDs` | `List<dynamic>` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
+| `targetPackageOrderUUID` | `String` | Yes |  |
+| `targetProductOrderUUID` | `String` | Yes |  |
 
 ### Operations
 
@@ -1028,11 +1028,11 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```dart
 final result = await client.OutputMoveTid().create({
-  'product_order_uui_d': <dynamic>[],  // List<dynamic>
-  'response_code': 1,  // int
-  'response_message': 'example_response_message',  // String
-  'target_package_order_uuid': 'example_target_package_order_uuid',  // String
-  'target_product_order_uuid': 'example_target_product_order_uuid',  // String
+  'productOrderUUIDs': <dynamic>[],  // List<dynamic>
+  'responseCode': 1,  // int
+  'responseMessage': 'example_responseMessage',  // String
+  'targetPackageOrderUUID': 'example_targetPackageOrderUUID',  // String
+  'targetProductOrderUUID': 'example_targetProductOrderUUID',  // String
 });
 ```
 
@@ -1067,10 +1067,10 @@ final output_remove_product = client.OutputRemoveProduct();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `String` | Yes |  |
-| `product_uui_d` | `List<dynamic>` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `packageUUID` | `String` | Yes |  |
+| `productUUIDs` | `List<dynamic>` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 
 ### Operations
 
@@ -1080,10 +1080,10 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```dart
 final result = await client.OutputRemoveProduct().create({
-  'package_uuid': 'example_package_uuid',  // String
-  'product_uui_d': <dynamic>[],  // List<dynamic>
-  'response_code': 1,  // int
-  'response_message': 'example_response_message',  // String
+  'packageUUID': 'example_packageUUID',  // String
+  'productUUIDs': <dynamic>[],  // List<dynamic>
+  'responseCode': 1,  // int
+  'responseMessage': 'example_responseMessage',  // String
 });
 ```
 
@@ -1119,8 +1119,8 @@ final output_start = client.OutputStart();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `String` | No |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 
 ### Operations
 
@@ -1130,8 +1130,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```dart
 final result = await client.OutputStart().create({
-  'response_code': 1,  // int
-  'response_message': 'example_response_message',  // String
+  'responseCode': 1,  // int
+  'responseMessage': 'example_responseMessage',  // String
 });
 ```
 
@@ -1167,8 +1167,8 @@ final output_status = client.OutputStatus();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `int` | No |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `String` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
 | `status` | `String` | No |  |
 
 ### Operations
@@ -1212,19 +1212,19 @@ final output_update_product = client.OutputUpdateProduct();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allow_multiple_order` | `bool` | No |  |
-| `app_form_name` | `String` | No |  |
-| `contract_needed` | `bool` | No |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `String` | No |  |
-| `name_key` | `String` | No |  |
-| `prescreening_allowed` | `bool` | No |  |
-| `product_name` | `String` | No |  |
-| `product_status` | `String` | No |  |
-| `product_uuid` | `String` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `String` | Yes |  |
-| `vendor_name` | `String` | No |  |
+| `allowMultipleOrders` | `bool` | No |  |
+| `appFormName` | `String` | No |  |
+| `contractNeeded` | `bool` | No |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `String` | No |  |
+| `nameKey` | `String` | No |  |
+| `prescreeningAllowed` | `bool` | No |  |
+| `productName` | `String` | No |  |
+| `productStatus` | `String` | No |  |
+| `productUUID` | `String` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `String` | Yes |  |
+| `vendorName` | `String` | No |  |
 
 ### Operations
 
@@ -1234,9 +1234,9 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```dart
 final result = await client.OutputUpdateProduct().create({
-  'product_uuid': 'example_product_uuid',  // String
-  'response_code': 1,  // int
-  'response_message': 'example_response_message',  // String
+  'productUUID': 'example_productUUID',  // String
+  'responseCode': 1,  // int
+  'responseMessage': 'example_responseMessage',  // String
 });
 ```
 

@@ -6,22 +6,22 @@ main: kit: entity: output_add_product: {
 
   fields: [
     {
-      name: "package_uuid"
+      name: "packageUUID"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "product_uui_d"
+      name: "productUUIDs"
       req: true
       type: "`$ARRAY`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: true
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: true
       type: "`$STRING`"
     }

@@ -99,228 +99,228 @@ struct MerchantPortalCommonControllerLoadMatch {};
 
 struct MerchantPortalPamContractController {
   std::string language;
-  std::string product_order_uuid;
+  std::string productOrderUUID;
 };
 
 struct MerchantPortalPamContractControllerCreateData {
   std::string language;
-  std::string product_order_uuid;
+  std::string productOrderUUID;
 };
 
 struct MerchantPortalPamDocumentController {
-  std::string app_form_field_desc_uuid;
-  std::string package_order_uuid;  // optional
-  std::string product_order_uuid;  // optional
+  std::string appFormFieldDescUUID;
+  std::string packageOrderUUID;  // optional
+  std::string productOrderUUID;  // optional
 };
 
 struct MerchantPortalPamDocumentControllerCreateData {
-  std::string app_form_field_desc_uuid;
-  std::string package_order_uuid;  // optional
-  std::string product_order_uuid;  // optional
+  std::string appFormFieldDescUUID;
+  std::string packageOrderUUID;  // optional
+  std::string productOrderUUID;  // optional
 };
 
 struct MerchantPortalPamFormController {
-  std::string app_form_fields_desc_uuid;
+  std::string appFormFieldsDescUUID;
   std::map<std::string, Value> filter;  // optional
   std::string language;
-  std::map<std::string, Value> package_order;  // optional
-  std::string package_order_uuid;
-  std::string package_uuid;  // optional
-  std::vector<Value> product_order;  // optional
-  std::string product_order_uuid;  // optional
-  std::string reason_of_reopening;
+  std::map<std::string, Value> packageOrder;  // optional
+  std::string packageOrderUUID;
+  std::string packageUUID;  // optional
+  std::string productOrderUUID;  // optional
+  std::vector<Value> productOrders;  // optional
+  std::string reasonOfReopening;
 };
 
 struct MerchantPortalPamFormControllerCreateData {
-  std::string app_form_fields_desc_uuid;
+  std::string appFormFieldsDescUUID;
   std::map<std::string, Value> filter;  // optional
   std::string language;
-  std::map<std::string, Value> package_order;  // optional
-  std::string package_order_uuid;
-  std::string package_uuid;  // optional
-  std::vector<Value> product_order;  // optional
-  std::string product_order_uuid;  // optional
-  std::string reason_of_reopening;
+  std::map<std::string, Value> packageOrder;  // optional
+  std::string packageOrderUUID;
+  std::string packageUUID;  // optional
+  std::string productOrderUUID;  // optional
+  std::vector<Value> productOrders;  // optional
+  std::string reasonOfReopening;
 };
 
 struct MerchantPortalPamMandatorController {
-  std::string client_secret;  // optional
-  std::string mandator_name;
-  std::string notification_email;  // optional
-  std::string package_uuid;
+  std::string clientSecret;  // optional
+  std::string mandatorName;
+  std::string notificationEmail;  // optional
+  std::string packageUUID;
 };
 
 struct MerchantPortalPamMandatorControllerCreateData {
-  std::string client_secret;  // optional
-  std::string mandator_name;
-  std::string notification_email;  // optional
-  std::string package_uuid;
+  std::string clientSecret;  // optional
+  std::string mandatorName;
+  std::string notificationEmail;  // optional
+  std::string packageUUID;
 };
 
 struct MerchantPortalPamMerchantController {
   std::map<std::string, Value> additional_data;  // optional
-  std::string business_registration_number;
+  std::string businessRegistrationNumber;
   std::string city;  // optional
-  std::string company_name;
-  std::string corporate_uuid;
+  std::string companyName;
+  std::string corporateUUID;
   std::string country;  // optional
   std::string currency;
   std::string email;
   std::string language;
   std::string login;
   std::string mandator;
+  std::string merchantContractNumber;
+  std::string merchantName;  // optional
   std::string merchant_category_code;  // optional
-  std::string merchant_contract_number;
-  std::string merchant_name;  // optional
-  std::string package_uuid;  // optional
+  std::string packageUUID;  // optional
   std::string packageorderuuid;
-  std::string phone_number;
-  std::string postal_code;  // optional
+  std::string phoneNumber;
+  std::string postalCode;  // optional
   std::string productid_acquirer;
   std::string region;  // optional
-  std::string registration_number;  // optional
+  std::string registrationNumber;  // optional
   std::string signature;  // optional
   std::string street;  // optional
-  std::vector<Value> terminal_id;  // optional
+  std::vector<Value> terminalIds;  // optional
   std::string terminalid_acquirer;  // optional
   std::string vu_nummer;
 };
 
 struct MerchantPortalPamMerchantControllerCreateData {
   std::map<std::string, Value> additional_data;  // optional
-  std::string business_registration_number;
+  std::string businessRegistrationNumber;
   std::string city;  // optional
-  std::string company_name;
-  std::string corporate_uuid;
+  std::string companyName;
+  std::string corporateUUID;
   std::string country;  // optional
   std::string currency;
   std::string email;
   std::string language;
   std::string login;
   std::string mandator;
+  std::string merchantContractNumber;
+  std::string merchantName;  // optional
   std::string merchant_category_code;  // optional
-  std::string merchant_contract_number;
-  std::string merchant_name;  // optional
-  std::string package_uuid;  // optional
+  std::string packageUUID;  // optional
   std::string packageorderuuid;
-  std::string phone_number;
-  std::string postal_code;  // optional
+  std::string phoneNumber;
+  std::string postalCode;  // optional
   std::string productid_acquirer;
   std::string region;  // optional
-  std::string registration_number;  // optional
+  std::string registrationNumber;  // optional
   std::string signature;  // optional
   std::string street;  // optional
-  std::vector<Value> terminal_id;  // optional
+  std::vector<Value> terminalIds;  // optional
   std::string terminalid_acquirer;  // optional
   std::string vu_nummer;
 };
 
 struct MerchantPortalPamPackageController {
-  std::string consumer_uuid;  // optional
-  std::string corporate_uuid;  // optional
+  std::string consumerUUID;  // optional
+  std::string corporateUUID;  // optional
   std::string country;  // optional
-  std::string description_key;  // optional
+  std::string descriptionKey;  // optional
   std::map<std::string, Value> filter;  // optional
   std::string language;
-  std::string name_key;  // optional
-  std::string package_status;  // optional
-  std::string package_uuid;
+  std::string nameKey;  // optional
+  std::string packageStatus;  // optional
+  std::string packageUUID;
   std::map<std::string, Value> pagination;  // optional
   std::map<std::string, Value> sorting;  // optional
 };
 
 struct MerchantPortalPamPackageControllerCreateData {
-  std::string consumer_uuid;  // optional
-  std::string corporate_uuid;  // optional
+  std::string consumerUUID;  // optional
+  std::string corporateUUID;  // optional
   std::string country;  // optional
-  std::string description_key;  // optional
+  std::string descriptionKey;  // optional
   std::map<std::string, Value> filter;  // optional
   std::string language;
-  std::string name_key;  // optional
-  std::string package_status;  // optional
-  std::string package_uuid;
+  std::string nameKey;  // optional
+  std::string packageStatus;  // optional
+  std::string packageUUID;
   std::map<std::string, Value> pagination;  // optional
   std::map<std::string, Value> sorting;  // optional
 };
 
 struct MerchantPortalPamProductController {
-  std::string consumer_uuid;  // optional
+  std::string consumerUUID;  // optional
   std::map<std::string, Value> filter;  // optional
   std::string language;  // optional
-  std::string merchant_id;  // optional
-  std::string package_order_uuid;
+  std::string merchantID;  // optional
+  std::string packageOrderUUID;
   std::map<std::string, Value> pagination;  // optional
-  std::string product_order_uuid;
-  std::string product_uuid;
+  std::string productOrderUUID;
+  std::string productUUID;
   std::string reason_decline;
   std::map<std::string, Value> sorting;  // optional
 };
 
 struct MerchantPortalPamProductControllerCreateData {
-  std::string consumer_uuid;  // optional
+  std::string consumerUUID;  // optional
   std::map<std::string, Value> filter;  // optional
   std::string language;  // optional
-  std::string merchant_id;  // optional
-  std::string package_order_uuid;
+  std::string merchantID;  // optional
+  std::string packageOrderUUID;
   std::map<std::string, Value> pagination;  // optional
-  std::string product_order_uuid;
-  std::string product_uuid;
+  std::string productOrderUUID;
+  std::string productUUID;
   std::string reason_decline;
   std::map<std::string, Value> sorting;  // optional
 };
 
 struct OutputAddProduct {
-  std::string package_uuid;
-  std::vector<Value> product_uui_d;
-  int64_t response_code;
-  std::string response_message;
+  std::string packageUUID;
+  std::vector<Value> productUUIDs;
+  int64_t responseCode;
+  std::string responseMessage;
 };
 
 struct OutputAddProductCreateData {
-  std::string package_uuid;
-  std::vector<Value> product_uui_d;
-  int64_t response_code;
-  std::string response_message;
+  std::string packageUUID;
+  std::vector<Value> productUUIDs;
+  int64_t responseCode;
+  std::string responseMessage;
 };
 
 struct OutputCreateProduct {
-  std::string acquirer_id;  // optional
-  bool allow_multiple_order;
-  std::string app_form_template_name;
-  bool contract_needed;
-  bool credentials_needed;  // optional
-  std::string description_key;
-  std::string name_key;
-  bool prescreening_allowed;
-  std::string product_name;
-  int64_t response_code;
-  std::string response_message;
-  std::string terminal_template_name;
-  std::string vendor_name;
-  std::string xml_template_file;
+  std::string acquirerId;  // optional
+  bool allowMultipleOrders;
+  std::string appFormTemplateName;
+  bool contractNeeded;
+  bool credentialsNeeded;  // optional
+  std::string descriptionKey;
+  std::string nameKey;
+  bool prescreeningAllowed;
+  std::string productName;
+  int64_t responseCode;
+  std::string responseMessage;
+  std::string terminalTemplateName;
+  std::string vendorName;
+  std::string xmlTemplateFile;
 };
 
 struct OutputCreateProductCreateData {
-  std::string acquirer_id;  // optional
-  bool allow_multiple_order;
-  std::string app_form_template_name;
-  bool contract_needed;
-  bool credentials_needed;  // optional
-  std::string description_key;
-  std::string name_key;
-  bool prescreening_allowed;
-  std::string product_name;
-  int64_t response_code;
-  std::string response_message;
-  std::string terminal_template_name;
-  std::string vendor_name;
-  std::string xml_template_file;
+  std::string acquirerId;  // optional
+  bool allowMultipleOrders;
+  std::string appFormTemplateName;
+  bool contractNeeded;
+  bool credentialsNeeded;  // optional
+  std::string descriptionKey;
+  std::string nameKey;
+  bool prescreeningAllowed;
+  std::string productName;
+  int64_t responseCode;
+  std::string responseMessage;
+  std::string terminalTemplateName;
+  std::string vendorName;
+  std::string xmlTemplateFile;
 };
 
 struct OutputDetail {
-  std::map<std::string, Value> detail;  // optional
-  int64_t response_code;
-  std::string response_message;
+  std::map<std::string, Value> batch;  // optional
+  std::map<std::string, Value> lines;  // optional
+  std::map<std::string, Value> progress;  // optional
 };
 
 struct OutputDetailLoadMatch {
@@ -328,24 +328,24 @@ struct OutputDetailLoadMatch {
 };
 
 struct OutputList {
-  std::vector<Value> item;  // optional
+  std::vector<Value> items;  // optional
   std::map<std::string, Value> pagination;
-  int64_t response_code;
-  std::string response_message;
+  int64_t responseCode;
+  std::string responseMessage;
   std::map<std::string, Value> sorting;  // optional
 };
 
 struct OutputListCreateData {
-  std::vector<Value> item;  // optional
+  std::vector<Value> items;  // optional
   std::map<std::string, Value> pagination;
-  int64_t response_code;
-  std::string response_message;
+  int64_t responseCode;
+  std::string responseMessage;
   std::map<std::string, Value> sorting;  // optional
 };
 
 struct OutputMessage {
-  int64_t response_code;
-  std::string response_message;
+  int64_t responseCode;
+  std::string responseMessage;
 };
 
 struct OutputMessageLoadMatch {
@@ -353,51 +353,51 @@ struct OutputMessageLoadMatch {
 };
 
 struct OutputMoveTid {
-  std::vector<Value> product_order_uui_d;
-  int64_t response_code;
-  std::string response_message;
-  std::string target_package_order_uuid;
-  std::string target_product_order_uuid;
+  std::vector<Value> productOrderUUIDs;
+  int64_t responseCode;
+  std::string responseMessage;
+  std::string targetPackageOrderUUID;
+  std::string targetProductOrderUUID;
 };
 
 struct OutputMoveTidCreateData {
-  std::vector<Value> product_order_uui_d;
-  int64_t response_code;
-  std::string response_message;
-  std::string target_package_order_uuid;
-  std::string target_product_order_uuid;
+  std::vector<Value> productOrderUUIDs;
+  int64_t responseCode;
+  std::string responseMessage;
+  std::string targetPackageOrderUUID;
+  std::string targetProductOrderUUID;
 };
 
 struct OutputRemoveProduct {
-  std::string package_uuid;
-  std::vector<Value> product_uui_d;
-  int64_t response_code;
-  std::string response_message;
+  std::string packageUUID;
+  std::vector<Value> productUUIDs;
+  int64_t responseCode;
+  std::string responseMessage;
 };
 
 struct OutputRemoveProductCreateData {
-  std::string package_uuid;
-  std::vector<Value> product_uui_d;
-  int64_t response_code;
-  std::string response_message;
+  std::string packageUUID;
+  std::vector<Value> productUUIDs;
+  int64_t responseCode;
+  std::string responseMessage;
 };
 
 struct OutputStart {
   std::string id;  // optional
-  int64_t response_code;
-  std::string response_message;
+  int64_t responseCode;
+  std::string responseMessage;
 };
 
 struct OutputStartCreateData {
   std::string id;  // optional
-  int64_t response_code;
-  std::string response_message;
+  int64_t responseCode;
+  std::string responseMessage;
 };
 
 struct OutputStatus {
   int64_t percentage;  // optional
-  int64_t response_code;
-  std::string response_message;
+  int64_t responseCode;
+  std::string responseMessage;
   std::string status;  // optional
 };
 
@@ -406,35 +406,35 @@ struct OutputStatusLoadMatch {
 };
 
 struct OutputUpdateProduct {
-  bool allow_multiple_order;  // optional
-  std::string app_form_name;  // optional
-  bool contract_needed;  // optional
-  bool credentials_needed;  // optional
-  std::string description_key;  // optional
-  std::string name_key;  // optional
-  bool prescreening_allowed;  // optional
-  std::string product_name;  // optional
-  std::string product_status;  // optional
-  std::string product_uuid;
-  int64_t response_code;
-  std::string response_message;
-  std::string vendor_name;  // optional
+  bool allowMultipleOrders;  // optional
+  std::string appFormName;  // optional
+  bool contractNeeded;  // optional
+  bool credentialsNeeded;  // optional
+  std::string descriptionKey;  // optional
+  std::string nameKey;  // optional
+  bool prescreeningAllowed;  // optional
+  std::string productName;  // optional
+  std::string productStatus;  // optional
+  std::string productUUID;
+  int64_t responseCode;
+  std::string responseMessage;
+  std::string vendorName;  // optional
 };
 
 struct OutputUpdateProductCreateData {
-  bool allow_multiple_order;  // optional
-  std::string app_form_name;  // optional
-  bool contract_needed;  // optional
-  bool credentials_needed;  // optional
-  std::string description_key;  // optional
-  std::string name_key;  // optional
-  bool prescreening_allowed;  // optional
-  std::string product_name;  // optional
-  std::string product_status;  // optional
-  std::string product_uuid;
-  int64_t response_code;
-  std::string response_message;
-  std::string vendor_name;  // optional
+  bool allowMultipleOrders;  // optional
+  std::string appFormName;  // optional
+  bool contractNeeded;  // optional
+  bool credentialsNeeded;  // optional
+  std::string descriptionKey;  // optional
+  std::string nameKey;  // optional
+  bool prescreeningAllowed;  // optional
+  std::string productName;  // optional
+  std::string productStatus;  // optional
+  std::string productUUID;
+  int64_t responseCode;
+  std::string responseMessage;
+  std::string vendorName;  // optional
 };
 
 } // namespace types

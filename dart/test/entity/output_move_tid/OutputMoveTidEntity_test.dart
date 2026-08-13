@@ -47,7 +47,7 @@ void tests() {
       final output_move_tid_ref01_ent = client.OutputMoveTid();
       dynamic output_move_tid_ref01_data = setup['data']['new']['output_move_tid']['output_move_tid_ref01'];
 
-      output_move_tid_ref01_data = await output_move_tid_ref01_ent.create(output_move_tid_ref01_data);
+      output_move_tid_ref01_data = (await output_move_tid_ref01_ent.create(output_move_tid_ref01_data)).data();
       ok(null != output_move_tid_ref01_data);
 
 

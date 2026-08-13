@@ -314,7 +314,7 @@ $merchant_portal_pam_contract_controller = $client->MerchantPortalPamContractCon
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `language` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
+| `productOrderUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -325,7 +325,7 @@ Create a new entity with the given data. Throws on error.
 ```php
 $result = $client->MerchantPortalPamContractController()->create([
   "language" => null, // string
-  "product_order_uuid" => null, // string
+  "productOrderUUID" => null, // string
 ]);
 ```
 
@@ -369,9 +369,9 @@ $merchant_portal_pam_document_controller = $client->MerchantPortalPamDocumentCon
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_field_desc_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
+| `appFormFieldDescUUID` | `string` | Yes |  |
+| `packageOrderUUID` | `string` | No |  |
+| `productOrderUUID` | `string` | No |  |
 
 ### Operations
 
@@ -381,7 +381,7 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->MerchantPortalPamDocumentController()->create([
-  "app_form_field_desc_uuid" => null, // string
+  "appFormFieldDescUUID" => null, // string
 ]);
 ```
 
@@ -425,29 +425,29 @@ $merchant_portal_pam_form_controller = $client->MerchantPortalPamFormController(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `string` | Yes |  |
+| `appFormFieldsDescUUID` | `string` | Yes |  |
 | `filter` | `array` | No |  |
 | `language` | `string` | Yes |  |
-| `package_order` | `array` | No |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `package_uuid` | `string` | No |  |
-| `product_order` | `array` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `reason_of_reopening` | `string` | Yes |  |
+| `packageOrder` | `array` | No |  |
+| `packageOrderUUID` | `string` | Yes |  |
+| `packageUUID` | `string` | No |  |
+| `productOrderUUID` | `string` | No |  |
+| `productOrders` | `array` | No |  |
+| `reasonOfReopening` | `string` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `app_form_fields_desc_uuid` | - |
+| `appFormFieldsDescUUID` | - |
 | `filter` | - |
 | `language` | Yes |
-| `package_order` | - |
-| `package_order_uuid` | Yes |
-| `package_uuid` | - |
-| `product_order` | - |
-| `product_order_uuid` | Yes |
-| `reason_of_reopening` | - |
+| `packageOrder` | - |
+| `packageOrderUUID` | Yes |
+| `packageUUID` | - |
+| `productOrderUUID` | Yes |
+| `productOrders` | - |
+| `reasonOfReopening` | - |
 
 ### Operations
 
@@ -457,10 +457,10 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->MerchantPortalPamFormController()->create([
-  "app_form_fields_desc_uuid" => null, // string
+  "appFormFieldsDescUUID" => null, // string
   "language" => null, // string
-  "package_order_uuid" => null, // string
-  "reason_of_reopening" => null, // string
+  "packageOrderUUID" => null, // string
+  "reasonOfReopening" => null, // string
 ]);
 ```
 
@@ -504,10 +504,10 @@ $merchant_portal_pam_mandator_controller = $client->MerchantPortalPamMandatorCon
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `string` | No |  |
-| `mandator_name` | `string` | Yes |  |
-| `notification_email` | `string` | No |  |
-| `package_uuid` | `string` | Yes |  |
+| `clientSecret` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `notificationEmail` | `string` | No |  |
+| `packageUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -517,8 +517,8 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->MerchantPortalPamMandatorController()->create([
-  "mandator_name" => null, // string
-  "package_uuid" => null, // string
+  "mandatorName" => null, // string
+  "packageUUID" => null, // string
 ]);
 ```
 
@@ -563,29 +563,29 @@ $merchant_portal_pam_merchant_controller = $client->MerchantPortalPamMerchantCon
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `additional_data` | `array` | No |  |
-| `business_registration_number` | `string` | Yes |  |
+| `businessRegistrationNumber` | `string` | Yes |  |
 | `city` | `string` | No |  |
-| `company_name` | `string` | Yes |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `companyName` | `string` | Yes |  |
+| `corporateUUID` | `string` | Yes |  |
 | `country` | `string` | No |  |
 | `currency` | `string` | Yes |  |
 | `email` | `string` | Yes |  |
 | `language` | `string` | Yes |  |
 | `login` | `string` | Yes |  |
 | `mandator` | `string` | Yes |  |
+| `merchantContractNumber` | `string` | Yes |  |
+| `merchantName` | `string` | No |  |
 | `merchant_category_code` | `string` | No |  |
-| `merchant_contract_number` | `string` | Yes |  |
-| `merchant_name` | `string` | No |  |
-| `package_uuid` | `string` | No |  |
+| `packageUUID` | `string` | No |  |
 | `packageorderuuid` | `string` | Yes |  |
-| `phone_number` | `string` | Yes |  |
-| `postal_code` | `string` | No |  |
+| `phoneNumber` | `string` | Yes |  |
+| `postalCode` | `string` | No |  |
 | `productid_acquirer` | `string` | Yes |  |
 | `region` | `string` | No |  |
-| `registration_number` | `string` | No |  |
+| `registrationNumber` | `string` | No |  |
 | `signature` | `string` | No |  |
 | `street` | `string` | No |  |
-| `terminal_id` | `array` | No |  |
+| `terminalIds` | `array` | No |  |
 | `terminalid_acquirer` | `string` | No |  |
 | `vu_nummer` | `string` | Yes |  |
 
@@ -594,29 +594,29 @@ $merchant_portal_pam_merchant_controller = $client->MerchantPortalPamMerchantCon
 | Field | create |
 | --- | --- |
 | `additional_data` | - |
-| `business_registration_number` | - |
+| `businessRegistrationNumber` | - |
 | `city` | - |
-| `company_name` | - |
-| `corporate_uuid` | - |
+| `companyName` | - |
+| `corporateUUID` | - |
 | `country` | - |
 | `currency` | - |
 | `email` | - |
 | `language` | - |
 | `login` | - |
 | `mandator` | - |
+| `merchantContractNumber` | Yes |
+| `merchantName` | - |
 | `merchant_category_code` | - |
-| `merchant_contract_number` | Yes |
-| `merchant_name` | - |
-| `package_uuid` | - |
+| `packageUUID` | - |
 | `packageorderuuid` | - |
-| `phone_number` | - |
-| `postal_code` | - |
+| `phoneNumber` | - |
+| `postalCode` | - |
 | `productid_acquirer` | - |
 | `region` | - |
-| `registration_number` | - |
+| `registrationNumber` | - |
 | `signature` | - |
 | `street` | - |
-| `terminal_id` | - |
+| `terminalIds` | - |
 | `terminalid_acquirer` | - |
 | `vu_nummer` | - |
 
@@ -628,17 +628,17 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->MerchantPortalPamMerchantController()->create([
-  "business_registration_number" => null, // string
-  "company_name" => null, // string
-  "corporate_uuid" => null, // string
+  "businessRegistrationNumber" => null, // string
+  "companyName" => null, // string
+  "corporateUUID" => null, // string
   "currency" => null, // string
   "email" => null, // string
   "language" => null, // string
   "login" => null, // string
   "mandator" => null, // string
-  "merchant_contract_number" => null, // string
+  "merchantContractNumber" => null, // string
   "packageorderuuid" => null, // string
-  "phone_number" => null, // string
+  "phoneNumber" => null, // string
   "productid_acquirer" => null, // string
   "vu_nummer" => null, // string
 ]);
@@ -684,15 +684,15 @@ $merchant_portal_pam_package_controller = $client->MerchantPortalPamPackageContr
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
 | `country` | `string` | No |  |
-| `description_key` | `string` | No |  |
+| `descriptionKey` | `string` | No |  |
 | `filter` | `array` | No |  |
 | `language` | `string` | Yes |  |
-| `name_key` | `string` | No |  |
-| `package_status` | `string` | No |  |
-| `package_uuid` | `string` | Yes |  |
+| `nameKey` | `string` | No |  |
+| `packageStatus` | `string` | No |  |
+| `packageUUID` | `string` | Yes |  |
 | `pagination` | `array` | No |  |
 | `sorting` | `array` | No |  |
 
@@ -700,15 +700,15 @@ $merchant_portal_pam_package_controller = $client->MerchantPortalPamPackageContr
 
 | Field | create |
 | --- | --- |
-| `consumer_uuid` | - |
-| `corporate_uuid` | - |
+| `consumerUUID` | - |
+| `corporateUUID` | - |
 | `country` | - |
-| `description_key` | - |
+| `descriptionKey` | - |
 | `filter` | - |
 | `language` | Yes |
-| `name_key` | - |
-| `package_status` | - |
-| `package_uuid` | - |
+| `nameKey` | - |
+| `packageStatus` | - |
+| `packageUUID` | - |
 | `pagination` | - |
 | `sorting` | - |
 
@@ -721,7 +721,7 @@ Create a new entity with the given data. Throws on error.
 ```php
 $result = $client->MerchantPortalPamPackageController()->create([
   "language" => null, // string
-  "package_uuid" => null, // string
+  "packageUUID" => null, // string
 ]);
 ```
 
@@ -765,14 +765,14 @@ $merchant_portal_pam_product_controller = $client->MerchantPortalPamProductContr
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
 | `filter` | `array` | No |  |
 | `language` | `string` | No |  |
-| `merchant_id` | `string` | No |  |
-| `package_order_uuid` | `string` | Yes |  |
+| `merchantID` | `string` | No |  |
+| `packageOrderUUID` | `string` | Yes |  |
 | `pagination` | `array` | No |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `product_uuid` | `string` | Yes |  |
+| `productOrderUUID` | `string` | Yes |  |
+| `productUUID` | `string` | Yes |  |
 | `reason_decline` | `string` | Yes |  |
 | `sorting` | `array` | No |  |
 
@@ -784,9 +784,9 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->MerchantPortalPamProductController()->create([
-  "package_order_uuid" => null, // string
-  "product_order_uuid" => null, // string
-  "product_uuid" => null, // string
+  "packageOrderUUID" => null, // string
+  "productOrderUUID" => null, // string
+  "productUUID" => null, // string
   "reason_decline" => null, // string
 ]);
 ```
@@ -831,10 +831,10 @@ $output_add_product = $client->OutputAddProduct();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `string` | Yes |  |
-| `product_uui_d` | `array` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `packageUUID` | `string` | Yes |  |
+| `productUUIDs` | `array` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -844,10 +844,10 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->OutputAddProduct()->create([
-  "package_uuid" => null, // string
-  "product_uui_d" => null, // array
-  "response_code" => null, // int
-  "response_message" => null, // string
+  "packageUUID" => null, // string
+  "productUUIDs" => null, // array
+  "responseCode" => null, // int
+  "responseMessage" => null, // string
 ]);
 ```
 
@@ -891,20 +891,20 @@ $output_create_product = $client->OutputCreateProduct();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `allow_multiple_order` | `bool` | Yes |  |
-| `app_form_template_name` | `string` | Yes |  |
-| `contract_needed` | `bool` | Yes |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `string` | Yes |  |
-| `name_key` | `string` | Yes |  |
-| `prescreening_allowed` | `bool` | Yes |  |
-| `product_name` | `string` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `terminal_template_name` | `string` | Yes |  |
-| `vendor_name` | `string` | Yes |  |
-| `xml_template_file` | `string` | Yes |  |
+| `acquirerId` | `string` | No |  |
+| `allowMultipleOrders` | `bool` | Yes |  |
+| `appFormTemplateName` | `string` | Yes |  |
+| `contractNeeded` | `bool` | Yes |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `string` | Yes |  |
+| `nameKey` | `string` | Yes |  |
+| `prescreeningAllowed` | `bool` | Yes |  |
+| `productName` | `string` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `terminalTemplateName` | `string` | Yes |  |
+| `vendorName` | `string` | Yes |  |
+| `xmlTemplateFile` | `string` | Yes |  |
 
 ### Operations
 
@@ -914,18 +914,18 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->OutputCreateProduct()->create([
-  "allow_multiple_order" => null, // bool
-  "app_form_template_name" => null, // string
-  "contract_needed" => null, // bool
-  "description_key" => null, // string
-  "name_key" => null, // string
-  "prescreening_allowed" => null, // bool
-  "product_name" => null, // string
-  "response_code" => null, // int
-  "response_message" => null, // string
-  "terminal_template_name" => null, // string
-  "vendor_name" => null, // string
-  "xml_template_file" => null, // string
+  "allowMultipleOrders" => null, // bool
+  "appFormTemplateName" => null, // string
+  "contractNeeded" => null, // bool
+  "descriptionKey" => null, // string
+  "nameKey" => null, // string
+  "prescreeningAllowed" => null, // bool
+  "productName" => null, // string
+  "responseCode" => null, // int
+  "responseMessage" => null, // string
+  "terminalTemplateName" => null, // string
+  "vendorName" => null, // string
+  "xmlTemplateFile" => null, // string
 ]);
 ```
 
@@ -969,9 +969,9 @@ $output_detail = $client->OutputDetail();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `detail` | `array` | No |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `batch` | `array` | No |  |
+| `lines` | `array` | No |  |
+| `progress` | `array` | No |  |
 
 ### Operations
 
@@ -1023,20 +1023,20 @@ $output_list = $client->OutputList();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `item` | `array` | No |  |
+| `items` | `array` | No |  |
 | `pagination` | `array` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 | `sorting` | `array` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `item` | - |
+| `items` | - |
 | `pagination` | Yes |
-| `response_code` | - |
-| `response_message` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
 | `sorting` | - |
 
 ### Operations
@@ -1048,8 +1048,8 @@ Create a new entity with the given data. Throws on error.
 ```php
 $result = $client->OutputList()->create([
   "pagination" => null, // array
-  "response_code" => null, // int
-  "response_message" => null, // string
+  "responseCode" => null, // int
+  "responseMessage" => null, // string
 ]);
 ```
 
@@ -1093,8 +1093,8 @@ $output_message = $client->OutputMessage();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1146,11 +1146,11 @@ $output_move_tid = $client->OutputMoveTid();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `product_order_uui_d` | `array` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `target_package_order_uuid` | `string` | Yes |  |
-| `target_product_order_uuid` | `string` | Yes |  |
+| `productOrderUUIDs` | `array` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `targetPackageOrderUUID` | `string` | Yes |  |
+| `targetProductOrderUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -1160,11 +1160,11 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->OutputMoveTid()->create([
-  "product_order_uui_d" => null, // array
-  "response_code" => null, // int
-  "response_message" => null, // string
-  "target_package_order_uuid" => null, // string
-  "target_product_order_uuid" => null, // string
+  "productOrderUUIDs" => null, // array
+  "responseCode" => null, // int
+  "responseMessage" => null, // string
+  "targetPackageOrderUUID" => null, // string
+  "targetProductOrderUUID" => null, // string
 ]);
 ```
 
@@ -1208,10 +1208,10 @@ $output_remove_product = $client->OutputRemoveProduct();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `string` | Yes |  |
-| `product_uui_d` | `array` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `packageUUID` | `string` | Yes |  |
+| `productUUIDs` | `array` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1221,10 +1221,10 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->OutputRemoveProduct()->create([
-  "package_uuid" => null, // string
-  "product_uui_d" => null, // array
-  "response_code" => null, // int
-  "response_message" => null, // string
+  "packageUUID" => null, // string
+  "productUUIDs" => null, // array
+  "responseCode" => null, // int
+  "responseMessage" => null, // string
 ]);
 ```
 
@@ -1269,8 +1269,8 @@ $output_start = $client->OutputStart();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `string` | No |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1280,8 +1280,8 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->OutputStart()->create([
-  "response_code" => null, // int
-  "response_message" => null, // string
+  "responseCode" => null, // int
+  "responseMessage" => null, // string
 ]);
 ```
 
@@ -1326,8 +1326,8 @@ $output_status = $client->OutputStatus();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `int` | No |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 | `status` | `string` | No |  |
 
 ### Operations
@@ -1380,19 +1380,19 @@ $output_update_product = $client->OutputUpdateProduct();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allow_multiple_order` | `bool` | No |  |
-| `app_form_name` | `string` | No |  |
-| `contract_needed` | `bool` | No |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `string` | No |  |
-| `name_key` | `string` | No |  |
-| `prescreening_allowed` | `bool` | No |  |
-| `product_name` | `string` | No |  |
-| `product_status` | `string` | No |  |
-| `product_uuid` | `string` | Yes |  |
-| `response_code` | `int` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `vendor_name` | `string` | No |  |
+| `allowMultipleOrders` | `bool` | No |  |
+| `appFormName` | `string` | No |  |
+| `contractNeeded` | `bool` | No |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `string` | No |  |
+| `nameKey` | `string` | No |  |
+| `prescreeningAllowed` | `bool` | No |  |
+| `productName` | `string` | No |  |
+| `productStatus` | `string` | No |  |
+| `productUUID` | `string` | Yes |  |
+| `responseCode` | `int` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `vendorName` | `string` | No |  |
 
 ### Operations
 
@@ -1402,9 +1402,9 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->OutputUpdateProduct()->create([
-  "product_uuid" => null, // string
-  "response_code" => null, // int
-  "response_message" => null, // string
+  "productUUID" => null, // string
+  "responseCode" => null, // int
+  "responseMessage" => null, // string
 ]);
 ```
 

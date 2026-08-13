@@ -320,7 +320,7 @@ Return the entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `language` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
+| `productOrderUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -333,7 +333,7 @@ Create a new entity with the given data. Returns the created entity data and rai
   (e-merchant_portal_pam_contract_controller/create (api/merchant_portal_pam_contract_controller client nil)
     (vs/jm
       "language" "example_language"  ;; string
-      "product_order_uuid" "example_product_order_uuid"  ;; string
+      "productOrderUUID" "example_productOrderUUID"  ;; string
       )
     nil))
 ```
@@ -381,9 +381,9 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_field_desc_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
+| `appFormFieldDescUUID` | `string` | Yes |  |
+| `packageOrderUUID` | `string` | No |  |
+| `productOrderUUID` | `string` | No |  |
 
 ### Operations
 
@@ -395,7 +395,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-merchant_portal_pam_document_controller/create (api/merchant_portal_pam_document_controller client nil)
     (vs/jm
-      "app_form_field_desc_uuid" "example_app_form_field_desc_uuid"  ;; string
+      "appFormFieldDescUUID" "example_appFormFieldDescUUID"  ;; string
       )
     nil))
 ```
@@ -443,29 +443,29 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `string` | Yes |  |
+| `appFormFieldsDescUUID` | `string` | Yes |  |
 | `filter` | `map` | No |  |
 | `language` | `string` | Yes |  |
-| `package_order` | `map` | No |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `package_uuid` | `string` | No |  |
-| `product_order` | `vector` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `reason_of_reopening` | `string` | Yes |  |
+| `packageOrder` | `map` | No |  |
+| `packageOrderUUID` | `string` | Yes |  |
+| `packageUUID` | `string` | No |  |
+| `productOrderUUID` | `string` | No |  |
+| `productOrders` | `vector` | No |  |
+| `reasonOfReopening` | `string` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `app_form_fields_desc_uuid` | - |
+| `appFormFieldsDescUUID` | - |
 | `filter` | - |
 | `language` | Yes |
-| `package_order` | - |
-| `package_order_uuid` | Yes |
-| `package_uuid` | - |
-| `product_order` | - |
-| `product_order_uuid` | Yes |
-| `reason_of_reopening` | - |
+| `packageOrder` | - |
+| `packageOrderUUID` | Yes |
+| `packageUUID` | - |
+| `productOrderUUID` | Yes |
+| `productOrders` | - |
+| `reasonOfReopening` | - |
 
 ### Operations
 
@@ -477,10 +477,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-merchant_portal_pam_form_controller/create (api/merchant_portal_pam_form_controller client nil)
     (vs/jm
-      "app_form_fields_desc_uuid" "example_app_form_fields_desc_uuid"  ;; string
+      "appFormFieldsDescUUID" "example_appFormFieldsDescUUID"  ;; string
       "language" "example_language"  ;; string
-      "package_order_uuid" "example_package_order_uuid"  ;; string
-      "reason_of_reopening" "example_reason_of_reopening"  ;; string
+      "packageOrderUUID" "example_packageOrderUUID"  ;; string
+      "reasonOfReopening" "example_reasonOfReopening"  ;; string
       )
     nil))
 ```
@@ -528,10 +528,10 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `string` | No |  |
-| `mandator_name` | `string` | Yes |  |
-| `notification_email` | `string` | No |  |
-| `package_uuid` | `string` | Yes |  |
+| `clientSecret` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `notificationEmail` | `string` | No |  |
+| `packageUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -543,8 +543,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-merchant_portal_pam_mandator_controller/create (api/merchant_portal_pam_mandator_controller client nil)
     (vs/jm
-      "mandator_name" "example_mandator_name"  ;; string
-      "package_uuid" "example_package_uuid"  ;; string
+      "mandatorName" "example_mandatorName"  ;; string
+      "packageUUID" "example_packageUUID"  ;; string
       )
     nil))
 ```
@@ -593,29 +593,29 @@ Return the entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `additional_data` | `map` | No |  |
-| `business_registration_number` | `string` | Yes |  |
+| `businessRegistrationNumber` | `string` | Yes |  |
 | `city` | `string` | No |  |
-| `company_name` | `string` | Yes |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `companyName` | `string` | Yes |  |
+| `corporateUUID` | `string` | Yes |  |
 | `country` | `string` | No |  |
 | `currency` | `string` | Yes |  |
 | `email` | `string` | Yes |  |
 | `language` | `string` | Yes |  |
 | `login` | `string` | Yes |  |
 | `mandator` | `string` | Yes |  |
+| `merchantContractNumber` | `string` | Yes |  |
+| `merchantName` | `string` | No |  |
 | `merchant_category_code` | `string` | No |  |
-| `merchant_contract_number` | `string` | Yes |  |
-| `merchant_name` | `string` | No |  |
-| `package_uuid` | `string` | No |  |
+| `packageUUID` | `string` | No |  |
 | `packageorderuuid` | `string` | Yes |  |
-| `phone_number` | `string` | Yes |  |
-| `postal_code` | `string` | No |  |
+| `phoneNumber` | `string` | Yes |  |
+| `postalCode` | `string` | No |  |
 | `productid_acquirer` | `string` | Yes |  |
 | `region` | `string` | No |  |
-| `registration_number` | `string` | No |  |
+| `registrationNumber` | `string` | No |  |
 | `signature` | `string` | No |  |
 | `street` | `string` | No |  |
-| `terminal_id` | `vector` | No |  |
+| `terminalIds` | `vector` | No |  |
 | `terminalid_acquirer` | `string` | No |  |
 | `vu_nummer` | `string` | Yes |  |
 
@@ -624,29 +624,29 @@ Return the entity name.
 | Field | create |
 | --- | --- |
 | `additional_data` | - |
-| `business_registration_number` | - |
+| `businessRegistrationNumber` | - |
 | `city` | - |
-| `company_name` | - |
-| `corporate_uuid` | - |
+| `companyName` | - |
+| `corporateUUID` | - |
 | `country` | - |
 | `currency` | - |
 | `email` | - |
 | `language` | - |
 | `login` | - |
 | `mandator` | - |
+| `merchantContractNumber` | Yes |
+| `merchantName` | - |
 | `merchant_category_code` | - |
-| `merchant_contract_number` | Yes |
-| `merchant_name` | - |
-| `package_uuid` | - |
+| `packageUUID` | - |
 | `packageorderuuid` | - |
-| `phone_number` | - |
-| `postal_code` | - |
+| `phoneNumber` | - |
+| `postalCode` | - |
 | `productid_acquirer` | - |
 | `region` | - |
-| `registration_number` | - |
+| `registrationNumber` | - |
 | `signature` | - |
 | `street` | - |
-| `terminal_id` | - |
+| `terminalIds` | - |
 | `terminalid_acquirer` | - |
 | `vu_nummer` | - |
 
@@ -660,17 +660,17 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-merchant_portal_pam_merchant_controller/create (api/merchant_portal_pam_merchant_controller client nil)
     (vs/jm
-      "business_registration_number" "example_business_registration_number"  ;; string
-      "company_name" "example_company_name"  ;; string
-      "corporate_uuid" "example_corporate_uuid"  ;; string
+      "businessRegistrationNumber" "example_businessRegistrationNumber"  ;; string
+      "companyName" "example_companyName"  ;; string
+      "corporateUUID" "example_corporateUUID"  ;; string
       "currency" "example_currency"  ;; string
       "email" "example_email"  ;; string
       "language" "example_language"  ;; string
       "login" "example_login"  ;; string
       "mandator" "example_mandator"  ;; string
-      "merchant_contract_number" "example_merchant_contract_number"  ;; string
+      "merchantContractNumber" "example_merchantContractNumber"  ;; string
       "packageorderuuid" "example_packageorderuuid"  ;; string
-      "phone_number" "example_phone_number"  ;; string
+      "phoneNumber" "example_phoneNumber"  ;; string
       "productid_acquirer" "example_productid_acquirer"  ;; string
       "vu_nummer" "example_vu_nummer"  ;; string
       )
@@ -720,15 +720,15 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
 | `country` | `string` | No |  |
-| `description_key` | `string` | No |  |
+| `descriptionKey` | `string` | No |  |
 | `filter` | `map` | No |  |
 | `language` | `string` | Yes |  |
-| `name_key` | `string` | No |  |
-| `package_status` | `string` | No |  |
-| `package_uuid` | `string` | Yes |  |
+| `nameKey` | `string` | No |  |
+| `packageStatus` | `string` | No |  |
+| `packageUUID` | `string` | Yes |  |
 | `pagination` | `map` | No |  |
 | `sorting` | `map` | No |  |
 
@@ -736,15 +736,15 @@ Return the entity name.
 
 | Field | create |
 | --- | --- |
-| `consumer_uuid` | - |
-| `corporate_uuid` | - |
+| `consumerUUID` | - |
+| `corporateUUID` | - |
 | `country` | - |
-| `description_key` | - |
+| `descriptionKey` | - |
 | `filter` | - |
 | `language` | Yes |
-| `name_key` | - |
-| `package_status` | - |
-| `package_uuid` | - |
+| `nameKey` | - |
+| `packageStatus` | - |
+| `packageUUID` | - |
 | `pagination` | - |
 | `sorting` | - |
 
@@ -759,7 +759,7 @@ Create a new entity with the given data. Returns the created entity data and rai
   (e-merchant_portal_pam_package_controller/create (api/merchant_portal_pam_package_controller client nil)
     (vs/jm
       "language" "example_language"  ;; string
-      "package_uuid" "example_package_uuid"  ;; string
+      "packageUUID" "example_packageUUID"  ;; string
       )
     nil))
 ```
@@ -807,14 +807,14 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
 | `filter` | `map` | No |  |
 | `language` | `string` | No |  |
-| `merchant_id` | `string` | No |  |
-| `package_order_uuid` | `string` | Yes |  |
+| `merchantID` | `string` | No |  |
+| `packageOrderUUID` | `string` | Yes |  |
 | `pagination` | `map` | No |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `product_uuid` | `string` | Yes |  |
+| `productOrderUUID` | `string` | Yes |  |
+| `productUUID` | `string` | Yes |  |
 | `reason_decline` | `string` | Yes |  |
 | `sorting` | `map` | No |  |
 
@@ -828,9 +828,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-merchant_portal_pam_product_controller/create (api/merchant_portal_pam_product_controller client nil)
     (vs/jm
-      "package_order_uuid" "example_package_order_uuid"  ;; string
-      "product_order_uuid" "example_product_order_uuid"  ;; string
-      "product_uuid" "example_product_uuid"  ;; string
+      "packageOrderUUID" "example_packageOrderUUID"  ;; string
+      "productOrderUUID" "example_productOrderUUID"  ;; string
+      "productUUID" "example_productUUID"  ;; string
       "reason_decline" "example_reason_decline"  ;; string
       )
     nil))
@@ -879,10 +879,10 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `string` | Yes |  |
-| `product_uui_d` | `vector` | Yes |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `packageUUID` | `string` | Yes |  |
+| `productUUIDs` | `vector` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -894,10 +894,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-output_add_product/create (api/output_add_product client nil)
     (vs/jm
-      "package_uuid" "example_package_uuid"  ;; string
-      "product_uui_d" (vs/jt)  ;; vector
-      "response_code" 1  ;; long
-      "response_message" "example_response_message"  ;; string
+      "packageUUID" "example_packageUUID"  ;; string
+      "productUUIDs" (vs/jt)  ;; vector
+      "responseCode" 1  ;; long
+      "responseMessage" "example_responseMessage"  ;; string
       )
     nil))
 ```
@@ -945,20 +945,20 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `allow_multiple_order` | `boolean` | Yes |  |
-| `app_form_template_name` | `string` | Yes |  |
-| `contract_needed` | `boolean` | Yes |  |
-| `credentials_needed` | `boolean` | No |  |
-| `description_key` | `string` | Yes |  |
-| `name_key` | `string` | Yes |  |
-| `prescreening_allowed` | `boolean` | Yes |  |
-| `product_name` | `string` | Yes |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `terminal_template_name` | `string` | Yes |  |
-| `vendor_name` | `string` | Yes |  |
-| `xml_template_file` | `string` | Yes |  |
+| `acquirerId` | `string` | No |  |
+| `allowMultipleOrders` | `boolean` | Yes |  |
+| `appFormTemplateName` | `string` | Yes |  |
+| `contractNeeded` | `boolean` | Yes |  |
+| `credentialsNeeded` | `boolean` | No |  |
+| `descriptionKey` | `string` | Yes |  |
+| `nameKey` | `string` | Yes |  |
+| `prescreeningAllowed` | `boolean` | Yes |  |
+| `productName` | `string` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `terminalTemplateName` | `string` | Yes |  |
+| `vendorName` | `string` | Yes |  |
+| `xmlTemplateFile` | `string` | Yes |  |
 
 ### Operations
 
@@ -970,18 +970,18 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-output_create_product/create (api/output_create_product client nil)
     (vs/jm
-      "allow_multiple_order" true  ;; boolean
-      "app_form_template_name" "example_app_form_template_name"  ;; string
-      "contract_needed" true  ;; boolean
-      "description_key" "example_description_key"  ;; string
-      "name_key" "example_name_key"  ;; string
-      "prescreening_allowed" true  ;; boolean
-      "product_name" "example_product_name"  ;; string
-      "response_code" 1  ;; long
-      "response_message" "example_response_message"  ;; string
-      "terminal_template_name" "example_terminal_template_name"  ;; string
-      "vendor_name" "example_vendor_name"  ;; string
-      "xml_template_file" "example_xml_template_file"  ;; string
+      "allowMultipleOrders" true  ;; boolean
+      "appFormTemplateName" "example_appFormTemplateName"  ;; string
+      "contractNeeded" true  ;; boolean
+      "descriptionKey" "example_descriptionKey"  ;; string
+      "nameKey" "example_nameKey"  ;; string
+      "prescreeningAllowed" true  ;; boolean
+      "productName" "example_productName"  ;; string
+      "responseCode" 1  ;; long
+      "responseMessage" "example_responseMessage"  ;; string
+      "terminalTemplateName" "example_terminalTemplateName"  ;; string
+      "vendorName" "example_vendorName"  ;; string
+      "xmlTemplateFile" "example_xmlTemplateFile"  ;; string
       )
     nil))
 ```
@@ -1029,9 +1029,9 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `detail` | `map` | No |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `batch` | `map` | No |  |
+| `lines` | `map` | No |  |
+| `progress` | `map` | No |  |
 
 ### Operations
 
@@ -1086,20 +1086,20 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `item` | `vector` | No |  |
+| `items` | `vector` | No |  |
 | `pagination` | `map` | Yes |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 | `sorting` | `map` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `item` | - |
+| `items` | - |
 | `pagination` | Yes |
-| `response_code` | - |
-| `response_message` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
 | `sorting` | - |
 
 ### Operations
@@ -1113,8 +1113,8 @@ Create a new entity with the given data. Returns the created entity data and rai
   (e-output_list/create (api/output_list client nil)
     (vs/jm
       "pagination" (vs/jm)  ;; map
-      "response_code" 1  ;; long
-      "response_message" "example_response_message"  ;; string
+      "responseCode" 1  ;; long
+      "responseMessage" "example_responseMessage"  ;; string
       )
     nil))
 ```
@@ -1162,8 +1162,8 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1218,11 +1218,11 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `product_order_uui_d` | `vector` | Yes |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `target_package_order_uuid` | `string` | Yes |  |
-| `target_product_order_uuid` | `string` | Yes |  |
+| `productOrderUUIDs` | `vector` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `targetPackageOrderUUID` | `string` | Yes |  |
+| `targetProductOrderUUID` | `string` | Yes |  |
 
 ### Operations
 
@@ -1234,11 +1234,11 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-output_move_tid/create (api/output_move_tid client nil)
     (vs/jm
-      "product_order_uui_d" (vs/jt)  ;; vector
-      "response_code" 1  ;; long
-      "response_message" "example_response_message"  ;; string
-      "target_package_order_uuid" "example_target_package_order_uuid"  ;; string
-      "target_product_order_uuid" "example_target_product_order_uuid"  ;; string
+      "productOrderUUIDs" (vs/jt)  ;; vector
+      "responseCode" 1  ;; long
+      "responseMessage" "example_responseMessage"  ;; string
+      "targetPackageOrderUUID" "example_targetPackageOrderUUID"  ;; string
+      "targetProductOrderUUID" "example_targetProductOrderUUID"  ;; string
       )
     nil))
 ```
@@ -1286,10 +1286,10 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `string` | Yes |  |
-| `product_uui_d` | `vector` | Yes |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `packageUUID` | `string` | Yes |  |
+| `productUUIDs` | `vector` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1301,10 +1301,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-output_remove_product/create (api/output_remove_product client nil)
     (vs/jm
-      "package_uuid" "example_package_uuid"  ;; string
-      "product_uui_d" (vs/jt)  ;; vector
-      "response_code" 1  ;; long
-      "response_message" "example_response_message"  ;; string
+      "packageUUID" "example_packageUUID"  ;; string
+      "productUUIDs" (vs/jt)  ;; vector
+      "responseCode" 1  ;; long
+      "responseMessage" "example_responseMessage"  ;; string
       )
     nil))
 ```
@@ -1353,8 +1353,8 @@ Return the entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `string` | No |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 
 ### Operations
 
@@ -1366,8 +1366,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-output_start/create (api/output_start client nil)
     (vs/jm
-      "response_code" 1  ;; long
-      "response_message" "example_response_message"  ;; string
+      "responseCode" 1  ;; long
+      "responseMessage" "example_responseMessage"  ;; string
       )
     nil))
 ```
@@ -1416,8 +1416,8 @@ Return the entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `long` | No |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
 | `status` | `string` | No |  |
 
 ### Operations
@@ -1473,19 +1473,19 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allow_multiple_order` | `boolean` | No |  |
-| `app_form_name` | `string` | No |  |
-| `contract_needed` | `boolean` | No |  |
-| `credentials_needed` | `boolean` | No |  |
-| `description_key` | `string` | No |  |
-| `name_key` | `string` | No |  |
-| `prescreening_allowed` | `boolean` | No |  |
-| `product_name` | `string` | No |  |
-| `product_status` | `string` | No |  |
-| `product_uuid` | `string` | Yes |  |
-| `response_code` | `long` | Yes |  |
-| `response_message` | `string` | Yes |  |
-| `vendor_name` | `string` | No |  |
+| `allowMultipleOrders` | `boolean` | No |  |
+| `appFormName` | `string` | No |  |
+| `contractNeeded` | `boolean` | No |  |
+| `credentialsNeeded` | `boolean` | No |  |
+| `descriptionKey` | `string` | No |  |
+| `nameKey` | `string` | No |  |
+| `prescreeningAllowed` | `boolean` | No |  |
+| `productName` | `string` | No |  |
+| `productStatus` | `string` | No |  |
+| `productUUID` | `string` | Yes |  |
+| `responseCode` | `long` | Yes |  |
+| `responseMessage` | `string` | Yes |  |
+| `vendorName` | `string` | No |  |
 
 ### Operations
 
@@ -1497,9 +1497,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-output_update_product/create (api/output_update_product client nil)
     (vs/jm
-      "product_uuid" "example_product_uuid"  ;; string
-      "response_code" 1  ;; long
-      "response_message" "example_response_message"  ;; string
+      "productUUID" "example_productUUID"  ;; string
+      "responseCode" 1  ;; long
+      "responseMessage" "example_responseMessage"  ;; string
       )
     nil))
 ```

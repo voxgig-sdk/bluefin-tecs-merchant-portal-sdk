@@ -47,7 +47,7 @@ void tests() {
       final output_update_product_ref01_ent = client.OutputUpdateProduct();
       dynamic output_update_product_ref01_data = setup['data']['new']['output_update_product']['output_update_product_ref01'];
 
-      output_update_product_ref01_data = await output_update_product_ref01_ent.create(output_update_product_ref01_data);
+      output_update_product_ref01_data = (await output_update_product_ref01_ent.create(output_update_product_ref01_data)).data();
       ok(null != output_update_product_ref01_data);
 
 

@@ -72,8 +72,8 @@ public final class RunnerSupport {
   }
 
   public static Map<String, Object> envOverride(Map<String, Object> m) {
-    if ("TRUE".equals(getenv("BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"))
-        || "TRUE".equals(getenv("BLUEFINTECSMERCHANTPORTAL_TEST_OVERRIDE"))) {
+    if ("TRUE".equals(getenv("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"))
+        || "TRUE".equals(getenv("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OVERRIDE"))) {
       for (String key : new ArrayList<>(m.keySet())) {
         String envval = getenv(key);
         if (envval != null && !envval.isEmpty()) {
@@ -90,9 +90,9 @@ public final class RunnerSupport {
       }
     }
 
-    String explain = getenv("BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN");
+    String explain = getenv("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN");
     if (explain != null && !explain.isEmpty()) {
-      m.put("BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN", explain);
+      m.put("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN", explain);
     }
 
     return m;

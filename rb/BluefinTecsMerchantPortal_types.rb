@@ -295,11 +295,11 @@ end
 # @!attribute [rw] language
 #   @return [String]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUUID
 #   @return [String]
 MerchantPortalPamContractController = Struct.new(
   :language,
-  :product_order_uuid,
+  :productOrderUUID,
   keyword_init: true
 )
 
@@ -308,51 +308,51 @@ MerchantPortalPamContractController = Struct.new(
 # @!attribute [rw] language
 #   @return [String]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUUID
 #   @return [String]
 MerchantPortalPamContractControllerCreateData = Struct.new(
   :language,
-  :product_order_uuid,
+  :productOrderUUID,
   keyword_init: true
 )
 
 # MerchantPortalPamDocumentController entity data model.
 #
-# @!attribute [rw] app_form_field_desc_uuid
+# @!attribute [rw] appFormFieldDescUUID
 #   @return [String]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUUID
 #   @return [String, nil]
 MerchantPortalPamDocumentController = Struct.new(
-  :app_form_field_desc_uuid,
-  :package_order_uuid,
-  :product_order_uuid,
+  :appFormFieldDescUUID,
+  :packageOrderUUID,
+  :productOrderUUID,
   keyword_init: true
 )
 
 # Request payload for MerchantPortalPamDocumentController#create.
 #
-# @!attribute [rw] app_form_field_desc_uuid
+# @!attribute [rw] appFormFieldDescUUID
 #   @return [String]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUUID
 #   @return [String, nil]
 MerchantPortalPamDocumentControllerCreateData = Struct.new(
-  :app_form_field_desc_uuid,
-  :package_order_uuid,
-  :product_order_uuid,
+  :appFormFieldDescUUID,
+  :packageOrderUUID,
+  :productOrderUUID,
   keyword_init: true
 )
 
 # MerchantPortalPamFormController entity data model.
 #
-# @!attribute [rw] app_form_fields_desc_uuid
+# @!attribute [rw] appFormFieldsDescUUID
 #   @return [String]
 #
 # @!attribute [rw] filter
@@ -361,39 +361,39 @@ MerchantPortalPamDocumentControllerCreateData = Struct.new(
 # @!attribute [rw] language
 #   @return [String]
 #
-# @!attribute [rw] package_order
+# @!attribute [rw] packageOrder
 #   @return [Hash, nil]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUUID
 #   @return [String]
 #
-# @!attribute [rw] package_uuid
+# @!attribute [rw] packageUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] product_order
+# @!attribute [rw] productOrderUUID
+#   @return [String, nil]
+#
+# @!attribute [rw] productOrders
 #   @return [Array, nil]
 #
-# @!attribute [rw] product_order_uuid
-#   @return [String, nil]
-#
-# @!attribute [rw] reason_of_reopening
+# @!attribute [rw] reasonOfReopening
 #   @return [String]
 MerchantPortalPamFormController = Struct.new(
-  :app_form_fields_desc_uuid,
+  :appFormFieldsDescUUID,
   :filter,
   :language,
-  :package_order,
-  :package_order_uuid,
-  :package_uuid,
-  :product_order,
-  :product_order_uuid,
-  :reason_of_reopening,
+  :packageOrder,
+  :packageOrderUUID,
+  :packageUUID,
+  :productOrderUUID,
+  :productOrders,
+  :reasonOfReopening,
   keyword_init: true
 )
 
 # Request payload for MerchantPortalPamFormController#create.
 #
-# @!attribute [rw] app_form_fields_desc_uuid
+# @!attribute [rw] appFormFieldsDescUUID
 #   @return [String]
 #
 # @!attribute [rw] filter
@@ -402,75 +402,75 @@ MerchantPortalPamFormController = Struct.new(
 # @!attribute [rw] language
 #   @return [String]
 #
-# @!attribute [rw] package_order
+# @!attribute [rw] packageOrder
 #   @return [Hash, nil]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUUID
 #   @return [String]
 #
-# @!attribute [rw] package_uuid
+# @!attribute [rw] packageUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] product_order
+# @!attribute [rw] productOrderUUID
+#   @return [String, nil]
+#
+# @!attribute [rw] productOrders
 #   @return [Array, nil]
 #
-# @!attribute [rw] product_order_uuid
-#   @return [String, nil]
-#
-# @!attribute [rw] reason_of_reopening
+# @!attribute [rw] reasonOfReopening
 #   @return [String]
 MerchantPortalPamFormControllerCreateData = Struct.new(
-  :app_form_fields_desc_uuid,
+  :appFormFieldsDescUUID,
   :filter,
   :language,
-  :package_order,
-  :package_order_uuid,
-  :package_uuid,
-  :product_order,
-  :product_order_uuid,
-  :reason_of_reopening,
+  :packageOrder,
+  :packageOrderUUID,
+  :packageUUID,
+  :productOrderUUID,
+  :productOrders,
+  :reasonOfReopening,
   keyword_init: true
 )
 
 # MerchantPortalPamMandatorController entity data model.
 #
-# @!attribute [rw] client_secret
+# @!attribute [rw] clientSecret
 #   @return [String, nil]
 #
-# @!attribute [rw] mandator_name
+# @!attribute [rw] mandatorName
 #   @return [String]
 #
-# @!attribute [rw] notification_email
+# @!attribute [rw] notificationEmail
 #   @return [String, nil]
 #
-# @!attribute [rw] package_uuid
+# @!attribute [rw] packageUUID
 #   @return [String]
 MerchantPortalPamMandatorController = Struct.new(
-  :client_secret,
-  :mandator_name,
-  :notification_email,
-  :package_uuid,
+  :clientSecret,
+  :mandatorName,
+  :notificationEmail,
+  :packageUUID,
   keyword_init: true
 )
 
 # Request payload for MerchantPortalPamMandatorController#create.
 #
-# @!attribute [rw] client_secret
+# @!attribute [rw] clientSecret
 #   @return [String, nil]
 #
-# @!attribute [rw] mandator_name
+# @!attribute [rw] mandatorName
 #   @return [String]
 #
-# @!attribute [rw] notification_email
+# @!attribute [rw] notificationEmail
 #   @return [String, nil]
 #
-# @!attribute [rw] package_uuid
+# @!attribute [rw] packageUUID
 #   @return [String]
 MerchantPortalPamMandatorControllerCreateData = Struct.new(
-  :client_secret,
-  :mandator_name,
-  :notification_email,
-  :package_uuid,
+  :clientSecret,
+  :mandatorName,
+  :notificationEmail,
+  :packageUUID,
   keyword_init: true
 )
 
@@ -479,16 +479,16 @@ MerchantPortalPamMandatorControllerCreateData = Struct.new(
 # @!attribute [rw] additional_data
 #   @return [Hash, nil]
 #
-# @!attribute [rw] business_registration_number
+# @!attribute [rw] businessRegistrationNumber
 #   @return [String]
 #
 # @!attribute [rw] city
 #   @return [String, nil]
 #
-# @!attribute [rw] company_name
+# @!attribute [rw] companyName
 #   @return [String]
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUUID
 #   @return [String]
 #
 # @!attribute [rw] country
@@ -509,25 +509,25 @@ MerchantPortalPamMandatorControllerCreateData = Struct.new(
 # @!attribute [rw] mandator
 #   @return [String]
 #
+# @!attribute [rw] merchantContractNumber
+#   @return [String]
+#
+# @!attribute [rw] merchantName
+#   @return [String, nil]
+#
 # @!attribute [rw] merchant_category_code
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_contract_number
-#   @return [String]
-#
-# @!attribute [rw] merchant_name
-#   @return [String, nil]
-#
-# @!attribute [rw] package_uuid
+# @!attribute [rw] packageUUID
 #   @return [String, nil]
 #
 # @!attribute [rw] packageorderuuid
 #   @return [String]
 #
-# @!attribute [rw] phone_number
+# @!attribute [rw] phoneNumber
 #   @return [String]
 #
-# @!attribute [rw] postal_code
+# @!attribute [rw] postalCode
 #   @return [String, nil]
 #
 # @!attribute [rw] productid_acquirer
@@ -536,7 +536,7 @@ MerchantPortalPamMandatorControllerCreateData = Struct.new(
 # @!attribute [rw] region
 #   @return [String, nil]
 #
-# @!attribute [rw] registration_number
+# @!attribute [rw] registrationNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] signature
@@ -545,7 +545,7 @@ MerchantPortalPamMandatorControllerCreateData = Struct.new(
 # @!attribute [rw] street
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalIds
 #   @return [Array, nil]
 #
 # @!attribute [rw] terminalid_acquirer
@@ -555,29 +555,29 @@ MerchantPortalPamMandatorControllerCreateData = Struct.new(
 #   @return [String]
 MerchantPortalPamMerchantController = Struct.new(
   :additional_data,
-  :business_registration_number,
+  :businessRegistrationNumber,
   :city,
-  :company_name,
-  :corporate_uuid,
+  :companyName,
+  :corporateUUID,
   :country,
   :currency,
   :email,
   :language,
   :login,
   :mandator,
+  :merchantContractNumber,
+  :merchantName,
   :merchant_category_code,
-  :merchant_contract_number,
-  :merchant_name,
-  :package_uuid,
+  :packageUUID,
   :packageorderuuid,
-  :phone_number,
-  :postal_code,
+  :phoneNumber,
+  :postalCode,
   :productid_acquirer,
   :region,
-  :registration_number,
+  :registrationNumber,
   :signature,
   :street,
-  :terminal_id,
+  :terminalIds,
   :terminalid_acquirer,
   :vu_nummer,
   keyword_init: true
@@ -588,16 +588,16 @@ MerchantPortalPamMerchantController = Struct.new(
 # @!attribute [rw] additional_data
 #   @return [Hash, nil]
 #
-# @!attribute [rw] business_registration_number
+# @!attribute [rw] businessRegistrationNumber
 #   @return [String]
 #
 # @!attribute [rw] city
 #   @return [String, nil]
 #
-# @!attribute [rw] company_name
+# @!attribute [rw] companyName
 #   @return [String]
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUUID
 #   @return [String]
 #
 # @!attribute [rw] country
@@ -618,25 +618,25 @@ MerchantPortalPamMerchantController = Struct.new(
 # @!attribute [rw] mandator
 #   @return [String]
 #
+# @!attribute [rw] merchantContractNumber
+#   @return [String]
+#
+# @!attribute [rw] merchantName
+#   @return [String, nil]
+#
 # @!attribute [rw] merchant_category_code
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_contract_number
-#   @return [String]
-#
-# @!attribute [rw] merchant_name
-#   @return [String, nil]
-#
-# @!attribute [rw] package_uuid
+# @!attribute [rw] packageUUID
 #   @return [String, nil]
 #
 # @!attribute [rw] packageorderuuid
 #   @return [String]
 #
-# @!attribute [rw] phone_number
+# @!attribute [rw] phoneNumber
 #   @return [String]
 #
-# @!attribute [rw] postal_code
+# @!attribute [rw] postalCode
 #   @return [String, nil]
 #
 # @!attribute [rw] productid_acquirer
@@ -645,7 +645,7 @@ MerchantPortalPamMerchantController = Struct.new(
 # @!attribute [rw] region
 #   @return [String, nil]
 #
-# @!attribute [rw] registration_number
+# @!attribute [rw] registrationNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] signature
@@ -654,7 +654,7 @@ MerchantPortalPamMerchantController = Struct.new(
 # @!attribute [rw] street
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalIds
 #   @return [Array, nil]
 #
 # @!attribute [rw] terminalid_acquirer
@@ -664,29 +664,29 @@ MerchantPortalPamMerchantController = Struct.new(
 #   @return [String]
 MerchantPortalPamMerchantControllerCreateData = Struct.new(
   :additional_data,
-  :business_registration_number,
+  :businessRegistrationNumber,
   :city,
-  :company_name,
-  :corporate_uuid,
+  :companyName,
+  :corporateUUID,
   :country,
   :currency,
   :email,
   :language,
   :login,
   :mandator,
+  :merchantContractNumber,
+  :merchantName,
   :merchant_category_code,
-  :merchant_contract_number,
-  :merchant_name,
-  :package_uuid,
+  :packageUUID,
   :packageorderuuid,
-  :phone_number,
-  :postal_code,
+  :phoneNumber,
+  :postalCode,
   :productid_acquirer,
   :region,
-  :registration_number,
+  :registrationNumber,
   :signature,
   :street,
-  :terminal_id,
+  :terminalIds,
   :terminalid_acquirer,
   :vu_nummer,
   keyword_init: true
@@ -694,16 +694,16 @@ MerchantPortalPamMerchantControllerCreateData = Struct.new(
 
 # MerchantPortalPamPackageController entity data model.
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUUID
 #   @return [String, nil]
 #
 # @!attribute [rw] country
 #   @return [String, nil]
 #
-# @!attribute [rw] description_key
+# @!attribute [rw] descriptionKey
 #   @return [String, nil]
 #
 # @!attribute [rw] filter
@@ -712,13 +712,13 @@ MerchantPortalPamMerchantControllerCreateData = Struct.new(
 # @!attribute [rw] language
 #   @return [String]
 #
-# @!attribute [rw] name_key
+# @!attribute [rw] nameKey
 #   @return [String, nil]
 #
-# @!attribute [rw] package_status
+# @!attribute [rw] packageStatus
 #   @return [String, nil]
 #
-# @!attribute [rw] package_uuid
+# @!attribute [rw] packageUUID
 #   @return [String]
 #
 # @!attribute [rw] pagination
@@ -727,15 +727,15 @@ MerchantPortalPamMerchantControllerCreateData = Struct.new(
 # @!attribute [rw] sorting
 #   @return [Hash, nil]
 MerchantPortalPamPackageController = Struct.new(
-  :consumer_uuid,
-  :corporate_uuid,
+  :consumerUUID,
+  :corporateUUID,
   :country,
-  :description_key,
+  :descriptionKey,
   :filter,
   :language,
-  :name_key,
-  :package_status,
-  :package_uuid,
+  :nameKey,
+  :packageStatus,
+  :packageUUID,
   :pagination,
   :sorting,
   keyword_init: true
@@ -743,16 +743,16 @@ MerchantPortalPamPackageController = Struct.new(
 
 # Request payload for MerchantPortalPamPackageController#create.
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUUID
 #   @return [String, nil]
 #
 # @!attribute [rw] country
 #   @return [String, nil]
 #
-# @!attribute [rw] description_key
+# @!attribute [rw] descriptionKey
 #   @return [String, nil]
 #
 # @!attribute [rw] filter
@@ -761,13 +761,13 @@ MerchantPortalPamPackageController = Struct.new(
 # @!attribute [rw] language
 #   @return [String]
 #
-# @!attribute [rw] name_key
+# @!attribute [rw] nameKey
 #   @return [String, nil]
 #
-# @!attribute [rw] package_status
+# @!attribute [rw] packageStatus
 #   @return [String, nil]
 #
-# @!attribute [rw] package_uuid
+# @!attribute [rw] packageUUID
 #   @return [String]
 #
 # @!attribute [rw] pagination
@@ -776,15 +776,15 @@ MerchantPortalPamPackageController = Struct.new(
 # @!attribute [rw] sorting
 #   @return [Hash, nil]
 MerchantPortalPamPackageControllerCreateData = Struct.new(
-  :consumer_uuid,
-  :corporate_uuid,
+  :consumerUUID,
+  :corporateUUID,
   :country,
-  :description_key,
+  :descriptionKey,
   :filter,
   :language,
-  :name_key,
-  :package_status,
-  :package_uuid,
+  :nameKey,
+  :packageStatus,
+  :packageUUID,
   :pagination,
   :sorting,
   keyword_init: true
@@ -792,7 +792,7 @@ MerchantPortalPamPackageControllerCreateData = Struct.new(
 
 # MerchantPortalPamProductController entity data model.
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUUID
 #   @return [String, nil]
 #
 # @!attribute [rw] filter
@@ -801,19 +801,19 @@ MerchantPortalPamPackageControllerCreateData = Struct.new(
 # @!attribute [rw] language
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_id
+# @!attribute [rw] merchantID
 #   @return [String, nil]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUUID
 #   @return [String]
 #
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUUID
 #   @return [String]
 #
-# @!attribute [rw] product_uuid
+# @!attribute [rw] productUUID
 #   @return [String]
 #
 # @!attribute [rw] reason_decline
@@ -822,14 +822,14 @@ MerchantPortalPamPackageControllerCreateData = Struct.new(
 # @!attribute [rw] sorting
 #   @return [Hash, nil]
 MerchantPortalPamProductController = Struct.new(
-  :consumer_uuid,
+  :consumerUUID,
   :filter,
   :language,
-  :merchant_id,
-  :package_order_uuid,
+  :merchantID,
+  :packageOrderUUID,
   :pagination,
-  :product_order_uuid,
-  :product_uuid,
+  :productOrderUUID,
+  :productUUID,
   :reason_decline,
   :sorting,
   keyword_init: true
@@ -837,7 +837,7 @@ MerchantPortalPamProductController = Struct.new(
 
 # Request payload for MerchantPortalPamProductController#create.
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUUID
 #   @return [String, nil]
 #
 # @!attribute [rw] filter
@@ -846,19 +846,19 @@ MerchantPortalPamProductController = Struct.new(
 # @!attribute [rw] language
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_id
+# @!attribute [rw] merchantID
 #   @return [String, nil]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUUID
 #   @return [String]
 #
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUUID
 #   @return [String]
 #
-# @!attribute [rw] product_uuid
+# @!attribute [rw] productUUID
 #   @return [String]
 #
 # @!attribute [rw] reason_decline
@@ -867,14 +867,14 @@ MerchantPortalPamProductController = Struct.new(
 # @!attribute [rw] sorting
 #   @return [Hash, nil]
 MerchantPortalPamProductControllerCreateData = Struct.new(
-  :consumer_uuid,
+  :consumerUUID,
   :filter,
   :language,
-  :merchant_id,
-  :package_order_uuid,
+  :merchantID,
+  :packageOrderUUID,
   :pagination,
-  :product_order_uuid,
-  :product_uuid,
+  :productOrderUUID,
+  :productUUID,
   :reason_decline,
   :sorting,
   keyword_init: true
@@ -882,182 +882,182 @@ MerchantPortalPamProductControllerCreateData = Struct.new(
 
 # OutputAddProduct entity data model.
 #
-# @!attribute [rw] package_uuid
+# @!attribute [rw] packageUUID
 #   @return [String]
 #
-# @!attribute [rw] product_uui_d
+# @!attribute [rw] productUUIDs
 #   @return [Array]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 OutputAddProduct = Struct.new(
-  :package_uuid,
-  :product_uui_d,
-  :response_code,
-  :response_message,
+  :packageUUID,
+  :productUUIDs,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputAddProduct#create.
 #
-# @!attribute [rw] package_uuid
+# @!attribute [rw] packageUUID
 #   @return [String]
 #
-# @!attribute [rw] product_uui_d
+# @!attribute [rw] productUUIDs
 #   @return [Array]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 OutputAddProductCreateData = Struct.new(
-  :package_uuid,
-  :product_uui_d,
-  :response_code,
-  :response_message,
+  :packageUUID,
+  :productUUIDs,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # OutputCreateProduct entity data model.
 #
-# @!attribute [rw] acquirer_id
+# @!attribute [rw] acquirerId
 #   @return [String, nil]
 #
-# @!attribute [rw] allow_multiple_order
+# @!attribute [rw] allowMultipleOrders
 #   @return [Boolean]
 #
-# @!attribute [rw] app_form_template_name
+# @!attribute [rw] appFormTemplateName
 #   @return [String]
 #
-# @!attribute [rw] contract_needed
+# @!attribute [rw] contractNeeded
 #   @return [Boolean]
 #
-# @!attribute [rw] credentials_needed
+# @!attribute [rw] credentialsNeeded
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] description_key
+# @!attribute [rw] descriptionKey
 #   @return [String]
 #
-# @!attribute [rw] name_key
+# @!attribute [rw] nameKey
 #   @return [String]
 #
-# @!attribute [rw] prescreening_allowed
+# @!attribute [rw] prescreeningAllowed
 #   @return [Boolean]
 #
-# @!attribute [rw] product_name
+# @!attribute [rw] productName
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 #
-# @!attribute [rw] terminal_template_name
+# @!attribute [rw] terminalTemplateName
 #   @return [String]
 #
-# @!attribute [rw] vendor_name
+# @!attribute [rw] vendorName
 #   @return [String]
 #
-# @!attribute [rw] xml_template_file
+# @!attribute [rw] xmlTemplateFile
 #   @return [String]
 OutputCreateProduct = Struct.new(
-  :acquirer_id,
-  :allow_multiple_order,
-  :app_form_template_name,
-  :contract_needed,
-  :credentials_needed,
-  :description_key,
-  :name_key,
-  :prescreening_allowed,
-  :product_name,
-  :response_code,
-  :response_message,
-  :terminal_template_name,
-  :vendor_name,
-  :xml_template_file,
+  :acquirerId,
+  :allowMultipleOrders,
+  :appFormTemplateName,
+  :contractNeeded,
+  :credentialsNeeded,
+  :descriptionKey,
+  :nameKey,
+  :prescreeningAllowed,
+  :productName,
+  :responseCode,
+  :responseMessage,
+  :terminalTemplateName,
+  :vendorName,
+  :xmlTemplateFile,
   keyword_init: true
 )
 
 # Request payload for OutputCreateProduct#create.
 #
-# @!attribute [rw] acquirer_id
+# @!attribute [rw] acquirerId
 #   @return [String, nil]
 #
-# @!attribute [rw] allow_multiple_order
+# @!attribute [rw] allowMultipleOrders
 #   @return [Boolean]
 #
-# @!attribute [rw] app_form_template_name
+# @!attribute [rw] appFormTemplateName
 #   @return [String]
 #
-# @!attribute [rw] contract_needed
+# @!attribute [rw] contractNeeded
 #   @return [Boolean]
 #
-# @!attribute [rw] credentials_needed
+# @!attribute [rw] credentialsNeeded
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] description_key
+# @!attribute [rw] descriptionKey
 #   @return [String]
 #
-# @!attribute [rw] name_key
+# @!attribute [rw] nameKey
 #   @return [String]
 #
-# @!attribute [rw] prescreening_allowed
+# @!attribute [rw] prescreeningAllowed
 #   @return [Boolean]
 #
-# @!attribute [rw] product_name
+# @!attribute [rw] productName
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 #
-# @!attribute [rw] terminal_template_name
+# @!attribute [rw] terminalTemplateName
 #   @return [String]
 #
-# @!attribute [rw] vendor_name
+# @!attribute [rw] vendorName
 #   @return [String]
 #
-# @!attribute [rw] xml_template_file
+# @!attribute [rw] xmlTemplateFile
 #   @return [String]
 OutputCreateProductCreateData = Struct.new(
-  :acquirer_id,
-  :allow_multiple_order,
-  :app_form_template_name,
-  :contract_needed,
-  :credentials_needed,
-  :description_key,
-  :name_key,
-  :prescreening_allowed,
-  :product_name,
-  :response_code,
-  :response_message,
-  :terminal_template_name,
-  :vendor_name,
-  :xml_template_file,
+  :acquirerId,
+  :allowMultipleOrders,
+  :appFormTemplateName,
+  :contractNeeded,
+  :credentialsNeeded,
+  :descriptionKey,
+  :nameKey,
+  :prescreeningAllowed,
+  :productName,
+  :responseCode,
+  :responseMessage,
+  :terminalTemplateName,
+  :vendorName,
+  :xmlTemplateFile,
   keyword_init: true
 )
 
 # OutputDetail entity data model.
 #
-# @!attribute [rw] detail
+# @!attribute [rw] batch
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
-#   @return [Integer]
+# @!attribute [rw] lines
+#   @return [Hash, nil]
 #
-# @!attribute [rw] response_message
-#   @return [String]
+# @!attribute [rw] progress
+#   @return [Hash, nil]
 OutputDetail = Struct.new(
-  :detail,
-  :response_code,
-  :response_message,
+  :batch,
+  :lines,
+  :progress,
   keyword_init: true
 )
 
@@ -1072,64 +1072,64 @@ OutputDetailLoadMatch = Struct.new(
 
 # OutputList entity data model.
 #
-# @!attribute [rw] item
+# @!attribute [rw] items
 #   @return [Array, nil]
 #
 # @!attribute [rw] pagination
 #   @return [Hash]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 #
 # @!attribute [rw] sorting
 #   @return [Hash, nil]
 OutputList = Struct.new(
-  :item,
+  :items,
   :pagination,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :sorting,
   keyword_init: true
 )
 
 # Request payload for OutputList#create.
 #
-# @!attribute [rw] item
+# @!attribute [rw] items
 #   @return [Array, nil]
 #
 # @!attribute [rw] pagination
 #   @return [Hash]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 #
 # @!attribute [rw] sorting
 #   @return [Hash, nil]
 OutputListCreateData = Struct.new(
-  :item,
+  :items,
   :pagination,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :sorting,
   keyword_init: true
 )
 
 # OutputMessage entity data model.
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 OutputMessage = Struct.new(
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
@@ -1144,93 +1144,93 @@ OutputMessageLoadMatch = Struct.new(
 
 # OutputMoveTid entity data model.
 #
-# @!attribute [rw] product_order_uui_d
+# @!attribute [rw] productOrderUUIDs
 #   @return [Array]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 #
-# @!attribute [rw] target_package_order_uuid
+# @!attribute [rw] targetPackageOrderUUID
 #   @return [String]
 #
-# @!attribute [rw] target_product_order_uuid
+# @!attribute [rw] targetProductOrderUUID
 #   @return [String]
 OutputMoveTid = Struct.new(
-  :product_order_uui_d,
-  :response_code,
-  :response_message,
-  :target_package_order_uuid,
-  :target_product_order_uuid,
+  :productOrderUUIDs,
+  :responseCode,
+  :responseMessage,
+  :targetPackageOrderUUID,
+  :targetProductOrderUUID,
   keyword_init: true
 )
 
 # Request payload for OutputMoveTid#create.
 #
-# @!attribute [rw] product_order_uui_d
+# @!attribute [rw] productOrderUUIDs
 #   @return [Array]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 #
-# @!attribute [rw] target_package_order_uuid
+# @!attribute [rw] targetPackageOrderUUID
 #   @return [String]
 #
-# @!attribute [rw] target_product_order_uuid
+# @!attribute [rw] targetProductOrderUUID
 #   @return [String]
 OutputMoveTidCreateData = Struct.new(
-  :product_order_uui_d,
-  :response_code,
-  :response_message,
-  :target_package_order_uuid,
-  :target_product_order_uuid,
+  :productOrderUUIDs,
+  :responseCode,
+  :responseMessage,
+  :targetPackageOrderUUID,
+  :targetProductOrderUUID,
   keyword_init: true
 )
 
 # OutputRemoveProduct entity data model.
 #
-# @!attribute [rw] package_uuid
+# @!attribute [rw] packageUUID
 #   @return [String]
 #
-# @!attribute [rw] product_uui_d
+# @!attribute [rw] productUUIDs
 #   @return [Array]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 OutputRemoveProduct = Struct.new(
-  :package_uuid,
-  :product_uui_d,
-  :response_code,
-  :response_message,
+  :packageUUID,
+  :productUUIDs,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputRemoveProduct#create.
 #
-# @!attribute [rw] package_uuid
+# @!attribute [rw] packageUUID
 #   @return [String]
 #
-# @!attribute [rw] product_uui_d
+# @!attribute [rw] productUUIDs
 #   @return [Array]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 OutputRemoveProductCreateData = Struct.new(
-  :package_uuid,
-  :product_uui_d,
-  :response_code,
-  :response_message,
+  :packageUUID,
+  :productUUIDs,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
@@ -1239,15 +1239,15 @@ OutputRemoveProductCreateData = Struct.new(
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 OutputStart = Struct.new(
   :id,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
@@ -1256,15 +1256,15 @@ OutputStart = Struct.new(
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 OutputStartCreateData = Struct.new(
   :id,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
@@ -1273,18 +1273,18 @@ OutputStartCreateData = Struct.new(
 # @!attribute [rw] percentage
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 #
 # @!attribute [rw] status
 #   @return [String, nil]
 OutputStatus = Struct.new(
   :percentage,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :status,
   keyword_init: true
 )
@@ -1300,115 +1300,115 @@ OutputStatusLoadMatch = Struct.new(
 
 # OutputUpdateProduct entity data model.
 #
-# @!attribute [rw] allow_multiple_order
+# @!attribute [rw] allowMultipleOrders
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] app_form_name
+# @!attribute [rw] appFormName
 #   @return [String, nil]
 #
-# @!attribute [rw] contract_needed
+# @!attribute [rw] contractNeeded
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] credentials_needed
+# @!attribute [rw] credentialsNeeded
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] description_key
+# @!attribute [rw] descriptionKey
 #   @return [String, nil]
 #
-# @!attribute [rw] name_key
+# @!attribute [rw] nameKey
 #   @return [String, nil]
 #
-# @!attribute [rw] prescreening_allowed
+# @!attribute [rw] prescreeningAllowed
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] product_name
+# @!attribute [rw] productName
 #   @return [String, nil]
 #
-# @!attribute [rw] product_status
+# @!attribute [rw] productStatus
 #   @return [String, nil]
 #
-# @!attribute [rw] product_uuid
+# @!attribute [rw] productUUID
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 #
-# @!attribute [rw] vendor_name
+# @!attribute [rw] vendorName
 #   @return [String, nil]
 OutputUpdateProduct = Struct.new(
-  :allow_multiple_order,
-  :app_form_name,
-  :contract_needed,
-  :credentials_needed,
-  :description_key,
-  :name_key,
-  :prescreening_allowed,
-  :product_name,
-  :product_status,
-  :product_uuid,
-  :response_code,
-  :response_message,
-  :vendor_name,
+  :allowMultipleOrders,
+  :appFormName,
+  :contractNeeded,
+  :credentialsNeeded,
+  :descriptionKey,
+  :nameKey,
+  :prescreeningAllowed,
+  :productName,
+  :productStatus,
+  :productUUID,
+  :responseCode,
+  :responseMessage,
+  :vendorName,
   keyword_init: true
 )
 
 # Request payload for OutputUpdateProduct#create.
 #
-# @!attribute [rw] allow_multiple_order
+# @!attribute [rw] allowMultipleOrders
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] app_form_name
+# @!attribute [rw] appFormName
 #   @return [String, nil]
 #
-# @!attribute [rw] contract_needed
+# @!attribute [rw] contractNeeded
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] credentials_needed
+# @!attribute [rw] credentialsNeeded
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] description_key
+# @!attribute [rw] descriptionKey
 #   @return [String, nil]
 #
-# @!attribute [rw] name_key
+# @!attribute [rw] nameKey
 #   @return [String, nil]
 #
-# @!attribute [rw] prescreening_allowed
+# @!attribute [rw] prescreeningAllowed
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] product_name
+# @!attribute [rw] productName
 #   @return [String, nil]
 #
-# @!attribute [rw] product_status
+# @!attribute [rw] productStatus
 #   @return [String, nil]
 #
-# @!attribute [rw] product_uuid
+# @!attribute [rw] productUUID
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String]
 #
-# @!attribute [rw] vendor_name
+# @!attribute [rw] vendorName
 #   @return [String, nil]
 OutputUpdateProductCreateData = Struct.new(
-  :allow_multiple_order,
-  :app_form_name,
-  :contract_needed,
-  :credentials_needed,
-  :description_key,
-  :name_key,
-  :prescreening_allowed,
-  :product_name,
-  :product_status,
-  :product_uuid,
-  :response_code,
-  :response_message,
-  :vendor_name,
+  :allowMultipleOrders,
+  :appFormName,
+  :contractNeeded,
+  :credentialsNeeded,
+  :descriptionKey,
+  :nameKey,
+  :prescreeningAllowed,
+  :productName,
+  :productStatus,
+  :productUUID,
+  :responseCode,
+  :responseMessage,
+  :vendorName,
   keyword_init: true
 )
 

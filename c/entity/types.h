@@ -101,97 +101,97 @@ typedef struct {
 // MerchantPortalPamContractController is the typed data model for the merchant_portal_pam_contract_controller entity.
 typedef struct {
   char*language;
-  char*product_order_uuid;
+  char*productorderuuid;
 } MerchantPortalPamContractController;
 
 // MerchantPortalPamContractControllerCreateData is the typed request payload for MerchantPortalPamContractController.create.
 typedef struct {
   char*language;
-  char*product_order_uuid;
+  char*productorderuuid;
 } MerchantPortalPamContractControllerCreateData;
 
 // MerchantPortalPamDocumentController is the typed data model for the merchant_portal_pam_document_controller entity.
 typedef struct {
-  char*app_form_field_desc_uuid;
-  char*package_order_uuid;  // optional
-  char*product_order_uuid;  // optional
+  char*appformfielddescuuid;
+  char*packageorderuuid;  // optional
+  char*productorderuuid;  // optional
 } MerchantPortalPamDocumentController;
 
 // MerchantPortalPamDocumentControllerCreateData is the typed request payload for MerchantPortalPamDocumentController.create.
 typedef struct {
-  char*app_form_field_desc_uuid;
-  char*package_order_uuid;  // optional
-  char*product_order_uuid;  // optional
+  char*appformfielddescuuid;
+  char*packageorderuuid;  // optional
+  char*productorderuuid;  // optional
 } MerchantPortalPamDocumentControllerCreateData;
 
 // MerchantPortalPamFormController is the typed data model for the merchant_portal_pam_form_controller entity.
 typedef struct {
-  char*app_form_fields_desc_uuid;
+  char*appformfieldsdescuuid;
   voxgig_value*filter;  // optional
   char*language;
-  voxgig_value*package_order;  // optional
-  char*package_order_uuid;
-  char*package_uuid;  // optional
-  voxgig_value*product_order;  // optional
-  char*product_order_uuid;  // optional
-  char*reason_of_reopening;
+  voxgig_value*packageorder;  // optional
+  char*packageorderuuid;
+  char*packageuuid;  // optional
+  char*productorderuuid;  // optional
+  voxgig_value*productorders;  // optional
+  char*reasonofreopening;
 } MerchantPortalPamFormController;
 
 // MerchantPortalPamFormControllerCreateData is the typed request payload for MerchantPortalPamFormController.create.
 typedef struct {
-  char*app_form_fields_desc_uuid;
+  char*appformfieldsdescuuid;
   voxgig_value*filter;  // optional
   char*language;
-  voxgig_value*package_order;  // optional
-  char*package_order_uuid;
-  char*package_uuid;  // optional
-  voxgig_value*product_order;  // optional
-  char*product_order_uuid;  // optional
-  char*reason_of_reopening;
+  voxgig_value*packageorder;  // optional
+  char*packageorderuuid;
+  char*packageuuid;  // optional
+  char*productorderuuid;  // optional
+  voxgig_value*productorders;  // optional
+  char*reasonofreopening;
 } MerchantPortalPamFormControllerCreateData;
 
 // MerchantPortalPamMandatorController is the typed data model for the merchant_portal_pam_mandator_controller entity.
 typedef struct {
-  char*client_secret;  // optional
-  char*mandator_name;
-  char*notification_email;  // optional
-  char*package_uuid;
+  char*clientsecret;  // optional
+  char*mandatorname;
+  char*notificationemail;  // optional
+  char*packageuuid;
 } MerchantPortalPamMandatorController;
 
 // MerchantPortalPamMandatorControllerCreateData is the typed request payload for MerchantPortalPamMandatorController.create.
 typedef struct {
-  char*client_secret;  // optional
-  char*mandator_name;
-  char*notification_email;  // optional
-  char*package_uuid;
+  char*clientsecret;  // optional
+  char*mandatorname;
+  char*notificationemail;  // optional
+  char*packageuuid;
 } MerchantPortalPamMandatorControllerCreateData;
 
 // MerchantPortalPamMerchantController is the typed data model for the merchant_portal_pam_merchant_controller entity.
 typedef struct {
   voxgig_value*additional_data;  // optional
-  char*business_registration_number;
+  char*businessregistrationnumber;
   char*city;  // optional
-  char*company_name;
-  char*corporate_uuid;
+  char*companyname;
+  char*corporateuuid;
   char*country;  // optional
   char*currency;
   char*email;
   char*language;
   char*login;
   char*mandator;
+  char*merchantcontractnumber;
+  char*merchantname;  // optional
   char*merchant_category_code;  // optional
-  char*merchant_contract_number;
-  char*merchant_name;  // optional
-  char*package_uuid;  // optional
+  char*packageuuid;  // optional
   char*packageorderuuid;
-  char*phone_number;
-  char*postal_code;  // optional
+  char*phonenumber;
+  char*postalcode;  // optional
   char*productid_acquirer;
   char*region;  // optional
-  char*registration_number;  // optional
+  char*registrationnumber;  // optional
   char*signature;  // optional
   char*street;  // optional
-  voxgig_value*terminal_id;  // optional
+  voxgig_value*terminalids;  // optional
   char*terminalid_acquirer;  // optional
   char*vu_nummer;
 } MerchantPortalPamMerchantController;
@@ -199,148 +199,148 @@ typedef struct {
 // MerchantPortalPamMerchantControllerCreateData is the typed request payload for MerchantPortalPamMerchantController.create.
 typedef struct {
   voxgig_value*additional_data;  // optional
-  char*business_registration_number;
+  char*businessregistrationnumber;
   char*city;  // optional
-  char*company_name;
-  char*corporate_uuid;
+  char*companyname;
+  char*corporateuuid;
   char*country;  // optional
   char*currency;
   char*email;
   char*language;
   char*login;
   char*mandator;
+  char*merchantcontractnumber;
+  char*merchantname;  // optional
   char*merchant_category_code;  // optional
-  char*merchant_contract_number;
-  char*merchant_name;  // optional
-  char*package_uuid;  // optional
+  char*packageuuid;  // optional
   char*packageorderuuid;
-  char*phone_number;
-  char*postal_code;  // optional
+  char*phonenumber;
+  char*postalcode;  // optional
   char*productid_acquirer;
   char*region;  // optional
-  char*registration_number;  // optional
+  char*registrationnumber;  // optional
   char*signature;  // optional
   char*street;  // optional
-  voxgig_value*terminal_id;  // optional
+  voxgig_value*terminalids;  // optional
   char*terminalid_acquirer;  // optional
   char*vu_nummer;
 } MerchantPortalPamMerchantControllerCreateData;
 
 // MerchantPortalPamPackageController is the typed data model for the merchant_portal_pam_package_controller entity.
 typedef struct {
-  char*consumer_uuid;  // optional
-  char*corporate_uuid;  // optional
+  char*consumeruuid;  // optional
+  char*corporateuuid;  // optional
   char*country;  // optional
-  char*description_key;  // optional
+  char*descriptionkey;  // optional
   voxgig_value*filter;  // optional
   char*language;
-  char*name_key;  // optional
-  char*package_status;  // optional
-  char*package_uuid;
+  char*namekey;  // optional
+  char*packagestatus;  // optional
+  char*packageuuid;
   voxgig_value*pagination;  // optional
   voxgig_value*sorting;  // optional
 } MerchantPortalPamPackageController;
 
 // MerchantPortalPamPackageControllerCreateData is the typed request payload for MerchantPortalPamPackageController.create.
 typedef struct {
-  char*consumer_uuid;  // optional
-  char*corporate_uuid;  // optional
+  char*consumeruuid;  // optional
+  char*corporateuuid;  // optional
   char*country;  // optional
-  char*description_key;  // optional
+  char*descriptionkey;  // optional
   voxgig_value*filter;  // optional
   char*language;
-  char*name_key;  // optional
-  char*package_status;  // optional
-  char*package_uuid;
+  char*namekey;  // optional
+  char*packagestatus;  // optional
+  char*packageuuid;
   voxgig_value*pagination;  // optional
   voxgig_value*sorting;  // optional
 } MerchantPortalPamPackageControllerCreateData;
 
 // MerchantPortalPamProductController is the typed data model for the merchant_portal_pam_product_controller entity.
 typedef struct {
-  char*consumer_uuid;  // optional
+  char*consumeruuid;  // optional
   voxgig_value*filter;  // optional
   char*language;  // optional
-  char*merchant_id;  // optional
-  char*package_order_uuid;
+  char*merchantid;  // optional
+  char*packageorderuuid;
   voxgig_value*pagination;  // optional
-  char*product_order_uuid;
-  char*product_uuid;
+  char*productorderuuid;
+  char*productuuid;
   char*reason_decline;
   voxgig_value*sorting;  // optional
 } MerchantPortalPamProductController;
 
 // MerchantPortalPamProductControllerCreateData is the typed request payload for MerchantPortalPamProductController.create.
 typedef struct {
-  char*consumer_uuid;  // optional
+  char*consumeruuid;  // optional
   voxgig_value*filter;  // optional
   char*language;  // optional
-  char*merchant_id;  // optional
-  char*package_order_uuid;
+  char*merchantid;  // optional
+  char*packageorderuuid;
   voxgig_value*pagination;  // optional
-  char*product_order_uuid;
-  char*product_uuid;
+  char*productorderuuid;
+  char*productuuid;
   char*reason_decline;
   voxgig_value*sorting;  // optional
 } MerchantPortalPamProductControllerCreateData;
 
 // OutputAddProduct is the typed data model for the output_add_product entity.
 typedef struct {
-  char*package_uuid;
-  voxgig_value*product_uui_d;
-  int64_t response_code;
-  char*response_message;
+  char*packageuuid;
+  voxgig_value*productuuids;
+  int64_t responsecode;
+  char*responsemessage;
 } OutputAddProduct;
 
 // OutputAddProductCreateData is the typed request payload for OutputAddProduct.create.
 typedef struct {
-  char*package_uuid;
-  voxgig_value*product_uui_d;
-  int64_t response_code;
-  char*response_message;
+  char*packageuuid;
+  voxgig_value*productuuids;
+  int64_t responsecode;
+  char*responsemessage;
 } OutputAddProductCreateData;
 
 // OutputCreateProduct is the typed data model for the output_create_product entity.
 typedef struct {
-  char*acquirer_id;  // optional
-  bool allow_multiple_order;
-  char*app_form_template_name;
-  bool contract_needed;
-  bool credentials_needed;  // optional
-  char*description_key;
-  char*name_key;
-  bool prescreening_allowed;
-  char*product_name;
-  int64_t response_code;
-  char*response_message;
-  char*terminal_template_name;
-  char*vendor_name;
-  char*xml_template_file;
+  char*acquirerid;  // optional
+  bool allowmultipleorders;
+  char*appformtemplatename;
+  bool contractneeded;
+  bool credentialsneeded;  // optional
+  char*descriptionkey;
+  char*namekey;
+  bool prescreeningallowed;
+  char*productname;
+  int64_t responsecode;
+  char*responsemessage;
+  char*terminaltemplatename;
+  char*vendorname;
+  char*xmltemplatefile;
 } OutputCreateProduct;
 
 // OutputCreateProductCreateData is the typed request payload for OutputCreateProduct.create.
 typedef struct {
-  char*acquirer_id;  // optional
-  bool allow_multiple_order;
-  char*app_form_template_name;
-  bool contract_needed;
-  bool credentials_needed;  // optional
-  char*description_key;
-  char*name_key;
-  bool prescreening_allowed;
-  char*product_name;
-  int64_t response_code;
-  char*response_message;
-  char*terminal_template_name;
-  char*vendor_name;
-  char*xml_template_file;
+  char*acquirerid;  // optional
+  bool allowmultipleorders;
+  char*appformtemplatename;
+  bool contractneeded;
+  bool credentialsneeded;  // optional
+  char*descriptionkey;
+  char*namekey;
+  bool prescreeningallowed;
+  char*productname;
+  int64_t responsecode;
+  char*responsemessage;
+  char*terminaltemplatename;
+  char*vendorname;
+  char*xmltemplatefile;
 } OutputCreateProductCreateData;
 
 // OutputDetail is the typed data model for the output_detail entity.
 typedef struct {
-  voxgig_value*detail;  // optional
-  int64_t response_code;
-  char*response_message;
+  voxgig_value*batch;  // optional
+  voxgig_value*lines;  // optional
+  voxgig_value*progress;  // optional
 } OutputDetail;
 
 // OutputDetailLoadMatch is the typed request payload for OutputDetail.load.
@@ -350,26 +350,26 @@ typedef struct {
 
 // OutputList is the typed data model for the output_list entity.
 typedef struct {
-  voxgig_value*item;  // optional
+  voxgig_value*items;  // optional
   voxgig_value*pagination;
-  int64_t response_code;
-  char*response_message;
+  int64_t responsecode;
+  char*responsemessage;
   voxgig_value*sorting;  // optional
 } OutputList;
 
 // OutputListCreateData is the typed request payload for OutputList.create.
 typedef struct {
-  voxgig_value*item;  // optional
+  voxgig_value*items;  // optional
   voxgig_value*pagination;
-  int64_t response_code;
-  char*response_message;
+  int64_t responsecode;
+  char*responsemessage;
   voxgig_value*sorting;  // optional
 } OutputListCreateData;
 
 // OutputMessage is the typed data model for the output_message entity.
 typedef struct {
-  int64_t response_code;
-  char*response_message;
+  int64_t responsecode;
+  char*responsemessage;
 } OutputMessage;
 
 // OutputMessageLoadMatch is the typed request payload for OutputMessage.load.
@@ -379,57 +379,57 @@ typedef struct {
 
 // OutputMoveTid is the typed data model for the output_move_tid entity.
 typedef struct {
-  voxgig_value*product_order_uui_d;
-  int64_t response_code;
-  char*response_message;
-  char*target_package_order_uuid;
-  char*target_product_order_uuid;
+  voxgig_value*productorderuuids;
+  int64_t responsecode;
+  char*responsemessage;
+  char*targetpackageorderuuid;
+  char*targetproductorderuuid;
 } OutputMoveTid;
 
 // OutputMoveTidCreateData is the typed request payload for OutputMoveTid.create.
 typedef struct {
-  voxgig_value*product_order_uui_d;
-  int64_t response_code;
-  char*response_message;
-  char*target_package_order_uuid;
-  char*target_product_order_uuid;
+  voxgig_value*productorderuuids;
+  int64_t responsecode;
+  char*responsemessage;
+  char*targetpackageorderuuid;
+  char*targetproductorderuuid;
 } OutputMoveTidCreateData;
 
 // OutputRemoveProduct is the typed data model for the output_remove_product entity.
 typedef struct {
-  char*package_uuid;
-  voxgig_value*product_uui_d;
-  int64_t response_code;
-  char*response_message;
+  char*packageuuid;
+  voxgig_value*productuuids;
+  int64_t responsecode;
+  char*responsemessage;
 } OutputRemoveProduct;
 
 // OutputRemoveProductCreateData is the typed request payload for OutputRemoveProduct.create.
 typedef struct {
-  char*package_uuid;
-  voxgig_value*product_uui_d;
-  int64_t response_code;
-  char*response_message;
+  char*packageuuid;
+  voxgig_value*productuuids;
+  int64_t responsecode;
+  char*responsemessage;
 } OutputRemoveProductCreateData;
 
 // OutputStart is the typed data model for the output_start entity.
 typedef struct {
   char*id;  // optional
-  int64_t response_code;
-  char*response_message;
+  int64_t responsecode;
+  char*responsemessage;
 } OutputStart;
 
 // OutputStartCreateData is the typed request payload for OutputStart.create.
 typedef struct {
   char*id;  // optional
-  int64_t response_code;
-  char*response_message;
+  int64_t responsecode;
+  char*responsemessage;
 } OutputStartCreateData;
 
 // OutputStatus is the typed data model for the output_status entity.
 typedef struct {
   int64_t percentage;  // optional
-  int64_t response_code;
-  char*response_message;
+  int64_t responsecode;
+  char*responsemessage;
   char*status;  // optional
 } OutputStatus;
 
@@ -440,36 +440,36 @@ typedef struct {
 
 // OutputUpdateProduct is the typed data model for the output_update_product entity.
 typedef struct {
-  bool allow_multiple_order;  // optional
-  char*app_form_name;  // optional
-  bool contract_needed;  // optional
-  bool credentials_needed;  // optional
-  char*description_key;  // optional
-  char*name_key;  // optional
-  bool prescreening_allowed;  // optional
-  char*product_name;  // optional
-  char*product_status;  // optional
-  char*product_uuid;
-  int64_t response_code;
-  char*response_message;
-  char*vendor_name;  // optional
+  bool allowmultipleorders;  // optional
+  char*appformname;  // optional
+  bool contractneeded;  // optional
+  bool credentialsneeded;  // optional
+  char*descriptionkey;  // optional
+  char*namekey;  // optional
+  bool prescreeningallowed;  // optional
+  char*productname;  // optional
+  char*productstatus;  // optional
+  char*productuuid;
+  int64_t responsecode;
+  char*responsemessage;
+  char*vendorname;  // optional
 } OutputUpdateProduct;
 
 // OutputUpdateProductCreateData is the typed request payload for OutputUpdateProduct.create.
 typedef struct {
-  bool allow_multiple_order;  // optional
-  char*app_form_name;  // optional
-  bool contract_needed;  // optional
-  bool credentials_needed;  // optional
-  char*description_key;  // optional
-  char*name_key;  // optional
-  bool prescreening_allowed;  // optional
-  char*product_name;  // optional
-  char*product_status;  // optional
-  char*product_uuid;
-  int64_t response_code;
-  char*response_message;
-  char*vendor_name;  // optional
+  bool allowmultipleorders;  // optional
+  char*appformname;  // optional
+  bool contractneeded;  // optional
+  bool credentialsneeded;  // optional
+  char*descriptionkey;  // optional
+  char*namekey;  // optional
+  bool prescreeningallowed;  // optional
+  char*productname;  // optional
+  char*productstatus;  // optional
+  char*productuuid;
+  int64_t responsecode;
+  char*responsemessage;
+  char*vendorname;  // optional
 } OutputUpdateProductCreateData;
 
 #endif // BLUEFINTECSMERCHANTPORTAL_ENTITY_TYPES_H

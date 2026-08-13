@@ -232,9 +232,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local merchant_portal_api_controller, err = client:MerchantPortalApiController():load()
+    local merchant_portal_common_controller, err = client:MerchantPortalCommonController():load()
     if err then error(err) end
-    -- merchant_portal_api_controller is the loaded record
+    -- merchant_portal_common_controller is the loaded record
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -297,7 +297,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -307,9 +307,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -319,15 +319,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: Create.
 
@@ -337,10 +337,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: Create.
 
@@ -351,29 +351,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -385,15 +385,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -405,14 +405,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -424,10 +424,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -437,20 +437,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: Create.
 
@@ -460,9 +460,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: Load.
 
@@ -472,10 +472,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -486,8 +486,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -497,11 +497,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: Create.
 
@@ -511,10 +511,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -525,8 +525,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -537,8 +537,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Load.
@@ -549,19 +549,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: Create.
 
@@ -678,14 +678,14 @@ Create an instance: `local merchant_portal_pam_contract_controller = client:Merc
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local merchant_portal_pam_contract_controller, err = client:MerchantPortalPamContractController():create({
   language = "example_language", -- string
-  product_order_uuid = "example_product_order_uuid", -- string
+  productOrderUUID = "example_productOrderUUID", -- string
 })
 ```
 
@@ -704,15 +704,15 @@ Create an instance: `local merchant_portal_pam_document_controller = client:Merc
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `appFormFieldDescUUID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local merchant_portal_pam_document_controller, err = client:MerchantPortalPamDocumentController():create({
-  app_form_field_desc_uuid = "example_app_form_field_desc_uuid", -- string
+  appFormFieldDescUUID = "example_appFormFieldDescUUID", -- string
 })
 ```
 
@@ -731,24 +731,24 @@ Create an instance: `local merchant_portal_pam_form_controller = client:Merchant
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `string` |  |
+| `appFormFieldsDescUUID` | `string` |  |
 | `filter` | `table` |  |
 | `language` | `string` |  |
-| `package_order` | `table` |  |
-| `package_order_uuid` | `string` |  |
-| `package_uuid` | `string` |  |
-| `product_order` | `table` |  |
-| `product_order_uuid` | `string` |  |
-| `reason_of_reopening` | `string` |  |
+| `packageOrder` | `table` |  |
+| `packageOrderUUID` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productOrders` | `table` |  |
+| `reasonOfReopening` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local merchant_portal_pam_form_controller, err = client:MerchantPortalPamFormController():create({
-  app_form_fields_desc_uuid = "example_app_form_fields_desc_uuid", -- string
+  appFormFieldsDescUUID = "example_appFormFieldsDescUUID", -- string
   language = "example_language", -- string
-  package_order_uuid = "example_package_order_uuid", -- string
-  reason_of_reopening = "example_reason_of_reopening", -- string
+  packageOrderUUID = "example_packageOrderUUID", -- string
+  reasonOfReopening = "example_reasonOfReopening", -- string
 })
 ```
 
@@ -767,17 +767,17 @@ Create an instance: `local merchant_portal_pam_mandator_controller = client:Merc
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `string` |  |
-| `mandator_name` | `string` |  |
-| `notification_email` | `string` |  |
-| `package_uuid` | `string` |  |
+| `clientSecret` | `string` |  |
+| `mandatorName` | `string` |  |
+| `notificationEmail` | `string` |  |
+| `packageUUID` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local merchant_portal_pam_mandator_controller, err = client:MerchantPortalPamMandatorController():create({
-  mandator_name = "example_mandator_name", -- string
-  package_uuid = "example_package_uuid", -- string
+  mandatorName = "example_mandatorName", -- string
+  packageUUID = "example_packageUUID", -- string
 })
 ```
 
@@ -797,29 +797,29 @@ Create an instance: `local merchant_portal_pam_merchant_controller = client:Merc
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `table` |  |
-| `business_registration_number` | `string` |  |
+| `businessRegistrationNumber` | `string` |  |
 | `city` | `string` |  |
-| `company_name` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `companyName` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
 | `currency` | `string` |  |
 | `email` | `string` |  |
 | `language` | `string` |  |
 | `login` | `string` |  |
 | `mandator` | `string` |  |
+| `merchantContractNumber` | `string` |  |
+| `merchantName` | `string` |  |
 | `merchant_category_code` | `string` |  |
-| `merchant_contract_number` | `string` |  |
-| `merchant_name` | `string` |  |
-| `package_uuid` | `string` |  |
+| `packageUUID` | `string` |  |
 | `packageorderuuid` | `string` |  |
-| `phone_number` | `string` |  |
-| `postal_code` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `postalCode` | `string` |  |
 | `productid_acquirer` | `string` |  |
 | `region` | `string` |  |
-| `registration_number` | `string` |  |
+| `registrationNumber` | `string` |  |
 | `signature` | `string` |  |
 | `street` | `string` |  |
-| `terminal_id` | `table` |  |
+| `terminalIds` | `table` |  |
 | `terminalid_acquirer` | `string` |  |
 | `vu_nummer` | `string` |  |
 
@@ -827,17 +827,17 @@ Create an instance: `local merchant_portal_pam_merchant_controller = client:Merc
 
 ```lua
 local merchant_portal_pam_merchant_controller, err = client:MerchantPortalPamMerchantController():create({
-  business_registration_number = "example_business_registration_number", -- string
-  company_name = "example_company_name", -- string
-  corporate_uuid = "example_corporate_uuid", -- string
+  businessRegistrationNumber = "example_businessRegistrationNumber", -- string
+  companyName = "example_companyName", -- string
+  corporateUUID = "example_corporateUUID", -- string
   currency = "example_currency", -- string
   email = "example_email", -- string
   language = "example_language", -- string
   login = "example_login", -- string
   mandator = "example_mandator", -- string
-  merchant_contract_number = "example_merchant_contract_number", -- string
+  merchantContractNumber = "example_merchantContractNumber", -- string
   packageorderuuid = "example_packageorderuuid", -- string
-  phone_number = "example_phone_number", -- string
+  phoneNumber = "example_phoneNumber", -- string
   productid_acquirer = "example_productid_acquirer", -- string
   vu_nummer = "example_vu_nummer", -- string
 })
@@ -858,15 +858,15 @@ Create an instance: `local merchant_portal_pam_package_controller = client:Merch
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
-| `description_key` | `string` |  |
+| `descriptionKey` | `string` |  |
 | `filter` | `table` |  |
 | `language` | `string` |  |
-| `name_key` | `string` |  |
-| `package_status` | `string` |  |
-| `package_uuid` | `string` |  |
+| `nameKey` | `string` |  |
+| `packageStatus` | `string` |  |
+| `packageUUID` | `string` |  |
 | `pagination` | `table` |  |
 | `sorting` | `table` |  |
 
@@ -875,7 +875,7 @@ Create an instance: `local merchant_portal_pam_package_controller = client:Merch
 ```lua
 local merchant_portal_pam_package_controller, err = client:MerchantPortalPamPackageController():create({
   language = "example_language", -- string
-  package_uuid = "example_package_uuid", -- string
+  packageUUID = "example_packageUUID", -- string
 })
 ```
 
@@ -894,14 +894,14 @@ Create an instance: `local merchant_portal_pam_product_controller = client:Merch
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
 | `filter` | `table` |  |
 | `language` | `string` |  |
-| `merchant_id` | `string` |  |
-| `package_order_uuid` | `string` |  |
+| `merchantID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
 | `pagination` | `table` |  |
-| `product_order_uuid` | `string` |  |
-| `product_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productUUID` | `string` |  |
 | `reason_decline` | `string` |  |
 | `sorting` | `table` |  |
 
@@ -909,9 +909,9 @@ Create an instance: `local merchant_portal_pam_product_controller = client:Merch
 
 ```lua
 local merchant_portal_pam_product_controller, err = client:MerchantPortalPamProductController():create({
-  package_order_uuid = "example_package_order_uuid", -- string
-  product_order_uuid = "example_product_order_uuid", -- string
-  product_uuid = "example_product_uuid", -- string
+  packageOrderUUID = "example_packageOrderUUID", -- string
+  productOrderUUID = "example_productOrderUUID", -- string
+  productUUID = "example_productUUID", -- string
   reason_decline = "example_reason_decline", -- string
 })
 ```
@@ -931,19 +931,19 @@ Create an instance: `local output_add_product = client:OutputAddProduct(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `table` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `table` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local output_add_product, err = client:OutputAddProduct():create({
-  package_uuid = "example_package_uuid", -- string
-  product_uui_d = {}, -- table
-  response_code = 1, -- number
-  response_message = "example_response_message", -- string
+  packageUUID = "example_packageUUID", -- string
+  productUUIDs = {}, -- table
+  responseCode = 1, -- number
+  responseMessage = "example_responseMessage", -- string
 })
 ```
 
@@ -962,37 +962,37 @@ Create an instance: `local output_create_product = client:OutputCreateProduct(ni
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `string` |  |
-| `allow_multiple_order` | `boolean` |  |
-| `app_form_template_name` | `string` |  |
-| `contract_needed` | `boolean` |  |
-| `credentials_needed` | `boolean` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `boolean` |  |
-| `product_name` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
-| `terminal_template_name` | `string` |  |
-| `vendor_name` | `string` |  |
-| `xml_template_file` | `string` |  |
+| `acquirerId` | `string` |  |
+| `allowMultipleOrders` | `boolean` |  |
+| `appFormTemplateName` | `string` |  |
+| `contractNeeded` | `boolean` |  |
+| `credentialsNeeded` | `boolean` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `boolean` |  |
+| `productName` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
+| `terminalTemplateName` | `string` |  |
+| `vendorName` | `string` |  |
+| `xmlTemplateFile` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local output_create_product, err = client:OutputCreateProduct():create({
-  allow_multiple_order = true, -- boolean
-  app_form_template_name = "example_app_form_template_name", -- string
-  contract_needed = true, -- boolean
-  description_key = "example_description_key", -- string
-  name_key = "example_name_key", -- string
-  prescreening_allowed = true, -- boolean
-  product_name = "example_product_name", -- string
-  response_code = 1, -- number
-  response_message = "example_response_message", -- string
-  terminal_template_name = "example_terminal_template_name", -- string
-  vendor_name = "example_vendor_name", -- string
-  xml_template_file = "example_xml_template_file", -- string
+  allowMultipleOrders = true, -- boolean
+  appFormTemplateName = "example_appFormTemplateName", -- string
+  contractNeeded = true, -- boolean
+  descriptionKey = "example_descriptionKey", -- string
+  nameKey = "example_nameKey", -- string
+  prescreeningAllowed = true, -- boolean
+  productName = "example_productName", -- string
+  responseCode = 1, -- number
+  responseMessage = "example_responseMessage", -- string
+  terminalTemplateName = "example_terminalTemplateName", -- string
+  vendorName = "example_vendorName", -- string
+  xmlTemplateFile = "example_xmlTemplateFile", -- string
 })
 ```
 
@@ -1011,9 +1011,9 @@ Create an instance: `local output_detail = client:OutputDetail(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `table` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `batch` | `table` |  |
+| `lines` | `table` |  |
+| `progress` | `table` |  |
 
 #### Example: Load
 
@@ -1036,10 +1036,10 @@ Create an instance: `local output_list = client:OutputList(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `table` |  |
+| `items` | `table` |  |
 | `pagination` | `table` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `table` |  |
 
 #### Example: Create
@@ -1047,8 +1047,8 @@ Create an instance: `local output_list = client:OutputList(nil)`
 ```lua
 local output_list, err = client:OutputList():create({
   pagination = {}, -- table
-  response_code = 1, -- number
-  response_message = "example_response_message", -- string
+  responseCode = 1, -- number
+  responseMessage = "example_responseMessage", -- string
 })
 ```
 
@@ -1067,8 +1067,8 @@ Create an instance: `local output_message = client:OutputMessage(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Load
 
@@ -1091,21 +1091,21 @@ Create an instance: `local output_move_tid = client:OutputMoveTid(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `table` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
-| `target_package_order_uuid` | `string` |  |
-| `target_product_order_uuid` | `string` |  |
+| `productOrderUUIDs` | `table` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
+| `targetPackageOrderUUID` | `string` |  |
+| `targetProductOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local output_move_tid, err = client:OutputMoveTid():create({
-  product_order_uui_d = {}, -- table
-  response_code = 1, -- number
-  response_message = "example_response_message", -- string
-  target_package_order_uuid = "example_target_package_order_uuid", -- string
-  target_product_order_uuid = "example_target_product_order_uuid", -- string
+  productOrderUUIDs = {}, -- table
+  responseCode = 1, -- number
+  responseMessage = "example_responseMessage", -- string
+  targetPackageOrderUUID = "example_targetPackageOrderUUID", -- string
+  targetProductOrderUUID = "example_targetProductOrderUUID", -- string
 })
 ```
 
@@ -1124,19 +1124,19 @@ Create an instance: `local output_remove_product = client:OutputRemoveProduct(ni
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `table` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `table` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local output_remove_product, err = client:OutputRemoveProduct():create({
-  package_uuid = "example_package_uuid", -- string
-  product_uui_d = {}, -- table
-  response_code = 1, -- number
-  response_message = "example_response_message", -- string
+  packageUUID = "example_packageUUID", -- string
+  productUUIDs = {}, -- table
+  responseCode = 1, -- number
+  responseMessage = "example_responseMessage", -- string
 })
 ```
 
@@ -1156,15 +1156,15 @@ Create an instance: `local output_start = client:OutputStart(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local output_start, err = client:OutputStart():create({
-  response_code = 1, -- number
-  response_message = "example_response_message", -- string
+  responseCode = 1, -- number
+  responseMessage = "example_responseMessage", -- string
 })
 ```
 
@@ -1184,8 +1184,8 @@ Create an instance: `local output_status = client:OutputStatus(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `number` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `status` | `string` |  |
 
 #### Example: Load
@@ -1209,27 +1209,27 @@ Create an instance: `local output_update_product = client:OutputUpdateProduct(ni
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `boolean` |  |
-| `app_form_name` | `string` |  |
-| `contract_needed` | `boolean` |  |
-| `credentials_needed` | `boolean` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `boolean` |  |
-| `product_name` | `string` |  |
-| `product_status` | `string` |  |
-| `product_uuid` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
-| `vendor_name` | `string` |  |
+| `allowMultipleOrders` | `boolean` |  |
+| `appFormName` | `string` |  |
+| `contractNeeded` | `boolean` |  |
+| `credentialsNeeded` | `boolean` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `boolean` |  |
+| `productName` | `string` |  |
+| `productStatus` | `string` |  |
+| `productUUID` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
+| `vendorName` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local output_update_product, err = client:OutputUpdateProduct():create({
-  product_uuid = "example_product_uuid", -- string
-  response_code = 1, -- number
-  response_message = "example_response_message", -- string
+  productUUID = "example_productUUID", -- string
+  responseCode = 1, -- number
+  responseMessage = "example_responseMessage", -- string
 })
 ```
 

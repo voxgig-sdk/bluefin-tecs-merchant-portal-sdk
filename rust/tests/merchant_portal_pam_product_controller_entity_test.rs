@@ -41,7 +41,7 @@ fn merchant_portal_pam_product_controller_entity_basic() {
     // The basic flow consumes synthetic IDs from the fixture. In live mode
     // without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup.synthetic_only {
-        eprintln!("skip: live entity test uses synthetic IDs from fixture — set BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_PAM_PRODUCT_CONTROLLER_ENTID JSON to run live");
+        eprintln!("skip: live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_PRODUCT_CONTROLLER_ENTID JSON to run live");
         return;
     }
     let client = setup.client.clone();
@@ -55,7 +55,7 @@ fn merchant_portal_pam_product_controller_entity_basic() {
     let merchant_portal_pam_product_controller_ref01_data_result = merchant_portal_pam_product_controller_ref01_ent
         .create(merchant_portal_pam_product_controller_ref01_data.clone(), Value::Noval)
         .expect("create failed");
-    let merchant_portal_pam_product_controller_ref01_data = to_map(&merchant_portal_pam_product_controller_ref01_data_result);
+    let merchant_portal_pam_product_controller_ref01_data = to_map(&merchant_portal_pam_product_controller_ref01_data_result.data(None));
     assert!(
         matches!(merchant_portal_pam_product_controller_ref01_data, Value::Map(_)),
         "expected create result to be a map"
@@ -107,22 +107,22 @@ fn merchant_portal_pam_product_controller_basic_setup(extra: Value) -> EntityTes
     // Detect ENTID env override before env_override consumes it. When live
     // mode is on without a real override, the basic test runs against
     // synthetic IDs from the fixture and 4xx's.
-    let entid_env_raw = std::env::var("BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_PAM_PRODUCT_CONTROLLER_ENTID").unwrap_or_default();
+    let entid_env_raw = std::env::var("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_PRODUCT_CONTROLLER_ENTID").unwrap_or_default();
     let idmap_overridden =
         !entid_env_raw.trim().is_empty() && entid_env_raw.trim().starts_with('{');
 
     let env = env_override(jo(vec![
-        ("BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_PAM_PRODUCT_CONTROLLER_ENTID", idmap.clone()),
-        ("BLUEFINTECSMERCHANTPORTAL_TEST_LIVE", Value::str("FALSE")),
-        ("BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN", Value::str("FALSE")),
+        ("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_PRODUCT_CONTROLLER_ENTID", idmap.clone()),
+        ("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE", Value::str("FALSE")),
+        ("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN", Value::str("FALSE")),
     ]));
 
-    let idmap_resolved = match to_map(&getp(&env, "BLUEFINTECSMERCHANTPORTAL_TEST_MERCHANT_PORTAL_PAM_PRODUCT_CONTROLLER_ENTID")) {
+    let idmap_resolved = match to_map(&getp(&env, "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_PRODUCT_CONTROLLER_ENTID")) {
         Value::Map(m) => Value::Map(m),
         _ => to_map(&idmap),
     };
 
-    let live = getp(&env, "BLUEFINTECSMERCHANTPORTAL_TEST_LIVE") == Value::str("TRUE");
+    let live = getp(&env, "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE") == Value::str("TRUE");
 
     let client = if live {
         let merged = vs::merge(
@@ -139,7 +139,7 @@ fn merchant_portal_pam_product_controller_basic_setup(extra: Value) -> EntityTes
         data: entity_data,
         idmap: idmap_resolved,
         env: env.clone(),
-        explain: getp(&env, "BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN") == Value::str("TRUE"),
+        explain: getp(&env, "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN") == Value::str("TRUE"),
         live,
         synthetic_only: live && !idmap_overridden,
         now: now_ms(),

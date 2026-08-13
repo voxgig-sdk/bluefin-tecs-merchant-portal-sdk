@@ -307,7 +307,7 @@ Entity* merchant_portal_pam_contract_controller = bluefintecsmerchantportal_merc
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `language` | `char*` | Yes |  |
-| `product_order_uuid` | `char*` | Yes |  |
+| `productOrderUUID` | `char*` | Yes |  |
 
 ### Operations
 
@@ -319,7 +319,7 @@ Create a new entity with the given data. Returns the created entity data and set
 Entity* merchant_portal_pam_contract_controller = bluefintecsmerchantportal_merchant_portal_pam_contract_controller(client, NULL);
 voxgig_value* result = merchant_portal_pam_contract_controller->vt->create(merchant_portal_pam_contract_controller, cmap(2,
     "language", v_str("example_language"),  // char*
-    "product_order_uuid", v_str("example_product_order_uuid"))  // char*
+    "productOrderUUID", v_str("example_productOrderUUID"))  // char*
 , NULL, &err);
 ```
 
@@ -354,9 +354,9 @@ Entity* merchant_portal_pam_document_controller = bluefintecsmerchantportal_merc
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_field_desc_uuid` | `char*` | Yes |  |
-| `package_order_uuid` | `char*` | No |  |
-| `product_order_uuid` | `char*` | No |  |
+| `appFormFieldDescUUID` | `char*` | Yes |  |
+| `packageOrderUUID` | `char*` | No |  |
+| `productOrderUUID` | `char*` | No |  |
 
 ### Operations
 
@@ -367,7 +367,7 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* merchant_portal_pam_document_controller = bluefintecsmerchantportal_merchant_portal_pam_document_controller(client, NULL);
 voxgig_value* result = merchant_portal_pam_document_controller->vt->create(merchant_portal_pam_document_controller, cmap(1,
-    "app_form_field_desc_uuid", v_str("example_app_form_field_desc_uuid"))  // char*
+    "appFormFieldDescUUID", v_str("example_appFormFieldDescUUID"))  // char*
 , NULL, &err);
 ```
 
@@ -402,29 +402,29 @@ Entity* merchant_portal_pam_form_controller = bluefintecsmerchantportal_merchant
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `char*` | Yes |  |
+| `appFormFieldsDescUUID` | `char*` | Yes |  |
 | `filter` | `voxgig_value* (map)` | No |  |
 | `language` | `char*` | Yes |  |
-| `package_order` | `voxgig_value* (map)` | No |  |
-| `package_order_uuid` | `char*` | Yes |  |
-| `package_uuid` | `char*` | No |  |
-| `product_order` | `voxgig_value* (list)` | No |  |
-| `product_order_uuid` | `char*` | No |  |
-| `reason_of_reopening` | `char*` | Yes |  |
+| `packageOrder` | `voxgig_value* (map)` | No |  |
+| `packageOrderUUID` | `char*` | Yes |  |
+| `packageUUID` | `char*` | No |  |
+| `productOrderUUID` | `char*` | No |  |
+| `productOrders` | `voxgig_value* (list)` | No |  |
+| `reasonOfReopening` | `char*` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `app_form_fields_desc_uuid` | - |
+| `appFormFieldsDescUUID` | - |
 | `filter` | - |
 | `language` | Yes |
-| `package_order` | - |
-| `package_order_uuid` | Yes |
-| `package_uuid` | - |
-| `product_order` | - |
-| `product_order_uuid` | Yes |
-| `reason_of_reopening` | - |
+| `packageOrder` | - |
+| `packageOrderUUID` | Yes |
+| `packageUUID` | - |
+| `productOrderUUID` | Yes |
+| `productOrders` | - |
+| `reasonOfReopening` | - |
 
 ### Operations
 
@@ -435,10 +435,10 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* merchant_portal_pam_form_controller = bluefintecsmerchantportal_merchant_portal_pam_form_controller(client, NULL);
 voxgig_value* result = merchant_portal_pam_form_controller->vt->create(merchant_portal_pam_form_controller, cmap(4,
-    "app_form_fields_desc_uuid", v_str("example_app_form_fields_desc_uuid"),  // char*
+    "appFormFieldsDescUUID", v_str("example_appFormFieldsDescUUID"),  // char*
     "language", v_str("example_language"),  // char*
-    "package_order_uuid", v_str("example_package_order_uuid"),  // char*
-    "reason_of_reopening", v_str("example_reason_of_reopening"))  // char*
+    "packageOrderUUID", v_str("example_packageOrderUUID"),  // char*
+    "reasonOfReopening", v_str("example_reasonOfReopening"))  // char*
 , NULL, &err);
 ```
 
@@ -473,10 +473,10 @@ Entity* merchant_portal_pam_mandator_controller = bluefintecsmerchantportal_merc
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `char*` | No |  |
-| `mandator_name` | `char*` | Yes |  |
-| `notification_email` | `char*` | No |  |
-| `package_uuid` | `char*` | Yes |  |
+| `clientSecret` | `char*` | No |  |
+| `mandatorName` | `char*` | Yes |  |
+| `notificationEmail` | `char*` | No |  |
+| `packageUUID` | `char*` | Yes |  |
 
 ### Operations
 
@@ -487,8 +487,8 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* merchant_portal_pam_mandator_controller = bluefintecsmerchantportal_merchant_portal_pam_mandator_controller(client, NULL);
 voxgig_value* result = merchant_portal_pam_mandator_controller->vt->create(merchant_portal_pam_mandator_controller, cmap(2,
-    "mandator_name", v_str("example_mandator_name"),  // char*
-    "package_uuid", v_str("example_package_uuid"))  // char*
+    "mandatorName", v_str("example_mandatorName"),  // char*
+    "packageUUID", v_str("example_packageUUID"))  // char*
 , NULL, &err);
 ```
 
@@ -524,29 +524,29 @@ Entity* merchant_portal_pam_merchant_controller = bluefintecsmerchantportal_merc
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `additional_data` | `voxgig_value* (map)` | No |  |
-| `business_registration_number` | `char*` | Yes |  |
+| `businessRegistrationNumber` | `char*` | Yes |  |
 | `city` | `char*` | No |  |
-| `company_name` | `char*` | Yes |  |
-| `corporate_uuid` | `char*` | Yes |  |
+| `companyName` | `char*` | Yes |  |
+| `corporateUUID` | `char*` | Yes |  |
 | `country` | `char*` | No |  |
 | `currency` | `char*` | Yes |  |
 | `email` | `char*` | Yes |  |
 | `language` | `char*` | Yes |  |
 | `login` | `char*` | Yes |  |
 | `mandator` | `char*` | Yes |  |
+| `merchantContractNumber` | `char*` | Yes |  |
+| `merchantName` | `char*` | No |  |
 | `merchant_category_code` | `char*` | No |  |
-| `merchant_contract_number` | `char*` | Yes |  |
-| `merchant_name` | `char*` | No |  |
-| `package_uuid` | `char*` | No |  |
+| `packageUUID` | `char*` | No |  |
 | `packageorderuuid` | `char*` | Yes |  |
-| `phone_number` | `char*` | Yes |  |
-| `postal_code` | `char*` | No |  |
+| `phoneNumber` | `char*` | Yes |  |
+| `postalCode` | `char*` | No |  |
 | `productid_acquirer` | `char*` | Yes |  |
 | `region` | `char*` | No |  |
-| `registration_number` | `char*` | No |  |
+| `registrationNumber` | `char*` | No |  |
 | `signature` | `char*` | No |  |
 | `street` | `char*` | No |  |
-| `terminal_id` | `voxgig_value* (list)` | No |  |
+| `terminalIds` | `voxgig_value* (list)` | No |  |
 | `terminalid_acquirer` | `char*` | No |  |
 | `vu_nummer` | `char*` | Yes |  |
 
@@ -555,29 +555,29 @@ Entity* merchant_portal_pam_merchant_controller = bluefintecsmerchantportal_merc
 | Field | create |
 | --- | --- |
 | `additional_data` | - |
-| `business_registration_number` | - |
+| `businessRegistrationNumber` | - |
 | `city` | - |
-| `company_name` | - |
-| `corporate_uuid` | - |
+| `companyName` | - |
+| `corporateUUID` | - |
 | `country` | - |
 | `currency` | - |
 | `email` | - |
 | `language` | - |
 | `login` | - |
 | `mandator` | - |
+| `merchantContractNumber` | Yes |
+| `merchantName` | - |
 | `merchant_category_code` | - |
-| `merchant_contract_number` | Yes |
-| `merchant_name` | - |
-| `package_uuid` | - |
+| `packageUUID` | - |
 | `packageorderuuid` | - |
-| `phone_number` | - |
-| `postal_code` | - |
+| `phoneNumber` | - |
+| `postalCode` | - |
 | `productid_acquirer` | - |
 | `region` | - |
-| `registration_number` | - |
+| `registrationNumber` | - |
 | `signature` | - |
 | `street` | - |
-| `terminal_id` | - |
+| `terminalIds` | - |
 | `terminalid_acquirer` | - |
 | `vu_nummer` | - |
 
@@ -590,17 +590,17 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* merchant_portal_pam_merchant_controller = bluefintecsmerchantportal_merchant_portal_pam_merchant_controller(client, NULL);
 voxgig_value* result = merchant_portal_pam_merchant_controller->vt->create(merchant_portal_pam_merchant_controller, cmap(13,
-    "business_registration_number", v_str("example_business_registration_number"),  // char*
-    "company_name", v_str("example_company_name"),  // char*
-    "corporate_uuid", v_str("example_corporate_uuid"),  // char*
+    "businessRegistrationNumber", v_str("example_businessRegistrationNumber"),  // char*
+    "companyName", v_str("example_companyName"),  // char*
+    "corporateUUID", v_str("example_corporateUUID"),  // char*
     "currency", v_str("example_currency"),  // char*
     "email", v_str("example_email"),  // char*
     "language", v_str("example_language"),  // char*
     "login", v_str("example_login"),  // char*
     "mandator", v_str("example_mandator"),  // char*
-    "merchant_contract_number", v_str("example_merchant_contract_number"),  // char*
+    "merchantContractNumber", v_str("example_merchantContractNumber"),  // char*
     "packageorderuuid", v_str("example_packageorderuuid"),  // char*
-    "phone_number", v_str("example_phone_number"),  // char*
+    "phoneNumber", v_str("example_phoneNumber"),  // char*
     "productid_acquirer", v_str("example_productid_acquirer"),  // char*
     "vu_nummer", v_str("example_vu_nummer"))  // char*
 , NULL, &err);
@@ -637,15 +637,15 @@ Entity* merchant_portal_pam_package_controller = bluefintecsmerchantportal_merch
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `char*` | No |  |
-| `corporate_uuid` | `char*` | No |  |
+| `consumerUUID` | `char*` | No |  |
+| `corporateUUID` | `char*` | No |  |
 | `country` | `char*` | No |  |
-| `description_key` | `char*` | No |  |
+| `descriptionKey` | `char*` | No |  |
 | `filter` | `voxgig_value* (map)` | No |  |
 | `language` | `char*` | Yes |  |
-| `name_key` | `char*` | No |  |
-| `package_status` | `char*` | No |  |
-| `package_uuid` | `char*` | Yes |  |
+| `nameKey` | `char*` | No |  |
+| `packageStatus` | `char*` | No |  |
+| `packageUUID` | `char*` | Yes |  |
 | `pagination` | `voxgig_value* (map)` | No |  |
 | `sorting` | `voxgig_value* (map)` | No |  |
 
@@ -653,15 +653,15 @@ Entity* merchant_portal_pam_package_controller = bluefintecsmerchantportal_merch
 
 | Field | create |
 | --- | --- |
-| `consumer_uuid` | - |
-| `corporate_uuid` | - |
+| `consumerUUID` | - |
+| `corporateUUID` | - |
 | `country` | - |
-| `description_key` | - |
+| `descriptionKey` | - |
 | `filter` | - |
 | `language` | Yes |
-| `name_key` | - |
-| `package_status` | - |
-| `package_uuid` | - |
+| `nameKey` | - |
+| `packageStatus` | - |
+| `packageUUID` | - |
 | `pagination` | - |
 | `sorting` | - |
 
@@ -675,7 +675,7 @@ Create a new entity with the given data. Returns the created entity data and set
 Entity* merchant_portal_pam_package_controller = bluefintecsmerchantportal_merchant_portal_pam_package_controller(client, NULL);
 voxgig_value* result = merchant_portal_pam_package_controller->vt->create(merchant_portal_pam_package_controller, cmap(2,
     "language", v_str("example_language"),  // char*
-    "package_uuid", v_str("example_package_uuid"))  // char*
+    "packageUUID", v_str("example_packageUUID"))  // char*
 , NULL, &err);
 ```
 
@@ -710,14 +710,14 @@ Entity* merchant_portal_pam_product_controller = bluefintecsmerchantportal_merch
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `char*` | No |  |
+| `consumerUUID` | `char*` | No |  |
 | `filter` | `voxgig_value* (map)` | No |  |
 | `language` | `char*` | No |  |
-| `merchant_id` | `char*` | No |  |
-| `package_order_uuid` | `char*` | Yes |  |
+| `merchantID` | `char*` | No |  |
+| `packageOrderUUID` | `char*` | Yes |  |
 | `pagination` | `voxgig_value* (map)` | No |  |
-| `product_order_uuid` | `char*` | Yes |  |
-| `product_uuid` | `char*` | Yes |  |
+| `productOrderUUID` | `char*` | Yes |  |
+| `productUUID` | `char*` | Yes |  |
 | `reason_decline` | `char*` | Yes |  |
 | `sorting` | `voxgig_value* (map)` | No |  |
 
@@ -730,9 +730,9 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* merchant_portal_pam_product_controller = bluefintecsmerchantportal_merchant_portal_pam_product_controller(client, NULL);
 voxgig_value* result = merchant_portal_pam_product_controller->vt->create(merchant_portal_pam_product_controller, cmap(4,
-    "package_order_uuid", v_str("example_package_order_uuid"),  // char*
-    "product_order_uuid", v_str("example_product_order_uuid"),  // char*
-    "product_uuid", v_str("example_product_uuid"),  // char*
+    "packageOrderUUID", v_str("example_packageOrderUUID"),  // char*
+    "productOrderUUID", v_str("example_productOrderUUID"),  // char*
+    "productUUID", v_str("example_productUUID"),  // char*
     "reason_decline", v_str("example_reason_decline"))  // char*
 , NULL, &err);
 ```
@@ -768,10 +768,10 @@ Entity* output_add_product = bluefintecsmerchantportal_output_add_product(client
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `char*` | Yes |  |
-| `product_uui_d` | `voxgig_value* (list)` | Yes |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `char*` | Yes |  |
+| `packageUUID` | `char*` | Yes |  |
+| `productUUIDs` | `voxgig_value* (list)` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `char*` | Yes |  |
 
 ### Operations
 
@@ -782,10 +782,10 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* output_add_product = bluefintecsmerchantportal_output_add_product(client, NULL);
 voxgig_value* result = output_add_product->vt->create(output_add_product, cmap(4,
-    "package_uuid", v_str("example_package_uuid"),  // char*
-    "product_uui_d", v_list(),  // voxgig_value* (list)
-    "response_code", v_num(1),  // int64_t
-    "response_message", v_str("example_response_message"))  // char*
+    "packageUUID", v_str("example_packageUUID"),  // char*
+    "productUUIDs", v_list(),  // voxgig_value* (list)
+    "responseCode", v_num(1),  // int64_t
+    "responseMessage", v_str("example_responseMessage"))  // char*
 , NULL, &err);
 ```
 
@@ -820,20 +820,20 @@ Entity* output_create_product = bluefintecsmerchantportal_output_create_product(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `char*` | No |  |
-| `allow_multiple_order` | `bool` | Yes |  |
-| `app_form_template_name` | `char*` | Yes |  |
-| `contract_needed` | `bool` | Yes |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `char*` | Yes |  |
-| `name_key` | `char*` | Yes |  |
-| `prescreening_allowed` | `bool` | Yes |  |
-| `product_name` | `char*` | Yes |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `char*` | Yes |  |
-| `terminal_template_name` | `char*` | Yes |  |
-| `vendor_name` | `char*` | Yes |  |
-| `xml_template_file` | `char*` | Yes |  |
+| `acquirerId` | `char*` | No |  |
+| `allowMultipleOrders` | `bool` | Yes |  |
+| `appFormTemplateName` | `char*` | Yes |  |
+| `contractNeeded` | `bool` | Yes |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `char*` | Yes |  |
+| `nameKey` | `char*` | Yes |  |
+| `prescreeningAllowed` | `bool` | Yes |  |
+| `productName` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `char*` | Yes |  |
+| `terminalTemplateName` | `char*` | Yes |  |
+| `vendorName` | `char*` | Yes |  |
+| `xmlTemplateFile` | `char*` | Yes |  |
 
 ### Operations
 
@@ -844,18 +844,18 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* output_create_product = bluefintecsmerchantportal_output_create_product(client, NULL);
 voxgig_value* result = output_create_product->vt->create(output_create_product, cmap(12,
-    "allow_multiple_order", v_bool(true),  // bool
-    "app_form_template_name", v_str("example_app_form_template_name"),  // char*
-    "contract_needed", v_bool(true),  // bool
-    "description_key", v_str("example_description_key"),  // char*
-    "name_key", v_str("example_name_key"),  // char*
-    "prescreening_allowed", v_bool(true),  // bool
-    "product_name", v_str("example_product_name"),  // char*
-    "response_code", v_num(1),  // int64_t
-    "response_message", v_str("example_response_message"),  // char*
-    "terminal_template_name", v_str("example_terminal_template_name"),  // char*
-    "vendor_name", v_str("example_vendor_name"),  // char*
-    "xml_template_file", v_str("example_xml_template_file"))  // char*
+    "allowMultipleOrders", v_bool(true),  // bool
+    "appFormTemplateName", v_str("example_appFormTemplateName"),  // char*
+    "contractNeeded", v_bool(true),  // bool
+    "descriptionKey", v_str("example_descriptionKey"),  // char*
+    "nameKey", v_str("example_nameKey"),  // char*
+    "prescreeningAllowed", v_bool(true),  // bool
+    "productName", v_str("example_productName"),  // char*
+    "responseCode", v_num(1),  // int64_t
+    "responseMessage", v_str("example_responseMessage"),  // char*
+    "terminalTemplateName", v_str("example_terminalTemplateName"),  // char*
+    "vendorName", v_str("example_vendorName"),  // char*
+    "xmlTemplateFile", v_str("example_xmlTemplateFile"))  // char*
 , NULL, &err);
 ```
 
@@ -890,9 +890,9 @@ Entity* output_detail = bluefintecsmerchantportal_output_detail(client, NULL);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `detail` | `voxgig_value* (map)` | No |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `char*` | Yes |  |
+| `batch` | `voxgig_value* (map)` | No |  |
+| `lines` | `voxgig_value* (map)` | No |  |
+| `progress` | `voxgig_value* (map)` | No |  |
 
 ### Operations
 
@@ -936,20 +936,20 @@ Entity* output_list = bluefintecsmerchantportal_output_list(client, NULL);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `item` | `voxgig_value* (list)` | No |  |
+| `items` | `voxgig_value* (list)` | No |  |
 | `pagination` | `voxgig_value* (map)` | Yes |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `char*` | Yes |  |
 | `sorting` | `voxgig_value* (map)` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `item` | - |
+| `items` | - |
 | `pagination` | Yes |
-| `response_code` | - |
-| `response_message` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
 | `sorting` | - |
 
 ### Operations
@@ -962,8 +962,8 @@ Create a new entity with the given data. Returns the created entity data and set
 Entity* output_list = bluefintecsmerchantportal_output_list(client, NULL);
 voxgig_value* result = output_list->vt->create(output_list, cmap(3,
     "pagination", v_map(),  // voxgig_value* (map)
-    "response_code", v_num(1),  // int64_t
-    "response_message", v_str("example_response_message"))  // char*
+    "responseCode", v_num(1),  // int64_t
+    "responseMessage", v_str("example_responseMessage"))  // char*
 , NULL, &err);
 ```
 
@@ -998,8 +998,8 @@ Entity* output_message = bluefintecsmerchantportal_output_message(client, NULL);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `char*` | Yes |  |
 
 ### Operations
 
@@ -1043,11 +1043,11 @@ Entity* output_move_tid = bluefintecsmerchantportal_output_move_tid(client, NULL
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `product_order_uui_d` | `voxgig_value* (list)` | Yes |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `char*` | Yes |  |
-| `target_package_order_uuid` | `char*` | Yes |  |
-| `target_product_order_uuid` | `char*` | Yes |  |
+| `productOrderUUIDs` | `voxgig_value* (list)` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `char*` | Yes |  |
+| `targetPackageOrderUUID` | `char*` | Yes |  |
+| `targetProductOrderUUID` | `char*` | Yes |  |
 
 ### Operations
 
@@ -1058,11 +1058,11 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* output_move_tid = bluefintecsmerchantportal_output_move_tid(client, NULL);
 voxgig_value* result = output_move_tid->vt->create(output_move_tid, cmap(5,
-    "product_order_uui_d", v_list(),  // voxgig_value* (list)
-    "response_code", v_num(1),  // int64_t
-    "response_message", v_str("example_response_message"),  // char*
-    "target_package_order_uuid", v_str("example_target_package_order_uuid"),  // char*
-    "target_product_order_uuid", v_str("example_target_product_order_uuid"))  // char*
+    "productOrderUUIDs", v_list(),  // voxgig_value* (list)
+    "responseCode", v_num(1),  // int64_t
+    "responseMessage", v_str("example_responseMessage"),  // char*
+    "targetPackageOrderUUID", v_str("example_targetPackageOrderUUID"),  // char*
+    "targetProductOrderUUID", v_str("example_targetProductOrderUUID"))  // char*
 , NULL, &err);
 ```
 
@@ -1097,10 +1097,10 @@ Entity* output_remove_product = bluefintecsmerchantportal_output_remove_product(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `package_uuid` | `char*` | Yes |  |
-| `product_uui_d` | `voxgig_value* (list)` | Yes |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `char*` | Yes |  |
+| `packageUUID` | `char*` | Yes |  |
+| `productUUIDs` | `voxgig_value* (list)` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `char*` | Yes |  |
 
 ### Operations
 
@@ -1111,10 +1111,10 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* output_remove_product = bluefintecsmerchantportal_output_remove_product(client, NULL);
 voxgig_value* result = output_remove_product->vt->create(output_remove_product, cmap(4,
-    "package_uuid", v_str("example_package_uuid"),  // char*
-    "product_uui_d", v_list(),  // voxgig_value* (list)
-    "response_code", v_num(1),  // int64_t
-    "response_message", v_str("example_response_message"))  // char*
+    "packageUUID", v_str("example_packageUUID"),  // char*
+    "productUUIDs", v_list(),  // voxgig_value* (list)
+    "responseCode", v_num(1),  // int64_t
+    "responseMessage", v_str("example_responseMessage"))  // char*
 , NULL, &err);
 ```
 
@@ -1150,8 +1150,8 @@ Entity* output_start = bluefintecsmerchantportal_output_start(client, NULL);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `char*` | No |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `char*` | Yes |  |
 
 ### Operations
 
@@ -1162,8 +1162,8 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* output_start = bluefintecsmerchantportal_output_start(client, NULL);
 voxgig_value* result = output_start->vt->create(output_start, cmap(2,
-    "response_code", v_num(1),  // int64_t
-    "response_message", v_str("example_response_message"))  // char*
+    "responseCode", v_num(1),  // int64_t
+    "responseMessage", v_str("example_responseMessage"))  // char*
 , NULL, &err);
 ```
 
@@ -1199,8 +1199,8 @@ Entity* output_status = bluefintecsmerchantportal_output_status(client, NULL);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `int64_t` | No |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `char*` | Yes |  |
 | `status` | `char*` | No |  |
 
 ### Operations
@@ -1245,19 +1245,19 @@ Entity* output_update_product = bluefintecsmerchantportal_output_update_product(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allow_multiple_order` | `bool` | No |  |
-| `app_form_name` | `char*` | No |  |
-| `contract_needed` | `bool` | No |  |
-| `credentials_needed` | `bool` | No |  |
-| `description_key` | `char*` | No |  |
-| `name_key` | `char*` | No |  |
-| `prescreening_allowed` | `bool` | No |  |
-| `product_name` | `char*` | No |  |
-| `product_status` | `char*` | No |  |
-| `product_uuid` | `char*` | Yes |  |
-| `response_code` | `int64_t` | Yes |  |
-| `response_message` | `char*` | Yes |  |
-| `vendor_name` | `char*` | No |  |
+| `allowMultipleOrders` | `bool` | No |  |
+| `appFormName` | `char*` | No |  |
+| `contractNeeded` | `bool` | No |  |
+| `credentialsNeeded` | `bool` | No |  |
+| `descriptionKey` | `char*` | No |  |
+| `nameKey` | `char*` | No |  |
+| `prescreeningAllowed` | `bool` | No |  |
+| `productName` | `char*` | No |  |
+| `productStatus` | `char*` | No |  |
+| `productUUID` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | Yes |  |
+| `responseMessage` | `char*` | Yes |  |
+| `vendorName` | `char*` | No |  |
 
 ### Operations
 
@@ -1268,9 +1268,9 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* output_update_product = bluefintecsmerchantportal_output_update_product(client, NULL);
 voxgig_value* result = output_update_product->vt->create(output_update_product, cmap(3,
-    "product_uuid", v_str("example_product_uuid"),  // char*
-    "response_code", v_num(1),  // int64_t
-    "response_message", v_str("example_response_message"))  // char*
+    "productUUID", v_str("example_productUUID"),  // char*
+    "responseCode", v_num(1),  // int64_t
+    "responseMessage", v_str("example_responseMessage"))  // char*
 , NULL, &err);
 ```
 

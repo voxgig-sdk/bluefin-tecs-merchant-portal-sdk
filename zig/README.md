@@ -317,7 +317,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -327,9 +327,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -339,15 +339,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: Create.
 
@@ -357,10 +357,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: Create.
 
@@ -371,29 +371,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -405,15 +405,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -425,14 +425,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -444,10 +444,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -457,20 +457,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: Create.
 
@@ -480,9 +480,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: Load.
 
@@ -492,10 +492,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -506,8 +506,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -517,11 +517,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: Create.
 
@@ -531,10 +531,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -545,8 +545,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -557,8 +557,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Load.
@@ -569,19 +569,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: Create.
 
@@ -713,14 +713,14 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `[]const u8` |  |
-| `product_order_uuid` | `[]const u8` |  |
+| `productOrderUUID` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.merchant_portal_pam_contract_controller(h.vnull()).create(h.jo(&.{
     .{ "language", h.vstr("example_language") }, // []const u8
-    .{ "product_order_uuid", h.vstr("example_product_order_uuid") }, // []const u8
+    .{ "productOrderUUID", h.vstr("example_productOrderUUID") }, // []const u8
 }), h.vnull())) {
     .ok => |merchant_portal_pam_contract_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_contract_controller)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -745,15 +745,15 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `[]const u8` |  |
-| `package_order_uuid` | `[]const u8` |  |
-| `product_order_uuid` | `[]const u8` |  |
+| `appFormFieldDescUUID` | `[]const u8` |  |
+| `packageOrderUUID` | `[]const u8` |  |
+| `productOrderUUID` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.merchant_portal_pam_document_controller(h.vnull()).create(h.jo(&.{
-    .{ "app_form_field_desc_uuid", h.vstr("example_app_form_field_desc_uuid") }, // []const u8
+    .{ "appFormFieldDescUUID", h.vstr("example_appFormFieldDescUUID") }, // []const u8
 }), h.vnull())) {
     .ok => |merchant_portal_pam_document_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_document_controller)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -778,24 +778,24 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `[]const u8` |  |
+| `appFormFieldsDescUUID` | `[]const u8` |  |
 | `filter` | `Value (object)` |  |
 | `language` | `[]const u8` |  |
-| `package_order` | `Value (object)` |  |
-| `package_order_uuid` | `[]const u8` |  |
-| `package_uuid` | `[]const u8` |  |
-| `product_order` | `Value (array)` |  |
-| `product_order_uuid` | `[]const u8` |  |
-| `reason_of_reopening` | `[]const u8` |  |
+| `packageOrder` | `Value (object)` |  |
+| `packageOrderUUID` | `[]const u8` |  |
+| `packageUUID` | `[]const u8` |  |
+| `productOrderUUID` | `[]const u8` |  |
+| `productOrders` | `Value (array)` |  |
+| `reasonOfReopening` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.merchant_portal_pam_form_controller(h.vnull()).create(h.jo(&.{
-    .{ "app_form_fields_desc_uuid", h.vstr("example_app_form_fields_desc_uuid") }, // []const u8
+    .{ "appFormFieldsDescUUID", h.vstr("example_appFormFieldsDescUUID") }, // []const u8
     .{ "language", h.vstr("example_language") }, // []const u8
-    .{ "package_order_uuid", h.vstr("example_package_order_uuid") }, // []const u8
-    .{ "reason_of_reopening", h.vstr("example_reason_of_reopening") }, // []const u8
+    .{ "packageOrderUUID", h.vstr("example_packageOrderUUID") }, // []const u8
+    .{ "reasonOfReopening", h.vstr("example_reasonOfReopening") }, // []const u8
 }), h.vnull())) {
     .ok => |merchant_portal_pam_form_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_form_controller)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -820,17 +820,17 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `[]const u8` |  |
-| `mandator_name` | `[]const u8` |  |
-| `notification_email` | `[]const u8` |  |
-| `package_uuid` | `[]const u8` |  |
+| `clientSecret` | `[]const u8` |  |
+| `mandatorName` | `[]const u8` |  |
+| `notificationEmail` | `[]const u8` |  |
+| `packageUUID` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.merchant_portal_pam_mandator_controller(h.vnull()).create(h.jo(&.{
-    .{ "mandator_name", h.vstr("example_mandator_name") }, // []const u8
-    .{ "package_uuid", h.vstr("example_package_uuid") }, // []const u8
+    .{ "mandatorName", h.vstr("example_mandatorName") }, // []const u8
+    .{ "packageUUID", h.vstr("example_packageUUID") }, // []const u8
 }), h.vnull())) {
     .ok => |merchant_portal_pam_mandator_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_mandator_controller)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -856,29 +856,29 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `Value (object)` |  |
-| `business_registration_number` | `[]const u8` |  |
+| `businessRegistrationNumber` | `[]const u8` |  |
 | `city` | `[]const u8` |  |
-| `company_name` | `[]const u8` |  |
-| `corporate_uuid` | `[]const u8` |  |
+| `companyName` | `[]const u8` |  |
+| `corporateUUID` | `[]const u8` |  |
 | `country` | `[]const u8` |  |
 | `currency` | `[]const u8` |  |
 | `email` | `[]const u8` |  |
 | `language` | `[]const u8` |  |
 | `login` | `[]const u8` |  |
 | `mandator` | `[]const u8` |  |
+| `merchantContractNumber` | `[]const u8` |  |
+| `merchantName` | `[]const u8` |  |
 | `merchant_category_code` | `[]const u8` |  |
-| `merchant_contract_number` | `[]const u8` |  |
-| `merchant_name` | `[]const u8` |  |
-| `package_uuid` | `[]const u8` |  |
+| `packageUUID` | `[]const u8` |  |
 | `packageorderuuid` | `[]const u8` |  |
-| `phone_number` | `[]const u8` |  |
-| `postal_code` | `[]const u8` |  |
+| `phoneNumber` | `[]const u8` |  |
+| `postalCode` | `[]const u8` |  |
 | `productid_acquirer` | `[]const u8` |  |
 | `region` | `[]const u8` |  |
-| `registration_number` | `[]const u8` |  |
+| `registrationNumber` | `[]const u8` |  |
 | `signature` | `[]const u8` |  |
 | `street` | `[]const u8` |  |
-| `terminal_id` | `Value (array)` |  |
+| `terminalIds` | `Value (array)` |  |
 | `terminalid_acquirer` | `[]const u8` |  |
 | `vu_nummer` | `[]const u8` |  |
 
@@ -886,17 +886,17 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 ```zig
 switch (client.merchant_portal_pam_merchant_controller(h.vnull()).create(h.jo(&.{
-    .{ "business_registration_number", h.vstr("example_business_registration_number") }, // []const u8
-    .{ "company_name", h.vstr("example_company_name") }, // []const u8
-    .{ "corporate_uuid", h.vstr("example_corporate_uuid") }, // []const u8
+    .{ "businessRegistrationNumber", h.vstr("example_businessRegistrationNumber") }, // []const u8
+    .{ "companyName", h.vstr("example_companyName") }, // []const u8
+    .{ "corporateUUID", h.vstr("example_corporateUUID") }, // []const u8
     .{ "currency", h.vstr("example_currency") }, // []const u8
     .{ "email", h.vstr("example_email") }, // []const u8
     .{ "language", h.vstr("example_language") }, // []const u8
     .{ "login", h.vstr("example_login") }, // []const u8
     .{ "mandator", h.vstr("example_mandator") }, // []const u8
-    .{ "merchant_contract_number", h.vstr("example_merchant_contract_number") }, // []const u8
+    .{ "merchantContractNumber", h.vstr("example_merchantContractNumber") }, // []const u8
     .{ "packageorderuuid", h.vstr("example_packageorderuuid") }, // []const u8
-    .{ "phone_number", h.vstr("example_phone_number") }, // []const u8
+    .{ "phoneNumber", h.vstr("example_phoneNumber") }, // []const u8
     .{ "productid_acquirer", h.vstr("example_productid_acquirer") }, // []const u8
     .{ "vu_nummer", h.vstr("example_vu_nummer") }, // []const u8
 }), h.vnull())) {
@@ -923,15 +923,15 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `[]const u8` |  |
-| `corporate_uuid` | `[]const u8` |  |
+| `consumerUUID` | `[]const u8` |  |
+| `corporateUUID` | `[]const u8` |  |
 | `country` | `[]const u8` |  |
-| `description_key` | `[]const u8` |  |
+| `descriptionKey` | `[]const u8` |  |
 | `filter` | `Value (object)` |  |
 | `language` | `[]const u8` |  |
-| `name_key` | `[]const u8` |  |
-| `package_status` | `[]const u8` |  |
-| `package_uuid` | `[]const u8` |  |
+| `nameKey` | `[]const u8` |  |
+| `packageStatus` | `[]const u8` |  |
+| `packageUUID` | `[]const u8` |  |
 | `pagination` | `Value (object)` |  |
 | `sorting` | `Value (object)` |  |
 
@@ -940,7 +940,7 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 ```zig
 switch (client.merchant_portal_pam_package_controller(h.vnull()).create(h.jo(&.{
     .{ "language", h.vstr("example_language") }, // []const u8
-    .{ "package_uuid", h.vstr("example_package_uuid") }, // []const u8
+    .{ "packageUUID", h.vstr("example_packageUUID") }, // []const u8
 }), h.vnull())) {
     .ok => |merchant_portal_pam_package_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_package_controller)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -965,14 +965,14 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `[]const u8` |  |
+| `consumerUUID` | `[]const u8` |  |
 | `filter` | `Value (object)` |  |
 | `language` | `[]const u8` |  |
-| `merchant_id` | `[]const u8` |  |
-| `package_order_uuid` | `[]const u8` |  |
+| `merchantID` | `[]const u8` |  |
+| `packageOrderUUID` | `[]const u8` |  |
 | `pagination` | `Value (object)` |  |
-| `product_order_uuid` | `[]const u8` |  |
-| `product_uuid` | `[]const u8` |  |
+| `productOrderUUID` | `[]const u8` |  |
+| `productUUID` | `[]const u8` |  |
 | `reason_decline` | `[]const u8` |  |
 | `sorting` | `Value (object)` |  |
 
@@ -980,9 +980,9 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 ```zig
 switch (client.merchant_portal_pam_product_controller(h.vnull()).create(h.jo(&.{
-    .{ "package_order_uuid", h.vstr("example_package_order_uuid") }, // []const u8
-    .{ "product_order_uuid", h.vstr("example_product_order_uuid") }, // []const u8
-    .{ "product_uuid", h.vstr("example_product_uuid") }, // []const u8
+    .{ "packageOrderUUID", h.vstr("example_packageOrderUUID") }, // []const u8
+    .{ "productOrderUUID", h.vstr("example_productOrderUUID") }, // []const u8
+    .{ "productUUID", h.vstr("example_productUUID") }, // []const u8
     .{ "reason_decline", h.vstr("example_reason_decline") }, // []const u8
 }), h.vnull())) {
     .ok => |merchant_portal_pam_product_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_product_controller)}),
@@ -1008,19 +1008,19 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `[]const u8` |  |
-| `product_uui_d` | `Value (array)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `packageUUID` | `[]const u8` |  |
+| `productUUIDs` | `Value (array)` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.output_add_product(h.vnull()).create(h.jo(&.{
-    .{ "package_uuid", h.vstr("example_package_uuid") }, // []const u8
-    .{ "product_uui_d", h.olist() }, // Value (array)
-    .{ "response_code", h.vnum(1) }, // i64
-    .{ "response_message", h.vstr("example_response_message") }, // []const u8
+    .{ "packageUUID", h.vstr("example_packageUUID") }, // []const u8
+    .{ "productUUIDs", h.olist() }, // Value (array)
+    .{ "responseCode", h.vnum(1) }, // i64
+    .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
     .ok => |output_add_product| std.debug.print("{s}\n", .{h.stringify(output_add_product)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1045,37 +1045,37 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `[]const u8` |  |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_template_name` | `[]const u8` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `[]const u8` |  |
-| `name_key` | `[]const u8` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `terminal_template_name` | `[]const u8` |  |
-| `vendor_name` | `[]const u8` |  |
-| `xml_template_file` | `[]const u8` |  |
+| `acquirerId` | `[]const u8` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormTemplateName` | `[]const u8` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `[]const u8` |  |
+| `nameKey` | `[]const u8` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `terminalTemplateName` | `[]const u8` |  |
+| `vendorName` | `[]const u8` |  |
+| `xmlTemplateFile` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.output_create_product(h.vnull()).create(h.jo(&.{
-    .{ "allow_multiple_order", h.vbool(true) }, // bool
-    .{ "app_form_template_name", h.vstr("example_app_form_template_name") }, // []const u8
-    .{ "contract_needed", h.vbool(true) }, // bool
-    .{ "description_key", h.vstr("example_description_key") }, // []const u8
-    .{ "name_key", h.vstr("example_name_key") }, // []const u8
-    .{ "prescreening_allowed", h.vbool(true) }, // bool
-    .{ "product_name", h.vstr("example_product_name") }, // []const u8
-    .{ "response_code", h.vnum(1) }, // i64
-    .{ "response_message", h.vstr("example_response_message") }, // []const u8
-    .{ "terminal_template_name", h.vstr("example_terminal_template_name") }, // []const u8
-    .{ "vendor_name", h.vstr("example_vendor_name") }, // []const u8
-    .{ "xml_template_file", h.vstr("example_xml_template_file") }, // []const u8
+    .{ "allowMultipleOrders", h.vbool(true) }, // bool
+    .{ "appFormTemplateName", h.vstr("example_appFormTemplateName") }, // []const u8
+    .{ "contractNeeded", h.vbool(true) }, // bool
+    .{ "descriptionKey", h.vstr("example_descriptionKey") }, // []const u8
+    .{ "nameKey", h.vstr("example_nameKey") }, // []const u8
+    .{ "prescreeningAllowed", h.vbool(true) }, // bool
+    .{ "productName", h.vstr("example_productName") }, // []const u8
+    .{ "responseCode", h.vnum(1) }, // i64
+    .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
+    .{ "terminalTemplateName", h.vstr("example_terminalTemplateName") }, // []const u8
+    .{ "vendorName", h.vstr("example_vendorName") }, // []const u8
+    .{ "xmlTemplateFile", h.vstr("example_xmlTemplateFile") }, // []const u8
 }), h.vnull())) {
     .ok => |output_create_product| std.debug.print("{s}\n", .{h.stringify(output_create_product)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1100,9 +1100,9 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `Value (object)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `batch` | `Value (object)` |  |
+| `lines` | `Value (object)` |  |
+| `progress` | `Value (object)` |  |
 
 #### Example: Load
 
@@ -1131,10 +1131,10 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `Value (array)` |  |
+| `items` | `Value (array)` |  |
 | `pagination` | `Value (object)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 | `sorting` | `Value (object)` |  |
 
 #### Example: Create
@@ -1142,8 +1142,8 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 ```zig
 switch (client.output_list(h.vnull()).create(h.jo(&.{
     .{ "pagination", h.omap() }, // Value (object)
-    .{ "response_code", h.vnum(1) }, // i64
-    .{ "response_message", h.vstr("example_response_message") }, // []const u8
+    .{ "responseCode", h.vnum(1) }, // i64
+    .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
     .ok => |output_list| std.debug.print("{s}\n", .{h.stringify(output_list)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1168,8 +1168,8 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Load
 
@@ -1198,21 +1198,21 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `Value (array)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `target_package_order_uuid` | `[]const u8` |  |
-| `target_product_order_uuid` | `[]const u8` |  |
+| `productOrderUUIDs` | `Value (array)` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `targetPackageOrderUUID` | `[]const u8` |  |
+| `targetProductOrderUUID` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.output_move_tid(h.vnull()).create(h.jo(&.{
-    .{ "product_order_uui_d", h.olist() }, // Value (array)
-    .{ "response_code", h.vnum(1) }, // i64
-    .{ "response_message", h.vstr("example_response_message") }, // []const u8
-    .{ "target_package_order_uuid", h.vstr("example_target_package_order_uuid") }, // []const u8
-    .{ "target_product_order_uuid", h.vstr("example_target_product_order_uuid") }, // []const u8
+    .{ "productOrderUUIDs", h.olist() }, // Value (array)
+    .{ "responseCode", h.vnum(1) }, // i64
+    .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
+    .{ "targetPackageOrderUUID", h.vstr("example_targetPackageOrderUUID") }, // []const u8
+    .{ "targetProductOrderUUID", h.vstr("example_targetProductOrderUUID") }, // []const u8
 }), h.vnull())) {
     .ok => |output_move_tid| std.debug.print("{s}\n", .{h.stringify(output_move_tid)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1237,19 +1237,19 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `[]const u8` |  |
-| `product_uui_d` | `Value (array)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `packageUUID` | `[]const u8` |  |
+| `productUUIDs` | `Value (array)` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.output_remove_product(h.vnull()).create(h.jo(&.{
-    .{ "package_uuid", h.vstr("example_package_uuid") }, // []const u8
-    .{ "product_uui_d", h.olist() }, // Value (array)
-    .{ "response_code", h.vnum(1) }, // i64
-    .{ "response_message", h.vstr("example_response_message") }, // []const u8
+    .{ "packageUUID", h.vstr("example_packageUUID") }, // []const u8
+    .{ "productUUIDs", h.olist() }, // Value (array)
+    .{ "responseCode", h.vnum(1) }, // i64
+    .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
     .ok => |output_remove_product| std.debug.print("{s}\n", .{h.stringify(output_remove_product)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1275,15 +1275,15 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.output_start(h.vnull()).create(h.jo(&.{
-    .{ "response_code", h.vnum(1) }, // i64
-    .{ "response_message", h.vstr("example_response_message") }, // []const u8
+    .{ "responseCode", h.vnum(1) }, // i64
+    .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
     .ok => |output_start| std.debug.print("{s}\n", .{h.stringify(output_start)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1309,8 +1309,8 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `i64` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 | `status` | `[]const u8` |  |
 
 #### Example: Load
@@ -1340,27 +1340,27 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_name` | `[]const u8` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `[]const u8` |  |
-| `name_key` | `[]const u8` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `[]const u8` |  |
-| `product_status` | `[]const u8` |  |
-| `product_uuid` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `vendor_name` | `[]const u8` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormName` | `[]const u8` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `[]const u8` |  |
+| `nameKey` | `[]const u8` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `[]const u8` |  |
+| `productStatus` | `[]const u8` |  |
+| `productUUID` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `vendorName` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.output_update_product(h.vnull()).create(h.jo(&.{
-    .{ "product_uuid", h.vstr("example_product_uuid") }, // []const u8
-    .{ "response_code", h.vnum(1) }, // i64
-    .{ "response_message", h.vstr("example_response_message") }, // []const u8
+    .{ "productUUID", h.vstr("example_productUUID") }, // []const u8
+    .{ "responseCode", h.vnum(1) }, // i64
+    .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
     .ok => |output_update_product| std.debug.print("{s}\n", .{h.stringify(output_update_product)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),

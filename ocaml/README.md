@@ -43,9 +43,9 @@ let client = Sdk_client.make0 ()
 ### 4. Create, update, and remove
 
 ```ocaml
-(* Create — returns the bare created record (a Map) *)
+(* Create — resolves to the ENTITY; e_data_get gives the record *)
 let created = (Sdk_client.merchant_portal_api_controller client Noval).e_create (jo [("business_reg_number", (Str "example_business_reg_number")); ("city", (Str "example_city")); ("country", (Str "example_country")); ("currency", (Str "example_currency")); ("merchant_category_code", (Num 1.)); ("merchant_name", (Str "example_merchant_name")); ("packageid", (Str "example_packageid")); ("packageorderuuid", (Str "example_packageorderuuid")); ("reason_deactivation", (Str "example_reason_deactivation")); ("reason_reactivation", (Str "example_reason_reactivation")); ("street", (Str "example_street")); ("terminal_country_code", (Str "example_terminal_country_code")); ("terminal_language_code", (Str "example_terminal_language_code")); ("terminal_location", (Str "example_terminal_location")); ("terminal_serial_number", (Str "example_terminal_serial_number")); ("terminalid", (Num 1.)); ("vu_nummer", (Str "example_vu_nummer")); ("zipcode", (Str "example_zipcode"))]) Noval in
-ignore created;
+print_endline (stringify (created.e_data_get ()));
 
 ```
 
@@ -123,9 +123,9 @@ Create a mock client for unit testing — no server required:
 ```ocaml
 let () =
   let client = Sdk_client.test () in
-  (* Entity ops return the bare record and raise on error. *)
+  (* Entity ops resolve to the ENTITY and raise on error. *)
   let output_detail = (Sdk_client.output_detail client Noval).e_load (jo [("id", Str "test01")]) Noval in
-  print_endline (stringify output_detail)  (* the mock response record *)
+  print_endline (stringify (output_detail.e_data_get ()))  (* the mock response record *)
 ```
 
 ### Use a custom fetch function
@@ -224,8 +224,8 @@ All entities are `entity_obj` records sharing the same fields.
 
 | Field | Signature | Description |
 | --- | --- | --- |
-| `e_load` | `value -> value -> value` | Load a single entity by match criteria. Raises on error. |
-| `e_create` | `value -> value -> value` | Create a new entity. Raises on error. |
+| `e_load` | `value -> value -> entity_obj` | Load a single entity by match criteria. Resolves to the entity. Raises on error. |
+| `e_create` | `value -> value -> entity_obj` | Create a new entity. Resolves to the entity. Raises on error. |
 | `e_data_get` | `unit -> value` | Get entity data. |
 | `e_data_set` | `value -> unit` | Set entity data. |
 | `e_match_get` | `unit -> value` | Get entity match criteria. |
@@ -235,9 +235,11 @@ All entities are `entity_obj` records sharing the same fields.
 
 ### Result shape
 
-Entity operations return the bare result value (a `Map` for single-entity
-ops, a `List` for `e_list`) and raise `Sdk_error.E` on error. Wrap calls
-in `try`/`with` to handle failures.
+Entity operations resolve to the ENTITY, not the raw record — `e_list` to
+one entity per record — and raise `Sdk_error.E` on error. The record is
+reached through `e_data_get`, which returns the entity's data container.
+`e_remove` resolves to the entity marked deleted (`e_deleted`); it keeps the
+data it held. Wrap calls in `try`/`with` to handle failures.
 
 The `direct` escape hatch never raises — it returns a result `value` map
 you branch on via `getp result "ok"`:
@@ -309,7 +311,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -319,9 +321,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -331,15 +333,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: Create.
 
@@ -349,10 +351,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: Create.
 
@@ -363,29 +365,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -397,15 +399,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -417,14 +419,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -436,10 +438,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -449,20 +451,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: Create.
 
@@ -472,9 +474,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: Load.
 
@@ -484,10 +486,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -498,8 +500,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -509,11 +511,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: Create.
 
@@ -523,10 +525,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -537,8 +539,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -549,8 +551,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Load.
@@ -561,19 +563,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: Create.
 
@@ -592,7 +594,7 @@ Create an instance: `let merchant_portal_api_controller = Sdk_client.merchant_po
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
@@ -655,6 +657,7 @@ let merchant_portal_api_controller = (Sdk_client.merchant_portal_api_controller 
     ("vu_nummer", (Str "example_vu_nummer"));  (* string *)
     ("zipcode", (Str "example_zipcode"));  (* string *)
 ]) Noval
+let merchant_portal_api_controller_data = merchant_portal_api_controller.e_data_get ()
 ```
 
 
@@ -666,12 +669,14 @@ Create an instance: `let merchant_portal_common_controller = Sdk_client.merchant
 
 | Method | Description |
 | --- | --- |
-| `e_load reqmatch ctrl` | Load a single entity by match criteria. |
+| `e_load reqmatch ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Example: Load
 
 ```ocaml
+(* The op resolves to the ENTITY; the record is inside it. *)
 let merchant_portal_common_controller = (Sdk_client.merchant_portal_common_controller client Noval).e_load (Noval) Noval
+let merchant_portal_common_controller_data = merchant_portal_common_controller.e_data_get ()
 ```
 
 
@@ -683,22 +688,23 @@ Create an instance: `let merchant_portal_pam_contract_controller = Sdk_client.me
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let merchant_portal_pam_contract_controller = (Sdk_client.merchant_portal_pam_contract_controller client Noval).e_create (jo [
     ("language", (Str "example_language"));  (* string *)
-    ("product_order_uuid", (Str "example_product_order_uuid"));  (* string *)
+    ("productOrderUUID", (Str "example_productOrderUUID"));  (* string *)
 ]) Noval
+let merchant_portal_pam_contract_controller_data = merchant_portal_pam_contract_controller.e_data_get ()
 ```
 
 
@@ -710,22 +716,23 @@ Create an instance: `let merchant_portal_pam_document_controller = Sdk_client.me
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `appFormFieldDescUUID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let merchant_portal_pam_document_controller = (Sdk_client.merchant_portal_pam_document_controller client Noval).e_create (jo [
-    ("app_form_field_desc_uuid", (Str "example_app_form_field_desc_uuid"));  (* string *)
+    ("appFormFieldDescUUID", (Str "example_appFormFieldDescUUID"));  (* string *)
 ]) Noval
+let merchant_portal_pam_document_controller_data = merchant_portal_pam_document_controller.e_data_get ()
 ```
 
 
@@ -737,31 +744,32 @@ Create an instance: `let merchant_portal_pam_form_controller = Sdk_client.mercha
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `string` |  |
+| `appFormFieldsDescUUID` | `string` |  |
 | `filter` | `value map` |  |
 | `language` | `string` |  |
-| `package_order` | `value map` |  |
-| `package_order_uuid` | `string` |  |
-| `package_uuid` | `string` |  |
-| `product_order` | `value list` |  |
-| `product_order_uuid` | `string` |  |
-| `reason_of_reopening` | `string` |  |
+| `packageOrder` | `value map` |  |
+| `packageOrderUUID` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productOrders` | `value list` |  |
+| `reasonOfReopening` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let merchant_portal_pam_form_controller = (Sdk_client.merchant_portal_pam_form_controller client Noval).e_create (jo [
-    ("app_form_fields_desc_uuid", (Str "example_app_form_fields_desc_uuid"));  (* string *)
+    ("appFormFieldsDescUUID", (Str "example_appFormFieldsDescUUID"));  (* string *)
     ("language", (Str "example_language"));  (* string *)
-    ("package_order_uuid", (Str "example_package_order_uuid"));  (* string *)
-    ("reason_of_reopening", (Str "example_reason_of_reopening"));  (* string *)
+    ("packageOrderUUID", (Str "example_packageOrderUUID"));  (* string *)
+    ("reasonOfReopening", (Str "example_reasonOfReopening"));  (* string *)
 ]) Noval
+let merchant_portal_pam_form_controller_data = merchant_portal_pam_form_controller.e_data_get ()
 ```
 
 
@@ -773,24 +781,25 @@ Create an instance: `let merchant_portal_pam_mandator_controller = Sdk_client.me
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `string` |  |
-| `mandator_name` | `string` |  |
-| `notification_email` | `string` |  |
-| `package_uuid` | `string` |  |
+| `clientSecret` | `string` |  |
+| `mandatorName` | `string` |  |
+| `notificationEmail` | `string` |  |
+| `packageUUID` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let merchant_portal_pam_mandator_controller = (Sdk_client.merchant_portal_pam_mandator_controller client Noval).e_create (jo [
-    ("mandator_name", (Str "example_mandator_name"));  (* string *)
-    ("package_uuid", (Str "example_package_uuid"));  (* string *)
+    ("mandatorName", (Str "example_mandatorName"));  (* string *)
+    ("packageUUID", (Str "example_packageUUID"));  (* string *)
 ]) Noval
+let merchant_portal_pam_mandator_controller_data = merchant_portal_pam_mandator_controller.e_data_get ()
 ```
 
 
@@ -802,36 +811,36 @@ Create an instance: `let merchant_portal_pam_merchant_controller = Sdk_client.me
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `value map` |  |
-| `business_registration_number` | `string` |  |
+| `businessRegistrationNumber` | `string` |  |
 | `city` | `string` |  |
-| `company_name` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `companyName` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
 | `currency` | `string` |  |
 | `email` | `string` |  |
 | `language` | `string` |  |
 | `login` | `string` |  |
 | `mandator` | `string` |  |
+| `merchantContractNumber` | `string` |  |
+| `merchantName` | `string` |  |
 | `merchant_category_code` | `string` |  |
-| `merchant_contract_number` | `string` |  |
-| `merchant_name` | `string` |  |
-| `package_uuid` | `string` |  |
+| `packageUUID` | `string` |  |
 | `packageorderuuid` | `string` |  |
-| `phone_number` | `string` |  |
-| `postal_code` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `postalCode` | `string` |  |
 | `productid_acquirer` | `string` |  |
 | `region` | `string` |  |
-| `registration_number` | `string` |  |
+| `registrationNumber` | `string` |  |
 | `signature` | `string` |  |
 | `street` | `string` |  |
-| `terminal_id` | `value list` |  |
+| `terminalIds` | `value list` |  |
 | `terminalid_acquirer` | `string` |  |
 | `vu_nummer` | `string` |  |
 
@@ -839,20 +848,21 @@ Create an instance: `let merchant_portal_pam_merchant_controller = Sdk_client.me
 
 ```ocaml
 let merchant_portal_pam_merchant_controller = (Sdk_client.merchant_portal_pam_merchant_controller client Noval).e_create (jo [
-    ("business_registration_number", (Str "example_business_registration_number"));  (* string *)
-    ("company_name", (Str "example_company_name"));  (* string *)
-    ("corporate_uuid", (Str "example_corporate_uuid"));  (* string *)
+    ("businessRegistrationNumber", (Str "example_businessRegistrationNumber"));  (* string *)
+    ("companyName", (Str "example_companyName"));  (* string *)
+    ("corporateUUID", (Str "example_corporateUUID"));  (* string *)
     ("currency", (Str "example_currency"));  (* string *)
     ("email", (Str "example_email"));  (* string *)
     ("language", (Str "example_language"));  (* string *)
     ("login", (Str "example_login"));  (* string *)
     ("mandator", (Str "example_mandator"));  (* string *)
-    ("merchant_contract_number", (Str "example_merchant_contract_number"));  (* string *)
+    ("merchantContractNumber", (Str "example_merchantContractNumber"));  (* string *)
     ("packageorderuuid", (Str "example_packageorderuuid"));  (* string *)
-    ("phone_number", (Str "example_phone_number"));  (* string *)
+    ("phoneNumber", (Str "example_phoneNumber"));  (* string *)
     ("productid_acquirer", (Str "example_productid_acquirer"));  (* string *)
     ("vu_nummer", (Str "example_vu_nummer"));  (* string *)
 ]) Noval
+let merchant_portal_pam_merchant_controller_data = merchant_portal_pam_merchant_controller.e_data_get ()
 ```
 
 
@@ -864,21 +874,21 @@ Create an instance: `let merchant_portal_pam_package_controller = Sdk_client.mer
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
-| `description_key` | `string` |  |
+| `descriptionKey` | `string` |  |
 | `filter` | `value map` |  |
 | `language` | `string` |  |
-| `name_key` | `string` |  |
-| `package_status` | `string` |  |
-| `package_uuid` | `string` |  |
+| `nameKey` | `string` |  |
+| `packageStatus` | `string` |  |
+| `packageUUID` | `string` |  |
 | `pagination` | `value map` |  |
 | `sorting` | `value map` |  |
 
@@ -887,8 +897,9 @@ Create an instance: `let merchant_portal_pam_package_controller = Sdk_client.mer
 ```ocaml
 let merchant_portal_pam_package_controller = (Sdk_client.merchant_portal_pam_package_controller client Noval).e_create (jo [
     ("language", (Str "example_language"));  (* string *)
-    ("package_uuid", (Str "example_package_uuid"));  (* string *)
+    ("packageUUID", (Str "example_packageUUID"));  (* string *)
 ]) Noval
+let merchant_portal_pam_package_controller_data = merchant_portal_pam_package_controller.e_data_get ()
 ```
 
 
@@ -900,20 +911,20 @@ Create an instance: `let merchant_portal_pam_product_controller = Sdk_client.mer
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
 | `filter` | `value map` |  |
 | `language` | `string` |  |
-| `merchant_id` | `string` |  |
-| `package_order_uuid` | `string` |  |
+| `merchantID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
 | `pagination` | `value map` |  |
-| `product_order_uuid` | `string` |  |
-| `product_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productUUID` | `string` |  |
 | `reason_decline` | `string` |  |
 | `sorting` | `value map` |  |
 
@@ -921,11 +932,12 @@ Create an instance: `let merchant_portal_pam_product_controller = Sdk_client.mer
 
 ```ocaml
 let merchant_portal_pam_product_controller = (Sdk_client.merchant_portal_pam_product_controller client Noval).e_create (jo [
-    ("package_order_uuid", (Str "example_package_order_uuid"));  (* string *)
-    ("product_order_uuid", (Str "example_product_order_uuid"));  (* string *)
-    ("product_uuid", (Str "example_product_uuid"));  (* string *)
+    ("packageOrderUUID", (Str "example_packageOrderUUID"));  (* string *)
+    ("productOrderUUID", (Str "example_productOrderUUID"));  (* string *)
+    ("productUUID", (Str "example_productUUID"));  (* string *)
     ("reason_decline", (Str "example_reason_decline"));  (* string *)
 ]) Noval
+let merchant_portal_pam_product_controller_data = merchant_portal_pam_product_controller.e_data_get ()
 ```
 
 
@@ -937,26 +949,27 @@ Create an instance: `let output_add_product = Sdk_client.output_add_product clie
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `value list` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `value list` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_add_product = (Sdk_client.output_add_product client Noval).e_create (jo [
-    ("package_uuid", (Str "example_package_uuid"));  (* string *)
-    ("product_uui_d", (empty_list ()));  (* value list *)
-    ("response_code", (Num 1.));  (* int *)
-    ("response_message", (Str "example_response_message"));  (* string *)
+    ("packageUUID", (Str "example_packageUUID"));  (* string *)
+    ("productUUIDs", (empty_list ()));  (* value list *)
+    ("responseCode", (Num 1.));  (* int *)
+    ("responseMessage", (Str "example_responseMessage"));  (* string *)
 ]) Noval
+let output_add_product_data = output_add_product.e_data_get ()
 ```
 
 
@@ -968,44 +981,45 @@ Create an instance: `let output_create_product = Sdk_client.output_create_produc
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `string` |  |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_template_name` | `string` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_template_name` | `string` |  |
-| `vendor_name` | `string` |  |
-| `xml_template_file` | `string` |  |
+| `acquirerId` | `string` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormTemplateName` | `string` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalTemplateName` | `string` |  |
+| `vendorName` | `string` |  |
+| `xmlTemplateFile` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_create_product = (Sdk_client.output_create_product client Noval).e_create (jo [
-    ("allow_multiple_order", (Bool true));  (* bool *)
-    ("app_form_template_name", (Str "example_app_form_template_name"));  (* string *)
-    ("contract_needed", (Bool true));  (* bool *)
-    ("description_key", (Str "example_description_key"));  (* string *)
-    ("name_key", (Str "example_name_key"));  (* string *)
-    ("prescreening_allowed", (Bool true));  (* bool *)
-    ("product_name", (Str "example_product_name"));  (* string *)
-    ("response_code", (Num 1.));  (* int *)
-    ("response_message", (Str "example_response_message"));  (* string *)
-    ("terminal_template_name", (Str "example_terminal_template_name"));  (* string *)
-    ("vendor_name", (Str "example_vendor_name"));  (* string *)
-    ("xml_template_file", (Str "example_xml_template_file"));  (* string *)
+    ("allowMultipleOrders", (Bool true));  (* bool *)
+    ("appFormTemplateName", (Str "example_appFormTemplateName"));  (* string *)
+    ("contractNeeded", (Bool true));  (* bool *)
+    ("descriptionKey", (Str "example_descriptionKey"));  (* string *)
+    ("nameKey", (Str "example_nameKey"));  (* string *)
+    ("prescreeningAllowed", (Bool true));  (* bool *)
+    ("productName", (Str "example_productName"));  (* string *)
+    ("responseCode", (Num 1.));  (* int *)
+    ("responseMessage", (Str "example_responseMessage"));  (* string *)
+    ("terminalTemplateName", (Str "example_terminalTemplateName"));  (* string *)
+    ("vendorName", (Str "example_vendorName"));  (* string *)
+    ("xmlTemplateFile", (Str "example_xmlTemplateFile"));  (* string *)
 ]) Noval
+let output_create_product_data = output_create_product.e_data_get ()
 ```
 
 
@@ -1017,20 +1031,22 @@ Create an instance: `let output_detail = Sdk_client.output_detail client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_load reqmatch ctrl` | Load a single entity by match criteria. |
+| `e_load reqmatch ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `value map` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `batch` | `value map` |  |
+| `lines` | `value map` |  |
+| `progress` | `value map` |  |
 
 #### Example: Load
 
 ```ocaml
+(* The op resolves to the ENTITY; the record is inside it. *)
 let output_detail = (Sdk_client.output_detail client Noval).e_load (jo [("id", (Str "output_detail_id"))]) Noval
+let output_detail_data = output_detail.e_data_get ()
 ```
 
 
@@ -1042,16 +1058,16 @@ Create an instance: `let output_list = Sdk_client.output_list client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `value list` |  |
+| `items` | `value list` |  |
 | `pagination` | `value map` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `value map` |  |
 
 #### Example: Create
@@ -1059,9 +1075,10 @@ Create an instance: `let output_list = Sdk_client.output_list client Noval`
 ```ocaml
 let output_list = (Sdk_client.output_list client Noval).e_create (jo [
     ("pagination", (empty_map ()));  (* value map *)
-    ("response_code", (Num 1.));  (* int *)
-    ("response_message", (Str "example_response_message"));  (* string *)
+    ("responseCode", (Num 1.));  (* int *)
+    ("responseMessage", (Str "example_responseMessage"));  (* string *)
 ]) Noval
+let output_list_data = output_list.e_data_get ()
 ```
 
 
@@ -1073,19 +1090,21 @@ Create an instance: `let output_message = Sdk_client.output_message client Noval
 
 | Method | Description |
 | --- | --- |
-| `e_load reqmatch ctrl` | Load a single entity by match criteria. |
+| `e_load reqmatch ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Load
 
 ```ocaml
+(* The op resolves to the ENTITY; the record is inside it. *)
 let output_message = (Sdk_client.output_message client Noval).e_load (jo [("id", (Str "output_message_id"))]) Noval
+let output_message_data = output_message.e_data_get ()
 ```
 
 
@@ -1097,28 +1116,29 @@ Create an instance: `let output_move_tid = Sdk_client.output_move_tid client Nov
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `value list` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `target_package_order_uuid` | `string` |  |
-| `target_product_order_uuid` | `string` |  |
+| `productOrderUUIDs` | `value list` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `targetPackageOrderUUID` | `string` |  |
+| `targetProductOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_move_tid = (Sdk_client.output_move_tid client Noval).e_create (jo [
-    ("product_order_uui_d", (empty_list ()));  (* value list *)
-    ("response_code", (Num 1.));  (* int *)
-    ("response_message", (Str "example_response_message"));  (* string *)
-    ("target_package_order_uuid", (Str "example_target_package_order_uuid"));  (* string *)
-    ("target_product_order_uuid", (Str "example_target_product_order_uuid"));  (* string *)
+    ("productOrderUUIDs", (empty_list ()));  (* value list *)
+    ("responseCode", (Num 1.));  (* int *)
+    ("responseMessage", (Str "example_responseMessage"));  (* string *)
+    ("targetPackageOrderUUID", (Str "example_targetPackageOrderUUID"));  (* string *)
+    ("targetProductOrderUUID", (Str "example_targetProductOrderUUID"));  (* string *)
 ]) Noval
+let output_move_tid_data = output_move_tid.e_data_get ()
 ```
 
 
@@ -1130,26 +1150,27 @@ Create an instance: `let output_remove_product = Sdk_client.output_remove_produc
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `value list` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `value list` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_remove_product = (Sdk_client.output_remove_product client Noval).e_create (jo [
-    ("package_uuid", (Str "example_package_uuid"));  (* string *)
-    ("product_uui_d", (empty_list ()));  (* value list *)
-    ("response_code", (Num 1.));  (* int *)
-    ("response_message", (Str "example_response_message"));  (* string *)
+    ("packageUUID", (Str "example_packageUUID"));  (* string *)
+    ("productUUIDs", (empty_list ()));  (* value list *)
+    ("responseCode", (Num 1.));  (* int *)
+    ("responseMessage", (Str "example_responseMessage"));  (* string *)
 ]) Noval
+let output_remove_product_data = output_remove_product.e_data_get ()
 ```
 
 
@@ -1161,23 +1182,24 @@ Create an instance: `let output_start = Sdk_client.output_start client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_start = (Sdk_client.output_start client Noval).e_create (jo [
-    ("response_code", (Num 1.));  (* int *)
-    ("response_message", (Str "example_response_message"));  (* string *)
+    ("responseCode", (Num 1.));  (* int *)
+    ("responseMessage", (Str "example_responseMessage"));  (* string *)
 ]) Noval
+let output_start_data = output_start.e_data_get ()
 ```
 
 
@@ -1189,21 +1211,23 @@ Create an instance: `let output_status = Sdk_client.output_status client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_load reqmatch ctrl` | Load a single entity by match criteria. |
+| `e_load reqmatch ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `int` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `status` | `string` |  |
 
 #### Example: Load
 
 ```ocaml
+(* The op resolves to the ENTITY; the record is inside it. *)
 let output_status = (Sdk_client.output_status client Noval).e_load (jo [("id", (Str "output_status_id"))]) Noval
+let output_status_data = output_status.e_data_get ()
 ```
 
 
@@ -1215,34 +1239,35 @@ Create an instance: `let output_update_product = Sdk_client.output_update_produc
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_name` | `string` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `string` |  |
-| `product_status` | `string` |  |
-| `product_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `vendor_name` | `string` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormName` | `string` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `string` |  |
+| `productStatus` | `string` |  |
+| `productUUID` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `vendorName` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_update_product = (Sdk_client.output_update_product client Noval).e_create (jo [
-    ("product_uuid", (Str "example_product_uuid"));  (* string *)
-    ("response_code", (Num 1.));  (* int *)
-    ("response_message", (Str "example_response_message"));  (* string *)
+    ("productUUID", (Str "example_productUUID"));  (* string *)
+    ("responseCode", (Num 1.));  (* int *)
+    ("responseMessage", (Str "example_responseMessage"));  (* string *)
 ]) Noval
+let output_update_product_data = output_update_product.e_data_get ()
 ```
 
 

@@ -47,7 +47,7 @@ void tests() {
       final output_remove_product_ref01_ent = client.OutputRemoveProduct();
       dynamic output_remove_product_ref01_data = setup['data']['new']['output_remove_product']['output_remove_product_ref01'];
 
-      output_remove_product_ref01_data = await output_remove_product_ref01_ent.create(output_remove_product_ref01_data);
+      output_remove_product_ref01_data = (await output_remove_product_ref01_ent.create(output_remove_product_ref01_data)).data();
       ok(null != output_remove_product_ref01_data);
 
 

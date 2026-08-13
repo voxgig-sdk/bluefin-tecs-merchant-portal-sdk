@@ -38,15 +38,15 @@ static OutputStartSetup output_start_basic_setup(const Value& extra) {
   if (!idmap.is_map()) idmap = vmap();
 
   Value env = env_override(vmap({
-    {"BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_START_ENTID", idmap},
-    {"BLUEFINTECSMERCHANTPORTAL_TEST_LIVE", Value("FALSE")},
-    {"BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN", Value("FALSE")}
+    {"BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_START_ENTID", idmap},
+    {"BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE", Value("FALSE")},
+    {"BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN", Value("FALSE")}
   }));
 
-  Value idmap_resolved = Helpers::toMapAny(getp(env, "BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_START_ENTID"));
+  Value idmap_resolved = Helpers::toMapAny(getp(env, "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_START_ENTID"));
   if (!idmap_resolved.is_map()) idmap_resolved = idmap;
 
-  bool live = getp(env, "BLUEFINTECSMERCHANTPORTAL_TEST_LIVE") == Value("TRUE");
+  bool live = getp(env, "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE") == Value("TRUE");
 
   OutputStartSetup s;
   s.client = client;
@@ -65,27 +65,6 @@ static void output_start_entity_instance() {
   ASSERT_EQ(ent->getName(), std::string("output_start"), "entity name");
 }
 
-static void output_start_entity_stream() {
-  // stream() runs the list op through the full pipeline and returns the
-  // result items. Seed two entities via test mode; with the streaming feature
-  // active it yields the feature's incremental items, else it falls back to
-  // the materialised items — either way every item is yielded.
-  Value seed = vmap({{"entity", vmap({{"output_start", vmap({
-      {"strm01", vmap({{"id", Value("strm01")}})},
-      {"strm02", vmap({{"id", Value("strm02")}})}})}})}});
-  Value sdkopts = vmap({{"feature",
-      vmap({{"streaming", vmap({{"active", Value(true)}})}})}});
-
-  auto strsdk = BluefinTecsMerchantPortalSDK::testSDK(seed, sdkopts);
-  auto se = strsdk->output_start();
-  std::vector<Value> items = se->stream("list", Value::undef(), Value::undef());
-  ASSERT_EQ((int)items.size(), 2, "stream yields both seeded items");
-
-  auto plainsdk = BluefinTecsMerchantPortalSDK::testSDK(seed, Value::undef());
-  auto pe = plainsdk->output_start();
-  std::vector<Value> pitems = pe->stream("list", Value::undef(), Value::undef());
-  ASSERT_EQ((int)pitems.size(), 2, "fallback stream yields both items");
-}
 
 static void output_start_entity_basic() {
   auto setup = output_start_basic_setup(Value::undef());
@@ -100,7 +79,7 @@ static void output_start_entity_basic() {
   Value output_start_ref01_data = Helpers::toMapAny(getp(Struct::getpath(setup.data, {"new", "output_start"}), "output_start_ref01"));
   if (!output_start_ref01_data.is_map()) output_start_ref01_data = vmap();
   {
-    Value output_start_ref01_data_result = output_start_ref01_ent->create(Struct::clone(output_start_ref01_data), Value::undef());
+    Value output_start_ref01_data_result = output_start_ref01_ent->create(Struct::clone(output_start_ref01_data), Value::undef())->data();
     output_start_ref01_data = Helpers::toMapAny(output_start_ref01_data_result);
     if (!output_start_ref01_data.is_map()) output_start_ref01_data = vmap();
     ASSERT_TRUE(output_start_ref01_data.is_map(), "expected create result to be a map");
@@ -111,7 +90,6 @@ static void output_start_entity_basic() {
 
 int main() {
   T_RUN(output_start_entity_instance);
-  T_RUN(output_start_entity_stream);
   T_RUN(output_start_entity_basic);
   return sdktest::summary("output_start_entity_test");
 }

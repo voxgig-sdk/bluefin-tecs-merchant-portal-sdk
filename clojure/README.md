@@ -332,7 +332,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -342,9 +342,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -354,15 +354,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: Create.
 
@@ -372,10 +372,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: Create.
 
@@ -386,29 +386,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -420,15 +420,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -440,14 +440,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -459,10 +459,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -472,20 +472,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: Create.
 
@@ -495,9 +495,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: Load.
 
@@ -507,10 +507,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -521,8 +521,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -532,11 +532,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: Create.
 
@@ -546,10 +546,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -560,8 +560,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -572,8 +572,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Load.
@@ -584,19 +584,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: Create.
 
@@ -716,7 +716,7 @@ Create an instance: `(def merchant_portal_pam_contract_controller (api/merchant_
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
@@ -725,7 +725,7 @@ Create an instance: `(def merchant_portal_pam_contract_controller (api/merchant_
   (e-merchant_portal_pam_contract_controller/create (api/merchant_portal_pam_contract_controller client nil)
     (vs/jm
       "language" "example_language"  ;; string
-      "product_order_uuid" "example_product_order_uuid"  ;; string
+      "productOrderUUID" "example_productOrderUUID"  ;; string
       )
     nil))
 ```
@@ -745,9 +745,9 @@ Create an instance: `(def merchant_portal_pam_document_controller (api/merchant_
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `appFormFieldDescUUID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
@@ -755,7 +755,7 @@ Create an instance: `(def merchant_portal_pam_document_controller (api/merchant_
 (def merchant_portal_pam_document_controller
   (e-merchant_portal_pam_document_controller/create (api/merchant_portal_pam_document_controller client nil)
     (vs/jm
-      "app_form_field_desc_uuid" "example_app_form_field_desc_uuid"  ;; string
+      "appFormFieldDescUUID" "example_appFormFieldDescUUID"  ;; string
       )
     nil))
 ```
@@ -775,15 +775,15 @@ Create an instance: `(def merchant_portal_pam_form_controller (api/merchant_port
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `string` |  |
+| `appFormFieldsDescUUID` | `string` |  |
 | `filter` | `map` |  |
 | `language` | `string` |  |
-| `package_order` | `map` |  |
-| `package_order_uuid` | `string` |  |
-| `package_uuid` | `string` |  |
-| `product_order` | `vector` |  |
-| `product_order_uuid` | `string` |  |
-| `reason_of_reopening` | `string` |  |
+| `packageOrder` | `map` |  |
+| `packageOrderUUID` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productOrders` | `vector` |  |
+| `reasonOfReopening` | `string` |  |
 
 #### Example: Create
 
@@ -791,10 +791,10 @@ Create an instance: `(def merchant_portal_pam_form_controller (api/merchant_port
 (def merchant_portal_pam_form_controller
   (e-merchant_portal_pam_form_controller/create (api/merchant_portal_pam_form_controller client nil)
     (vs/jm
-      "app_form_fields_desc_uuid" "example_app_form_fields_desc_uuid"  ;; string
+      "appFormFieldsDescUUID" "example_appFormFieldsDescUUID"  ;; string
       "language" "example_language"  ;; string
-      "package_order_uuid" "example_package_order_uuid"  ;; string
-      "reason_of_reopening" "example_reason_of_reopening"  ;; string
+      "packageOrderUUID" "example_packageOrderUUID"  ;; string
+      "reasonOfReopening" "example_reasonOfReopening"  ;; string
       )
     nil))
 ```
@@ -814,10 +814,10 @@ Create an instance: `(def merchant_portal_pam_mandator_controller (api/merchant_
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `string` |  |
-| `mandator_name` | `string` |  |
-| `notification_email` | `string` |  |
-| `package_uuid` | `string` |  |
+| `clientSecret` | `string` |  |
+| `mandatorName` | `string` |  |
+| `notificationEmail` | `string` |  |
+| `packageUUID` | `string` |  |
 
 #### Example: Create
 
@@ -825,8 +825,8 @@ Create an instance: `(def merchant_portal_pam_mandator_controller (api/merchant_
 (def merchant_portal_pam_mandator_controller
   (e-merchant_portal_pam_mandator_controller/create (api/merchant_portal_pam_mandator_controller client nil)
     (vs/jm
-      "mandator_name" "example_mandator_name"  ;; string
-      "package_uuid" "example_package_uuid"  ;; string
+      "mandatorName" "example_mandatorName"  ;; string
+      "packageUUID" "example_packageUUID"  ;; string
       )
     nil))
 ```
@@ -847,29 +847,29 @@ Create an instance: `(def merchant_portal_pam_merchant_controller (api/merchant_
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `map` |  |
-| `business_registration_number` | `string` |  |
+| `businessRegistrationNumber` | `string` |  |
 | `city` | `string` |  |
-| `company_name` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `companyName` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
 | `currency` | `string` |  |
 | `email` | `string` |  |
 | `language` | `string` |  |
 | `login` | `string` |  |
 | `mandator` | `string` |  |
+| `merchantContractNumber` | `string` |  |
+| `merchantName` | `string` |  |
 | `merchant_category_code` | `string` |  |
-| `merchant_contract_number` | `string` |  |
-| `merchant_name` | `string` |  |
-| `package_uuid` | `string` |  |
+| `packageUUID` | `string` |  |
 | `packageorderuuid` | `string` |  |
-| `phone_number` | `string` |  |
-| `postal_code` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `postalCode` | `string` |  |
 | `productid_acquirer` | `string` |  |
 | `region` | `string` |  |
-| `registration_number` | `string` |  |
+| `registrationNumber` | `string` |  |
 | `signature` | `string` |  |
 | `street` | `string` |  |
-| `terminal_id` | `vector` |  |
+| `terminalIds` | `vector` |  |
 | `terminalid_acquirer` | `string` |  |
 | `vu_nummer` | `string` |  |
 
@@ -879,17 +879,17 @@ Create an instance: `(def merchant_portal_pam_merchant_controller (api/merchant_
 (def merchant_portal_pam_merchant_controller
   (e-merchant_portal_pam_merchant_controller/create (api/merchant_portal_pam_merchant_controller client nil)
     (vs/jm
-      "business_registration_number" "example_business_registration_number"  ;; string
-      "company_name" "example_company_name"  ;; string
-      "corporate_uuid" "example_corporate_uuid"  ;; string
+      "businessRegistrationNumber" "example_businessRegistrationNumber"  ;; string
+      "companyName" "example_companyName"  ;; string
+      "corporateUUID" "example_corporateUUID"  ;; string
       "currency" "example_currency"  ;; string
       "email" "example_email"  ;; string
       "language" "example_language"  ;; string
       "login" "example_login"  ;; string
       "mandator" "example_mandator"  ;; string
-      "merchant_contract_number" "example_merchant_contract_number"  ;; string
+      "merchantContractNumber" "example_merchantContractNumber"  ;; string
       "packageorderuuid" "example_packageorderuuid"  ;; string
-      "phone_number" "example_phone_number"  ;; string
+      "phoneNumber" "example_phoneNumber"  ;; string
       "productid_acquirer" "example_productid_acquirer"  ;; string
       "vu_nummer" "example_vu_nummer"  ;; string
       )
@@ -911,15 +911,15 @@ Create an instance: `(def merchant_portal_pam_package_controller (api/merchant_p
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
-| `description_key` | `string` |  |
+| `descriptionKey` | `string` |  |
 | `filter` | `map` |  |
 | `language` | `string` |  |
-| `name_key` | `string` |  |
-| `package_status` | `string` |  |
-| `package_uuid` | `string` |  |
+| `nameKey` | `string` |  |
+| `packageStatus` | `string` |  |
+| `packageUUID` | `string` |  |
 | `pagination` | `map` |  |
 | `sorting` | `map` |  |
 
@@ -930,7 +930,7 @@ Create an instance: `(def merchant_portal_pam_package_controller (api/merchant_p
   (e-merchant_portal_pam_package_controller/create (api/merchant_portal_pam_package_controller client nil)
     (vs/jm
       "language" "example_language"  ;; string
-      "package_uuid" "example_package_uuid"  ;; string
+      "packageUUID" "example_packageUUID"  ;; string
       )
     nil))
 ```
@@ -950,14 +950,14 @@ Create an instance: `(def merchant_portal_pam_product_controller (api/merchant_p
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
 | `filter` | `map` |  |
 | `language` | `string` |  |
-| `merchant_id` | `string` |  |
-| `package_order_uuid` | `string` |  |
+| `merchantID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
 | `pagination` | `map` |  |
-| `product_order_uuid` | `string` |  |
-| `product_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productUUID` | `string` |  |
 | `reason_decline` | `string` |  |
 | `sorting` | `map` |  |
 
@@ -967,9 +967,9 @@ Create an instance: `(def merchant_portal_pam_product_controller (api/merchant_p
 (def merchant_portal_pam_product_controller
   (e-merchant_portal_pam_product_controller/create (api/merchant_portal_pam_product_controller client nil)
     (vs/jm
-      "package_order_uuid" "example_package_order_uuid"  ;; string
-      "product_order_uuid" "example_product_order_uuid"  ;; string
-      "product_uuid" "example_product_uuid"  ;; string
+      "packageOrderUUID" "example_packageOrderUUID"  ;; string
+      "productOrderUUID" "example_productOrderUUID"  ;; string
+      "productUUID" "example_productUUID"  ;; string
       "reason_decline" "example_reason_decline"  ;; string
       )
     nil))
@@ -990,10 +990,10 @@ Create an instance: `(def output_add_product (api/output_add_product client nil)
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `vector` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `vector` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1001,10 +1001,10 @@ Create an instance: `(def output_add_product (api/output_add_product client nil)
 (def output_add_product
   (e-output_add_product/create (api/output_add_product client nil)
     (vs/jm
-      "package_uuid" "example_package_uuid"  ;; string
-      "product_uui_d" (vs/jt)  ;; vector
-      "response_code" 1  ;; long
-      "response_message" "example_response_message"  ;; string
+      "packageUUID" "example_packageUUID"  ;; string
+      "productUUIDs" (vs/jt)  ;; vector
+      "responseCode" 1  ;; long
+      "responseMessage" "example_responseMessage"  ;; string
       )
     nil))
 ```
@@ -1024,20 +1024,20 @@ Create an instance: `(def output_create_product (api/output_create_product clien
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `string` |  |
-| `allow_multiple_order` | `boolean` |  |
-| `app_form_template_name` | `string` |  |
-| `contract_needed` | `boolean` |  |
-| `credentials_needed` | `boolean` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `boolean` |  |
-| `product_name` | `string` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
-| `terminal_template_name` | `string` |  |
-| `vendor_name` | `string` |  |
-| `xml_template_file` | `string` |  |
+| `acquirerId` | `string` |  |
+| `allowMultipleOrders` | `boolean` |  |
+| `appFormTemplateName` | `string` |  |
+| `contractNeeded` | `boolean` |  |
+| `credentialsNeeded` | `boolean` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `boolean` |  |
+| `productName` | `string` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
+| `terminalTemplateName` | `string` |  |
+| `vendorName` | `string` |  |
+| `xmlTemplateFile` | `string` |  |
 
 #### Example: Create
 
@@ -1045,18 +1045,18 @@ Create an instance: `(def output_create_product (api/output_create_product clien
 (def output_create_product
   (e-output_create_product/create (api/output_create_product client nil)
     (vs/jm
-      "allow_multiple_order" true  ;; boolean
-      "app_form_template_name" "example_app_form_template_name"  ;; string
-      "contract_needed" true  ;; boolean
-      "description_key" "example_description_key"  ;; string
-      "name_key" "example_name_key"  ;; string
-      "prescreening_allowed" true  ;; boolean
-      "product_name" "example_product_name"  ;; string
-      "response_code" 1  ;; long
-      "response_message" "example_response_message"  ;; string
-      "terminal_template_name" "example_terminal_template_name"  ;; string
-      "vendor_name" "example_vendor_name"  ;; string
-      "xml_template_file" "example_xml_template_file"  ;; string
+      "allowMultipleOrders" true  ;; boolean
+      "appFormTemplateName" "example_appFormTemplateName"  ;; string
+      "contractNeeded" true  ;; boolean
+      "descriptionKey" "example_descriptionKey"  ;; string
+      "nameKey" "example_nameKey"  ;; string
+      "prescreeningAllowed" true  ;; boolean
+      "productName" "example_productName"  ;; string
+      "responseCode" 1  ;; long
+      "responseMessage" "example_responseMessage"  ;; string
+      "terminalTemplateName" "example_terminalTemplateName"  ;; string
+      "vendorName" "example_vendorName"  ;; string
+      "xmlTemplateFile" "example_xmlTemplateFile"  ;; string
       )
     nil))
 ```
@@ -1076,9 +1076,9 @@ Create an instance: `(def output_detail (api/output_detail client nil))`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `map` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
+| `batch` | `map` |  |
+| `lines` | `map` |  |
+| `progress` | `map` |  |
 
 #### Example: Load
 
@@ -1101,10 +1101,10 @@ Create an instance: `(def output_list (api/output_list client nil))`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `vector` |  |
+| `items` | `vector` |  |
 | `pagination` | `map` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `map` |  |
 
 #### Example: Create
@@ -1114,8 +1114,8 @@ Create an instance: `(def output_list (api/output_list client nil))`
   (e-output_list/create (api/output_list client nil)
     (vs/jm
       "pagination" (vs/jm)  ;; map
-      "response_code" 1  ;; long
-      "response_message" "example_response_message"  ;; string
+      "responseCode" 1  ;; long
+      "responseMessage" "example_responseMessage"  ;; string
       )
     nil))
 ```
@@ -1135,8 +1135,8 @@ Create an instance: `(def output_message (api/output_message client nil))`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Load
 
@@ -1159,11 +1159,11 @@ Create an instance: `(def output_move_tid (api/output_move_tid client nil))`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `vector` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
-| `target_package_order_uuid` | `string` |  |
-| `target_product_order_uuid` | `string` |  |
+| `productOrderUUIDs` | `vector` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
+| `targetPackageOrderUUID` | `string` |  |
+| `targetProductOrderUUID` | `string` |  |
 
 #### Example: Create
 
@@ -1171,11 +1171,11 @@ Create an instance: `(def output_move_tid (api/output_move_tid client nil))`
 (def output_move_tid
   (e-output_move_tid/create (api/output_move_tid client nil)
     (vs/jm
-      "product_order_uui_d" (vs/jt)  ;; vector
-      "response_code" 1  ;; long
-      "response_message" "example_response_message"  ;; string
-      "target_package_order_uuid" "example_target_package_order_uuid"  ;; string
-      "target_product_order_uuid" "example_target_product_order_uuid"  ;; string
+      "productOrderUUIDs" (vs/jt)  ;; vector
+      "responseCode" 1  ;; long
+      "responseMessage" "example_responseMessage"  ;; string
+      "targetPackageOrderUUID" "example_targetPackageOrderUUID"  ;; string
+      "targetProductOrderUUID" "example_targetProductOrderUUID"  ;; string
       )
     nil))
 ```
@@ -1195,10 +1195,10 @@ Create an instance: `(def output_remove_product (api/output_remove_product clien
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `vector` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `vector` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1206,10 +1206,10 @@ Create an instance: `(def output_remove_product (api/output_remove_product clien
 (def output_remove_product
   (e-output_remove_product/create (api/output_remove_product client nil)
     (vs/jm
-      "package_uuid" "example_package_uuid"  ;; string
-      "product_uui_d" (vs/jt)  ;; vector
-      "response_code" 1  ;; long
-      "response_message" "example_response_message"  ;; string
+      "packageUUID" "example_packageUUID"  ;; string
+      "productUUIDs" (vs/jt)  ;; vector
+      "responseCode" 1  ;; long
+      "responseMessage" "example_responseMessage"  ;; string
       )
     nil))
 ```
@@ -1230,8 +1230,8 @@ Create an instance: `(def output_start (api/output_start client nil))`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `string` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1239,8 +1239,8 @@ Create an instance: `(def output_start (api/output_start client nil))`
 (def output_start
   (e-output_start/create (api/output_start client nil)
     (vs/jm
-      "response_code" 1  ;; long
-      "response_message" "example_response_message"  ;; string
+      "responseCode" 1  ;; long
+      "responseMessage" "example_responseMessage"  ;; string
       )
     nil))
 ```
@@ -1261,8 +1261,8 @@ Create an instance: `(def output_status (api/output_status client nil))`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `long` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
 | `status` | `string` |  |
 
 #### Example: Load
@@ -1286,19 +1286,19 @@ Create an instance: `(def output_update_product (api/output_update_product clien
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `boolean` |  |
-| `app_form_name` | `string` |  |
-| `contract_needed` | `boolean` |  |
-| `credentials_needed` | `boolean` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `boolean` |  |
-| `product_name` | `string` |  |
-| `product_status` | `string` |  |
-| `product_uuid` | `string` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
-| `vendor_name` | `string` |  |
+| `allowMultipleOrders` | `boolean` |  |
+| `appFormName` | `string` |  |
+| `contractNeeded` | `boolean` |  |
+| `credentialsNeeded` | `boolean` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `boolean` |  |
+| `productName` | `string` |  |
+| `productStatus` | `string` |  |
+| `productUUID` | `string` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
+| `vendorName` | `string` |  |
 
 #### Example: Create
 
@@ -1306,9 +1306,9 @@ Create an instance: `(def output_update_product (api/output_update_product clien
 (def output_update_product
   (e-output_update_product/create (api/output_update_product client nil)
     (vs/jm
-      "product_uuid" "example_product_uuid"  ;; string
-      "response_code" 1  ;; long
-      "response_message" "example_response_message"  ;; string
+      "productUUID" "example_productUUID"  ;; string
+      "responseCode" 1  ;; long
+      "responseMessage" "example_responseMessage"  ;; string
       )
     nil))
 ```

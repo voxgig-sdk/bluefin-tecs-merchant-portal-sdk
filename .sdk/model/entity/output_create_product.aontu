@@ -6,72 +6,72 @@ main: kit: entity: output_create_product: {
 
   fields: [
     {
-      name: "acquirer_id"
+      name: "acquirerId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "allow_multiple_order"
+      name: "allowMultipleOrders"
       req: true
       type: "`$BOOLEAN`"
     }
     {
-      name: "app_form_template_name"
+      name: "appFormTemplateName"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "contract_needed"
+      name: "contractNeeded"
       req: true
       type: "`$BOOLEAN`"
     }
     {
-      name: "credentials_needed"
+      name: "credentialsNeeded"
       req: false
       type: "`$BOOLEAN`"
     }
     {
-      name: "description_key"
+      name: "descriptionKey"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "name_key"
+      name: "nameKey"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "prescreening_allowed"
+      name: "prescreeningAllowed"
       req: true
       type: "`$BOOLEAN`"
     }
     {
-      name: "product_name"
+      name: "productName"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: true
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "terminal_template_name"
+      name: "terminalTemplateName"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "vendor_name"
+      name: "vendorName"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "xml_template_file"
+      name: "xmlTemplateFile"
       req: true
       type: "`$STRING`"
     }

@@ -23,8 +23,8 @@ module BluefinTecsMerchantPortalTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("BLUEFINTECSMERCHANTPORTAL_TEST_LIVE")
-    override = getenv("BLUEFINTECSMERCHANTPORTAL_TEST_OVERRIDE")
+    live = getenv("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE")
+    override = getenv("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module BluefinTecsMerchantPortalTestRunner
       end
     end
 
-    explain = getenv("BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN")
-    m["BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN")
+    m["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

@@ -318,7 +318,7 @@ API path: `/merchantportalws/logDeveloperInfo`
 | Field | Description |
 | --- | --- |
 | `language` |  |
-| `product_order_uuid` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -328,9 +328,9 @@ API path: `/merchantportalws/generateContract`
 
 | Field | Description |
 | --- | --- |
-| `app_form_field_desc_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
+| `appFormFieldDescUUID` |  |
+| `packageOrderUUID` |  |
+| `productOrderUUID` |  |
 
 Operations: Create.
 
@@ -340,15 +340,15 @@ API path: `/merchantportalws/documentsList`
 
 | Field | Description |
 | --- | --- |
-| `app_form_fields_desc_uuid` |  |
+| `appFormFieldsDescUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `package_order` |  |
-| `package_order_uuid` |  |
-| `package_uuid` |  |
-| `product_order` |  |
-| `product_order_uuid` |  |
-| `reason_of_reopening` |  |
+| `packageOrder` |  |
+| `packageOrderUUID` |  |
+| `packageUUID` |  |
+| `productOrderUUID` |  |
+| `productOrders` |  |
+| `reasonOfReopening` |  |
 
 Operations: Create.
 
@@ -358,10 +358,10 @@ API path: `/merchantportalws/applicationForm`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `mandator_name` |  |
-| `notification_email` |  |
-| `package_uuid` |  |
+| `clientSecret` |  |
+| `mandatorName` |  |
+| `notificationEmail` |  |
+| `packageUUID` |  |
 
 Operations: Create.
 
@@ -372,29 +372,29 @@ API path: `/merchantportalws/createMandatorConfig`
 | Field | Description |
 | --- | --- |
 | `additional_data` |  |
-| `business_registration_number` |  |
+| `businessRegistrationNumber` |  |
 | `city` |  |
-| `company_name` |  |
-| `corporate_uuid` |  |
+| `companyName` |  |
+| `corporateUUID` |  |
 | `country` |  |
 | `currency` |  |
 | `email` |  |
 | `language` |  |
 | `login` |  |
 | `mandator` |  |
+| `merchantContractNumber` |  |
+| `merchantName` |  |
 | `merchant_category_code` |  |
-| `merchant_contract_number` |  |
-| `merchant_name` |  |
-| `package_uuid` |  |
+| `packageUUID` |  |
 | `packageorderuuid` |  |
-| `phone_number` |  |
-| `postal_code` |  |
+| `phoneNumber` |  |
+| `postalCode` |  |
 | `productid_acquirer` |  |
 | `region` |  |
-| `registration_number` |  |
+| `registrationNumber` |  |
 | `signature` |  |
 | `street` |  |
-| `terminal_id` |  |
+| `terminalIds` |  |
 | `terminalid_acquirer` |  |
 | `vu_nummer` |  |
 
@@ -406,15 +406,15 @@ API path: `/merchantportalws/contractNumber`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `corporate_uuid` |  |
+| `consumerUUID` |  |
+| `corporateUUID` |  |
 | `country` |  |
-| `description_key` |  |
+| `descriptionKey` |  |
 | `filter` |  |
 | `language` |  |
-| `name_key` |  |
-| `package_status` |  |
-| `package_uuid` |  |
+| `nameKey` |  |
+| `packageStatus` |  |
+| `packageUUID` |  |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -426,14 +426,14 @@ API path: `/merchantportalws/availablePackages`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
+| `consumerUUID` |  |
 | `filter` |  |
 | `language` |  |
-| `merchant_id` |  |
-| `package_order_uuid` |  |
+| `merchantID` |  |
+| `packageOrderUUID` |  |
 | `pagination` |  |
-| `product_order_uuid` |  |
-| `product_uuid` |  |
+| `productOrderUUID` |  |
+| `productUUID` |  |
 | `reason_decline` |  |
 | `sorting` |  |
 
@@ -445,10 +445,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -458,20 +458,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `allow_multiple_order` |  |
-| `app_form_template_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_name` |  |
-| `vendor_name` |  |
-| `xml_template_file` |  |
+| `acquirerId` |  |
+| `allowMultipleOrders` |  |
+| `appFormTemplateName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateName` |  |
+| `vendorName` |  |
+| `xmlTemplateFile` |  |
 
 Operations: Create.
 
@@ -481,9 +481,9 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `detail` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `batch` |  |
+| `lines` |  |
+| `progress` |  |
 
 Operations: Load.
 
@@ -493,10 +493,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 
 | Field | Description |
 | --- | --- |
-| `item` |  |
+| `items` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -507,8 +507,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -518,11 +518,11 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 
 | Field | Description |
 | --- | --- |
-| `product_order_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_package_order_uuid` |  |
-| `target_product_order_uuid` |  |
+| `productOrderUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageOrderUUID` |  |
+| `targetProductOrderUUID` |  |
 
 Operations: Create.
 
@@ -532,10 +532,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `package_uuid` |  |
-| `product_uui_d` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `packageUUID` |  |
+| `productUUIDs` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -546,8 +546,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -558,8 +558,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Load.
@@ -570,19 +570,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allow_multiple_order` |  |
-| `app_form_name` |  |
-| `contract_needed` |  |
-| `credentials_needed` |  |
-| `description_key` |  |
-| `name_key` |  |
-| `prescreening_allowed` |  |
-| `product_name` |  |
-| `product_status` |  |
-| `product_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `vendor_name` |  |
+| `allowMultipleOrders` |  |
+| `appFormName` |  |
+| `contractNeeded` |  |
+| `credentialsNeeded` |  |
+| `descriptionKey` |  |
+| `nameKey` |  |
+| `prescreeningAllowed` |  |
+| `productName` |  |
+| `productStatus` |  |
+| `productUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `vendorName` |  |
 
 Operations: Create.
 
@@ -700,7 +700,7 @@ Create an instance: `var merchantPortalPamContractController = client.MerchantPo
 | Field | Type | Description |
 | --- | --- | --- |
 | `language` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
@@ -708,7 +708,7 @@ Create an instance: `var merchantPortalPamContractController = client.MerchantPo
 var merchantPortalPamContractController = client.MerchantPortalPamContractController().Create(new Dictionary<string, object?>
 {
     ["language"] = "example_language",  // string
-    ["product_order_uuid"] = "example_product_order_uuid",  // string
+    ["productOrderUUID"] = "example_productOrderUUID",  // string
 });
 ```
 
@@ -727,16 +727,16 @@ Create an instance: `var merchantPortalPamDocumentController = client.MerchantPo
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_field_desc_uuid` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
+| `appFormFieldDescUUID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```csharp
 var merchantPortalPamDocumentController = client.MerchantPortalPamDocumentController().Create(new Dictionary<string, object?>
 {
-    ["app_form_field_desc_uuid"] = "example_app_form_field_desc_uuid",  // string
+    ["appFormFieldDescUUID"] = "example_appFormFieldDescUUID",  // string
 });
 ```
 
@@ -755,25 +755,25 @@ Create an instance: `var merchantPortalPamFormController = client.MerchantPortal
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_form_fields_desc_uuid` | `string` |  |
+| `appFormFieldsDescUUID` | `string` |  |
 | `filter` | `Dictionary<string, object?>` |  |
 | `language` | `string` |  |
-| `package_order` | `Dictionary<string, object?>` |  |
-| `package_order_uuid` | `string` |  |
-| `package_uuid` | `string` |  |
-| `product_order` | `List<object?>` |  |
-| `product_order_uuid` | `string` |  |
-| `reason_of_reopening` | `string` |  |
+| `packageOrder` | `Dictionary<string, object?>` |  |
+| `packageOrderUUID` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productOrders` | `List<object?>` |  |
+| `reasonOfReopening` | `string` |  |
 
 #### Example: Create
 
 ```csharp
 var merchantPortalPamFormController = client.MerchantPortalPamFormController().Create(new Dictionary<string, object?>
 {
-    ["app_form_fields_desc_uuid"] = "example_app_form_fields_desc_uuid",  // string
+    ["appFormFieldsDescUUID"] = "example_appFormFieldsDescUUID",  // string
     ["language"] = "example_language",  // string
-    ["package_order_uuid"] = "example_package_order_uuid",  // string
-    ["reason_of_reopening"] = "example_reason_of_reopening",  // string
+    ["packageOrderUUID"] = "example_packageOrderUUID",  // string
+    ["reasonOfReopening"] = "example_reasonOfReopening",  // string
 });
 ```
 
@@ -792,18 +792,18 @@ Create an instance: `var merchantPortalPamMandatorController = client.MerchantPo
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `string` |  |
-| `mandator_name` | `string` |  |
-| `notification_email` | `string` |  |
-| `package_uuid` | `string` |  |
+| `clientSecret` | `string` |  |
+| `mandatorName` | `string` |  |
+| `notificationEmail` | `string` |  |
+| `packageUUID` | `string` |  |
 
 #### Example: Create
 
 ```csharp
 var merchantPortalPamMandatorController = client.MerchantPortalPamMandatorController().Create(new Dictionary<string, object?>
 {
-    ["mandator_name"] = "example_mandator_name",  // string
-    ["package_uuid"] = "example_package_uuid",  // string
+    ["mandatorName"] = "example_mandatorName",  // string
+    ["packageUUID"] = "example_packageUUID",  // string
 });
 ```
 
@@ -823,29 +823,29 @@ Create an instance: `var merchantPortalPamMerchantController = client.MerchantPo
 | Field | Type | Description |
 | --- | --- | --- |
 | `additional_data` | `Dictionary<string, object?>` |  |
-| `business_registration_number` | `string` |  |
+| `businessRegistrationNumber` | `string` |  |
 | `city` | `string` |  |
-| `company_name` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `companyName` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
 | `currency` | `string` |  |
 | `email` | `string` |  |
 | `language` | `string` |  |
 | `login` | `string` |  |
 | `mandator` | `string` |  |
+| `merchantContractNumber` | `string` |  |
+| `merchantName` | `string` |  |
 | `merchant_category_code` | `string` |  |
-| `merchant_contract_number` | `string` |  |
-| `merchant_name` | `string` |  |
-| `package_uuid` | `string` |  |
+| `packageUUID` | `string` |  |
 | `packageorderuuid` | `string` |  |
-| `phone_number` | `string` |  |
-| `postal_code` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `postalCode` | `string` |  |
 | `productid_acquirer` | `string` |  |
 | `region` | `string` |  |
-| `registration_number` | `string` |  |
+| `registrationNumber` | `string` |  |
 | `signature` | `string` |  |
 | `street` | `string` |  |
-| `terminal_id` | `List<object?>` |  |
+| `terminalIds` | `List<object?>` |  |
 | `terminalid_acquirer` | `string` |  |
 | `vu_nummer` | `string` |  |
 
@@ -854,17 +854,17 @@ Create an instance: `var merchantPortalPamMerchantController = client.MerchantPo
 ```csharp
 var merchantPortalPamMerchantController = client.MerchantPortalPamMerchantController().Create(new Dictionary<string, object?>
 {
-    ["business_registration_number"] = "example_business_registration_number",  // string
-    ["company_name"] = "example_company_name",  // string
-    ["corporate_uuid"] = "example_corporate_uuid",  // string
+    ["businessRegistrationNumber"] = "example_businessRegistrationNumber",  // string
+    ["companyName"] = "example_companyName",  // string
+    ["corporateUUID"] = "example_corporateUUID",  // string
     ["currency"] = "example_currency",  // string
     ["email"] = "example_email",  // string
     ["language"] = "example_language",  // string
     ["login"] = "example_login",  // string
     ["mandator"] = "example_mandator",  // string
-    ["merchant_contract_number"] = "example_merchant_contract_number",  // string
+    ["merchantContractNumber"] = "example_merchantContractNumber",  // string
     ["packageorderuuid"] = "example_packageorderuuid",  // string
-    ["phone_number"] = "example_phone_number",  // string
+    ["phoneNumber"] = "example_phoneNumber",  // string
     ["productid_acquirer"] = "example_productid_acquirer",  // string
     ["vu_nummer"] = "example_vu_nummer",  // string
 });
@@ -885,15 +885,15 @@ Create an instance: `var merchantPortalPamPackageController = client.MerchantPor
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `corporateUUID` | `string` |  |
 | `country` | `string` |  |
-| `description_key` | `string` |  |
+| `descriptionKey` | `string` |  |
 | `filter` | `Dictionary<string, object?>` |  |
 | `language` | `string` |  |
-| `name_key` | `string` |  |
-| `package_status` | `string` |  |
-| `package_uuid` | `string` |  |
+| `nameKey` | `string` |  |
+| `packageStatus` | `string` |  |
+| `packageUUID` | `string` |  |
 | `pagination` | `Dictionary<string, object?>` |  |
 | `sorting` | `Dictionary<string, object?>` |  |
 
@@ -903,7 +903,7 @@ Create an instance: `var merchantPortalPamPackageController = client.MerchantPor
 var merchantPortalPamPackageController = client.MerchantPortalPamPackageController().Create(new Dictionary<string, object?>
 {
     ["language"] = "example_language",  // string
-    ["package_uuid"] = "example_package_uuid",  // string
+    ["packageUUID"] = "example_packageUUID",  // string
 });
 ```
 
@@ -922,14 +922,14 @@ Create an instance: `var merchantPortalPamProductController = client.MerchantPor
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
+| `consumerUUID` | `string` |  |
 | `filter` | `Dictionary<string, object?>` |  |
 | `language` | `string` |  |
-| `merchant_id` | `string` |  |
-| `package_order_uuid` | `string` |  |
+| `merchantID` | `string` |  |
+| `packageOrderUUID` | `string` |  |
 | `pagination` | `Dictionary<string, object?>` |  |
-| `product_order_uuid` | `string` |  |
-| `product_uuid` | `string` |  |
+| `productOrderUUID` | `string` |  |
+| `productUUID` | `string` |  |
 | `reason_decline` | `string` |  |
 | `sorting` | `Dictionary<string, object?>` |  |
 
@@ -938,9 +938,9 @@ Create an instance: `var merchantPortalPamProductController = client.MerchantPor
 ```csharp
 var merchantPortalPamProductController = client.MerchantPortalPamProductController().Create(new Dictionary<string, object?>
 {
-    ["package_order_uuid"] = "example_package_order_uuid",  // string
-    ["product_order_uuid"] = "example_product_order_uuid",  // string
-    ["product_uuid"] = "example_product_uuid",  // string
+    ["packageOrderUUID"] = "example_packageOrderUUID",  // string
+    ["productOrderUUID"] = "example_productOrderUUID",  // string
+    ["productUUID"] = "example_productUUID",  // string
     ["reason_decline"] = "example_reason_decline",  // string
 });
 ```
@@ -960,20 +960,20 @@ Create an instance: `var outputAddProduct = client.OutputAddProduct();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `List<object?>` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `List<object?>` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```csharp
 var outputAddProduct = client.OutputAddProduct().Create(new Dictionary<string, object?>
 {
-    ["package_uuid"] = "example_package_uuid",  // string
-    ["product_uui_d"] = new List<object?>(),  // List<object?>
-    ["response_code"] = 1L,  // long
-    ["response_message"] = "example_response_message",  // string
+    ["packageUUID"] = "example_packageUUID",  // string
+    ["productUUIDs"] = new List<object?>(),  // List<object?>
+    ["responseCode"] = 1L,  // long
+    ["responseMessage"] = "example_responseMessage",  // string
 });
 ```
 
@@ -992,38 +992,38 @@ Create an instance: `var outputCreateProduct = client.OutputCreateProduct();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `string` |  |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_template_name` | `string` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `string` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
-| `terminal_template_name` | `string` |  |
-| `vendor_name` | `string` |  |
-| `xml_template_file` | `string` |  |
+| `acquirerId` | `string` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormTemplateName` | `string` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `string` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
+| `terminalTemplateName` | `string` |  |
+| `vendorName` | `string` |  |
+| `xmlTemplateFile` | `string` |  |
 
 #### Example: Create
 
 ```csharp
 var outputCreateProduct = client.OutputCreateProduct().Create(new Dictionary<string, object?>
 {
-    ["allow_multiple_order"] = true,  // bool
-    ["app_form_template_name"] = "example_app_form_template_name",  // string
-    ["contract_needed"] = true,  // bool
-    ["description_key"] = "example_description_key",  // string
-    ["name_key"] = "example_name_key",  // string
-    ["prescreening_allowed"] = true,  // bool
-    ["product_name"] = "example_product_name",  // string
-    ["response_code"] = 1L,  // long
-    ["response_message"] = "example_response_message",  // string
-    ["terminal_template_name"] = "example_terminal_template_name",  // string
-    ["vendor_name"] = "example_vendor_name",  // string
-    ["xml_template_file"] = "example_xml_template_file",  // string
+    ["allowMultipleOrders"] = true,  // bool
+    ["appFormTemplateName"] = "example_appFormTemplateName",  // string
+    ["contractNeeded"] = true,  // bool
+    ["descriptionKey"] = "example_descriptionKey",  // string
+    ["nameKey"] = "example_nameKey",  // string
+    ["prescreeningAllowed"] = true,  // bool
+    ["productName"] = "example_productName",  // string
+    ["responseCode"] = 1L,  // long
+    ["responseMessage"] = "example_responseMessage",  // string
+    ["terminalTemplateName"] = "example_terminalTemplateName",  // string
+    ["vendorName"] = "example_vendorName",  // string
+    ["xmlTemplateFile"] = "example_xmlTemplateFile",  // string
 });
 ```
 
@@ -1042,9 +1042,9 @@ Create an instance: `var outputDetail = client.OutputDetail();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `detail` | `Dictionary<string, object?>` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
+| `batch` | `Dictionary<string, object?>` |  |
+| `lines` | `Dictionary<string, object?>` |  |
+| `progress` | `Dictionary<string, object?>` |  |
 
 #### Example: Load
 
@@ -1067,10 +1067,10 @@ Create an instance: `var outputList = client.OutputList();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `item` | `List<object?>` |  |
+| `items` | `List<object?>` |  |
 | `pagination` | `Dictionary<string, object?>` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `Dictionary<string, object?>` |  |
 
 #### Example: Create
@@ -1079,8 +1079,8 @@ Create an instance: `var outputList = client.OutputList();`
 var outputList = client.OutputList().Create(new Dictionary<string, object?>
 {
     ["pagination"] = new Dictionary<string, object?>(),  // Dictionary<string, object?>
-    ["response_code"] = 1L,  // long
-    ["response_message"] = "example_response_message",  // string
+    ["responseCode"] = 1L,  // long
+    ["responseMessage"] = "example_responseMessage",  // string
 });
 ```
 
@@ -1099,8 +1099,8 @@ Create an instance: `var outputMessage = client.OutputMessage();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Load
 
@@ -1123,22 +1123,22 @@ Create an instance: `var outputMoveTid = client.OutputMoveTid();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `product_order_uui_d` | `List<object?>` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
-| `target_package_order_uuid` | `string` |  |
-| `target_product_order_uuid` | `string` |  |
+| `productOrderUUIDs` | `List<object?>` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
+| `targetPackageOrderUUID` | `string` |  |
+| `targetProductOrderUUID` | `string` |  |
 
 #### Example: Create
 
 ```csharp
 var outputMoveTid = client.OutputMoveTid().Create(new Dictionary<string, object?>
 {
-    ["product_order_uui_d"] = new List<object?>(),  // List<object?>
-    ["response_code"] = 1L,  // long
-    ["response_message"] = "example_response_message",  // string
-    ["target_package_order_uuid"] = "example_target_package_order_uuid",  // string
-    ["target_product_order_uuid"] = "example_target_product_order_uuid",  // string
+    ["productOrderUUIDs"] = new List<object?>(),  // List<object?>
+    ["responseCode"] = 1L,  // long
+    ["responseMessage"] = "example_responseMessage",  // string
+    ["targetPackageOrderUUID"] = "example_targetPackageOrderUUID",  // string
+    ["targetProductOrderUUID"] = "example_targetProductOrderUUID",  // string
 });
 ```
 
@@ -1157,20 +1157,20 @@ Create an instance: `var outputRemoveProduct = client.OutputRemoveProduct();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `package_uuid` | `string` |  |
-| `product_uui_d` | `List<object?>` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
+| `packageUUID` | `string` |  |
+| `productUUIDs` | `List<object?>` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```csharp
 var outputRemoveProduct = client.OutputRemoveProduct().Create(new Dictionary<string, object?>
 {
-    ["package_uuid"] = "example_package_uuid",  // string
-    ["product_uui_d"] = new List<object?>(),  // List<object?>
-    ["response_code"] = 1L,  // long
-    ["response_message"] = "example_response_message",  // string
+    ["packageUUID"] = "example_packageUUID",  // string
+    ["productUUIDs"] = new List<object?>(),  // List<object?>
+    ["responseCode"] = 1L,  // long
+    ["responseMessage"] = "example_responseMessage",  // string
 });
 ```
 
@@ -1190,16 +1190,16 @@ Create an instance: `var outputStart = client.OutputStart();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `string` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```csharp
 var outputStart = client.OutputStart().Create(new Dictionary<string, object?>
 {
-    ["response_code"] = 1L,  // long
-    ["response_message"] = "example_response_message",  // string
+    ["responseCode"] = 1L,  // long
+    ["responseMessage"] = "example_responseMessage",  // string
 });
 ```
 
@@ -1219,8 +1219,8 @@ Create an instance: `var outputStatus = client.OutputStatus();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `long` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
 | `status` | `string` |  |
 
 #### Example: Load
@@ -1244,28 +1244,28 @@ Create an instance: `var outputUpdateProduct = client.OutputUpdateProduct();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allow_multiple_order` | `bool` |  |
-| `app_form_name` | `string` |  |
-| `contract_needed` | `bool` |  |
-| `credentials_needed` | `bool` |  |
-| `description_key` | `string` |  |
-| `name_key` | `string` |  |
-| `prescreening_allowed` | `bool` |  |
-| `product_name` | `string` |  |
-| `product_status` | `string` |  |
-| `product_uuid` | `string` |  |
-| `response_code` | `long` |  |
-| `response_message` | `string` |  |
-| `vendor_name` | `string` |  |
+| `allowMultipleOrders` | `bool` |  |
+| `appFormName` | `string` |  |
+| `contractNeeded` | `bool` |  |
+| `credentialsNeeded` | `bool` |  |
+| `descriptionKey` | `string` |  |
+| `nameKey` | `string` |  |
+| `prescreeningAllowed` | `bool` |  |
+| `productName` | `string` |  |
+| `productStatus` | `string` |  |
+| `productUUID` | `string` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
+| `vendorName` | `string` |  |
 
 #### Example: Create
 
 ```csharp
 var outputUpdateProduct = client.OutputUpdateProduct().Create(new Dictionary<string, object?>
 {
-    ["product_uuid"] = "example_product_uuid",  // string
-    ["response_code"] = 1L,  // long
-    ["response_message"] = "example_response_message",  // string
+    ["productUUID"] = "example_productUUID",  // string
+    ["responseCode"] = 1L,  // long
+    ["responseMessage"] = "example_responseMessage",  // string
 });
 ```
 

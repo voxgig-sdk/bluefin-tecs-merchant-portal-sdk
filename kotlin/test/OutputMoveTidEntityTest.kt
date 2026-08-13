@@ -40,7 +40,7 @@ class OutputMoveTidEntityTest {
     }
     Assumptions.assumeFalse(
       setup.syntheticOnly,
-      "live entity test uses synthetic IDs from fixture — set BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_MOVE_TID_ENTID JSON to run live",
+      "live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_MOVE_TID_ENTID JSON to run live",
     )
     val client = setup.client
 
@@ -50,7 +50,7 @@ class OutputMoveTidEntityTest {
         Struct.getpath(setup.data, "new.output_move_tid"), "output_move_tid_ref01")) ?: linkedMapOf())
 
     val outputMoveTidRef01DataResult = outputMoveTidRef01Ent.create(outputMoveTidRef01Data, null)
-    outputMoveTidRef01Data = Helpers.toMapAny(outputMoveTidRef01DataResult) ?: linkedMapOf()
+    outputMoveTidRef01Data = Helpers.toMapAny(if (outputMoveTidRef01DataResult is SdkEntity) outputMoveTidRef01DataResult.data() else outputMoveTidRef01DataResult) ?: linkedMapOf()
     assertNotNull(outputMoveTidRef01Data, "expected create result to be a map")
 
   }
@@ -85,21 +85,21 @@ class OutputMoveTidEntityTest {
           "}]}"))
 
       // Detect ENTID env override before envOverride consumes it.
-      val entidEnvRaw = RunnerSupport.getenv("BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_MOVE_TID_ENTID")
+      val entidEnvRaw = RunnerSupport.getenv("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_MOVE_TID_ENTID")
       val idmapOverridden = entidEnvRaw != null && entidEnvRaw.trim().startsWith("{")
 
       val envm = linkedMapOf<String, Any?>()
-      envm["BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_MOVE_TID_ENTID"] = idmap
-      envm["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"] = "FALSE"
-      envm["BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN"] = "FALSE"
+      envm["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_MOVE_TID_ENTID"] = idmap
+      envm["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"] = "FALSE"
+      envm["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN"] = "FALSE"
       val env = RunnerSupport.envOverride(envm)
 
-      var idmapResolved = Helpers.toMapAny(env["BLUEFINTECSMERCHANTPORTAL_TEST_OUTPUT_MOVE_TID_ENTID"])
+      var idmapResolved = Helpers.toMapAny(env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_MOVE_TID_ENTID"])
       if (idmapResolved == null) {
         idmapResolved = Helpers.toMapAny(idmap) ?: linkedMapOf()
       }
 
-      val live = "TRUE" == env["BLUEFINTECSMERCHANTPORTAL_TEST_LIVE"]
+      val live = "TRUE" == env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"]
       if (live) {
         val liveOpts = linkedMapOf<String, Any?>()
         val mergedOpts = Struct.merge(Struct.jt(liveOpts, extra))
@@ -111,7 +111,7 @@ class OutputMoveTidEntityTest {
       setup.data = entityData
       setup.idmap = idmapResolved
       setup.env = env
-      setup.explain = "TRUE" == env["BLUEFINTECSMERCHANTPORTAL_TEST_EXPLAIN"]
+      setup.explain = "TRUE" == env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN"]
       setup.live = live
       setup.syntheticOnly = live && !idmapOverridden
       setup.now = System.currentTimeMillis()

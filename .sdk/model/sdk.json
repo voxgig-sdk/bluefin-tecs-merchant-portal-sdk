@@ -5,6 +5,10 @@
       "desc": ""
     },
     "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
       "config": {
         "docs_order": [
           "ts",
@@ -18,6 +22,7 @@
           "content-type": "application/json"
         }
       },
+      "contributor": {},
       "entity": {
         "merchant_portal_api_controller": {
           "active": true,
@@ -244,6 +249,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/deactivateTerminal",
                   "parts": [
@@ -274,6 +280,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/reactivateTerminal",
                   "parts": [
@@ -304,6 +311,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/registerAdditionalTerminal",
                   "parts": [
@@ -334,6 +342,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/registerNewMerchant",
                   "parts": [
@@ -372,6 +381,7 @@
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/logDeveloperInfo",
                   "parts": [
@@ -387,6 +397,7 @@
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/version",
                   "parts": [
@@ -420,7 +431,7 @@
             },
             {
               "active": true,
-              "name": "product_order_uuid",
+              "name": "productOrderUUID",
               "req": true,
               "type": "`$STRING`"
             }
@@ -445,6 +456,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/generateContract",
                   "parts": [
@@ -475,6 +487,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/uploadContract",
                   "parts": [
@@ -506,19 +519,19 @@
           "fields": [
             {
               "active": true,
-              "name": "app_form_field_desc_uuid",
+              "name": "appFormFieldDescUUID",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "package_order_uuid",
+              "name": "packageOrderUUID",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "product_order_uuid",
+              "name": "productOrderUUID",
               "req": false,
               "type": "`$STRING`"
             }
@@ -543,6 +556,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/documentsList",
                   "parts": [
@@ -573,6 +587,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/downloadDocument",
                   "parts": [
@@ -604,7 +619,7 @@
           "fields": [
             {
               "active": true,
-              "name": "app_form_fields_desc_uuid",
+              "name": "appFormFieldsDescUUID",
               "req": true,
               "type": "`$STRING`"
             },
@@ -628,13 +643,13 @@
             },
             {
               "active": true,
-              "name": "package_order",
+              "name": "packageOrder",
               "req": false,
               "type": "`$OBJECT`"
             },
             {
               "active": true,
-              "name": "package_order_uuid",
+              "name": "packageOrderUUID",
               "op": {
                 "create": {
                   "req": false,
@@ -646,19 +661,13 @@
             },
             {
               "active": true,
-              "name": "package_uuid",
+              "name": "packageUUID",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "product_order",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "product_order_uuid",
+              "name": "productOrderUUID",
               "op": {
                 "create": {
                   "req": true,
@@ -670,7 +679,13 @@
             },
             {
               "active": true,
-              "name": "reason_of_reopening",
+              "name": "productOrders",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "reasonOfReopening",
               "req": true,
               "type": "`$STRING`"
             }
@@ -695,6 +710,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/applicationForm",
                   "parts": [
@@ -725,6 +741,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/packageForm",
                   "parts": [
@@ -755,6 +772,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/reopenForm",
                   "parts": [
@@ -785,6 +803,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/secretKey",
                   "parts": [
@@ -815,6 +834,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/submitForm",
                   "parts": [
@@ -845,6 +865,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/submitValues",
                   "parts": [
@@ -876,25 +897,25 @@
           "fields": [
             {
               "active": true,
-              "name": "client_secret",
+              "name": "clientSecret",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "mandator_name",
+              "name": "mandatorName",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "notification_email",
+              "name": "notificationEmail",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "package_uuid",
+              "name": "packageUUID",
               "req": true,
               "type": "`$STRING`"
             }
@@ -919,6 +940,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/createMandatorConfig",
                   "parts": [
@@ -949,6 +971,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/introduceMandatorPackage",
                   "parts": [
@@ -979,6 +1002,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/selfRegistrationLink",
                   "parts": [
@@ -1016,7 +1040,7 @@
             },
             {
               "active": true,
-              "name": "business_registration_number",
+              "name": "businessRegistrationNumber",
               "req": true,
               "type": "`$STRING`"
             },
@@ -1028,13 +1052,13 @@
             },
             {
               "active": true,
-              "name": "company_name",
+              "name": "companyName",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "corporate_uuid",
+              "name": "corporateUUID",
               "req": true,
               "type": "`$STRING`"
             },
@@ -1076,13 +1100,7 @@
             },
             {
               "active": true,
-              "name": "merchant_category_code",
-              "req": false,
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "merchant_contract_number",
+              "name": "merchantContractNumber",
               "op": {
                 "create": {
                   "req": false,
@@ -1094,13 +1112,19 @@
             },
             {
               "active": true,
-              "name": "merchant_name",
+              "name": "merchantName",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "package_uuid",
+              "name": "merchant_category_code",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "packageUUID",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1112,13 +1136,13 @@
             },
             {
               "active": true,
-              "name": "phone_number",
+              "name": "phoneNumber",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "postal_code",
+              "name": "postalCode",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1136,7 +1160,7 @@
             },
             {
               "active": true,
-              "name": "registration_number",
+              "name": "registrationNumber",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1154,7 +1178,7 @@
             },
             {
               "active": true,
-              "name": "terminal_id",
+              "name": "terminalIds",
               "req": false,
               "type": "`$ARRAY`"
             },
@@ -1191,6 +1215,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/contractNumber",
                   "parts": [
@@ -1221,6 +1246,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/registerAdditionalAcquiring",
                   "parts": [
@@ -1251,6 +1277,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/updateMerchant",
                   "parts": [
@@ -1270,6 +1297,7 @@
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/registerMerchant",
                   "parts": [
@@ -1297,13 +1325,13 @@
           "fields": [
             {
               "active": true,
-              "name": "consumer_uuid",
+              "name": "consumerUUID",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "corporate_uuid",
+              "name": "corporateUUID",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1315,7 +1343,7 @@
             },
             {
               "active": true,
-              "name": "description_key",
+              "name": "descriptionKey",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1339,19 +1367,19 @@
             },
             {
               "active": true,
-              "name": "name_key",
+              "name": "nameKey",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "package_status",
+              "name": "packageStatus",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "package_uuid",
+              "name": "packageUUID",
               "req": true,
               "type": "`$STRING`"
             },
@@ -1388,6 +1416,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/availablePackages",
                   "parts": [
@@ -1418,6 +1447,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/orderPackage",
                   "parts": [
@@ -1448,6 +1478,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/orderedPackages",
                   "parts": [
@@ -1478,6 +1509,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/packageTemplates",
                   "parts": [
@@ -1508,6 +1540,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/updatePackageData",
                   "parts": [
@@ -1539,7 +1572,7 @@
           "fields": [
             {
               "active": true,
-              "name": "consumer_uuid",
+              "name": "consumerUUID",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1557,13 +1590,13 @@
             },
             {
               "active": true,
-              "name": "merchant_id",
+              "name": "merchantID",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "package_order_uuid",
+              "name": "packageOrderUUID",
               "req": true,
               "type": "`$STRING`"
             },
@@ -1575,13 +1608,13 @@
             },
             {
               "active": true,
-              "name": "product_order_uuid",
+              "name": "productOrderUUID",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "product_uuid",
+              "name": "productUUID",
               "req": true,
               "type": "`$STRING`"
             },
@@ -1618,6 +1651,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/approveProduct",
                   "parts": [
@@ -1648,6 +1682,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/declineProduct",
                   "parts": [
@@ -1678,6 +1713,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/orderAdditionalProduct",
                   "parts": [
@@ -1708,6 +1744,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/productsList",
                   "parts": [
@@ -1739,25 +1776,25 @@
           "fields": [
             {
               "active": true,
-              "name": "package_uuid",
+              "name": "packageUUID",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "product_uui_d",
+              "name": "productUUIDs",
               "req": true,
               "type": "`$ARRAY`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": true,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": true,
               "type": "`$STRING`"
             }
@@ -1782,6 +1819,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/addProductsToPackage",
                   "parts": [
@@ -1813,85 +1851,85 @@
           "fields": [
             {
               "active": true,
-              "name": "acquirer_id",
+              "name": "acquirerId",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "allow_multiple_order",
+              "name": "allowMultipleOrders",
               "req": true,
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
-              "name": "app_form_template_name",
+              "name": "appFormTemplateName",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "contract_needed",
+              "name": "contractNeeded",
               "req": true,
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
-              "name": "credentials_needed",
+              "name": "credentialsNeeded",
               "req": false,
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
-              "name": "description_key",
+              "name": "descriptionKey",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "name_key",
+              "name": "nameKey",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "prescreening_allowed",
+              "name": "prescreeningAllowed",
               "req": true,
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
-              "name": "product_name",
+              "name": "productName",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": true,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "terminal_template_name",
+              "name": "terminalTemplateName",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "vendor_name",
+              "name": "vendorName",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "xml_template_file",
+              "name": "xmlTemplateFile",
               "req": true,
               "type": "`$STRING`"
             }
@@ -1916,6 +1954,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/createNewProduct",
                   "parts": [
@@ -1947,21 +1986,21 @@
           "fields": [
             {
               "active": true,
-              "name": "detail",
+              "name": "batch",
               "req": false,
               "type": "`$OBJECT`"
             },
             {
               "active": true,
-              "name": "response_code",
-              "req": true,
-              "type": "`$INTEGER`"
+              "name": "lines",
+              "req": false,
+              "type": "`$OBJECT`"
             },
             {
               "active": true,
-              "name": "response_message",
-              "req": true,
-              "type": "`$STRING`"
+              "name": "progress",
+              "req": false,
+              "type": "`$OBJECT`"
             }
           ],
           "name": "output_detail",
@@ -1994,6 +2033,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/batch/registerAdditionalTerminal/details/{id}",
                   "parts": [
@@ -2029,7 +2069,7 @@
           "fields": [
             {
               "active": true,
-              "name": "item",
+              "name": "items",
               "req": false,
               "type": "`$ARRAY`"
             },
@@ -2047,13 +2087,13 @@
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": true,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": true,
               "type": "`$STRING`"
             },
@@ -2084,6 +2124,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/batch/registerAdditionalTerminal/list",
                   "parts": [
@@ -2117,13 +2158,13 @@
           "fields": [
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": true,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": true,
               "type": "`$STRING`"
             }
@@ -2158,6 +2199,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}",
                   "parts": [
@@ -2202,6 +2244,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}",
                   "parts": [
@@ -2237,31 +2280,31 @@
           "fields": [
             {
               "active": true,
-              "name": "product_order_uui_d",
+              "name": "productOrderUUIDs",
               "req": true,
               "type": "`$ARRAY`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": true,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "target_package_order_uuid",
+              "name": "targetPackageOrderUUID",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "target_product_order_uuid",
+              "name": "targetProductOrderUUID",
               "req": true,
               "type": "`$STRING`"
             }
@@ -2286,6 +2329,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/moveTid",
                   "parts": [
@@ -2317,25 +2361,25 @@
           "fields": [
             {
               "active": true,
-              "name": "package_uuid",
+              "name": "packageUUID",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "product_uui_d",
+              "name": "productUUIDs",
               "req": true,
               "type": "`$ARRAY`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": true,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": true,
               "type": "`$STRING`"
             }
@@ -2360,6 +2404,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/removeProductsFromPackage",
                   "parts": [
@@ -2397,13 +2442,13 @@
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": true,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": true,
               "type": "`$STRING`"
             }
@@ -2432,6 +2477,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/batch/registerAdditionalTerminal/start",
                   "parts": [
@@ -2471,13 +2517,13 @@
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": true,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": true,
               "type": "`$STRING`"
             },
@@ -2518,6 +2564,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/batch/registerAdditionalTerminal/status/{id}",
                   "parts": [
@@ -2553,79 +2600,79 @@
           "fields": [
             {
               "active": true,
-              "name": "allow_multiple_order",
+              "name": "allowMultipleOrders",
               "req": false,
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
-              "name": "app_form_name",
+              "name": "appFormName",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "contract_needed",
+              "name": "contractNeeded",
               "req": false,
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
-              "name": "credentials_needed",
+              "name": "credentialsNeeded",
               "req": false,
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
-              "name": "description_key",
+              "name": "descriptionKey",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "name_key",
+              "name": "nameKey",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "prescreening_allowed",
+              "name": "prescreeningAllowed",
               "req": false,
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
-              "name": "product_name",
+              "name": "productName",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "product_status",
+              "name": "productStatus",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "product_uuid",
+              "name": "productUUID",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": true,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "vendor_name",
+              "name": "vendorName",
               "req": false,
               "type": "`$STRING`"
             }
@@ -2650,6 +2697,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/updateProduct",
                   "parts": [
@@ -3283,18 +3331,42 @@
         "website": "https://test.tecs.at"
       },
       "option": {},
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
       "target": {
         "c": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "c",
+          "feature": {
+            "fullset": [
+              "tests/feature_test.c",
+              "tests/sdk_pipeline_test.c"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "c",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3316,22 +3388,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "C"
         },
         "clojure": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": ";"
           },
           "deps": {},
           "ext": "clj",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "clojure",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3353,22 +3443,42 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Clojure"
         },
         "cpp": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "hpp",
+          "feature": {
+            "fullset": [
+              "test/feature_test.cpp"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "cpp",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3390,23 +3500,43 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "C++"
         },
         "csharp": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "cs",
+          "feature": {
+            "fullset": [
+              "test/FeatureTest.cs"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "csharp",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3428,22 +3558,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "C#"
         },
         "dart": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "dart",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "dart",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3465,22 +3613,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Dart"
         },
         "elixir": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
           "deps": {},
           "ext": "ex",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "elixir",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3502,22 +3668,42 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Elixir"
         },
         "go": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [
+              "test/feature_test.go"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "go",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3539,22 +3725,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Golang"
         },
         "go-cli": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "go-cli",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "phase": {
             "agentguide": {
               "active": false
@@ -3593,21 +3797,39 @@
                 "recipe": "github"
               },
               "via": "root"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "Go CLI"
         },
         "go-mcp": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "go-mcp",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "phase": {
             "agentguide": {
               "active": false
@@ -3646,21 +3868,39 @@
                 "recipe": "github"
               },
               "via": "root"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "Go MCP server"
         },
         "haskell": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "--"
           },
           "deps": {},
           "ext": "hs",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "haskell",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "phase": {
             "agentguide": {
               "active": true
@@ -3699,22 +3939,42 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Haskell"
         },
         "java": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "java",
+          "feature": {
+            "fullset": [
+              "test/FeatureTest.java"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "java",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3736,13 +3996,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Java"
         },
         "js": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
@@ -3754,10 +4019,23 @@
             }
           },
           "ext": "js",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "js",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3779,21 +4057,41 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "JavaScript"
         },
         "kotlin": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "kt",
+          "feature": {
+            "fullset": [
+              "test/FeatureTest.kt"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "kotlin",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3815,13 +4113,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Kotlin"
         },
         "lua": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "--"
           },
@@ -3833,10 +4136,23 @@
             }
           },
           "ext": "lua",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "lua",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3858,22 +4174,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Lua"
         },
         "ocaml": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "ml",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "ocaml",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3895,22 +4229,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "OCaml"
         },
         "perl": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
           "deps": {},
           "ext": "pl",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "perl",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3932,22 +4284,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Perl"
         },
         "php": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "php",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "php",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3969,13 +4339,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "PHP"
         },
         "py": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
@@ -3987,10 +4362,23 @@
             }
           },
           "ext": "py",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "py",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4012,13 +4400,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Python"
         },
         "rb": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
@@ -4035,10 +4428,23 @@
             }
           },
           "ext": "rb",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "rb",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4060,13 +4466,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Ruby"
         },
         "rust": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
@@ -4078,10 +4489,25 @@
             }
           },
           "ext": "rs",
+          "feature": {
+            "fullset": [
+              "tests/feature_test.rs"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "rust",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4103,22 +4529,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Rust"
         },
         "scala": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "scala",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "scala",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4140,23 +4584,43 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Scala"
         },
         "swift": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "swift",
+          "feature": {
+            "fullset": [
+              "Tests/ProjectNameSDKTests/FeatureTest.swift"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "swift",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4178,13 +4642,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Swift"
         },
         "ts": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
@@ -4207,10 +4676,23 @@
             }
           },
           "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "ts",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4232,21 +4714,39 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "TypeScript"
         },
         "zig": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "zig",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
           "module": {
-            "name": "bluefin-tecs-merchant-portal"
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
           },
           "name": "zig",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4268,10 +4768,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Zig"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": false
         }
       }
     }

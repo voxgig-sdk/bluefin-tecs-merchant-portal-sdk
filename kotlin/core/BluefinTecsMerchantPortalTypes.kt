@@ -24,72 +24,72 @@ object BluefinTecsMerchantPortalTypes {
 
   class MerchantPortalCommonControllerLoadMatch
 
-  data class MerchantPortalPamContractController(val language: String?, val product_order_uuid: String?)
+  data class MerchantPortalPamContractController(val language: String?, val productOrderUUID: String?)
 
-  data class MerchantPortalPamContractControllerCreateData(val language: String?, val product_order_uuid: String?)
+  data class MerchantPortalPamContractControllerCreateData(val language: String?, val productOrderUUID: String?)
 
-  data class MerchantPortalPamDocumentController(val app_form_field_desc_uuid: String?, val package_order_uuid: String?, val product_order_uuid: String?)
+  data class MerchantPortalPamDocumentController(val appFormFieldDescUUID: String?, val packageOrderUUID: String?, val productOrderUUID: String?)
 
-  data class MerchantPortalPamDocumentControllerCreateData(val app_form_field_desc_uuid: String?, val package_order_uuid: String?, val product_order_uuid: String?)
+  data class MerchantPortalPamDocumentControllerCreateData(val appFormFieldDescUUID: String?, val packageOrderUUID: String?, val productOrderUUID: String?)
 
-  data class MerchantPortalPamFormController(val app_form_fields_desc_uuid: String?, val filter: Map<String, Any?>?, val language: String?, val package_order: Map<String, Any?>?, val package_order_uuid: String?, val package_uuid: String?, val product_order: List<Any?>?, val product_order_uuid: String?, val reason_of_reopening: String?)
+  data class MerchantPortalPamFormController(val appFormFieldsDescUUID: String?, val filter: Map<String, Any?>?, val language: String?, val packageOrder: Map<String, Any?>?, val packageOrderUUID: String?, val packageUUID: String?, val productOrderUUID: String?, val productOrders: List<Any?>?, val reasonOfReopening: String?)
 
-  data class MerchantPortalPamFormControllerCreateData(val app_form_fields_desc_uuid: String?, val filter: Map<String, Any?>?, val language: String?, val package_order: Map<String, Any?>?, val package_order_uuid: String?, val package_uuid: String?, val product_order: List<Any?>?, val product_order_uuid: String?, val reason_of_reopening: String?)
+  data class MerchantPortalPamFormControllerCreateData(val appFormFieldsDescUUID: String?, val filter: Map<String, Any?>?, val language: String?, val packageOrder: Map<String, Any?>?, val packageOrderUUID: String?, val packageUUID: String?, val productOrderUUID: String?, val productOrders: List<Any?>?, val reasonOfReopening: String?)
 
-  data class MerchantPortalPamMandatorController(val client_secret: String?, val mandator_name: String?, val notification_email: String?, val package_uuid: String?)
+  data class MerchantPortalPamMandatorController(val clientSecret: String?, val mandatorName: String?, val notificationEmail: String?, val packageUUID: String?)
 
-  data class MerchantPortalPamMandatorControllerCreateData(val client_secret: String?, val mandator_name: String?, val notification_email: String?, val package_uuid: String?)
+  data class MerchantPortalPamMandatorControllerCreateData(val clientSecret: String?, val mandatorName: String?, val notificationEmail: String?, val packageUUID: String?)
 
-  data class MerchantPortalPamMerchantController(val additional_data: Map<String, Any?>?, val business_registration_number: String?, val city: String?, val company_name: String?, val corporate_uuid: String?, val country: String?, val currency: String?, val email: String?, val language: String?, val login: String?, val mandator: String?, val merchant_category_code: String?, val merchant_contract_number: String?, val merchant_name: String?, val package_uuid: String?, val packageorderuuid: String?, val phone_number: String?, val postal_code: String?, val productid_acquirer: String?, val region: String?, val registration_number: String?, val signature: String?, val street: String?, val terminal_id: List<Any?>?, val terminalid_acquirer: String?, val vu_nummer: String?)
+  data class MerchantPortalPamMerchantController(val additional_data: Map<String, Any?>?, val businessRegistrationNumber: String?, val city: String?, val companyName: String?, val corporateUUID: String?, val country: String?, val currency: String?, val email: String?, val language: String?, val login: String?, val mandator: String?, val merchantContractNumber: String?, val merchantName: String?, val merchant_category_code: String?, val packageUUID: String?, val packageorderuuid: String?, val phoneNumber: String?, val postalCode: String?, val productid_acquirer: String?, val region: String?, val registrationNumber: String?, val signature: String?, val street: String?, val terminalIds: List<Any?>?, val terminalid_acquirer: String?, val vu_nummer: String?)
 
-  data class MerchantPortalPamMerchantControllerCreateData(val additional_data: Map<String, Any?>?, val business_registration_number: String?, val city: String?, val company_name: String?, val corporate_uuid: String?, val country: String?, val currency: String?, val email: String?, val language: String?, val login: String?, val mandator: String?, val merchant_category_code: String?, val merchant_contract_number: String?, val merchant_name: String?, val package_uuid: String?, val packageorderuuid: String?, val phone_number: String?, val postal_code: String?, val productid_acquirer: String?, val region: String?, val registration_number: String?, val signature: String?, val street: String?, val terminal_id: List<Any?>?, val terminalid_acquirer: String?, val vu_nummer: String?)
+  data class MerchantPortalPamMerchantControllerCreateData(val additional_data: Map<String, Any?>?, val businessRegistrationNumber: String?, val city: String?, val companyName: String?, val corporateUUID: String?, val country: String?, val currency: String?, val email: String?, val language: String?, val login: String?, val mandator: String?, val merchantContractNumber: String?, val merchantName: String?, val merchant_category_code: String?, val packageUUID: String?, val packageorderuuid: String?, val phoneNumber: String?, val postalCode: String?, val productid_acquirer: String?, val region: String?, val registrationNumber: String?, val signature: String?, val street: String?, val terminalIds: List<Any?>?, val terminalid_acquirer: String?, val vu_nummer: String?)
 
-  data class MerchantPortalPamPackageController(val consumer_uuid: String?, val corporate_uuid: String?, val country: String?, val description_key: String?, val filter: Map<String, Any?>?, val language: String?, val name_key: String?, val package_status: String?, val package_uuid: String?, val pagination: Map<String, Any?>?, val sorting: Map<String, Any?>?)
+  data class MerchantPortalPamPackageController(val consumerUUID: String?, val corporateUUID: String?, val country: String?, val descriptionKey: String?, val filter: Map<String, Any?>?, val language: String?, val nameKey: String?, val packageStatus: String?, val packageUUID: String?, val pagination: Map<String, Any?>?, val sorting: Map<String, Any?>?)
 
-  data class MerchantPortalPamPackageControllerCreateData(val consumer_uuid: String?, val corporate_uuid: String?, val country: String?, val description_key: String?, val filter: Map<String, Any?>?, val language: String?, val name_key: String?, val package_status: String?, val package_uuid: String?, val pagination: Map<String, Any?>?, val sorting: Map<String, Any?>?)
+  data class MerchantPortalPamPackageControllerCreateData(val consumerUUID: String?, val corporateUUID: String?, val country: String?, val descriptionKey: String?, val filter: Map<String, Any?>?, val language: String?, val nameKey: String?, val packageStatus: String?, val packageUUID: String?, val pagination: Map<String, Any?>?, val sorting: Map<String, Any?>?)
 
-  data class MerchantPortalPamProductController(val consumer_uuid: String?, val filter: Map<String, Any?>?, val language: String?, val merchant_id: String?, val package_order_uuid: String?, val pagination: Map<String, Any?>?, val product_order_uuid: String?, val product_uuid: String?, val reason_decline: String?, val sorting: Map<String, Any?>?)
+  data class MerchantPortalPamProductController(val consumerUUID: String?, val filter: Map<String, Any?>?, val language: String?, val merchantID: String?, val packageOrderUUID: String?, val pagination: Map<String, Any?>?, val productOrderUUID: String?, val productUUID: String?, val reason_decline: String?, val sorting: Map<String, Any?>?)
 
-  data class MerchantPortalPamProductControllerCreateData(val consumer_uuid: String?, val filter: Map<String, Any?>?, val language: String?, val merchant_id: String?, val package_order_uuid: String?, val pagination: Map<String, Any?>?, val product_order_uuid: String?, val product_uuid: String?, val reason_decline: String?, val sorting: Map<String, Any?>?)
+  data class MerchantPortalPamProductControllerCreateData(val consumerUUID: String?, val filter: Map<String, Any?>?, val language: String?, val merchantID: String?, val packageOrderUUID: String?, val pagination: Map<String, Any?>?, val productOrderUUID: String?, val productUUID: String?, val reason_decline: String?, val sorting: Map<String, Any?>?)
 
-  data class OutputAddProduct(val package_uuid: String?, val product_uui_d: List<Any?>?, val response_code: Long?, val response_message: String?)
+  data class OutputAddProduct(val packageUUID: String?, val productUUIDs: List<Any?>?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputAddProductCreateData(val package_uuid: String?, val product_uui_d: List<Any?>?, val response_code: Long?, val response_message: String?)
+  data class OutputAddProductCreateData(val packageUUID: String?, val productUUIDs: List<Any?>?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputCreateProduct(val acquirer_id: String?, val allow_multiple_order: Boolean?, val app_form_template_name: String?, val contract_needed: Boolean?, val credentials_needed: Boolean?, val description_key: String?, val name_key: String?, val prescreening_allowed: Boolean?, val product_name: String?, val response_code: Long?, val response_message: String?, val terminal_template_name: String?, val vendor_name: String?, val xml_template_file: String?)
+  data class OutputCreateProduct(val acquirerId: String?, val allowMultipleOrders: Boolean?, val appFormTemplateName: String?, val contractNeeded: Boolean?, val credentialsNeeded: Boolean?, val descriptionKey: String?, val nameKey: String?, val prescreeningAllowed: Boolean?, val productName: String?, val responseCode: Long?, val responseMessage: String?, val terminalTemplateName: String?, val vendorName: String?, val xmlTemplateFile: String?)
 
-  data class OutputCreateProductCreateData(val acquirer_id: String?, val allow_multiple_order: Boolean?, val app_form_template_name: String?, val contract_needed: Boolean?, val credentials_needed: Boolean?, val description_key: String?, val name_key: String?, val prescreening_allowed: Boolean?, val product_name: String?, val response_code: Long?, val response_message: String?, val terminal_template_name: String?, val vendor_name: String?, val xml_template_file: String?)
+  data class OutputCreateProductCreateData(val acquirerId: String?, val allowMultipleOrders: Boolean?, val appFormTemplateName: String?, val contractNeeded: Boolean?, val credentialsNeeded: Boolean?, val descriptionKey: String?, val nameKey: String?, val prescreeningAllowed: Boolean?, val productName: String?, val responseCode: Long?, val responseMessage: String?, val terminalTemplateName: String?, val vendorName: String?, val xmlTemplateFile: String?)
 
-  data class OutputDetail(val detail: Map<String, Any?>?, val response_code: Long?, val response_message: String?)
+  data class OutputDetail(val batch: Map<String, Any?>?, val lines: Map<String, Any?>?, val progress: Map<String, Any?>?)
 
   data class OutputDetailLoadMatch(val id: String?)
 
-  data class OutputList(val item: List<Any?>?, val pagination: Map<String, Any?>?, val response_code: Long?, val response_message: String?, val sorting: Map<String, Any?>?)
+  data class OutputList(val items: List<Any?>?, val pagination: Map<String, Any?>?, val responseCode: Long?, val responseMessage: String?, val sorting: Map<String, Any?>?)
 
-  data class OutputListCreateData(val item: List<Any?>?, val pagination: Map<String, Any?>?, val response_code: Long?, val response_message: String?, val sorting: Map<String, Any?>?)
+  data class OutputListCreateData(val items: List<Any?>?, val pagination: Map<String, Any?>?, val responseCode: Long?, val responseMessage: String?, val sorting: Map<String, Any?>?)
 
-  data class OutputMessage(val response_code: Long?, val response_message: String?)
+  data class OutputMessage(val responseCode: Long?, val responseMessage: String?)
 
   data class OutputMessageLoadMatch(val id: String?)
 
-  data class OutputMoveTid(val product_order_uui_d: List<Any?>?, val response_code: Long?, val response_message: String?, val target_package_order_uuid: String?, val target_product_order_uuid: String?)
+  data class OutputMoveTid(val productOrderUUIDs: List<Any?>?, val responseCode: Long?, val responseMessage: String?, val targetPackageOrderUUID: String?, val targetProductOrderUUID: String?)
 
-  data class OutputMoveTidCreateData(val product_order_uui_d: List<Any?>?, val response_code: Long?, val response_message: String?, val target_package_order_uuid: String?, val target_product_order_uuid: String?)
+  data class OutputMoveTidCreateData(val productOrderUUIDs: List<Any?>?, val responseCode: Long?, val responseMessage: String?, val targetPackageOrderUUID: String?, val targetProductOrderUUID: String?)
 
-  data class OutputRemoveProduct(val package_uuid: String?, val product_uui_d: List<Any?>?, val response_code: Long?, val response_message: String?)
+  data class OutputRemoveProduct(val packageUUID: String?, val productUUIDs: List<Any?>?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputRemoveProductCreateData(val package_uuid: String?, val product_uui_d: List<Any?>?, val response_code: Long?, val response_message: String?)
+  data class OutputRemoveProductCreateData(val packageUUID: String?, val productUUIDs: List<Any?>?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputStart(val id: String?, val response_code: Long?, val response_message: String?)
+  data class OutputStart(val id: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputStartCreateData(val id: String?, val response_code: Long?, val response_message: String?)
+  data class OutputStartCreateData(val id: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputStatus(val percentage: Long?, val response_code: Long?, val response_message: String?, val status: String?)
+  data class OutputStatus(val percentage: Long?, val responseCode: Long?, val responseMessage: String?, val status: String?)
 
   data class OutputStatusLoadMatch(val id: String?)
 
-  data class OutputUpdateProduct(val allow_multiple_order: Boolean?, val app_form_name: String?, val contract_needed: Boolean?, val credentials_needed: Boolean?, val description_key: String?, val name_key: String?, val prescreening_allowed: Boolean?, val product_name: String?, val product_status: String?, val product_uuid: String?, val response_code: Long?, val response_message: String?, val vendor_name: String?)
+  data class OutputUpdateProduct(val allowMultipleOrders: Boolean?, val appFormName: String?, val contractNeeded: Boolean?, val credentialsNeeded: Boolean?, val descriptionKey: String?, val nameKey: String?, val prescreeningAllowed: Boolean?, val productName: String?, val productStatus: String?, val productUUID: String?, val responseCode: Long?, val responseMessage: String?, val vendorName: String?)
 
-  data class OutputUpdateProductCreateData(val allow_multiple_order: Boolean?, val app_form_name: String?, val contract_needed: Boolean?, val credentials_needed: Boolean?, val description_key: String?, val name_key: String?, val prescreening_allowed: Boolean?, val product_name: String?, val product_status: String?, val product_uuid: String?, val response_code: Long?, val response_message: String?, val vendor_name: String?)
+  data class OutputUpdateProductCreateData(val allowMultipleOrders: Boolean?, val appFormName: String?, val contractNeeded: Boolean?, val credentialsNeeded: Boolean?, val descriptionKey: String?, val nameKey: String?, val prescreeningAllowed: Boolean?, val productName: String?, val productStatus: String?, val productUUID: String?, val responseCode: Long?, val responseMessage: String?, val vendorName: String?)
 
 }

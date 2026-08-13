@@ -102,105 +102,105 @@ class MerchantPortalCommonControllerLoadMatch
 class MerchantPortalPamContractController
 {
     public string $language;
-    public string $product_order_uuid;
+    public string $productOrderUUID;
 }
 
 /** Request payload for MerchantPortalPamContractController#create. */
 class MerchantPortalPamContractControllerCreateData
 {
     public string $language;
-    public string $product_order_uuid;
+    public string $productOrderUUID;
 }
 
 /** MerchantPortalPamDocumentController entity data model. */
 class MerchantPortalPamDocumentController
 {
-    public string $app_form_field_desc_uuid;
-    public ?string $package_order_uuid = null;
-    public ?string $product_order_uuid = null;
+    public string $appFormFieldDescUUID;
+    public ?string $packageOrderUUID = null;
+    public ?string $productOrderUUID = null;
 }
 
 /** Request payload for MerchantPortalPamDocumentController#create. */
 class MerchantPortalPamDocumentControllerCreateData
 {
-    public string $app_form_field_desc_uuid;
-    public ?string $package_order_uuid = null;
-    public ?string $product_order_uuid = null;
+    public string $appFormFieldDescUUID;
+    public ?string $packageOrderUUID = null;
+    public ?string $productOrderUUID = null;
 }
 
 /** MerchantPortalPamFormController entity data model. */
 class MerchantPortalPamFormController
 {
-    public string $app_form_fields_desc_uuid;
+    public string $appFormFieldsDescUUID;
     public ?array $filter = null;
     public string $language;
-    public ?array $package_order = null;
-    public string $package_order_uuid;
-    public ?string $package_uuid = null;
-    public ?array $product_order = null;
-    public ?string $product_order_uuid = null;
-    public string $reason_of_reopening;
+    public ?array $packageOrder = null;
+    public string $packageOrderUUID;
+    public ?string $packageUUID = null;
+    public ?string $productOrderUUID = null;
+    public ?array $productOrders = null;
+    public string $reasonOfReopening;
 }
 
 /** Request payload for MerchantPortalPamFormController#create. */
 class MerchantPortalPamFormControllerCreateData
 {
-    public string $app_form_fields_desc_uuid;
+    public string $appFormFieldsDescUUID;
     public ?array $filter = null;
     public string $language;
-    public ?array $package_order = null;
-    public string $package_order_uuid;
-    public ?string $package_uuid = null;
-    public ?array $product_order = null;
-    public ?string $product_order_uuid = null;
-    public string $reason_of_reopening;
+    public ?array $packageOrder = null;
+    public string $packageOrderUUID;
+    public ?string $packageUUID = null;
+    public ?string $productOrderUUID = null;
+    public ?array $productOrders = null;
+    public string $reasonOfReopening;
 }
 
 /** MerchantPortalPamMandatorController entity data model. */
 class MerchantPortalPamMandatorController
 {
-    public ?string $client_secret = null;
-    public string $mandator_name;
-    public ?string $notification_email = null;
-    public string $package_uuid;
+    public ?string $clientSecret = null;
+    public string $mandatorName;
+    public ?string $notificationEmail = null;
+    public string $packageUUID;
 }
 
 /** Request payload for MerchantPortalPamMandatorController#create. */
 class MerchantPortalPamMandatorControllerCreateData
 {
-    public ?string $client_secret = null;
-    public string $mandator_name;
-    public ?string $notification_email = null;
-    public string $package_uuid;
+    public ?string $clientSecret = null;
+    public string $mandatorName;
+    public ?string $notificationEmail = null;
+    public string $packageUUID;
 }
 
 /** MerchantPortalPamMerchantController entity data model. */
 class MerchantPortalPamMerchantController
 {
     public ?array $additional_data = null;
-    public string $business_registration_number;
+    public string $businessRegistrationNumber;
     public ?string $city = null;
-    public string $company_name;
-    public string $corporate_uuid;
+    public string $companyName;
+    public string $corporateUUID;
     public ?string $country = null;
     public string $currency;
     public string $email;
     public string $language;
     public string $login;
     public string $mandator;
+    public string $merchantContractNumber;
+    public ?string $merchantName = null;
     public ?string $merchant_category_code = null;
-    public string $merchant_contract_number;
-    public ?string $merchant_name = null;
-    public ?string $package_uuid = null;
+    public ?string $packageUUID = null;
     public string $packageorderuuid;
-    public string $phone_number;
-    public ?string $postal_code = null;
+    public string $phoneNumber;
+    public ?string $postalCode = null;
     public string $productid_acquirer;
     public ?string $region = null;
-    public ?string $registration_number = null;
+    public ?string $registrationNumber = null;
     public ?string $signature = null;
     public ?string $street = null;
-    public ?array $terminal_id = null;
+    public ?array $terminalIds = null;
     public ?string $terminalid_acquirer = null;
     public string $vu_nummer;
 }
@@ -209,29 +209,29 @@ class MerchantPortalPamMerchantController
 class MerchantPortalPamMerchantControllerCreateData
 {
     public ?array $additional_data = null;
-    public string $business_registration_number;
+    public string $businessRegistrationNumber;
     public ?string $city = null;
-    public string $company_name;
-    public string $corporate_uuid;
+    public string $companyName;
+    public string $corporateUUID;
     public ?string $country = null;
     public string $currency;
     public string $email;
     public string $language;
     public string $login;
     public string $mandator;
+    public string $merchantContractNumber;
+    public ?string $merchantName = null;
     public ?string $merchant_category_code = null;
-    public string $merchant_contract_number;
-    public ?string $merchant_name = null;
-    public ?string $package_uuid = null;
+    public ?string $packageUUID = null;
     public string $packageorderuuid;
-    public string $phone_number;
-    public ?string $postal_code = null;
+    public string $phoneNumber;
+    public ?string $postalCode = null;
     public string $productid_acquirer;
     public ?string $region = null;
-    public ?string $registration_number = null;
+    public ?string $registrationNumber = null;
     public ?string $signature = null;
     public ?string $street = null;
-    public ?array $terminal_id = null;
+    public ?array $terminalIds = null;
     public ?string $terminalid_acquirer = null;
     public string $vu_nummer;
 }
@@ -239,15 +239,15 @@ class MerchantPortalPamMerchantControllerCreateData
 /** MerchantPortalPamPackageController entity data model. */
 class MerchantPortalPamPackageController
 {
-    public ?string $consumer_uuid = null;
-    public ?string $corporate_uuid = null;
+    public ?string $consumerUUID = null;
+    public ?string $corporateUUID = null;
     public ?string $country = null;
-    public ?string $description_key = null;
+    public ?string $descriptionKey = null;
     public ?array $filter = null;
     public string $language;
-    public ?string $name_key = null;
-    public ?string $package_status = null;
-    public string $package_uuid;
+    public ?string $nameKey = null;
+    public ?string $packageStatus = null;
+    public string $packageUUID;
     public ?array $pagination = null;
     public ?array $sorting = null;
 }
@@ -255,15 +255,15 @@ class MerchantPortalPamPackageController
 /** Request payload for MerchantPortalPamPackageController#create. */
 class MerchantPortalPamPackageControllerCreateData
 {
-    public ?string $consumer_uuid = null;
-    public ?string $corporate_uuid = null;
+    public ?string $consumerUUID = null;
+    public ?string $corporateUUID = null;
     public ?string $country = null;
-    public ?string $description_key = null;
+    public ?string $descriptionKey = null;
     public ?array $filter = null;
     public string $language;
-    public ?string $name_key = null;
-    public ?string $package_status = null;
-    public string $package_uuid;
+    public ?string $nameKey = null;
+    public ?string $packageStatus = null;
+    public string $packageUUID;
     public ?array $pagination = null;
     public ?array $sorting = null;
 }
@@ -271,14 +271,14 @@ class MerchantPortalPamPackageControllerCreateData
 /** MerchantPortalPamProductController entity data model. */
 class MerchantPortalPamProductController
 {
-    public ?string $consumer_uuid = null;
+    public ?string $consumerUUID = null;
     public ?array $filter = null;
     public ?string $language = null;
-    public ?string $merchant_id = null;
-    public string $package_order_uuid;
+    public ?string $merchantID = null;
+    public string $packageOrderUUID;
     public ?array $pagination = null;
-    public string $product_order_uuid;
-    public string $product_uuid;
+    public string $productOrderUUID;
+    public string $productUUID;
     public string $reason_decline;
     public ?array $sorting = null;
 }
@@ -286,14 +286,14 @@ class MerchantPortalPamProductController
 /** Request payload for MerchantPortalPamProductController#create. */
 class MerchantPortalPamProductControllerCreateData
 {
-    public ?string $consumer_uuid = null;
+    public ?string $consumerUUID = null;
     public ?array $filter = null;
     public ?string $language = null;
-    public ?string $merchant_id = null;
-    public string $package_order_uuid;
+    public ?string $merchantID = null;
+    public string $packageOrderUUID;
     public ?array $pagination = null;
-    public string $product_order_uuid;
-    public string $product_uuid;
+    public string $productOrderUUID;
+    public string $productUUID;
     public string $reason_decline;
     public ?array $sorting = null;
 }
@@ -301,65 +301,65 @@ class MerchantPortalPamProductControllerCreateData
 /** OutputAddProduct entity data model. */
 class OutputAddProduct
 {
-    public string $package_uuid;
-    public array $product_uui_d;
-    public int $response_code;
-    public string $response_message;
+    public string $packageUUID;
+    public array $productUUIDs;
+    public int $responseCode;
+    public string $responseMessage;
 }
 
 /** Request payload for OutputAddProduct#create. */
 class OutputAddProductCreateData
 {
-    public string $package_uuid;
-    public array $product_uui_d;
-    public int $response_code;
-    public string $response_message;
+    public string $packageUUID;
+    public array $productUUIDs;
+    public int $responseCode;
+    public string $responseMessage;
 }
 
 /** OutputCreateProduct entity data model. */
 class OutputCreateProduct
 {
-    public ?string $acquirer_id = null;
-    public bool $allow_multiple_order;
-    public string $app_form_template_name;
-    public bool $contract_needed;
-    public ?bool $credentials_needed = null;
-    public string $description_key;
-    public string $name_key;
-    public bool $prescreening_allowed;
-    public string $product_name;
-    public int $response_code;
-    public string $response_message;
-    public string $terminal_template_name;
-    public string $vendor_name;
-    public string $xml_template_file;
+    public ?string $acquirerId = null;
+    public bool $allowMultipleOrders;
+    public string $appFormTemplateName;
+    public bool $contractNeeded;
+    public ?bool $credentialsNeeded = null;
+    public string $descriptionKey;
+    public string $nameKey;
+    public bool $prescreeningAllowed;
+    public string $productName;
+    public int $responseCode;
+    public string $responseMessage;
+    public string $terminalTemplateName;
+    public string $vendorName;
+    public string $xmlTemplateFile;
 }
 
 /** Request payload for OutputCreateProduct#create. */
 class OutputCreateProductCreateData
 {
-    public ?string $acquirer_id = null;
-    public bool $allow_multiple_order;
-    public string $app_form_template_name;
-    public bool $contract_needed;
-    public ?bool $credentials_needed = null;
-    public string $description_key;
-    public string $name_key;
-    public bool $prescreening_allowed;
-    public string $product_name;
-    public int $response_code;
-    public string $response_message;
-    public string $terminal_template_name;
-    public string $vendor_name;
-    public string $xml_template_file;
+    public ?string $acquirerId = null;
+    public bool $allowMultipleOrders;
+    public string $appFormTemplateName;
+    public bool $contractNeeded;
+    public ?bool $credentialsNeeded = null;
+    public string $descriptionKey;
+    public string $nameKey;
+    public bool $prescreeningAllowed;
+    public string $productName;
+    public int $responseCode;
+    public string $responseMessage;
+    public string $terminalTemplateName;
+    public string $vendorName;
+    public string $xmlTemplateFile;
 }
 
 /** OutputDetail entity data model. */
 class OutputDetail
 {
-    public ?array $detail = null;
-    public int $response_code;
-    public string $response_message;
+    public ?array $batch = null;
+    public ?array $lines = null;
+    public ?array $progress = null;
 }
 
 /** Request payload for OutputDetail#load. */
@@ -371,28 +371,28 @@ class OutputDetailLoadMatch
 /** OutputList entity data model. */
 class OutputList
 {
-    public ?array $item = null;
+    public ?array $items = null;
     public array $pagination;
-    public int $response_code;
-    public string $response_message;
+    public int $responseCode;
+    public string $responseMessage;
     public ?array $sorting = null;
 }
 
 /** Request payload for OutputList#create. */
 class OutputListCreateData
 {
-    public ?array $item = null;
+    public ?array $items = null;
     public array $pagination;
-    public int $response_code;
-    public string $response_message;
+    public int $responseCode;
+    public string $responseMessage;
     public ?array $sorting = null;
 }
 
 /** OutputMessage entity data model. */
 class OutputMessage
 {
-    public int $response_code;
-    public string $response_message;
+    public int $responseCode;
+    public string $responseMessage;
 }
 
 /** Request payload for OutputMessage#load. */
@@ -404,63 +404,63 @@ class OutputMessageLoadMatch
 /** OutputMoveTid entity data model. */
 class OutputMoveTid
 {
-    public array $product_order_uui_d;
-    public int $response_code;
-    public string $response_message;
-    public string $target_package_order_uuid;
-    public string $target_product_order_uuid;
+    public array $productOrderUUIDs;
+    public int $responseCode;
+    public string $responseMessage;
+    public string $targetPackageOrderUUID;
+    public string $targetProductOrderUUID;
 }
 
 /** Request payload for OutputMoveTid#create. */
 class OutputMoveTidCreateData
 {
-    public array $product_order_uui_d;
-    public int $response_code;
-    public string $response_message;
-    public string $target_package_order_uuid;
-    public string $target_product_order_uuid;
+    public array $productOrderUUIDs;
+    public int $responseCode;
+    public string $responseMessage;
+    public string $targetPackageOrderUUID;
+    public string $targetProductOrderUUID;
 }
 
 /** OutputRemoveProduct entity data model. */
 class OutputRemoveProduct
 {
-    public string $package_uuid;
-    public array $product_uui_d;
-    public int $response_code;
-    public string $response_message;
+    public string $packageUUID;
+    public array $productUUIDs;
+    public int $responseCode;
+    public string $responseMessage;
 }
 
 /** Request payload for OutputRemoveProduct#create. */
 class OutputRemoveProductCreateData
 {
-    public string $package_uuid;
-    public array $product_uui_d;
-    public int $response_code;
-    public string $response_message;
+    public string $packageUUID;
+    public array $productUUIDs;
+    public int $responseCode;
+    public string $responseMessage;
 }
 
 /** OutputStart entity data model. */
 class OutputStart
 {
     public ?string $id = null;
-    public int $response_code;
-    public string $response_message;
+    public int $responseCode;
+    public string $responseMessage;
 }
 
 /** Request payload for OutputStart#create. */
 class OutputStartCreateData
 {
     public ?string $id = null;
-    public int $response_code;
-    public string $response_message;
+    public int $responseCode;
+    public string $responseMessage;
 }
 
 /** OutputStatus entity data model. */
 class OutputStatus
 {
     public ?int $percentage = null;
-    public int $response_code;
-    public string $response_message;
+    public int $responseCode;
+    public string $responseMessage;
     public ?string $status = null;
 }
 
@@ -473,36 +473,36 @@ class OutputStatusLoadMatch
 /** OutputUpdateProduct entity data model. */
 class OutputUpdateProduct
 {
-    public ?bool $allow_multiple_order = null;
-    public ?string $app_form_name = null;
-    public ?bool $contract_needed = null;
-    public ?bool $credentials_needed = null;
-    public ?string $description_key = null;
-    public ?string $name_key = null;
-    public ?bool $prescreening_allowed = null;
-    public ?string $product_name = null;
-    public ?string $product_status = null;
-    public string $product_uuid;
-    public int $response_code;
-    public string $response_message;
-    public ?string $vendor_name = null;
+    public ?bool $allowMultipleOrders = null;
+    public ?string $appFormName = null;
+    public ?bool $contractNeeded = null;
+    public ?bool $credentialsNeeded = null;
+    public ?string $descriptionKey = null;
+    public ?string $nameKey = null;
+    public ?bool $prescreeningAllowed = null;
+    public ?string $productName = null;
+    public ?string $productStatus = null;
+    public string $productUUID;
+    public int $responseCode;
+    public string $responseMessage;
+    public ?string $vendorName = null;
 }
 
 /** Request payload for OutputUpdateProduct#create. */
 class OutputUpdateProductCreateData
 {
-    public ?bool $allow_multiple_order = null;
-    public ?string $app_form_name = null;
-    public ?bool $contract_needed = null;
-    public ?bool $credentials_needed = null;
-    public ?string $description_key = null;
-    public ?string $name_key = null;
-    public ?bool $prescreening_allowed = null;
-    public ?string $product_name = null;
-    public ?string $product_status = null;
-    public string $product_uuid;
-    public int $response_code;
-    public string $response_message;
-    public ?string $vendor_name = null;
+    public ?bool $allowMultipleOrders = null;
+    public ?string $appFormName = null;
+    public ?bool $contractNeeded = null;
+    public ?bool $credentialsNeeded = null;
+    public ?string $descriptionKey = null;
+    public ?string $nameKey = null;
+    public ?bool $prescreeningAllowed = null;
+    public ?string $productName = null;
+    public ?string $productStatus = null;
+    public string $productUUID;
+    public int $responseCode;
+    public string $responseMessage;
+    public ?string $vendorName = null;
 }
 

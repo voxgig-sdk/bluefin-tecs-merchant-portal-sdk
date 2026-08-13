@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import BluefinTecsMerchantPortalControl
-from core.error import BluefinTecsMerchantPortalError
-from core.result import BluefinTecsMerchantPortalResult
-from core.spec import BluefinTecsMerchantPortalSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import BluefinTecsMerchantPortalControl
+from projectname_sdk.core.error import BluefinTecsMerchantPortalError
+from projectname_sdk.core.result import BluefinTecsMerchantPortalResult
+from projectname_sdk.core.spec import BluefinTecsMerchantPortalSpec
 
 
 # True when this SDK was generated with the named feature.

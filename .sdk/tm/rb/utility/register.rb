@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ BluefinTecsMerchantPortalUtility.registrar = ->(u) {
   u.prepare_params = BluefinTecsMerchantPortalUtilities::PrepareParams
   u.prepare_path = BluefinTecsMerchantPortalUtilities::PreparePath
   u.prepare_query = BluefinTecsMerchantPortalUtilities::PrepareQuery
+  u.graphql_body = BluefinTecsMerchantPortalUtilities::GraphqlBody
+  u.graphql_errors = BluefinTecsMerchantPortalUtilities::GraphqlErrors
   u.result_basic = BluefinTecsMerchantPortalUtilities::ResultBasic
   u.result_body = BluefinTecsMerchantPortalUtilities::ResultBody
   u.result_headers = BluefinTecsMerchantPortalUtilities::ResultHeaders

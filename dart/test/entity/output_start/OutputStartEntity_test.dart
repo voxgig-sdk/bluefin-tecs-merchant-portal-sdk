@@ -47,7 +47,7 @@ void tests() {
       final output_start_ref01_ent = client.OutputStart();
       dynamic output_start_ref01_data = setup['data']['new']['output_start']['output_start_ref01'];
 
-      output_start_ref01_data = await output_start_ref01_ent.create(output_start_ref01_data);
+      output_start_ref01_data = (await output_start_ref01_ent.create(output_start_ref01_data)).data();
       ok(null != output_start_ref01_data['id']);
 
 

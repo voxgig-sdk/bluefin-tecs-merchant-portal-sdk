@@ -258,6 +258,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/deactivateTerminal"));
                 ("parts", (ja [
@@ -281,6 +282,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/reactivateTerminal"));
                 ("parts", (ja [
@@ -304,6 +306,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/registerAdditionalTerminal"));
                 ("parts", (ja [
@@ -327,6 +330,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/registerNewMerchant"));
                 ("parts", (ja [
@@ -353,6 +357,7 @@ let make_config () : value =
               (jo [
                 ("active", (Bool true));
                 ("args", (empty_map ()));
+                ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/merchantportalws/logDeveloperInfo"));
                 ("parts", (ja [
@@ -366,6 +371,7 @@ let make_config () : value =
               (jo [
                 ("active", (Bool true));
                 ("args", (empty_map ()));
+                ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/merchantportalws/version"));
                 ("parts", (ja [
@@ -389,7 +395,7 @@ let make_config () : value =
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "product_order_uuid"));
+            ("name", (Str "productOrderUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]) ]));
@@ -410,6 +416,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/generateContract"));
                 ("parts", (ja [
@@ -433,6 +440,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/uploadContract"));
                 ("parts", (ja [
@@ -452,19 +460,19 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "app_form_field_desc_uuid"));
+            ("name", (Str "appFormFieldDescUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "package_order_uuid"));
+            ("name", (Str "packageOrderUUID"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "product_order_uuid"));
+            ("name", (Str "productOrderUUID"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]) ]));
@@ -485,6 +493,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/documentsList"));
                 ("parts", (ja [
@@ -508,6 +517,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/downloadDocument"));
                 ("parts", (ja [
@@ -527,7 +537,7 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "app_form_fields_desc_uuid"));
+            ("name", (Str "appFormFieldsDescUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
@@ -549,13 +559,13 @@ let make_config () : value =
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "package_order"));
+            ("name", (Str "packageOrder"));
             ("req", (Bool false));
             ("type", (Str "`$OBJECT`"));
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "package_order_uuid"));
+            ("name", (Str "packageOrderUUID"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool false));
@@ -565,29 +575,29 @@ let make_config () : value =
             ("index$", (Num (4.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "package_uuid"));
+            ("name", (Str "packageUUID"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (5.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "product_order"));
-            ("req", (Bool false));
-            ("type", (Str "`$ARRAY`"));
-            ("index$", (Num (6.))) ]);
-          (jo [
-            ("active", (Bool true));
-            ("name", (Str "product_order_uuid"));
+            ("name", (Str "productOrderUUID"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
                 ("type", (Str "`$STRING`")) ])) ]));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
+            ("index$", (Num (6.))) ]);
+          (jo [
+            ("active", (Bool true));
+            ("name", (Str "productOrders"));
+            ("req", (Bool false));
+            ("type", (Str "`$ARRAY`"));
             ("index$", (Num (7.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "reason_of_reopening"));
+            ("name", (Str "reasonOfReopening"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (8.))) ]) ]));
@@ -608,6 +618,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/applicationForm"));
                 ("parts", (ja [
@@ -631,6 +642,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/packageForm"));
                 ("parts", (ja [
@@ -654,6 +666,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/reopenForm"));
                 ("parts", (ja [
@@ -677,6 +690,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/secretKey"));
                 ("parts", (ja [
@@ -700,6 +714,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/submitForm"));
                 ("parts", (ja [
@@ -723,6 +738,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/submitValues"));
                 ("parts", (ja [
@@ -742,25 +758,25 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "client_secret"));
+            ("name", (Str "clientSecret"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "mandator_name"));
+            ("name", (Str "mandatorName"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "notification_email"));
+            ("name", (Str "notificationEmail"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "package_uuid"));
+            ("name", (Str "packageUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]) ]));
@@ -781,6 +797,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/createMandatorConfig"));
                 ("parts", (ja [
@@ -804,6 +821,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/introduceMandatorPackage"));
                 ("parts", (ja [
@@ -827,6 +845,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/selfRegistrationLink"));
                 ("parts", (ja [
@@ -852,7 +871,7 @@ let make_config () : value =
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "business_registration_number"));
+            ("name", (Str "businessRegistrationNumber"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]);
@@ -864,13 +883,13 @@ let make_config () : value =
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "company_name"));
+            ("name", (Str "companyName"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "corporate_uuid"));
+            ("name", (Str "corporateUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (4.))) ]);
@@ -912,29 +931,29 @@ let make_config () : value =
             ("index$", (Num (10.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "merchant_category_code"));
-            ("req", (Bool false));
-            ("type", (Str "`$STRING`"));
-            ("index$", (Num (11.))) ]);
-          (jo [
-            ("active", (Bool true));
-            ("name", (Str "merchant_contract_number"));
+            ("name", (Str "merchantContractNumber"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool false));
                 ("type", (Str "`$STRING`")) ])) ]));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
+            ("index$", (Num (11.))) ]);
+          (jo [
+            ("active", (Bool true));
+            ("name", (Str "merchantName"));
+            ("req", (Bool false));
+            ("type", (Str "`$STRING`"));
             ("index$", (Num (12.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "merchant_name"));
+            ("name", (Str "merchant_category_code"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (13.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "package_uuid"));
+            ("name", (Str "packageUUID"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (14.))) ]);
@@ -946,13 +965,13 @@ let make_config () : value =
             ("index$", (Num (15.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "phone_number"));
+            ("name", (Str "phoneNumber"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (16.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "postal_code"));
+            ("name", (Str "postalCode"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (17.))) ]);
@@ -970,7 +989,7 @@ let make_config () : value =
             ("index$", (Num (19.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "registration_number"));
+            ("name", (Str "registrationNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (20.))) ]);
@@ -988,7 +1007,7 @@ let make_config () : value =
             ("index$", (Num (22.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "terminal_id"));
+            ("name", (Str "terminalIds"));
             ("req", (Bool false));
             ("type", (Str "`$ARRAY`"));
             ("index$", (Num (23.))) ]);
@@ -1021,6 +1040,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/contractNumber"));
                 ("parts", (ja [
@@ -1044,6 +1064,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/registerAdditionalAcquiring"));
                 ("parts", (ja [
@@ -1067,6 +1088,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/updateMerchant"));
                 ("parts", (ja [
@@ -1082,6 +1104,7 @@ let make_config () : value =
               (jo [
                 ("active", (Bool true));
                 ("args", (empty_map ()));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/registerMerchant"));
                 ("parts", (ja [
@@ -1099,13 +1122,13 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "consumer_uuid"));
+            ("name", (Str "consumerUUID"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "corporate_uuid"));
+            ("name", (Str "corporateUUID"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]);
@@ -1117,7 +1140,7 @@ let make_config () : value =
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "description_key"));
+            ("name", (Str "descriptionKey"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]);
@@ -1139,19 +1162,19 @@ let make_config () : value =
             ("index$", (Num (5.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "name_key"));
+            ("name", (Str "nameKey"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (6.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "package_status"));
+            ("name", (Str "packageStatus"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (7.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "package_uuid"));
+            ("name", (Str "packageUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (8.))) ]);
@@ -1184,6 +1207,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/availablePackages"));
                 ("parts", (ja [
@@ -1207,6 +1231,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/orderPackage"));
                 ("parts", (ja [
@@ -1230,6 +1255,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/orderedPackages"));
                 ("parts", (ja [
@@ -1253,6 +1279,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/packageTemplates"));
                 ("parts", (ja [
@@ -1276,6 +1303,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool false));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/updatePackageData"));
                 ("parts", (ja [
@@ -1295,7 +1323,7 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "consumer_uuid"));
+            ("name", (Str "consumerUUID"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
@@ -1313,13 +1341,13 @@ let make_config () : value =
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "merchant_id"));
+            ("name", (Str "merchantID"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "package_order_uuid"));
+            ("name", (Str "packageOrderUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (4.))) ]);
@@ -1331,13 +1359,13 @@ let make_config () : value =
             ("index$", (Num (5.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "product_order_uuid"));
+            ("name", (Str "productOrderUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (6.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "product_uuid"));
+            ("name", (Str "productUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (7.))) ]);
@@ -1370,6 +1398,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/approveProduct"));
                 ("parts", (ja [
@@ -1393,6 +1422,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/declineProduct"));
                 ("parts", (ja [
@@ -1416,6 +1446,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/orderAdditionalProduct"));
                 ("parts", (ja [
@@ -1439,6 +1470,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/productsList"));
                 ("parts", (ja [
@@ -1458,25 +1490,25 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "package_uuid"));
+            ("name", (Str "packageUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "product_uui_d"));
+            ("name", (Str "productUUIDs"));
             ("req", (Bool true));
             ("type", (Str "`$ARRAY`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]) ]));
@@ -1497,6 +1529,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/addProductsToPackage"));
                 ("parts", (ja [
@@ -1516,85 +1549,85 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "acquirer_id"));
+            ("name", (Str "acquirerId"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "allow_multiple_order"));
+            ("name", (Str "allowMultipleOrders"));
             ("req", (Bool true));
             ("type", (Str "`$BOOLEAN`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "app_form_template_name"));
+            ("name", (Str "appFormTemplateName"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "contract_needed"));
+            ("name", (Str "contractNeeded"));
             ("req", (Bool true));
             ("type", (Str "`$BOOLEAN`"));
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "credentials_needed"));
+            ("name", (Str "credentialsNeeded"));
             ("req", (Bool false));
             ("type", (Str "`$BOOLEAN`"));
             ("index$", (Num (4.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "description_key"));
+            ("name", (Str "descriptionKey"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (5.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "name_key"));
+            ("name", (Str "nameKey"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (6.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "prescreening_allowed"));
+            ("name", (Str "prescreeningAllowed"));
             ("req", (Bool true));
             ("type", (Str "`$BOOLEAN`"));
             ("index$", (Num (7.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "product_name"));
+            ("name", (Str "productName"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (8.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (9.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (10.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "terminal_template_name"));
+            ("name", (Str "terminalTemplateName"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (11.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "vendor_name"));
+            ("name", (Str "vendorName"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (12.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "xml_template_file"));
+            ("name", (Str "xmlTemplateFile"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (13.))) ]) ]));
@@ -1615,6 +1648,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/createNewProduct"));
                 ("parts", (ja [
@@ -1634,21 +1668,21 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "detail"));
+            ("name", (Str "batch"));
             ("req", (Bool false));
             ("type", (Str "`$OBJECT`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
-            ("req", (Bool true));
-            ("type", (Str "`$INTEGER`"));
+            ("name", (Str "lines"));
+            ("req", (Bool false));
+            ("type", (Str "`$OBJECT`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`"));
+            ("name", (Str "progress"));
+            ("req", (Bool false));
+            ("type", (Str "`$OBJECT`"));
             ("index$", (Num (2.))) ]) ]));
         ("name", (Str "output_detail"));
         ("op", (jo [
@@ -1676,6 +1710,7 @@ let make_config () : value =
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`"));
                       ("index$", (Num (0.))) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/merchantportalws/batch/registerAdditionalTerminal/details/{id}"));
                 ("parts", (ja [
@@ -1699,7 +1734,7 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "item"));
+            ("name", (Str "items"));
             ("req", (Bool false));
             ("type", (Str "`$ARRAY`"));
             ("index$", (Num (0.))) ]);
@@ -1715,13 +1750,13 @@ let make_config () : value =
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]);
@@ -1748,6 +1783,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/batch/registerAdditionalTerminal/list"));
                 ("parts", (ja [
@@ -1769,13 +1805,13 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]) ]));
@@ -1805,6 +1841,7 @@ let make_config () : value =
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`"));
                       ("index$", (Num (0.))) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}"));
                 ("parts", (ja [
@@ -1841,6 +1878,7 @@ let make_config () : value =
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`"));
                       ("index$", (Num (0.))) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}"));
                 ("parts", (ja [
@@ -1864,31 +1902,31 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "product_order_uui_d"));
+            ("name", (Str "productOrderUUIDs"));
             ("req", (Bool true));
             ("type", (Str "`$ARRAY`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "target_package_order_uuid"));
+            ("name", (Str "targetPackageOrderUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "target_product_order_uuid"));
+            ("name", (Str "targetProductOrderUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (4.))) ]) ]));
@@ -1909,6 +1947,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/moveTid"));
                 ("parts", (ja [
@@ -1928,25 +1967,25 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "package_uuid"));
+            ("name", (Str "packageUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "product_uui_d"));
+            ("name", (Str "productUUIDs"));
             ("req", (Bool true));
             ("type", (Str "`$ARRAY`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]) ]));
@@ -1967,6 +2006,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/removeProductsFromPackage"));
                 ("parts", (ja [
@@ -1992,13 +2032,13 @@ let make_config () : value =
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]) ]));
@@ -2019,6 +2059,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/batch/registerAdditionalTerminal/start"));
                 ("parts", (ja [
@@ -2046,13 +2087,13 @@ let make_config () : value =
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]);
@@ -2088,6 +2129,7 @@ let make_config () : value =
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`"));
                       ("index$", (Num (0.))) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/merchantportalws/batch/registerAdditionalTerminal/status/{id}"));
                 ("parts", (ja [
@@ -2111,79 +2153,79 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "allow_multiple_order"));
+            ("name", (Str "allowMultipleOrders"));
             ("req", (Bool false));
             ("type", (Str "`$BOOLEAN`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "app_form_name"));
+            ("name", (Str "appFormName"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "contract_needed"));
+            ("name", (Str "contractNeeded"));
             ("req", (Bool false));
             ("type", (Str "`$BOOLEAN`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "credentials_needed"));
+            ("name", (Str "credentialsNeeded"));
             ("req", (Bool false));
             ("type", (Str "`$BOOLEAN`"));
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "description_key"));
+            ("name", (Str "descriptionKey"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (4.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "name_key"));
+            ("name", (Str "nameKey"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (5.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "prescreening_allowed"));
+            ("name", (Str "prescreeningAllowed"));
             ("req", (Bool false));
             ("type", (Str "`$BOOLEAN`"));
             ("index$", (Num (6.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "product_name"));
+            ("name", (Str "productName"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (7.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "product_status"));
+            ("name", (Str "productStatus"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (8.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "product_uuid"));
+            ("name", (Str "productUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (9.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (10.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (11.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "vendor_name"));
+            ("name", (Str "vendorName"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (12.))) ]) ]));
@@ -2204,6 +2246,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/updateProduct"));
                 ("parts", (ja [
