@@ -8,200 +8,119 @@
       "merchant_portal_api_controller" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "account_number"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "additional_data"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "business_reg_number"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "city"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "corporateuuid"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "country"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "currency"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "merchant_category_code"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "merchant_email"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "merchant_name"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "merchant_phone_number"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "packageid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "packageorderuuid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "password"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 14
             "name" "productid"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 15
             "name" "productid_acquirer"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 16
             "name" "reason_deactivation"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 17
             "name" "reason_reactivation"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 18
             "name" "sorting_code"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 19
             "name" "state"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 20
             "name" "street"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 21
             "name" "terminal_country_code"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 22
             "name" "terminal_language_code"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 23
             "name" "terminal_location"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 24
             "name" "terminal_serial_number"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 25
             "name" "terminalid"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 26
             "name" "terminalid_acquirer"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 27
             "name" "user_email"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 28
             "name" "user_phone_number"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 29
             "name" "username"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 30
             "name" "vu_nummer"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 31
             "name" "web_shop_url"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 32
             "name" "zipcode"
             "req" true
             "type" "`$STRING`"))
@@ -209,21 +128,17 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/deactivateTerminal"
@@ -237,17 +152,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 1
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/reactivateTerminal"
@@ -261,17 +173,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 2
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/registerAdditionalTerminal"
@@ -285,17 +194,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 3
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/registerNewMerchant"
@@ -316,13 +222,10 @@
         "op" (vs/jm
           "load" (vs/jm
             "input" "data"
-            "key$" "load"
             "name" "load"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "GET"
                 "orig" "/merchantportalws/logDeveloperInfo"
@@ -334,9 +237,7 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 1
                 "kind" "http"
                 "method" "GET"
                 "orig" "/merchantportalws/version"
@@ -352,14 +253,10 @@
       "merchant_portal_pam_contract_controller" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "language"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "productOrderUUID"
             "req" true
             "type" "`$STRING`"))
@@ -367,21 +264,17 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/generateContract"
@@ -395,17 +288,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 1
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/uploadContract"
@@ -423,42 +313,30 @@
       "merchant_portal_pam_document_controller" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "appFormFieldDescUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "packageOrderUUID"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "productOrderUUID"
-            "req" false
             "type" "`$STRING`"))
         "name" "merchant_portal_pam_document_controller"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/documentsList"
@@ -472,17 +350,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 1
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/downloadDocument"
@@ -500,68 +375,43 @@
       "merchant_portal_pam_form_controller" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "appFormFieldsDescUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "filter"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "language"
             "op" (vs/jm
               "create" (vs/jm
-                "req" false
                 "type" "`$STRING`"))
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "packageOrder"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "packageOrderUUID"
             "op" (vs/jm
               "create" (vs/jm
-                "req" false
                 "type" "`$STRING`"))
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "packageUUID"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "productOrderUUID"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "productOrders"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "reasonOfReopening"
             "req" true
             "type" "`$STRING`"))
@@ -569,21 +419,17 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/applicationForm"
@@ -597,17 +443,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 1
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/packageForm"
@@ -621,17 +464,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 2
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/reopenForm"
@@ -645,17 +485,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 3
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/secretKey"
@@ -669,17 +506,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 4
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/submitForm"
@@ -693,17 +527,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 5
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/submitValues"
@@ -721,26 +552,16 @@
       "merchant_portal_pam_mandator_controller" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "clientSecret"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "mandatorName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "notificationEmail"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "packageUUID"
             "req" true
             "type" "`$STRING`"))
@@ -748,21 +569,17 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/createMandatorConfig"
@@ -776,17 +593,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 1
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/introduceMandatorPackage"
@@ -800,17 +614,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 2
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/selfRegistrationLink"
@@ -828,162 +639,96 @@
       "merchant_portal_pam_merchant_controller" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "additional_data"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "businessRegistrationNumber"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "city"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "companyName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "corporateUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "country"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "currency"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "email"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "language"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "login"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "mandator"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "merchantContractNumber"
             "op" (vs/jm
               "create" (vs/jm
-                "req" false
                 "type" "`$STRING`"))
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "merchantName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "merchant_category_code"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 14
             "name" "packageUUID"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 15
             "name" "packageorderuuid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 16
             "name" "phoneNumber"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 17
             "name" "postalCode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 18
             "name" "productid_acquirer"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 19
             "name" "region"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 20
             "name" "registrationNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 21
             "name" "signature"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 22
             "name" "street"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 23
             "name" "terminalIds"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 24
             "name" "terminalid_acquirer"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 25
             "name" "vu_nummer"
             "req" true
             "type" "`$STRING`"))
@@ -991,21 +736,17 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/contractNumber"
@@ -1019,17 +760,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 1
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/registerAdditionalAcquiring"
@@ -1043,17 +781,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 2
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/updateMerchant"
@@ -1067,9 +802,7 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 3
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/registerMerchant"
@@ -1085,94 +818,58 @@
       "merchant_portal_pam_package_controller" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "consumerUUID"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "corporateUUID"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "country"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "descriptionKey"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "filter"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "language"
             "op" (vs/jm
               "create" (vs/jm
-                "req" false
                 "type" "`$STRING`"))
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "nameKey"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "packageStatus"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "packageUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "pagination"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "sorting"
-            "req" false
             "type" "`$OBJECT`"))
         "name" "merchant_portal_pam_package_controller"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/availablePackages"
@@ -1186,17 +883,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 1
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/orderPackage"
@@ -1210,17 +904,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 2
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/orderedPackages"
@@ -1234,17 +925,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 3
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/packageTemplates"
@@ -1258,17 +946,13 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
-                      "reqd" false
                       "type" "`$STRING`")))
-                "index$" 4
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/updatePackageData"
@@ -1286,84 +970,54 @@
       "merchant_portal_pam_product_controller" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "consumerUUID"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "filter"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "language"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "merchantID"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "packageOrderUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "pagination"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "productOrderUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "productUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "reason_decline"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "sorting"
-            "req" false
             "type" "`$OBJECT`"))
         "name" "merchant_portal_pam_product_controller"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/approveProduct"
@@ -1377,17 +1031,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 1
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/declineProduct"
@@ -1401,17 +1052,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 2
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/orderAdditionalProduct"
@@ -1425,17 +1073,14 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 3
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/productsList"
@@ -1453,26 +1098,18 @@
       "output_add_product" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "packageUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "productUUIDs"
             "req" true
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseCode"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseMessage"
             "req" true
             "type" "`$STRING`"))
@@ -1480,21 +1117,17 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/addProductsToPackage"
@@ -1512,86 +1145,56 @@
       "output_create_product" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "acquirerId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "allowMultipleOrders"
             "req" true
             "type" "`$BOOLEAN`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "appFormTemplateName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "contractNeeded"
             "req" true
             "type" "`$BOOLEAN`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "credentialsNeeded"
-            "req" false
             "type" "`$BOOLEAN`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "descriptionKey"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "nameKey"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "prescreeningAllowed"
             "req" true
             "type" "`$BOOLEAN`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "productName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "responseCode"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "responseMessage"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "terminalTemplateName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "vendorName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "xmlTemplateFile"
             "req" true
             "type" "`$STRING`"))
@@ -1599,21 +1202,17 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/createNewProduct"
@@ -1631,36 +1230,24 @@
       "output_detail" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "batch"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "lines"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "progress"
-            "req" false
             "type" "`$OBJECT`"))
         "name" "output_detail"
         "op" (vs/jm
           "load" (vs/jm
             "input" "data"
-            "key$" "load"
             "name" "load"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
@@ -1668,14 +1255,11 @@
                       "type" "`$STRING`"))
                   "params" (vs/jt
                     (vs/jm
-                      "active" true
-                      "index$" 0
                       "kind" "param"
                       "name" "id"
                       "orig" "id"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "GET"
                 "orig" "/merchantportalws/batch/registerAdditionalTerminal/details/{id}"
@@ -1697,58 +1281,41 @@
       "output_list" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "items"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "pagination"
             "op" (vs/jm
               "create" (vs/jm
-                "req" false
                 "type" "`$OBJECT`"))
             "req" true
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseCode"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseMessage"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "sorting"
-            "req" false
             "type" "`$OBJECT`"))
         "name" "output_list"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/batch/registerAdditionalTerminal/list"
@@ -1768,14 +1335,10 @@
       "output_message" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "responseCode"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseMessage"
             "req" true
             "type" "`$STRING`"))
@@ -1783,15 +1346,12 @@
         "op" (vs/jm
           "load" (vs/jm
             "input" "data"
-            "key$" "load"
             "name" "load"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
@@ -1799,14 +1359,11 @@
                       "type" "`$STRING`"))
                   "params" (vs/jt
                     (vs/jm
-                      "active" true
-                      "index$" 0
                       "kind" "param"
                       "name" "id"
                       "orig" "id"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "GET"
                 "orig" "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}"
@@ -1824,11 +1381,9 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
@@ -1836,14 +1391,11 @@
                       "type" "`$STRING`"))
                   "params" (vs/jt
                     (vs/jm
-                      "active" true
-                      "index$" 0
                       "kind" "param"
                       "name" "id"
                       "orig" "id"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 1
                 "kind" "http"
                 "method" "GET"
                 "orig" "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}"
@@ -1865,32 +1417,22 @@
       "output_move_tid" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "productOrderUUIDs"
             "req" true
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "targetPackageOrderUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "targetProductOrderUUID"
             "req" true
             "type" "`$STRING`"))
@@ -1898,21 +1440,17 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/moveTid"
@@ -1930,26 +1468,18 @@
       "output_remove_product" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "packageUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "productUUIDs"
             "req" true
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseCode"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseMessage"
             "req" true
             "type" "`$STRING`"))
@@ -1957,21 +1487,17 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/removeProductsFromPackage"
@@ -1989,20 +1515,13 @@
       "output_start" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "id"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
             "req" true
             "type" "`$STRING`"))
@@ -2010,21 +1529,17 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/batch/registerAdditionalTerminal/start"
@@ -2044,42 +1559,29 @@
       "output_status" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "percentage"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "status"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_status"
         "op" (vs/jm
           "load" (vs/jm
             "input" "data"
-            "key$" "load"
             "name" "load"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
@@ -2087,14 +1589,11 @@
                       "type" "`$STRING`"))
                   "params" (vs/jt
                     (vs/jm
-                      "active" true
-                      "index$" 0
                       "kind" "param"
                       "name" "id"
                       "orig" "id"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "GET"
                 "orig" "/merchantportalws/batch/registerAdditionalTerminal/status/{id}"
@@ -2116,102 +1615,62 @@
       "output_update_product" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "allowMultipleOrders"
-            "req" false
             "type" "`$BOOLEAN`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "appFormName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "contractNeeded"
-            "req" false
             "type" "`$BOOLEAN`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "credentialsNeeded"
-            "req" false
             "type" "`$BOOLEAN`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "descriptionKey"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "nameKey"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "prescreeningAllowed"
-            "req" false
             "type" "`$BOOLEAN`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "productName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "productStatus"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "productUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "responseCode"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "responseMessage"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "vendorName"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_update_product"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/updateProduct"

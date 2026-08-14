@@ -66,235 +66,154 @@ class Config {
     'merchant_portal_api_controller': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'account_number',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'additional_data',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'business_reg_number',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'city',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'corporateuuid',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'country',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 5,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'currency',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 6,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'merchant_category_code',
           'req': true,
           'type': '`\$INTEGER`',
-          'index\$': 7,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'merchant_email',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 8,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'merchant_name',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 9,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'merchant_phone_number',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 10,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'packageid',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 11,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'packageorderuuid',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 12,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'password',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 13,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productid',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 14,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productid_acquirer',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 15,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'reason_deactivation',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 16,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'reason_reactivation',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 17,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'sorting_code',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 18,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'state',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 19,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'street',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 20,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'terminal_country_code',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 21,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'terminal_language_code',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 22,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'terminal_location',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 23,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'terminal_serial_number',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 24,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'terminalid',
           'req': true,
           'type': '`\$INTEGER`',
-          'index\$': 25,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'terminalid_acquirer',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 26,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'user_email',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 27,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'user_phone_number',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 28,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'username',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 29,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'vu_nummer',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 30,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'web_shop_url',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 31,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'zipcode',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 32,
         },
       ],
       'name': 'merchant_portal_api_controller',
@@ -304,11 +223,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -333,14 +250,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -365,14 +279,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 1,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -397,14 +308,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 2,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -429,10 +337,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 3,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -448,7 +354,6 @@ class Config {
           'name': 'load',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{},
               'kind': 'http',
               'method': 'GET',
@@ -462,10 +367,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{},
               'kind': 'http',
               'method': 'GET',
@@ -479,10 +382,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 1,
             },
           ],
-          'key\$': 'load',
         },
       },
       'relations': <String, dynamic>{
@@ -492,18 +393,14 @@ class Config {
     'merchant_portal_pam_contract_controller': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'language',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productOrderUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
       ],
       'name': 'merchant_portal_pam_contract_controller',
@@ -513,11 +410,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -542,14 +437,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -574,10 +466,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 1,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -587,25 +477,17 @@ class Config {
     'merchant_portal_pam_document_controller': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'appFormFieldDescUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'packageOrderUUID',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productOrderUUID',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
       ],
       'name': 'merchant_portal_pam_document_controller',
@@ -615,11 +497,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -644,14 +524,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -676,10 +553,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 1,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -689,61 +564,43 @@ class Config {
     'merchant_portal_pam_form_controller': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'appFormFieldsDescUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'filter',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'language',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
-              'req': false,
               'type': '`\$STRING`',
             },
           },
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'packageOrder',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'packageOrderUUID',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
-              'req': false,
               'type': '`\$STRING`',
             },
           },
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'packageUUID',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 5,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productOrderUUID',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -751,23 +608,16 @@ class Config {
               'type': '`\$STRING`',
             },
           },
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 6,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productOrders',
-          'req': false,
           'type': '`\$ARRAY`',
-          'index\$': 7,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'reasonOfReopening',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 8,
         },
       ],
       'name': 'merchant_portal_pam_form_controller',
@@ -777,11 +627,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -806,14 +654,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -838,14 +683,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 1,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -870,14 +712,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 2,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -902,14 +741,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 3,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -934,14 +770,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 4,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -966,10 +799,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 5,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -979,32 +810,22 @@ class Config {
     'merchant_portal_pam_mandator_controller': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'clientSecret',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'mandatorName',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'notificationEmail',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'packageUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
       ],
       'name': 'merchant_portal_pam_mandator_controller',
@@ -1014,11 +835,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1043,14 +862,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1075,14 +891,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 1,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1107,10 +920,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 2,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1120,192 +931,126 @@ class Config {
     'merchant_portal_pam_merchant_controller': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'additional_data',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'businessRegistrationNumber',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'city',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'companyName',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'corporateUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'country',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 5,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'currency',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 6,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'email',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 7,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'language',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 8,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'login',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 9,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'mandator',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 10,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'merchantContractNumber',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
-              'req': false,
               'type': '`\$STRING`',
             },
           },
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 11,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'merchantName',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 12,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'merchant_category_code',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 13,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'packageUUID',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 14,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'packageorderuuid',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 15,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'phoneNumber',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 16,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'postalCode',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 17,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productid_acquirer',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 18,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'region',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 19,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'registrationNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 20,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'signature',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 21,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'street',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 22,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'terminalIds',
-          'req': false,
           'type': '`\$ARRAY`',
-          'index\$': 23,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'terminalid_acquirer',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 24,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'vu_nummer',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 25,
         },
       ],
       'name': 'merchant_portal_pam_merchant_controller',
@@ -1315,11 +1060,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1344,14 +1087,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1376,14 +1116,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 1,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1408,10 +1145,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 2,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{},
               'kind': 'http',
               'method': 'POST',
@@ -1425,10 +1160,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 3,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1438,87 +1171,55 @@ class Config {
     'merchant_portal_pam_package_controller': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'consumerUUID',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'corporateUUID',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'country',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'descriptionKey',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'filter',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'language',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
-              'req': false,
               'type': '`\$STRING`',
             },
           },
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 5,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'nameKey',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 6,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'packageStatus',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 7,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'packageUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 8,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'pagination',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 9,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'sorting',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 10,
         },
       ],
       'name': 'merchant_portal_pam_package_controller',
@@ -1528,11 +1229,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1557,14 +1256,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1589,14 +1285,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 1,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1621,14 +1314,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 2,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1653,18 +1343,14 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 3,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
-                    'reqd': false,
                     'type': '`\$STRING`',
                   },
                 ],
@@ -1685,10 +1371,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 4,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1698,74 +1382,48 @@ class Config {
     'merchant_portal_pam_product_controller': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'consumerUUID',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'filter',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'language',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'merchantID',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'packageOrderUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'pagination',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 5,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productOrderUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 6,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 7,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'reason_decline',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 8,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'sorting',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 9,
         },
       ],
       'name': 'merchant_portal_pam_product_controller',
@@ -1775,11 +1433,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1804,14 +1460,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1836,14 +1489,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 1,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1868,14 +1518,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 2,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1900,10 +1547,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 3,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1913,32 +1558,24 @@ class Config {
     'output_add_product': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'packageUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productUUIDs',
           'req': true,
           'type': '`\$ARRAY`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
           'req': true,
           'type': '`\$INTEGER`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
       ],
       'name': 'output_add_product',
@@ -1948,11 +1585,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1977,10 +1612,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1990,102 +1623,72 @@ class Config {
     'output_create_product': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'acquirerId',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'allowMultipleOrders',
           'req': true,
           'type': '`\$BOOLEAN`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'appFormTemplateName',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'contractNeeded',
           'req': true,
           'type': '`\$BOOLEAN`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'credentialsNeeded',
-          'req': false,
           'type': '`\$BOOLEAN`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'descriptionKey',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 5,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'nameKey',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 6,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'prescreeningAllowed',
           'req': true,
           'type': '`\$BOOLEAN`',
-          'index\$': 7,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productName',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 8,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
           'req': true,
           'type': '`\$INTEGER`',
-          'index\$': 9,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 10,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'terminalTemplateName',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 11,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'vendorName',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 12,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'xmlTemplateFile',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 13,
         },
       ],
       'name': 'output_create_product',
@@ -2095,11 +1698,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -2124,10 +1725,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -2137,25 +1736,16 @@ class Config {
     'output_detail': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'batch',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'lines',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'progress',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 2,
         },
       ],
       'name': 'output_detail',
@@ -2165,11 +1755,9 @@ class Config {
           'name': 'load',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -2179,13 +1767,11 @@ class Config {
                 ],
                 'params': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'param',
                     'name': 'id',
                     'orig': 'id',
                     'reqd': true,
                     'type': '`\$STRING`',
-                    'index\$': 0,
                   },
                 ],
               },
@@ -2209,10 +1795,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'load',
         },
       },
       'relations': <String, dynamic>{
@@ -2222,45 +1806,32 @@ class Config {
     'output_list': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'items',
-          'req': false,
           'type': '`\$ARRAY`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'pagination',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
-              'req': false,
               'type': '`\$OBJECT`',
             },
           },
           'req': true,
           'type': '`\$OBJECT`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
           'req': true,
           'type': '`\$INTEGER`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'sorting',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 4,
         },
       ],
       'name': 'output_list',
@@ -2270,11 +1841,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -2301,10 +1870,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -2314,18 +1881,14 @@ class Config {
     'output_message': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
           'req': true,
           'type': '`\$INTEGER`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
       ],
       'name': 'output_message',
@@ -2335,11 +1898,9 @@ class Config {
           'name': 'load',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -2349,13 +1910,11 @@ class Config {
                 ],
                 'params': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'param',
                     'name': 'id',
                     'orig': 'id',
                     'reqd': true,
                     'type': '`\$STRING`',
-                    'index\$': 0,
                   },
                 ],
               },
@@ -2379,14 +1938,11 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -2396,13 +1952,11 @@ class Config {
                 ],
                 'params': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'param',
                     'name': 'id',
                     'orig': 'id',
                     'reqd': true,
                     'type': '`\$STRING`',
-                    'index\$': 0,
                   },
                 ],
               },
@@ -2426,10 +1980,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 1,
             },
           ],
-          'key\$': 'load',
         },
       },
       'relations': <String, dynamic>{
@@ -2439,39 +1991,29 @@ class Config {
     'output_move_tid': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'productOrderUUIDs',
           'req': true,
           'type': '`\$ARRAY`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
           'req': true,
           'type': '`\$INTEGER`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'targetPackageOrderUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'targetProductOrderUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
       ],
       'name': 'output_move_tid',
@@ -2481,11 +2023,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -2510,10 +2050,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -2523,32 +2061,24 @@ class Config {
     'output_remove_product': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'packageUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productUUIDs',
           'req': true,
           'type': '`\$ARRAY`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
           'req': true,
           'type': '`\$INTEGER`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
       ],
       'name': 'output_remove_product',
@@ -2558,11 +2088,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -2587,10 +2115,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -2600,25 +2126,18 @@ class Config {
     'output_start': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'id',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
           'req': true,
           'type': '`\$INTEGER`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
       ],
       'name': 'output_start',
@@ -2628,11 +2147,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -2659,10 +2176,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -2672,32 +2187,22 @@ class Config {
     'output_status': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'percentage',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
           'req': true,
           'type': '`\$INTEGER`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'status',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
       ],
       'name': 'output_status',
@@ -2707,11 +2212,9 @@ class Config {
           'name': 'load',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -2721,13 +2224,11 @@ class Config {
                 ],
                 'params': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'param',
                     'name': 'id',
                     'orig': 'id',
                     'reqd': true,
                     'type': '`\$STRING`',
-                    'index\$': 0,
                   },
                 ],
               },
@@ -2751,10 +2252,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'load',
         },
       },
       'relations': <String, dynamic>{
@@ -2764,95 +2263,59 @@ class Config {
     'output_update_product': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'allowMultipleOrders',
-          'req': false,
           'type': '`\$BOOLEAN`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'appFormName',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'contractNeeded',
-          'req': false,
           'type': '`\$BOOLEAN`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'credentialsNeeded',
-          'req': false,
           'type': '`\$BOOLEAN`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'descriptionKey',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'nameKey',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 5,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'prescreeningAllowed',
-          'req': false,
           'type': '`\$BOOLEAN`',
-          'index\$': 6,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productName',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 7,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productStatus',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 8,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'productUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 9,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
           'req': true,
           'type': '`\$INTEGER`',
-          'index\$': 10,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 11,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'vendorName',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 12,
         },
       ],
       'name': 'output_update_product',
@@ -2862,11 +2325,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -2891,10 +2352,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
