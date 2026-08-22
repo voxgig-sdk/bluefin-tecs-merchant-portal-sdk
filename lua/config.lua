@@ -8,7 +8,7 @@ local function make_config()
     main = {
       name = "BluefinTecsMerchantPortal",
       slug = "bluefin-tecs-merchant-portal",
-      version = "0.0.1",
+      version = "0.1.1",
       target = "lua",
     },
     feature = {
@@ -1857,7 +1857,7 @@ local function make_config()
                 },
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.details`",
                 },
               },
             },

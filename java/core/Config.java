@@ -50,7 +50,7 @@ public final class Config {
     b.append(" \"main\": {");
     b.append("  \"name\": \"BluefinTecsMerchantPortal\",");
     b.append("  \"slug\": \"bluefin-tecs-merchant-portal\",");
-    b.append("  \"version\": \"0.0.1\",");
+    b.append("  \"version\": \"0.1.1\",");
     b.append("  \"target\": \"java\"");
     b.append(" },");
     b.append(" \"feature\": {");
@@ -1899,7 +1899,7 @@ public final class Config {
     b.append("       },");
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
-    b.append("        \"res\": \"`body`\"");
+    b.append("        \"res\": \"`body.details`\"");
     b.append("       }");
     b.append("      }");
     b.append("     ]");

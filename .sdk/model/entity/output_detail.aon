@@ -1,0 +1,77 @@
+# Entity: output_detail
+
+main: kit: entity: output_detail: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "batch"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "lines"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "progress"
+      req: false
+      type: "`$OBJECT`"
+    }
+  ]
+
+  name: "output_detail"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/merchantportalws/batch/registerAdditionalTerminal/details/{id}"
+          parts: [
+            "merchantportalws"
+            "batch"
+            "registerAdditionalTerminal"
+            "details"
+            "{id}"
+          ]
+          select: {
+            exist: [
+              "authorization"
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.details`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -4,7 +4,7 @@ defmodule BluefinTecsMerchantPortal.MixProject do
   def project do
     [
       app: :bluefin_tecs_merchant_portal,
-      version: "0.0.1",
+      version: "0.1.1",
       elixir: "~> 1.14",
       description: "Unofficial generated elixir SDK for the Merchant Portal Web Service Documentation public API. Not affiliated with or endorsed by the upstream API provider.",
       elixirc_paths: elixirc_paths(Mix.env()),

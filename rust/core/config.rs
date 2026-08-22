@@ -11,7 +11,7 @@ pub fn make_config() -> Value {
         ("main".to_string(), Value::map_of([
             ("name".to_string(), Value::str("BluefinTecsMerchantPortal")),
             ("slug".to_string(), Value::str("bluefin-tecs-merchant-portal")),
-            ("version".to_string(), Value::str("0.0.1")),
+            ("version".to_string(), Value::str("0.1.1")),
             ("target".to_string(), Value::str("rust")),
         ])),
         ("feature".to_string(), Value::map_of([
@@ -1860,7 +1860,7 @@ pub fn make_config() -> Value {
                                 ])),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
-                                    ("res".to_string(), Value::str("`body`")),
+                                    ("res".to_string(), Value::str("`body.details`")),
                                 ])),
                             ]),
                         ])),

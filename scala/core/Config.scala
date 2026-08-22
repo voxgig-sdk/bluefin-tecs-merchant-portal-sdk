@@ -1882,7 +1882,7 @@ object Config {
     b.append("       },")
     b.append("       \"transform\": {")
     b.append("        \"req\": \"`reqdata`\",")
-    b.append("        \"res\": \"`body`\"")
+    b.append("        \"res\": \"`body.details`\"")
     b.append("       }")
     b.append("      }")
     b.append("     ]")

@@ -1356,7 +1356,7 @@
                     "id"))
                 "transform" (vs/jm
                   "req" "`reqdata`"
-                  "res" "`body`")))))
+                  "res" "`body.details`")))))
         "relations" (vs/jm
           "ancestors" (vs/jt)))
       "output_list" (vs/jm

@@ -19,7 +19,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
   "main": {
     "name": "BluefinTecsMerchantPortal",
     "slug": "bluefin-tecs-merchant-portal",
-    "version": "0.0.1",
+    "version": "0.1.1",
     "target": "perl"
   },
   "feature": {
@@ -1868,7 +1868,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.details`"
               }
             }
           ]
