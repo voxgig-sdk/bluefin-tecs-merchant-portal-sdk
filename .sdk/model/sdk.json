@@ -20,9 +20,11 @@
         ],
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "repr": "auto"
       },
       "contributor": {},
+      "docs": {},
       "entity": {
         "merchant_portal_api_controller": {
           "active": true,
@@ -34,198 +36,231 @@
               "active": true,
               "name": "account_number",
               "req": false,
+              "short": "Account number provided by the acquirer.",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "additional_data",
               "req": false,
+              "short": "Arbitrary merchant-specific data related to terminal registration.",
               "type": "`$OBJECT`"
             },
             {
               "active": true,
               "name": "business_reg_number",
               "req": true,
+              "short": "Merchant business registration number as stated in the company registry.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "city",
               "req": true,
+              "short": "Merchant's address: city.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "corporateuuid",
               "req": false,
+              "short": "Unique identifier for the corporate entity (UUID format).",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "country",
               "req": true,
+              "short": "Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format).",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "currency",
               "req": true,
+              "short": "Transaction currency (must be in \"ISO 4217\" format).",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "merchant_category_code",
               "req": true,
+              "short": "Merchant category code as defined by the payment network.",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "merchant_email",
               "req": false,
+              "short": "Merchant's email address for receiving notifications.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "merchant_name",
               "req": true,
+              "short": "The officially incorporated company name of the merchant.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "merchant_phone_number",
               "req": false,
+              "short": "Merchant's phone number for notifications.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "packageid",
               "req": true,
+              "short": "Identifier of the package in the TECS processing engine provided by TECS.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "packageorderuuid",
               "req": true,
+              "short": "Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "password",
               "req": false,
+              "short": "Merchant password for MPOS.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "productid",
               "req": false,
+              "short": "Identifier of the product for which terminal registration is to be performed.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "productid_acquirer",
               "req": false,
+              "short": "Identifier of the product for which acquiring is enabled.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "reason_deactivation",
               "req": true,
+              "short": "Reason for terminal deactivation.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "reason_reactivation",
               "req": true,
+              "short": "Reason for terminal reactivation.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "sorting_code",
               "req": false,
+              "short": "Sorting code provided by the acquirer.",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "state",
               "req": false,
+              "short": "Merchant's address: state.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "street",
               "req": true,
+              "short": "Merchant's address: street and house number.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "terminal_country_code",
               "req": true,
+              "short": "Terminal country code (must be in 'ISO-3166 ALPHA-3' format).",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "terminal_language_code",
               "req": true,
+              "short": "Terminal language code (must be in 'ISO 639-1' format).",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "terminal_location",
               "req": true,
+              "short": "Physical or logical location of the terminal.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "terminal_serial_number",
               "req": true,
+              "short": "Terminal serial number.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "terminalid",
               "req": true,
+              "short": "TECS terminalid given by Tecs processing engine.",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "terminalid_acquirer",
               "req": false,
+              "short": "Terminal ID as set by the acquirer (optional).",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "user_email",
               "req": false,
+              "short": "Email address of the user acting on behalf of the merchant.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "user_phone_number",
               "req": false,
+              "short": "Phone number of the user acting on behalf of the merchant.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "username",
               "req": false,
+              "short": "Merchant username for MPOS.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "vu_nummer",
               "req": true,
+              "short": "Merchant contract number with the acquirer.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "web_shop_url",
               "req": false,
+              "short": "URL of the merchant's web shop.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "zipcode",
               "req": true,
+              "short": "Merchant's address: postal code.",
               "type": "`$STRING`"
             }
           ],
@@ -527,12 +562,14 @@
               "active": true,
               "name": "packageOrderUUID",
               "req": false,
+              "short": "UUID of the package order.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "productOrderUUID",
               "req": false,
+              "short": "UUID of the product order.",
               "type": "`$STRING`"
             }
           ],
@@ -657,6 +694,7 @@
                 }
               },
               "req": true,
+              "short": "UUID of the package order.",
               "type": "`$STRING`"
             },
             {
@@ -675,6 +713,7 @@
                 }
               },
               "req": false,
+              "short": "UUID of the product order.",
               "type": "`$STRING`"
             },
             {
@@ -1036,6 +1075,7 @@
               "active": true,
               "name": "additional_data",
               "req": false,
+              "short": "Optional additional merchant-specific data related to enabling acquiring.",
               "type": "`$OBJECT`"
             },
             {
@@ -1048,6 +1088,7 @@
               "active": true,
               "name": "city",
               "req": false,
+              "short": "City where the merchant is located.",
               "type": "`$STRING`"
             },
             {
@@ -1060,18 +1101,21 @@
               "active": true,
               "name": "corporateUUID",
               "req": true,
+              "short": "Unique identifier for the corporate entity.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "country",
               "req": false,
+              "short": "Country where the merchant is located.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "currency",
               "req": true,
+              "short": "Transaction currency in ISO 4217 format.",
               "type": "`$STRING`"
             },
             {
@@ -1096,6 +1140,7 @@
               "active": true,
               "name": "mandator",
               "req": true,
+              "short": "Mandator name assigned by TECS.",
               "type": "`$STRING`"
             },
             {
@@ -1108,30 +1153,35 @@
                 }
               },
               "req": true,
+              "short": "Unique identifier for the merchant within a specific system.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "merchantName",
               "req": false,
+              "short": "Name of the merchant.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "merchant_category_code",
               "req": false,
+              "short": "Merchant Category Code (MCC) describing the merchant’s type of business.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "packageUUID",
               "req": false,
+              "short": "UUID of the package.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "packageorderuuid",
               "req": true,
+              "short": "Unique identifier for the registered merchant in the TECS system.",
               "type": "`$STRING`"
             },
             {
@@ -1144,54 +1194,63 @@
               "active": true,
               "name": "postalCode",
               "req": false,
+              "short": "Postal or ZIP code of the merchant’s location.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "productid_acquirer",
               "req": true,
+              "short": "Identifier of the product for which acquiring is to be enabled.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "region",
               "req": false,
+              "short": "State or province where the merchant is located.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "registrationNumber",
               "req": false,
+              "short": "Business registration number.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "signature",
               "req": false,
+              "short": "Signature value = saltAsHex-hashAsHex.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "street",
               "req": false,
+              "short": "Street address of the merchant.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "terminalIds",
               "req": false,
+              "short": "Optional list of terminal IDs for which acquiring should be activated.",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "terminalid_acquirer",
               "req": false,
+              "short": "Optional terminal ID provided by the acquirer.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "vu_nummer",
               "req": true,
+              "short": "Merchant contract number with the acquirer.",
               "type": "`$STRING`"
             }
           ],
@@ -1339,12 +1398,14 @@
               "active": true,
               "name": "country",
               "req": false,
+              "short": "Country associated with the package.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "descriptionKey",
               "req": false,
+              "short": "Key for the description of the package.",
               "type": "`$STRING`"
             },
             {
@@ -1369,18 +1430,21 @@
               "active": true,
               "name": "nameKey",
               "req": false,
+              "short": "Key for the name of the package.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "packageStatus",
               "req": false,
+              "short": "Status of the package.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "packageUUID",
               "req": true,
+              "short": "Unique identifier for the package.",
               "type": "`$STRING`"
             },
             {
@@ -1622,6 +1686,7 @@
               "active": true,
               "name": "reason_decline",
               "req": true,
+              "short": "Reason for product decline.",
               "type": "`$STRING`"
             },
             {
@@ -1778,24 +1843,28 @@
               "active": true,
               "name": "packageUUID",
               "req": true,
+              "short": "Unique identifier for the package.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "productUUIDs",
               "req": true,
+              "short": "The list of unique identifiers of the products.",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "responseCode",
               "req": true,
+              "short": "Response code.",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "responseMessage",
               "req": true,
+              "short": "Response message.",
               "type": "`$STRING`"
             }
           ],
@@ -1853,84 +1922,98 @@
               "active": true,
               "name": "acquirerId",
               "req": false,
+              "short": "Unique identifier for the acquirer.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "allowMultipleOrders",
               "req": true,
+              "short": "Indication whether multiple orders are allowed or not.",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "appFormTemplateName",
               "req": true,
+              "short": "Name of the application form template.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "contractNeeded",
               "req": true,
+              "short": "Indication whether contract is needed or not.",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "credentialsNeeded",
               "req": false,
+              "short": "Indication whether credentials are needed or not.",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "descriptionKey",
               "req": true,
+              "short": "Key indicator for product description.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "nameKey",
               "req": true,
+              "short": "Key indicator for product name.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "prescreeningAllowed",
               "req": true,
+              "short": "Indication whether prescreening is allowed or not.",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "productName",
               "req": true,
+              "short": "Name of the product.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "responseCode",
               "req": true,
+              "short": "Response code.",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "responseMessage",
               "req": true,
+              "short": "Response message.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "terminalTemplateName",
               "req": true,
+              "short": "Name of the terminal template.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "vendorName",
               "req": true,
+              "short": "Name of the vendor.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "xmlTemplateFile",
               "req": true,
+              "short": "A string value containing the XML template file encoded in Base64.",
               "type": "`$STRING`"
             }
           ],
@@ -2089,12 +2172,14 @@
               "active": true,
               "name": "responseCode",
               "req": true,
+              "short": "Response code.",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "responseMessage",
               "req": true,
+              "short": "Response message.",
               "type": "`$STRING`"
             },
             {
@@ -2160,12 +2245,14 @@
               "active": true,
               "name": "responseCode",
               "req": true,
+              "short": "Response code.",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "responseMessage",
               "req": true,
+              "short": "Response message.",
               "type": "`$STRING`"
             }
           ],
@@ -2288,12 +2375,14 @@
               "active": true,
               "name": "responseCode",
               "req": true,
+              "short": "Response code.",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "responseMessage",
               "req": true,
+              "short": "Response message.",
               "type": "`$STRING`"
             },
             {
@@ -2363,24 +2452,28 @@
               "active": true,
               "name": "packageUUID",
               "req": true,
+              "short": "Unique identifier for the package.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "productUUIDs",
               "req": true,
+              "short": "List of product unique identifiers.",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "responseCode",
               "req": true,
+              "short": "Response code.",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "responseMessage",
               "req": true,
+              "short": "Response message.",
               "type": "`$STRING`"
             }
           ],
@@ -2444,12 +2537,14 @@
               "active": true,
               "name": "responseCode",
               "req": true,
+              "short": "Response code.",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "responseMessage",
               "req": true,
+              "short": "Response message.",
               "type": "`$STRING`"
             }
           ],
@@ -2519,12 +2614,14 @@
               "active": true,
               "name": "responseCode",
               "req": true,
+              "short": "Response code.",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "responseMessage",
               "req": true,
+              "short": "Response message.",
               "type": "`$STRING`"
             },
             {
@@ -2602,78 +2699,91 @@
               "active": true,
               "name": "allowMultipleOrders",
               "req": false,
+              "short": "An attribute to indicate if multiple orders are allowed",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "appFormName",
               "req": false,
+              "short": "The name of the application form",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "contractNeeded",
               "req": false,
+              "short": "An attribute to indicate if a contract is needed",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "credentialsNeeded",
               "req": false,
+              "short": "An attribute to indicate if credentials are needed",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "descriptionKey",
               "req": false,
+              "short": "The description of the product",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "nameKey",
               "req": false,
+              "short": "The key of the product name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "prescreeningAllowed",
               "req": false,
+              "short": "An attribute to indicate if prescreening is allowed",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "productName",
               "req": false,
+              "short": "The name of the product",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "productStatus",
               "req": false,
+              "short": "The status of the product",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "productUUID",
               "req": true,
+              "short": "The UUID of the product to update",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "responseCode",
               "req": true,
+              "short": "Response code.",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "responseMessage",
               "req": true,
+              "short": "Response message.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "vendorName",
               "req": false,
+              "short": "The name of the vendor",
               "type": "`$STRING`"
             }
           ],
@@ -2725,6 +2835,7 @@
       "feature": {
         "test": {
           "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "config": {
             "options": {
               "active": false
@@ -2785,6 +2896,8 @@
             }
           },
           "name": "test",
+          "origname": "",
+          "package": "@voxgig/sdkgen",
           "target": {
             "c": {
               "deps": {}
@@ -2811,9 +2924,6 @@
               "deps": {}
             },
             "go-mcp": {
-              "deps": {}
-            },
-            "haskell": {
               "deps": {}
             },
             "java": {
@@ -3342,6 +3452,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
@@ -3361,12 +3472,14 @@
             "path": ""
           },
           "name": "c",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -3400,6 +3513,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": ";"
           },
@@ -3416,12 +3530,14 @@
             "path": ""
           },
           "name": "clojure",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -3455,6 +3571,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
@@ -3473,12 +3590,14 @@
             "path": ""
           },
           "name": "cpp",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -3531,12 +3650,14 @@
             "path": ""
           },
           "name": "csharp",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -3570,6 +3691,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
@@ -3586,12 +3708,14 @@
             "path": ""
           },
           "name": "dart",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -3625,6 +3749,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "#"
           },
@@ -3641,12 +3766,14 @@
             "path": ""
           },
           "name": "elixir",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -3680,6 +3807,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
@@ -3698,12 +3826,14 @@
             "path": ""
           },
           "name": "go",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -3737,6 +3867,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
@@ -3753,12 +3884,14 @@
             "path": ""
           },
           "name": "go-cli",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "phase": {
             "agentguide": {
               "active": false
@@ -3808,6 +3941,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
@@ -3824,12 +3958,14 @@
             "path": ""
           },
           "name": "go-mcp",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "phase": {
             "agentguide": {
               "active": false
@@ -3873,84 +4009,13 @@
           },
           "title": "Go MCP server"
         },
-        "haskell": {
-          "active": true,
-          "author": {
-            "name": "",
-            "url": ""
-          },
-          "comment": {
-            "line": "--"
-          },
-          "deps": {},
-          "ext": "hs",
-          "feature": {
-            "fullset": [],
-            "trim": false
-          },
-          "module": {
-            "goversion": "",
-            "name": "bluefin-tecs-merchant-portal",
-            "package": "",
-            "path": ""
-          },
-          "name": "haskell",
-          "output": {
-            "adopt": false,
-            "path": "",
-            "repo": "",
-            "sdkrel": ""
-          },
-          "phase": {
-            "agentguide": {
-              "active": true
-            },
-            "entity": {
-              "active": false
-            },
-            "feature": {
-              "active": false
-            },
-            "readme": {
-              "active": true
-            },
-            "test": {
-              "active": true
-            }
-          },
-          "publish": {
-            "registry": {
-              "active": false,
-              "name": "hackage",
-              "package": "",
-              "state": "pending",
-              "url": "https://hackage.haskell.org",
-              "vault": {
-                "alias": "hackage",
-                "env": "HACKAGE_TOKEN",
-                "recipe": ""
-              }
-            },
-            "tag": {
-              "active": true,
-              "prefix": "",
-              "vault": {
-                "alias": "github",
-                "recipe": "github"
-              },
-              "via": "port"
-            },
-            "version": "0.0.1"
-          },
-          "srcfeature": false,
-          "title": "Haskell"
-        },
         "java": {
           "active": true,
           "author": {
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
@@ -3969,12 +4034,14 @@
             "path": ""
           },
           "name": "java",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -4008,6 +4075,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
@@ -4030,12 +4098,14 @@
             "path": ""
           },
           "name": "js",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -4068,6 +4138,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
@@ -4086,12 +4157,14 @@
             "path": ""
           },
           "name": "kotlin",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -4125,6 +4198,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "--"
           },
@@ -4147,12 +4221,14 @@
             "path": ""
           },
           "name": "lua",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -4186,6 +4262,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
@@ -4202,12 +4279,14 @@
             "path": ""
           },
           "name": "ocaml",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -4241,6 +4320,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "#"
           },
@@ -4257,12 +4337,14 @@
             "path": ""
           },
           "name": "perl",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -4296,6 +4378,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
@@ -4312,12 +4395,14 @@
             "path": ""
           },
           "name": "php",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -4351,6 +4436,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "#"
           },
@@ -4373,12 +4459,14 @@
             "path": ""
           },
           "name": "py",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -4412,6 +4500,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "#"
           },
@@ -4439,12 +4528,14 @@
             "path": ""
           },
           "name": "rb",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -4478,6 +4569,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
@@ -4502,12 +4594,14 @@
             "path": ""
           },
           "name": "rust",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -4541,6 +4635,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
@@ -4557,12 +4652,14 @@
             "path": ""
           },
           "name": "scala",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -4615,12 +4712,14 @@
             "path": ""
           },
           "name": "swift",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -4687,12 +4786,14 @@
             "path": ""
           },
           "name": "ts",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,
@@ -4725,6 +4826,7 @@
             "name": "",
             "url": ""
           },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
@@ -4741,12 +4843,14 @@
             "path": ""
           },
           "name": "zig",
+          "origname": "",
           "output": {
             "adopt": false,
             "path": "",
             "repo": "",
             "sdkrel": ""
           },
+          "package": "@voxgig/sdkgen",
           "publish": {
             "registry": {
               "active": false,

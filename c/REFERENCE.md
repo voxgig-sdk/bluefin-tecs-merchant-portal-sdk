@@ -173,39 +173,39 @@ Entity* merchant_portal_api_controller = bluefintecsmerchantportal_merchant_port
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_number` | `int64_t` | No |  |
-| `additional_data` | `voxgig_value* (map)` | No |  |
-| `business_reg_number` | `char*` | Yes |  |
-| `city` | `char*` | Yes |  |
-| `corporateuuid` | `char*` | No |  |
-| `country` | `char*` | Yes |  |
-| `currency` | `char*` | Yes |  |
-| `merchant_category_code` | `int64_t` | Yes |  |
-| `merchant_email` | `char*` | No |  |
-| `merchant_name` | `char*` | Yes |  |
-| `merchant_phone_number` | `char*` | No |  |
-| `packageid` | `char*` | Yes |  |
-| `packageorderuuid` | `char*` | Yes |  |
-| `password` | `char*` | No |  |
-| `productid` | `char*` | No |  |
-| `productid_acquirer` | `char*` | No |  |
-| `reason_deactivation` | `char*` | Yes |  |
-| `reason_reactivation` | `char*` | Yes |  |
-| `sorting_code` | `int64_t` | No |  |
-| `state` | `char*` | No |  |
-| `street` | `char*` | Yes |  |
-| `terminal_country_code` | `char*` | Yes |  |
-| `terminal_language_code` | `char*` | Yes |  |
-| `terminal_location` | `char*` | Yes |  |
-| `terminal_serial_number` | `char*` | Yes |  |
-| `terminalid` | `int64_t` | Yes |  |
-| `terminalid_acquirer` | `char*` | No |  |
-| `user_email` | `char*` | No |  |
-| `user_phone_number` | `char*` | No |  |
-| `username` | `char*` | No |  |
-| `vu_nummer` | `char*` | Yes |  |
-| `web_shop_url` | `char*` | No |  |
-| `zipcode` | `char*` | Yes |  |
+| `account_number` | `int64_t` | No | Account number provided by the acquirer. |
+| `additional_data` | `voxgig_value* (map)` | No | Arbitrary merchant-specific data related to terminal registration. |
+| `business_reg_number` | `char*` | Yes | Merchant business registration number as stated in the company registry. |
+| `city` | `char*` | Yes | Merchant's address: city. |
+| `corporateuuid` | `char*` | No | Unique identifier for the corporate entity (UUID format). |
+| `country` | `char*` | Yes | Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format). |
+| `currency` | `char*` | Yes | Transaction currency (must be in "ISO 4217" format). |
+| `merchant_category_code` | `int64_t` | Yes | Merchant category code as defined by the payment network. |
+| `merchant_email` | `char*` | No | Merchant's email address for receiving notifications. |
+| `merchant_name` | `char*` | Yes | The officially incorporated company name of the merchant. |
+| `merchant_phone_number` | `char*` | No | Merchant's phone number for notifications. |
+| `packageid` | `char*` | Yes | Identifier of the package in the TECS processing engine provided by TECS. |
+| `packageorderuuid` | `char*` | Yes | Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call. |
+| `password` | `char*` | No | Merchant password for MPOS. |
+| `productid` | `char*` | No | Identifier of the product for which terminal registration is to be performed. |
+| `productid_acquirer` | `char*` | No | Identifier of the product for which acquiring is enabled. |
+| `reason_deactivation` | `char*` | Yes | Reason for terminal deactivation. |
+| `reason_reactivation` | `char*` | Yes | Reason for terminal reactivation. |
+| `sorting_code` | `int64_t` | No | Sorting code provided by the acquirer. |
+| `state` | `char*` | No | Merchant's address: state. |
+| `street` | `char*` | Yes | Merchant's address: street and house number. |
+| `terminal_country_code` | `char*` | Yes | Terminal country code (must be in 'ISO-3166 ALPHA-3' format). |
+| `terminal_language_code` | `char*` | Yes | Terminal language code (must be in 'ISO 639-1' format). |
+| `terminal_location` | `char*` | Yes | Physical or logical location of the terminal. |
+| `terminal_serial_number` | `char*` | Yes | Terminal serial number. |
+| `terminalid` | `int64_t` | Yes | TECS terminalid given by Tecs processing engine. |
+| `terminalid_acquirer` | `char*` | No | Terminal ID as set by the acquirer (optional). |
+| `user_email` | `char*` | No | Email address of the user acting on behalf of the merchant. |
+| `user_phone_number` | `char*` | No | Phone number of the user acting on behalf of the merchant. |
+| `username` | `char*` | No | Merchant username for MPOS. |
+| `vu_nummer` | `char*` | Yes | Merchant contract number with the acquirer. |
+| `web_shop_url` | `char*` | No | URL of the merchant's web shop. |
+| `zipcode` | `char*` | Yes | Merchant's address: postal code. |
 
 ### Operations
 
@@ -355,8 +355,8 @@ Entity* merchant_portal_pam_document_controller = bluefintecsmerchantportal_merc
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `appFormFieldDescUUID` | `char*` | Yes |  |
-| `packageOrderUUID` | `char*` | No |  |
-| `productOrderUUID` | `char*` | No |  |
+| `packageOrderUUID` | `char*` | No | UUID of the package order. |
+| `productOrderUUID` | `char*` | No | UUID of the product order. |
 
 ### Operations
 
@@ -406,9 +406,9 @@ Entity* merchant_portal_pam_form_controller = bluefintecsmerchantportal_merchant
 | `filter` | `voxgig_value* (map)` | No |  |
 | `language` | `char*` | Yes |  |
 | `packageOrder` | `voxgig_value* (map)` | No |  |
-| `packageOrderUUID` | `char*` | Yes |  |
+| `packageOrderUUID` | `char*` | Yes | UUID of the package order. |
 | `packageUUID` | `char*` | No |  |
-| `productOrderUUID` | `char*` | No |  |
+| `productOrderUUID` | `char*` | No | UUID of the product order. |
 | `productOrders` | `voxgig_value* (list)` | No |  |
 | `reasonOfReopening` | `char*` | Yes |  |
 
@@ -523,32 +523,32 @@ Entity* merchant_portal_pam_merchant_controller = bluefintecsmerchantportal_merc
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `voxgig_value* (map)` | No |  |
+| `additional_data` | `voxgig_value* (map)` | No | Optional additional merchant-specific data related to enabling acquiring. |
 | `businessRegistrationNumber` | `char*` | Yes |  |
-| `city` | `char*` | No |  |
+| `city` | `char*` | No | City where the merchant is located. |
 | `companyName` | `char*` | Yes |  |
-| `corporateUUID` | `char*` | Yes |  |
-| `country` | `char*` | No |  |
-| `currency` | `char*` | Yes |  |
+| `corporateUUID` | `char*` | Yes | Unique identifier for the corporate entity. |
+| `country` | `char*` | No | Country where the merchant is located. |
+| `currency` | `char*` | Yes | Transaction currency in ISO 4217 format. |
 | `email` | `char*` | Yes |  |
 | `language` | `char*` | Yes |  |
 | `login` | `char*` | Yes |  |
-| `mandator` | `char*` | Yes |  |
-| `merchantContractNumber` | `char*` | Yes |  |
-| `merchantName` | `char*` | No |  |
-| `merchant_category_code` | `char*` | No |  |
-| `packageUUID` | `char*` | No |  |
-| `packageorderuuid` | `char*` | Yes |  |
+| `mandator` | `char*` | Yes | Mandator name assigned by TECS. |
+| `merchantContractNumber` | `char*` | Yes | Unique identifier for the merchant within a specific system. |
+| `merchantName` | `char*` | No | Name of the merchant. |
+| `merchant_category_code` | `char*` | No | Merchant Category Code (MCC) describing the merchant’s type of business. |
+| `packageUUID` | `char*` | No | UUID of the package. |
+| `packageorderuuid` | `char*` | Yes | Unique identifier for the registered merchant in the TECS system. |
 | `phoneNumber` | `char*` | Yes |  |
-| `postalCode` | `char*` | No |  |
-| `productid_acquirer` | `char*` | Yes |  |
-| `region` | `char*` | No |  |
-| `registrationNumber` | `char*` | No |  |
-| `signature` | `char*` | No |  |
-| `street` | `char*` | No |  |
-| `terminalIds` | `voxgig_value* (list)` | No |  |
-| `terminalid_acquirer` | `char*` | No |  |
-| `vu_nummer` | `char*` | Yes |  |
+| `postalCode` | `char*` | No | Postal or ZIP code of the merchant’s location. |
+| `productid_acquirer` | `char*` | Yes | Identifier of the product for which acquiring is to be enabled. |
+| `region` | `char*` | No | State or province where the merchant is located. |
+| `registrationNumber` | `char*` | No | Business registration number. |
+| `signature` | `char*` | No | Signature value = saltAsHex-hashAsHex. |
+| `street` | `char*` | No | Street address of the merchant. |
+| `terminalIds` | `voxgig_value* (list)` | No | Optional list of terminal IDs for which acquiring should be activated. |
+| `terminalid_acquirer` | `char*` | No | Optional terminal ID provided by the acquirer. |
+| `vu_nummer` | `char*` | Yes | Merchant contract number with the acquirer. |
 
 ### Field Usage by Operation
 
@@ -639,13 +639,13 @@ Entity* merchant_portal_pam_package_controller = bluefintecsmerchantportal_merch
 | --- | --- | --- | --- |
 | `consumerUUID` | `char*` | No |  |
 | `corporateUUID` | `char*` | No |  |
-| `country` | `char*` | No |  |
-| `descriptionKey` | `char*` | No |  |
+| `country` | `char*` | No | Country associated with the package. |
+| `descriptionKey` | `char*` | No | Key for the description of the package. |
 | `filter` | `voxgig_value* (map)` | No |  |
 | `language` | `char*` | Yes |  |
-| `nameKey` | `char*` | No |  |
-| `packageStatus` | `char*` | No |  |
-| `packageUUID` | `char*` | Yes |  |
+| `nameKey` | `char*` | No | Key for the name of the package. |
+| `packageStatus` | `char*` | No | Status of the package. |
+| `packageUUID` | `char*` | Yes | Unique identifier for the package. |
 | `pagination` | `voxgig_value* (map)` | No |  |
 | `sorting` | `voxgig_value* (map)` | No |  |
 
@@ -718,7 +718,7 @@ Entity* merchant_portal_pam_product_controller = bluefintecsmerchantportal_merch
 | `pagination` | `voxgig_value* (map)` | No |  |
 | `productOrderUUID` | `char*` | Yes |  |
 | `productUUID` | `char*` | Yes |  |
-| `reason_decline` | `char*` | Yes |  |
+| `reason_decline` | `char*` | Yes | Reason for product decline. |
 | `sorting` | `voxgig_value* (map)` | No |  |
 
 ### Operations
@@ -768,10 +768,10 @@ Entity* output_add_product = bluefintecsmerchantportal_output_add_product(client
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `packageUUID` | `char*` | Yes |  |
-| `productUUIDs` | `voxgig_value* (list)` | Yes |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `char*` | Yes |  |
+| `packageUUID` | `char*` | Yes | Unique identifier for the package. |
+| `productUUIDs` | `voxgig_value* (list)` | Yes | The list of unique identifiers of the products. |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `char*` | Yes | Response message. |
 
 ### Operations
 
@@ -820,20 +820,20 @@ Entity* output_create_product = bluefintecsmerchantportal_output_create_product(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirerId` | `char*` | No |  |
-| `allowMultipleOrders` | `bool` | Yes |  |
-| `appFormTemplateName` | `char*` | Yes |  |
-| `contractNeeded` | `bool` | Yes |  |
-| `credentialsNeeded` | `bool` | No |  |
-| `descriptionKey` | `char*` | Yes |  |
-| `nameKey` | `char*` | Yes |  |
-| `prescreeningAllowed` | `bool` | Yes |  |
-| `productName` | `char*` | Yes |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `char*` | Yes |  |
-| `terminalTemplateName` | `char*` | Yes |  |
-| `vendorName` | `char*` | Yes |  |
-| `xmlTemplateFile` | `char*` | Yes |  |
+| `acquirerId` | `char*` | No | Unique identifier for the acquirer. |
+| `allowMultipleOrders` | `bool` | Yes | Indication whether multiple orders are allowed or not. |
+| `appFormTemplateName` | `char*` | Yes | Name of the application form template. |
+| `contractNeeded` | `bool` | Yes | Indication whether contract is needed or not. |
+| `credentialsNeeded` | `bool` | No | Indication whether credentials are needed or not. |
+| `descriptionKey` | `char*` | Yes | Key indicator for product description. |
+| `nameKey` | `char*` | Yes | Key indicator for product name. |
+| `prescreeningAllowed` | `bool` | Yes | Indication whether prescreening is allowed or not. |
+| `productName` | `char*` | Yes | Name of the product. |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `char*` | Yes | Response message. |
+| `terminalTemplateName` | `char*` | Yes | Name of the terminal template. |
+| `vendorName` | `char*` | Yes | Name of the vendor. |
+| `xmlTemplateFile` | `char*` | Yes | A string value containing the XML template file encoded in Base64. |
 
 ### Operations
 
@@ -938,8 +938,8 @@ Entity* output_list = bluefintecsmerchantportal_output_list(client, NULL);
 | --- | --- | --- | --- |
 | `items` | `voxgig_value* (list)` | No |  |
 | `pagination` | `voxgig_value* (map)` | Yes |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `char*` | Yes | Response message. |
 | `sorting` | `voxgig_value* (map)` | No |  |
 
 ### Field Usage by Operation
@@ -998,8 +998,8 @@ Entity* output_message = bluefintecsmerchantportal_output_message(client, NULL);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `char*` | Yes | Response message. |
 
 ### Operations
 
@@ -1044,8 +1044,8 @@ Entity* output_move_tid = bluefintecsmerchantportal_output_move_tid(client, NULL
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `productOrderUUIDs` | `voxgig_value* (list)` | Yes |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `char*` | Yes | Response message. |
 | `targetPackageOrderUUID` | `char*` | Yes |  |
 | `targetProductOrderUUID` | `char*` | Yes |  |
 
@@ -1097,10 +1097,10 @@ Entity* output_remove_product = bluefintecsmerchantportal_output_remove_product(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `packageUUID` | `char*` | Yes |  |
-| `productUUIDs` | `voxgig_value* (list)` | Yes |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `char*` | Yes |  |
+| `packageUUID` | `char*` | Yes | Unique identifier for the package. |
+| `productUUIDs` | `voxgig_value* (list)` | Yes | List of product unique identifiers. |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `char*` | Yes | Response message. |
 
 ### Operations
 
@@ -1150,8 +1150,8 @@ Entity* output_start = bluefintecsmerchantportal_output_start(client, NULL);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `char*` | No |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `char*` | Yes | Response message. |
 
 ### Operations
 
@@ -1199,8 +1199,8 @@ Entity* output_status = bluefintecsmerchantportal_output_status(client, NULL);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `int64_t` | No |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `char*` | Yes | Response message. |
 | `status` | `char*` | No |  |
 
 ### Operations
@@ -1245,19 +1245,19 @@ Entity* output_update_product = bluefintecsmerchantportal_output_update_product(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allowMultipleOrders` | `bool` | No |  |
-| `appFormName` | `char*` | No |  |
-| `contractNeeded` | `bool` | No |  |
-| `credentialsNeeded` | `bool` | No |  |
-| `descriptionKey` | `char*` | No |  |
-| `nameKey` | `char*` | No |  |
-| `prescreeningAllowed` | `bool` | No |  |
-| `productName` | `char*` | No |  |
-| `productStatus` | `char*` | No |  |
-| `productUUID` | `char*` | Yes |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `char*` | Yes |  |
-| `vendorName` | `char*` | No |  |
+| `allowMultipleOrders` | `bool` | No | An attribute to indicate if multiple orders are allowed |
+| `appFormName` | `char*` | No | The name of the application form |
+| `contractNeeded` | `bool` | No | An attribute to indicate if a contract is needed |
+| `credentialsNeeded` | `bool` | No | An attribute to indicate if credentials are needed |
+| `descriptionKey` | `char*` | No | The description of the product |
+| `nameKey` | `char*` | No | The key of the product name |
+| `prescreeningAllowed` | `bool` | No | An attribute to indicate if prescreening is allowed |
+| `productName` | `char*` | No | The name of the product |
+| `productStatus` | `char*` | No | The status of the product |
+| `productUUID` | `char*` | Yes | The UUID of the product to update |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `char*` | Yes | Response message. |
+| `vendorName` | `char*` | No | The name of the vendor |
 
 ### Operations
 

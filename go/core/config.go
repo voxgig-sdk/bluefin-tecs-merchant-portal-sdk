@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "BluefinTecsMerchantPortal",
+			"slug": "bluefin-tecs-merchant-portal",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -51,152 +54,185 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "account_number",
+						"short": "Account number provided by the acquirer.",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "additional_data",
+						"short": "Arbitrary merchant-specific data related to terminal registration.",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "business_reg_number",
 						"req": true,
+						"short": "Merchant business registration number as stated in the company registry.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "city",
 						"req": true,
+						"short": "Merchant's address: city.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "corporateuuid",
+						"short": "Unique identifier for the corporate entity (UUID format).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "country",
 						"req": true,
+						"short": "Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "currency",
 						"req": true,
+						"short": "Transaction currency (must be in \"ISO 4217\" format).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchant_category_code",
 						"req": true,
+						"short": "Merchant category code as defined by the payment network.",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "merchant_email",
+						"short": "Merchant's email address for receiving notifications.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchant_name",
 						"req": true,
+						"short": "The officially incorporated company name of the merchant.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchant_phone_number",
+						"short": "Merchant's phone number for notifications.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "packageid",
 						"req": true,
+						"short": "Identifier of the package in the TECS processing engine provided by TECS.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "packageorderuuid",
 						"req": true,
+						"short": "Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "password",
+						"short": "Merchant password for MPOS.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productid",
+						"short": "Identifier of the product for which terminal registration is to be performed.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productid_acquirer",
+						"short": "Identifier of the product for which acquiring is enabled.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "reason_deactivation",
 						"req": true,
+						"short": "Reason for terminal deactivation.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "reason_reactivation",
 						"req": true,
+						"short": "Reason for terminal reactivation.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "sorting_code",
+						"short": "Sorting code provided by the acquirer.",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "state",
+						"short": "Merchant's address: state.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "street",
 						"req": true,
+						"short": "Merchant's address: street and house number.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminal_country_code",
 						"req": true,
+						"short": "Terminal country code (must be in 'ISO-3166 ALPHA-3' format).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminal_language_code",
 						"req": true,
+						"short": "Terminal language code (must be in 'ISO 639-1' format).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminal_location",
 						"req": true,
+						"short": "Physical or logical location of the terminal.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminal_serial_number",
 						"req": true,
+						"short": "Terminal serial number.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminalid",
 						"req": true,
+						"short": "TECS terminalid given by Tecs processing engine.",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "terminalid_acquirer",
+						"short": "Terminal ID as set by the acquirer (optional).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "user_email",
+						"short": "Email address of the user acting on behalf of the merchant.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "user_phone_number",
+						"short": "Phone number of the user acting on behalf of the merchant.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "username",
+						"short": "Merchant username for MPOS.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "vu_nummer",
 						"req": true,
+						"short": "Merchant contract number with the acquirer.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "web_shop_url",
+						"short": "URL of the merchant's web shop.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "zipcode",
 						"req": true,
+						"short": "Merchant's address: postal code.",
 						"type": "`$STRING`",
 					},
 				},
@@ -467,10 +503,12 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "packageOrderUUID",
+						"short": "UUID of the package order.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productOrderUUID",
+						"short": "UUID of the product order.",
 						"type": "`$STRING`",
 					},
 				},
@@ -578,6 +616,7 @@ func MakeConfig() map[string]any {
 							},
 						},
 						"req": true,
+						"short": "UUID of the package order.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -592,6 +631,7 @@ func MakeConfig() map[string]any {
 								"type": "`$STRING`",
 							},
 						},
+						"short": "UUID of the product order.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -916,6 +956,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "additional_data",
+						"short": "Optional additional merchant-specific data related to enabling acquiring.",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
@@ -925,6 +966,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "city",
+						"short": "City where the merchant is located.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -935,15 +977,18 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "corporateUUID",
 						"req": true,
+						"short": "Unique identifier for the corporate entity.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "country",
+						"short": "Country where the merchant is located.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "currency",
 						"req": true,
+						"short": "Transaction currency in ISO 4217 format.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -964,6 +1009,7 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "mandator",
 						"req": true,
+						"short": "Mandator name assigned by TECS.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -974,23 +1020,28 @@ func MakeConfig() map[string]any {
 							},
 						},
 						"req": true,
+						"short": "Unique identifier for the merchant within a specific system.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantName",
+						"short": "Name of the merchant.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchant_category_code",
+						"short": "Merchant Category Code (MCC) describing the merchant’s type of business.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "packageUUID",
+						"short": "UUID of the package.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "packageorderuuid",
 						"req": true,
+						"short": "Unique identifier for the registered merchant in the TECS system.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1000,40 +1051,49 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "postalCode",
+						"short": "Postal or ZIP code of the merchant’s location.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productid_acquirer",
 						"req": true,
+						"short": "Identifier of the product for which acquiring is to be enabled.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "region",
+						"short": "State or province where the merchant is located.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "registrationNumber",
+						"short": "Business registration number.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "signature",
+						"short": "Signature value = saltAsHex-hashAsHex.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "street",
+						"short": "Street address of the merchant.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminalIds",
+						"short": "Optional list of terminal IDs for which acquiring should be activated.",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "terminalid_acquirer",
+						"short": "Optional terminal ID provided by the acquirer.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "vu_nummer",
 						"req": true,
+						"short": "Merchant contract number with the acquirer.",
 						"type": "`$STRING`",
 					},
 				},
@@ -1164,10 +1224,12 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "country",
+						"short": "Country associated with the package.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "descriptionKey",
+						"short": "Key for the description of the package.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1186,15 +1248,18 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "nameKey",
+						"short": "Key for the name of the package.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "packageStatus",
+						"short": "Status of the package.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "packageUUID",
 						"req": true,
+						"short": "Unique identifier for the package.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1403,6 +1468,7 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "reason_decline",
 						"req": true,
+						"short": "Reason for product decline.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1544,21 +1610,25 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "packageUUID",
 						"req": true,
+						"short": "Unique identifier for the package.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productUUIDs",
 						"req": true,
+						"short": "The list of unique identifiers of the products.",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "responseCode",
 						"req": true,
+						"short": "Response code.",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "responseMessage",
 						"req": true,
+						"short": "Response message.",
 						"type": "`$STRING`",
 					},
 				},
@@ -1608,70 +1678,84 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "acquirerId",
+						"short": "Unique identifier for the acquirer.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "allowMultipleOrders",
 						"req": true,
+						"short": "Indication whether multiple orders are allowed or not.",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "appFormTemplateName",
 						"req": true,
+						"short": "Name of the application form template.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "contractNeeded",
 						"req": true,
+						"short": "Indication whether contract is needed or not.",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "credentialsNeeded",
+						"short": "Indication whether credentials are needed or not.",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "descriptionKey",
 						"req": true,
+						"short": "Key indicator for product description.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nameKey",
 						"req": true,
+						"short": "Key indicator for product name.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "prescreeningAllowed",
 						"req": true,
+						"short": "Indication whether prescreening is allowed or not.",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "productName",
 						"req": true,
+						"short": "Name of the product.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "responseCode",
 						"req": true,
+						"short": "Response code.",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "responseMessage",
 						"req": true,
+						"short": "Response message.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminalTemplateName",
 						"req": true,
+						"short": "Name of the terminal template.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "vendorName",
 						"req": true,
+						"short": "Name of the vendor.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "xmlTemplateFile",
 						"req": true,
+						"short": "A string value containing the XML template file encoded in Base64.",
 						"type": "`$STRING`",
 					},
 				},
@@ -1806,11 +1890,13 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "responseCode",
 						"req": true,
+						"short": "Response code.",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "responseMessage",
 						"req": true,
+						"short": "Response message.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1867,11 +1953,13 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "responseCode",
 						"req": true,
+						"short": "Response code.",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "responseMessage",
 						"req": true,
+						"short": "Response message.",
 						"type": "`$STRING`",
 					},
 				},
@@ -1982,11 +2070,13 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "responseCode",
 						"req": true,
+						"short": "Response code.",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "responseMessage",
 						"req": true,
+						"short": "Response message.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -2047,21 +2137,25 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "packageUUID",
 						"req": true,
+						"short": "Unique identifier for the package.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productUUIDs",
 						"req": true,
+						"short": "List of product unique identifiers.",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "responseCode",
 						"req": true,
+						"short": "Response code.",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "responseMessage",
 						"req": true,
+						"short": "Response message.",
 						"type": "`$STRING`",
 					},
 				},
@@ -2116,11 +2210,13 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "responseCode",
 						"req": true,
+						"short": "Response code.",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "responseMessage",
 						"req": true,
+						"short": "Response message.",
 						"type": "`$STRING`",
 					},
 				},
@@ -2177,11 +2273,13 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "responseCode",
 						"req": true,
+						"short": "Response code.",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "responseMessage",
 						"req": true,
+						"short": "Response message.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -2248,57 +2346,70 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "allowMultipleOrders",
+						"short": "An attribute to indicate if multiple orders are allowed",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "appFormName",
+						"short": "The name of the application form",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "contractNeeded",
+						"short": "An attribute to indicate if a contract is needed",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "credentialsNeeded",
+						"short": "An attribute to indicate if credentials are needed",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "descriptionKey",
+						"short": "The description of the product",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nameKey",
+						"short": "The key of the product name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "prescreeningAllowed",
+						"short": "An attribute to indicate if prescreening is allowed",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "productName",
+						"short": "The name of the product",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productStatus",
+						"short": "The status of the product",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productUUID",
 						"req": true,
+						"short": "The UUID of the product to update",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "responseCode",
 						"req": true,
+						"short": "Response code.",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "responseMessage",
 						"req": true,
+						"short": "Response message.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "vendorName",
+						"short": "The name of the vendor",
 						"type": "`$STRING`",
 					},
 				},

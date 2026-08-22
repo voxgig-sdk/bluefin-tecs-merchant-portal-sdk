@@ -13,11 +13,13 @@ main: kit: entity: merchant_portal_pam_document_controller: {
     {
       name: "packageOrderUUID"
       req: false
+      short: "UUID of the package order."
       type: "`$STRING`"
     }
     {
       name: "productOrderUUID"
       req: false
+      short: "UUID of the product order."
       type: "`$STRING`"
     }
   ]

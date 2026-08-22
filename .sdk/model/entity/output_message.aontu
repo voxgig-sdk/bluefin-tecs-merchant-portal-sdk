@@ -8,11 +8,13 @@ main: kit: entity: output_message: {
     {
       name: "responseCode"
       req: true
+      short: "Response code."
       type: "`$INTEGER`"
     }
     {
       name: "responseMessage"
       req: true
+      short: "Response message."
       type: "`$STRING`"
     }
   ]

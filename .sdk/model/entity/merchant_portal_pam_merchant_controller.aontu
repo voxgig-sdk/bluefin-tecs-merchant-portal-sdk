@@ -8,6 +8,7 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
     {
       name: "additional_data"
       req: false
+      short: "Optional additional merchant-specific data related to enabling acquiring."
       type: "`$OBJECT`"
     }
     {
@@ -18,6 +19,7 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
     {
       name: "city"
       req: false
+      short: "City where the merchant is located."
       type: "`$STRING`"
     }
     {
@@ -28,16 +30,19 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
     {
       name: "corporateUUID"
       req: true
+      short: "Unique identifier for the corporate entity."
       type: "`$STRING`"
     }
     {
       name: "country"
       req: false
+      short: "Country where the merchant is located."
       type: "`$STRING`"
     }
     {
       name: "currency"
       req: true
+      short: "Transaction currency in ISO 4217 format."
       type: "`$STRING`"
     }
     {
@@ -58,6 +63,7 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
     {
       name: "mandator"
       req: true
+      short: "Mandator name assigned by TECS."
       type: "`$STRING`"
     }
     {
@@ -69,26 +75,31 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
         }
       }
       req: true
+      short: "Unique identifier for the merchant within a specific system."
       type: "`$STRING`"
     }
     {
       name: "merchantName"
       req: false
+      short: "Name of the merchant."
       type: "`$STRING`"
     }
     {
       name: "merchant_category_code"
       req: false
+      short: "Merchant Category Code (MCC) describing the merchant’s type of business."
       type: "`$STRING`"
     }
     {
       name: "packageUUID"
       req: false
+      short: "UUID of the package."
       type: "`$STRING`"
     }
     {
       name: "packageorderuuid"
       req: true
+      short: "Unique identifier for the registered merchant in the TECS system."
       type: "`$STRING`"
     }
     {
@@ -99,46 +110,55 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
     {
       name: "postalCode"
       req: false
+      short: "Postal or ZIP code of the merchant’s location."
       type: "`$STRING`"
     }
     {
       name: "productid_acquirer"
       req: true
+      short: "Identifier of the product for which acquiring is to be enabled."
       type: "`$STRING`"
     }
     {
       name: "region"
       req: false
+      short: "State or province where the merchant is located."
       type: "`$STRING`"
     }
     {
       name: "registrationNumber"
       req: false
+      short: "Business registration number."
       type: "`$STRING`"
     }
     {
       name: "signature"
       req: false
+      short: "Signature value = saltAsHex-hashAsHex."
       type: "`$STRING`"
     }
     {
       name: "street"
       req: false
+      short: "Street address of the merchant."
       type: "`$STRING`"
     }
     {
       name: "terminalIds"
       req: false
+      short: "Optional list of terminal IDs for which acquiring should be activated."
       type: "`$ARRAY`"
     }
     {
       name: "terminalid_acquirer"
       req: false
+      short: "Optional terminal ID provided by the acquirer."
       type: "`$STRING`"
     }
     {
       name: "vu_nummer"
       req: true
+      short: "Merchant contract number with the acquirer."
       type: "`$STRING`"
     }
   ]

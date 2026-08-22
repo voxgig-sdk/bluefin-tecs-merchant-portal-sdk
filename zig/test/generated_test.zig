@@ -21,8 +21,15 @@ test "merchant_portal_common_controller_load_smoke" {
     const e = testsdk.merchant_portal_common_controller(vnull());
     const res = e.load(h.jo(&.{.{ "id", h.vstr("t01") }}), vnull());
     switch (res) {
-        .ok => |data| {
-            try std.testing.expect(std.mem.eql(u8, h.get_str(data, "id") orelse "", "t01"));
+        .ok => |ent| {
+            // EVERY operation resolves to the ENTITY, not the record: the
+            // payload of EntResult.ok is the entity pointer, and the record is
+            // reached through data(). Destructuring it as a Value was a
+            // compile error ("expected type 'struct.JsonValue', found
+            // '*entity.<name>.<Name>Entity'"), so no generated zig SDK with a
+            // loadable entity could build its own test suite.
+            const rec = ent.asEntity().data(null);
+            try std.testing.expect(std.mem.eql(u8, h.get_str(rec, "id") orelse "", "t01"));
         },
         .err => |er| {
             std.debug.print("merchant_portal_common_controller load failed: {s}\n", .{er.msg});
@@ -67,8 +74,15 @@ test "output_detail_load_smoke" {
     const e = testsdk.output_detail(vnull());
     const res = e.load(h.jo(&.{.{ "id", h.vstr("t01") }}), vnull());
     switch (res) {
-        .ok => |data| {
-            try std.testing.expect(std.mem.eql(u8, h.get_str(data, "id") orelse "", "t01"));
+        .ok => |ent| {
+            // EVERY operation resolves to the ENTITY, not the record: the
+            // payload of EntResult.ok is the entity pointer, and the record is
+            // reached through data(). Destructuring it as a Value was a
+            // compile error ("expected type 'struct.JsonValue', found
+            // '*entity.<name>.<Name>Entity'"), so no generated zig SDK with a
+            // loadable entity could build its own test suite.
+            const rec = ent.asEntity().data(null);
+            try std.testing.expect(std.mem.eql(u8, h.get_str(rec, "id") orelse "", "t01"));
         },
         .err => |er| {
             std.debug.print("output_detail load failed: {s}\n", .{er.msg});
@@ -113,8 +127,15 @@ test "output_message_load_smoke" {
     const e = testsdk.output_message(vnull());
     const res = e.load(h.jo(&.{.{ "id", h.vstr("t01") }}), vnull());
     switch (res) {
-        .ok => |data| {
-            try std.testing.expect(std.mem.eql(u8, h.get_str(data, "id") orelse "", "t01"));
+        .ok => |ent| {
+            // EVERY operation resolves to the ENTITY, not the record: the
+            // payload of EntResult.ok is the entity pointer, and the record is
+            // reached through data(). Destructuring it as a Value was a
+            // compile error ("expected type 'struct.JsonValue', found
+            // '*entity.<name>.<Name>Entity'"), so no generated zig SDK with a
+            // loadable entity could build its own test suite.
+            const rec = ent.asEntity().data(null);
+            try std.testing.expect(std.mem.eql(u8, h.get_str(rec, "id") orelse "", "t01"));
         },
         .err => |er| {
             std.debug.print("output_message load failed: {s}\n", .{er.msg});
@@ -159,8 +180,15 @@ test "output_status_load_smoke" {
     const e = testsdk.output_status(vnull());
     const res = e.load(h.jo(&.{.{ "id", h.vstr("t01") }}), vnull());
     switch (res) {
-        .ok => |data| {
-            try std.testing.expect(std.mem.eql(u8, h.get_str(data, "id") orelse "", "t01"));
+        .ok => |ent| {
+            // EVERY operation resolves to the ENTITY, not the record: the
+            // payload of EntResult.ok is the entity pointer, and the record is
+            // reached through data(). Destructuring it as a Value was a
+            // compile error ("expected type 'struct.JsonValue', found
+            // '*entity.<name>.<Name>Entity'"), so no generated zig SDK with a
+            // loadable entity could build its own test suite.
+            const rec = ent.asEntity().data(null);
+            try std.testing.expect(std.mem.eql(u8, h.get_str(rec, "id") orelse "", "t01"));
         },
         .err => |er| {
             std.debug.print("output_status load failed: {s}\n", .{er.msg});

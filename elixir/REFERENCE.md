@@ -158,39 +158,39 @@ merchant_portal_api_controller = BluefinTecsMerchantPortal.merchant_portal_api_c
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_number` | `integer()` | No |  |
-| `additional_data` | `map()` | No |  |
-| `business_reg_number` | `String.t()` | Yes |  |
-| `city` | `String.t()` | Yes |  |
-| `corporateuuid` | `String.t()` | No |  |
-| `country` | `String.t()` | Yes |  |
-| `currency` | `String.t()` | Yes |  |
-| `merchant_category_code` | `integer()` | Yes |  |
-| `merchant_email` | `String.t()` | No |  |
-| `merchant_name` | `String.t()` | Yes |  |
-| `merchant_phone_number` | `String.t()` | No |  |
-| `packageid` | `String.t()` | Yes |  |
-| `packageorderuuid` | `String.t()` | Yes |  |
-| `password` | `String.t()` | No |  |
-| `productid` | `String.t()` | No |  |
-| `productid_acquirer` | `String.t()` | No |  |
-| `reason_deactivation` | `String.t()` | Yes |  |
-| `reason_reactivation` | `String.t()` | Yes |  |
-| `sorting_code` | `integer()` | No |  |
-| `state` | `String.t()` | No |  |
-| `street` | `String.t()` | Yes |  |
-| `terminal_country_code` | `String.t()` | Yes |  |
-| `terminal_language_code` | `String.t()` | Yes |  |
-| `terminal_location` | `String.t()` | Yes |  |
-| `terminal_serial_number` | `String.t()` | Yes |  |
-| `terminalid` | `integer()` | Yes |  |
-| `terminalid_acquirer` | `String.t()` | No |  |
-| `user_email` | `String.t()` | No |  |
-| `user_phone_number` | `String.t()` | No |  |
-| `username` | `String.t()` | No |  |
-| `vu_nummer` | `String.t()` | Yes |  |
-| `web_shop_url` | `String.t()` | No |  |
-| `zipcode` | `String.t()` | Yes |  |
+| `account_number` | `integer()` | No | Account number provided by the acquirer. |
+| `additional_data` | `map()` | No | Arbitrary merchant-specific data related to terminal registration. |
+| `business_reg_number` | `String.t()` | Yes | Merchant business registration number as stated in the company registry. |
+| `city` | `String.t()` | Yes | Merchant's address: city. |
+| `corporateuuid` | `String.t()` | No | Unique identifier for the corporate entity (UUID format). |
+| `country` | `String.t()` | Yes | Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format). |
+| `currency` | `String.t()` | Yes | Transaction currency (must be in "ISO 4217" format). |
+| `merchant_category_code` | `integer()` | Yes | Merchant category code as defined by the payment network. |
+| `merchant_email` | `String.t()` | No | Merchant's email address for receiving notifications. |
+| `merchant_name` | `String.t()` | Yes | The officially incorporated company name of the merchant. |
+| `merchant_phone_number` | `String.t()` | No | Merchant's phone number for notifications. |
+| `packageid` | `String.t()` | Yes | Identifier of the package in the TECS processing engine provided by TECS. |
+| `packageorderuuid` | `String.t()` | Yes | Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call. |
+| `password` | `String.t()` | No | Merchant password for MPOS. |
+| `productid` | `String.t()` | No | Identifier of the product for which terminal registration is to be performed. |
+| `productid_acquirer` | `String.t()` | No | Identifier of the product for which acquiring is enabled. |
+| `reason_deactivation` | `String.t()` | Yes | Reason for terminal deactivation. |
+| `reason_reactivation` | `String.t()` | Yes | Reason for terminal reactivation. |
+| `sorting_code` | `integer()` | No | Sorting code provided by the acquirer. |
+| `state` | `String.t()` | No | Merchant's address: state. |
+| `street` | `String.t()` | Yes | Merchant's address: street and house number. |
+| `terminal_country_code` | `String.t()` | Yes | Terminal country code (must be in 'ISO-3166 ALPHA-3' format). |
+| `terminal_language_code` | `String.t()` | Yes | Terminal language code (must be in 'ISO 639-1' format). |
+| `terminal_location` | `String.t()` | Yes | Physical or logical location of the terminal. |
+| `terminal_serial_number` | `String.t()` | Yes | Terminal serial number. |
+| `terminalid` | `integer()` | Yes | TECS terminalid given by Tecs processing engine. |
+| `terminalid_acquirer` | `String.t()` | No | Terminal ID as set by the acquirer (optional). |
+| `user_email` | `String.t()` | No | Email address of the user acting on behalf of the merchant. |
+| `user_phone_number` | `String.t()` | No | Phone number of the user acting on behalf of the merchant. |
+| `username` | `String.t()` | No | Merchant username for MPOS. |
+| `vu_nummer` | `String.t()` | Yes | Merchant contract number with the acquirer. |
+| `web_shop_url` | `String.t()` | No | URL of the merchant's web shop. |
+| `zipcode` | `String.t()` | Yes | Merchant's address: postal code. |
 
 ### Operations
 
@@ -361,8 +361,8 @@ merchant_portal_pam_document_controller = BluefinTecsMerchantPortal.merchant_por
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `appFormFieldDescUUID` | `String.t()` | Yes |  |
-| `packageOrderUUID` | `String.t()` | No |  |
-| `productOrderUUID` | `String.t()` | No |  |
+| `packageOrderUUID` | `String.t()` | No | UUID of the package order. |
+| `productOrderUUID` | `String.t()` | No | UUID of the product order. |
 
 ### Operations
 
@@ -419,9 +419,9 @@ merchant_portal_pam_form_controller = BluefinTecsMerchantPortal.merchant_portal_
 | `filter` | `map()` | No |  |
 | `language` | `String.t()` | Yes |  |
 | `packageOrder` | `map()` | No |  |
-| `packageOrderUUID` | `String.t()` | Yes |  |
+| `packageOrderUUID` | `String.t()` | Yes | UUID of the package order. |
 | `packageUUID` | `String.t()` | No |  |
-| `productOrderUUID` | `String.t()` | No |  |
+| `productOrderUUID` | `String.t()` | No | UUID of the product order. |
 | `productOrders` | `list()` | No |  |
 | `reasonOfReopening` | `String.t()` | Yes |  |
 
@@ -536,32 +536,32 @@ merchant_portal_pam_merchant_controller = BluefinTecsMerchantPortal.merchant_por
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `map()` | No |  |
+| `additional_data` | `map()` | No | Optional additional merchant-specific data related to enabling acquiring. |
 | `businessRegistrationNumber` | `String.t()` | Yes |  |
-| `city` | `String.t()` | No |  |
+| `city` | `String.t()` | No | City where the merchant is located. |
 | `companyName` | `String.t()` | Yes |  |
-| `corporateUUID` | `String.t()` | Yes |  |
-| `country` | `String.t()` | No |  |
-| `currency` | `String.t()` | Yes |  |
+| `corporateUUID` | `String.t()` | Yes | Unique identifier for the corporate entity. |
+| `country` | `String.t()` | No | Country where the merchant is located. |
+| `currency` | `String.t()` | Yes | Transaction currency in ISO 4217 format. |
 | `email` | `String.t()` | Yes |  |
 | `language` | `String.t()` | Yes |  |
 | `login` | `String.t()` | Yes |  |
-| `mandator` | `String.t()` | Yes |  |
-| `merchantContractNumber` | `String.t()` | Yes |  |
-| `merchantName` | `String.t()` | No |  |
-| `merchant_category_code` | `String.t()` | No |  |
-| `packageUUID` | `String.t()` | No |  |
-| `packageorderuuid` | `String.t()` | Yes |  |
+| `mandator` | `String.t()` | Yes | Mandator name assigned by TECS. |
+| `merchantContractNumber` | `String.t()` | Yes | Unique identifier for the merchant within a specific system. |
+| `merchantName` | `String.t()` | No | Name of the merchant. |
+| `merchant_category_code` | `String.t()` | No | Merchant Category Code (MCC) describing the merchant’s type of business. |
+| `packageUUID` | `String.t()` | No | UUID of the package. |
+| `packageorderuuid` | `String.t()` | Yes | Unique identifier for the registered merchant in the TECS system. |
 | `phoneNumber` | `String.t()` | Yes |  |
-| `postalCode` | `String.t()` | No |  |
-| `productid_acquirer` | `String.t()` | Yes |  |
-| `region` | `String.t()` | No |  |
-| `registrationNumber` | `String.t()` | No |  |
-| `signature` | `String.t()` | No |  |
-| `street` | `String.t()` | No |  |
-| `terminalIds` | `list()` | No |  |
-| `terminalid_acquirer` | `String.t()` | No |  |
-| `vu_nummer` | `String.t()` | Yes |  |
+| `postalCode` | `String.t()` | No | Postal or ZIP code of the merchant’s location. |
+| `productid_acquirer` | `String.t()` | Yes | Identifier of the product for which acquiring is to be enabled. |
+| `region` | `String.t()` | No | State or province where the merchant is located. |
+| `registrationNumber` | `String.t()` | No | Business registration number. |
+| `signature` | `String.t()` | No | Signature value = saltAsHex-hashAsHex. |
+| `street` | `String.t()` | No | Street address of the merchant. |
+| `terminalIds` | `list()` | No | Optional list of terminal IDs for which acquiring should be activated. |
+| `terminalid_acquirer` | `String.t()` | No | Optional terminal ID provided by the acquirer. |
+| `vu_nummer` | `String.t()` | Yes | Merchant contract number with the acquirer. |
 
 ### Operations
 
@@ -628,13 +628,13 @@ merchant_portal_pam_package_controller = BluefinTecsMerchantPortal.merchant_port
 | --- | --- | --- | --- |
 | `consumerUUID` | `String.t()` | No |  |
 | `corporateUUID` | `String.t()` | No |  |
-| `country` | `String.t()` | No |  |
-| `descriptionKey` | `String.t()` | No |  |
+| `country` | `String.t()` | No | Country associated with the package. |
+| `descriptionKey` | `String.t()` | No | Key for the description of the package. |
 | `filter` | `map()` | No |  |
 | `language` | `String.t()` | Yes |  |
-| `nameKey` | `String.t()` | No |  |
-| `packageStatus` | `String.t()` | No |  |
-| `packageUUID` | `String.t()` | Yes |  |
+| `nameKey` | `String.t()` | No | Key for the name of the package. |
+| `packageStatus` | `String.t()` | No | Status of the package. |
+| `packageUUID` | `String.t()` | Yes | Unique identifier for the package. |
 | `pagination` | `map()` | No |  |
 | `sorting` | `map()` | No |  |
 
@@ -698,7 +698,7 @@ merchant_portal_pam_product_controller = BluefinTecsMerchantPortal.merchant_port
 | `pagination` | `map()` | No |  |
 | `productOrderUUID` | `String.t()` | Yes |  |
 | `productUUID` | `String.t()` | Yes |  |
-| `reason_decline` | `String.t()` | Yes |  |
+| `reason_decline` | `String.t()` | Yes | Reason for product decline. |
 | `sorting` | `map()` | No |  |
 
 ### Operations
@@ -755,10 +755,10 @@ output_add_product = BluefinTecsMerchantPortal.output_add_product(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `packageUUID` | `String.t()` | Yes |  |
-| `productUUIDs` | `list()` | Yes |  |
-| `responseCode` | `integer()` | Yes |  |
-| `responseMessage` | `String.t()` | Yes |  |
+| `packageUUID` | `String.t()` | Yes | Unique identifier for the package. |
+| `productUUIDs` | `list()` | Yes | The list of unique identifiers of the products. |
+| `responseCode` | `integer()` | Yes | Response code. |
+| `responseMessage` | `String.t()` | Yes | Response message. |
 
 ### Operations
 
@@ -814,20 +814,20 @@ output_create_product = BluefinTecsMerchantPortal.output_create_product(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirerId` | `String.t()` | No |  |
-| `allowMultipleOrders` | `boolean()` | Yes |  |
-| `appFormTemplateName` | `String.t()` | Yes |  |
-| `contractNeeded` | `boolean()` | Yes |  |
-| `credentialsNeeded` | `boolean()` | No |  |
-| `descriptionKey` | `String.t()` | Yes |  |
-| `nameKey` | `String.t()` | Yes |  |
-| `prescreeningAllowed` | `boolean()` | Yes |  |
-| `productName` | `String.t()` | Yes |  |
-| `responseCode` | `integer()` | Yes |  |
-| `responseMessage` | `String.t()` | Yes |  |
-| `terminalTemplateName` | `String.t()` | Yes |  |
-| `vendorName` | `String.t()` | Yes |  |
-| `xmlTemplateFile` | `String.t()` | Yes |  |
+| `acquirerId` | `String.t()` | No | Unique identifier for the acquirer. |
+| `allowMultipleOrders` | `boolean()` | Yes | Indication whether multiple orders are allowed or not. |
+| `appFormTemplateName` | `String.t()` | Yes | Name of the application form template. |
+| `contractNeeded` | `boolean()` | Yes | Indication whether contract is needed or not. |
+| `credentialsNeeded` | `boolean()` | No | Indication whether credentials are needed or not. |
+| `descriptionKey` | `String.t()` | Yes | Key indicator for product description. |
+| `nameKey` | `String.t()` | Yes | Key indicator for product name. |
+| `prescreeningAllowed` | `boolean()` | Yes | Indication whether prescreening is allowed or not. |
+| `productName` | `String.t()` | Yes | Name of the product. |
+| `responseCode` | `integer()` | Yes | Response code. |
+| `responseMessage` | `String.t()` | Yes | Response message. |
+| `terminalTemplateName` | `String.t()` | Yes | Name of the terminal template. |
+| `vendorName` | `String.t()` | Yes | Name of the vendor. |
+| `xmlTemplateFile` | `String.t()` | Yes | A string value containing the XML template file encoded in Base64. |
 
 ### Operations
 
@@ -946,8 +946,8 @@ output_list = BluefinTecsMerchantPortal.output_list(sdk)
 | --- | --- | --- | --- |
 | `items` | `list()` | No |  |
 | `pagination` | `map()` | Yes |  |
-| `responseCode` | `integer()` | Yes |  |
-| `responseMessage` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | Yes | Response code. |
+| `responseMessage` | `String.t()` | Yes | Response message. |
 | `sorting` | `map()` | No |  |
 
 ### Operations
@@ -1003,8 +1003,8 @@ output_message = BluefinTecsMerchantPortal.output_message(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `responseCode` | `integer()` | Yes |  |
-| `responseMessage` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | Yes | Response code. |
+| `responseMessage` | `String.t()` | Yes | Response message. |
 
 ### Operations
 
@@ -1056,8 +1056,8 @@ output_move_tid = BluefinTecsMerchantPortal.output_move_tid(sdk)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `productOrderUUIDs` | `list()` | Yes |  |
-| `responseCode` | `integer()` | Yes |  |
-| `responseMessage` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | Yes | Response code. |
+| `responseMessage` | `String.t()` | Yes | Response message. |
 | `targetPackageOrderUUID` | `String.t()` | Yes |  |
 | `targetProductOrderUUID` | `String.t()` | Yes |  |
 
@@ -1116,10 +1116,10 @@ output_remove_product = BluefinTecsMerchantPortal.output_remove_product(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `packageUUID` | `String.t()` | Yes |  |
-| `productUUIDs` | `list()` | Yes |  |
-| `responseCode` | `integer()` | Yes |  |
-| `responseMessage` | `String.t()` | Yes |  |
+| `packageUUID` | `String.t()` | Yes | Unique identifier for the package. |
+| `productUUIDs` | `list()` | Yes | List of product unique identifiers. |
+| `responseCode` | `integer()` | Yes | Response code. |
+| `responseMessage` | `String.t()` | Yes | Response message. |
 
 ### Operations
 
@@ -1176,8 +1176,8 @@ output_start = BluefinTecsMerchantPortal.output_start(sdk)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `String.t()` | No |  |
-| `responseCode` | `integer()` | Yes |  |
-| `responseMessage` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | Yes | Response code. |
+| `responseMessage` | `String.t()` | Yes | Response message. |
 
 ### Operations
 
@@ -1232,8 +1232,8 @@ output_status = BluefinTecsMerchantPortal.output_status(sdk)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `integer()` | No |  |
-| `responseCode` | `integer()` | Yes |  |
-| `responseMessage` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | Yes | Response code. |
+| `responseMessage` | `String.t()` | Yes | Response message. |
 | `status` | `String.t()` | No |  |
 
 ### Operations
@@ -1285,19 +1285,19 @@ output_update_product = BluefinTecsMerchantPortal.output_update_product(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allowMultipleOrders` | `boolean()` | No |  |
-| `appFormName` | `String.t()` | No |  |
-| `contractNeeded` | `boolean()` | No |  |
-| `credentialsNeeded` | `boolean()` | No |  |
-| `descriptionKey` | `String.t()` | No |  |
-| `nameKey` | `String.t()` | No |  |
-| `prescreeningAllowed` | `boolean()` | No |  |
-| `productName` | `String.t()` | No |  |
-| `productStatus` | `String.t()` | No |  |
-| `productUUID` | `String.t()` | Yes |  |
-| `responseCode` | `integer()` | Yes |  |
-| `responseMessage` | `String.t()` | Yes |  |
-| `vendorName` | `String.t()` | No |  |
+| `allowMultipleOrders` | `boolean()` | No | An attribute to indicate if multiple orders are allowed |
+| `appFormName` | `String.t()` | No | The name of the application form |
+| `contractNeeded` | `boolean()` | No | An attribute to indicate if a contract is needed |
+| `credentialsNeeded` | `boolean()` | No | An attribute to indicate if credentials are needed |
+| `descriptionKey` | `String.t()` | No | The description of the product |
+| `nameKey` | `String.t()` | No | The key of the product name |
+| `prescreeningAllowed` | `boolean()` | No | An attribute to indicate if prescreening is allowed |
+| `productName` | `String.t()` | No | The name of the product |
+| `productStatus` | `String.t()` | No | The status of the product |
+| `productUUID` | `String.t()` | Yes | The UUID of the product to update |
+| `responseCode` | `integer()` | Yes | Response code. |
+| `responseMessage` | `String.t()` | Yes | Response message. |
+| `vendorName` | `String.t()` | No | The name of the vendor |
 
 ### Operations
 

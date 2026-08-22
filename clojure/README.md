@@ -280,39 +280,39 @@ On error, `ok` is `false` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `account_number` |  |
-| `additional_data` |  |
-| `business_reg_number` |  |
-| `city` |  |
-| `corporateuuid` |  |
-| `country` |  |
-| `currency` |  |
-| `merchant_category_code` |  |
-| `merchant_email` |  |
-| `merchant_name` |  |
-| `merchant_phone_number` |  |
-| `packageid` |  |
-| `packageorderuuid` |  |
-| `password` |  |
-| `productid` |  |
-| `productid_acquirer` |  |
-| `reason_deactivation` |  |
-| `reason_reactivation` |  |
-| `sorting_code` |  |
-| `state` |  |
-| `street` |  |
-| `terminal_country_code` |  |
-| `terminal_language_code` |  |
-| `terminal_location` |  |
-| `terminal_serial_number` |  |
-| `terminalid` |  |
-| `terminalid_acquirer` |  |
-| `user_email` |  |
-| `user_phone_number` |  |
-| `username` |  |
-| `vu_nummer` |  |
-| `web_shop_url` |  |
-| `zipcode` |  |
+| `account_number` | Account number provided by the acquirer. |
+| `additional_data` | Arbitrary merchant-specific data related to terminal registration. |
+| `business_reg_number` | Merchant business registration number as stated in the company registry. |
+| `city` | Merchant's address: city. |
+| `corporateuuid` | Unique identifier for the corporate entity (UUID format). |
+| `country` | Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format). |
+| `currency` | Transaction currency (must be in "ISO 4217" format). |
+| `merchant_category_code` | Merchant category code as defined by the payment network. |
+| `merchant_email` | Merchant's email address for receiving notifications. |
+| `merchant_name` | The officially incorporated company name of the merchant. |
+| `merchant_phone_number` | Merchant's phone number for notifications. |
+| `packageid` | Identifier of the package in the TECS processing engine provided by TECS. |
+| `packageorderuuid` | Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call. |
+| `password` | Merchant password for MPOS. |
+| `productid` | Identifier of the product for which terminal registration is to be performed. |
+| `productid_acquirer` | Identifier of the product for which acquiring is enabled. |
+| `reason_deactivation` | Reason for terminal deactivation. |
+| `reason_reactivation` | Reason for terminal reactivation. |
+| `sorting_code` | Sorting code provided by the acquirer. |
+| `state` | Merchant's address: state. |
+| `street` | Merchant's address: street and house number. |
+| `terminal_country_code` | Terminal country code (must be in 'ISO-3166 ALPHA-3' format). |
+| `terminal_language_code` | Terminal language code (must be in 'ISO 639-1' format). |
+| `terminal_location` | Physical or logical location of the terminal. |
+| `terminal_serial_number` | Terminal serial number. |
+| `terminalid` | TECS terminalid given by Tecs processing engine. |
+| `terminalid_acquirer` | Terminal ID as set by the acquirer (optional). |
+| `user_email` | Email address of the user acting on behalf of the merchant. |
+| `user_phone_number` | Phone number of the user acting on behalf of the merchant. |
+| `username` | Merchant username for MPOS. |
+| `vu_nummer` | Merchant contract number with the acquirer. |
+| `web_shop_url` | URL of the merchant's web shop. |
+| `zipcode` | Merchant's address: postal code. |
 
 Operations: Create.
 
@@ -343,8 +343,8 @@ API path: `/merchantportalws/generateContract`
 | Field | Description |
 | --- | --- |
 | `appFormFieldDescUUID` |  |
-| `packageOrderUUID` |  |
-| `productOrderUUID` |  |
+| `packageOrderUUID` | UUID of the package order. |
+| `productOrderUUID` | UUID of the product order. |
 
 Operations: Create.
 
@@ -358,9 +358,9 @@ API path: `/merchantportalws/documentsList`
 | `filter` |  |
 | `language` |  |
 | `packageOrder` |  |
-| `packageOrderUUID` |  |
+| `packageOrderUUID` | UUID of the package order. |
 | `packageUUID` |  |
-| `productOrderUUID` |  |
+| `productOrderUUID` | UUID of the product order. |
 | `productOrders` |  |
 | `reasonOfReopening` |  |
 
@@ -385,32 +385,32 @@ API path: `/merchantportalws/createMandatorConfig`
 
 | Field | Description |
 | --- | --- |
-| `additional_data` |  |
+| `additional_data` | Optional additional merchant-specific data related to enabling acquiring. |
 | `businessRegistrationNumber` |  |
-| `city` |  |
+| `city` | City where the merchant is located. |
 | `companyName` |  |
-| `corporateUUID` |  |
-| `country` |  |
-| `currency` |  |
+| `corporateUUID` | Unique identifier for the corporate entity. |
+| `country` | Country where the merchant is located. |
+| `currency` | Transaction currency in ISO 4217 format. |
 | `email` |  |
 | `language` |  |
 | `login` |  |
-| `mandator` |  |
-| `merchantContractNumber` |  |
-| `merchantName` |  |
-| `merchant_category_code` |  |
-| `packageUUID` |  |
-| `packageorderuuid` |  |
+| `mandator` | Mandator name assigned by TECS. |
+| `merchantContractNumber` | Unique identifier for the merchant within a specific system. |
+| `merchantName` | Name of the merchant. |
+| `merchant_category_code` | Merchant Category Code (MCC) describing the merchant’s type of business. |
+| `packageUUID` | UUID of the package. |
+| `packageorderuuid` | Unique identifier for the registered merchant in the TECS system. |
 | `phoneNumber` |  |
-| `postalCode` |  |
-| `productid_acquirer` |  |
-| `region` |  |
-| `registrationNumber` |  |
-| `signature` |  |
-| `street` |  |
-| `terminalIds` |  |
-| `terminalid_acquirer` |  |
-| `vu_nummer` |  |
+| `postalCode` | Postal or ZIP code of the merchant’s location. |
+| `productid_acquirer` | Identifier of the product for which acquiring is to be enabled. |
+| `region` | State or province where the merchant is located. |
+| `registrationNumber` | Business registration number. |
+| `signature` | Signature value = saltAsHex-hashAsHex. |
+| `street` | Street address of the merchant. |
+| `terminalIds` | Optional list of terminal IDs for which acquiring should be activated. |
+| `terminalid_acquirer` | Optional terminal ID provided by the acquirer. |
+| `vu_nummer` | Merchant contract number with the acquirer. |
 
 Operations: Create.
 
@@ -422,13 +422,13 @@ API path: `/merchantportalws/contractNumber`
 | --- | --- |
 | `consumerUUID` |  |
 | `corporateUUID` |  |
-| `country` |  |
-| `descriptionKey` |  |
+| `country` | Country associated with the package. |
+| `descriptionKey` | Key for the description of the package. |
 | `filter` |  |
 | `language` |  |
-| `nameKey` |  |
-| `packageStatus` |  |
-| `packageUUID` |  |
+| `nameKey` | Key for the name of the package. |
+| `packageStatus` | Status of the package. |
+| `packageUUID` | Unique identifier for the package. |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -448,7 +448,7 @@ API path: `/merchantportalws/availablePackages`
 | `pagination` |  |
 | `productOrderUUID` |  |
 | `productUUID` |  |
-| `reason_decline` |  |
+| `reason_decline` | Reason for product decline. |
 | `sorting` |  |
 
 Operations: Create.
@@ -459,10 +459,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `packageUUID` |  |
-| `productUUIDs` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
+| `packageUUID` | Unique identifier for the package. |
+| `productUUIDs` | The list of unique identifiers of the products. |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Create.
 
@@ -472,20 +472,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirerId` |  |
-| `allowMultipleOrders` |  |
-| `appFormTemplateName` |  |
-| `contractNeeded` |  |
-| `credentialsNeeded` |  |
-| `descriptionKey` |  |
-| `nameKey` |  |
-| `prescreeningAllowed` |  |
-| `productName` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `terminalTemplateName` |  |
-| `vendorName` |  |
-| `xmlTemplateFile` |  |
+| `acquirerId` | Unique identifier for the acquirer. |
+| `allowMultipleOrders` | Indication whether multiple orders are allowed or not. |
+| `appFormTemplateName` | Name of the application form template. |
+| `contractNeeded` | Indication whether contract is needed or not. |
+| `credentialsNeeded` | Indication whether credentials are needed or not. |
+| `descriptionKey` | Key indicator for product description. |
+| `nameKey` | Key indicator for product name. |
+| `prescreeningAllowed` | Indication whether prescreening is allowed or not. |
+| `productName` | Name of the product. |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
+| `terminalTemplateName` | Name of the terminal template. |
+| `vendorName` | Name of the vendor. |
+| `xmlTemplateFile` | A string value containing the XML template file encoded in Base64. |
 
 Operations: Create.
 
@@ -509,8 +509,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 | --- | --- |
 | `items` |  |
 | `pagination` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 | `sorting` |  |
 
 Operations: Create.
@@ -521,8 +521,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `responseCode` |  |
-| `responseMessage` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Load.
 
@@ -533,8 +533,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 | Field | Description |
 | --- | --- |
 | `productOrderUUIDs` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 | `targetPackageOrderUUID` |  |
 | `targetProductOrderUUID` |  |
 
@@ -546,10 +546,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `packageUUID` |  |
-| `productUUIDs` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
+| `packageUUID` | Unique identifier for the package. |
+| `productUUIDs` | List of product unique identifiers. |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Create.
 
@@ -560,8 +560,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Create.
 
@@ -572,8 +572,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 | Field | Description |
 | --- | --- |
 | `percentage` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 | `status` |  |
 
 Operations: Load.
@@ -584,19 +584,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allowMultipleOrders` |  |
-| `appFormName` |  |
-| `contractNeeded` |  |
-| `credentialsNeeded` |  |
-| `descriptionKey` |  |
-| `nameKey` |  |
-| `prescreeningAllowed` |  |
-| `productName` |  |
-| `productStatus` |  |
-| `productUUID` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `vendorName` |  |
+| `allowMultipleOrders` | An attribute to indicate if multiple orders are allowed |
+| `appFormName` | The name of the application form |
+| `contractNeeded` | An attribute to indicate if a contract is needed |
+| `credentialsNeeded` | An attribute to indicate if credentials are needed |
+| `descriptionKey` | The description of the product |
+| `nameKey` | The key of the product name |
+| `prescreeningAllowed` | An attribute to indicate if prescreening is allowed |
+| `productName` | The name of the product |
+| `productStatus` | The status of the product |
+| `productUUID` | The UUID of the product to update |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
+| `vendorName` | The name of the vendor |
 
 Operations: Create.
 
@@ -621,39 +621,39 @@ Create an instance: `(def merchant_portal_api_controller (api/merchant_portal_ap
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `account_number` | `long` |  |
-| `additional_data` | `map` |  |
-| `business_reg_number` | `string` |  |
-| `city` | `string` |  |
-| `corporateuuid` | `string` |  |
-| `country` | `string` |  |
-| `currency` | `string` |  |
-| `merchant_category_code` | `long` |  |
-| `merchant_email` | `string` |  |
-| `merchant_name` | `string` |  |
-| `merchant_phone_number` | `string` |  |
-| `packageid` | `string` |  |
-| `packageorderuuid` | `string` |  |
-| `password` | `string` |  |
-| `productid` | `string` |  |
-| `productid_acquirer` | `string` |  |
-| `reason_deactivation` | `string` |  |
-| `reason_reactivation` | `string` |  |
-| `sorting_code` | `long` |  |
-| `state` | `string` |  |
-| `street` | `string` |  |
-| `terminal_country_code` | `string` |  |
-| `terminal_language_code` | `string` |  |
-| `terminal_location` | `string` |  |
-| `terminal_serial_number` | `string` |  |
-| `terminalid` | `long` |  |
-| `terminalid_acquirer` | `string` |  |
-| `user_email` | `string` |  |
-| `user_phone_number` | `string` |  |
-| `username` | `string` |  |
-| `vu_nummer` | `string` |  |
-| `web_shop_url` | `string` |  |
-| `zipcode` | `string` |  |
+| `account_number` | `long` | Account number provided by the acquirer. |
+| `additional_data` | `map` | Arbitrary merchant-specific data related to terminal registration. |
+| `business_reg_number` | `string` | Merchant business registration number as stated in the company registry. |
+| `city` | `string` | Merchant's address: city. |
+| `corporateuuid` | `string` | Unique identifier for the corporate entity (UUID format). |
+| `country` | `string` | Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format). |
+| `currency` | `string` | Transaction currency (must be in "ISO 4217" format). |
+| `merchant_category_code` | `long` | Merchant category code as defined by the payment network. |
+| `merchant_email` | `string` | Merchant's email address for receiving notifications. |
+| `merchant_name` | `string` | The officially incorporated company name of the merchant. |
+| `merchant_phone_number` | `string` | Merchant's phone number for notifications. |
+| `packageid` | `string` | Identifier of the package in the TECS processing engine provided by TECS. |
+| `packageorderuuid` | `string` | Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call. |
+| `password` | `string` | Merchant password for MPOS. |
+| `productid` | `string` | Identifier of the product for which terminal registration is to be performed. |
+| `productid_acquirer` | `string` | Identifier of the product for which acquiring is enabled. |
+| `reason_deactivation` | `string` | Reason for terminal deactivation. |
+| `reason_reactivation` | `string` | Reason for terminal reactivation. |
+| `sorting_code` | `long` | Sorting code provided by the acquirer. |
+| `state` | `string` | Merchant's address: state. |
+| `street` | `string` | Merchant's address: street and house number. |
+| `terminal_country_code` | `string` | Terminal country code (must be in 'ISO-3166 ALPHA-3' format). |
+| `terminal_language_code` | `string` | Terminal language code (must be in 'ISO 639-1' format). |
+| `terminal_location` | `string` | Physical or logical location of the terminal. |
+| `terminal_serial_number` | `string` | Terminal serial number. |
+| `terminalid` | `long` | TECS terminalid given by Tecs processing engine. |
+| `terminalid_acquirer` | `string` | Terminal ID as set by the acquirer (optional). |
+| `user_email` | `string` | Email address of the user acting on behalf of the merchant. |
+| `user_phone_number` | `string` | Phone number of the user acting on behalf of the merchant. |
+| `username` | `string` | Merchant username for MPOS. |
+| `vu_nummer` | `string` | Merchant contract number with the acquirer. |
+| `web_shop_url` | `string` | URL of the merchant's web shop. |
+| `zipcode` | `string` | Merchant's address: postal code. |
 
 #### Example: Create
 
@@ -746,8 +746,8 @@ Create an instance: `(def merchant_portal_pam_document_controller (api/merchant_
 | Field | Type | Description |
 | --- | --- | --- |
 | `appFormFieldDescUUID` | `string` |  |
-| `packageOrderUUID` | `string` |  |
-| `productOrderUUID` | `string` |  |
+| `packageOrderUUID` | `string` | UUID of the package order. |
+| `productOrderUUID` | `string` | UUID of the product order. |
 
 #### Example: Create
 
@@ -779,9 +779,9 @@ Create an instance: `(def merchant_portal_pam_form_controller (api/merchant_port
 | `filter` | `map` |  |
 | `language` | `string` |  |
 | `packageOrder` | `map` |  |
-| `packageOrderUUID` | `string` |  |
+| `packageOrderUUID` | `string` | UUID of the package order. |
 | `packageUUID` | `string` |  |
-| `productOrderUUID` | `string` |  |
+| `productOrderUUID` | `string` | UUID of the product order. |
 | `productOrders` | `vector` |  |
 | `reasonOfReopening` | `string` |  |
 
@@ -846,32 +846,32 @@ Create an instance: `(def merchant_portal_pam_merchant_controller (api/merchant_
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `additional_data` | `map` |  |
+| `additional_data` | `map` | Optional additional merchant-specific data related to enabling acquiring. |
 | `businessRegistrationNumber` | `string` |  |
-| `city` | `string` |  |
+| `city` | `string` | City where the merchant is located. |
 | `companyName` | `string` |  |
-| `corporateUUID` | `string` |  |
-| `country` | `string` |  |
-| `currency` | `string` |  |
+| `corporateUUID` | `string` | Unique identifier for the corporate entity. |
+| `country` | `string` | Country where the merchant is located. |
+| `currency` | `string` | Transaction currency in ISO 4217 format. |
 | `email` | `string` |  |
 | `language` | `string` |  |
 | `login` | `string` |  |
-| `mandator` | `string` |  |
-| `merchantContractNumber` | `string` |  |
-| `merchantName` | `string` |  |
-| `merchant_category_code` | `string` |  |
-| `packageUUID` | `string` |  |
-| `packageorderuuid` | `string` |  |
+| `mandator` | `string` | Mandator name assigned by TECS. |
+| `merchantContractNumber` | `string` | Unique identifier for the merchant within a specific system. |
+| `merchantName` | `string` | Name of the merchant. |
+| `merchant_category_code` | `string` | Merchant Category Code (MCC) describing the merchant’s type of business. |
+| `packageUUID` | `string` | UUID of the package. |
+| `packageorderuuid` | `string` | Unique identifier for the registered merchant in the TECS system. |
 | `phoneNumber` | `string` |  |
-| `postalCode` | `string` |  |
-| `productid_acquirer` | `string` |  |
-| `region` | `string` |  |
-| `registrationNumber` | `string` |  |
-| `signature` | `string` |  |
-| `street` | `string` |  |
-| `terminalIds` | `vector` |  |
-| `terminalid_acquirer` | `string` |  |
-| `vu_nummer` | `string` |  |
+| `postalCode` | `string` | Postal or ZIP code of the merchant’s location. |
+| `productid_acquirer` | `string` | Identifier of the product for which acquiring is to be enabled. |
+| `region` | `string` | State or province where the merchant is located. |
+| `registrationNumber` | `string` | Business registration number. |
+| `signature` | `string` | Signature value = saltAsHex-hashAsHex. |
+| `street` | `string` | Street address of the merchant. |
+| `terminalIds` | `vector` | Optional list of terminal IDs for which acquiring should be activated. |
+| `terminalid_acquirer` | `string` | Optional terminal ID provided by the acquirer. |
+| `vu_nummer` | `string` | Merchant contract number with the acquirer. |
 
 #### Example: Create
 
@@ -913,13 +913,13 @@ Create an instance: `(def merchant_portal_pam_package_controller (api/merchant_p
 | --- | --- | --- |
 | `consumerUUID` | `string` |  |
 | `corporateUUID` | `string` |  |
-| `country` | `string` |  |
-| `descriptionKey` | `string` |  |
+| `country` | `string` | Country associated with the package. |
+| `descriptionKey` | `string` | Key for the description of the package. |
 | `filter` | `map` |  |
 | `language` | `string` |  |
-| `nameKey` | `string` |  |
-| `packageStatus` | `string` |  |
-| `packageUUID` | `string` |  |
+| `nameKey` | `string` | Key for the name of the package. |
+| `packageStatus` | `string` | Status of the package. |
+| `packageUUID` | `string` | Unique identifier for the package. |
 | `pagination` | `map` |  |
 | `sorting` | `map` |  |
 
@@ -958,7 +958,7 @@ Create an instance: `(def merchant_portal_pam_product_controller (api/merchant_p
 | `pagination` | `map` |  |
 | `productOrderUUID` | `string` |  |
 | `productUUID` | `string` |  |
-| `reason_decline` | `string` |  |
+| `reason_decline` | `string` | Reason for product decline. |
 | `sorting` | `map` |  |
 
 #### Example: Create
@@ -990,10 +990,10 @@ Create an instance: `(def output_add_product (api/output_add_product client nil)
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `packageUUID` | `string` |  |
-| `productUUIDs` | `vector` |  |
-| `responseCode` | `long` |  |
-| `responseMessage` | `string` |  |
+| `packageUUID` | `string` | Unique identifier for the package. |
+| `productUUIDs` | `vector` | The list of unique identifiers of the products. |
+| `responseCode` | `long` | Response code. |
+| `responseMessage` | `string` | Response message. |
 
 #### Example: Create
 
@@ -1024,20 +1024,20 @@ Create an instance: `(def output_create_product (api/output_create_product clien
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirerId` | `string` |  |
-| `allowMultipleOrders` | `boolean` |  |
-| `appFormTemplateName` | `string` |  |
-| `contractNeeded` | `boolean` |  |
-| `credentialsNeeded` | `boolean` |  |
-| `descriptionKey` | `string` |  |
-| `nameKey` | `string` |  |
-| `prescreeningAllowed` | `boolean` |  |
-| `productName` | `string` |  |
-| `responseCode` | `long` |  |
-| `responseMessage` | `string` |  |
-| `terminalTemplateName` | `string` |  |
-| `vendorName` | `string` |  |
-| `xmlTemplateFile` | `string` |  |
+| `acquirerId` | `string` | Unique identifier for the acquirer. |
+| `allowMultipleOrders` | `boolean` | Indication whether multiple orders are allowed or not. |
+| `appFormTemplateName` | `string` | Name of the application form template. |
+| `contractNeeded` | `boolean` | Indication whether contract is needed or not. |
+| `credentialsNeeded` | `boolean` | Indication whether credentials are needed or not. |
+| `descriptionKey` | `string` | Key indicator for product description. |
+| `nameKey` | `string` | Key indicator for product name. |
+| `prescreeningAllowed` | `boolean` | Indication whether prescreening is allowed or not. |
+| `productName` | `string` | Name of the product. |
+| `responseCode` | `long` | Response code. |
+| `responseMessage` | `string` | Response message. |
+| `terminalTemplateName` | `string` | Name of the terminal template. |
+| `vendorName` | `string` | Name of the vendor. |
+| `xmlTemplateFile` | `string` | A string value containing the XML template file encoded in Base64. |
 
 #### Example: Create
 
@@ -1103,8 +1103,8 @@ Create an instance: `(def output_list (api/output_list client nil))`
 | --- | --- | --- |
 | `items` | `vector` |  |
 | `pagination` | `map` |  |
-| `responseCode` | `long` |  |
-| `responseMessage` | `string` |  |
+| `responseCode` | `long` | Response code. |
+| `responseMessage` | `string` | Response message. |
 | `sorting` | `map` |  |
 
 #### Example: Create
@@ -1135,8 +1135,8 @@ Create an instance: `(def output_message (api/output_message client nil))`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `responseCode` | `long` |  |
-| `responseMessage` | `string` |  |
+| `responseCode` | `long` | Response code. |
+| `responseMessage` | `string` | Response message. |
 
 #### Example: Load
 
@@ -1160,8 +1160,8 @@ Create an instance: `(def output_move_tid (api/output_move_tid client nil))`
 | Field | Type | Description |
 | --- | --- | --- |
 | `productOrderUUIDs` | `vector` |  |
-| `responseCode` | `long` |  |
-| `responseMessage` | `string` |  |
+| `responseCode` | `long` | Response code. |
+| `responseMessage` | `string` | Response message. |
 | `targetPackageOrderUUID` | `string` |  |
 | `targetProductOrderUUID` | `string` |  |
 
@@ -1195,10 +1195,10 @@ Create an instance: `(def output_remove_product (api/output_remove_product clien
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `packageUUID` | `string` |  |
-| `productUUIDs` | `vector` |  |
-| `responseCode` | `long` |  |
-| `responseMessage` | `string` |  |
+| `packageUUID` | `string` | Unique identifier for the package. |
+| `productUUIDs` | `vector` | List of product unique identifiers. |
+| `responseCode` | `long` | Response code. |
+| `responseMessage` | `string` | Response message. |
 
 #### Example: Create
 
@@ -1230,8 +1230,8 @@ Create an instance: `(def output_start (api/output_start client nil))`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `string` |  |
-| `responseCode` | `long` |  |
-| `responseMessage` | `string` |  |
+| `responseCode` | `long` | Response code. |
+| `responseMessage` | `string` | Response message. |
 
 #### Example: Create
 
@@ -1261,8 +1261,8 @@ Create an instance: `(def output_status (api/output_status client nil))`
 | Field | Type | Description |
 | --- | --- | --- |
 | `percentage` | `long` |  |
-| `responseCode` | `long` |  |
-| `responseMessage` | `string` |  |
+| `responseCode` | `long` | Response code. |
+| `responseMessage` | `string` | Response message. |
 | `status` | `string` |  |
 
 #### Example: Load
@@ -1286,19 +1286,19 @@ Create an instance: `(def output_update_product (api/output_update_product clien
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allowMultipleOrders` | `boolean` |  |
-| `appFormName` | `string` |  |
-| `contractNeeded` | `boolean` |  |
-| `credentialsNeeded` | `boolean` |  |
-| `descriptionKey` | `string` |  |
-| `nameKey` | `string` |  |
-| `prescreeningAllowed` | `boolean` |  |
-| `productName` | `string` |  |
-| `productStatus` | `string` |  |
-| `productUUID` | `string` |  |
-| `responseCode` | `long` |  |
-| `responseMessage` | `string` |  |
-| `vendorName` | `string` |  |
+| `allowMultipleOrders` | `boolean` | An attribute to indicate if multiple orders are allowed |
+| `appFormName` | `string` | The name of the application form |
+| `contractNeeded` | `boolean` | An attribute to indicate if a contract is needed |
+| `credentialsNeeded` | `boolean` | An attribute to indicate if credentials are needed |
+| `descriptionKey` | `string` | The description of the product |
+| `nameKey` | `string` | The key of the product name |
+| `prescreeningAllowed` | `boolean` | An attribute to indicate if prescreening is allowed |
+| `productName` | `string` | The name of the product |
+| `productStatus` | `string` | The status of the product |
+| `productUUID` | `string` | The UUID of the product to update |
+| `responseCode` | `long` | Response code. |
+| `responseMessage` | `string` | Response message. |
+| `vendorName` | `string` | The name of the vendor |
 
 #### Example: Create
 

@@ -182,39 +182,39 @@ const merchant_portal_api_controller = client.merchant_portal_api_controller(h.v
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_number` | `i64` | No |  |
-| `additional_data` | `Value (object)` | No |  |
-| `business_reg_number` | `[]const u8` | Yes |  |
-| `city` | `[]const u8` | Yes |  |
-| `corporateuuid` | `[]const u8` | No |  |
-| `country` | `[]const u8` | Yes |  |
-| `currency` | `[]const u8` | Yes |  |
-| `merchant_category_code` | `i64` | Yes |  |
-| `merchant_email` | `[]const u8` | No |  |
-| `merchant_name` | `[]const u8` | Yes |  |
-| `merchant_phone_number` | `[]const u8` | No |  |
-| `packageid` | `[]const u8` | Yes |  |
-| `packageorderuuid` | `[]const u8` | Yes |  |
-| `password` | `[]const u8` | No |  |
-| `productid` | `[]const u8` | No |  |
-| `productid_acquirer` | `[]const u8` | No |  |
-| `reason_deactivation` | `[]const u8` | Yes |  |
-| `reason_reactivation` | `[]const u8` | Yes |  |
-| `sorting_code` | `i64` | No |  |
-| `state` | `[]const u8` | No |  |
-| `street` | `[]const u8` | Yes |  |
-| `terminal_country_code` | `[]const u8` | Yes |  |
-| `terminal_language_code` | `[]const u8` | Yes |  |
-| `terminal_location` | `[]const u8` | Yes |  |
-| `terminal_serial_number` | `[]const u8` | Yes |  |
-| `terminalid` | `i64` | Yes |  |
-| `terminalid_acquirer` | `[]const u8` | No |  |
-| `user_email` | `[]const u8` | No |  |
-| `user_phone_number` | `[]const u8` | No |  |
-| `username` | `[]const u8` | No |  |
-| `vu_nummer` | `[]const u8` | Yes |  |
-| `web_shop_url` | `[]const u8` | No |  |
-| `zipcode` | `[]const u8` | Yes |  |
+| `account_number` | `i64` | No | Account number provided by the acquirer. |
+| `additional_data` | `Value (object)` | No | Arbitrary merchant-specific data related to terminal registration. |
+| `business_reg_number` | `[]const u8` | Yes | Merchant business registration number as stated in the company registry. |
+| `city` | `[]const u8` | Yes | Merchant's address: city. |
+| `corporateuuid` | `[]const u8` | No | Unique identifier for the corporate entity (UUID format). |
+| `country` | `[]const u8` | Yes | Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format). |
+| `currency` | `[]const u8` | Yes | Transaction currency (must be in "ISO 4217" format). |
+| `merchant_category_code` | `i64` | Yes | Merchant category code as defined by the payment network. |
+| `merchant_email` | `[]const u8` | No | Merchant's email address for receiving notifications. |
+| `merchant_name` | `[]const u8` | Yes | The officially incorporated company name of the merchant. |
+| `merchant_phone_number` | `[]const u8` | No | Merchant's phone number for notifications. |
+| `packageid` | `[]const u8` | Yes | Identifier of the package in the TECS processing engine provided by TECS. |
+| `packageorderuuid` | `[]const u8` | Yes | Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call. |
+| `password` | `[]const u8` | No | Merchant password for MPOS. |
+| `productid` | `[]const u8` | No | Identifier of the product for which terminal registration is to be performed. |
+| `productid_acquirer` | `[]const u8` | No | Identifier of the product for which acquiring is enabled. |
+| `reason_deactivation` | `[]const u8` | Yes | Reason for terminal deactivation. |
+| `reason_reactivation` | `[]const u8` | Yes | Reason for terminal reactivation. |
+| `sorting_code` | `i64` | No | Sorting code provided by the acquirer. |
+| `state` | `[]const u8` | No | Merchant's address: state. |
+| `street` | `[]const u8` | Yes | Merchant's address: street and house number. |
+| `terminal_country_code` | `[]const u8` | Yes | Terminal country code (must be in 'ISO-3166 ALPHA-3' format). |
+| `terminal_language_code` | `[]const u8` | Yes | Terminal language code (must be in 'ISO 639-1' format). |
+| `terminal_location` | `[]const u8` | Yes | Physical or logical location of the terminal. |
+| `terminal_serial_number` | `[]const u8` | Yes | Terminal serial number. |
+| `terminalid` | `i64` | Yes | TECS terminalid given by Tecs processing engine. |
+| `terminalid_acquirer` | `[]const u8` | No | Terminal ID as set by the acquirer (optional). |
+| `user_email` | `[]const u8` | No | Email address of the user acting on behalf of the merchant. |
+| `user_phone_number` | `[]const u8` | No | Phone number of the user acting on behalf of the merchant. |
+| `username` | `[]const u8` | No | Merchant username for MPOS. |
+| `vu_nummer` | `[]const u8` | Yes | Merchant contract number with the acquirer. |
+| `web_shop_url` | `[]const u8` | No | URL of the merchant's web shop. |
+| `zipcode` | `[]const u8` | Yes | Merchant's address: postal code. |
 
 ### Operations
 
@@ -370,8 +370,8 @@ const merchant_portal_pam_document_controller = client.merchant_portal_pam_docum
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `appFormFieldDescUUID` | `[]const u8` | Yes |  |
-| `packageOrderUUID` | `[]const u8` | No |  |
-| `productOrderUUID` | `[]const u8` | No |  |
+| `packageOrderUUID` | `[]const u8` | No | UUID of the package order. |
+| `productOrderUUID` | `[]const u8` | No | UUID of the product order. |
 
 ### Operations
 
@@ -423,9 +423,9 @@ const merchant_portal_pam_form_controller = client.merchant_portal_pam_form_cont
 | `filter` | `Value (object)` | No |  |
 | `language` | `[]const u8` | Yes |  |
 | `packageOrder` | `Value (object)` | No |  |
-| `packageOrderUUID` | `[]const u8` | Yes |  |
+| `packageOrderUUID` | `[]const u8` | Yes | UUID of the package order. |
 | `packageUUID` | `[]const u8` | No |  |
-| `productOrderUUID` | `[]const u8` | No |  |
+| `productOrderUUID` | `[]const u8` | No | UUID of the product order. |
 | `productOrders` | `Value (array)` | No |  |
 | `reasonOfReopening` | `[]const u8` | Yes |  |
 
@@ -544,32 +544,32 @@ const merchant_portal_pam_merchant_controller = client.merchant_portal_pam_merch
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `Value (object)` | No |  |
+| `additional_data` | `Value (object)` | No | Optional additional merchant-specific data related to enabling acquiring. |
 | `businessRegistrationNumber` | `[]const u8` | Yes |  |
-| `city` | `[]const u8` | No |  |
+| `city` | `[]const u8` | No | City where the merchant is located. |
 | `companyName` | `[]const u8` | Yes |  |
-| `corporateUUID` | `[]const u8` | Yes |  |
-| `country` | `[]const u8` | No |  |
-| `currency` | `[]const u8` | Yes |  |
+| `corporateUUID` | `[]const u8` | Yes | Unique identifier for the corporate entity. |
+| `country` | `[]const u8` | No | Country where the merchant is located. |
+| `currency` | `[]const u8` | Yes | Transaction currency in ISO 4217 format. |
 | `email` | `[]const u8` | Yes |  |
 | `language` | `[]const u8` | Yes |  |
 | `login` | `[]const u8` | Yes |  |
-| `mandator` | `[]const u8` | Yes |  |
-| `merchantContractNumber` | `[]const u8` | Yes |  |
-| `merchantName` | `[]const u8` | No |  |
-| `merchant_category_code` | `[]const u8` | No |  |
-| `packageUUID` | `[]const u8` | No |  |
-| `packageorderuuid` | `[]const u8` | Yes |  |
+| `mandator` | `[]const u8` | Yes | Mandator name assigned by TECS. |
+| `merchantContractNumber` | `[]const u8` | Yes | Unique identifier for the merchant within a specific system. |
+| `merchantName` | `[]const u8` | No | Name of the merchant. |
+| `merchant_category_code` | `[]const u8` | No | Merchant Category Code (MCC) describing the merchant’s type of business. |
+| `packageUUID` | `[]const u8` | No | UUID of the package. |
+| `packageorderuuid` | `[]const u8` | Yes | Unique identifier for the registered merchant in the TECS system. |
 | `phoneNumber` | `[]const u8` | Yes |  |
-| `postalCode` | `[]const u8` | No |  |
-| `productid_acquirer` | `[]const u8` | Yes |  |
-| `region` | `[]const u8` | No |  |
-| `registrationNumber` | `[]const u8` | No |  |
-| `signature` | `[]const u8` | No |  |
-| `street` | `[]const u8` | No |  |
-| `terminalIds` | `Value (array)` | No |  |
-| `terminalid_acquirer` | `[]const u8` | No |  |
-| `vu_nummer` | `[]const u8` | Yes |  |
+| `postalCode` | `[]const u8` | No | Postal or ZIP code of the merchant’s location. |
+| `productid_acquirer` | `[]const u8` | Yes | Identifier of the product for which acquiring is to be enabled. |
+| `region` | `[]const u8` | No | State or province where the merchant is located. |
+| `registrationNumber` | `[]const u8` | No | Business registration number. |
+| `signature` | `[]const u8` | No | Signature value = saltAsHex-hashAsHex. |
+| `street` | `[]const u8` | No | Street address of the merchant. |
+| `terminalIds` | `Value (array)` | No | Optional list of terminal IDs for which acquiring should be activated. |
+| `terminalid_acquirer` | `[]const u8` | No | Optional terminal ID provided by the acquirer. |
+| `vu_nummer` | `[]const u8` | Yes | Merchant contract number with the acquirer. |
 
 ### Field Usage by Operation
 
@@ -662,13 +662,13 @@ const merchant_portal_pam_package_controller = client.merchant_portal_pam_packag
 | --- | --- | --- | --- |
 | `consumerUUID` | `[]const u8` | No |  |
 | `corporateUUID` | `[]const u8` | No |  |
-| `country` | `[]const u8` | No |  |
-| `descriptionKey` | `[]const u8` | No |  |
+| `country` | `[]const u8` | No | Country associated with the package. |
+| `descriptionKey` | `[]const u8` | No | Key for the description of the package. |
 | `filter` | `Value (object)` | No |  |
 | `language` | `[]const u8` | Yes |  |
-| `nameKey` | `[]const u8` | No |  |
-| `packageStatus` | `[]const u8` | No |  |
-| `packageUUID` | `[]const u8` | Yes |  |
+| `nameKey` | `[]const u8` | No | Key for the name of the package. |
+| `packageStatus` | `[]const u8` | No | Status of the package. |
+| `packageUUID` | `[]const u8` | Yes | Unique identifier for the package. |
 | `pagination` | `Value (object)` | No |  |
 | `sorting` | `Value (object)` | No |  |
 
@@ -743,7 +743,7 @@ const merchant_portal_pam_product_controller = client.merchant_portal_pam_produc
 | `pagination` | `Value (object)` | No |  |
 | `productOrderUUID` | `[]const u8` | Yes |  |
 | `productUUID` | `[]const u8` | Yes |  |
-| `reason_decline` | `[]const u8` | Yes |  |
+| `reason_decline` | `[]const u8` | Yes | Reason for product decline. |
 | `sorting` | `Value (object)` | No |  |
 
 ### Operations
@@ -795,10 +795,10 @@ const output_add_product = client.output_add_product(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `packageUUID` | `[]const u8` | Yes |  |
-| `productUUIDs` | `Value (array)` | Yes |  |
-| `responseCode` | `i64` | Yes |  |
-| `responseMessage` | `[]const u8` | Yes |  |
+| `packageUUID` | `[]const u8` | Yes | Unique identifier for the package. |
+| `productUUIDs` | `Value (array)` | Yes | The list of unique identifiers of the products. |
+| `responseCode` | `i64` | Yes | Response code. |
+| `responseMessage` | `[]const u8` | Yes | Response message. |
 
 ### Operations
 
@@ -849,20 +849,20 @@ const output_create_product = client.output_create_product(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirerId` | `[]const u8` | No |  |
-| `allowMultipleOrders` | `bool` | Yes |  |
-| `appFormTemplateName` | `[]const u8` | Yes |  |
-| `contractNeeded` | `bool` | Yes |  |
-| `credentialsNeeded` | `bool` | No |  |
-| `descriptionKey` | `[]const u8` | Yes |  |
-| `nameKey` | `[]const u8` | Yes |  |
-| `prescreeningAllowed` | `bool` | Yes |  |
-| `productName` | `[]const u8` | Yes |  |
-| `responseCode` | `i64` | Yes |  |
-| `responseMessage` | `[]const u8` | Yes |  |
-| `terminalTemplateName` | `[]const u8` | Yes |  |
-| `vendorName` | `[]const u8` | Yes |  |
-| `xmlTemplateFile` | `[]const u8` | Yes |  |
+| `acquirerId` | `[]const u8` | No | Unique identifier for the acquirer. |
+| `allowMultipleOrders` | `bool` | Yes | Indication whether multiple orders are allowed or not. |
+| `appFormTemplateName` | `[]const u8` | Yes | Name of the application form template. |
+| `contractNeeded` | `bool` | Yes | Indication whether contract is needed or not. |
+| `credentialsNeeded` | `bool` | No | Indication whether credentials are needed or not. |
+| `descriptionKey` | `[]const u8` | Yes | Key indicator for product description. |
+| `nameKey` | `[]const u8` | Yes | Key indicator for product name. |
+| `prescreeningAllowed` | `bool` | Yes | Indication whether prescreening is allowed or not. |
+| `productName` | `[]const u8` | Yes | Name of the product. |
+| `responseCode` | `i64` | Yes | Response code. |
+| `responseMessage` | `[]const u8` | Yes | Response message. |
+| `terminalTemplateName` | `[]const u8` | Yes | Name of the terminal template. |
+| `vendorName` | `[]const u8` | Yes | Name of the vendor. |
+| `xmlTemplateFile` | `[]const u8` | Yes | A string value containing the XML template file encoded in Base64. |
 
 ### Operations
 
@@ -971,8 +971,8 @@ const output_list = client.output_list(h.vnull());
 | --- | --- | --- | --- |
 | `items` | `Value (array)` | No |  |
 | `pagination` | `Value (object)` | Yes |  |
-| `responseCode` | `i64` | Yes |  |
-| `responseMessage` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | Yes | Response code. |
+| `responseMessage` | `[]const u8` | Yes | Response message. |
 | `sorting` | `Value (object)` | No |  |
 
 ### Field Usage by Operation
@@ -1033,8 +1033,8 @@ const output_message = client.output_message(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `responseCode` | `i64` | Yes |  |
-| `responseMessage` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | Yes | Response code. |
+| `responseMessage` | `[]const u8` | Yes | Response message. |
 
 ### Operations
 
@@ -1081,8 +1081,8 @@ const output_move_tid = client.output_move_tid(h.vnull());
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `productOrderUUIDs` | `Value (array)` | Yes |  |
-| `responseCode` | `i64` | Yes |  |
-| `responseMessage` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | Yes | Response code. |
+| `responseMessage` | `[]const u8` | Yes | Response message. |
 | `targetPackageOrderUUID` | `[]const u8` | Yes |  |
 | `targetProductOrderUUID` | `[]const u8` | Yes |  |
 
@@ -1136,10 +1136,10 @@ const output_remove_product = client.output_remove_product(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `packageUUID` | `[]const u8` | Yes |  |
-| `productUUIDs` | `Value (array)` | Yes |  |
-| `responseCode` | `i64` | Yes |  |
-| `responseMessage` | `[]const u8` | Yes |  |
+| `packageUUID` | `[]const u8` | Yes | Unique identifier for the package. |
+| `productUUIDs` | `Value (array)` | Yes | List of product unique identifiers. |
+| `responseCode` | `i64` | Yes | Response code. |
+| `responseMessage` | `[]const u8` | Yes | Response message. |
 
 ### Operations
 
@@ -1191,8 +1191,8 @@ const output_start = client.output_start(h.vnull());
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `[]const u8` | No |  |
-| `responseCode` | `i64` | Yes |  |
-| `responseMessage` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | Yes | Response code. |
+| `responseMessage` | `[]const u8` | Yes | Response message. |
 
 ### Operations
 
@@ -1242,8 +1242,8 @@ const output_status = client.output_status(h.vnull());
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `i64` | No |  |
-| `responseCode` | `i64` | Yes |  |
-| `responseMessage` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | Yes | Response code. |
+| `responseMessage` | `[]const u8` | Yes | Response message. |
 | `status` | `[]const u8` | No |  |
 
 ### Operations
@@ -1290,19 +1290,19 @@ const output_update_product = client.output_update_product(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allowMultipleOrders` | `bool` | No |  |
-| `appFormName` | `[]const u8` | No |  |
-| `contractNeeded` | `bool` | No |  |
-| `credentialsNeeded` | `bool` | No |  |
-| `descriptionKey` | `[]const u8` | No |  |
-| `nameKey` | `[]const u8` | No |  |
-| `prescreeningAllowed` | `bool` | No |  |
-| `productName` | `[]const u8` | No |  |
-| `productStatus` | `[]const u8` | No |  |
-| `productUUID` | `[]const u8` | Yes |  |
-| `responseCode` | `i64` | Yes |  |
-| `responseMessage` | `[]const u8` | Yes |  |
-| `vendorName` | `[]const u8` | No |  |
+| `allowMultipleOrders` | `bool` | No | An attribute to indicate if multiple orders are allowed |
+| `appFormName` | `[]const u8` | No | The name of the application form |
+| `contractNeeded` | `bool` | No | An attribute to indicate if a contract is needed |
+| `credentialsNeeded` | `bool` | No | An attribute to indicate if credentials are needed |
+| `descriptionKey` | `[]const u8` | No | The description of the product |
+| `nameKey` | `[]const u8` | No | The key of the product name |
+| `prescreeningAllowed` | `bool` | No | An attribute to indicate if prescreening is allowed |
+| `productName` | `[]const u8` | No | The name of the product |
+| `productStatus` | `[]const u8` | No | The status of the product |
+| `productUUID` | `[]const u8` | Yes | The UUID of the product to update |
+| `responseCode` | `i64` | Yes | Response code. |
+| `responseMessage` | `[]const u8` | Yes | Response message. |
+| `vendorName` | `[]const u8` | No | The name of the vendor |
 
 ### Operations
 

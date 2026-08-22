@@ -17,7 +17,10 @@ package BluefinTecsMerchantPortalConfig;
 my $CONFIG_JSON = <<'END_CONFIG_JSON';
 {
   "main": {
-    "name": "BluefinTecsMerchantPortal"
+    "name": "BluefinTecsMerchantPortal",
+    "slug": "bluefin-tecs-merchant-portal",
+    "version": "0.0.1",
+    "target": "perl"
   },
   "feature": {
     "test": {
@@ -58,152 +61,185 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "account_number",
+          "short": "Account number provided by the acquirer.",
           "type": "`$INTEGER`"
         },
         {
           "name": "additional_data",
+          "short": "Arbitrary merchant-specific data related to terminal registration.",
           "type": "`$OBJECT`"
         },
         {
           "name": "business_reg_number",
           "req": true,
+          "short": "Merchant business registration number as stated in the company registry.",
           "type": "`$STRING`"
         },
         {
           "name": "city",
           "req": true,
+          "short": "Merchant's address: city.",
           "type": "`$STRING`"
         },
         {
           "name": "corporateuuid",
+          "short": "Unique identifier for the corporate entity (UUID format).",
           "type": "`$STRING`"
         },
         {
           "name": "country",
           "req": true,
+          "short": "Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format).",
           "type": "`$STRING`"
         },
         {
           "name": "currency",
           "req": true,
+          "short": "Transaction currency (must be in \"ISO 4217\" format).",
           "type": "`$STRING`"
         },
         {
           "name": "merchant_category_code",
           "req": true,
+          "short": "Merchant category code as defined by the payment network.",
           "type": "`$INTEGER`"
         },
         {
           "name": "merchant_email",
+          "short": "Merchant's email address for receiving notifications.",
           "type": "`$STRING`"
         },
         {
           "name": "merchant_name",
           "req": true,
+          "short": "The officially incorporated company name of the merchant.",
           "type": "`$STRING`"
         },
         {
           "name": "merchant_phone_number",
+          "short": "Merchant's phone number for notifications.",
           "type": "`$STRING`"
         },
         {
           "name": "packageid",
           "req": true,
+          "short": "Identifier of the package in the TECS processing engine provided by TECS.",
           "type": "`$STRING`"
         },
         {
           "name": "packageorderuuid",
           "req": true,
+          "short": "Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call.",
           "type": "`$STRING`"
         },
         {
           "name": "password",
+          "short": "Merchant password for MPOS.",
           "type": "`$STRING`"
         },
         {
           "name": "productid",
+          "short": "Identifier of the product for which terminal registration is to be performed.",
           "type": "`$STRING`"
         },
         {
           "name": "productid_acquirer",
+          "short": "Identifier of the product for which acquiring is enabled.",
           "type": "`$STRING`"
         },
         {
           "name": "reason_deactivation",
           "req": true,
+          "short": "Reason for terminal deactivation.",
           "type": "`$STRING`"
         },
         {
           "name": "reason_reactivation",
           "req": true,
+          "short": "Reason for terminal reactivation.",
           "type": "`$STRING`"
         },
         {
           "name": "sorting_code",
+          "short": "Sorting code provided by the acquirer.",
           "type": "`$INTEGER`"
         },
         {
           "name": "state",
+          "short": "Merchant's address: state.",
           "type": "`$STRING`"
         },
         {
           "name": "street",
           "req": true,
+          "short": "Merchant's address: street and house number.",
           "type": "`$STRING`"
         },
         {
           "name": "terminal_country_code",
           "req": true,
+          "short": "Terminal country code (must be in 'ISO-3166 ALPHA-3' format).",
           "type": "`$STRING`"
         },
         {
           "name": "terminal_language_code",
           "req": true,
+          "short": "Terminal language code (must be in 'ISO 639-1' format).",
           "type": "`$STRING`"
         },
         {
           "name": "terminal_location",
           "req": true,
+          "short": "Physical or logical location of the terminal.",
           "type": "`$STRING`"
         },
         {
           "name": "terminal_serial_number",
           "req": true,
+          "short": "Terminal serial number.",
           "type": "`$STRING`"
         },
         {
           "name": "terminalid",
           "req": true,
+          "short": "TECS terminalid given by Tecs processing engine.",
           "type": "`$INTEGER`"
         },
         {
           "name": "terminalid_acquirer",
+          "short": "Terminal ID as set by the acquirer (optional).",
           "type": "`$STRING`"
         },
         {
           "name": "user_email",
+          "short": "Email address of the user acting on behalf of the merchant.",
           "type": "`$STRING`"
         },
         {
           "name": "user_phone_number",
+          "short": "Phone number of the user acting on behalf of the merchant.",
           "type": "`$STRING`"
         },
         {
           "name": "username",
+          "short": "Merchant username for MPOS.",
           "type": "`$STRING`"
         },
         {
           "name": "vu_nummer",
           "req": true,
+          "short": "Merchant contract number with the acquirer.",
           "type": "`$STRING`"
         },
         {
           "name": "web_shop_url",
+          "short": "URL of the merchant's web shop.",
           "type": "`$STRING`"
         },
         {
           "name": "zipcode",
           "req": true,
+          "short": "Merchant's address: postal code.",
           "type": "`$STRING`"
         }
       ],
@@ -474,10 +510,12 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "name": "packageOrderUUID",
+          "short": "UUID of the package order.",
           "type": "`$STRING`"
         },
         {
           "name": "productOrderUUID",
+          "short": "UUID of the product order.",
           "type": "`$STRING`"
         }
       ],
@@ -585,6 +623,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
             }
           },
           "req": true,
+          "short": "UUID of the package order.",
           "type": "`$STRING`"
         },
         {
@@ -599,6 +638,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "type": "`$STRING`"
             }
           },
+          "short": "UUID of the product order.",
           "type": "`$STRING`"
         },
         {
@@ -923,6 +963,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "additional_data",
+          "short": "Optional additional merchant-specific data related to enabling acquiring.",
           "type": "`$OBJECT`"
         },
         {
@@ -932,6 +973,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "name": "city",
+          "short": "City where the merchant is located.",
           "type": "`$STRING`"
         },
         {
@@ -942,15 +984,18 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         {
           "name": "corporateUUID",
           "req": true,
+          "short": "Unique identifier for the corporate entity.",
           "type": "`$STRING`"
         },
         {
           "name": "country",
+          "short": "Country where the merchant is located.",
           "type": "`$STRING`"
         },
         {
           "name": "currency",
           "req": true,
+          "short": "Transaction currency in ISO 4217 format.",
           "type": "`$STRING`"
         },
         {
@@ -971,6 +1016,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         {
           "name": "mandator",
           "req": true,
+          "short": "Mandator name assigned by TECS.",
           "type": "`$STRING`"
         },
         {
@@ -981,23 +1027,28 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
             }
           },
           "req": true,
+          "short": "Unique identifier for the merchant within a specific system.",
           "type": "`$STRING`"
         },
         {
           "name": "merchantName",
+          "short": "Name of the merchant.",
           "type": "`$STRING`"
         },
         {
           "name": "merchant_category_code",
+          "short": "Merchant Category Code (MCC) describing the merchant’s type of business.",
           "type": "`$STRING`"
         },
         {
           "name": "packageUUID",
+          "short": "UUID of the package.",
           "type": "`$STRING`"
         },
         {
           "name": "packageorderuuid",
           "req": true,
+          "short": "Unique identifier for the registered merchant in the TECS system.",
           "type": "`$STRING`"
         },
         {
@@ -1007,40 +1058,49 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "name": "postalCode",
+          "short": "Postal or ZIP code of the merchant’s location.",
           "type": "`$STRING`"
         },
         {
           "name": "productid_acquirer",
           "req": true,
+          "short": "Identifier of the product for which acquiring is to be enabled.",
           "type": "`$STRING`"
         },
         {
           "name": "region",
+          "short": "State or province where the merchant is located.",
           "type": "`$STRING`"
         },
         {
           "name": "registrationNumber",
+          "short": "Business registration number.",
           "type": "`$STRING`"
         },
         {
           "name": "signature",
+          "short": "Signature value = saltAsHex-hashAsHex.",
           "type": "`$STRING`"
         },
         {
           "name": "street",
+          "short": "Street address of the merchant.",
           "type": "`$STRING`"
         },
         {
           "name": "terminalIds",
+          "short": "Optional list of terminal IDs for which acquiring should be activated.",
           "type": "`$ARRAY`"
         },
         {
           "name": "terminalid_acquirer",
+          "short": "Optional terminal ID provided by the acquirer.",
           "type": "`$STRING`"
         },
         {
           "name": "vu_nummer",
           "req": true,
+          "short": "Merchant contract number with the acquirer.",
           "type": "`$STRING`"
         }
       ],
@@ -1171,10 +1231,12 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "name": "country",
+          "short": "Country associated with the package.",
           "type": "`$STRING`"
         },
         {
           "name": "descriptionKey",
+          "short": "Key for the description of the package.",
           "type": "`$STRING`"
         },
         {
@@ -1193,15 +1255,18 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "name": "nameKey",
+          "short": "Key for the name of the package.",
           "type": "`$STRING`"
         },
         {
           "name": "packageStatus",
+          "short": "Status of the package.",
           "type": "`$STRING`"
         },
         {
           "name": "packageUUID",
           "req": true,
+          "short": "Unique identifier for the package.",
           "type": "`$STRING`"
         },
         {
@@ -1410,6 +1475,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         {
           "name": "reason_decline",
           "req": true,
+          "short": "Reason for product decline.",
           "type": "`$STRING`"
         },
         {
@@ -1551,21 +1617,25 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         {
           "name": "packageUUID",
           "req": true,
+          "short": "Unique identifier for the package.",
           "type": "`$STRING`"
         },
         {
           "name": "productUUIDs",
           "req": true,
+          "short": "The list of unique identifiers of the products.",
           "type": "`$ARRAY`"
         },
         {
           "name": "responseCode",
           "req": true,
+          "short": "Response code.",
           "type": "`$INTEGER`"
         },
         {
           "name": "responseMessage",
           "req": true,
+          "short": "Response message.",
           "type": "`$STRING`"
         }
       ],
@@ -1615,70 +1685,84 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "acquirerId",
+          "short": "Unique identifier for the acquirer.",
           "type": "`$STRING`"
         },
         {
           "name": "allowMultipleOrders",
           "req": true,
+          "short": "Indication whether multiple orders are allowed or not.",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "appFormTemplateName",
           "req": true,
+          "short": "Name of the application form template.",
           "type": "`$STRING`"
         },
         {
           "name": "contractNeeded",
           "req": true,
+          "short": "Indication whether contract is needed or not.",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "credentialsNeeded",
+          "short": "Indication whether credentials are needed or not.",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "descriptionKey",
           "req": true,
+          "short": "Key indicator for product description.",
           "type": "`$STRING`"
         },
         {
           "name": "nameKey",
           "req": true,
+          "short": "Key indicator for product name.",
           "type": "`$STRING`"
         },
         {
           "name": "prescreeningAllowed",
           "req": true,
+          "short": "Indication whether prescreening is allowed or not.",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "productName",
           "req": true,
+          "short": "Name of the product.",
           "type": "`$STRING`"
         },
         {
           "name": "responseCode",
           "req": true,
+          "short": "Response code.",
           "type": "`$INTEGER`"
         },
         {
           "name": "responseMessage",
           "req": true,
+          "short": "Response message.",
           "type": "`$STRING`"
         },
         {
           "name": "terminalTemplateName",
           "req": true,
+          "short": "Name of the terminal template.",
           "type": "`$STRING`"
         },
         {
           "name": "vendorName",
           "req": true,
+          "short": "Name of the vendor.",
           "type": "`$STRING`"
         },
         {
           "name": "xmlTemplateFile",
           "req": true,
+          "short": "A string value containing the XML template file encoded in Base64.",
           "type": "`$STRING`"
         }
       ],
@@ -1813,11 +1897,13 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         {
           "name": "responseCode",
           "req": true,
+          "short": "Response code.",
           "type": "`$INTEGER`"
         },
         {
           "name": "responseMessage",
           "req": true,
+          "short": "Response message.",
           "type": "`$STRING`"
         },
         {
@@ -1874,11 +1960,13 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         {
           "name": "responseCode",
           "req": true,
+          "short": "Response code.",
           "type": "`$INTEGER`"
         },
         {
           "name": "responseMessage",
           "req": true,
+          "short": "Response message.",
           "type": "`$STRING`"
         }
       ],
@@ -1989,11 +2077,13 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         {
           "name": "responseCode",
           "req": true,
+          "short": "Response code.",
           "type": "`$INTEGER`"
         },
         {
           "name": "responseMessage",
           "req": true,
+          "short": "Response message.",
           "type": "`$STRING`"
         },
         {
@@ -2054,21 +2144,25 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         {
           "name": "packageUUID",
           "req": true,
+          "short": "Unique identifier for the package.",
           "type": "`$STRING`"
         },
         {
           "name": "productUUIDs",
           "req": true,
+          "short": "List of product unique identifiers.",
           "type": "`$ARRAY`"
         },
         {
           "name": "responseCode",
           "req": true,
+          "short": "Response code.",
           "type": "`$INTEGER`"
         },
         {
           "name": "responseMessage",
           "req": true,
+          "short": "Response message.",
           "type": "`$STRING`"
         }
       ],
@@ -2123,11 +2217,13 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         {
           "name": "responseCode",
           "req": true,
+          "short": "Response code.",
           "type": "`$INTEGER`"
         },
         {
           "name": "responseMessage",
           "req": true,
+          "short": "Response message.",
           "type": "`$STRING`"
         }
       ],
@@ -2184,11 +2280,13 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         {
           "name": "responseCode",
           "req": true,
+          "short": "Response code.",
           "type": "`$INTEGER`"
         },
         {
           "name": "responseMessage",
           "req": true,
+          "short": "Response message.",
           "type": "`$STRING`"
         },
         {
@@ -2255,57 +2353,70 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "allowMultipleOrders",
+          "short": "An attribute to indicate if multiple orders are allowed",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "appFormName",
+          "short": "The name of the application form",
           "type": "`$STRING`"
         },
         {
           "name": "contractNeeded",
+          "short": "An attribute to indicate if a contract is needed",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "credentialsNeeded",
+          "short": "An attribute to indicate if credentials are needed",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "descriptionKey",
+          "short": "The description of the product",
           "type": "`$STRING`"
         },
         {
           "name": "nameKey",
+          "short": "The key of the product name",
           "type": "`$STRING`"
         },
         {
           "name": "prescreeningAllowed",
+          "short": "An attribute to indicate if prescreening is allowed",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "productName",
+          "short": "The name of the product",
           "type": "`$STRING`"
         },
         {
           "name": "productStatus",
+          "short": "The status of the product",
           "type": "`$STRING`"
         },
         {
           "name": "productUUID",
           "req": true,
+          "short": "The UUID of the product to update",
           "type": "`$STRING`"
         },
         {
           "name": "responseCode",
           "req": true,
+          "short": "Response code.",
           "type": "`$INTEGER`"
         },
         {
           "name": "responseMessage",
           "req": true,
+          "short": "Response message.",
           "type": "`$STRING`"
         },
         {
           "name": "vendorName",
+          "short": "The name of the vendor",
           "type": "`$STRING`"
         }
       ],
@@ -2357,6 +2468,21 @@ END_CONFIG_JSON
 
 sub make_config {
   return Voxgig::Struct::parse_json($CONFIG_JSON);
+}
+
+# SHARED CONFIG (sdkgen rung L2).
+#
+# The SDK reads the config on every request and never writes to it, so one
+# instance is shared by every client rather than rebuilt per client - the
+# difference between parsing the embedded JSON once and once per client.
+#
+# The returned structure is SHARED: treat it as read-only. Callers that need to
+# mutate should use make_config, which always parses a fresh copy.
+my $SHARED_CONFIG;
+
+sub shared_config {
+  $SHARED_CONFIG = make_config() unless defined $SHARED_CONFIG;
+  return $SHARED_CONFIG;
 }
 
 sub make_feature {

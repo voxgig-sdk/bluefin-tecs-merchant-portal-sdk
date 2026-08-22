@@ -18,11 +18,13 @@ main: kit: entity: merchant_portal_pam_package_controller: {
     {
       name: "country"
       req: false
+      short: "Country associated with the package."
       type: "`$STRING`"
     }
     {
       name: "descriptionKey"
       req: false
+      short: "Key for the description of the package."
       type: "`$STRING`"
     }
     {
@@ -44,16 +46,19 @@ main: kit: entity: merchant_portal_pam_package_controller: {
     {
       name: "nameKey"
       req: false
+      short: "Key for the name of the package."
       type: "`$STRING`"
     }
     {
       name: "packageStatus"
       req: false
+      short: "Status of the package."
       type: "`$STRING`"
     }
     {
       name: "packageUUID"
       req: true
+      short: "Unique identifier for the package."
       type: "`$STRING`"
     }
     {

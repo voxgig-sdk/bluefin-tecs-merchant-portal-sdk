@@ -45,120 +45,153 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("name", (Str "account_number"));
+            ("short", (Str "Account number provided by the acquirer."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "additional_data"));
+            ("short", (Str "Arbitrary merchant-specific data related to terminal registration."));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "business_reg_number"));
             ("req", (Bool true));
+            ("short", (Str "Merchant business registration number as stated in the company registry."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "city"));
             ("req", (Bool true));
+            ("short", (Str "Merchant's address: city."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "corporateuuid"));
+            ("short", (Str "Unique identifier for the corporate entity (UUID format)."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "country"));
             ("req", (Bool true));
+            ("short", (Str "Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format)."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "currency"));
             ("req", (Bool true));
+            ("short", (Str "Transaction currency (must be in \"ISO 4217\" format)."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchant_category_code"));
             ("req", (Bool true));
+            ("short", (Str "Merchant category code as defined by the payment network."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "merchant_email"));
+            ("short", (Str "Merchant's email address for receiving notifications."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchant_name"));
             ("req", (Bool true));
+            ("short", (Str "The officially incorporated company name of the merchant."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchant_phone_number"));
+            ("short", (Str "Merchant's phone number for notifications."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "packageid"));
             ("req", (Bool true));
+            ("short", (Str "Identifier of the package in the TECS processing engine provided by TECS."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "packageorderuuid"));
             ("req", (Bool true));
+            ("short", (Str "Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "password"));
+            ("short", (Str "Merchant password for MPOS."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "productid"));
+            ("short", (Str "Identifier of the product for which terminal registration is to be performed."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "productid_acquirer"));
+            ("short", (Str "Identifier of the product for which acquiring is enabled."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "reason_deactivation"));
             ("req", (Bool true));
+            ("short", (Str "Reason for terminal deactivation."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "reason_reactivation"));
             ("req", (Bool true));
+            ("short", (Str "Reason for terminal reactivation."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "sorting_code"));
+            ("short", (Str "Sorting code provided by the acquirer."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "state"));
+            ("short", (Str "Merchant's address: state."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "street"));
             ("req", (Bool true));
+            ("short", (Str "Merchant's address: street and house number."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminal_country_code"));
             ("req", (Bool true));
+            ("short", (Str "Terminal country code (must be in 'ISO-3166 ALPHA-3' format)."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminal_language_code"));
             ("req", (Bool true));
+            ("short", (Str "Terminal language code (must be in 'ISO 639-1' format)."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminal_location"));
             ("req", (Bool true));
+            ("short", (Str "Physical or logical location of the terminal."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminal_serial_number"));
             ("req", (Bool true));
+            ("short", (Str "Terminal serial number."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminalid"));
             ("req", (Bool true));
+            ("short", (Str "TECS terminalid given by Tecs processing engine."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "terminalid_acquirer"));
+            ("short", (Str "Terminal ID as set by the acquirer (optional)."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "user_email"));
+            ("short", (Str "Email address of the user acting on behalf of the merchant."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "user_phone_number"));
+            ("short", (Str "Phone number of the user acting on behalf of the merchant."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "username"));
+            ("short", (Str "Merchant username for MPOS."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "vu_nummer"));
             ("req", (Bool true));
+            ("short", (Str "Merchant contract number with the acquirer."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "web_shop_url"));
+            ("short", (Str "URL of the merchant's web shop."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "zipcode"));
             ("req", (Bool true));
+            ("short", (Str "Merchant's address: postal code."));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "merchant_portal_api_controller"));
         ("op", (jo [
@@ -354,9 +387,11 @@ let make_config () : value =
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "packageOrderUUID"));
+            ("short", (Str "UUID of the package order."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "productOrderUUID"));
+            ("short", (Str "UUID of the product order."));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "merchant_portal_pam_document_controller"));
         ("op", (jo [
@@ -433,6 +468,7 @@ let make_config () : value =
               ("create", (jo [
                 ("type", (Str "`$STRING`")) ])) ]));
             ("req", (Bool true));
+            ("short", (Str "UUID of the package order."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "packageUUID"));
@@ -443,6 +479,7 @@ let make_config () : value =
               ("create", (jo [
                 ("req", (Bool true));
                 ("type", (Str "`$STRING`")) ])) ]));
+            ("short", (Str "UUID of the product order."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "productOrders"));
@@ -676,6 +713,7 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("name", (Str "additional_data"));
+            ("short", (Str "Optional additional merchant-specific data related to enabling acquiring."));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "businessRegistrationNumber"));
@@ -683,6 +721,7 @@ let make_config () : value =
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "city"));
+            ("short", (Str "City where the merchant is located."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "companyName"));
@@ -691,13 +730,16 @@ let make_config () : value =
           (jo [
             ("name", (Str "corporateUUID"));
             ("req", (Bool true));
+            ("short", (Str "Unique identifier for the corporate entity."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "country"));
+            ("short", (Str "Country where the merchant is located."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "currency"));
             ("req", (Bool true));
+            ("short", (Str "Transaction currency in ISO 4217 format."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "email"));
@@ -714,6 +756,7 @@ let make_config () : value =
           (jo [
             ("name", (Str "mandator"));
             ("req", (Bool true));
+            ("short", (Str "Mandator name assigned by TECS."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantContractNumber"));
@@ -721,19 +764,24 @@ let make_config () : value =
               ("create", (jo [
                 ("type", (Str "`$STRING`")) ])) ]));
             ("req", (Bool true));
+            ("short", (Str "Unique identifier for the merchant within a specific system."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantName"));
+            ("short", (Str "Name of the merchant."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchant_category_code"));
+            ("short", (Str "Merchant Category Code (MCC) describing the merchant’s type of business."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "packageUUID"));
+            ("short", (Str "UUID of the package."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "packageorderuuid"));
             ("req", (Bool true));
+            ("short", (Str "Unique identifier for the registered merchant in the TECS system."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "phoneNumber"));
@@ -741,32 +789,41 @@ let make_config () : value =
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "postalCode"));
+            ("short", (Str "Postal or ZIP code of the merchant’s location."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "productid_acquirer"));
             ("req", (Bool true));
+            ("short", (Str "Identifier of the product for which acquiring is to be enabled."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "region"));
+            ("short", (Str "State or province where the merchant is located."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "registrationNumber"));
+            ("short", (Str "Business registration number."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "signature"));
+            ("short", (Str "Signature value = saltAsHex-hashAsHex."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "street"));
+            ("short", (Str "Street address of the merchant."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminalIds"));
+            ("short", (Str "Optional list of terminal IDs for which acquiring should be activated."));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
             ("name", (Str "terminalid_acquirer"));
+            ("short", (Str "Optional terminal ID provided by the acquirer."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "vu_nummer"));
             ("req", (Bool true));
+            ("short", (Str "Merchant contract number with the acquirer."));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "merchant_portal_pam_merchant_controller"));
         ("op", (jo [
@@ -861,9 +918,11 @@ let make_config () : value =
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "country"));
+            ("short", (Str "Country associated with the package."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "descriptionKey"));
+            ("short", (Str "Key for the description of the package."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "filter"));
@@ -877,13 +936,16 @@ let make_config () : value =
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "nameKey"));
+            ("short", (Str "Key for the name of the package."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "packageStatus"));
+            ("short", (Str "Status of the package."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "packageUUID"));
             ("req", (Bool true));
+            ("short", (Str "Unique identifier for the package."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "pagination"));
@@ -1035,6 +1097,7 @@ let make_config () : value =
           (jo [
             ("name", (Str "reason_decline"));
             ("req", (Bool true));
+            ("short", (Str "Reason for product decline."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "sorting"));
@@ -1136,18 +1199,22 @@ let make_config () : value =
           (jo [
             ("name", (Str "packageUUID"));
             ("req", (Bool true));
+            ("short", (Str "Unique identifier for the package."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "productUUIDs"));
             ("req", (Bool true));
+            ("short", (Str "The list of unique identifiers of the products."));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
             ("name", (Str "responseCode"));
             ("req", (Bool true));
+            ("short", (Str "Response code."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("req", (Bool true));
+            ("short", (Str "Response message."));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_add_product"));
         ("op", (jo [
@@ -1182,57 +1249,71 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("name", (Str "acquirerId"));
+            ("short", (Str "Unique identifier for the acquirer."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "allowMultipleOrders"));
             ("req", (Bool true));
+            ("short", (Str "Indication whether multiple orders are allowed or not."));
             ("type", (Str "`$BOOLEAN`")) ]);
           (jo [
             ("name", (Str "appFormTemplateName"));
             ("req", (Bool true));
+            ("short", (Str "Name of the application form template."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "contractNeeded"));
             ("req", (Bool true));
+            ("short", (Str "Indication whether contract is needed or not."));
             ("type", (Str "`$BOOLEAN`")) ]);
           (jo [
             ("name", (Str "credentialsNeeded"));
+            ("short", (Str "Indication whether credentials are needed or not."));
             ("type", (Str "`$BOOLEAN`")) ]);
           (jo [
             ("name", (Str "descriptionKey"));
             ("req", (Bool true));
+            ("short", (Str "Key indicator for product description."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "nameKey"));
             ("req", (Bool true));
+            ("short", (Str "Key indicator for product name."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "prescreeningAllowed"));
             ("req", (Bool true));
+            ("short", (Str "Indication whether prescreening is allowed or not."));
             ("type", (Str "`$BOOLEAN`")) ]);
           (jo [
             ("name", (Str "productName"));
             ("req", (Bool true));
+            ("short", (Str "Name of the product."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "responseCode"));
             ("req", (Bool true));
+            ("short", (Str "Response code."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("req", (Bool true));
+            ("short", (Str "Response message."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminalTemplateName"));
             ("req", (Bool true));
+            ("short", (Str "Name of the terminal template."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "vendorName"));
             ("req", (Bool true));
+            ("short", (Str "Name of the vendor."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "xmlTemplateFile"));
             ("req", (Bool true));
+            ("short", (Str "A string value containing the XML template file encoded in Base64."));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_create_product"));
         ("op", (jo [
@@ -1329,10 +1410,12 @@ let make_config () : value =
           (jo [
             ("name", (Str "responseCode"));
             ("req", (Bool true));
+            ("short", (Str "Response code."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("req", (Bool true));
+            ("short", (Str "Response message."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "sorting"));
@@ -1373,10 +1456,12 @@ let make_config () : value =
           (jo [
             ("name", (Str "responseCode"));
             ("req", (Bool true));
+            ("short", (Str "Response code."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("req", (Bool true));
+            ("short", (Str "Response message."));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_message"));
         ("op", (jo [
@@ -1459,10 +1544,12 @@ let make_config () : value =
           (jo [
             ("name", (Str "responseCode"));
             ("req", (Bool true));
+            ("short", (Str "Response code."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("req", (Bool true));
+            ("short", (Str "Response message."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "targetPackageOrderUUID"));
@@ -1506,18 +1593,22 @@ let make_config () : value =
           (jo [
             ("name", (Str "packageUUID"));
             ("req", (Bool true));
+            ("short", (Str "Unique identifier for the package."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "productUUIDs"));
             ("req", (Bool true));
+            ("short", (Str "List of product unique identifiers."));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
             ("name", (Str "responseCode"));
             ("req", (Bool true));
+            ("short", (Str "Response code."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("req", (Bool true));
+            ("short", (Str "Response message."));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_remove_product"));
         ("op", (jo [
@@ -1556,10 +1647,12 @@ let make_config () : value =
           (jo [
             ("name", (Str "responseCode"));
             ("req", (Bool true));
+            ("short", (Str "Response code."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("req", (Bool true));
+            ("short", (Str "Response message."));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_start"));
         ("op", (jo [
@@ -1600,10 +1693,12 @@ let make_config () : value =
           (jo [
             ("name", (Str "responseCode"));
             ("req", (Bool true));
+            ("short", (Str "Response code."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("req", (Bool true));
+            ("short", (Str "Response message."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "status"));
@@ -1652,45 +1747,58 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("name", (Str "allowMultipleOrders"));
+            ("short", (Str "An attribute to indicate if multiple orders are allowed"));
             ("type", (Str "`$BOOLEAN`")) ]);
           (jo [
             ("name", (Str "appFormName"));
+            ("short", (Str "The name of the application form"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "contractNeeded"));
+            ("short", (Str "An attribute to indicate if a contract is needed"));
             ("type", (Str "`$BOOLEAN`")) ]);
           (jo [
             ("name", (Str "credentialsNeeded"));
+            ("short", (Str "An attribute to indicate if credentials are needed"));
             ("type", (Str "`$BOOLEAN`")) ]);
           (jo [
             ("name", (Str "descriptionKey"));
+            ("short", (Str "The description of the product"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "nameKey"));
+            ("short", (Str "The key of the product name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "prescreeningAllowed"));
+            ("short", (Str "An attribute to indicate if prescreening is allowed"));
             ("type", (Str "`$BOOLEAN`")) ]);
           (jo [
             ("name", (Str "productName"));
+            ("short", (Str "The name of the product"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "productStatus"));
+            ("short", (Str "The status of the product"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "productUUID"));
             ("req", (Bool true));
+            ("short", (Str "The UUID of the product to update"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "responseCode"));
             ("req", (Bool true));
+            ("short", (Str "Response code."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("req", (Bool true));
+            ("short", (Str "Response message."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "vendorName"));
+            ("short", (Str "The name of the vendor"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_update_product"));
         ("op", (jo [

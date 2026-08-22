@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "BluefinTecsMerchantPortal",
+            "slug": "bluefin-tecs-merchant-portal",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -68,152 +71,185 @@ def make_config():
         "fields": [
           {
             "name": "account_number",
+            "short": "Account number provided by the acquirer.",
             "type": "`$INTEGER`",
           },
           {
             "name": "additional_data",
+            "short": "Arbitrary merchant-specific data related to terminal registration.",
             "type": "`$OBJECT`",
           },
           {
             "name": "business_reg_number",
             "req": True,
+            "short": "Merchant business registration number as stated in the company registry.",
             "type": "`$STRING`",
           },
           {
             "name": "city",
             "req": True,
+            "short": "Merchant's address: city.",
             "type": "`$STRING`",
           },
           {
             "name": "corporateuuid",
+            "short": "Unique identifier for the corporate entity (UUID format).",
             "type": "`$STRING`",
           },
           {
             "name": "country",
             "req": True,
+            "short": "Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format).",
             "type": "`$STRING`",
           },
           {
             "name": "currency",
             "req": True,
+            "short": "Transaction currency (must be in \"ISO 4217\" format).",
             "type": "`$STRING`",
           },
           {
             "name": "merchant_category_code",
             "req": True,
+            "short": "Merchant category code as defined by the payment network.",
             "type": "`$INTEGER`",
           },
           {
             "name": "merchant_email",
+            "short": "Merchant's email address for receiving notifications.",
             "type": "`$STRING`",
           },
           {
             "name": "merchant_name",
             "req": True,
+            "short": "The officially incorporated company name of the merchant.",
             "type": "`$STRING`",
           },
           {
             "name": "merchant_phone_number",
+            "short": "Merchant's phone number for notifications.",
             "type": "`$STRING`",
           },
           {
             "name": "packageid",
             "req": True,
+            "short": "Identifier of the package in the TECS processing engine provided by TECS.",
             "type": "`$STRING`",
           },
           {
             "name": "packageorderuuid",
             "req": True,
+            "short": "Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call.",
             "type": "`$STRING`",
           },
           {
             "name": "password",
+            "short": "Merchant password for MPOS.",
             "type": "`$STRING`",
           },
           {
             "name": "productid",
+            "short": "Identifier of the product for which terminal registration is to be performed.",
             "type": "`$STRING`",
           },
           {
             "name": "productid_acquirer",
+            "short": "Identifier of the product for which acquiring is enabled.",
             "type": "`$STRING`",
           },
           {
             "name": "reason_deactivation",
             "req": True,
+            "short": "Reason for terminal deactivation.",
             "type": "`$STRING`",
           },
           {
             "name": "reason_reactivation",
             "req": True,
+            "short": "Reason for terminal reactivation.",
             "type": "`$STRING`",
           },
           {
             "name": "sorting_code",
+            "short": "Sorting code provided by the acquirer.",
             "type": "`$INTEGER`",
           },
           {
             "name": "state",
+            "short": "Merchant's address: state.",
             "type": "`$STRING`",
           },
           {
             "name": "street",
             "req": True,
+            "short": "Merchant's address: street and house number.",
             "type": "`$STRING`",
           },
           {
             "name": "terminal_country_code",
             "req": True,
+            "short": "Terminal country code (must be in 'ISO-3166 ALPHA-3' format).",
             "type": "`$STRING`",
           },
           {
             "name": "terminal_language_code",
             "req": True,
+            "short": "Terminal language code (must be in 'ISO 639-1' format).",
             "type": "`$STRING`",
           },
           {
             "name": "terminal_location",
             "req": True,
+            "short": "Physical or logical location of the terminal.",
             "type": "`$STRING`",
           },
           {
             "name": "terminal_serial_number",
             "req": True,
+            "short": "Terminal serial number.",
             "type": "`$STRING`",
           },
           {
             "name": "terminalid",
             "req": True,
+            "short": "TECS terminalid given by Tecs processing engine.",
             "type": "`$INTEGER`",
           },
           {
             "name": "terminalid_acquirer",
+            "short": "Terminal ID as set by the acquirer (optional).",
             "type": "`$STRING`",
           },
           {
             "name": "user_email",
+            "short": "Email address of the user acting on behalf of the merchant.",
             "type": "`$STRING`",
           },
           {
             "name": "user_phone_number",
+            "short": "Phone number of the user acting on behalf of the merchant.",
             "type": "`$STRING`",
           },
           {
             "name": "username",
+            "short": "Merchant username for MPOS.",
             "type": "`$STRING`",
           },
           {
             "name": "vu_nummer",
             "req": True,
+            "short": "Merchant contract number with the acquirer.",
             "type": "`$STRING`",
           },
           {
             "name": "web_shop_url",
+            "short": "URL of the merchant's web shop.",
             "type": "`$STRING`",
           },
           {
             "name": "zipcode",
             "req": True,
+            "short": "Merchant's address: postal code.",
             "type": "`$STRING`",
           },
         ],
@@ -484,10 +520,12 @@ def make_config():
           },
           {
             "name": "packageOrderUUID",
+            "short": "UUID of the package order.",
             "type": "`$STRING`",
           },
           {
             "name": "productOrderUUID",
+            "short": "UUID of the product order.",
             "type": "`$STRING`",
           },
         ],
@@ -595,6 +633,7 @@ def make_config():
               },
             },
             "req": True,
+            "short": "UUID of the package order.",
             "type": "`$STRING`",
           },
           {
@@ -609,6 +648,7 @@ def make_config():
                 "type": "`$STRING`",
               },
             },
+            "short": "UUID of the product order.",
             "type": "`$STRING`",
           },
           {
@@ -933,6 +973,7 @@ def make_config():
         "fields": [
           {
             "name": "additional_data",
+            "short": "Optional additional merchant-specific data related to enabling acquiring.",
             "type": "`$OBJECT`",
           },
           {
@@ -942,6 +983,7 @@ def make_config():
           },
           {
             "name": "city",
+            "short": "City where the merchant is located.",
             "type": "`$STRING`",
           },
           {
@@ -952,15 +994,18 @@ def make_config():
           {
             "name": "corporateUUID",
             "req": True,
+            "short": "Unique identifier for the corporate entity.",
             "type": "`$STRING`",
           },
           {
             "name": "country",
+            "short": "Country where the merchant is located.",
             "type": "`$STRING`",
           },
           {
             "name": "currency",
             "req": True,
+            "short": "Transaction currency in ISO 4217 format.",
             "type": "`$STRING`",
           },
           {
@@ -981,6 +1026,7 @@ def make_config():
           {
             "name": "mandator",
             "req": True,
+            "short": "Mandator name assigned by TECS.",
             "type": "`$STRING`",
           },
           {
@@ -991,23 +1037,28 @@ def make_config():
               },
             },
             "req": True,
+            "short": "Unique identifier for the merchant within a specific system.",
             "type": "`$STRING`",
           },
           {
             "name": "merchantName",
+            "short": "Name of the merchant.",
             "type": "`$STRING`",
           },
           {
             "name": "merchant_category_code",
+            "short": "Merchant Category Code (MCC) describing the merchant’s type of business.",
             "type": "`$STRING`",
           },
           {
             "name": "packageUUID",
+            "short": "UUID of the package.",
             "type": "`$STRING`",
           },
           {
             "name": "packageorderuuid",
             "req": True,
+            "short": "Unique identifier for the registered merchant in the TECS system.",
             "type": "`$STRING`",
           },
           {
@@ -1017,40 +1068,49 @@ def make_config():
           },
           {
             "name": "postalCode",
+            "short": "Postal or ZIP code of the merchant’s location.",
             "type": "`$STRING`",
           },
           {
             "name": "productid_acquirer",
             "req": True,
+            "short": "Identifier of the product for which acquiring is to be enabled.",
             "type": "`$STRING`",
           },
           {
             "name": "region",
+            "short": "State or province where the merchant is located.",
             "type": "`$STRING`",
           },
           {
             "name": "registrationNumber",
+            "short": "Business registration number.",
             "type": "`$STRING`",
           },
           {
             "name": "signature",
+            "short": "Signature value = saltAsHex-hashAsHex.",
             "type": "`$STRING`",
           },
           {
             "name": "street",
+            "short": "Street address of the merchant.",
             "type": "`$STRING`",
           },
           {
             "name": "terminalIds",
+            "short": "Optional list of terminal IDs for which acquiring should be activated.",
             "type": "`$ARRAY`",
           },
           {
             "name": "terminalid_acquirer",
+            "short": "Optional terminal ID provided by the acquirer.",
             "type": "`$STRING`",
           },
           {
             "name": "vu_nummer",
             "req": True,
+            "short": "Merchant contract number with the acquirer.",
             "type": "`$STRING`",
           },
         ],
@@ -1181,10 +1241,12 @@ def make_config():
           },
           {
             "name": "country",
+            "short": "Country associated with the package.",
             "type": "`$STRING`",
           },
           {
             "name": "descriptionKey",
+            "short": "Key for the description of the package.",
             "type": "`$STRING`",
           },
           {
@@ -1203,15 +1265,18 @@ def make_config():
           },
           {
             "name": "nameKey",
+            "short": "Key for the name of the package.",
             "type": "`$STRING`",
           },
           {
             "name": "packageStatus",
+            "short": "Status of the package.",
             "type": "`$STRING`",
           },
           {
             "name": "packageUUID",
             "req": True,
+            "short": "Unique identifier for the package.",
             "type": "`$STRING`",
           },
           {
@@ -1420,6 +1485,7 @@ def make_config():
           {
             "name": "reason_decline",
             "req": True,
+            "short": "Reason for product decline.",
             "type": "`$STRING`",
           },
           {
@@ -1561,21 +1627,25 @@ def make_config():
           {
             "name": "packageUUID",
             "req": True,
+            "short": "Unique identifier for the package.",
             "type": "`$STRING`",
           },
           {
             "name": "productUUIDs",
             "req": True,
+            "short": "The list of unique identifiers of the products.",
             "type": "`$ARRAY`",
           },
           {
             "name": "responseCode",
             "req": True,
+            "short": "Response code.",
             "type": "`$INTEGER`",
           },
           {
             "name": "responseMessage",
             "req": True,
+            "short": "Response message.",
             "type": "`$STRING`",
           },
         ],
@@ -1625,70 +1695,84 @@ def make_config():
         "fields": [
           {
             "name": "acquirerId",
+            "short": "Unique identifier for the acquirer.",
             "type": "`$STRING`",
           },
           {
             "name": "allowMultipleOrders",
             "req": True,
+            "short": "Indication whether multiple orders are allowed or not.",
             "type": "`$BOOLEAN`",
           },
           {
             "name": "appFormTemplateName",
             "req": True,
+            "short": "Name of the application form template.",
             "type": "`$STRING`",
           },
           {
             "name": "contractNeeded",
             "req": True,
+            "short": "Indication whether contract is needed or not.",
             "type": "`$BOOLEAN`",
           },
           {
             "name": "credentialsNeeded",
+            "short": "Indication whether credentials are needed or not.",
             "type": "`$BOOLEAN`",
           },
           {
             "name": "descriptionKey",
             "req": True,
+            "short": "Key indicator for product description.",
             "type": "`$STRING`",
           },
           {
             "name": "nameKey",
             "req": True,
+            "short": "Key indicator for product name.",
             "type": "`$STRING`",
           },
           {
             "name": "prescreeningAllowed",
             "req": True,
+            "short": "Indication whether prescreening is allowed or not.",
             "type": "`$BOOLEAN`",
           },
           {
             "name": "productName",
             "req": True,
+            "short": "Name of the product.",
             "type": "`$STRING`",
           },
           {
             "name": "responseCode",
             "req": True,
+            "short": "Response code.",
             "type": "`$INTEGER`",
           },
           {
             "name": "responseMessage",
             "req": True,
+            "short": "Response message.",
             "type": "`$STRING`",
           },
           {
             "name": "terminalTemplateName",
             "req": True,
+            "short": "Name of the terminal template.",
             "type": "`$STRING`",
           },
           {
             "name": "vendorName",
             "req": True,
+            "short": "Name of the vendor.",
             "type": "`$STRING`",
           },
           {
             "name": "xmlTemplateFile",
             "req": True,
+            "short": "A string value containing the XML template file encoded in Base64.",
             "type": "`$STRING`",
           },
         ],
@@ -1823,11 +1907,13 @@ def make_config():
           {
             "name": "responseCode",
             "req": True,
+            "short": "Response code.",
             "type": "`$INTEGER`",
           },
           {
             "name": "responseMessage",
             "req": True,
+            "short": "Response message.",
             "type": "`$STRING`",
           },
           {
@@ -1884,11 +1970,13 @@ def make_config():
           {
             "name": "responseCode",
             "req": True,
+            "short": "Response code.",
             "type": "`$INTEGER`",
           },
           {
             "name": "responseMessage",
             "req": True,
+            "short": "Response message.",
             "type": "`$STRING`",
           },
         ],
@@ -1999,11 +2087,13 @@ def make_config():
           {
             "name": "responseCode",
             "req": True,
+            "short": "Response code.",
             "type": "`$INTEGER`",
           },
           {
             "name": "responseMessage",
             "req": True,
+            "short": "Response message.",
             "type": "`$STRING`",
           },
           {
@@ -2064,21 +2154,25 @@ def make_config():
           {
             "name": "packageUUID",
             "req": True,
+            "short": "Unique identifier for the package.",
             "type": "`$STRING`",
           },
           {
             "name": "productUUIDs",
             "req": True,
+            "short": "List of product unique identifiers.",
             "type": "`$ARRAY`",
           },
           {
             "name": "responseCode",
             "req": True,
+            "short": "Response code.",
             "type": "`$INTEGER`",
           },
           {
             "name": "responseMessage",
             "req": True,
+            "short": "Response message.",
             "type": "`$STRING`",
           },
         ],
@@ -2133,11 +2227,13 @@ def make_config():
           {
             "name": "responseCode",
             "req": True,
+            "short": "Response code.",
             "type": "`$INTEGER`",
           },
           {
             "name": "responseMessage",
             "req": True,
+            "short": "Response message.",
             "type": "`$STRING`",
           },
         ],
@@ -2194,11 +2290,13 @@ def make_config():
           {
             "name": "responseCode",
             "req": True,
+            "short": "Response code.",
             "type": "`$INTEGER`",
           },
           {
             "name": "responseMessage",
             "req": True,
+            "short": "Response message.",
             "type": "`$STRING`",
           },
           {
@@ -2265,57 +2363,70 @@ def make_config():
         "fields": [
           {
             "name": "allowMultipleOrders",
+            "short": "An attribute to indicate if multiple orders are allowed",
             "type": "`$BOOLEAN`",
           },
           {
             "name": "appFormName",
+            "short": "The name of the application form",
             "type": "`$STRING`",
           },
           {
             "name": "contractNeeded",
+            "short": "An attribute to indicate if a contract is needed",
             "type": "`$BOOLEAN`",
           },
           {
             "name": "credentialsNeeded",
+            "short": "An attribute to indicate if credentials are needed",
             "type": "`$BOOLEAN`",
           },
           {
             "name": "descriptionKey",
+            "short": "The description of the product",
             "type": "`$STRING`",
           },
           {
             "name": "nameKey",
+            "short": "The key of the product name",
             "type": "`$STRING`",
           },
           {
             "name": "prescreeningAllowed",
+            "short": "An attribute to indicate if prescreening is allowed",
             "type": "`$BOOLEAN`",
           },
           {
             "name": "productName",
+            "short": "The name of the product",
             "type": "`$STRING`",
           },
           {
             "name": "productStatus",
+            "short": "The status of the product",
             "type": "`$STRING`",
           },
           {
             "name": "productUUID",
             "req": True,
+            "short": "The UUID of the product to update",
             "type": "`$STRING`",
           },
           {
             "name": "responseCode",
             "req": True,
+            "short": "Response code.",
             "type": "`$INTEGER`",
           },
           {
             "name": "responseMessage",
             "req": True,
+            "short": "Response message.",
             "type": "`$STRING`",
           },
           {
             "name": "vendorName",
+            "short": "The name of the vendor",
             "type": "`$STRING`",
           },
         ],

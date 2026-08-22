@@ -8,71 +8,85 @@ main: kit: entity: output_create_product: {
     {
       name: "acquirerId"
       req: false
+      short: "Unique identifier for the acquirer."
       type: "`$STRING`"
     }
     {
       name: "allowMultipleOrders"
       req: true
+      short: "Indication whether multiple orders are allowed or not."
       type: "`$BOOLEAN`"
     }
     {
       name: "appFormTemplateName"
       req: true
+      short: "Name of the application form template."
       type: "`$STRING`"
     }
     {
       name: "contractNeeded"
       req: true
+      short: "Indication whether contract is needed or not."
       type: "`$BOOLEAN`"
     }
     {
       name: "credentialsNeeded"
       req: false
+      short: "Indication whether credentials are needed or not."
       type: "`$BOOLEAN`"
     }
     {
       name: "descriptionKey"
       req: true
+      short: "Key indicator for product description."
       type: "`$STRING`"
     }
     {
       name: "nameKey"
       req: true
+      short: "Key indicator for product name."
       type: "`$STRING`"
     }
     {
       name: "prescreeningAllowed"
       req: true
+      short: "Indication whether prescreening is allowed or not."
       type: "`$BOOLEAN`"
     }
     {
       name: "productName"
       req: true
+      short: "Name of the product."
       type: "`$STRING`"
     }
     {
       name: "responseCode"
       req: true
+      short: "Response code."
       type: "`$INTEGER`"
     }
     {
       name: "responseMessage"
       req: true
+      short: "Response message."
       type: "`$STRING`"
     }
     {
       name: "terminalTemplateName"
       req: true
+      short: "Name of the terminal template."
       type: "`$STRING`"
     }
     {
       name: "vendorName"
       req: true
+      short: "Name of the vendor."
       type: "`$STRING`"
     }
     {
       name: "xmlTemplateFile"
       req: true
+      short: "A string value containing the XML template file encoded in Base64."
       type: "`$STRING`"
     }
   ]

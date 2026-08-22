@@ -10,7 +10,7 @@ This is an unofficial SDK for the Merchant Portal Web Service Documentation publ
 
 Learn more about Voxgig SDKs at [voxgig.com/sdk](https://voxgig.com/sdk/).
 
-> TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Haskell, Java, JavaScript, Kotlin, OCaml, Perl, Rust, Scala, Swift, Zig SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
+> TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Java, JavaScript, Kotlin, OCaml, Perl, Rust, Scala, Swift, Zig SDKs, a CLI with an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
 
 ## Entities, not endpoints
 
@@ -177,23 +177,6 @@ record = BluefinTecsMerchantPortal.Entity.OutputDetail.load(output_detail, H.dee
 IO.inspect(record)
 ```
 
-### Haskell
-
-```haskell
-import qualified SdkClient as Sdk
-import VoxgigStruct (Value (..), emptyMap)
-import SdkHelpers (jo)
-
-main :: IO ()
-main = do
-  sdk <- Sdk.testSdk0
-  ent <- Sdk.output_detail sdk VNoval
-  arg <- jo [("id", VStr "test01")]
-  ctrl <- emptyMap
-  output_detail <- Sdk.eLoad ent arg ctrl
-  print output_detail
-```
-
 ### Java
 
 ```java
@@ -296,7 +279,6 @@ switch (client.output_detail(h.vnull()).load(h.jo(&.{.{ "id", h.vstr("test01") }
 | C# | `voxgig-sdk-bluefin-tecs-merchant-portal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases) |
 | Dart | `voxgig-sdk-bluefin-tecs-merchant-portal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases) |
 | Elixir | `voxgig-sdk-bluefin-tecs-merchant-portal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases) |
-| Haskell | `voxgig-sdk-bluefin-tecs-merchant-portal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases) |
 | Java | `voxgig-sdk-bluefin-tecs-merchant-portal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases) |
 | JavaScript | `@voxgig-sdk/bluefin-tecs-merchant-portal-js` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases) |
 | Kotlin | `voxgig-sdk-bluefin-tecs-merchant-portal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases) |
@@ -326,7 +308,7 @@ See the [TypeScript README](ts/README.md) for the full guide.
 
 | Surface | Path |
 | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Haskell, Java, JavaScript, Kotlin, OCaml, Perl, Rust, Scala, Swift, Zig) | `ts/` `py/` `php/` `go/` `rb/` `lua/` `c/` `clojure/` `cpp/` `csharp/` `dart/` `elixir/` `haskell/` `java/` `js/` `kotlin/` `ocaml/` `perl/` `rust/` `scala/` `swift/` `zig/` |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Java, JavaScript, Kotlin, OCaml, Perl, Rust, Scala, Swift, Zig) | `ts/` `py/` `php/` `go/` `rb/` `lua/` `c/` `clojure/` `cpp/` `csharp/` `dart/` `elixir/` `java/` `js/` `kotlin/` `ocaml/` `perl/` `rust/` `scala/` `swift/` `zig/` |
 | **CLI** | `go-cli/` |
 | **MCP server** | `go-mcp/` |
 
@@ -489,18 +471,6 @@ alias BluefinTecsMerchantPortal.Helpers, as: H
 sdk = BluefinTecsMerchantPortal.new()
 
 merchant_portal_api_controller = BluefinTecsMerchantPortal.merchant_portal_api_controller(sdk)
-```
-
-### Haskell
-
-```haskell
-import qualified SdkClient as Sdk
-import VoxgigStruct (Value (..), emptyMap)
-import SdkHelpers (jo)
-
-main :: IO ()
-main = do
-  sdk <- Sdk.newSdk0
 ```
 
 ### Java
@@ -721,22 +691,6 @@ result = BluefinTecsMerchantPortal.direct(sdk, BluefinTecsMerchantPortal.Helpers
 }))
 ```
 
-**Haskell:**
-```haskell
-import qualified SdkClient as Sdk
-import qualified SdkFeatures as F
-import VoxgigStruct (Value (..))
-import SdkHelpers (jo)
-
-main :: IO ()
-main = do
-  sdk <- Sdk.newSdk0
-  params <- jo [("id", VStr "example")]
-  args <- jo [("path", VStr "/api/resource/{id}"), ("method", VStr "GET"), ("params", params)]
-  result <- F.direct sdk args
-  print result
-```
-
 **Java:**
 ```java
 Map<String, Object> result = client.direct(Map.of(
@@ -859,7 +813,6 @@ Pass custom features via the `extend` option at construction time.
 - [C#](csharp/README.md)
 - [Dart](dart/README.md)
 - [Elixir](elixir/README.md)
-- [Haskell](haskell/README.md)
 - [Java](java/README.md)
 - [JavaScript](js/README.md)
 - [Kotlin](kotlin/README.md)

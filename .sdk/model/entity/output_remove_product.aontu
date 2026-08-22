@@ -8,21 +8,25 @@ main: kit: entity: output_remove_product: {
     {
       name: "packageUUID"
       req: true
+      short: "Unique identifier for the package."
       type: "`$STRING`"
     }
     {
       name: "productUUIDs"
       req: true
+      short: "List of product unique identifiers."
       type: "`$ARRAY`"
     }
     {
       name: "responseCode"
       req: true
+      short: "Response code."
       type: "`$INTEGER`"
     }
     {
       name: "responseMessage"
       req: true
+      short: "Response message."
       type: "`$STRING`"
     }
   ]

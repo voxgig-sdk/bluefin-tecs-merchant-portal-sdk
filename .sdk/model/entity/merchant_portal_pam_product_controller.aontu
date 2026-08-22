@@ -48,6 +48,7 @@ main: kit: entity: merchant_portal_pam_product_controller: {
     {
       name: "reason_decline"
       req: true
+      short: "Reason for product decline."
       type: "`$STRING`"
     }
     {

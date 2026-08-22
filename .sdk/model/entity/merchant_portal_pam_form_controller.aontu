@@ -40,6 +40,7 @@ main: kit: entity: merchant_portal_pam_form_controller: {
         }
       }
       req: true
+      short: "UUID of the package order."
       type: "`$STRING`"
     }
     {
@@ -56,6 +57,7 @@ main: kit: entity: merchant_portal_pam_form_controller: {
         }
       }
       req: false
+      short: "UUID of the product order."
       type: "`$STRING`"
     }
     {

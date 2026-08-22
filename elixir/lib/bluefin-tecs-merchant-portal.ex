@@ -18,7 +18,9 @@ defmodule BluefinTecsMerchantPortal do
     utility = Utility.new()
     S.setprop(client, "_utility", utility)
 
-    config = BluefinTecsMerchantPortal.Config.make_config()
+    # The process-wide config (sdkgen rung L2): read-only on the request path,
+    # so every client shares one rather than rebuilding it.
+    config = BluefinTecsMerchantPortal.Config.shared_config()
 
     rootctx =
       Context.new(

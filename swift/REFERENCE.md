@@ -178,39 +178,39 @@ let merchantPortalApiController = client.MerchantPortalApiController()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_number` | `Int` | No |  |
-| `additional_data` | `VMap` | No |  |
-| `business_reg_number` | `String` | Yes |  |
-| `city` | `String` | Yes |  |
-| `corporateuuid` | `String` | No |  |
-| `country` | `String` | Yes |  |
-| `currency` | `String` | Yes |  |
-| `merchant_category_code` | `Int` | Yes |  |
-| `merchant_email` | `String` | No |  |
-| `merchant_name` | `String` | Yes |  |
-| `merchant_phone_number` | `String` | No |  |
-| `packageid` | `String` | Yes |  |
-| `packageorderuuid` | `String` | Yes |  |
-| `password` | `String` | No |  |
-| `productid` | `String` | No |  |
-| `productid_acquirer` | `String` | No |  |
-| `reason_deactivation` | `String` | Yes |  |
-| `reason_reactivation` | `String` | Yes |  |
-| `sorting_code` | `Int` | No |  |
-| `state` | `String` | No |  |
-| `street` | `String` | Yes |  |
-| `terminal_country_code` | `String` | Yes |  |
-| `terminal_language_code` | `String` | Yes |  |
-| `terminal_location` | `String` | Yes |  |
-| `terminal_serial_number` | `String` | Yes |  |
-| `terminalid` | `Int` | Yes |  |
-| `terminalid_acquirer` | `String` | No |  |
-| `user_email` | `String` | No |  |
-| `user_phone_number` | `String` | No |  |
-| `username` | `String` | No |  |
-| `vu_nummer` | `String` | Yes |  |
-| `web_shop_url` | `String` | No |  |
-| `zipcode` | `String` | Yes |  |
+| `account_number` | `Int` | No | Account number provided by the acquirer. |
+| `additional_data` | `VMap` | No | Arbitrary merchant-specific data related to terminal registration. |
+| `business_reg_number` | `String` | Yes | Merchant business registration number as stated in the company registry. |
+| `city` | `String` | Yes | Merchant's address: city. |
+| `corporateuuid` | `String` | No | Unique identifier for the corporate entity (UUID format). |
+| `country` | `String` | Yes | Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format). |
+| `currency` | `String` | Yes | Transaction currency (must be in "ISO 4217" format). |
+| `merchant_category_code` | `Int` | Yes | Merchant category code as defined by the payment network. |
+| `merchant_email` | `String` | No | Merchant's email address for receiving notifications. |
+| `merchant_name` | `String` | Yes | The officially incorporated company name of the merchant. |
+| `merchant_phone_number` | `String` | No | Merchant's phone number for notifications. |
+| `packageid` | `String` | Yes | Identifier of the package in the TECS processing engine provided by TECS. |
+| `packageorderuuid` | `String` | Yes | Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call. |
+| `password` | `String` | No | Merchant password for MPOS. |
+| `productid` | `String` | No | Identifier of the product for which terminal registration is to be performed. |
+| `productid_acquirer` | `String` | No | Identifier of the product for which acquiring is enabled. |
+| `reason_deactivation` | `String` | Yes | Reason for terminal deactivation. |
+| `reason_reactivation` | `String` | Yes | Reason for terminal reactivation. |
+| `sorting_code` | `Int` | No | Sorting code provided by the acquirer. |
+| `state` | `String` | No | Merchant's address: state. |
+| `street` | `String` | Yes | Merchant's address: street and house number. |
+| `terminal_country_code` | `String` | Yes | Terminal country code (must be in 'ISO-3166 ALPHA-3' format). |
+| `terminal_language_code` | `String` | Yes | Terminal language code (must be in 'ISO 639-1' format). |
+| `terminal_location` | `String` | Yes | Physical or logical location of the terminal. |
+| `terminal_serial_number` | `String` | Yes | Terminal serial number. |
+| `terminalid` | `Int` | Yes | TECS terminalid given by Tecs processing engine. |
+| `terminalid_acquirer` | `String` | No | Terminal ID as set by the acquirer (optional). |
+| `user_email` | `String` | No | Email address of the user acting on behalf of the merchant. |
+| `user_phone_number` | `String` | No | Phone number of the user acting on behalf of the merchant. |
+| `username` | `String` | No | Merchant username for MPOS. |
+| `vu_nummer` | `String` | Yes | Merchant contract number with the acquirer. |
+| `web_shop_url` | `String` | No | URL of the merchant's web shop. |
+| `zipcode` | `String` | Yes | Merchant's address: postal code. |
 
 ### Operations
 
@@ -357,8 +357,8 @@ let merchantPortalPamDocumentController = client.MerchantPortalPamDocumentContro
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `appFormFieldDescUUID` | `String` | Yes |  |
-| `packageOrderUUID` | `String` | No |  |
-| `productOrderUUID` | `String` | No |  |
+| `packageOrderUUID` | `String` | No | UUID of the package order. |
+| `productOrderUUID` | `String` | No | UUID of the product order. |
 
 ### Operations
 
@@ -407,9 +407,9 @@ let merchantPortalPamFormController = client.MerchantPortalPamFormController()
 | `filter` | `VMap` | No |  |
 | `language` | `String` | Yes |  |
 | `packageOrder` | `VMap` | No |  |
-| `packageOrderUUID` | `String` | Yes |  |
+| `packageOrderUUID` | `String` | Yes | UUID of the package order. |
 | `packageUUID` | `String` | No |  |
-| `productOrderUUID` | `String` | No |  |
+| `productOrderUUID` | `String` | No | UUID of the product order. |
 | `productOrders` | `[Value]` | No |  |
 | `reasonOfReopening` | `String` | Yes |  |
 
@@ -522,32 +522,32 @@ let merchantPortalPamMerchantController = client.MerchantPortalPamMerchantContro
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `VMap` | No |  |
+| `additional_data` | `VMap` | No | Optional additional merchant-specific data related to enabling acquiring. |
 | `businessRegistrationNumber` | `String` | Yes |  |
-| `city` | `String` | No |  |
+| `city` | `String` | No | City where the merchant is located. |
 | `companyName` | `String` | Yes |  |
-| `corporateUUID` | `String` | Yes |  |
-| `country` | `String` | No |  |
-| `currency` | `String` | Yes |  |
+| `corporateUUID` | `String` | Yes | Unique identifier for the corporate entity. |
+| `country` | `String` | No | Country where the merchant is located. |
+| `currency` | `String` | Yes | Transaction currency in ISO 4217 format. |
 | `email` | `String` | Yes |  |
 | `language` | `String` | Yes |  |
 | `login` | `String` | Yes |  |
-| `mandator` | `String` | Yes |  |
-| `merchantContractNumber` | `String` | Yes |  |
-| `merchantName` | `String` | No |  |
-| `merchant_category_code` | `String` | No |  |
-| `packageUUID` | `String` | No |  |
-| `packageorderuuid` | `String` | Yes |  |
+| `mandator` | `String` | Yes | Mandator name assigned by TECS. |
+| `merchantContractNumber` | `String` | Yes | Unique identifier for the merchant within a specific system. |
+| `merchantName` | `String` | No | Name of the merchant. |
+| `merchant_category_code` | `String` | No | Merchant Category Code (MCC) describing the merchant’s type of business. |
+| `packageUUID` | `String` | No | UUID of the package. |
+| `packageorderuuid` | `String` | Yes | Unique identifier for the registered merchant in the TECS system. |
 | `phoneNumber` | `String` | Yes |  |
-| `postalCode` | `String` | No |  |
-| `productid_acquirer` | `String` | Yes |  |
-| `region` | `String` | No |  |
-| `registrationNumber` | `String` | No |  |
-| `signature` | `String` | No |  |
-| `street` | `String` | No |  |
-| `terminalIds` | `[Value]` | No |  |
-| `terminalid_acquirer` | `String` | No |  |
-| `vu_nummer` | `String` | Yes |  |
+| `postalCode` | `String` | No | Postal or ZIP code of the merchant’s location. |
+| `productid_acquirer` | `String` | Yes | Identifier of the product for which acquiring is to be enabled. |
+| `region` | `String` | No | State or province where the merchant is located. |
+| `registrationNumber` | `String` | No | Business registration number. |
+| `signature` | `String` | No | Signature value = saltAsHex-hashAsHex. |
+| `street` | `String` | No | Street address of the merchant. |
+| `terminalIds` | `[Value]` | No | Optional list of terminal IDs for which acquiring should be activated. |
+| `terminalid_acquirer` | `String` | No | Optional terminal ID provided by the acquirer. |
+| `vu_nummer` | `String` | Yes | Merchant contract number with the acquirer. |
 
 ### Field Usage by Operation
 
@@ -637,13 +637,13 @@ let merchantPortalPamPackageController = client.MerchantPortalPamPackageControll
 | --- | --- | --- | --- |
 | `consumerUUID` | `String` | No |  |
 | `corporateUUID` | `String` | No |  |
-| `country` | `String` | No |  |
-| `descriptionKey` | `String` | No |  |
+| `country` | `String` | No | Country associated with the package. |
+| `descriptionKey` | `String` | No | Key for the description of the package. |
 | `filter` | `VMap` | No |  |
 | `language` | `String` | Yes |  |
-| `nameKey` | `String` | No |  |
-| `packageStatus` | `String` | No |  |
-| `packageUUID` | `String` | Yes |  |
+| `nameKey` | `String` | No | Key for the name of the package. |
+| `packageStatus` | `String` | No | Status of the package. |
+| `packageUUID` | `String` | Yes | Unique identifier for the package. |
 | `pagination` | `VMap` | No |  |
 | `sorting` | `VMap` | No |  |
 
@@ -715,7 +715,7 @@ let merchantPortalPamProductController = client.MerchantPortalPamProductControll
 | `pagination` | `VMap` | No |  |
 | `productOrderUUID` | `String` | Yes |  |
 | `productUUID` | `String` | Yes |  |
-| `reason_decline` | `String` | Yes |  |
+| `reason_decline` | `String` | Yes | Reason for product decline. |
 | `sorting` | `VMap` | No |  |
 
 ### Operations
@@ -764,10 +764,10 @@ let outputAddProduct = client.OutputAddProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `packageUUID` | `String` | Yes |  |
-| `productUUIDs` | `[Value]` | Yes |  |
-| `responseCode` | `Int` | Yes |  |
-| `responseMessage` | `String` | Yes |  |
+| `packageUUID` | `String` | Yes | Unique identifier for the package. |
+| `productUUIDs` | `[Value]` | Yes | The list of unique identifiers of the products. |
+| `responseCode` | `Int` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
 
 ### Operations
 
@@ -815,20 +815,20 @@ let outputCreateProduct = client.OutputCreateProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirerId` | `String` | No |  |
-| `allowMultipleOrders` | `Bool` | Yes |  |
-| `appFormTemplateName` | `String` | Yes |  |
-| `contractNeeded` | `Bool` | Yes |  |
-| `credentialsNeeded` | `Bool` | No |  |
-| `descriptionKey` | `String` | Yes |  |
-| `nameKey` | `String` | Yes |  |
-| `prescreeningAllowed` | `Bool` | Yes |  |
-| `productName` | `String` | Yes |  |
-| `responseCode` | `Int` | Yes |  |
-| `responseMessage` | `String` | Yes |  |
-| `terminalTemplateName` | `String` | Yes |  |
-| `vendorName` | `String` | Yes |  |
-| `xmlTemplateFile` | `String` | Yes |  |
+| `acquirerId` | `String` | No | Unique identifier for the acquirer. |
+| `allowMultipleOrders` | `Bool` | Yes | Indication whether multiple orders are allowed or not. |
+| `appFormTemplateName` | `String` | Yes | Name of the application form template. |
+| `contractNeeded` | `Bool` | Yes | Indication whether contract is needed or not. |
+| `credentialsNeeded` | `Bool` | No | Indication whether credentials are needed or not. |
+| `descriptionKey` | `String` | Yes | Key indicator for product description. |
+| `nameKey` | `String` | Yes | Key indicator for product name. |
+| `prescreeningAllowed` | `Bool` | Yes | Indication whether prescreening is allowed or not. |
+| `productName` | `String` | Yes | Name of the product. |
+| `responseCode` | `Int` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
+| `terminalTemplateName` | `String` | Yes | Name of the terminal template. |
+| `vendorName` | `String` | Yes | Name of the vendor. |
+| `xmlTemplateFile` | `String` | Yes | A string value containing the XML template file encoded in Base64. |
 
 ### Operations
 
@@ -931,8 +931,8 @@ let outputList = client.OutputList()
 | --- | --- | --- | --- |
 | `items` | `[Value]` | No |  |
 | `pagination` | `VMap` | Yes |  |
-| `responseCode` | `Int` | Yes |  |
-| `responseMessage` | `String` | Yes |  |
+| `responseCode` | `Int` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
 | `sorting` | `VMap` | No |  |
 
 ### Field Usage by Operation
@@ -990,8 +990,8 @@ let outputMessage = client.OutputMessage()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `responseCode` | `Int` | Yes |  |
-| `responseMessage` | `String` | Yes |  |
+| `responseCode` | `Int` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
 
 ### Operations
 
@@ -1035,8 +1035,8 @@ let outputMoveTid = client.OutputMoveTid()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `productOrderUUIDs` | `[Value]` | Yes |  |
-| `responseCode` | `Int` | Yes |  |
-| `responseMessage` | `String` | Yes |  |
+| `responseCode` | `Int` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
 | `targetPackageOrderUUID` | `String` | Yes |  |
 | `targetProductOrderUUID` | `String` | Yes |  |
 
@@ -1087,10 +1087,10 @@ let outputRemoveProduct = client.OutputRemoveProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `packageUUID` | `String` | Yes |  |
-| `productUUIDs` | `[Value]` | Yes |  |
-| `responseCode` | `Int` | Yes |  |
-| `responseMessage` | `String` | Yes |  |
+| `packageUUID` | `String` | Yes | Unique identifier for the package. |
+| `productUUIDs` | `[Value]` | Yes | List of product unique identifiers. |
+| `responseCode` | `Int` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
 
 ### Operations
 
@@ -1139,8 +1139,8 @@ let outputStart = client.OutputStart()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `String` | No |  |
-| `responseCode` | `Int` | Yes |  |
-| `responseMessage` | `String` | Yes |  |
+| `responseCode` | `Int` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
 
 ### Operations
 
@@ -1187,8 +1187,8 @@ let outputStatus = client.OutputStatus()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `Int` | No |  |
-| `responseCode` | `Int` | Yes |  |
-| `responseMessage` | `String` | Yes |  |
+| `responseCode` | `Int` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
 | `status` | `String` | No |  |
 
 ### Operations
@@ -1232,19 +1232,19 @@ let outputUpdateProduct = client.OutputUpdateProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allowMultipleOrders` | `Bool` | No |  |
-| `appFormName` | `String` | No |  |
-| `contractNeeded` | `Bool` | No |  |
-| `credentialsNeeded` | `Bool` | No |  |
-| `descriptionKey` | `String` | No |  |
-| `nameKey` | `String` | No |  |
-| `prescreeningAllowed` | `Bool` | No |  |
-| `productName` | `String` | No |  |
-| `productStatus` | `String` | No |  |
-| `productUUID` | `String` | Yes |  |
-| `responseCode` | `Int` | Yes |  |
-| `responseMessage` | `String` | Yes |  |
-| `vendorName` | `String` | No |  |
+| `allowMultipleOrders` | `Bool` | No | An attribute to indicate if multiple orders are allowed |
+| `appFormName` | `String` | No | The name of the application form |
+| `contractNeeded` | `Bool` | No | An attribute to indicate if a contract is needed |
+| `credentialsNeeded` | `Bool` | No | An attribute to indicate if credentials are needed |
+| `descriptionKey` | `String` | No | The description of the product |
+| `nameKey` | `String` | No | The key of the product name |
+| `prescreeningAllowed` | `Bool` | No | An attribute to indicate if prescreening is allowed |
+| `productName` | `String` | No | The name of the product |
+| `productStatus` | `String` | No | The status of the product |
+| `productUUID` | `String` | Yes | The UUID of the product to update |
+| `responseCode` | `Int` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
+| `vendorName` | `String` | No | The name of the vendor |
 
 ### Operations
 

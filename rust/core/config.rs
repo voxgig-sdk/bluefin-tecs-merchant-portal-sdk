@@ -10,6 +10,9 @@ pub fn make_config() -> Value {
     Value::map_of([
         ("main".to_string(), Value::map_of([
             ("name".to_string(), Value::str("BluefinTecsMerchantPortal")),
+            ("slug".to_string(), Value::str("bluefin-tecs-merchant-portal")),
+            ("version".to_string(), Value::str("0.0.1")),
+            ("target".to_string(), Value::str("rust")),
         ])),
         ("feature".to_string(), Value::map_of([
             ("test".to_string(), Value::map_of([
@@ -50,152 +53,185 @@ pub fn make_config() -> Value {
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
                         ("name".to_string(), Value::str("account_number")),
+                        ("short".to_string(), Value::str("Account number provided by the acquirer.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("additional_data")),
+                        ("short".to_string(), Value::str("Arbitrary merchant-specific data related to terminal registration.")),
                         ("type".to_string(), Value::str("`$OBJECT`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("business_reg_number")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Merchant business registration number as stated in the company registry.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("city")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Merchant's address: city.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("corporateuuid")),
+                        ("short".to_string(), Value::str("Unique identifier for the corporate entity (UUID format).")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("country")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format).")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("currency")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Transaction currency (must be in \"ISO 4217\" format).")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("merchant_category_code")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Merchant category code as defined by the payment network.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("merchant_email")),
+                        ("short".to_string(), Value::str("Merchant's email address for receiving notifications.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("merchant_name")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("The officially incorporated company name of the merchant.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("merchant_phone_number")),
+                        ("short".to_string(), Value::str("Merchant's phone number for notifications.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("packageid")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Identifier of the package in the TECS processing engine provided by TECS.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("packageorderuuid")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("password")),
+                        ("short".to_string(), Value::str("Merchant password for MPOS.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("productid")),
+                        ("short".to_string(), Value::str("Identifier of the product for which terminal registration is to be performed.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("productid_acquirer")),
+                        ("short".to_string(), Value::str("Identifier of the product for which acquiring is enabled.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("reason_deactivation")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Reason for terminal deactivation.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("reason_reactivation")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Reason for terminal reactivation.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("sorting_code")),
+                        ("short".to_string(), Value::str("Sorting code provided by the acquirer.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("state")),
+                        ("short".to_string(), Value::str("Merchant's address: state.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("street")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Merchant's address: street and house number.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("terminal_country_code")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Terminal country code (must be in 'ISO-3166 ALPHA-3' format).")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("terminal_language_code")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Terminal language code (must be in 'ISO 639-1' format).")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("terminal_location")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Physical or logical location of the terminal.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("terminal_serial_number")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Terminal serial number.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("terminalid")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("TECS terminalid given by Tecs processing engine.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("terminalid_acquirer")),
+                        ("short".to_string(), Value::str("Terminal ID as set by the acquirer (optional).")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("user_email")),
+                        ("short".to_string(), Value::str("Email address of the user acting on behalf of the merchant.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("user_phone_number")),
+                        ("short".to_string(), Value::str("Phone number of the user acting on behalf of the merchant.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("username")),
+                        ("short".to_string(), Value::str("Merchant username for MPOS.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("vu_nummer")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Merchant contract number with the acquirer.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("web_shop_url")),
+                        ("short".to_string(), Value::str("URL of the merchant's web shop.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("zipcode")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Merchant's address: postal code.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -466,10 +502,12 @@ pub fn make_config() -> Value {
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("packageOrderUUID")),
+                        ("short".to_string(), Value::str("UUID of the package order.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("productOrderUUID")),
+                        ("short".to_string(), Value::str("UUID of the product order.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -577,6 +615,7 @@ pub fn make_config() -> Value {
                             ])),
                         ])),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("UUID of the package order.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -591,6 +630,7 @@ pub fn make_config() -> Value {
                                 ("type".to_string(), Value::str("`$STRING`")),
                             ])),
                         ])),
+                        ("short".to_string(), Value::str("UUID of the product order.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -915,6 +955,7 @@ pub fn make_config() -> Value {
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
                         ("name".to_string(), Value::str("additional_data")),
+                        ("short".to_string(), Value::str("Optional additional merchant-specific data related to enabling acquiring.")),
                         ("type".to_string(), Value::str("`$OBJECT`")),
                     ]),
                     Value::map_of([
@@ -924,6 +965,7 @@ pub fn make_config() -> Value {
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("city")),
+                        ("short".to_string(), Value::str("City where the merchant is located.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -934,15 +976,18 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("corporateUUID")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Unique identifier for the corporate entity.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("country")),
+                        ("short".to_string(), Value::str("Country where the merchant is located.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("currency")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Transaction currency in ISO 4217 format.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -963,6 +1008,7 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("mandator")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Mandator name assigned by TECS.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -973,23 +1019,28 @@ pub fn make_config() -> Value {
                             ])),
                         ])),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Unique identifier for the merchant within a specific system.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("merchantName")),
+                        ("short".to_string(), Value::str("Name of the merchant.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("merchant_category_code")),
+                        ("short".to_string(), Value::str("Merchant Category Code (MCC) describing the merchant’s type of business.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("packageUUID")),
+                        ("short".to_string(), Value::str("UUID of the package.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("packageorderuuid")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Unique identifier for the registered merchant in the TECS system.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -999,40 +1050,49 @@ pub fn make_config() -> Value {
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("postalCode")),
+                        ("short".to_string(), Value::str("Postal or ZIP code of the merchant’s location.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("productid_acquirer")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Identifier of the product for which acquiring is to be enabled.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("region")),
+                        ("short".to_string(), Value::str("State or province where the merchant is located.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("registrationNumber")),
+                        ("short".to_string(), Value::str("Business registration number.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("signature")),
+                        ("short".to_string(), Value::str("Signature value = saltAsHex-hashAsHex.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("street")),
+                        ("short".to_string(), Value::str("Street address of the merchant.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("terminalIds")),
+                        ("short".to_string(), Value::str("Optional list of terminal IDs for which acquiring should be activated.")),
                         ("type".to_string(), Value::str("`$ARRAY`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("terminalid_acquirer")),
+                        ("short".to_string(), Value::str("Optional terminal ID provided by the acquirer.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("vu_nummer")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Merchant contract number with the acquirer.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -1163,10 +1223,12 @@ pub fn make_config() -> Value {
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("country")),
+                        ("short".to_string(), Value::str("Country associated with the package.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("descriptionKey")),
+                        ("short".to_string(), Value::str("Key for the description of the package.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -1185,15 +1247,18 @@ pub fn make_config() -> Value {
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("nameKey")),
+                        ("short".to_string(), Value::str("Key for the name of the package.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("packageStatus")),
+                        ("short".to_string(), Value::str("Status of the package.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("packageUUID")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Unique identifier for the package.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -1402,6 +1467,7 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("reason_decline")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Reason for product decline.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -1543,21 +1609,25 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("packageUUID")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Unique identifier for the package.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("productUUIDs")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("The list of unique identifiers of the products.")),
                         ("type".to_string(), Value::str("`$ARRAY`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response code.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseMessage")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response message.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -1607,70 +1677,84 @@ pub fn make_config() -> Value {
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
                         ("name".to_string(), Value::str("acquirerId")),
+                        ("short".to_string(), Value::str("Unique identifier for the acquirer.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("allowMultipleOrders")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Indication whether multiple orders are allowed or not.")),
                         ("type".to_string(), Value::str("`$BOOLEAN`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("appFormTemplateName")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Name of the application form template.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("contractNeeded")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Indication whether contract is needed or not.")),
                         ("type".to_string(), Value::str("`$BOOLEAN`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("credentialsNeeded")),
+                        ("short".to_string(), Value::str("Indication whether credentials are needed or not.")),
                         ("type".to_string(), Value::str("`$BOOLEAN`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("descriptionKey")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Key indicator for product description.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("nameKey")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Key indicator for product name.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("prescreeningAllowed")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Indication whether prescreening is allowed or not.")),
                         ("type".to_string(), Value::str("`$BOOLEAN`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("productName")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Name of the product.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response code.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseMessage")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response message.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("terminalTemplateName")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Name of the terminal template.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("vendorName")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Name of the vendor.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("xmlTemplateFile")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("A string value containing the XML template file encoded in Base64.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -1805,11 +1889,13 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response code.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseMessage")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response message.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -1866,11 +1952,13 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response code.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseMessage")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response message.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -1981,11 +2069,13 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response code.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseMessage")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response message.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -2046,21 +2136,25 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("packageUUID")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Unique identifier for the package.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("productUUIDs")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("List of product unique identifiers.")),
                         ("type".to_string(), Value::str("`$ARRAY`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response code.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseMessage")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response message.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -2115,11 +2209,13 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response code.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseMessage")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response message.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -2176,11 +2272,13 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response code.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseMessage")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response message.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -2247,57 +2345,70 @@ pub fn make_config() -> Value {
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
                         ("name".to_string(), Value::str("allowMultipleOrders")),
+                        ("short".to_string(), Value::str("An attribute to indicate if multiple orders are allowed")),
                         ("type".to_string(), Value::str("`$BOOLEAN`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("appFormName")),
+                        ("short".to_string(), Value::str("The name of the application form")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("contractNeeded")),
+                        ("short".to_string(), Value::str("An attribute to indicate if a contract is needed")),
                         ("type".to_string(), Value::str("`$BOOLEAN`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("credentialsNeeded")),
+                        ("short".to_string(), Value::str("An attribute to indicate if credentials are needed")),
                         ("type".to_string(), Value::str("`$BOOLEAN`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("descriptionKey")),
+                        ("short".to_string(), Value::str("The description of the product")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("nameKey")),
+                        ("short".to_string(), Value::str("The key of the product name")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("prescreeningAllowed")),
+                        ("short".to_string(), Value::str("An attribute to indicate if prescreening is allowed")),
                         ("type".to_string(), Value::str("`$BOOLEAN`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("productName")),
+                        ("short".to_string(), Value::str("The name of the product")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("productStatus")),
+                        ("short".to_string(), Value::str("The status of the product")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("productUUID")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("The UUID of the product to update")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response code.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseMessage")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response message.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("vendorName")),
+                        ("short".to_string(), Value::str("The name of the vendor")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -2345,6 +2456,28 @@ pub fn make_config() -> Value {
             ])),
         ])),
     ])
+}
+
+// SHARED CONFIG (sdkgen rung L2).
+//
+// The SDK reads the config on every request and never writes to it, so one
+// instance is shared by every client rather than rebuilt per client. Above the
+// size threshold make_config re-parses the whole embedded JSON, so this is the
+// difference between parsing the model once and once per client.
+//
+// THREAD-LOCAL, not a global: Value is Rc/RefCell-backed and so is neither
+// Send nor Sync. One config per thread is the widest scope that is sound here,
+// and the clone is an Rc bump, not a deep copy.
+thread_local! {
+    static SHARED_CONFIG: Value = make_config();
+}
+
+/// The per-thread config, built once on first use.
+///
+/// The returned Value SHARES its nodes: treat it as read-only. Callers that
+/// need to mutate should use make_config, which always returns a fresh copy.
+pub fn shared_config() -> Value {
+    SHARED_CONFIG.with(|c| c.clone())
 }
 
 pub fn make_feature(name: &str) -> FeatureRef {

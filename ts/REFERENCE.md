@@ -332,39 +332,39 @@ const merchant_portal_api_controller = client.MerchantPortalApiController()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_number` | `number` | No |  |
-| `additional_data` | `Record<string, any>` | No |  |
-| `business_reg_number` | `string` | Yes |  |
-| `city` | `string` | Yes |  |
-| `corporateuuid` | `string` | No |  |
-| `country` | `string` | Yes |  |
-| `currency` | `string` | Yes |  |
-| `merchant_category_code` | `number` | Yes |  |
-| `merchant_email` | `string` | No |  |
-| `merchant_name` | `string` | Yes |  |
-| `merchant_phone_number` | `string` | No |  |
-| `packageid` | `string` | Yes |  |
-| `packageorderuuid` | `string` | Yes |  |
-| `password` | `string` | No |  |
-| `productid` | `string` | No |  |
-| `productid_acquirer` | `string` | No |  |
-| `reason_deactivation` | `string` | Yes |  |
-| `reason_reactivation` | `string` | Yes |  |
-| `sorting_code` | `number` | No |  |
-| `state` | `string` | No |  |
-| `street` | `string` | Yes |  |
-| `terminal_country_code` | `string` | Yes |  |
-| `terminal_language_code` | `string` | Yes |  |
-| `terminal_location` | `string` | Yes |  |
-| `terminal_serial_number` | `string` | Yes |  |
-| `terminalid` | `number` | Yes |  |
-| `terminalid_acquirer` | `string` | No |  |
-| `user_email` | `string` | No |  |
-| `user_phone_number` | `string` | No |  |
-| `username` | `string` | No |  |
-| `vu_nummer` | `string` | Yes |  |
-| `web_shop_url` | `string` | No |  |
-| `zipcode` | `string` | Yes |  |
+| `account_number` | `number` | No | Account number provided by the acquirer. |
+| `additional_data` | `Record<string, any>` | No | Arbitrary merchant-specific data related to terminal registration. |
+| `business_reg_number` | `string` | Yes | Merchant business registration number as stated in the company registry. |
+| `city` | `string` | Yes | Merchant's address: city. |
+| `corporateuuid` | `string` | No | Unique identifier for the corporate entity (UUID format). |
+| `country` | `string` | Yes | Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format). |
+| `currency` | `string` | Yes | Transaction currency (must be in "ISO 4217" format). |
+| `merchant_category_code` | `number` | Yes | Merchant category code as defined by the payment network. |
+| `merchant_email` | `string` | No | Merchant's email address for receiving notifications. |
+| `merchant_name` | `string` | Yes | The officially incorporated company name of the merchant. |
+| `merchant_phone_number` | `string` | No | Merchant's phone number for notifications. |
+| `packageid` | `string` | Yes | Identifier of the package in the TECS processing engine provided by TECS. |
+| `packageorderuuid` | `string` | Yes | Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call. |
+| `password` | `string` | No | Merchant password for MPOS. |
+| `productid` | `string` | No | Identifier of the product for which terminal registration is to be performed. |
+| `productid_acquirer` | `string` | No | Identifier of the product for which acquiring is enabled. |
+| `reason_deactivation` | `string` | Yes | Reason for terminal deactivation. |
+| `reason_reactivation` | `string` | Yes | Reason for terminal reactivation. |
+| `sorting_code` | `number` | No | Sorting code provided by the acquirer. |
+| `state` | `string` | No | Merchant's address: state. |
+| `street` | `string` | Yes | Merchant's address: street and house number. |
+| `terminal_country_code` | `string` | Yes | Terminal country code (must be in 'ISO-3166 ALPHA-3' format). |
+| `terminal_language_code` | `string` | Yes | Terminal language code (must be in 'ISO 639-1' format). |
+| `terminal_location` | `string` | Yes | Physical or logical location of the terminal. |
+| `terminal_serial_number` | `string` | Yes | Terminal serial number. |
+| `terminalid` | `number` | Yes | TECS terminalid given by Tecs processing engine. |
+| `terminalid_acquirer` | `string` | No | Terminal ID as set by the acquirer (optional). |
+| `user_email` | `string` | No | Email address of the user acting on behalf of the merchant. |
+| `user_phone_number` | `string` | No | Phone number of the user acting on behalf of the merchant. |
+| `username` | `string` | No | Merchant username for MPOS. |
+| `vu_nummer` | `string` | Yes | Merchant contract number with the acquirer. |
+| `web_shop_url` | `string` | No | URL of the merchant's web shop. |
+| `zipcode` | `string` | Yes | Merchant's address: postal code. |
 
 ### Operations
 
@@ -532,8 +532,8 @@ const merchant_portal_pam_document_controller = client.MerchantPortalPamDocument
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `appFormFieldDescUUID` | `string` | Yes |  |
-| `packageOrderUUID` | `string` | No |  |
-| `productOrderUUID` | `string` | No |  |
+| `packageOrderUUID` | `string` | No | UUID of the package order. |
+| `productOrderUUID` | `string` | No | UUID of the product order. |
 
 ### Operations
 
@@ -589,9 +589,9 @@ const merchant_portal_pam_form_controller = client.MerchantPortalPamFormControll
 | `filter` | `Record<string, any>` | No |  |
 | `language` | `string` | Yes |  |
 | `packageOrder` | `Record<string, any>` | No |  |
-| `packageOrderUUID` | `string` | Yes |  |
+| `packageOrderUUID` | `string` | Yes | UUID of the package order. |
 | `packageUUID` | `string` | No |  |
-| `productOrderUUID` | `string` | No |  |
+| `productOrderUUID` | `string` | No | UUID of the product order. |
 | `productOrders` | `any[]` | No |  |
 | `reasonOfReopening` | `string` | Yes |  |
 
@@ -718,32 +718,32 @@ const merchant_portal_pam_merchant_controller = client.MerchantPortalPamMerchant
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `Record<string, any>` | No |  |
+| `additional_data` | `Record<string, any>` | No | Optional additional merchant-specific data related to enabling acquiring. |
 | `businessRegistrationNumber` | `string` | Yes |  |
-| `city` | `string` | No |  |
+| `city` | `string` | No | City where the merchant is located. |
 | `companyName` | `string` | Yes |  |
-| `corporateUUID` | `string` | Yes |  |
-| `country` | `string` | No |  |
-| `currency` | `string` | Yes |  |
+| `corporateUUID` | `string` | Yes | Unique identifier for the corporate entity. |
+| `country` | `string` | No | Country where the merchant is located. |
+| `currency` | `string` | Yes | Transaction currency in ISO 4217 format. |
 | `email` | `string` | Yes |  |
 | `language` | `string` | Yes |  |
 | `login` | `string` | Yes |  |
-| `mandator` | `string` | Yes |  |
-| `merchantContractNumber` | `string` | Yes |  |
-| `merchantName` | `string` | No |  |
-| `merchant_category_code` | `string` | No |  |
-| `packageUUID` | `string` | No |  |
-| `packageorderuuid` | `string` | Yes |  |
+| `mandator` | `string` | Yes | Mandator name assigned by TECS. |
+| `merchantContractNumber` | `string` | Yes | Unique identifier for the merchant within a specific system. |
+| `merchantName` | `string` | No | Name of the merchant. |
+| `merchant_category_code` | `string` | No | Merchant Category Code (MCC) describing the merchant’s type of business. |
+| `packageUUID` | `string` | No | UUID of the package. |
+| `packageorderuuid` | `string` | Yes | Unique identifier for the registered merchant in the TECS system. |
 | `phoneNumber` | `string` | Yes |  |
-| `postalCode` | `string` | No |  |
-| `productid_acquirer` | `string` | Yes |  |
-| `region` | `string` | No |  |
-| `registrationNumber` | `string` | No |  |
-| `signature` | `string` | No |  |
-| `street` | `string` | No |  |
-| `terminalIds` | `any[]` | No |  |
-| `terminalid_acquirer` | `string` | No |  |
-| `vu_nummer` | `string` | Yes |  |
+| `postalCode` | `string` | No | Postal or ZIP code of the merchant’s location. |
+| `productid_acquirer` | `string` | Yes | Identifier of the product for which acquiring is to be enabled. |
+| `region` | `string` | No | State or province where the merchant is located. |
+| `registrationNumber` | `string` | No | Business registration number. |
+| `signature` | `string` | No | Signature value = saltAsHex-hashAsHex. |
+| `street` | `string` | No | Street address of the merchant. |
+| `terminalIds` | `any[]` | No | Optional list of terminal IDs for which acquiring should be activated. |
+| `terminalid_acquirer` | `string` | No | Optional terminal ID provided by the acquirer. |
+| `vu_nummer` | `string` | Yes | Merchant contract number with the acquirer. |
 
 ### Field Usage by Operation
 
@@ -840,13 +840,13 @@ const merchant_portal_pam_package_controller = client.MerchantPortalPamPackageCo
 | --- | --- | --- | --- |
 | `consumerUUID` | `string` | No |  |
 | `corporateUUID` | `string` | No |  |
-| `country` | `string` | No |  |
-| `descriptionKey` | `string` | No |  |
+| `country` | `string` | No | Country associated with the package. |
+| `descriptionKey` | `string` | No | Key for the description of the package. |
 | `filter` | `Record<string, any>` | No |  |
 | `language` | `string` | Yes |  |
-| `nameKey` | `string` | No |  |
-| `packageStatus` | `string` | No |  |
-| `packageUUID` | `string` | Yes |  |
+| `nameKey` | `string` | No | Key for the name of the package. |
+| `packageStatus` | `string` | No | Status of the package. |
+| `packageUUID` | `string` | Yes | Unique identifier for the package. |
 | `pagination` | `Record<string, any>` | No |  |
 | `sorting` | `Record<string, any>` | No |  |
 
@@ -925,7 +925,7 @@ const merchant_portal_pam_product_controller = client.MerchantPortalPamProductCo
 | `pagination` | `Record<string, any>` | No |  |
 | `productOrderUUID` | `string` | Yes |  |
 | `productUUID` | `string` | Yes |  |
-| `reason_decline` | `string` | Yes |  |
+| `reason_decline` | `string` | Yes | Reason for product decline. |
 | `sorting` | `Record<string, any>` | No |  |
 
 ### Operations
@@ -981,10 +981,10 @@ const output_add_product = client.OutputAddProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `packageUUID` | `string` | Yes |  |
-| `productUUIDs` | `any[]` | Yes |  |
-| `responseCode` | `number` | Yes |  |
-| `responseMessage` | `string` | Yes |  |
+| `packageUUID` | `string` | Yes | Unique identifier for the package. |
+| `productUUIDs` | `any[]` | Yes | The list of unique identifiers of the products. |
+| `responseCode` | `number` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
 
 ### Operations
 
@@ -1039,20 +1039,20 @@ const output_create_product = client.OutputCreateProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirerId` | `string` | No |  |
-| `allowMultipleOrders` | `boolean` | Yes |  |
-| `appFormTemplateName` | `string` | Yes |  |
-| `contractNeeded` | `boolean` | Yes |  |
-| `credentialsNeeded` | `boolean` | No |  |
-| `descriptionKey` | `string` | Yes |  |
-| `nameKey` | `string` | Yes |  |
-| `prescreeningAllowed` | `boolean` | Yes |  |
-| `productName` | `string` | Yes |  |
-| `responseCode` | `number` | Yes |  |
-| `responseMessage` | `string` | Yes |  |
-| `terminalTemplateName` | `string` | Yes |  |
-| `vendorName` | `string` | Yes |  |
-| `xmlTemplateFile` | `string` | Yes |  |
+| `acquirerId` | `string` | No | Unique identifier for the acquirer. |
+| `allowMultipleOrders` | `boolean` | Yes | Indication whether multiple orders are allowed or not. |
+| `appFormTemplateName` | `string` | Yes | Name of the application form template. |
+| `contractNeeded` | `boolean` | Yes | Indication whether contract is needed or not. |
+| `credentialsNeeded` | `boolean` | No | Indication whether credentials are needed or not. |
+| `descriptionKey` | `string` | Yes | Key indicator for product description. |
+| `nameKey` | `string` | Yes | Key indicator for product name. |
+| `prescreeningAllowed` | `boolean` | Yes | Indication whether prescreening is allowed or not. |
+| `productName` | `string` | Yes | Name of the product. |
+| `responseCode` | `number` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
+| `terminalTemplateName` | `string` | Yes | Name of the terminal template. |
+| `vendorName` | `string` | Yes | Name of the vendor. |
+| `xmlTemplateFile` | `string` | Yes | A string value containing the XML template file encoded in Base64. |
 
 ### Operations
 
@@ -1169,8 +1169,8 @@ const output_list = client.OutputList()
 | --- | --- | --- | --- |
 | `items` | `any[]` | No |  |
 | `pagination` | `Record<string, any>` | Yes |  |
-| `responseCode` | `number` | Yes |  |
-| `responseMessage` | `string` | Yes |  |
+| `responseCode` | `number` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
 | `sorting` | `Record<string, any>` | No |  |
 
 ### Field Usage by Operation
@@ -1235,8 +1235,8 @@ const output_message = client.OutputMessage()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `responseCode` | `number` | Yes |  |
-| `responseMessage` | `string` | Yes |  |
+| `responseCode` | `number` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
 
 ### Operations
 
@@ -1287,8 +1287,8 @@ const output_move_tid = client.OutputMoveTid()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `productOrderUUIDs` | `any[]` | Yes |  |
-| `responseCode` | `number` | Yes |  |
-| `responseMessage` | `string` | Yes |  |
+| `responseCode` | `number` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
 | `targetPackageOrderUUID` | `string` | Yes |  |
 | `targetProductOrderUUID` | `string` | Yes |  |
 
@@ -1346,10 +1346,10 @@ const output_remove_product = client.OutputRemoveProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `packageUUID` | `string` | Yes |  |
-| `productUUIDs` | `any[]` | Yes |  |
-| `responseCode` | `number` | Yes |  |
-| `responseMessage` | `string` | Yes |  |
+| `packageUUID` | `string` | Yes | Unique identifier for the package. |
+| `productUUIDs` | `any[]` | Yes | List of product unique identifiers. |
+| `responseCode` | `number` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
 
 ### Operations
 
@@ -1405,8 +1405,8 @@ const output_start = client.OutputStart()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `string` | No |  |
-| `responseCode` | `number` | Yes |  |
-| `responseMessage` | `string` | Yes |  |
+| `responseCode` | `number` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
 
 ### Operations
 
@@ -1460,8 +1460,8 @@ const output_status = client.OutputStatus()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `number` | No |  |
-| `responseCode` | `number` | Yes |  |
-| `responseMessage` | `string` | Yes |  |
+| `responseCode` | `number` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
 | `status` | `string` | No |  |
 
 ### Operations
@@ -1512,19 +1512,19 @@ const output_update_product = client.OutputUpdateProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allowMultipleOrders` | `boolean` | No |  |
-| `appFormName` | `string` | No |  |
-| `contractNeeded` | `boolean` | No |  |
-| `credentialsNeeded` | `boolean` | No |  |
-| `descriptionKey` | `string` | No |  |
-| `nameKey` | `string` | No |  |
-| `prescreeningAllowed` | `boolean` | No |  |
-| `productName` | `string` | No |  |
-| `productStatus` | `string` | No |  |
-| `productUUID` | `string` | Yes |  |
-| `responseCode` | `number` | Yes |  |
-| `responseMessage` | `string` | Yes |  |
-| `vendorName` | `string` | No |  |
+| `allowMultipleOrders` | `boolean` | No | An attribute to indicate if multiple orders are allowed |
+| `appFormName` | `string` | No | The name of the application form |
+| `contractNeeded` | `boolean` | No | An attribute to indicate if a contract is needed |
+| `credentialsNeeded` | `boolean` | No | An attribute to indicate if credentials are needed |
+| `descriptionKey` | `string` | No | The description of the product |
+| `nameKey` | `string` | No | The key of the product name |
+| `prescreeningAllowed` | `boolean` | No | An attribute to indicate if prescreening is allowed |
+| `productName` | `string` | No | The name of the product |
+| `productStatus` | `string` | No | The status of the product |
+| `productUUID` | `string` | Yes | The UUID of the product to update |
+| `responseCode` | `number` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
+| `vendorName` | `string` | No | The name of the vendor |
 
 ### Operations
 

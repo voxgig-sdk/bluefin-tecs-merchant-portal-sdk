@@ -50,152 +50,185 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("account_number") },
+                        .{ "short", h.vstr("Account number provided by the acquirer.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("additional_data") },
+                        .{ "short", h.vstr("Arbitrary merchant-specific data related to terminal registration.") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("business_reg_number") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Merchant business registration number as stated in the company registry.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("city") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Merchant's address: city.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("corporateuuid") },
+                        .{ "short", h.vstr("Unique identifier for the corporate entity (UUID format).") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("country") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format).") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("currency") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Transaction currency (must be in \"ISO 4217\" format).") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("merchant_category_code") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Merchant category code as defined by the payment network.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("merchant_email") },
+                        .{ "short", h.vstr("Merchant's email address for receiving notifications.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("merchant_name") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("The officially incorporated company name of the merchant.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("merchant_phone_number") },
+                        .{ "short", h.vstr("Merchant's phone number for notifications.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageid") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Identifier of the package in the TECS processing engine provided by TECS.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageorderuuid") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("password") },
+                        .{ "short", h.vstr("Merchant password for MPOS.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productid") },
+                        .{ "short", h.vstr("Identifier of the product for which terminal registration is to be performed.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productid_acquirer") },
+                        .{ "short", h.vstr("Identifier of the product for which acquiring is enabled.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("reason_deactivation") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Reason for terminal deactivation.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("reason_reactivation") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Reason for terminal reactivation.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("sorting_code") },
+                        .{ "short", h.vstr("Sorting code provided by the acquirer.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("state") },
+                        .{ "short", h.vstr("Merchant's address: state.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("street") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Merchant's address: street and house number.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminal_country_code") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Terminal country code (must be in 'ISO-3166 ALPHA-3' format).") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminal_language_code") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Terminal language code (must be in 'ISO 639-1' format).") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminal_location") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Physical or logical location of the terminal.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminal_serial_number") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Terminal serial number.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminalid") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("TECS terminalid given by Tecs processing engine.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminalid_acquirer") },
+                        .{ "short", h.vstr("Terminal ID as set by the acquirer (optional).") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("user_email") },
+                        .{ "short", h.vstr("Email address of the user acting on behalf of the merchant.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("user_phone_number") },
+                        .{ "short", h.vstr("Phone number of the user acting on behalf of the merchant.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("username") },
+                        .{ "short", h.vstr("Merchant username for MPOS.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("vu_nummer") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Merchant contract number with the acquirer.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("web_shop_url") },
+                        .{ "short", h.vstr("URL of the merchant's web shop.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("zipcode") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Merchant's address: postal code.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -466,10 +499,12 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageOrderUUID") },
+                        .{ "short", h.vstr("UUID of the package order.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productOrderUUID") },
+                        .{ "short", h.vstr("UUID of the product order.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -577,6 +612,7 @@ pub fn make_config() Value {
                             }) },
                         }) },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("UUID of the package order.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -591,6 +627,7 @@ pub fn make_config() Value {
                                 .{ "type", h.vstr("`$STRING`") },
                             }) },
                         }) },
+                        .{ "short", h.vstr("UUID of the product order.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -915,6 +952,7 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("additional_data") },
+                        .{ "short", h.vstr("Optional additional merchant-specific data related to enabling acquiring.") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
@@ -924,6 +962,7 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("city") },
+                        .{ "short", h.vstr("City where the merchant is located.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -934,15 +973,18 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("corporateUUID") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Unique identifier for the corporate entity.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("country") },
+                        .{ "short", h.vstr("Country where the merchant is located.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("currency") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Transaction currency in ISO 4217 format.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -963,6 +1005,7 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("mandator") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Mandator name assigned by TECS.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -973,23 +1016,28 @@ pub fn make_config() Value {
                             }) },
                         }) },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Unique identifier for the merchant within a specific system.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("merchantName") },
+                        .{ "short", h.vstr("Name of the merchant.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("merchant_category_code") },
+                        .{ "short", h.vstr("Merchant Category Code (MCC) describing the merchant’s type of business.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageUUID") },
+                        .{ "short", h.vstr("UUID of the package.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageorderuuid") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Unique identifier for the registered merchant in the TECS system.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -999,40 +1047,49 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("postalCode") },
+                        .{ "short", h.vstr("Postal or ZIP code of the merchant’s location.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productid_acquirer") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Identifier of the product for which acquiring is to be enabled.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("region") },
+                        .{ "short", h.vstr("State or province where the merchant is located.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("registrationNumber") },
+                        .{ "short", h.vstr("Business registration number.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("signature") },
+                        .{ "short", h.vstr("Signature value = saltAsHex-hashAsHex.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("street") },
+                        .{ "short", h.vstr("Street address of the merchant.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminalIds") },
+                        .{ "short", h.vstr("Optional list of terminal IDs for which acquiring should be activated.") },
                         .{ "type", h.vstr("`$ARRAY`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminalid_acquirer") },
+                        .{ "short", h.vstr("Optional terminal ID provided by the acquirer.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("vu_nummer") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Merchant contract number with the acquirer.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -1163,10 +1220,12 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("country") },
+                        .{ "short", h.vstr("Country associated with the package.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("descriptionKey") },
+                        .{ "short", h.vstr("Key for the description of the package.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -1185,15 +1244,18 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("nameKey") },
+                        .{ "short", h.vstr("Key for the name of the package.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageStatus") },
+                        .{ "short", h.vstr("Status of the package.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageUUID") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Unique identifier for the package.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -1402,6 +1464,7 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("reason_decline") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Reason for product decline.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -1543,21 +1606,25 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("packageUUID") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Unique identifier for the package.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productUUIDs") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("The list of unique identifiers of the products.") },
                         .{ "type", h.vstr("`$ARRAY`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response code.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response message.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -1607,70 +1674,84 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("acquirerId") },
+                        .{ "short", h.vstr("Unique identifier for the acquirer.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("allowMultipleOrders") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Indication whether multiple orders are allowed or not.") },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("appFormTemplateName") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Name of the application form template.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("contractNeeded") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Indication whether contract is needed or not.") },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("credentialsNeeded") },
+                        .{ "short", h.vstr("Indication whether credentials are needed or not.") },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("descriptionKey") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Key indicator for product description.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("nameKey") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Key indicator for product name.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("prescreeningAllowed") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Indication whether prescreening is allowed or not.") },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productName") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Name of the product.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response code.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response message.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminalTemplateName") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Name of the terminal template.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("vendorName") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Name of the vendor.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("xmlTemplateFile") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("A string value containing the XML template file encoded in Base64.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -1805,11 +1886,13 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response code.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response message.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -1866,11 +1949,13 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response code.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response message.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -1981,11 +2066,13 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response code.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response message.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -2046,21 +2133,25 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("packageUUID") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Unique identifier for the package.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productUUIDs") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("List of product unique identifiers.") },
                         .{ "type", h.vstr("`$ARRAY`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response code.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response message.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -2115,11 +2206,13 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response code.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response message.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -2176,11 +2269,13 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response code.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response message.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -2247,57 +2342,70 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("allowMultipleOrders") },
+                        .{ "short", h.vstr("An attribute to indicate if multiple orders are allowed") },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("appFormName") },
+                        .{ "short", h.vstr("The name of the application form") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("contractNeeded") },
+                        .{ "short", h.vstr("An attribute to indicate if a contract is needed") },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("credentialsNeeded") },
+                        .{ "short", h.vstr("An attribute to indicate if credentials are needed") },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("descriptionKey") },
+                        .{ "short", h.vstr("The description of the product") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("nameKey") },
+                        .{ "short", h.vstr("The key of the product name") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("prescreeningAllowed") },
+                        .{ "short", h.vstr("An attribute to indicate if prescreening is allowed") },
                         .{ "type", h.vstr("`$BOOLEAN`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productName") },
+                        .{ "short", h.vstr("The name of the product") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productStatus") },
+                        .{ "short", h.vstr("The status of the product") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productUUID") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("The UUID of the product to update") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response code.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response message.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("vendorName") },
+                        .{ "short", h.vstr("The name of the vendor") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -2345,6 +2453,28 @@ pub fn make_config() Value {
             }) },
         }) },
     });
+}
+
+// SHARED CONFIG (sdkgen rung L2).
+//
+// The SDK reads the config on every request and never writes to it, so one
+// instance is shared by every client rather than rebuilt per client. Above the
+// size threshold make_config re-parses the whole embedded JSON, so this is the
+// difference between parsing the model once and once per client.
+//
+// Value nodes are arena-allocated and reference-stable, so the shared value is
+// genuinely one structure, not a copy.
+var shared_config_val: ?Value = null;
+
+/// The process-wide config, built once on first use.
+///
+/// The returned Value SHARES its nodes: treat it as read-only. Callers that
+/// need to mutate should use make_config, which always returns a fresh copy.
+pub fn shared_config() Value {
+    if (shared_config_val) |c| return c;
+    const c = make_config();
+    shared_config_val = c;
+    return c;
 }
 
 pub fn make_feature(name: []const u8) Feature {

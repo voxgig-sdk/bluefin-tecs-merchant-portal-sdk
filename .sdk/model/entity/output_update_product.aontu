@@ -8,66 +8,79 @@ main: kit: entity: output_update_product: {
     {
       name: "allowMultipleOrders"
       req: false
+      short: "An attribute to indicate if multiple orders are allowed"
       type: "`$BOOLEAN`"
     }
     {
       name: "appFormName"
       req: false
+      short: "The name of the application form"
       type: "`$STRING`"
     }
     {
       name: "contractNeeded"
       req: false
+      short: "An attribute to indicate if a contract is needed"
       type: "`$BOOLEAN`"
     }
     {
       name: "credentialsNeeded"
       req: false
+      short: "An attribute to indicate if credentials are needed"
       type: "`$BOOLEAN`"
     }
     {
       name: "descriptionKey"
       req: false
+      short: "The description of the product"
       type: "`$STRING`"
     }
     {
       name: "nameKey"
       req: false
+      short: "The key of the product name"
       type: "`$STRING`"
     }
     {
       name: "prescreeningAllowed"
       req: false
+      short: "An attribute to indicate if prescreening is allowed"
       type: "`$BOOLEAN`"
     }
     {
       name: "productName"
       req: false
+      short: "The name of the product"
       type: "`$STRING`"
     }
     {
       name: "productStatus"
       req: false
+      short: "The status of the product"
       type: "`$STRING`"
     }
     {
       name: "productUUID"
       req: true
+      short: "The UUID of the product to update"
       type: "`$STRING`"
     }
     {
       name: "responseCode"
       req: true
+      short: "Response code."
       type: "`$INTEGER`"
     }
     {
       name: "responseMessage"
       req: true
+      short: "Response message."
       type: "`$STRING`"
     }
     {
       name: "vendorName"
       req: false
+      short: "The name of the vendor"
       type: "`$STRING`"
     }
   ]

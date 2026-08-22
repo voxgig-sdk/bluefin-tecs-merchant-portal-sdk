@@ -162,39 +162,39 @@ auto merchant_portal_api_controller = client->merchant_portal_api_controller();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_number` | `int64_t` | No |  |
-| `additional_data` | `std::map<std::string, Value>` | No |  |
-| `business_reg_number` | `std::string` | Yes |  |
-| `city` | `std::string` | Yes |  |
-| `corporateuuid` | `std::string` | No |  |
-| `country` | `std::string` | Yes |  |
-| `currency` | `std::string` | Yes |  |
-| `merchant_category_code` | `int64_t` | Yes |  |
-| `merchant_email` | `std::string` | No |  |
-| `merchant_name` | `std::string` | Yes |  |
-| `merchant_phone_number` | `std::string` | No |  |
-| `packageid` | `std::string` | Yes |  |
-| `packageorderuuid` | `std::string` | Yes |  |
-| `password` | `std::string` | No |  |
-| `productid` | `std::string` | No |  |
-| `productid_acquirer` | `std::string` | No |  |
-| `reason_deactivation` | `std::string` | Yes |  |
-| `reason_reactivation` | `std::string` | Yes |  |
-| `sorting_code` | `int64_t` | No |  |
-| `state` | `std::string` | No |  |
-| `street` | `std::string` | Yes |  |
-| `terminal_country_code` | `std::string` | Yes |  |
-| `terminal_language_code` | `std::string` | Yes |  |
-| `terminal_location` | `std::string` | Yes |  |
-| `terminal_serial_number` | `std::string` | Yes |  |
-| `terminalid` | `int64_t` | Yes |  |
-| `terminalid_acquirer` | `std::string` | No |  |
-| `user_email` | `std::string` | No |  |
-| `user_phone_number` | `std::string` | No |  |
-| `username` | `std::string` | No |  |
-| `vu_nummer` | `std::string` | Yes |  |
-| `web_shop_url` | `std::string` | No |  |
-| `zipcode` | `std::string` | Yes |  |
+| `account_number` | `int64_t` | No | Account number provided by the acquirer. |
+| `additional_data` | `std::map<std::string, Value>` | No | Arbitrary merchant-specific data related to terminal registration. |
+| `business_reg_number` | `std::string` | Yes | Merchant business registration number as stated in the company registry. |
+| `city` | `std::string` | Yes | Merchant's address: city. |
+| `corporateuuid` | `std::string` | No | Unique identifier for the corporate entity (UUID format). |
+| `country` | `std::string` | Yes | Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format). |
+| `currency` | `std::string` | Yes | Transaction currency (must be in "ISO 4217" format). |
+| `merchant_category_code` | `int64_t` | Yes | Merchant category code as defined by the payment network. |
+| `merchant_email` | `std::string` | No | Merchant's email address for receiving notifications. |
+| `merchant_name` | `std::string` | Yes | The officially incorporated company name of the merchant. |
+| `merchant_phone_number` | `std::string` | No | Merchant's phone number for notifications. |
+| `packageid` | `std::string` | Yes | Identifier of the package in the TECS processing engine provided by TECS. |
+| `packageorderuuid` | `std::string` | Yes | Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call. |
+| `password` | `std::string` | No | Merchant password for MPOS. |
+| `productid` | `std::string` | No | Identifier of the product for which terminal registration is to be performed. |
+| `productid_acquirer` | `std::string` | No | Identifier of the product for which acquiring is enabled. |
+| `reason_deactivation` | `std::string` | Yes | Reason for terminal deactivation. |
+| `reason_reactivation` | `std::string` | Yes | Reason for terminal reactivation. |
+| `sorting_code` | `int64_t` | No | Sorting code provided by the acquirer. |
+| `state` | `std::string` | No | Merchant's address: state. |
+| `street` | `std::string` | Yes | Merchant's address: street and house number. |
+| `terminal_country_code` | `std::string` | Yes | Terminal country code (must be in 'ISO-3166 ALPHA-3' format). |
+| `terminal_language_code` | `std::string` | Yes | Terminal language code (must be in 'ISO 639-1' format). |
+| `terminal_location` | `std::string` | Yes | Physical or logical location of the terminal. |
+| `terminal_serial_number` | `std::string` | Yes | Terminal serial number. |
+| `terminalid` | `int64_t` | Yes | TECS terminalid given by Tecs processing engine. |
+| `terminalid_acquirer` | `std::string` | No | Terminal ID as set by the acquirer (optional). |
+| `user_email` | `std::string` | No | Email address of the user acting on behalf of the merchant. |
+| `user_phone_number` | `std::string` | No | Phone number of the user acting on behalf of the merchant. |
+| `username` | `std::string` | No | Merchant username for MPOS. |
+| `vu_nummer` | `std::string` | Yes | Merchant contract number with the acquirer. |
+| `web_shop_url` | `std::string` | No | URL of the merchant's web shop. |
+| `zipcode` | `std::string` | Yes | Merchant's address: postal code. |
 
 ### Operations
 
@@ -341,8 +341,8 @@ auto merchant_portal_pam_document_controller = client->merchant_portal_pam_docum
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `appFormFieldDescUUID` | `std::string` | Yes |  |
-| `packageOrderUUID` | `std::string` | No |  |
-| `productOrderUUID` | `std::string` | No |  |
+| `packageOrderUUID` | `std::string` | No | UUID of the package order. |
+| `productOrderUUID` | `std::string` | No | UUID of the product order. |
 
 ### Operations
 
@@ -391,9 +391,9 @@ auto merchant_portal_pam_form_controller = client->merchant_portal_pam_form_cont
 | `filter` | `std::map<std::string, Value>` | No |  |
 | `language` | `std::string` | Yes |  |
 | `packageOrder` | `std::map<std::string, Value>` | No |  |
-| `packageOrderUUID` | `std::string` | Yes |  |
+| `packageOrderUUID` | `std::string` | Yes | UUID of the package order. |
 | `packageUUID` | `std::string` | No |  |
-| `productOrderUUID` | `std::string` | No |  |
+| `productOrderUUID` | `std::string` | No | UUID of the product order. |
 | `productOrders` | `std::vector<Value>` | No |  |
 | `reasonOfReopening` | `std::string` | Yes |  |
 
@@ -506,32 +506,32 @@ auto merchant_portal_pam_merchant_controller = client->merchant_portal_pam_merch
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `std::map<std::string, Value>` | No |  |
+| `additional_data` | `std::map<std::string, Value>` | No | Optional additional merchant-specific data related to enabling acquiring. |
 | `businessRegistrationNumber` | `std::string` | Yes |  |
-| `city` | `std::string` | No |  |
+| `city` | `std::string` | No | City where the merchant is located. |
 | `companyName` | `std::string` | Yes |  |
-| `corporateUUID` | `std::string` | Yes |  |
-| `country` | `std::string` | No |  |
-| `currency` | `std::string` | Yes |  |
+| `corporateUUID` | `std::string` | Yes | Unique identifier for the corporate entity. |
+| `country` | `std::string` | No | Country where the merchant is located. |
+| `currency` | `std::string` | Yes | Transaction currency in ISO 4217 format. |
 | `email` | `std::string` | Yes |  |
 | `language` | `std::string` | Yes |  |
 | `login` | `std::string` | Yes |  |
-| `mandator` | `std::string` | Yes |  |
-| `merchantContractNumber` | `std::string` | Yes |  |
-| `merchantName` | `std::string` | No |  |
-| `merchant_category_code` | `std::string` | No |  |
-| `packageUUID` | `std::string` | No |  |
-| `packageorderuuid` | `std::string` | Yes |  |
+| `mandator` | `std::string` | Yes | Mandator name assigned by TECS. |
+| `merchantContractNumber` | `std::string` | Yes | Unique identifier for the merchant within a specific system. |
+| `merchantName` | `std::string` | No | Name of the merchant. |
+| `merchant_category_code` | `std::string` | No | Merchant Category Code (MCC) describing the merchant’s type of business. |
+| `packageUUID` | `std::string` | No | UUID of the package. |
+| `packageorderuuid` | `std::string` | Yes | Unique identifier for the registered merchant in the TECS system. |
 | `phoneNumber` | `std::string` | Yes |  |
-| `postalCode` | `std::string` | No |  |
-| `productid_acquirer` | `std::string` | Yes |  |
-| `region` | `std::string` | No |  |
-| `registrationNumber` | `std::string` | No |  |
-| `signature` | `std::string` | No |  |
-| `street` | `std::string` | No |  |
-| `terminalIds` | `std::vector<Value>` | No |  |
-| `terminalid_acquirer` | `std::string` | No |  |
-| `vu_nummer` | `std::string` | Yes |  |
+| `postalCode` | `std::string` | No | Postal or ZIP code of the merchant’s location. |
+| `productid_acquirer` | `std::string` | Yes | Identifier of the product for which acquiring is to be enabled. |
+| `region` | `std::string` | No | State or province where the merchant is located. |
+| `registrationNumber` | `std::string` | No | Business registration number. |
+| `signature` | `std::string` | No | Signature value = saltAsHex-hashAsHex. |
+| `street` | `std::string` | No | Street address of the merchant. |
+| `terminalIds` | `std::vector<Value>` | No | Optional list of terminal IDs for which acquiring should be activated. |
+| `terminalid_acquirer` | `std::string` | No | Optional terminal ID provided by the acquirer. |
+| `vu_nummer` | `std::string` | Yes | Merchant contract number with the acquirer. |
 
 ### Field Usage by Operation
 
@@ -621,13 +621,13 @@ auto merchant_portal_pam_package_controller = client->merchant_portal_pam_packag
 | --- | --- | --- | --- |
 | `consumerUUID` | `std::string` | No |  |
 | `corporateUUID` | `std::string` | No |  |
-| `country` | `std::string` | No |  |
-| `descriptionKey` | `std::string` | No |  |
+| `country` | `std::string` | No | Country associated with the package. |
+| `descriptionKey` | `std::string` | No | Key for the description of the package. |
 | `filter` | `std::map<std::string, Value>` | No |  |
 | `language` | `std::string` | Yes |  |
-| `nameKey` | `std::string` | No |  |
-| `packageStatus` | `std::string` | No |  |
-| `packageUUID` | `std::string` | Yes |  |
+| `nameKey` | `std::string` | No | Key for the name of the package. |
+| `packageStatus` | `std::string` | No | Status of the package. |
+| `packageUUID` | `std::string` | Yes | Unique identifier for the package. |
 | `pagination` | `std::map<std::string, Value>` | No |  |
 | `sorting` | `std::map<std::string, Value>` | No |  |
 
@@ -699,7 +699,7 @@ auto merchant_portal_pam_product_controller = client->merchant_portal_pam_produc
 | `pagination` | `std::map<std::string, Value>` | No |  |
 | `productOrderUUID` | `std::string` | Yes |  |
 | `productUUID` | `std::string` | Yes |  |
-| `reason_decline` | `std::string` | Yes |  |
+| `reason_decline` | `std::string` | Yes | Reason for product decline. |
 | `sorting` | `std::map<std::string, Value>` | No |  |
 
 ### Operations
@@ -748,10 +748,10 @@ auto output_add_product = client->output_add_product();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `packageUUID` | `std::string` | Yes |  |
-| `productUUIDs` | `std::vector<Value>` | Yes |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `std::string` | Yes |  |
+| `packageUUID` | `std::string` | Yes | Unique identifier for the package. |
+| `productUUIDs` | `std::vector<Value>` | Yes | The list of unique identifiers of the products. |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `std::string` | Yes | Response message. |
 
 ### Operations
 
@@ -799,20 +799,20 @@ auto output_create_product = client->output_create_product();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirerId` | `std::string` | No |  |
-| `allowMultipleOrders` | `bool` | Yes |  |
-| `appFormTemplateName` | `std::string` | Yes |  |
-| `contractNeeded` | `bool` | Yes |  |
-| `credentialsNeeded` | `bool` | No |  |
-| `descriptionKey` | `std::string` | Yes |  |
-| `nameKey` | `std::string` | Yes |  |
-| `prescreeningAllowed` | `bool` | Yes |  |
-| `productName` | `std::string` | Yes |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `std::string` | Yes |  |
-| `terminalTemplateName` | `std::string` | Yes |  |
-| `vendorName` | `std::string` | Yes |  |
-| `xmlTemplateFile` | `std::string` | Yes |  |
+| `acquirerId` | `std::string` | No | Unique identifier for the acquirer. |
+| `allowMultipleOrders` | `bool` | Yes | Indication whether multiple orders are allowed or not. |
+| `appFormTemplateName` | `std::string` | Yes | Name of the application form template. |
+| `contractNeeded` | `bool` | Yes | Indication whether contract is needed or not. |
+| `credentialsNeeded` | `bool` | No | Indication whether credentials are needed or not. |
+| `descriptionKey` | `std::string` | Yes | Key indicator for product description. |
+| `nameKey` | `std::string` | Yes | Key indicator for product name. |
+| `prescreeningAllowed` | `bool` | Yes | Indication whether prescreening is allowed or not. |
+| `productName` | `std::string` | Yes | Name of the product. |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `std::string` | Yes | Response message. |
+| `terminalTemplateName` | `std::string` | Yes | Name of the terminal template. |
+| `vendorName` | `std::string` | Yes | Name of the vendor. |
+| `xmlTemplateFile` | `std::string` | Yes | A string value containing the XML template file encoded in Base64. |
 
 ### Operations
 
@@ -915,8 +915,8 @@ auto output_list = client->output_list();
 | --- | --- | --- | --- |
 | `items` | `std::vector<Value>` | No |  |
 | `pagination` | `std::map<std::string, Value>` | Yes |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `std::string` | Yes | Response message. |
 | `sorting` | `std::map<std::string, Value>` | No |  |
 
 ### Field Usage by Operation
@@ -974,8 +974,8 @@ auto output_message = client->output_message();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `std::string` | Yes | Response message. |
 
 ### Operations
 
@@ -1019,8 +1019,8 @@ auto output_move_tid = client->output_move_tid();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `productOrderUUIDs` | `std::vector<Value>` | Yes |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `std::string` | Yes | Response message. |
 | `targetPackageOrderUUID` | `std::string` | Yes |  |
 | `targetProductOrderUUID` | `std::string` | Yes |  |
 
@@ -1071,10 +1071,10 @@ auto output_remove_product = client->output_remove_product();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `packageUUID` | `std::string` | Yes |  |
-| `productUUIDs` | `std::vector<Value>` | Yes |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `std::string` | Yes |  |
+| `packageUUID` | `std::string` | Yes | Unique identifier for the package. |
+| `productUUIDs` | `std::vector<Value>` | Yes | List of product unique identifiers. |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `std::string` | Yes | Response message. |
 
 ### Operations
 
@@ -1123,8 +1123,8 @@ auto output_start = client->output_start();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `id` | `std::string` | No |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `std::string` | Yes | Response message. |
 
 ### Operations
 
@@ -1171,8 +1171,8 @@ auto output_status = client->output_status();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `percentage` | `int64_t` | No |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `std::string` | Yes | Response message. |
 | `status` | `std::string` | No |  |
 
 ### Operations
@@ -1216,19 +1216,19 @@ auto output_update_product = client->output_update_product();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `allowMultipleOrders` | `bool` | No |  |
-| `appFormName` | `std::string` | No |  |
-| `contractNeeded` | `bool` | No |  |
-| `credentialsNeeded` | `bool` | No |  |
-| `descriptionKey` | `std::string` | No |  |
-| `nameKey` | `std::string` | No |  |
-| `prescreeningAllowed` | `bool` | No |  |
-| `productName` | `std::string` | No |  |
-| `productStatus` | `std::string` | No |  |
-| `productUUID` | `std::string` | Yes |  |
-| `responseCode` | `int64_t` | Yes |  |
-| `responseMessage` | `std::string` | Yes |  |
-| `vendorName` | `std::string` | No |  |
+| `allowMultipleOrders` | `bool` | No | An attribute to indicate if multiple orders are allowed |
+| `appFormName` | `std::string` | No | The name of the application form |
+| `contractNeeded` | `bool` | No | An attribute to indicate if a contract is needed |
+| `credentialsNeeded` | `bool` | No | An attribute to indicate if credentials are needed |
+| `descriptionKey` | `std::string` | No | The description of the product |
+| `nameKey` | `std::string` | No | The key of the product name |
+| `prescreeningAllowed` | `bool` | No | An attribute to indicate if prescreening is allowed |
+| `productName` | `std::string` | No | The name of the product |
+| `productStatus` | `std::string` | No | The status of the product |
+| `productUUID` | `std::string` | Yes | The UUID of the product to update |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `std::string` | Yes | Response message. |
+| `vendorName` | `std::string` | No | The name of the vendor |
 
 ### Operations
 
