@@ -5,7 +5,7 @@
 
 import java.util.{ArrayList, LinkedHashMap, List => JList, Map => JMap}
 
-import voxgig.bluefintecsmerchantportalsdk.core.{Helpers, BluefinTecsMerchantPortalSDK}
+import voxgig.bluefintecsmerchantportalsdk.core.{Helpers, SdkEntity, BluefinTecsMerchantPortalSDK}
 import voxgig.bluefintecsmerchantportalsdk.utility.struct.Struct
 
 object MerchantPortalPamMerchantControllerEntityTest {
