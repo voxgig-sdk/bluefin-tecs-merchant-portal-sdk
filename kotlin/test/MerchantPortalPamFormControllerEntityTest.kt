@@ -31,7 +31,7 @@ class MerchantPortalPamFormControllerEntityTest {
     val setup = merchantPortalPamFormControllerBasicSetup(null)
     // Per-op sdk-test-control.json skip.
     val mode = if (setup.live) "live" else "unit"
-    for (op in arrayOf("create")) {
+    for (op in arrayOf<String>("create")) {
       val reason = RunnerSupport.skipReason("entityOp", "merchant_portal_pam_form_controller.$op", mode)
       Assumptions.assumeTrue(
         reason == null,

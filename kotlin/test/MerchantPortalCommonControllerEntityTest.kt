@@ -31,7 +31,7 @@ class MerchantPortalCommonControllerEntityTest {
     val setup = merchantPortalCommonControllerBasicSetup(null)
     // Per-op sdk-test-control.json skip.
     val mode = if (setup.live) "live" else "unit"
-    for (op in arrayOf("load")) {
+    for (op in arrayOf<String>("load")) {
       val reason = RunnerSupport.skipReason("entityOp", "merchant_portal_common_controller.$op", mode)
       Assumptions.assumeTrue(
         reason == null,

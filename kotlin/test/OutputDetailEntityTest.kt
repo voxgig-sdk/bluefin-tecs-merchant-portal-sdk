@@ -31,7 +31,7 @@ class OutputDetailEntityTest {
     val setup = outputDetailBasicSetup(null)
     // Per-op sdk-test-control.json skip.
     val mode = if (setup.live) "live" else "unit"
-    for (op in arrayOf("load")) {
+    for (op in arrayOf<String>("load")) {
       val reason = RunnerSupport.skipReason("entityOp", "output_detail.$op", mode)
       Assumptions.assumeTrue(
         reason == null,
