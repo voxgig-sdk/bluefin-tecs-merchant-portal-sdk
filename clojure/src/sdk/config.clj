@@ -1796,9 +1796,13 @@
     "feature" (vs/jm
       "test" (vs/jm
         "options" (vs/jm
-          "active" false)))
+          "active" false)
+        "transport" "base"))
     "main" (vs/jm
-      "name" "BluefinTecsMerchantPortal")
+      "name" "BluefinTecsMerchantPortal"
+      "slug" "bluefin-tecs-merchant-portal"
+      "target" "clojure"
+      "version" "0.1.1")
     "options" (vs/jm
       "base" "https://test.tecs.at"
       "entity" (vs/jm

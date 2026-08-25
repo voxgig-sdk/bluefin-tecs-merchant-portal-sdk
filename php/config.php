@@ -42,6 +42,7 @@ class BluefinTecsMerchantPortalConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
