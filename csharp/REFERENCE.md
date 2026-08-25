@@ -899,6 +899,7 @@ var outputDetail = client.OutputDetail();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `Dictionary<string, object?>` | No |  |
+| `id` | `string` | No |  |
 | `lines` | `Dictionary<string, object?>` | No |  |
 | `progress` | `Dictionary<string, object?>` | No |  |
 
@@ -1005,6 +1006,7 @@ var outputMessage = client.OutputMessage();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `responseCode` | `long` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |
 
@@ -1204,6 +1206,7 @@ var outputStatus = client.OutputStatus();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `percentage` | `long` | No |  |
 | `responseCode` | `long` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |

@@ -59,9 +59,12 @@ describe('OutputMessageEntity', async () => {
 
     let output_message_ref01_data = Object.values(setup.data.existing.output_message)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const output_message_ref01_ent = client.OutputMessage()
+    const output_message_ref01_match_dt0: any = {}
+    output_message_ref01_match_dt0.id = output_message_ref01_data.id
+    const output_message_ref01_data_dt0 = (await output_message_ref01_ent.load(output_message_ref01_match_dt0)).data()
+    assert(output_message_ref01_data_dt0.id === output_message_ref01_data.id)
 
 
   })

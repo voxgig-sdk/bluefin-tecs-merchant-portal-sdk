@@ -59,9 +59,12 @@ describe('OutputDetailEntity', async () => {
 
     let output_detail_ref01_data = Object.values(setup.data.existing.output_detail)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const output_detail_ref01_ent = client.OutputDetail()
+    const output_detail_ref01_match_dt0: any = {}
+    output_detail_ref01_match_dt0.id = output_detail_ref01_data.id
+    const output_detail_ref01_data_dt0 = (await output_detail_ref01_ent.load(output_detail_ref01_match_dt0)).data()
+    assert(output_detail_ref01_data_dt0.id === output_detail_ref01_data.id)
 
 
   })

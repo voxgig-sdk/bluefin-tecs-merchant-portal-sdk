@@ -41,9 +41,13 @@ class OutputMessageEntityTest < Minitest::Test
 
     # LOAD
     output_message_ref01_ent = client.OutputMessage(nil)
-    output_message_ref01_match_dt0 = {}
+    output_message_ref01_match_dt0 = {
+      "id" => output_message_ref01_data["id"],
+    }
     output_message_ref01_data_dt0_loaded = output_message_ref01_ent.load(output_message_ref01_match_dt0, nil)
-    assert !output_message_ref01_data_dt0_loaded.nil?
+    output_message_ref01_data_dt0_load_result = Helpers.to_map(output_message_ref01_data_dt0_loaded.respond_to?(:data_get) ? output_message_ref01_data_dt0_loaded.data_get : output_message_ref01_data_dt0_loaded)
+    assert !output_message_ref01_data_dt0_load_result.nil?
+    assert_equal output_message_ref01_data_dt0_load_result["id"], output_message_ref01_data["id"]
 
   end
 end

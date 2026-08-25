@@ -64,7 +64,7 @@ public final class BluefinTecsMerchantPortalTypes {
 
   public record OutputCreateProductCreateData(String acquirerId, Boolean allowMultipleOrders, String appFormTemplateName, Boolean contractNeeded, Boolean credentialsNeeded, String descriptionKey, String nameKey, Boolean prescreeningAllowed, String productName, Long responseCode, String responseMessage, String terminalTemplateName, String vendorName, String xmlTemplateFile) {}
 
-  public record OutputDetail(Map<String, Object> batch, Map<String, Object> lines, Map<String, Object> progress) {}
+  public record OutputDetail(Map<String, Object> batch, String id, Map<String, Object> lines, Map<String, Object> progress) {}
 
   public record OutputDetailLoadMatch(String id) {}
 
@@ -72,7 +72,7 @@ public final class BluefinTecsMerchantPortalTypes {
 
   public record OutputListCreateData(List<Object> items, Map<String, Object> pagination, Long responseCode, String responseMessage, Map<String, Object> sorting) {}
 
-  public record OutputMessage(Long responseCode, String responseMessage) {}
+  public record OutputMessage(String id, Long responseCode, String responseMessage) {}
 
   public record OutputMessageLoadMatch(String id) {}
 
@@ -88,7 +88,7 @@ public final class BluefinTecsMerchantPortalTypes {
 
   public record OutputStartCreateData(String id, Long responseCode, String responseMessage) {}
 
-  public record OutputStatus(Long percentage, Long responseCode, String responseMessage, String status) {}
+  public record OutputStatus(String id, Long percentage, Long responseCode, String responseMessage, String status) {}
 
   public record OutputStatusLoadMatch(String id) {}
 

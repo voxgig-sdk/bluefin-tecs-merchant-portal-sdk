@@ -61,13 +61,19 @@ func TestOutputMessageEntity(t *testing.T) {
 
 		// LOAD
 		outputMessageRef01Ent := client.OutputMessage(nil)
-		outputMessageRef01MatchDt0 := map[string]any{}
+		outputMessageRef01MatchDt0 := map[string]any{
+			"id": outputMessageRef01Data["id"],
+		}
 		outputMessageRef01DataDt0Loaded, err := outputMessageRef01Ent.Load(outputMessageRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if outputMessageRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		outputMessageRef01DataDt0LoadResult := core.ToMapAny(entityData(outputMessageRef01DataDt0Loaded))
+		if outputMessageRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if outputMessageRef01DataDt0LoadResult["id"] != outputMessageRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

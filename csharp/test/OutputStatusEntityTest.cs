@@ -51,9 +51,15 @@ public class OutputStatusEntityTest
 
         // LOAD
         var outputStatusRef01Ent = client.OutputStatus();
-        var outputStatusRef01MatchDt0 = new Dictionary<string, object?>();
+        var outputStatusRef01MatchDt0 = new Dictionary<string, object?>
+        {
+            ["id"] = outputStatusRef01Data!["id"],
+        };
         var outputStatusRef01DataDt0Loaded = outputStatusRef01Ent.Load(outputStatusRef01MatchDt0, null);
-        Assert.True(outputStatusRef01DataDt0Loaded != null, "expected load result to be non-null");
+        var outputStatusRef01DataDt0LoadResult = Helpers.ToMapAny(outputStatusRef01DataDt0Loaded is IEntity le ? le.Data() : outputStatusRef01DataDt0Loaded);
+        Assert.True(outputStatusRef01DataDt0LoadResult != null, "expected load result to be a map");
+        Assert.True(StructRunner.DeepEqual(outputStatusRef01DataDt0LoadResult!["id"], outputStatusRef01Data["id"]),
+            "expected load result id to match");
 
     }
 

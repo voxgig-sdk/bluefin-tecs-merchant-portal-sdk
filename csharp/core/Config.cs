@@ -2269,6 +2269,11 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["name"] = "id",
+                            ["type"] = "`$STRING`",
+                        },
+                        new Dictionary<string, object?>
+                        {
                             ["name"] = "lines",
                             ["type"] = "`$OBJECT`",
                         },
@@ -2449,6 +2454,11 @@ public static class SdkConfig
                 {
                     ["fields"] = new List<object?>
                     {
+                        new Dictionary<string, object?>
+                        {
+                            ["name"] = "id",
+                            ["type"] = "`$STRING`",
+                        },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseCode",
@@ -2847,6 +2857,11 @@ public static class SdkConfig
                 {
                     ["fields"] = new List<object?>
                     {
+                        new Dictionary<string, object?>
+                        {
+                            ["name"] = "id",
+                            ["type"] = "`$STRING`",
+                        },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "percentage",

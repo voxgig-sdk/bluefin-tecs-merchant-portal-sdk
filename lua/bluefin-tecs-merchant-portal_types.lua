@@ -284,6 +284,7 @@
 
 ---@class OutputDetail
 ---@field batch? table
+---@field id? string
 ---@field lines? table
 ---@field progress? table
 
@@ -305,6 +306,7 @@
 ---@field sorting? table
 
 ---@class OutputMessage
+---@field id? string
 ---@field responseCode number
 ---@field responseMessage string
 
@@ -348,6 +350,7 @@
 ---@field responseMessage string
 
 ---@class OutputStatus
+---@field id? string
 ---@field percentage? number
 ---@field responseCode number
 ---@field responseMessage string

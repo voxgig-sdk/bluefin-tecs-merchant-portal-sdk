@@ -970,6 +970,7 @@ $output_detail = $client->OutputDetail();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `array` | No |  |
+| `id` | `string` | No |  |
 | `lines` | `array` | No |  |
 | `progress` | `array` | No |  |
 
@@ -1093,6 +1094,7 @@ $output_message = $client->OutputMessage();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `responseCode` | `int` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |
 
@@ -1325,6 +1327,7 @@ $output_status = $client->OutputStatus();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `percentage` | `int` | No |  |
 | `responseCode` | `int` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |

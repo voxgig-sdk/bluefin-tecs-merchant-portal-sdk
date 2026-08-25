@@ -1116,6 +1116,7 @@ const output_detail = client.OutputDetail()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `Record<string, any>` | No |  |
+| `id` | `string` | No |  |
 | `lines` | `Record<string, any>` | No |  |
 | `progress` | `Record<string, any>` | No |  |
 
@@ -1235,6 +1236,7 @@ const output_message = client.OutputMessage()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `responseCode` | `number` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |
 
@@ -1459,6 +1461,7 @@ const output_status = client.OutputStatus()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `percentage` | `number` | No |  |
 | `responseCode` | `number` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |

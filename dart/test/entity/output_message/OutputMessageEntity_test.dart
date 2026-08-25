@@ -45,9 +45,12 @@ void tests() {
       final output_message_ref01_data =
           (setup['data']['existing']['output_message'] as Map).values.first;
 
-      // LOAD: skipped — no entity id field and load requires path params.
-      // Entity-var is declared here so later flow steps still compile.
+      // LOAD
       final output_message_ref01_ent = client.OutputMessage();
+      final output_message_ref01_match_dt0 = <String, dynamic>{};
+      output_message_ref01_match_dt0['id'] = output_message_ref01_data['id'];
+      final output_message_ref01_data_dt0 = (await output_message_ref01_ent.load(output_message_ref01_match_dt0)).data();
+      ok(output_message_ref01_data_dt0['id'] == output_message_ref01_data['id']);
 
 
     });

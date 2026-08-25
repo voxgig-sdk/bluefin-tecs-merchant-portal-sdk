@@ -88,9 +88,11 @@ static void output_status_entity_basic() {
   }
   // LOAD
   auto output_status_ref01_ent = client->output_status();
-  Value output_status_ref01_match_dt0 = vmap();
-  Value output_status_ref01_data_dt0_loaded = output_status_ref01_ent->load(output_status_ref01_match_dt0, Value::undef())->data();
-  ASSERT_TRUE(!output_status_ref01_data_dt0_loaded.is_undef(), "expected load result to be non-nil");
+  Value output_status_ref01_match_dt0 = vmap({{"id", getp(output_status_ref01_data, "id")}});
+  Value output_status_ref01_data_dt0_loaded = output_status_ref01_ent->load(Struct::clone(output_status_ref01_match_dt0), Value::undef())->data();
+  Value output_status_ref01_data_dt0_load_result = Helpers::toMapAny(output_status_ref01_data_dt0_loaded);
+  ASSERT_TRUE(output_status_ref01_data_dt0_load_result.is_map(), "expected load result to be a map");
+  ASSERT_EQ_VAL(getp(output_status_ref01_data_dt0_load_result, "id"), getp(output_status_ref01_data, "id"), "expected load result id to match");
 
 }
 

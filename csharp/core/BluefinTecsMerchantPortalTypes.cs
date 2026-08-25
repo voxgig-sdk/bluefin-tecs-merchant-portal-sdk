@@ -332,6 +332,7 @@ public record OutputCreateProductCreateData
 public record OutputDetail
 {
     public Dictionary<string, object?>? batch { get; init; }
+    public string? id { get; init; }
     public Dictionary<string, object?>? lines { get; init; }
     public Dictionary<string, object?>? progress { get; init; }
 }
@@ -361,6 +362,7 @@ public record OutputListCreateData
 
 public record OutputMessage
 {
+    public string? id { get; init; }
     public long responseCode { get; init; }
     public string responseMessage { get; init; }
 }
@@ -420,6 +422,7 @@ public record OutputStartCreateData
 
 public record OutputStatus
 {
+    public string? id { get; init; }
     public long? percentage { get; init; }
     public long responseCode { get; init; }
     public string responseMessage { get; init; }

@@ -53,8 +53,12 @@ class OutputDetailEntityTest {
     // LOAD
     val outputDetailRef01Ent = client.outputDetail(null)
     val outputDetailRef01MatchDt0 = linkedMapOf<String, Any?>()
+    outputDetailRef01MatchDt0["id"] = outputDetailRef01Data["id"]
     val outputDetailRef01DataDt0Loaded = outputDetailRef01Ent.load(outputDetailRef01MatchDt0, null)
-    assertNotNull(outputDetailRef01DataDt0Loaded, "expected load result to be non-null")
+    val outputDetailRef01DataDt0LoadResult = Helpers.toMapAny(if (outputDetailRef01DataDt0Loaded is SdkEntity) outputDetailRef01DataDt0Loaded.data() else outputDetailRef01DataDt0Loaded) ?: linkedMapOf()
+    assertNotNull(outputDetailRef01DataDt0LoadResult, "expected load result to be a map")
+    assertEquals(outputDetailRef01Data["id"], outputDetailRef01DataDt0LoadResult["id"],
+        "expected load result id to match")
 
   }
 

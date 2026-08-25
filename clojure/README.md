@@ -496,6 +496,7 @@ API path: `/merchantportalws/createNewProduct`
 | Field | Description |
 | --- | --- |
 | `batch` |  |
+| `id` |  |
 | `lines` |  |
 | `progress` |  |
 
@@ -521,6 +522,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
 
@@ -571,6 +573,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `percentage` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
@@ -1077,6 +1080,7 @@ Create an instance: `(def output_detail (api/output_detail client nil))`
 | Field | Type | Description |
 | --- | --- | --- |
 | `batch` | `map` |  |
+| `id` | `string` |  |
 | `lines` | `map` |  |
 | `progress` | `map` |  |
 
@@ -1135,6 +1139,7 @@ Create an instance: `(def output_message (api/output_message client nil))`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `string` |  |
 | `responseCode` | `long` | Response code. |
 | `responseMessage` | `string` | Response message. |
 
@@ -1260,6 +1265,7 @@ Create an instance: `(def output_status (api/output_status client nil))`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `string` |  |
 | `percentage` | `long` |  |
 | `responseCode` | `long` | Response code. |
 | `responseMessage` | `string` | Response message. |

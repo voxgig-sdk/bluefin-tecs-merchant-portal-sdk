@@ -44,8 +44,9 @@ describe('OutputMessageEntity', async () => {
     // LOAD
     const output_message_ref01_ent = client.OutputMessage()
     const output_message_ref01_match_dt0 = {}
+    output_message_ref01_match_dt0.id = output_message_ref01_data.id
     const output_message_ref01_data_dt0 = (await output_message_ref01_ent.load(output_message_ref01_match_dt0)).data()
-    assert(null != output_message_ref01_data_dt0)
+    assert(output_message_ref01_data_dt0.id === output_message_ref01_data.id)
 
 
   })

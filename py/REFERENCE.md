@@ -954,6 +954,7 @@ output_detail = client.OutputDetail()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `dict` | No |  |
+| `id` | `str` | No |  |
 | `lines` | `dict` | No |  |
 | `progress` | `dict` | No |  |
 
@@ -1075,6 +1076,7 @@ output_message = client.OutputMessage()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `str` | No |  |
 | `responseCode` | `int` | Yes | Response code. |
 | `responseMessage` | `str` | Yes | Response message. |
 
@@ -1303,6 +1305,7 @@ output_status = client.OutputStatus()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `str` | No |  |
 | `percentage` | `int` | No |  |
 | `responseCode` | `int` | Yes | Response code. |
 | `responseMessage` | `str` | Yes | Response message. |

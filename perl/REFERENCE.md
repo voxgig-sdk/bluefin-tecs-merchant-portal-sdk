@@ -955,6 +955,7 @@ my $output_detail = $client->OutputDetail;
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `hashref` | No |  |
+| `id` | `string` | No |  |
 | `lines` | `hashref` | No |  |
 | `progress` | `hashref` | No |  |
 
@@ -1076,6 +1077,7 @@ my $output_message = $client->OutputMessage;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `responseCode` | `integer` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |
 
@@ -1304,6 +1306,7 @@ my $output_status = $client->OutputStatus;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `percentage` | `integer` | No |  |
 | `responseCode` | `integer` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |

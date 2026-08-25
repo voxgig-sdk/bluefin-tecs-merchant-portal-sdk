@@ -339,6 +339,7 @@ typedef struct {
 // OutputDetail is the typed data model for the output_detail entity.
 typedef struct {
   voxgig_value*batch;  // optional
+  char*id;  // optional
   voxgig_value*lines;  // optional
   voxgig_value*progress;  // optional
 } OutputDetail;
@@ -368,6 +369,7 @@ typedef struct {
 
 // OutputMessage is the typed data model for the output_message entity.
 typedef struct {
+  char*id;  // optional
   int64_t responsecode;
   char*responsemessage;
 } OutputMessage;
@@ -427,6 +429,7 @@ typedef struct {
 
 // OutputStatus is the typed data model for the output_status entity.
 typedef struct {
+  char*id;  // optional
   int64_t percentage;  // optional
   int64_t responsecode;
   char*responsemessage;

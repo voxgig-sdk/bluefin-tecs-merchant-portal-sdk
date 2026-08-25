@@ -1808,6 +1808,10 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$OBJECT`")),
                     ]),
                     Value::map_of([
+                        ("name".to_string(), Value::str("id")),
+                        ("type".to_string(), Value::str("`$STRING`")),
+                    ]),
+                    Value::map_of([
                         ("name".to_string(), Value::str("lines")),
                         ("type".to_string(), Value::str("`$OBJECT`")),
                     ]),
@@ -1950,6 +1954,10 @@ pub fn make_config() -> Value {
             ])),
             ("output_message".to_string(), Value::map_of([
                 ("fields".to_string(), Value::list(vec![
+                    Value::map_of([
+                        ("name".to_string(), Value::str("id")),
+                        ("type".to_string(), Value::str("`$STRING`")),
+                    ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
@@ -2266,6 +2274,10 @@ pub fn make_config() -> Value {
             ])),
             ("output_status".to_string(), Value::map_of([
                 ("fields".to_string(), Value::list(vec![
+                    Value::map_of([
+                        ("name".to_string(), Value::str("id")),
+                        ("type".to_string(), Value::str("`$STRING`")),
+                    ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("percentage")),
                         ("type".to_string(), Value::str("`$INTEGER`")),

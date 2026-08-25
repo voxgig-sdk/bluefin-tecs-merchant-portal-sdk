@@ -50,9 +50,13 @@ BASIC_FLOW: {
 
   # LOAD
   $V{output_detail_ref01_ent} = $client->OutputDetail(undef);
-  $V{output_detail_ref01_match_dt0} = {};
+  $V{output_detail_ref01_match_dt0} = {
+    'id' => $V{output_detail_ref01_data}{id},
+  };
   $V{output_detail_ref01_data_dt0_loaded} = $V{output_detail_ref01_ent}->load($V{output_detail_ref01_match_dt0}, undef);
-  ok(defined $V{output_detail_ref01_data_dt0_loaded}, 'output_detail load: data');
+  $V{output_detail_ref01_data_dt0_load_result} = BluefinTecsMerchantPortalHelpers::to_map(ref($V{output_detail_ref01_data_dt0_loaded}) && $V{output_detail_ref01_data_dt0_loaded}->can('data_get') ? $V{output_detail_ref01_data_dt0_loaded}->data_get : $V{output_detail_ref01_data_dt0_loaded});
+  ok(defined $V{output_detail_ref01_data_dt0_load_result}, 'output_detail load: data');
+  is($V{output_detail_ref01_data_dt0_load_result}{id}, $V{output_detail_ref01_data}{id}, 'output_detail load: id');
 
 }
 

@@ -891,6 +891,7 @@ Entity* output_detail = bluefintecsmerchantportal_output_detail(client, NULL);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `voxgig_value* (map)` | No |  |
+| `id` | `char*` | No |  |
 | `lines` | `voxgig_value* (map)` | No |  |
 | `progress` | `voxgig_value* (map)` | No |  |
 
@@ -998,6 +999,7 @@ Entity* output_message = bluefintecsmerchantportal_output_message(client, NULL);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `char*` | No |  |
 | `responseCode` | `int64_t` | Yes | Response code. |
 | `responseMessage` | `char*` | Yes | Response message. |
 
@@ -1198,6 +1200,7 @@ Entity* output_status = bluefintecsmerchantportal_output_status(client, NULL);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `char*` | No |  |
 | `percentage` | `int64_t` | No |  |
 | `responseCode` | `int64_t` | Yes | Response code. |
 | `responseMessage` | `char*` | Yes | Response message. |

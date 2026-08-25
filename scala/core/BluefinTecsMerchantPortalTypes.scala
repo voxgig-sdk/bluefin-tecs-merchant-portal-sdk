@@ -60,7 +60,7 @@ object BluefinTecsMerchantPortalTypes {
 
   final case class OutputCreateProductCreateData(acquirerId: String, allowMultipleOrders: java.lang.Boolean, appFormTemplateName: String, contractNeeded: java.lang.Boolean, credentialsNeeded: java.lang.Boolean, descriptionKey: String, nameKey: String, prescreeningAllowed: java.lang.Boolean, productName: String, responseCode: java.lang.Long, responseMessage: String, terminalTemplateName: String, vendorName: String, xmlTemplateFile: String)
 
-  final case class OutputDetail(batch: java.util.Map[String, Object], lines: java.util.Map[String, Object], progress: java.util.Map[String, Object])
+  final case class OutputDetail(batch: java.util.Map[String, Object], id: String, lines: java.util.Map[String, Object], progress: java.util.Map[String, Object])
 
   final case class OutputDetailLoadMatch(id: String)
 
@@ -68,7 +68,7 @@ object BluefinTecsMerchantPortalTypes {
 
   final case class OutputListCreateData(items: java.util.List[Object], pagination: java.util.Map[String, Object], responseCode: java.lang.Long, responseMessage: String, sorting: java.util.Map[String, Object])
 
-  final case class OutputMessage(responseCode: java.lang.Long, responseMessage: String)
+  final case class OutputMessage(id: String, responseCode: java.lang.Long, responseMessage: String)
 
   final case class OutputMessageLoadMatch(id: String)
 
@@ -84,7 +84,7 @@ object BluefinTecsMerchantPortalTypes {
 
   final case class OutputStartCreateData(id: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputStatus(percentage: java.lang.Long, responseCode: java.lang.Long, responseMessage: String, status: String)
+  final case class OutputStatus(id: String, percentage: java.lang.Long, responseCode: java.lang.Long, responseMessage: String, status: String)
 
   final case class OutputStatusLoadMatch(id: String)
 

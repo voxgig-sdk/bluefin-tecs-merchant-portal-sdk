@@ -335,6 +335,7 @@ type OutputCreateProductCreateData struct {
 // OutputDetail is the typed data model for the output_detail entity.
 type OutputDetail struct {
 	Batch *map[string]any `json:"batch,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Lines *map[string]any `json:"lines,omitempty"`
 	Progress *map[string]any `json:"progress,omitempty"`
 }
@@ -364,6 +365,7 @@ type OutputListCreateData struct {
 
 // OutputMessage is the typed data model for the output_message entity.
 type OutputMessage struct {
+	Id *string `json:"id,omitempty"`
 	ResponseCode int `json:"responseCode"`
 	ResponseMessage string `json:"responseMessage"`
 }
@@ -423,6 +425,7 @@ type OutputStartCreateData struct {
 
 // OutputStatus is the typed data model for the output_status entity.
 type OutputStatus struct {
+	Id *string `json:"id,omitempty"`
 	Percentage *int `json:"percentage,omitempty"`
 	ResponseCode int `json:"responseCode"`
 	ResponseMessage string `json:"responseMessage"`

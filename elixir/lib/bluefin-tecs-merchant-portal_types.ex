@@ -402,6 +402,7 @@ defmodule BluefinTecsMerchantPortal.Types do
 
   Members:
     * `"batch"` — map() (optional)
+    * `"id"` — String.t() (optional)
     * `"lines"` — map() (optional)
     * `"progress"` — map() (optional)
   """
@@ -443,6 +444,7 @@ defmodule BluefinTecsMerchantPortal.Types do
   OutputMessage entity data model.
 
   Members:
+    * `"id"` — String.t() (optional)
     * `"responseCode"` — integer() (required)
     * `"responseMessage"` — String.t() (required)
   """
@@ -526,6 +528,7 @@ defmodule BluefinTecsMerchantPortal.Types do
   OutputStatus entity data model.
 
   Members:
+    * `"id"` — String.t() (optional)
     * `"percentage"` — integer() (optional)
     * `"responseCode"` — integer() (required)
     * `"responseMessage"` — String.t() (required)

@@ -493,6 +493,7 @@ API path: `/merchantportalws/createNewProduct`
 | Field | Description |
 | --- | --- |
 | `"batch"` |  |
+| `"id"` |  |
 | `"lines"` |  |
 | `"progress"` |  |
 
@@ -518,6 +519,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
+| `"id"` |  |
 | `"responseCode"` | Response code. |
 | `"responseMessage"` | Response message. |
 
@@ -568,6 +570,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 
 | Field | Description |
 | --- | --- |
+| `"id"` |  |
 | `"percentage"` |  |
 | `"responseCode"` | Response code. |
 | `"responseMessage"` | Response message. |
@@ -1088,6 +1091,7 @@ Create an instance: `outputDetail := client.OutputDetail(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `batch` | `map[string]any` |  |
+| `id` | `string` |  |
 | `lines` | `map[string]any` |  |
 | `progress` | `map[string]any` |  |
 
@@ -1151,6 +1155,7 @@ Create an instance: `outputMessage := client.OutputMessage(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `string` |  |
 | `responseCode` | `int` | Response code. |
 | `responseMessage` | `string` | Response message. |
 
@@ -1283,6 +1288,7 @@ Create an instance: `outputStatus := client.OutputStatus(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `string` |  |
 | `percentage` | `int` |  |
 | `responseCode` | `int` | Response code. |
 | `responseMessage` | `string` | Response message. |

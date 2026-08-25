@@ -1030,6 +1030,7 @@ Return the entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `map` | No |  |
+| `id` | `string` | No |  |
 | `lines` | `map` | No |  |
 | `progress` | `map` | No |  |
 
@@ -1162,6 +1163,7 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `responseCode` | `long` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |
 
@@ -1415,6 +1417,7 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `percentage` | `long` | No |  |
 | `responseCode` | `long` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |

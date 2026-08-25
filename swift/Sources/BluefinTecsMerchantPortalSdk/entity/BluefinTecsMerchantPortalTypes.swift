@@ -333,6 +333,7 @@ public struct OutputCreateProductCreateData {
 /// OutputDetail is the typed data model for the output_detail entity.
 public struct OutputDetail {
   public var batch: VMap?
+  public var id: String?
   public var lines: VMap?
   public var progress: VMap?
 }
@@ -362,6 +363,7 @@ public struct OutputListCreateData {
 
 /// OutputMessage is the typed data model for the output_message entity.
 public struct OutputMessage {
+  public var id: String?
   public var responseCode: Int
   public var responseMessage: String
 }
@@ -421,6 +423,7 @@ public struct OutputStartCreateData {
 
 /// OutputStatus is the typed data model for the output_status entity.
 public struct OutputStatus {
+  public var id: String?
   public var percentage: Int?
   public var responseCode: Int
   public var responseMessage: String

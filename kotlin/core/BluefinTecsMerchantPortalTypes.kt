@@ -60,7 +60,7 @@ object BluefinTecsMerchantPortalTypes {
 
   data class OutputCreateProductCreateData(val acquirerId: String?, val allowMultipleOrders: Boolean?, val appFormTemplateName: String?, val contractNeeded: Boolean?, val credentialsNeeded: Boolean?, val descriptionKey: String?, val nameKey: String?, val prescreeningAllowed: Boolean?, val productName: String?, val responseCode: Long?, val responseMessage: String?, val terminalTemplateName: String?, val vendorName: String?, val xmlTemplateFile: String?)
 
-  data class OutputDetail(val batch: Map<String, Any?>?, val lines: Map<String, Any?>?, val progress: Map<String, Any?>?)
+  data class OutputDetail(val batch: Map<String, Any?>?, val id: String?, val lines: Map<String, Any?>?, val progress: Map<String, Any?>?)
 
   data class OutputDetailLoadMatch(val id: String?)
 
@@ -68,7 +68,7 @@ object BluefinTecsMerchantPortalTypes {
 
   data class OutputListCreateData(val items: List<Any?>?, val pagination: Map<String, Any?>?, val responseCode: Long?, val responseMessage: String?, val sorting: Map<String, Any?>?)
 
-  data class OutputMessage(val responseCode: Long?, val responseMessage: String?)
+  data class OutputMessage(val id: String?, val responseCode: Long?, val responseMessage: String?)
 
   data class OutputMessageLoadMatch(val id: String?)
 
@@ -84,7 +84,7 @@ object BluefinTecsMerchantPortalTypes {
 
   data class OutputStartCreateData(val id: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputStatus(val percentage: Long?, val responseCode: Long?, val responseMessage: String?, val status: String?)
+  data class OutputStatus(val id: String?, val percentage: Long?, val responseCode: Long?, val responseMessage: String?, val status: String?)
 
   data class OutputStatusLoadMatch(val id: String?)
 

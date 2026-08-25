@@ -1314,6 +1314,9 @@
             "name" "batch"
             "type" "`$OBJECT`")
           (vs/jm
+            "name" "id"
+            "type" "`$STRING`")
+          (vs/jm
             "name" "lines"
             "type" "`$OBJECT`")
           (vs/jm
@@ -1417,6 +1420,9 @@
           "ancestors" (vs/jt)))
       "output_message" (vs/jm
         "fields" (vs/jt
+          (vs/jm
+            "name" "id"
+            "type" "`$STRING`")
           (vs/jm
             "name" "responseCode"
             "req" true
@@ -1651,6 +1657,9 @@
           "ancestors" (vs/jt)))
       "output_status" (vs/jm
         "fields" (vs/jt
+          (vs/jm
+            "name" "id"
+            "type" "`$STRING`")
           (vs/jm
             "name" "percentage"
             "type" "`$INTEGER`")

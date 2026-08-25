@@ -968,6 +968,7 @@ local output_detail = client:OutputDetail(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `table` | No |  |
+| `id` | `string` | No |  |
 | `lines` | `table` | No |  |
 | `progress` | `table` | No |  |
 
@@ -1091,6 +1092,7 @@ local output_message = client:OutputMessage(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `responseCode` | `number` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |
 
@@ -1323,6 +1325,7 @@ local output_status = client:OutputStatus(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `percentage` | `number` | No |  |
 | `responseCode` | `number` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |

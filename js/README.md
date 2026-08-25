@@ -172,7 +172,7 @@ await entity.load({ id: 'example' })
 
 // Subsequent calls reuse the stored state
 const data = entity.data()
-console.log(data)
+console.log(data.id)
 ```
 
 ### Add custom middleware
@@ -541,6 +541,7 @@ API path: `/merchantportalws/createNewProduct`
 | Field | Description |
 | --- | --- |
 | `batch` |  |
+| `id` |  |
 | `lines` |  |
 | `progress` |  |
 
@@ -566,6 +567,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
 
@@ -616,6 +618,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `percentage` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
@@ -1092,6 +1095,7 @@ Create an instance: `const output_detail = client.OutputDetail()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `batch` | `Object` |  |
+| `id` | `string` |  |
 | `lines` | `Object` |  |
 | `progress` | `Object` |  |
 
@@ -1147,6 +1151,7 @@ Create an instance: `const output_message = client.OutputMessage()`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `string` |  |
 | `responseCode` | `number` | Response code. |
 | `responseMessage` | `string` | Response message. |
 
@@ -1263,6 +1268,7 @@ Create an instance: `const output_status = client.OutputStatus()`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `string` |  |
 | `percentage` | `number` |  |
 | `responseCode` | `number` | Response code. |
 | `responseMessage` | `string` | Response message. |

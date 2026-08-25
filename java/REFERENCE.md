@@ -886,6 +886,7 @@ SdkEntity outputDetail = client.outputDetail(null);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `Map<String, Object>` | No |  |
+| `id` | `String` | No |  |
 | `lines` | `Map<String, Object>` | No |  |
 | `progress` | `Map<String, Object>` | No |  |
 
@@ -991,6 +992,7 @@ SdkEntity outputMessage = client.outputMessage(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `String` | No |  |
 | `responseCode` | `Long` | Yes | Response code. |
 | `responseMessage` | `String` | Yes | Response message. |
 
@@ -1187,6 +1189,7 @@ SdkEntity outputStatus = client.outputStatus(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `String` | No |  |
 | `percentage` | `Long` | No |  |
 | `responseCode` | `Long` | Yes | Response code. |
 | `responseMessage` | `String` | Yes | Response message. |

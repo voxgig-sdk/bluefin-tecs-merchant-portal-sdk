@@ -467,6 +467,7 @@ API path: `/merchantportalws/createNewProduct`
 | Field | Description |
 | --- | --- |
 | `batch` |  |
+| `id` |  |
 | `lines` |  |
 | `progress` |  |
 
@@ -492,6 +493,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
 
@@ -542,6 +544,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `percentage` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
@@ -1018,6 +1021,7 @@ Create an instance: `let output_detail = client.output_detail(Value::Noval);`
 | Field | Type | Description |
 | --- | --- | --- |
 | `batch` | `std::collections::HashMap<String, Value>` |  |
+| `id` | `String` |  |
 | `lines` | `std::collections::HashMap<String, Value>` |  |
 | `progress` | `std::collections::HashMap<String, Value>` |  |
 
@@ -1073,6 +1077,7 @@ Create an instance: `let output_message = client.output_message(Value::Noval);`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `String` |  |
 | `responseCode` | `i64` | Response code. |
 | `responseMessage` | `String` | Response message. |
 
@@ -1189,6 +1194,7 @@ Create an instance: `let output_status = client.output_status(Value::Noval);`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `String` |  |
 | `percentage` | `i64` |  |
 | `responseCode` | `i64` | Response code. |
 | `responseMessage` | `String` | Response message. |

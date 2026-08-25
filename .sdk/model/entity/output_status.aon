@@ -6,6 +6,11 @@ main: kit: entity: output_status: {
 
   fields: [
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "percentage"
       req: false
       type: "`$INTEGER`"
@@ -28,6 +33,11 @@ main: kit: entity: output_status: {
       type: "`$STRING`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "output_status"
   op: {

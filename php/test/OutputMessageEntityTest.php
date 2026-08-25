@@ -48,9 +48,13 @@ class OutputMessageEntityTest extends TestCase
 
         // LOAD
         $output_message_ref01_ent = $client->OutputMessage(null);
-        $output_message_ref01_match_dt0 = [];
+        $output_message_ref01_match_dt0 = [
+            "id" => $output_message_ref01_data["id"],
+        ];
         $output_message_ref01_data_dt0_loaded = $output_message_ref01_ent->load($output_message_ref01_match_dt0, null);
-        $this->assertNotNull($output_message_ref01_data_dt0_loaded);
+        $output_message_ref01_data_dt0_load_result = Helpers::to_map(is_object($output_message_ref01_data_dt0_loaded) && method_exists($output_message_ref01_data_dt0_loaded, 'data_get') ? $output_message_ref01_data_dt0_loaded->data_get() : $output_message_ref01_data_dt0_loaded);
+        $this->assertNotNull($output_message_ref01_data_dt0_load_result);
+        $this->assertEquals($output_message_ref01_data_dt0_load_result["id"], $output_message_ref01_data["id"]);
 
     }
 }

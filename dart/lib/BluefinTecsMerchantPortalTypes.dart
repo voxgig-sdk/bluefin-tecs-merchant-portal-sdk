@@ -1931,6 +1931,8 @@ class OutputCreateProductCreateData {
 class OutputDetail {
   /// OBJECT
   Map<String, dynamic>? batch;
+  /// STRING
+  String? id;
   /// OBJECT
   Map<String, dynamic>? lines;
   /// OBJECT
@@ -1938,12 +1940,14 @@ class OutputDetail {
 
   OutputDetail({
     this.batch,
+    this.id,
     this.lines,
     this.progress,
   });
 
   factory OutputDetail.fromMap(Map<String, dynamic> m) => OutputDetail(
         batch: m['batch'] is Map<String, dynamic> ? m['batch'] : null,
+        id: m['id'] is String ? m['id'] : null,
         lines: m['lines'] is Map<String, dynamic> ? m['lines'] : null,
         progress: m['progress'] is Map<String, dynamic> ? m['progress'] : null,
       );
@@ -1952,6 +1956,9 @@ class OutputDetail {
     final m = <String, dynamic>{};
     if (null != batch) {
       m['batch'] = batch;
+    }
+    if (null != id) {
+      m['id'] = id;
     }
     if (null != lines) {
       m['lines'] = lines;
@@ -2083,23 +2090,30 @@ class OutputListCreateData {
 }
 
 class OutputMessage {
+  /// STRING
+  String? id;
   /// INTEGER (required at the API)
   int? responseCode;
   /// STRING (required at the API)
   String? responseMessage;
 
   OutputMessage({
+    this.id,
     this.responseCode,
     this.responseMessage,
   });
 
   factory OutputMessage.fromMap(Map<String, dynamic> m) => OutputMessage(
+        id: m['id'] is String ? m['id'] : null,
         responseCode: m['responseCode'] is int ? m['responseCode'] : null,
         responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
+    if (null != id) {
+      m['id'] = id;
+    }
     if (null != responseCode) {
       m['responseCode'] = responseCode;
     }
@@ -2384,6 +2398,8 @@ class OutputStartCreateData {
 }
 
 class OutputStatus {
+  /// STRING
+  String? id;
   /// INTEGER
   int? percentage;
   /// INTEGER (required at the API)
@@ -2394,6 +2410,7 @@ class OutputStatus {
   String? status;
 
   OutputStatus({
+    this.id,
     this.percentage,
     this.responseCode,
     this.responseMessage,
@@ -2401,6 +2418,7 @@ class OutputStatus {
   });
 
   factory OutputStatus.fromMap(Map<String, dynamic> m) => OutputStatus(
+        id: m['id'] is String ? m['id'] : null,
         percentage: m['percentage'] is int ? m['percentage'] : null,
         responseCode: m['responseCode'] is int ? m['responseCode'] : null,
         responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
@@ -2409,6 +2427,9 @@ class OutputStatus {
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
+    if (null != id) {
+      m['id'] = id;
+    }
     if (null != percentage) {
       m['percentage'] = percentage;
     }

@@ -11,6 +11,11 @@ main: kit: entity: output_detail: {
       type: "`$OBJECT`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "lines"
       req: false
       type: "`$OBJECT`"
@@ -21,6 +26,11 @@ main: kit: entity: output_detail: {
       type: "`$OBJECT`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "output_detail"
   op: {

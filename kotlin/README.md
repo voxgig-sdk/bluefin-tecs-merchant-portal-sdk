@@ -469,6 +469,7 @@ API path: `/merchantportalws/createNewProduct`
 | Field | Description |
 | --- | --- |
 | `batch` |  |
+| `id` |  |
 | `lines` |  |
 | `progress` |  |
 
@@ -494,6 +495,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
 
@@ -544,6 +546,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `percentage` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
@@ -1020,6 +1023,7 @@ Create an instance: `val outputDetail = client.outputDetail(null)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `batch` | `Map<String, Any?>?` |  |
+| `id` | `String?` |  |
 | `lines` | `Map<String, Any?>?` |  |
 | `progress` | `Map<String, Any?>?` |  |
 
@@ -1075,6 +1079,7 @@ Create an instance: `val outputMessage = client.outputMessage(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `String?` |  |
 | `responseCode` | `Long?` | Response code. |
 | `responseMessage` | `String?` | Response message. |
 
@@ -1191,6 +1196,7 @@ Create an instance: `val outputStatus = client.outputStatus(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `String?` |  |
 | `percentage` | `Long?` |  |
 | `responseCode` | `Long?` | Response code. |
 | `responseMessage` | `String?` | Response message. |

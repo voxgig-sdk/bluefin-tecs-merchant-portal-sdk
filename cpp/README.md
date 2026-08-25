@@ -480,6 +480,7 @@ API path: `/merchantportalws/createNewProduct`
 | Field | Description |
 | --- | --- |
 | `batch` |  |
+| `id` |  |
 | `lines` |  |
 | `progress` |  |
 
@@ -505,6 +506,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
 
@@ -555,6 +557,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `percentage` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
@@ -1031,6 +1034,7 @@ Create an instance: `auto output_detail = client->output_detail();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `batch` | `std::map<std::string, Value>` |  |
+| `id` | `std::string` |  |
 | `lines` | `std::map<std::string, Value>` |  |
 | `progress` | `std::map<std::string, Value>` |  |
 
@@ -1086,6 +1090,7 @@ Create an instance: `auto output_message = client->output_message();`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `std::string` |  |
 | `responseCode` | `int64_t` | Response code. |
 | `responseMessage` | `std::string` | Response message. |
 
@@ -1202,6 +1207,7 @@ Create an instance: `auto output_status = client->output_status();`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `std::string` |  |
 | `percentage` | `int64_t` |  |
 | `responseCode` | `int64_t` | Response code. |
 | `responseMessage` | `std::string` | Response message. |

@@ -1831,6 +1831,10 @@ class BluefinTecsMerchantPortalConfig
               'type' => '`$OBJECT`',
             ],
             [
+              'name' => 'id',
+              'type' => '`$STRING`',
+            ],
+            [
               'name' => 'lines',
               'type' => '`$OBJECT`',
             ],
@@ -1973,6 +1977,10 @@ class BluefinTecsMerchantPortalConfig
         ],
         'output_message' => [
           'fields' => [
+            [
+              'name' => 'id',
+              'type' => '`$STRING`',
+            ],
             [
               'name' => 'responseCode',
               'req' => true,
@@ -2289,6 +2297,10 @@ class BluefinTecsMerchantPortalConfig
         ],
         'output_status' => [
           'fields' => [
+            [
+              'name' => 'id',
+              'type' => '`$STRING`',
+            ],
             [
               'name' => 'percentage',
               'type' => '`$INTEGER`',

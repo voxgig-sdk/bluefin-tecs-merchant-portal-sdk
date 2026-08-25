@@ -358,6 +358,7 @@ class OutputCreateProductCreateData
 class OutputDetail
 {
     public ?array $batch = null;
+    public ?string $id = null;
     public ?array $lines = null;
     public ?array $progress = null;
 }
@@ -391,6 +392,7 @@ class OutputListCreateData
 /** OutputMessage entity data model. */
 class OutputMessage
 {
+    public ?string $id = null;
     public int $responseCode;
     public string $responseMessage;
 }
@@ -458,6 +460,7 @@ class OutputStartCreateData
 /** OutputStatus entity data model. */
 class OutputStatus
 {
+    public ?string $id = null;
     public ?int $percentage = null;
     public int $responseCode;
     public string $responseMessage;

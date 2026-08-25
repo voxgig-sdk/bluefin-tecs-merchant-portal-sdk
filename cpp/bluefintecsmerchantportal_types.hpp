@@ -319,6 +319,7 @@ struct OutputCreateProductCreateData {
 
 struct OutputDetail {
   std::map<std::string, Value> batch;  // optional
+  std::string id;  // optional
   std::map<std::string, Value> lines;  // optional
   std::map<std::string, Value> progress;  // optional
 };
@@ -344,6 +345,7 @@ struct OutputListCreateData {
 };
 
 struct OutputMessage {
+  std::string id;  // optional
   int64_t responseCode;
   std::string responseMessage;
 };
@@ -395,6 +397,7 @@ struct OutputStartCreateData {
 };
 
 struct OutputStatus {
+  std::string id;  // optional
   int64_t percentage;  // optional
   int64_t responseCode;
   std::string responseMessage;

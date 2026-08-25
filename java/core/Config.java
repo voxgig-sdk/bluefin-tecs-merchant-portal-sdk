@@ -1847,6 +1847,10 @@ public final class Config {
     b.append("     \"type\": \"`$OBJECT`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"name\": \"id\",");
+    b.append("     \"type\": \"`$STRING`\"");
+    b.append("    },");
+    b.append("    {");
     b.append("     \"name\": \"lines\",");
     b.append("     \"type\": \"`$OBJECT`\"");
     b.append("    },");
@@ -1989,6 +1993,10 @@ public final class Config {
     b.append("  },");
     b.append("  \"output_message\": {");
     b.append("   \"fields\": [");
+    b.append("    {");
+    b.append("     \"name\": \"id\",");
+    b.append("     \"type\": \"`$STRING`\"");
+    b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"req\": true,");
@@ -2305,6 +2313,10 @@ public final class Config {
     b.append("  },");
     b.append("  \"output_status\": {");
     b.append("   \"fields\": [");
+    b.append("    {");
+    b.append("     \"name\": \"id\",");
+    b.append("     \"type\": \"`$STRING`\"");
+    b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"percentage\",");
     b.append("     \"type\": \"`$INTEGER`\"");

@@ -494,6 +494,7 @@ API path: `/merchantportalws/createNewProduct`
 | Field | Description |
 | --- | --- |
 | `batch` |  |
+| `id` |  |
 | `lines` |  |
 | `progress` |  |
 
@@ -519,6 +520,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
 
@@ -569,6 +571,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `percentage` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
@@ -1056,6 +1059,7 @@ Create an instance: `Entity* output_detail = bluefintecsmerchantportal_output_de
 | Field | Type | Description |
 | --- | --- | --- |
 | `batch` | `voxgig_value* (map)` |  |
+| `id` | `char*` |  |
 | `lines` | `voxgig_value* (map)` |  |
 | `progress` | `voxgig_value* (map)` |  |
 
@@ -1113,6 +1117,7 @@ Create an instance: `Entity* output_message = bluefintecsmerchantportal_output_m
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `char*` |  |
 | `responseCode` | `int64_t` | Response code. |
 | `responseMessage` | `char*` | Response message. |
 
@@ -1233,6 +1238,7 @@ Create an instance: `Entity* output_status = bluefintecsmerchantportal_output_st
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `char*` |  |
 | `percentage` | `int64_t` |  |
 | `responseCode` | `int64_t` | Response code. |
 | `responseMessage` | `char*` | Response message. |

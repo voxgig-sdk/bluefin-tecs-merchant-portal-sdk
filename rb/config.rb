@@ -1817,6 +1817,10 @@ module BluefinTecsMerchantPortalConfig
               "type" => "`$OBJECT`",
             },
             {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
+            {
               "name" => "lines",
               "type" => "`$OBJECT`",
             },
@@ -1959,6 +1963,10 @@ module BluefinTecsMerchantPortalConfig
         },
         "output_message" => {
           "fields" => [
+            {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
             {
               "name" => "responseCode",
               "req" => true,
@@ -2275,6 +2283,10 @@ module BluefinTecsMerchantPortalConfig
         },
         "output_status" => {
           "fields" => [
+            {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
             {
               "name" => "percentage",
               "type" => "`$INTEGER`",

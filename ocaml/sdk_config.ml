@@ -1354,6 +1354,9 @@ let make_config () : value =
             ("name", (Str "batch"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
+            ("name", (Str "id"));
+            ("type", (Str "`$STRING`")) ]);
+          (jo [
             ("name", (Str "lines"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
@@ -1457,6 +1460,9 @@ let make_config () : value =
           ("ancestors", (empty_list ())) ])) ]));
       ("output_message", (jo [
         ("fields", (ja [
+          (jo [
+            ("name", (Str "id"));
+            ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "responseCode"));
             ("req", (Bool true));
@@ -1691,6 +1697,9 @@ let make_config () : value =
           ("ancestors", (empty_list ())) ])) ]));
       ("output_status", (jo [
         ("fields", (ja [
+          (jo [
+            ("name", (Str "id"));
+            ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "percentage"));
             ("type", (Str "`$INTEGER`")) ]);

@@ -865,6 +865,7 @@ final output_detail = client.OutputDetail();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `Map<String, dynamic>` | No |  |
+| `id` | `String` | No |  |
 | `lines` | `Map<String, dynamic>` | No |  |
 | `progress` | `Map<String, dynamic>` | No |  |
 
@@ -970,6 +971,7 @@ final output_message = client.OutputMessage();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `String` | No |  |
 | `responseCode` | `int` | Yes | Response code. |
 | `responseMessage` | `String` | Yes | Response message. |
 
@@ -1166,6 +1168,7 @@ final output_status = client.OutputStatus();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `String` | No |  |
 | `percentage` | `int` | No |  |
 | `responseCode` | `int` | Yes | Response code. |
 | `responseMessage` | `String` | Yes | Response message. |

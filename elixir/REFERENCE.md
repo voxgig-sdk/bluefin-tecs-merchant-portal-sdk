@@ -892,6 +892,7 @@ output_detail = BluefinTecsMerchantPortal.output_detail(sdk)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `map()` | No |  |
+| `id` | `String.t()` | No |  |
 | `lines` | `map()` | No |  |
 | `progress` | `map()` | No |  |
 
@@ -1003,6 +1004,7 @@ output_message = BluefinTecsMerchantPortal.output_message(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `String.t()` | No |  |
 | `responseCode` | `integer()` | Yes | Response code. |
 | `responseMessage` | `String.t()` | Yes | Response message. |
 
@@ -1231,6 +1233,7 @@ output_status = BluefinTecsMerchantPortal.output_status(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `String.t()` | No |  |
 | `percentage` | `integer()` | No |  |
 | `responseCode` | `integer()` | Yes | Response code. |
 | `responseMessage` | `String.t()` | Yes | Response message. |

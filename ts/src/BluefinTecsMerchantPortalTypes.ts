@@ -305,6 +305,7 @@ export interface OutputCreateProductCreateData {
 
 export interface OutputDetail {
   batch?: Record<string, any>
+  id?: string
   lines?: Record<string, any>
   progress?: Record<string, any>
 }
@@ -330,6 +331,7 @@ export interface OutputListCreateData {
 }
 
 export interface OutputMessage {
+  id?: string
   responseCode: number
   responseMessage: string
 }
@@ -381,6 +383,7 @@ export interface OutputStartCreateData {
 }
 
 export interface OutputStatus {
+  id?: string
   percentage?: number
   responseCode: number
   responseMessage: string

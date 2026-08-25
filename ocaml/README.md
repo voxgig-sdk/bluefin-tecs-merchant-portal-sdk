@@ -475,6 +475,7 @@ API path: `/merchantportalws/createNewProduct`
 | Field | Description |
 | --- | --- |
 | `batch` |  |
+| `id` |  |
 | `lines` |  |
 | `progress` |  |
 
@@ -500,6 +501,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
 
@@ -550,6 +552,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `percentage` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
@@ -1038,6 +1041,7 @@ Create an instance: `let output_detail = Sdk_client.output_detail client Noval`
 | Field | Type | Description |
 | --- | --- | --- |
 | `batch` | `value map` |  |
+| `id` | `string` |  |
 | `lines` | `value map` |  |
 | `progress` | `value map` |  |
 
@@ -1096,6 +1100,7 @@ Create an instance: `let output_message = Sdk_client.output_message client Noval
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `string` |  |
 | `responseCode` | `int` | Response code. |
 | `responseMessage` | `string` | Response message. |
 
@@ -1217,6 +1222,7 @@ Create an instance: `let output_status = Sdk_client.output_status client Noval`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `string` |  |
 | `percentage` | `int` |  |
 | `responseCode` | `int` | Response code. |
 | `responseMessage` | `string` | Response message. |

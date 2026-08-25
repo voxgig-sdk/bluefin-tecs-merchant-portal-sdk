@@ -357,6 +357,7 @@ pub struct OutputCreateProductCreateData {
 #[derive(Debug, Clone)]
 pub struct OutputDetail {
     pub batch: Option<std::collections::HashMap<String, Value>>,
+    pub id: Option<String>,
     pub lines: Option<std::collections::HashMap<String, Value>>,
     pub progress: Option<std::collections::HashMap<String, Value>>,
 }
@@ -390,6 +391,7 @@ pub struct OutputListCreateData {
 /// OutputMessage is the typed data model for the output_message entity.
 #[derive(Debug, Clone)]
 pub struct OutputMessage {
+    pub id: Option<String>,
     pub responsecode: i64,
     pub responsemessage: String,
 }
@@ -457,6 +459,7 @@ pub struct OutputStartCreateData {
 /// OutputStatus is the typed data model for the output_status entity.
 #[derive(Debug, Clone)]
 pub struct OutputStatus {
+    pub id: Option<String>,
     pub percentage: Option<i64>,
     pub responsecode: i64,
     pub responsemessage: String,

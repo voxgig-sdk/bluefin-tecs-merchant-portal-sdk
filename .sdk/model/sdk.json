@@ -2075,6 +2075,12 @@
             },
             {
               "active": true,
+              "name": "id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
               "name": "lines",
               "req": false,
               "type": "`$OBJECT`"
@@ -2086,6 +2092,10 @@
               "type": "`$OBJECT`"
             }
           ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
           "name": "output_detail",
           "op": {
             "load": {
@@ -2243,6 +2253,12 @@
           "fields": [
             {
               "active": true,
+              "name": "id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
               "name": "responseCode",
               "req": true,
               "short": "Response code.",
@@ -2256,6 +2272,10 @@
               "type": "`$STRING`"
             }
           ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
           "name": "output_message",
           "op": {
             "load": {
@@ -2606,6 +2626,12 @@
           "fields": [
             {
               "active": true,
+              "name": "id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
               "name": "percentage",
               "req": false,
               "type": "`$INTEGER`"
@@ -2631,6 +2657,10 @@
               "type": "`$STRING`"
             }
           ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
           "name": "output_status",
           "op": {
             "load": {

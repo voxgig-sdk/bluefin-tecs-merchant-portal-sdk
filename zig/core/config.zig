@@ -1808,6 +1808,10 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
+                        .{ "name", h.vstr("id") },
+                        .{ "type", h.vstr("`$STRING`") },
+                    }),
+                    h.jo(&.{
                         .{ "name", h.vstr("lines") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
@@ -1950,6 +1954,10 @@ pub fn make_config() Value {
             }) },
             .{ "output_message", h.jo(&.{
                 .{ "fields", h.ja(&.{
+                    h.jo(&.{
+                        .{ "name", h.vstr("id") },
+                        .{ "type", h.vstr("`$STRING`") },
+                    }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
@@ -2266,6 +2274,10 @@ pub fn make_config() Value {
             }) },
             .{ "output_status", h.jo(&.{
                 .{ "fields", h.ja(&.{
+                    h.jo(&.{
+                        .{ "name", h.vstr("id") },
+                        .{ "type", h.vstr("`$STRING`") },
+                    }),
                     h.jo(&.{
                         .{ "name", h.vstr("percentage") },
                         .{ "type", h.vstr("`$INTEGER`") },

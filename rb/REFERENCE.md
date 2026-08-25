@@ -971,6 +971,7 @@ output_detail = client.OutputDetail
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `Hash` | No |  |
+| `id` | `String` | No |  |
 | `lines` | `Hash` | No |  |
 | `progress` | `Hash` | No |  |
 
@@ -1094,6 +1095,7 @@ output_message = client.OutputMessage
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `String` | No |  |
 | `responseCode` | `Integer` | Yes | Response code. |
 | `responseMessage` | `String` | Yes | Response message. |
 
@@ -1326,6 +1328,7 @@ output_status = client.OutputStatus
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `String` | No |  |
 | `percentage` | `Integer` | No |  |
 | `responseCode` | `Integer` | Yes | Response code. |
 | `responseMessage` | `String` | Yes | Response message. |

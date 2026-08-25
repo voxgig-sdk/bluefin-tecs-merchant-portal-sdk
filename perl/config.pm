@@ -1816,6 +1816,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$OBJECT`"
         },
         {
+          "name": "id",
+          "type": "`$STRING`"
+        },
+        {
           "name": "lines",
           "type": "`$OBJECT`"
         },
@@ -1958,6 +1962,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     },
     "output_message": {
       "fields": [
+        {
+          "name": "id",
+          "type": "`$STRING`"
+        },
         {
           "name": "responseCode",
           "req": true,
@@ -2274,6 +2282,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     },
     "output_status": {
       "fields": [
+        {
+          "name": "id",
+          "type": "`$STRING`"
+        },
         {
           "name": "percentage",
           "type": "`$INTEGER`"

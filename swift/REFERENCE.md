@@ -885,6 +885,7 @@ let outputDetail = client.OutputDetail()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `VMap` | No |  |
+| `id` | `String` | No |  |
 | `lines` | `VMap` | No |  |
 | `progress` | `VMap` | No |  |
 
@@ -990,6 +991,7 @@ let outputMessage = client.OutputMessage()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `String` | No |  |
 | `responseCode` | `Int` | Yes | Response code. |
 | `responseMessage` | `String` | Yes | Response message. |
 
@@ -1186,6 +1188,7 @@ let outputStatus = client.OutputStatus()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `String` | No |  |
 | `percentage` | `Int` | No |  |
 | `responseCode` | `Int` | Yes | Response code. |
 | `responseMessage` | `String` | Yes | Response message. |

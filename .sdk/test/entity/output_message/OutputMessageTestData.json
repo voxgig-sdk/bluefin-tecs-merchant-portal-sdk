@@ -2,27 +2,27 @@
   "existing": {
     "output_message": {
       "OUTPUT_MESSAGE00": {
-        "responseCode": "s14",
-        "responseMessage": "s15",
-        "id": "OUTPUT_MESSAGE00"
+        "id": "OUTPUT_MESSAGE00",
+        "responseCode": "s1f",
+        "responseMessage": "s20"
       },
       "OUTPUT_MESSAGE01": {
-        "responseCode": "s28",
-        "responseMessage": "s29",
-        "id": "OUTPUT_MESSAGE01"
+        "id": "OUTPUT_MESSAGE01",
+        "responseCode": "s3d",
+        "responseMessage": "s3e"
       },
       "OUTPUT_MESSAGE02": {
-        "responseCode": "s3c",
-        "responseMessage": "s3d",
-        "id": "OUTPUT_MESSAGE02"
+        "id": "OUTPUT_MESSAGE02",
+        "responseCode": "s5b",
+        "responseMessage": "s5c"
       }
     }
   },
   "new": {
     "output_message": {
       "output_message_ref01": {
-        "responseCode": "s50",
-        "responseMessage": "s51"
+        "responseCode": "s79",
+        "responseMessage": "s7a"
       }
     }
   }

@@ -1833,6 +1833,10 @@ class Config {
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
+          'name': 'id',
+          'type': '`\$STRING`',
+        },
+        <String, dynamic>{
           'name': 'lines',
           'type': '`\$OBJECT`',
         },
@@ -1975,6 +1979,10 @@ class Config {
     },
     'output_message': <String, dynamic>{
       'fields': <dynamic>[
+        <String, dynamic>{
+          'name': 'id',
+          'type': '`\$STRING`',
+        },
         <String, dynamic>{
           'name': 'responseCode',
           'req': true,
@@ -2291,6 +2299,10 @@ class Config {
     },
     'output_status': <String, dynamic>{
       'fields': <dynamic>[
+        <String, dynamic>{
+          'name': 'id',
+          'type': '`\$STRING`',
+        },
         <String, dynamic>{
           'name': 'percentage',
           'type': '`\$INTEGER`',

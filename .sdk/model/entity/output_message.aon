@@ -6,6 +6,11 @@ main: kit: entity: output_message: {
 
   fields: [
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "responseCode"
       req: true
       short: "Response code."
@@ -18,6 +23,11 @@ main: kit: entity: output_message: {
       type: "`$STRING`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "output_message"
   op: {

@@ -1809,6 +1809,10 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
+						"name": "id",
+						"type": "`$STRING`",
+					},
+					map[string]any{
 						"name": "lines",
 						"type": "`$OBJECT`",
 					},
@@ -1951,6 +1955,10 @@ func MakeConfig() map[string]any {
 			},
 			"output_message": map[string]any{
 				"fields": []any{
+					map[string]any{
+						"name": "id",
+						"type": "`$STRING`",
+					},
 					map[string]any{
 						"name": "responseCode",
 						"req": true,
@@ -2267,6 +2275,10 @@ func MakeConfig() map[string]any {
 			},
 			"output_status": map[string]any{
 				"fields": []any{
+					map[string]any{
+						"name": "id",
+						"type": "`$STRING`",
+					},
 					map[string]any{
 						"name": "percentage",
 						"type": "`$INTEGER`",

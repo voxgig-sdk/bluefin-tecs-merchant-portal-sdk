@@ -59,9 +59,12 @@ describe('OutputStatusEntity', async () => {
 
     let output_status_ref01_data = Object.values(setup.data.existing.output_status)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const output_status_ref01_ent = client.OutputStatus()
+    const output_status_ref01_match_dt0: any = {}
+    output_status_ref01_match_dt0.id = output_status_ref01_data.id
+    const output_status_ref01_data_dt0 = (await output_status_ref01_ent.load(output_status_ref01_match_dt0)).data()
+    assert(output_status_ref01_data_dt0.id === output_status_ref01_data.id)
 
 
   })

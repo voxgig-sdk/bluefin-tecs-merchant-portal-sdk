@@ -3,21 +3,21 @@
     "output_detail": {
       "OUTPUT_DETAIL00": {
         "batch": {},
+        "id": "OUTPUT_DETAIL00",
         "lines": {},
-        "progress": {},
-        "id": "OUTPUT_DETAIL00"
+        "progress": {}
       },
       "OUTPUT_DETAIL01": {
         "batch": {},
+        "id": "OUTPUT_DETAIL01",
         "lines": {},
-        "progress": {},
-        "id": "OUTPUT_DETAIL01"
+        "progress": {}
       },
       "OUTPUT_DETAIL02": {
         "batch": {},
+        "id": "OUTPUT_DETAIL02",
         "lines": {},
-        "progress": {},
-        "id": "OUTPUT_DETAIL02"
+        "progress": {}
       }
     }
   },

@@ -481,6 +481,7 @@ API path: `/merchantportalws/createNewProduct`
 | Field | Description |
 | --- | --- |
 | `batch` |  |
+| `id` |  |
 | `lines` |  |
 | `progress` |  |
 
@@ -506,6 +507,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
 
@@ -556,6 +558,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `percentage` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
@@ -1101,6 +1104,7 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | Field | Type | Description |
 | --- | --- | --- |
 | `batch` | `Value (object)` |  |
+| `id` | `[]const u8` |  |
 | `lines` | `Value (object)` |  |
 | `progress` | `Value (object)` |  |
 
@@ -1168,6 +1172,7 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `[]const u8` |  |
 | `responseCode` | `i64` | Response code. |
 | `responseMessage` | `[]const u8` | Response message. |
 
@@ -1308,6 +1313,7 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `[]const u8` |  |
 | `percentage` | `i64` |  |
 | `responseCode` | `i64` | Response code. |
 | `responseMessage` | `[]const u8` | Response message. |

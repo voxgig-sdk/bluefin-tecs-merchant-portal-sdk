@@ -29,12 +29,18 @@ object OutputMessageEntityTest {
       idmap.put("output_message02", "OUTPUT_MESSAGE02")
       idmap.put("output_message03", "OUTPUT_MESSAGE03")
       val now = System.currentTimeMillis()
+      val outputMessageRef01DataRaw = Struct.items(Helpers.toMapAny(
+          Struct.getpath(entityData, "existing.output_message")))
+      val outputMessageRef01Data = Helpers.toMapAny(outputMessageRef01DataRaw.get(0).get(1))
 
       // LOAD
       val outputMessageRef01Ent = client.outputMessage(null)
       val outputMessageRef01MatchDt0 = new LinkedHashMap[String, Object]()
+      outputMessageRef01MatchDt0.put("id", outputMessageRef01Data.get("id"))
       val outputMessageRef01DataDt0Loaded = outputMessageRef01Ent.load(outputMessageRef01MatchDt0, null)
-      rep.check("output_message.load.nonnull", outputMessageRef01DataDt0Loaded != null, "expected load result to be non-null")
+      val outputMessageRef01DataDt0LoadResult = Helpers.toMapAny(outputMessageRef01DataDt0Loaded match { case e: SdkEntity => e.data(); case o => o })
+      rep.check("output_message.load.map", outputMessageRef01DataDt0LoadResult != null, "expected load result to be a map")
+      rep.eq("output_message.load.id", outputMessageRef01Data.get("id"), outputMessageRef01DataDt0LoadResult.get("id"))
     }
   }
 }

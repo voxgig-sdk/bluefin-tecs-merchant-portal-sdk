@@ -965,6 +965,7 @@ fmt.Println(outputDetail.GetName()) // "output_detail"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `map[string]any` | No |  |
+| `id` | `string` | No |  |
 | `lines` | `map[string]any` | No |  |
 | `progress` | `map[string]any` | No |  |
 
@@ -1086,6 +1087,7 @@ fmt.Println(outputMessage.GetName()) // "output_message"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `responseCode` | `int` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |
 
@@ -1314,6 +1316,7 @@ fmt.Println(outputStatus.GetName()) // "output_status"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `percentage` | `int` | No |  |
 | `responseCode` | `int` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |

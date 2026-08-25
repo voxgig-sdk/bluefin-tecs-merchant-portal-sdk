@@ -922,6 +922,7 @@ const output_detail = client.output_detail(h.vnull());
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `Value (object)` | No |  |
+| `id` | `[]const u8` | No |  |
 | `lines` | `Value (object)` | No |  |
 | `progress` | `Value (object)` | No |  |
 
@@ -1033,6 +1034,7 @@ const output_message = client.output_message(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `[]const u8` | No |  |
 | `responseCode` | `i64` | Yes | Response code. |
 | `responseMessage` | `[]const u8` | Yes | Response message. |
 
@@ -1241,6 +1243,7 @@ const output_status = client.output_status(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `[]const u8` | No |  |
 | `percentage` | `i64` | No |  |
 | `responseCode` | `i64` | Yes | Response code. |
 | `responseMessage` | `[]const u8` | Yes | Response message. |

@@ -720,12 +720,17 @@ declare class Config {
             };
         };
         output_message: {
-            fields: {
+            fields: ({
+                name: string;
+                type: string;
+                req?: undefined;
+                short?: undefined;
+            } | {
                 name: string;
                 req: boolean;
                 short: string;
                 type: string;
-            }[];
+            })[];
             name: string;
             op: {
                 load: {

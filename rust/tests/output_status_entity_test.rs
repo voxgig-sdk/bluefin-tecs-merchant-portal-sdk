@@ -55,14 +55,19 @@ fn output_status_entity_basic() {
     ));
     // LOAD
     let output_status_ref01_ent = client.output_status(Value::Noval);
-    let output_status_ref01_match_dt0 = Value::empty_map();
+    let output_status_ref01_match_dt0 = jo(vec![("id", getp(&output_status_ref01_data, "id"))]);
     let output_status_ref01_data_dt0_loaded = output_status_ref01_ent
         .load(output_status_ref01_match_dt0.clone(), Value::Noval)
         .expect("load failed");
-    // load resolves to the ENTITY; the record is reached through data().
+    let output_status_ref01_data_dt0_load_result = to_map(&output_status_ref01_data_dt0_loaded.data(None));
     assert!(
-        !output_status_ref01_data_dt0_loaded.data(None).is_noval(),
-        "expected load result to carry data"
+        matches!(output_status_ref01_data_dt0_load_result, Value::Map(_)),
+        "expected load result to be a map"
+    );
+    assert_eq!(
+        getp(&output_status_ref01_data_dt0_load_result, "id"),
+        getp(&output_status_ref01_data, "id"),
+        "expected load result id to match"
     );
 
 }

@@ -44,10 +44,14 @@ describe("OutputStatusEntity", function()
 
     -- LOAD
     local output_status_ref01_ent = client:OutputStatus(nil)
-    local output_status_ref01_match_dt0 = {}
+    local output_status_ref01_match_dt0 = {
+      id = output_status_ref01_data["id"],
+    }
     local output_status_ref01_data_dt0_loaded, err = output_status_ref01_ent:load(output_status_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(output_status_ref01_data_dt0_loaded)
+    local output_status_ref01_data_dt0_load_result = helpers.to_map(type(output_status_ref01_data_dt0_loaded) == 'table' and output_status_ref01_data_dt0_loaded.data_get and output_status_ref01_data_dt0_loaded:data_get() or output_status_ref01_data_dt0_loaded)
+    assert.is_not_nil(output_status_ref01_data_dt0_load_result)
+    assert.are.equal(output_status_ref01_data_dt0_load_result["id"], output_status_ref01_data["id"])
 
   end)
 end)

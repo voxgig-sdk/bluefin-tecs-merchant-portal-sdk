@@ -1805,6 +1805,10 @@ local function make_config()
             ["type"] = "`$OBJECT`",
           },
           {
+            ["name"] = "id",
+            ["type"] = "`$STRING`",
+          },
+          {
             ["name"] = "lines",
             ["type"] = "`$OBJECT`",
           },
@@ -1947,6 +1951,10 @@ local function make_config()
       },
       ["output_message"] = {
         ["fields"] = {
+          {
+            ["name"] = "id",
+            ["type"] = "`$STRING`",
+          },
           {
             ["name"] = "responseCode",
             ["req"] = true,
@@ -2263,6 +2271,10 @@ local function make_config()
       },
       ["output_status"] = {
         ["fields"] = {
+          {
+            ["name"] = "id",
+            ["type"] = "`$STRING`",
+          },
           {
             ["name"] = "percentage",
             ["type"] = "`$INTEGER`",

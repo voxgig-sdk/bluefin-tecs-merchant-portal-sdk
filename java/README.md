@@ -471,6 +471,7 @@ API path: `/merchantportalws/createNewProduct`
 | Field | Description |
 | --- | --- |
 | `batch` |  |
+| `id` |  |
 | `lines` |  |
 | `progress` |  |
 
@@ -496,6 +497,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
 
@@ -546,6 +548,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `percentage` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
@@ -1022,6 +1025,7 @@ Create an instance: `SdkEntity outputDetail = client.outputDetail(null);`
 | Field | Type | Description |
 | --- | --- | --- |
 | `batch` | `Map<String, Object>` |  |
+| `id` | `String` |  |
 | `lines` | `Map<String, Object>` |  |
 | `progress` | `Map<String, Object>` |  |
 
@@ -1077,6 +1081,7 @@ Create an instance: `SdkEntity outputMessage = client.outputMessage(null);`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `String` |  |
 | `responseCode` | `Long` | Response code. |
 | `responseMessage` | `String` | Response message. |
 
@@ -1193,6 +1198,7 @@ Create an instance: `SdkEntity outputStatus = client.outputStatus(null);`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `String` |  |
 | `percentage` | `Long` |  |
 | `responseCode` | `Long` | Response code. |
 | `responseMessage` | `String` | Response message. |

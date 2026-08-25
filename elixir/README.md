@@ -502,6 +502,7 @@ API path: `/merchantportalws/createNewProduct`
 | Field | Description |
 | --- | --- |
 | `batch` |  |
+| `id` |  |
 | `lines` |  |
 | `progress` |  |
 
@@ -527,6 +528,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
 
@@ -577,6 +579,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `percentage` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
@@ -1067,6 +1070,7 @@ Create a handle: `output_detail = BluefinTecsMerchantPortal.output_detail(sdk)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `batch` | `map()` |  |
+| `id` | `String.t()` |  |
 | `lines` | `map()` |  |
 | `progress` | `map()` |  |
 
@@ -1124,6 +1128,7 @@ Create a handle: `output_message = BluefinTecsMerchantPortal.output_message(sdk)
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `String.t()` |  |
 | `responseCode` | `integer()` | Response code. |
 | `responseMessage` | `String.t()` | Response message. |
 
@@ -1244,6 +1249,7 @@ Create a handle: `output_status = BluefinTecsMerchantPortal.output_status(sdk)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `String.t()` |  |
 | `percentage` | `integer()` |  |
 | `responseCode` | `integer()` | Response code. |
 | `responseMessage` | `String.t()` | Response message. |

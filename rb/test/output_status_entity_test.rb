@@ -41,9 +41,13 @@ class OutputStatusEntityTest < Minitest::Test
 
     # LOAD
     output_status_ref01_ent = client.OutputStatus(nil)
-    output_status_ref01_match_dt0 = {}
+    output_status_ref01_match_dt0 = {
+      "id" => output_status_ref01_data["id"],
+    }
     output_status_ref01_data_dt0_loaded = output_status_ref01_ent.load(output_status_ref01_match_dt0, nil)
-    assert !output_status_ref01_data_dt0_loaded.nil?
+    output_status_ref01_data_dt0_load_result = Helpers.to_map(output_status_ref01_data_dt0_loaded.respond_to?(:data_get) ? output_status_ref01_data_dt0_loaded.data_get : output_status_ref01_data_dt0_loaded)
+    assert !output_status_ref01_data_dt0_load_result.nil?
+    assert_equal output_status_ref01_data_dt0_load_result["id"], output_status_ref01_data["id"]
 
   end
 end

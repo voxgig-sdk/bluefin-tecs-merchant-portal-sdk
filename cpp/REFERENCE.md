@@ -869,6 +869,7 @@ auto output_detail = client->output_detail();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `std::map<std::string, Value>` | No |  |
+| `id` | `std::string` | No |  |
 | `lines` | `std::map<std::string, Value>` | No |  |
 | `progress` | `std::map<std::string, Value>` | No |  |
 
@@ -974,6 +975,7 @@ auto output_message = client->output_message();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `std::string` | No |  |
 | `responseCode` | `int64_t` | Yes | Response code. |
 | `responseMessage` | `std::string` | Yes | Response message. |
 
@@ -1170,6 +1172,7 @@ auto output_status = client->output_status();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `std::string` | No |  |
 | `percentage` | `int64_t` | No |  |
 | `responseCode` | `int64_t` | Yes | Response code. |
 | `responseMessage` | `std::string` | Yes | Response message. |

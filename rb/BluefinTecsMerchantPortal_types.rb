@@ -1049,6 +1049,9 @@ OutputCreateProductCreateData = Struct.new(
 # @!attribute [rw] batch
 #   @return [Hash, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] lines
 #   @return [Hash, nil]
 #
@@ -1056,6 +1059,7 @@ OutputCreateProductCreateData = Struct.new(
 #   @return [Hash, nil]
 OutputDetail = Struct.new(
   :batch,
+  :id,
   :lines,
   :progress,
   keyword_init: true
@@ -1122,12 +1126,16 @@ OutputListCreateData = Struct.new(
 
 # OutputMessage entity data model.
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] responseCode
 #   @return [Integer]
 #
 # @!attribute [rw] responseMessage
 #   @return [String]
 OutputMessage = Struct.new(
+  :id,
   :responseCode,
   :responseMessage,
   keyword_init: true
@@ -1270,6 +1278,9 @@ OutputStartCreateData = Struct.new(
 
 # OutputStatus entity data model.
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] percentage
 #   @return [Integer, nil]
 #
@@ -1282,6 +1293,7 @@ OutputStartCreateData = Struct.new(
 # @!attribute [rw] status
 #   @return [String, nil]
 OutputStatus = Struct.new(
+  :id,
   :percentage,
   :responseCode,
   :responseMessage,

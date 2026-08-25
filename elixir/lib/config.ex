@@ -1806,6 +1806,10 @@ defmodule BluefinTecsMerchantPortal.Config do
               "type" => "`$OBJECT`"
             },
             %{
+              "name" => "id",
+              "type" => "`$STRING`"
+            },
+            %{
               "name" => "lines",
               "type" => "`$OBJECT`"
             },
@@ -1948,6 +1952,10 @@ defmodule BluefinTecsMerchantPortal.Config do
         },
         "output_message" => %{
           "fields" => [
+            %{
+              "name" => "id",
+              "type" => "`$STRING`"
+            },
             %{
               "name" => "responseCode",
               "req" => true,
@@ -2264,6 +2272,10 @@ defmodule BluefinTecsMerchantPortal.Config do
         },
         "output_status" => %{
           "fields" => [
+            %{
+              "name" => "id",
+              "type" => "`$STRING`"
+            },
             %{
               "name" => "percentage",
               "type" => "`$INTEGER`"

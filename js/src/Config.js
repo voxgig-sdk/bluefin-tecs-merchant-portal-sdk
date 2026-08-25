@@ -1876,6 +1876,10 @@ class Config {
           "type": "`$OBJECT`"
         },
         {
+          "name": "id",
+          "type": "`$STRING`"
+        },
+        {
           "name": "lines",
           "type": "`$OBJECT`"
         },
@@ -2018,6 +2022,10 @@ class Config {
     },
     "output_message": {
       "fields": [
+        {
+          "name": "id",
+          "type": "`$STRING`"
+        },
         {
           "name": "responseCode",
           "req": true,
@@ -2334,6 +2342,10 @@ class Config {
     },
     "output_status": {
       "fields": [
+        {
+          "name": "id",
+          "type": "`$STRING`"
+        },
         {
           "name": "percentage",
           "type": "`$INTEGER`"

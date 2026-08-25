@@ -366,6 +366,7 @@ class OutputCreateProductCreateData(OutputCreateProductCreateDataRequired, total
 
 class OutputDetail(TypedDict, total=False):
     batch: dict
+    id: str
     lines: dict
     progress: dict
 
@@ -396,9 +397,13 @@ class OutputListCreateData(OutputListCreateDataRequired, total=False):
     sorting: dict
 
 
-class OutputMessage(TypedDict):
+class OutputMessageRequired(TypedDict):
     responseCode: int
     responseMessage: str
+
+
+class OutputMessage(OutputMessageRequired, total=False):
+    id: str
 
 
 class OutputMessageLoadMatch(TypedDict):
@@ -459,6 +464,7 @@ class OutputStatusRequired(TypedDict):
 
 
 class OutputStatus(OutputStatusRequired, total=False):
+    id: str
     percentage: int
     status: str
 

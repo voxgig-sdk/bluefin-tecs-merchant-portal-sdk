@@ -329,6 +329,7 @@
 /**
  * @typedef {Object} OutputDetail
  * @property {Object} [batch]
+ * @property {string} [id]
  * @property {Object} [lines]
  * @property {Object} [progress]
  */
@@ -358,6 +359,7 @@
 
 /**
  * @typedef {Object} OutputMessage
+ * @property {string} [id]
  * @property {number} responseCode
  * @property {string} responseMessage
  */
@@ -417,6 +419,7 @@
 
 /**
  * @typedef {Object} OutputStatus
+ * @property {string} [id]
  * @property {number} [percentage]
  * @property {number} responseCode
  * @property {string} responseMessage

@@ -964,6 +964,7 @@ let output_detail = Sdk_client.output_detail client Noval
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `value map` | No |  |
+| `id` | `string` | No |  |
 | `lines` | `value map` | No |  |
 | `progress` | `value map` | No |  |
 
@@ -1087,6 +1088,7 @@ let output_message = Sdk_client.output_message client Noval
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `responseCode` | `int` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |
 
@@ -1319,6 +1321,7 @@ let output_status = Sdk_client.output_status client Noval
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `string` | No |  |
 | `percentage` | `int` | No |  |
 | `responseCode` | `int` | Yes | Response code. |
 | `responseMessage` | `string` | Yes | Response message. |

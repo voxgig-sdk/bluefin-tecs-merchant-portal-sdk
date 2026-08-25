@@ -482,6 +482,7 @@ API path: `/merchantportalws/createNewProduct`
 | Field | Description |
 | --- | --- |
 | `batch` |  |
+| `id` |  |
 | `lines` |  |
 | `progress` |  |
 
@@ -507,6 +508,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
 
@@ -557,6 +559,7 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `percentage` |  |
 | `responseCode` | Response code. |
 | `responseMessage` | Response message. |
@@ -1033,6 +1036,7 @@ Create an instance: `my $output_detail = $client->OutputDetail;`
 | Field | Type | Description |
 | --- | --- | --- |
 | `batch` | `hashref` |  |
+| `id` | `string` |  |
 | `lines` | `hashref` |  |
 | `progress` | `hashref` |  |
 
@@ -1088,6 +1092,7 @@ Create an instance: `my $output_message = $client->OutputMessage;`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `string` |  |
 | `responseCode` | `integer` | Response code. |
 | `responseMessage` | `string` | Response message. |
 
@@ -1204,6 +1209,7 @@ Create an instance: `my $output_status = $client->OutputStatus;`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `string` |  |
 | `percentage` | `integer` |  |
 | `responseCode` | `integer` | Response code. |
 | `responseMessage` | `string` | Response message. |

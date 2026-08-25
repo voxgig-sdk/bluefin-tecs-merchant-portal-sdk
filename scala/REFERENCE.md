@@ -886,6 +886,7 @@ val outputDetail = client.outputDetail(null)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `java.util.Map[String, Object]` | No |  |
+| `id` | `String` | No |  |
 | `lines` | `java.util.Map[String, Object]` | No |  |
 | `progress` | `java.util.Map[String, Object]` | No |  |
 
@@ -991,6 +992,7 @@ val outputMessage = client.outputMessage(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `String` | No |  |
 | `responseCode` | `java.lang.Long` | Yes | Response code. |
 | `responseMessage` | `String` | Yes | Response message. |
 
@@ -1187,6 +1189,7 @@ val outputStatus = client.outputStatus(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `String` | No |  |
 | `percentage` | `java.lang.Long` | No |  |
 | `responseCode` | `java.lang.Long` | Yes | Response code. |
 | `responseMessage` | `String` | Yes | Response message. |

@@ -48,9 +48,13 @@ class TestOutputDetailEntity:
 
         # LOAD
         output_detail_ref01_ent = client.OutputDetail(None)
-        output_detail_ref01_match_dt0 = {}
+        output_detail_ref01_match_dt0 = {
+            "id": output_detail_ref01_data["id"],
+        }
         output_detail_ref01_data_dt0_loaded = output_detail_ref01_ent.load(output_detail_ref01_match_dt0, None)
-        assert output_detail_ref01_data_dt0_loaded is not None
+        output_detail_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(output_detail_ref01_data_dt0_loaded))
+        assert output_detail_ref01_data_dt0_load_result is not None
+        assert output_detail_ref01_data_dt0_load_result["id"] == output_detail_ref01_data["id"]
 
 
 

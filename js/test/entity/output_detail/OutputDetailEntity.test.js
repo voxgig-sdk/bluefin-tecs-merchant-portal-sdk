@@ -44,8 +44,9 @@ describe('OutputDetailEntity', async () => {
     // LOAD
     const output_detail_ref01_ent = client.OutputDetail()
     const output_detail_ref01_match_dt0 = {}
+    output_detail_ref01_match_dt0.id = output_detail_ref01_data.id
     const output_detail_ref01_data_dt0 = (await output_detail_ref01_ent.load(output_detail_ref01_match_dt0)).data()
-    assert(null != output_detail_ref01_data_dt0)
+    assert(output_detail_ref01_data_dt0.id === output_detail_ref01_data.id)
 
 
   })

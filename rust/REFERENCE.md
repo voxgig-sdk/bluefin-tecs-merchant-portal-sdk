@@ -889,6 +889,7 @@ let output_detail = client.output_detail(Value::Noval);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `batch` | `std::collections::HashMap<String, Value>` | No |  |
+| `id` | `String` | No |  |
 | `lines` | `std::collections::HashMap<String, Value>` | No |  |
 | `progress` | `std::collections::HashMap<String, Value>` | No |  |
 
@@ -994,6 +995,7 @@ let output_message = client.output_message(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `String` | No |  |
 | `responseCode` | `i64` | Yes | Response code. |
 | `responseMessage` | `String` | Yes | Response message. |
 
@@ -1190,6 +1192,7 @@ let output_status = client.output_status(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `id` | `String` | No |  |
 | `percentage` | `i64` | No |  |
 | `responseCode` | `i64` | Yes | Response code. |
 | `responseMessage` | `String` | Yes | Response message. |
