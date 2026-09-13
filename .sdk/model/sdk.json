@@ -1,6 +1,15 @@
 {
+  "NAME": "BLUEFIN-TECS-MERCHANT-PORTAL",
+  "Name": "BluefinTecsMerchantPortal",
   "def": "tecs-merchant-portal-openapi.json",
   "main": {
+    "api": {
+      "entity": {},
+      "guide": {}
+    },
+    "custom": {
+      "plurals": {}
+    },
     "def": {
       "desc": ""
     },
@@ -6968,5 +6977,8 @@
     }
   },
   "name": "bluefin-tecs-merchant-portal",
+  "name-": "bluefin-tecs-merchant-portal",
+  "name_": "bluefin_tecs_merchant_portal",
+  "name__orig": "bluefin-tecs-merchant-portal",
   "origin": "voxgig-sdk"
 }
