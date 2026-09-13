@@ -72,7 +72,10 @@ Map<String, dynamic> directSetup([dynamic mockres]) {
   final live = 'TRUE' == env['BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE'];
 
   if (live) {
-    final client = BluefinTecsMerchantPortalSDK({
+    // Spread FIRST, so the generated fields below win: sdk-test-control.json's
+    // test.client.options adds to the live client, it does not redirect it.
+    final client = BluefinTecsMerchantPortalSDK(<String, dynamic>{
+      ...liveClientOptions(),
     });
 
     dynamic idmap = env['BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID'];

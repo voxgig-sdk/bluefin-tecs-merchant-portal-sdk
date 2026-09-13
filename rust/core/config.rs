@@ -150,6 +150,7 @@ pub fn make_config() -> Value {
             ("merchant_portal_api_controller".to_string(), Value::map_of([
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("account_number")),
                         ("short".to_string(), Value::str("Account number provided by the acquirer.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -189,12 +190,14 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("merchant_category_code")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("Merchant category code as defined by the payment network.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("email")),
                         ("name".to_string(), Value::str("merchant_email")),
                         ("short".to_string(), Value::str("Merchant's email address for receiving notifications.")),
                         ("type".to_string(), Value::str("`$STRING`")),
@@ -250,6 +253,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("sorting_code")),
                         ("short".to_string(), Value::str("Sorting code provided by the acquirer.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -290,6 +294,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalid")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("TECS terminalid given by Tecs processing engine.")),
@@ -301,6 +306,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("email")),
                         ("name".to_string(), Value::str("user_email")),
                         ("short".to_string(), Value::str("Email address of the user acting on behalf of the merchant.")),
                         ("type".to_string(), Value::str("`$STRING`")),
@@ -322,6 +328,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("uri")),
                         ("name".to_string(), Value::str("web_shop_url")),
                         ("short".to_string(), Value::str("URL of the merchant's web shop.")),
                         ("type".to_string(), Value::str("`$STRING`")),
@@ -354,9 +361,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/deactivateTerminal")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("deactivateTerminal"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("deactivateTerminal")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -366,6 +377,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("deactivateTerminal"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -383,9 +398,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/reactivateTerminal")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("reactivateTerminal"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("reactivateTerminal")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -395,6 +414,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("reactivateTerminal"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -412,9 +435,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/registerAdditionalTerminal")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("registerAdditionalTerminal"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("registerAdditionalTerminal")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -424,6 +451,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("registerAdditionalTerminal"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -441,9 +472,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/registerNewMerchant")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("registerNewMerchant"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("registerNewMerchant")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -453,6 +488,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("registerNewMerchant"),
                                 ])),
                             ]),
                         ])),
@@ -475,14 +514,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("GET")),
                                 ("orig".to_string(), Value::str("/merchantportalws/logDeveloperInfo")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("logDeveloperInfo"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("logDeveloperInfo")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("logDeveloperInfo"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -490,14 +537,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("GET")),
                                 ("orig".to_string(), Value::str("/merchantportalws/version")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("version"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("version")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("version"),
                                 ])),
                             ]),
                         ])),
@@ -541,9 +596,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/generateContract")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("generateContract"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("generateContract")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -553,6 +612,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("generateContract"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -570,9 +633,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/uploadContract")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("uploadContract"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("uploadContract")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -582,6 +649,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("uploadContract"),
                                 ])),
                             ]),
                         ])),
@@ -630,9 +701,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/documentsList")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("documentsList"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("documentsList")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -642,6 +717,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("documentsList"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -659,9 +738,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/downloadDocument")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("downloadDocument"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("downloadDocument")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -671,6 +754,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("downloadDocument"),
                                 ])),
                             ]),
                         ])),
@@ -762,9 +849,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/applicationForm")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("applicationForm"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("applicationForm")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -774,6 +865,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("applicationForm"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -791,9 +886,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/packageForm")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("packageForm"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("packageForm")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -803,6 +902,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("packageForm"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -820,9 +923,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/reopenForm")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("reopenForm"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("reopenForm")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -832,6 +939,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("reopenForm"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -849,9 +960,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/secretKey")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("secretKey"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("secretKey")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -861,6 +976,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("secretKey"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -878,9 +997,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/submitForm")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("submitForm"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("submitForm")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -890,6 +1013,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("submitForm"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -907,9 +1034,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/submitValues")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("submitValues"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("submitValues")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -919,6 +1050,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("submitValues"),
                                 ])),
                             ]),
                         ])),
@@ -970,9 +1105,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/createMandatorConfig")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("createMandatorConfig"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("createMandatorConfig")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -982,6 +1121,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("createMandatorConfig"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -999,9 +1142,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/introduceMandatorPackage")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("introduceMandatorPackage"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("introduceMandatorPackage")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1011,6 +1158,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("introduceMandatorPackage"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1028,9 +1179,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/selfRegistrationLink")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("selfRegistrationLink"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("selfRegistrationLink")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1040,6 +1195,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("selfRegistrationLink"),
                                 ])),
                             ]),
                         ])),
@@ -1215,9 +1374,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/contractNumber")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("contractNumber"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("contractNumber")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1227,6 +1390,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("contractNumber"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1244,9 +1411,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/registerAdditionalAcquiring")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("registerAdditionalAcquiring"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("registerAdditionalAcquiring")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1256,6 +1427,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("registerAdditionalAcquiring"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1273,9 +1448,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/updateMerchant")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("updateMerchant"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("updateMerchant")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1286,20 +1465,32 @@ pub fn make_config() -> Value {
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
                                 ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("updateMerchant"),
+                                ])),
                             ]),
                             Value::map_of([
                                 ("args".to_string(), Value::empty_map()),
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/registerMerchant")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("registerMerchant"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("registerMerchant")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("registerMerchant"),
                                 ])),
                             ]),
                         ])),
@@ -1389,9 +1580,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/availablePackages")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("availablePackages"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("availablePackages")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1401,6 +1596,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("availablePackages"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1418,9 +1617,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/orderPackage")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("orderPackage"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("orderPackage")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1430,6 +1633,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("orderPackage"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1447,9 +1654,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/orderedPackages")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("orderedPackages"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("orderedPackages")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1459,6 +1670,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("orderedPackages"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1476,9 +1691,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/packageTemplates")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("packageTemplates"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("packageTemplates")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1488,6 +1707,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("packageTemplates"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1504,9 +1727,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/updatePackageData")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("updatePackageData"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("updatePackageData")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1516,6 +1743,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("updatePackageData"),
                                 ])),
                             ]),
                         ])),
@@ -1594,9 +1825,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/approveProduct")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("approveProduct"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("approveProduct")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1606,6 +1841,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("approveProduct"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1623,9 +1862,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/declineProduct")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("declineProduct"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("declineProduct")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1635,6 +1878,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("declineProduct"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1652,9 +1899,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/orderAdditionalProduct")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("orderAdditionalProduct"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("orderAdditionalProduct")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1664,6 +1915,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("orderAdditionalProduct"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1681,9 +1936,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/productsList")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("productsList"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("productsList")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1693,6 +1952,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("productsList"),
                                 ])),
                             ]),
                         ])),
@@ -1717,6 +1980,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$ARRAY`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("Response code.")),
@@ -1750,9 +2014,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/addProductsToPackage")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("addProductsToPackage"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("addProductsToPackage")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1762,6 +2030,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("addProductsToPackage"),
                                 ])),
                             ]),
                         ])),
@@ -1826,6 +2098,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("Response code.")),
@@ -1877,9 +2150,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/createNewProduct")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("createNewProduct"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("createNewProduct")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1889,6 +2166,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("createNewProduct"),
                                 ])),
                             ]),
                         ])),
@@ -1916,6 +2197,10 @@ pub fn make_config() -> Value {
                         ("name".to_string(), Value::str("progress")),
                         ("type".to_string(), Value::str("`$OBJECT`")),
                     ]),
+                ])),
+                ("id".to_string(), Value::map_of([
+                    ("field".to_string(), Value::str("id")),
+                    ("name".to_string(), Value::str("id")),
                 ])),
                 ("name".to_string(), Value::str("output_detail")),
                 ("op".to_string(), Value::map_of([
@@ -1947,12 +2232,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("GET")),
                                 ("orig".to_string(), Value::str("/merchantportalws/batch/registerAdditionalTerminal/details/{id}")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("batch"),
-                                    Value::str("registerAdditionalTerminal"),
-                                    Value::str("details"),
-                                    Value::str("{id}"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("batch")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("registerAdditionalTerminal")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("details")),
+                                    ]),
+                                    Value::map_of([
+                                        ("var".to_string(), Value::str("id")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1963,6 +2258,13 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body.details`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("batch"),
+                                    Value::str("registerAdditionalTerminal"),
+                                    Value::str("details"),
+                                    Value::str("{id}"),
                                 ])),
                             ]),
                         ])),
@@ -1989,6 +2291,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$OBJECT`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("Response code.")),
@@ -2026,11 +2329,19 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/batch/registerAdditionalTerminal/list")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("batch"),
-                                    Value::str("registerAdditionalTerminal"),
-                                    Value::str("list"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("batch")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("registerAdditionalTerminal")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("list")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -2040,6 +2351,12 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("batch"),
+                                    Value::str("registerAdditionalTerminal"),
+                                    Value::str("list"),
                                 ])),
                             ]),
                         ])),
@@ -2056,6 +2373,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("Response code.")),
@@ -2067,6 +2385,10 @@ pub fn make_config() -> Value {
                         ("short".to_string(), Value::str("Response message.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
+                ])),
+                ("id".to_string(), Value::map_of([
+                    ("field".to_string(), Value::str("id")),
+                    ("name".to_string(), Value::str("id")),
                 ])),
                 ("name".to_string(), Value::str("output_message")),
                 ("op".to_string(), Value::map_of([
@@ -2098,12 +2420,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("GET")),
                                 ("orig".to_string(), Value::str("/merchantportalws/batch/registerAdditionalTerminal/restart/{id}")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("batch"),
-                                    Value::str("registerAdditionalTerminal"),
-                                    Value::str("restart"),
-                                    Value::str("{id}"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("batch")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("registerAdditionalTerminal")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("restart")),
+                                    ]),
+                                    Value::map_of([
+                                        ("var".to_string(), Value::str("id")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -2114,6 +2446,13 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("batch"),
+                                    Value::str("registerAdditionalTerminal"),
+                                    Value::str("restart"),
+                                    Value::str("{id}"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -2140,12 +2479,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("GET")),
                                 ("orig".to_string(), Value::str("/merchantportalws/batch/registerAdditionalTerminal/stop/{id}")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("batch"),
-                                    Value::str("registerAdditionalTerminal"),
-                                    Value::str("stop"),
-                                    Value::str("{id}"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("batch")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("registerAdditionalTerminal")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("stop")),
+                                    ]),
+                                    Value::map_of([
+                                        ("var".to_string(), Value::str("id")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -2156,6 +2505,13 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("batch"),
+                                    Value::str("registerAdditionalTerminal"),
+                                    Value::str("stop"),
+                                    Value::str("{id}"),
                                 ])),
                             ]),
                         ])),
@@ -2173,6 +2529,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$ARRAY`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("Response code.")),
@@ -2216,9 +2573,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/moveTid")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("moveTid"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("moveTid")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -2228,6 +2589,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("moveTid"),
                                 ])),
                             ]),
                         ])),
@@ -2252,6 +2617,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$ARRAY`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("Response code.")),
@@ -2285,9 +2651,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/removeProductsFromPackage")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("removeProductsFromPackage"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("removeProductsFromPackage")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -2297,6 +2667,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("removeProductsFromPackage"),
                                 ])),
                             ]),
                         ])),
@@ -2313,6 +2687,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("Response code.")),
@@ -2324,6 +2699,10 @@ pub fn make_config() -> Value {
                         ("short".to_string(), Value::str("Response message.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
+                ])),
+                ("id".to_string(), Value::map_of([
+                    ("field".to_string(), Value::str("id")),
+                    ("name".to_string(), Value::str("id")),
                 ])),
                 ("name".to_string(), Value::str("output_start")),
                 ("op".to_string(), Value::map_of([
@@ -2346,11 +2725,19 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/batch/registerAdditionalTerminal/start")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("batch"),
-                                    Value::str("registerAdditionalTerminal"),
-                                    Value::str("start"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("batch")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("registerAdditionalTerminal")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("start")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -2360,6 +2747,12 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("batch"),
+                                    Value::str("registerAdditionalTerminal"),
+                                    Value::str("start"),
                                 ])),
                             ]),
                         ])),
@@ -2376,10 +2769,12 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("percentage")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("Response code.")),
@@ -2395,6 +2790,10 @@ pub fn make_config() -> Value {
                         ("name".to_string(), Value::str("status")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
+                ])),
+                ("id".to_string(), Value::map_of([
+                    ("field".to_string(), Value::str("id")),
+                    ("name".to_string(), Value::str("id")),
                 ])),
                 ("name".to_string(), Value::str("output_status")),
                 ("op".to_string(), Value::map_of([
@@ -2426,12 +2825,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("GET")),
                                 ("orig".to_string(), Value::str("/merchantportalws/batch/registerAdditionalTerminal/status/{id}")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("batch"),
-                                    Value::str("registerAdditionalTerminal"),
-                                    Value::str("status"),
-                                    Value::str("{id}"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("batch")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("registerAdditionalTerminal")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("status")),
+                                    ]),
+                                    Value::map_of([
+                                        ("var".to_string(), Value::str("id")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -2442,6 +2851,13 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("batch"),
+                                    Value::str("registerAdditionalTerminal"),
+                                    Value::str("status"),
+                                    Value::str("{id}"),
                                 ])),
                             ]),
                         ])),
@@ -2505,6 +2921,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("Response code.")),
@@ -2543,9 +2960,13 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/merchantportalws/updateProduct")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("merchantportalws"),
-                                    Value::str("updateProduct"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("merchantportalws")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("updateProduct")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -2555,6 +2976,10 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("merchantportalws"),
+                                    Value::str("updateProduct"),
                                 ])),
                             ]),
                         ])),

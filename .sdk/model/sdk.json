@@ -34,6 +34,7 @@
           "fields": [
             {
               "active": true,
+              "format": "int32",
               "name": "account_number",
               "req": false,
               "short": "Account number provided by the acquirer.",
@@ -83,6 +84,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "merchant_category_code",
               "req": true,
               "short": "Merchant category code as defined by the payment network.",
@@ -90,6 +92,7 @@
             },
             {
               "active": true,
+              "format": "email",
               "name": "merchant_email",
               "req": false,
               "short": "Merchant's email address for receiving notifications.",
@@ -160,6 +163,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "sorting_code",
               "req": false,
               "short": "Sorting code provided by the acquirer.",
@@ -209,6 +213,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalid",
               "req": true,
               "short": "TECS terminalid given by Tecs processing engine.",
@@ -223,6 +228,7 @@
             },
             {
               "active": true,
+              "format": "email",
               "name": "user_email",
               "req": false,
               "short": "Email address of the user acting on behalf of the merchant.",
@@ -251,6 +257,7 @@
             },
             {
               "active": true,
+              "format": "uri",
               "name": "web_shop_url",
               "req": false,
               "short": "URL of the merchant's web shop.",
@@ -287,9 +294,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/deactivateTerminal",
-                  "parts": [
-                    "merchantportalws",
-                    "deactivateTerminal"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "deactivateTerminal"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -318,9 +329,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/reactivateTerminal",
-                  "parts": [
-                    "merchantportalws",
-                    "reactivateTerminal"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "reactivateTerminal"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -349,9 +364,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/registerAdditionalTerminal",
-                  "parts": [
-                    "merchantportalws",
-                    "registerAdditionalTerminal"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "registerAdditionalTerminal"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -380,9 +399,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/registerNewMerchant",
-                  "parts": [
-                    "merchantportalws",
-                    "registerNewMerchant"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "registerNewMerchant"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -419,9 +442,13 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/logDeveloperInfo",
-                  "parts": [
-                    "merchantportalws",
-                    "logDeveloperInfo"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "logDeveloperInfo"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -435,9 +462,13 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/version",
-                  "parts": [
-                    "merchantportalws",
-                    "version"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "version"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -494,9 +525,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/generateContract",
-                  "parts": [
-                    "merchantportalws",
-                    "generateContract"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "generateContract"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -525,9 +560,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/uploadContract",
-                  "parts": [
-                    "merchantportalws",
-                    "uploadContract"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "uploadContract"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -596,9 +635,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/documentsList",
-                  "parts": [
-                    "merchantportalws",
-                    "documentsList"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "documentsList"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -627,9 +670,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/downloadDocument",
-                  "parts": [
-                    "merchantportalws",
-                    "downloadDocument"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "downloadDocument"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -752,9 +799,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/applicationForm",
-                  "parts": [
-                    "merchantportalws",
-                    "applicationForm"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "applicationForm"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -783,9 +834,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/packageForm",
-                  "parts": [
-                    "merchantportalws",
-                    "packageForm"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "packageForm"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -814,9 +869,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/reopenForm",
-                  "parts": [
-                    "merchantportalws",
-                    "reopenForm"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "reopenForm"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -845,9 +904,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/secretKey",
-                  "parts": [
-                    "merchantportalws",
-                    "secretKey"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "secretKey"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -876,9 +939,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/submitForm",
-                  "parts": [
-                    "merchantportalws",
-                    "submitForm"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "submitForm"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -907,9 +974,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/submitValues",
-                  "parts": [
-                    "merchantportalws",
-                    "submitValues"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "submitValues"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -982,9 +1053,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/createMandatorConfig",
-                  "parts": [
-                    "merchantportalws",
-                    "createMandatorConfig"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "createMandatorConfig"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1013,9 +1088,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/introduceMandatorPackage",
-                  "parts": [
-                    "merchantportalws",
-                    "introduceMandatorPackage"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "introduceMandatorPackage"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1044,9 +1123,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/selfRegistrationLink",
-                  "parts": [
-                    "merchantportalws",
-                    "selfRegistrationLink"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "selfRegistrationLink"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1277,9 +1360,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/contractNumber",
-                  "parts": [
-                    "merchantportalws",
-                    "contractNumber"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "contractNumber"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1308,9 +1395,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/registerAdditionalAcquiring",
-                  "parts": [
-                    "merchantportalws",
-                    "registerAdditionalAcquiring"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "registerAdditionalAcquiring"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1339,9 +1430,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/updateMerchant",
-                  "parts": [
-                    "merchantportalws",
-                    "updateMerchant"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "updateMerchant"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1359,9 +1454,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/registerMerchant",
-                  "parts": [
-                    "merchantportalws",
-                    "registerMerchant"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "registerMerchant"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1483,9 +1582,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/availablePackages",
-                  "parts": [
-                    "merchantportalws",
-                    "availablePackages"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "availablePackages"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1514,9 +1617,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/orderPackage",
-                  "parts": [
-                    "merchantportalws",
-                    "orderPackage"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "orderPackage"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1545,9 +1652,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/orderedPackages",
-                  "parts": [
-                    "merchantportalws",
-                    "orderedPackages"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "orderedPackages"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1576,9 +1687,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/packageTemplates",
-                  "parts": [
-                    "merchantportalws",
-                    "packageTemplates"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "packageTemplates"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1607,9 +1722,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/updatePackageData",
-                  "parts": [
-                    "merchantportalws",
-                    "updatePackageData"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "updatePackageData"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1719,9 +1838,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/approveProduct",
-                  "parts": [
-                    "merchantportalws",
-                    "approveProduct"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "approveProduct"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1750,9 +1873,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/declineProduct",
-                  "parts": [
-                    "merchantportalws",
-                    "declineProduct"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "declineProduct"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1781,9 +1908,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/orderAdditionalProduct",
-                  "parts": [
-                    "merchantportalws",
-                    "orderAdditionalProduct"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "orderAdditionalProduct"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1812,9 +1943,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/productsList",
-                  "parts": [
-                    "merchantportalws",
-                    "productsList"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "productsList"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1855,6 +1990,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": true,
               "short": "Response code.",
@@ -1891,9 +2027,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/addProductsToPackage",
-                  "parts": [
-                    "merchantportalws",
-                    "addProductsToPackage"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "addProductsToPackage"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1983,6 +2123,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": true,
               "short": "Response code.",
@@ -2040,9 +2181,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/createNewProduct",
-                  "parts": [
-                    "merchantportalws",
-                    "createNewProduct"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "createNewProduct"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -2129,12 +2274,22 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/batch/registerAdditionalTerminal/details/{id}",
-                  "parts": [
-                    "merchantportalws",
-                    "batch",
-                    "registerAdditionalTerminal",
-                    "details",
-                    "{id}"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "batch"
+                    },
+                    {
+                      "lit": "registerAdditionalTerminal"
+                    },
+                    {
+                      "lit": "details"
+                    },
+                    {
+                      "var": "id"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -2180,6 +2335,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": true,
               "short": "Response code.",
@@ -2222,11 +2378,19 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/batch/registerAdditionalTerminal/list",
-                  "parts": [
-                    "merchantportalws",
-                    "batch",
-                    "registerAdditionalTerminal",
-                    "list"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "batch"
+                    },
+                    {
+                      "lit": "registerAdditionalTerminal"
+                    },
+                    {
+                      "lit": "list"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -2259,6 +2423,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": true,
               "short": "Response code.",
@@ -2309,12 +2474,22 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}",
-                  "parts": [
-                    "merchantportalws",
-                    "batch",
-                    "registerAdditionalTerminal",
-                    "restart",
-                    "{id}"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "batch"
+                    },
+                    {
+                      "lit": "registerAdditionalTerminal"
+                    },
+                    {
+                      "lit": "restart"
+                    },
+                    {
+                      "var": "id"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -2354,12 +2529,22 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}",
-                  "parts": [
-                    "merchantportalws",
-                    "batch",
-                    "registerAdditionalTerminal",
-                    "stop",
-                    "{id}"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "batch"
+                    },
+                    {
+                      "lit": "registerAdditionalTerminal"
+                    },
+                    {
+                      "lit": "stop"
+                    },
+                    {
+                      "var": "id"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -2393,6 +2578,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": true,
               "short": "Response code.",
@@ -2441,9 +2627,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/moveTid",
-                  "parts": [
-                    "merchantportalws",
-                    "moveTid"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "moveTid"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -2484,6 +2674,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": true,
               "short": "Response code.",
@@ -2520,9 +2711,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/removeProductsFromPackage",
-                  "parts": [
-                    "merchantportalws",
-                    "removeProductsFromPackage"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "removeProductsFromPackage"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -2555,6 +2750,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": true,
               "short": "Response code.",
@@ -2595,11 +2791,19 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/batch/registerAdditionalTerminal/start",
-                  "parts": [
-                    "merchantportalws",
-                    "batch",
-                    "registerAdditionalTerminal",
-                    "start"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "batch"
+                    },
+                    {
+                      "lit": "registerAdditionalTerminal"
+                    },
+                    {
+                      "lit": "start"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -2632,12 +2836,14 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "percentage",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": true,
               "short": "Response code.",
@@ -2694,12 +2900,22 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/batch/registerAdditionalTerminal/status/{id}",
-                  "parts": [
-                    "merchantportalws",
-                    "batch",
-                    "registerAdditionalTerminal",
-                    "status",
-                    "{id}"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "batch"
+                    },
+                    {
+                      "lit": "registerAdditionalTerminal"
+                    },
+                    {
+                      "lit": "status"
+                    },
+                    {
+                      "var": "id"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -2797,6 +3013,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": true,
               "short": "Response code.",
@@ -2840,9 +3057,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/updateProduct",
-                  "parts": [
-                    "merchantportalws",
-                    "updateProduct"
+                  "segments": [
+                    {
+                      "lit": "merchantportalws"
+                    },
+                    {
+                      "lit": "updateProduct"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -2928,8 +3149,11 @@
             }
           },
           "name": "audit",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -2958,6 +3182,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -2965,6 +3192,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -3061,8 +3291,11 @@
             }
           },
           "name": "clienttrack",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -3091,6 +3324,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -3098,6 +3334,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -3205,8 +3444,11 @@
             }
           },
           "name": "idempotency",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -3235,6 +3477,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -3242,6 +3487,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -3371,8 +3619,11 @@
             }
           },
           "name": "log",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -3401,6 +3652,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -3408,6 +3662,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -3515,8 +3772,11 @@
             }
           },
           "name": "metrics",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -3545,6 +3805,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -3552,6 +3815,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -3653,8 +3919,11 @@
             }
           },
           "name": "paging",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -3683,6 +3952,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -3690,6 +3962,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -3787,8 +4062,11 @@
             }
           },
           "name": "ratelimit",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -3817,6 +4095,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -3824,6 +4105,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -3932,8 +4216,11 @@
             }
           },
           "name": "retry",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -3962,6 +4249,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -3969,6 +4259,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -4076,8 +4369,11 @@
             }
           },
           "name": "telemetry",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -4106,6 +4402,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -4113,6 +4412,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -4216,8 +4518,11 @@
             }
           },
           "name": "test",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -4246,6 +4551,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -4253,6 +4561,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -4349,8 +4660,11 @@
             }
           },
           "name": "timeout",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -4379,6 +4693,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -4386,6 +4703,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -4935,6 +5255,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4960,6 +5283,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "tests/runner.h"
+          ],
           "title": "C"
         },
         "clojure": {
@@ -4994,6 +5320,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5019,6 +5348,7 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [],
           "title": "Clojure"
         },
         "cpp": {
@@ -5055,6 +5385,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5080,6 +5413,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.hpp"
+          ],
           "title": "C++"
         },
         "csharp": {
@@ -5116,6 +5452,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5141,6 +5480,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.cs"
+          ],
           "title": "C#"
         },
         "dart": {
@@ -5149,7 +5491,7 @@
             "name": "",
             "url": ""
           },
-          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "base": "node_modules/@voxgig/sdkgen-langpack/.sdk",
           "comment": {
             "line": "//"
           },
@@ -5174,7 +5516,10 @@
             "repo": "",
             "sdkrel": ""
           },
-          "package": "@voxgig/sdkgen",
+          "package": "@voxgig/sdkgen-langpack",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5200,6 +5545,10 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/runner.dart",
+            "test/struct_corpus.dart"
+          ],
           "title": "Dart"
         },
         "elixir": {
@@ -5234,6 +5583,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5259,6 +5611,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/support/struct_corpus.ex"
+          ],
           "title": "Elixir"
         },
         "go": {
@@ -5295,6 +5650,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5320,6 +5678,10 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/runner_test.go",
+            "test/struct_runner_test.go"
+          ],
           "title": "Golang"
         },
         "go-cli": {
@@ -5371,6 +5733,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -5395,6 +5758,7 @@
             },
             "version": "0.1.1"
           },
+          "superseded": [],
           "title": "Go CLI"
         },
         "go-mcp": {
@@ -5446,6 +5810,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -5470,7 +5835,86 @@
             },
             "version": "0.1.1"
           },
+          "superseded": [],
           "title": "Go MCP server"
+        },
+        "haskell": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen-langpack/.sdk",
+          "comment": {
+            "line": "--"
+          },
+          "deps": {},
+          "ext": "hs",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
+          "module": {
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
+          },
+          "name": "haskell",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen-langpack",
+          "phase": {
+            "agentguide": {
+              "active": true
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": true
+            },
+            "test": {
+              "active": true
+            }
+          },
+          "provides": {},
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "hackage",
+              "package": "",
+              "state": "pending",
+              "url": "https://hackage.haskell.org",
+              "vault": {
+                "alias": "hackage",
+                "env": "HACKAGE_TOKEN",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [],
+          "title": "Haskell"
         },
         "java": {
           "active": true,
@@ -5506,6 +5950,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5531,6 +5978,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.java"
+          ],
           "title": "Java"
         },
         "js": {
@@ -5571,6 +6021,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5595,6 +6048,9 @@
             },
             "version": "0.1.1"
           },
+          "superseded": [
+            "test/runner.js"
+          ],
           "title": "JavaScript"
         },
         "kotlin": {
@@ -5631,6 +6087,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5656,7 +6115,88 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.kt"
+          ],
           "title": "Kotlin"
+        },
+        "lean": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen-langpack/.sdk",
+          "comment": {
+            "line": "--"
+          },
+          "deps": {},
+          "ext": "lean",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
+          "module": {
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-portal",
+            "package": "",
+            "path": ""
+          },
+          "name": "lean",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen-langpack",
+          "phase": {
+            "agentguide": {
+              "active": true
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": true
+            },
+            "test": {
+              "active": true
+            }
+          },
+          "provides": {},
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "reservoir",
+              "package": "",
+              "state": "pending",
+              "url": "https://reservoir.lean-lang.org",
+              "vault": {
+                "alias": "reservoir",
+                "env": "RESERVOIR_TOKEN",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [],
+          "title": "Lean"
         },
         "lua": {
           "active": true,
@@ -5696,6 +6236,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5721,6 +6264,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.lua"
+          ],
           "title": "Lua"
         },
         "ocaml": {
@@ -5737,7 +6283,7 @@
           "ext": "ml",
           "feature": {
             "fullset": [],
-            "trim": false
+            "trim": true
           },
           "module": {
             "goversion": "",
@@ -5755,6 +6301,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5780,6 +6329,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/corpus_runner.ml"
+          ],
           "title": "OCaml"
         },
         "perl": {
@@ -5814,6 +6366,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5839,6 +6394,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "t/struct_runner.pm"
+          ],
           "title": "Perl"
         },
         "php": {
@@ -5873,6 +6431,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5898,6 +6459,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.php"
+          ],
           "title": "PHP"
         },
         "py": {
@@ -5938,6 +6502,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5963,6 +6530,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.py"
+          ],
           "title": "Python"
         },
         "rb": {
@@ -6008,6 +6578,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -6033,6 +6606,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.rb"
+          ],
           "title": "Ruby"
         },
         "rust": {
@@ -6075,6 +6651,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -6100,6 +6679,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "tests/struct_runner/mod.rs"
+          ],
           "title": "Rust"
         },
         "scala": {
@@ -6134,6 +6716,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -6159,6 +6744,7 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [],
           "title": "Scala"
         },
         "swift": {
@@ -6195,6 +6781,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -6220,6 +6809,7 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [],
           "title": "Swift"
         },
         "ts": {
@@ -6237,11 +6827,6 @@
               "active": true,
               "kind": "dev",
               "version": "^25.6.0"
-            },
-            "dotenv": {
-              "active": true,
-              "kind": "dev",
-              "version": "^17.4.2"
             },
             "typescript": {
               "active": true,
@@ -6270,6 +6855,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -6294,6 +6882,14 @@
             },
             "version": "0.1.1"
           },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
           "title": "TypeScript"
         },
         "zig": {
@@ -6328,6 +6924,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -6353,6 +6952,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.zig"
+          ],
           "title": "Zig"
         }
       },

@@ -306,39 +306,39 @@ On error, `ok` is `False` and `err` carries the error value.
 
 | Field | Description |
 | --- | --- |
-| `account_number` |  |
-| `additional_data` |  |
-| `business_reg_number` |  |
-| `city` |  |
-| `corporateuuid` |  |
-| `country` |  |
-| `currency` |  |
-| `merchant_category_code` |  |
-| `merchant_email` |  |
-| `merchant_name` |  |
-| `merchant_phone_number` |  |
-| `packageid` |  |
-| `packageorderuuid` |  |
-| `password` |  |
-| `productid` |  |
-| `productid_acquirer` |  |
-| `reason_deactivation` |  |
-| `reason_reactivation` |  |
-| `sorting_code` |  |
-| `state` |  |
-| `street` |  |
-| `terminal_country_code` |  |
-| `terminal_language_code` |  |
-| `terminal_location` |  |
-| `terminal_serial_number` |  |
-| `terminalid` |  |
-| `terminalid_acquirer` |  |
-| `user_email` |  |
-| `user_phone_number` |  |
-| `username` |  |
-| `vu_nummer` |  |
-| `web_shop_url` |  |
-| `zipcode` |  |
+| `account_number` | Account number provided by the acquirer. |
+| `additional_data` | Arbitrary merchant-specific data related to terminal registration. |
+| `business_reg_number` | Merchant business registration number as stated in the company registry. |
+| `city` | Merchant's address: city. |
+| `corporateuuid` | Unique identifier for the corporate entity (UUID format). |
+| `country` | Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format). |
+| `currency` | Transaction currency (must be in "ISO 4217" format). |
+| `merchant_category_code` | Merchant category code as defined by the payment network. |
+| `merchant_email` | Merchant's email address for receiving notifications. |
+| `merchant_name` | The officially incorporated company name of the merchant. |
+| `merchant_phone_number` | Merchant's phone number for notifications. |
+| `packageid` | Identifier of the package in the TECS processing engine provided by TECS. |
+| `packageorderuuid` | Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call. |
+| `password` | Merchant password for MPOS. |
+| `productid` | Identifier of the product for which terminal registration is to be performed. |
+| `productid_acquirer` | Identifier of the product for which acquiring is enabled. |
+| `reason_deactivation` | Reason for terminal deactivation. |
+| `reason_reactivation` | Reason for terminal reactivation. |
+| `sorting_code` | Sorting code provided by the acquirer. |
+| `state` | Merchant's address: state. |
+| `street` | Merchant's address: street and house number. |
+| `terminal_country_code` | Terminal country code (must be in 'ISO-3166 ALPHA-3' format). |
+| `terminal_language_code` | Terminal language code (must be in 'ISO 639-1' format). |
+| `terminal_location` | Physical or logical location of the terminal. |
+| `terminal_serial_number` | Terminal serial number. |
+| `terminalid` | TECS terminalid given by Tecs processing engine. |
+| `terminalid_acquirer` | Terminal ID as set by the acquirer (optional). |
+| `user_email` | Email address of the user acting on behalf of the merchant. |
+| `user_phone_number` | Phone number of the user acting on behalf of the merchant. |
+| `username` | Merchant username for MPOS. |
+| `vu_nummer` | Merchant contract number with the acquirer. |
+| `web_shop_url` | URL of the merchant's web shop. |
+| `zipcode` | Merchant's address: postal code. |
 
 Operations: Create.
 
@@ -369,8 +369,8 @@ API path: `/merchantportalws/generateContract`
 | Field | Description |
 | --- | --- |
 | `appFormFieldDescUUID` |  |
-| `packageOrderUUID` |  |
-| `productOrderUUID` |  |
+| `packageOrderUUID` | UUID of the package order. |
+| `productOrderUUID` | UUID of the product order. |
 
 Operations: Create.
 
@@ -384,9 +384,9 @@ API path: `/merchantportalws/documentsList`
 | `filter` |  |
 | `language` |  |
 | `packageOrder` |  |
-| `packageOrderUUID` |  |
+| `packageOrderUUID` | UUID of the package order. |
 | `packageUUID` |  |
-| `productOrderUUID` |  |
+| `productOrderUUID` | UUID of the product order. |
 | `productOrders` |  |
 | `reasonOfReopening` |  |
 
@@ -411,32 +411,32 @@ API path: `/merchantportalws/createMandatorConfig`
 
 | Field | Description |
 | --- | --- |
-| `additional_data` |  |
+| `additional_data` | Optional additional merchant-specific data related to enabling acquiring. |
 | `businessRegistrationNumber` |  |
-| `city` |  |
+| `city` | City where the merchant is located. |
 | `companyName` |  |
-| `corporateUUID` |  |
-| `country` |  |
-| `currency` |  |
+| `corporateUUID` | Unique identifier for the corporate entity. |
+| `country` | Country where the merchant is located. |
+| `currency` | Transaction currency in ISO 4217 format. |
 | `email` |  |
 | `language` |  |
 | `login` |  |
-| `mandator` |  |
-| `merchantContractNumber` |  |
-| `merchantName` |  |
-| `merchant_category_code` |  |
-| `packageUUID` |  |
-| `packageorderuuid` |  |
+| `mandator` | Mandator name assigned by TECS. |
+| `merchantContractNumber` | Unique identifier for the merchant within a specific system. |
+| `merchantName` | Name of the merchant. |
+| `merchant_category_code` | Merchant Category Code (MCC) describing the merchant’s type of business. |
+| `packageUUID` | UUID of the package. |
+| `packageorderuuid` | Unique identifier for the registered merchant in the TECS system. |
 | `phoneNumber` |  |
-| `postalCode` |  |
-| `productid_acquirer` |  |
-| `region` |  |
-| `registrationNumber` |  |
-| `signature` |  |
-| `street` |  |
-| `terminalIds` |  |
-| `terminalid_acquirer` |  |
-| `vu_nummer` |  |
+| `postalCode` | Postal or ZIP code of the merchant’s location. |
+| `productid_acquirer` | Identifier of the product for which acquiring is to be enabled. |
+| `region` | State or province where the merchant is located. |
+| `registrationNumber` | Business registration number. |
+| `signature` | Signature value = saltAsHex-hashAsHex. |
+| `street` | Street address of the merchant. |
+| `terminalIds` | Optional list of terminal IDs for which acquiring should be activated. |
+| `terminalid_acquirer` | Optional terminal ID provided by the acquirer. |
+| `vu_nummer` | Merchant contract number with the acquirer. |
 
 Operations: Create.
 
@@ -448,13 +448,13 @@ API path: `/merchantportalws/contractNumber`
 | --- | --- |
 | `consumerUUID` |  |
 | `corporateUUID` |  |
-| `country` |  |
-| `descriptionKey` |  |
+| `country` | Country associated with the package. |
+| `descriptionKey` | Key for the description of the package. |
 | `filter` |  |
 | `language` |  |
-| `nameKey` |  |
-| `packageStatus` |  |
-| `packageUUID` |  |
+| `nameKey` | Key for the name of the package. |
+| `packageStatus` | Status of the package. |
+| `packageUUID` | Unique identifier for the package. |
 | `pagination` |  |
 | `sorting` |  |
 
@@ -474,7 +474,7 @@ API path: `/merchantportalws/availablePackages`
 | `pagination` |  |
 | `productOrderUUID` |  |
 | `productUUID` |  |
-| `reason_decline` |  |
+| `reason_decline` | Reason for product decline. |
 | `sorting` |  |
 
 Operations: Create.
@@ -485,10 +485,10 @@ API path: `/merchantportalws/approveProduct`
 
 | Field | Description |
 | --- | --- |
-| `packageUUID` |  |
-| `productUUIDs` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
+| `packageUUID` | Unique identifier for the package. |
+| `productUUIDs` | The list of unique identifiers of the products. |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Create.
 
@@ -498,20 +498,20 @@ API path: `/merchantportalws/addProductsToPackage`
 
 | Field | Description |
 | --- | --- |
-| `acquirerId` |  |
-| `allowMultipleOrders` |  |
-| `appFormTemplateName` |  |
-| `contractNeeded` |  |
-| `credentialsNeeded` |  |
-| `descriptionKey` |  |
-| `nameKey` |  |
-| `prescreeningAllowed` |  |
-| `productName` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `terminalTemplateName` |  |
-| `vendorName` |  |
-| `xmlTemplateFile` |  |
+| `acquirerId` | Unique identifier for the acquirer. |
+| `allowMultipleOrders` | Indication whether multiple orders are allowed or not. |
+| `appFormTemplateName` | Name of the application form template. |
+| `contractNeeded` | Indication whether contract is needed or not. |
+| `credentialsNeeded` | Indication whether credentials are needed or not. |
+| `descriptionKey` | Key indicator for product description. |
+| `nameKey` | Key indicator for product name. |
+| `prescreeningAllowed` | Indication whether prescreening is allowed or not. |
+| `productName` | Name of the product. |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
+| `terminalTemplateName` | Name of the terminal template. |
+| `vendorName` | Name of the vendor. |
+| `xmlTemplateFile` | A string value containing the XML template file encoded in Base64. |
 
 Operations: Create.
 
@@ -522,6 +522,7 @@ API path: `/merchantportalws/createNewProduct`
 | Field | Description |
 | --- | --- |
 | `batch` |  |
+| `id` |  |
 | `lines` |  |
 | `progress` |  |
 
@@ -535,8 +536,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/details/{id}`
 | --- | --- |
 | `items` |  |
 | `pagination` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 | `sorting` |  |
 
 Operations: Create.
@@ -547,8 +548,9 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/list`
 
 | Field | Description |
 | --- | --- |
-| `responseCode` |  |
-| `responseMessage` |  |
+| `id` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Load.
 
@@ -559,8 +561,8 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/restart/{id}`
 | Field | Description |
 | --- | --- |
 | `productOrderUUIDs` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 | `targetPackageOrderUUID` |  |
 | `targetProductOrderUUID` |  |
 
@@ -572,10 +574,10 @@ API path: `/merchantportalws/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `packageUUID` |  |
-| `productUUIDs` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
+| `packageUUID` | Unique identifier for the package. |
+| `productUUIDs` | List of product unique identifiers. |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Create.
 
@@ -586,8 +588,8 @@ API path: `/merchantportalws/removeProductsFromPackage`
 | Field | Description |
 | --- | --- |
 | `id` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Create.
 
@@ -597,9 +599,10 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/start`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 | `percentage` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 | `status` |  |
 
 Operations: Load.
@@ -610,19 +613,19 @@ API path: `/merchantportalws/batch/registerAdditionalTerminal/status/{id}`
 
 | Field | Description |
 | --- | --- |
-| `allowMultipleOrders` |  |
-| `appFormName` |  |
-| `contractNeeded` |  |
-| `credentialsNeeded` |  |
-| `descriptionKey` |  |
-| `nameKey` |  |
-| `prescreeningAllowed` |  |
-| `productName` |  |
-| `productStatus` |  |
-| `productUUID` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `vendorName` |  |
+| `allowMultipleOrders` | An attribute to indicate if multiple orders are allowed |
+| `appFormName` | The name of the application form |
+| `contractNeeded` | An attribute to indicate if a contract is needed |
+| `credentialsNeeded` | An attribute to indicate if credentials are needed |
+| `descriptionKey` | The description of the product |
+| `nameKey` | The key of the product name |
+| `prescreeningAllowed` | An attribute to indicate if prescreening is allowed |
+| `productName` | The name of the product |
+| `productStatus` | The status of the product |
+| `productUUID` | The UUID of the product to update |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
+| `vendorName` | The name of the vendor |
 
 Operations: Create.
 
@@ -647,39 +650,39 @@ Create an instance: `merchant_portal_api_controller <- Sdk.merchant_portal_api_c
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `account_number` | `Int` |  |
-| `additional_data` | `Value` |  |
-| `business_reg_number` | `String` |  |
-| `city` | `String` |  |
-| `corporateuuid` | `String` |  |
-| `country` | `String` |  |
-| `currency` | `String` |  |
-| `merchant_category_code` | `Int` |  |
-| `merchant_email` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_phone_number` | `String` |  |
-| `packageid` | `String` |  |
-| `packageorderuuid` | `String` |  |
-| `password` | `String` |  |
-| `productid` | `String` |  |
-| `productid_acquirer` | `String` |  |
-| `reason_deactivation` | `String` |  |
-| `reason_reactivation` | `String` |  |
-| `sorting_code` | `Int` |  |
-| `state` | `String` |  |
-| `street` | `String` |  |
-| `terminal_country_code` | `String` |  |
-| `terminal_language_code` | `String` |  |
-| `terminal_location` | `String` |  |
-| `terminal_serial_number` | `String` |  |
-| `terminalid` | `Int` |  |
-| `terminalid_acquirer` | `String` |  |
-| `user_email` | `String` |  |
-| `user_phone_number` | `String` |  |
-| `username` | `String` |  |
-| `vu_nummer` | `String` |  |
-| `web_shop_url` | `String` |  |
-| `zipcode` | `String` |  |
+| `account_number` | `Int` | Account number provided by the acquirer. |
+| `additional_data` | `Value` | Arbitrary merchant-specific data related to terminal registration. |
+| `business_reg_number` | `String` | Merchant business registration number as stated in the company registry. |
+| `city` | `String` | Merchant's address: city. |
+| `corporateuuid` | `String` | Unique identifier for the corporate entity (UUID format). |
+| `country` | `String` | Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format). |
+| `currency` | `String` | Transaction currency (must be in "ISO 4217" format). |
+| `merchant_category_code` | `Int` | Merchant category code as defined by the payment network. |
+| `merchant_email` | `String` | Merchant's email address for receiving notifications. |
+| `merchant_name` | `String` | The officially incorporated company name of the merchant. |
+| `merchant_phone_number` | `String` | Merchant's phone number for notifications. |
+| `packageid` | `String` | Identifier of the package in the TECS processing engine provided by TECS. |
+| `packageorderuuid` | `String` | Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call. |
+| `password` | `String` | Merchant password for MPOS. |
+| `productid` | `String` | Identifier of the product for which terminal registration is to be performed. |
+| `productid_acquirer` | `String` | Identifier of the product for which acquiring is enabled. |
+| `reason_deactivation` | `String` | Reason for terminal deactivation. |
+| `reason_reactivation` | `String` | Reason for terminal reactivation. |
+| `sorting_code` | `Int` | Sorting code provided by the acquirer. |
+| `state` | `String` | Merchant's address: state. |
+| `street` | `String` | Merchant's address: street and house number. |
+| `terminal_country_code` | `String` | Terminal country code (must be in 'ISO-3166 ALPHA-3' format). |
+| `terminal_language_code` | `String` | Terminal language code (must be in 'ISO 639-1' format). |
+| `terminal_location` | `String` | Physical or logical location of the terminal. |
+| `terminal_serial_number` | `String` | Terminal serial number. |
+| `terminalid` | `Int` | TECS terminalid given by Tecs processing engine. |
+| `terminalid_acquirer` | `String` | Terminal ID as set by the acquirer (optional). |
+| `user_email` | `String` | Email address of the user acting on behalf of the merchant. |
+| `user_phone_number` | `String` | Phone number of the user acting on behalf of the merchant. |
+| `username` | `String` | Merchant username for MPOS. |
+| `vu_nummer` | `String` | Merchant contract number with the acquirer. |
+| `web_shop_url` | `String` | URL of the merchant's web shop. |
+| `zipcode` | `String` | Merchant's address: postal code. |
 
 #### Example: Create
 
@@ -779,8 +782,8 @@ Create an instance: `merchant_portal_pam_document_controller <- Sdk.merchant_por
 | Field | Type | Description |
 | --- | --- | --- |
 | `appFormFieldDescUUID` | `String` |  |
-| `packageOrderUUID` | `String` |  |
-| `productOrderUUID` | `String` |  |
+| `packageOrderUUID` | `String` | UUID of the package order. |
+| `productOrderUUID` | `String` | UUID of the product order. |
 
 #### Example: Create
 
@@ -813,9 +816,9 @@ Create an instance: `merchant_portal_pam_form_controller <- Sdk.merchant_portal_
 | `filter` | `Value` |  |
 | `language` | `String` |  |
 | `packageOrder` | `Value` |  |
-| `packageOrderUUID` | `String` |  |
+| `packageOrderUUID` | `String` | UUID of the package order. |
 | `packageUUID` | `String` |  |
-| `productOrderUUID` | `String` |  |
+| `productOrderUUID` | `String` | UUID of the product order. |
 | `productOrders` | `[Value]` |  |
 | `reasonOfReopening` | `String` |  |
 
@@ -882,32 +885,32 @@ Create an instance: `merchant_portal_pam_merchant_controller <- Sdk.merchant_por
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `additional_data` | `Value` |  |
+| `additional_data` | `Value` | Optional additional merchant-specific data related to enabling acquiring. |
 | `businessRegistrationNumber` | `String` |  |
-| `city` | `String` |  |
+| `city` | `String` | City where the merchant is located. |
 | `companyName` | `String` |  |
-| `corporateUUID` | `String` |  |
-| `country` | `String` |  |
-| `currency` | `String` |  |
+| `corporateUUID` | `String` | Unique identifier for the corporate entity. |
+| `country` | `String` | Country where the merchant is located. |
+| `currency` | `String` | Transaction currency in ISO 4217 format. |
 | `email` | `String` |  |
 | `language` | `String` |  |
 | `login` | `String` |  |
-| `mandator` | `String` |  |
-| `merchantContractNumber` | `String` |  |
-| `merchantName` | `String` |  |
-| `merchant_category_code` | `String` |  |
-| `packageUUID` | `String` |  |
-| `packageorderuuid` | `String` |  |
+| `mandator` | `String` | Mandator name assigned by TECS. |
+| `merchantContractNumber` | `String` | Unique identifier for the merchant within a specific system. |
+| `merchantName` | `String` | Name of the merchant. |
+| `merchant_category_code` | `String` | Merchant Category Code (MCC) describing the merchant’s type of business. |
+| `packageUUID` | `String` | UUID of the package. |
+| `packageorderuuid` | `String` | Unique identifier for the registered merchant in the TECS system. |
 | `phoneNumber` | `String` |  |
-| `postalCode` | `String` |  |
-| `productid_acquirer` | `String` |  |
-| `region` | `String` |  |
-| `registrationNumber` | `String` |  |
-| `signature` | `String` |  |
-| `street` | `String` |  |
-| `terminalIds` | `[Value]` |  |
-| `terminalid_acquirer` | `String` |  |
-| `vu_nummer` | `String` |  |
+| `postalCode` | `String` | Postal or ZIP code of the merchant’s location. |
+| `productid_acquirer` | `String` | Identifier of the product for which acquiring is to be enabled. |
+| `region` | `String` | State or province where the merchant is located. |
+| `registrationNumber` | `String` | Business registration number. |
+| `signature` | `String` | Signature value = saltAsHex-hashAsHex. |
+| `street` | `String` | Street address of the merchant. |
+| `terminalIds` | `[Value]` | Optional list of terminal IDs for which acquiring should be activated. |
+| `terminalid_acquirer` | `String` | Optional terminal ID provided by the acquirer. |
+| `vu_nummer` | `String` | Merchant contract number with the acquirer. |
 
 #### Example: Create
 
@@ -950,13 +953,13 @@ Create an instance: `merchant_portal_pam_package_controller <- Sdk.merchant_port
 | --- | --- | --- |
 | `consumerUUID` | `String` |  |
 | `corporateUUID` | `String` |  |
-| `country` | `String` |  |
-| `descriptionKey` | `String` |  |
+| `country` | `String` | Country associated with the package. |
+| `descriptionKey` | `String` | Key for the description of the package. |
 | `filter` | `Value` |  |
 | `language` | `String` |  |
-| `nameKey` | `String` |  |
-| `packageStatus` | `String` |  |
-| `packageUUID` | `String` |  |
+| `nameKey` | `String` | Key for the name of the package. |
+| `packageStatus` | `String` | Status of the package. |
+| `packageUUID` | `String` | Unique identifier for the package. |
 | `pagination` | `Value` |  |
 | `sorting` | `Value` |  |
 
@@ -996,7 +999,7 @@ Create an instance: `merchant_portal_pam_product_controller <- Sdk.merchant_port
 | `pagination` | `Value` |  |
 | `productOrderUUID` | `String` |  |
 | `productUUID` | `String` |  |
-| `reason_decline` | `String` |  |
+| `reason_decline` | `String` | Reason for product decline. |
 | `sorting` | `Value` |  |
 
 #### Example: Create
@@ -1029,10 +1032,10 @@ Create an instance: `output_add_product <- Sdk.output_add_product sdk VNoval`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `packageUUID` | `String` |  |
-| `productUUIDs` | `[Value]` |  |
-| `responseCode` | `Int` |  |
-| `responseMessage` | `String` |  |
+| `packageUUID` | `String` | Unique identifier for the package. |
+| `productUUIDs` | `[Value]` | The list of unique identifiers of the products. |
+| `responseCode` | `Int` | Response code. |
+| `responseMessage` | `String` | Response message. |
 
 #### Example: Create
 
@@ -1064,20 +1067,20 @@ Create an instance: `output_create_product <- Sdk.output_create_product sdk VNov
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirerId` | `String` |  |
-| `allowMultipleOrders` | `Bool` |  |
-| `appFormTemplateName` | `String` |  |
-| `contractNeeded` | `Bool` |  |
-| `credentialsNeeded` | `Bool` |  |
-| `descriptionKey` | `String` |  |
-| `nameKey` | `String` |  |
-| `prescreeningAllowed` | `Bool` |  |
-| `productName` | `String` |  |
-| `responseCode` | `Int` |  |
-| `responseMessage` | `String` |  |
-| `terminalTemplateName` | `String` |  |
-| `vendorName` | `String` |  |
-| `xmlTemplateFile` | `String` |  |
+| `acquirerId` | `String` | Unique identifier for the acquirer. |
+| `allowMultipleOrders` | `Bool` | Indication whether multiple orders are allowed or not. |
+| `appFormTemplateName` | `String` | Name of the application form template. |
+| `contractNeeded` | `Bool` | Indication whether contract is needed or not. |
+| `credentialsNeeded` | `Bool` | Indication whether credentials are needed or not. |
+| `descriptionKey` | `String` | Key indicator for product description. |
+| `nameKey` | `String` | Key indicator for product name. |
+| `prescreeningAllowed` | `Bool` | Indication whether prescreening is allowed or not. |
+| `productName` | `String` | Name of the product. |
+| `responseCode` | `Int` | Response code. |
+| `responseMessage` | `String` | Response message. |
+| `terminalTemplateName` | `String` | Name of the terminal template. |
+| `vendorName` | `String` | Name of the vendor. |
+| `xmlTemplateFile` | `String` | A string value containing the XML template file encoded in Base64. |
 
 #### Example: Create
 
@@ -1118,6 +1121,7 @@ Create an instance: `output_detail <- Sdk.output_detail sdk VNoval`
 | Field | Type | Description |
 | --- | --- | --- |
 | `batch` | `Value` |  |
+| `id` | `String` |  |
 | `lines` | `Value` |  |
 | `progress` | `Value` |  |
 
@@ -1149,8 +1153,8 @@ Create an instance: `output_list <- Sdk.output_list sdk VNoval`
 | --- | --- | --- |
 | `items` | `[Value]` |  |
 | `pagination` | `Value` |  |
-| `responseCode` | `Int` |  |
-| `responseMessage` | `String` |  |
+| `responseCode` | `Int` | Response code. |
+| `responseMessage` | `String` | Response message. |
 | `sorting` | `Value` |  |
 
 #### Example: Create
@@ -1182,8 +1186,9 @@ Create an instance: `output_message <- Sdk.output_message sdk VNoval`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `responseCode` | `Int` |  |
-| `responseMessage` | `String` |  |
+| `id` | `String` |  |
+| `responseCode` | `Int` | Response code. |
+| `responseMessage` | `String` | Response message. |
 
 #### Example: Load
 
@@ -1212,8 +1217,8 @@ Create an instance: `output_move_tid <- Sdk.output_move_tid sdk VNoval`
 | Field | Type | Description |
 | --- | --- | --- |
 | `productOrderUUIDs` | `[Value]` |  |
-| `responseCode` | `Int` |  |
-| `responseMessage` | `String` |  |
+| `responseCode` | `Int` | Response code. |
+| `responseMessage` | `String` | Response message. |
 | `targetPackageOrderUUID` | `String` |  |
 | `targetProductOrderUUID` | `String` |  |
 
@@ -1248,10 +1253,10 @@ Create an instance: `output_remove_product <- Sdk.output_remove_product sdk VNov
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `packageUUID` | `String` |  |
-| `productUUIDs` | `[Value]` |  |
-| `responseCode` | `Int` |  |
-| `responseMessage` | `String` |  |
+| `packageUUID` | `String` | Unique identifier for the package. |
+| `productUUIDs` | `[Value]` | List of product unique identifiers. |
+| `responseCode` | `Int` | Response code. |
+| `responseMessage` | `String` | Response message. |
 
 #### Example: Create
 
@@ -1284,8 +1289,8 @@ Create an instance: `output_start <- Sdk.output_start sdk VNoval`
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | `String` |  |
-| `responseCode` | `Int` |  |
-| `responseMessage` | `String` |  |
+| `responseCode` | `Int` | Response code. |
+| `responseMessage` | `String` | Response message. |
 
 #### Example: Create
 
@@ -1315,9 +1320,10 @@ Create an instance: `output_status <- Sdk.output_status sdk VNoval`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `id` | `String` |  |
 | `percentage` | `Int` |  |
-| `responseCode` | `Int` |  |
-| `responseMessage` | `String` |  |
+| `responseCode` | `Int` | Response code. |
+| `responseMessage` | `String` | Response message. |
 | `status` | `String` |  |
 
 #### Example: Load
@@ -1346,19 +1352,19 @@ Create an instance: `output_update_product <- Sdk.output_update_product sdk VNov
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `allowMultipleOrders` | `Bool` |  |
-| `appFormName` | `String` |  |
-| `contractNeeded` | `Bool` |  |
-| `credentialsNeeded` | `Bool` |  |
-| `descriptionKey` | `String` |  |
-| `nameKey` | `String` |  |
-| `prescreeningAllowed` | `Bool` |  |
-| `productName` | `String` |  |
-| `productStatus` | `String` |  |
-| `productUUID` | `String` |  |
-| `responseCode` | `Int` |  |
-| `responseMessage` | `String` |  |
-| `vendorName` | `String` |  |
+| `allowMultipleOrders` | `Bool` | An attribute to indicate if multiple orders are allowed |
+| `appFormName` | `String` | The name of the application form |
+| `contractNeeded` | `Bool` | An attribute to indicate if a contract is needed |
+| `credentialsNeeded` | `Bool` | An attribute to indicate if credentials are needed |
+| `descriptionKey` | `String` | The description of the product |
+| `nameKey` | `String` | The key of the product name |
+| `prescreeningAllowed` | `Bool` | An attribute to indicate if prescreening is allowed |
+| `productName` | `String` | The name of the product |
+| `productStatus` | `String` | The status of the product |
+| `productUUID` | `String` | The UUID of the product to update |
+| `responseCode` | `Int` | Response code. |
+| `responseMessage` | `String` | Response message. |
+| `vendorName` | `String` | The name of the vendor |
 
 #### Example: Create
 
@@ -1373,6 +1379,176 @@ Create an instance: `output_update_product <- Sdk.output_update_product sdk VNov
   output_update_product <- Sdk.eCreate ent d ctrl
   output_update_productData <- Sdk.eDataGet output_update_product
 ```
+
+## Features
+
+This SDK ships 11 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`audit`](#audit) | Structured audit trail of operations |
+| [`clienttrack`](#clienttrack) | Client identity and per-request correlation headers |
+| [`idempotency`](#idempotency) | Idempotency keys for safe retries of mutating operations |
+| [`log`](#log) | Structured request and response logging |
+| [`metrics`](#metrics) | Statistics capture: per-operation counters and latency |
+| [`paging`](#paging) | Pagination signals for list operations |
+| [`ratelimit`](#ratelimit) | Client-side rate limiting via a token bucket |
+| [`retry`](#retry) | Automatic retry of transient failures with exponential backoff |
+| [`telemetry`](#telemetry) | Distributed tracing spans with W3C trace-context propagation |
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+| [`timeout`](#timeout) | Per-request timeout with transport abort |
+
+> **Order matters for `ratelimit`, `retry`, `timeout`.** These wrap the
+> transport, so each one wraps whatever is already installed: the order you
+> activate them in IS the nesting order. Activating them as an ordered list
+> rather than a map is what fixes that order.
+
+### audit
+
+Structured audit trail of operations.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `actor` | `'anonymous'` |
+| `max` | `1000` |
+
+Set `feature.audit.active` to enable it, then override any of the options above.
+
+### clienttrack
+
+Client identity and per-request correlation headers.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `clientVersion` | `'0.0.1'` |
+
+Set `feature.clienttrack.active` to enable it, then override any of the options above.
+
+### idempotency
+
+Idempotency keys for safe retries of mutating operations.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `header` | `'Idempotency-Key'` |
+| `methods` | `['POST', 'PUT', 'PATCH', 'DELETE']` |
+| `ops` | `['create', 'update', 'remove']` |
+
+Set `feature.idempotency.active` to enable it, then override any of the options above.
+
+### log
+
+Structured request and response logging.
+
+| Option | Default |
+|---|---|
+| `active` | `true` |
+
+Set `feature.log.active` to enable it, then override any of the options above.
+
+### metrics
+
+Statistics capture: per-operation counters and latency.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.metrics.active` to enable it, then override any of the options above.
+
+### paging
+
+Pagination signals for list operations.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `afterVar` | `'after'` |
+| `cursorParam` | `'cursor'` |
+| `firstVar` | `'first'` |
+| `limitParam` | `'limit'` |
+| `pageParam` | `'page'` |
+| `startPage` | `1` |
+
+Set `feature.paging.active` to enable it, then override any of the options above.
+
+### ratelimit
+
+Client-side rate limiting via a token bucket.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `burst` | `5` |
+| `rate` | `5` |
+
+Set `feature.ratelimit.active` to enable it, then override any of the options above.
+
+`ratelimit` wraps the transport, so its position among the other
+transport features decides what it sees. A feature activated later wraps one
+activated earlier.
+
+### retry
+
+Automatic retry of transient failures with exponential backoff.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `factor` | `2` |
+| `maxDelay` | `2000` |
+| `minDelay` | `50` |
+| `retries` | `2` |
+| `statuses` | `[408, 425, 429, 500, 502, 503, 504]` |
+
+Set `feature.retry.active` to enable it, then override any of the options above.
+
+`retry` wraps the transport, so its position among the other
+transport features decides what it sees. A feature activated later wraps one
+activated earlier.
+
+### telemetry
+
+Distributed tracing spans with W3C trace-context propagation.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.telemetry.active` to enable it, then override any of the options above.
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
+
+### timeout
+
+Per-request timeout with transport abort.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `ms` | `30000` |
+
+Set `feature.timeout.active` to enable it, then override any of the options above.
+
+`timeout` wraps the transport, so its position among the other
+transport features decides what it sees. A feature activated later wraps one
+activated earlier.
 
 
 ## Advanced
@@ -1413,7 +1589,17 @@ a function that receives the context.
 
 The SDK ships with built-in features:
 
+- **AuditFeature**: Structured audit trail of operations
+- **ClienttrackFeature**: Client identity and per-request correlation headers
+- **IdempotencyFeature**: Idempotency keys for safe retries of mutating operations
+- **LogFeature**: Structured request and response logging
+- **MetricsFeature**: Statistics capture: per-operation counters and latency
+- **PagingFeature**: Pagination signals for list operations
+- **RatelimitFeature**: Client-side rate limiting via a token bucket
+- **RetryFeature**: Automatic retry of transient failures with exponential backoff
+- **TelemetryFeature**: Distributed tracing spans with W3C trace-context propagation
 - **TestFeature**: In-memory mock transport for testing without a live server
+- **TimeoutFeature**: Per-request timeout with transport abort
 
 Features are initialized in order. Hooks fire in the order features
 were added, so later features can override earlier ones.

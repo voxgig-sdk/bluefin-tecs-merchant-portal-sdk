@@ -150,6 +150,7 @@ pub fn make_config() Value {
             .{ "merchant_portal_api_controller", h.jo(&.{
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("account_number") },
                         .{ "short", h.vstr("Account number provided by the acquirer.") },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -189,12 +190,14 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("merchant_category_code") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Merchant category code as defined by the payment network.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("email") },
                         .{ "name", h.vstr("merchant_email") },
                         .{ "short", h.vstr("Merchant's email address for receiving notifications.") },
                         .{ "type", h.vstr("`$STRING`") },
@@ -250,6 +253,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("sorting_code") },
                         .{ "short", h.vstr("Sorting code provided by the acquirer.") },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -290,6 +294,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalid") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("TECS terminalid given by Tecs processing engine.") },
@@ -301,6 +306,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("email") },
                         .{ "name", h.vstr("user_email") },
                         .{ "short", h.vstr("Email address of the user acting on behalf of the merchant.") },
                         .{ "type", h.vstr("`$STRING`") },
@@ -322,6 +328,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("uri") },
                         .{ "name", h.vstr("web_shop_url") },
                         .{ "short", h.vstr("URL of the merchant's web shop.") },
                         .{ "type", h.vstr("`$STRING`") },
@@ -354,9 +361,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/deactivateTerminal") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("deactivateTerminal"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("deactivateTerminal") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -366,6 +377,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("deactivateTerminal"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -383,9 +398,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/reactivateTerminal") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("reactivateTerminal"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("reactivateTerminal") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -395,6 +414,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("reactivateTerminal"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -412,9 +435,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/registerAdditionalTerminal") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("registerAdditionalTerminal"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("registerAdditionalTerminal") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -424,6 +451,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("registerAdditionalTerminal"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -441,9 +472,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/registerNewMerchant") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("registerNewMerchant"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("registerNewMerchant") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -453,6 +488,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("registerNewMerchant"),
                                 }) },
                             }),
                         }) },
@@ -475,14 +514,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/logDeveloperInfo") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("logDeveloperInfo"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("logDeveloperInfo") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("logDeveloperInfo"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -490,14 +537,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/version") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("version"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("version") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("version"),
                                 }) },
                             }),
                         }) },
@@ -541,9 +596,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/generateContract") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("generateContract"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("generateContract") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -553,6 +612,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("generateContract"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -570,9 +633,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/uploadContract") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("uploadContract"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("uploadContract") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -582,6 +649,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("uploadContract"),
                                 }) },
                             }),
                         }) },
@@ -630,9 +701,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/documentsList") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("documentsList"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("documentsList") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -642,6 +717,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("documentsList"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -659,9 +738,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/downloadDocument") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("downloadDocument"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("downloadDocument") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -671,6 +754,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("downloadDocument"),
                                 }) },
                             }),
                         }) },
@@ -762,9 +849,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/applicationForm") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("applicationForm"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("applicationForm") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -774,6 +865,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("applicationForm"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -791,9 +886,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/packageForm") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("packageForm"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("packageForm") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -803,6 +902,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("packageForm"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -820,9 +923,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/reopenForm") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("reopenForm"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("reopenForm") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -832,6 +939,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("reopenForm"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -849,9 +960,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/secretKey") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("secretKey"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("secretKey") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -861,6 +976,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("secretKey"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -878,9 +997,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/submitForm") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("submitForm"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("submitForm") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -890,6 +1013,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("submitForm"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -907,9 +1034,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/submitValues") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("submitValues"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("submitValues") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -919,6 +1050,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("submitValues"),
                                 }) },
                             }),
                         }) },
@@ -970,9 +1105,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/createMandatorConfig") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("createMandatorConfig"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("createMandatorConfig") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -982,6 +1121,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("createMandatorConfig"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -999,9 +1142,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/introduceMandatorPackage") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("introduceMandatorPackage"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("introduceMandatorPackage") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1011,6 +1158,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("introduceMandatorPackage"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -1028,9 +1179,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/selfRegistrationLink") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("selfRegistrationLink"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("selfRegistrationLink") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1040,6 +1195,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("selfRegistrationLink"),
                                 }) },
                             }),
                         }) },
@@ -1215,9 +1374,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/contractNumber") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("contractNumber"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("contractNumber") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1227,6 +1390,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("contractNumber"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -1244,9 +1411,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/registerAdditionalAcquiring") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("registerAdditionalAcquiring"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("registerAdditionalAcquiring") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1256,6 +1427,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("registerAdditionalAcquiring"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -1273,9 +1448,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/updateMerchant") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("updateMerchant"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("updateMerchant") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1286,20 +1465,32 @@ pub fn make_config() Value {
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("updateMerchant"),
+                                }) },
                             }),
                             h.jo(&.{
                                 .{ "args", h.omap() },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/registerMerchant") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("registerMerchant"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("registerMerchant") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("registerMerchant"),
                                 }) },
                             }),
                         }) },
@@ -1389,9 +1580,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/availablePackages") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("availablePackages"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("availablePackages") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1401,6 +1596,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("availablePackages"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -1418,9 +1617,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/orderPackage") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("orderPackage"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("orderPackage") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1430,6 +1633,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("orderPackage"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -1447,9 +1654,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/orderedPackages") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("orderedPackages"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("orderedPackages") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1459,6 +1670,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("orderedPackages"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -1476,9 +1691,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/packageTemplates") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("packageTemplates"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("packageTemplates") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1488,6 +1707,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("packageTemplates"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -1504,9 +1727,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/updatePackageData") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("updatePackageData"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("updatePackageData") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1516,6 +1743,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("updatePackageData"),
                                 }) },
                             }),
                         }) },
@@ -1594,9 +1825,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/approveProduct") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("approveProduct"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("approveProduct") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1606,6 +1841,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("approveProduct"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -1623,9 +1862,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/declineProduct") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("declineProduct"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("declineProduct") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1635,6 +1878,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("declineProduct"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -1652,9 +1899,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/orderAdditionalProduct") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("orderAdditionalProduct"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("orderAdditionalProduct") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1664,6 +1915,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("orderAdditionalProduct"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -1681,9 +1936,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/productsList") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("productsList"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("productsList") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1693,6 +1952,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("productsList"),
                                 }) },
                             }),
                         }) },
@@ -1717,6 +1980,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$ARRAY`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
@@ -1750,9 +2014,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/addProductsToPackage") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("addProductsToPackage"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("addProductsToPackage") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1762,6 +2030,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("addProductsToPackage"),
                                 }) },
                             }),
                         }) },
@@ -1826,6 +2098,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
@@ -1877,9 +2150,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/createNewProduct") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("createNewProduct"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("createNewProduct") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1889,6 +2166,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("createNewProduct"),
                                 }) },
                             }),
                         }) },
@@ -1916,6 +2197,10 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("progress") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
+                }) },
+                .{ "id", h.jo(&.{
+                    .{ "field", h.vstr("id") },
+                    .{ "name", h.vstr("id") },
                 }) },
                 .{ "name", h.vstr("output_detail") },
                 .{ "op", h.jo(&.{
@@ -1947,12 +2232,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/details/{id}") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("batch"),
-                                    h.vstr("registerAdditionalTerminal"),
-                                    h.vstr("details"),
-                                    h.vstr("{id}"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("batch") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("registerAdditionalTerminal") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("details") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "var", h.vstr("id") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1963,6 +2258,13 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body.details`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("batch"),
+                                    h.vstr("registerAdditionalTerminal"),
+                                    h.vstr("details"),
+                                    h.vstr("{id}"),
                                 }) },
                             }),
                         }) },
@@ -1989,6 +2291,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
@@ -2026,11 +2329,19 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/list") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("batch"),
-                                    h.vstr("registerAdditionalTerminal"),
-                                    h.vstr("list"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("batch") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("registerAdditionalTerminal") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("list") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -2040,6 +2351,12 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("batch"),
+                                    h.vstr("registerAdditionalTerminal"),
+                                    h.vstr("list"),
                                 }) },
                             }),
                         }) },
@@ -2056,6 +2373,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
@@ -2067,6 +2385,10 @@ pub fn make_config() Value {
                         .{ "short", h.vstr("Response message.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
+                }) },
+                .{ "id", h.jo(&.{
+                    .{ "field", h.vstr("id") },
+                    .{ "name", h.vstr("id") },
                 }) },
                 .{ "name", h.vstr("output_message") },
                 .{ "op", h.jo(&.{
@@ -2098,12 +2420,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/restart/{id}") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("batch"),
-                                    h.vstr("registerAdditionalTerminal"),
-                                    h.vstr("restart"),
-                                    h.vstr("{id}"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("batch") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("registerAdditionalTerminal") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("restart") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "var", h.vstr("id") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -2114,6 +2446,13 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("batch"),
+                                    h.vstr("registerAdditionalTerminal"),
+                                    h.vstr("restart"),
+                                    h.vstr("{id}"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -2140,12 +2479,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/stop/{id}") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("batch"),
-                                    h.vstr("registerAdditionalTerminal"),
-                                    h.vstr("stop"),
-                                    h.vstr("{id}"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("batch") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("registerAdditionalTerminal") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("stop") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "var", h.vstr("id") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -2156,6 +2505,13 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("batch"),
+                                    h.vstr("registerAdditionalTerminal"),
+                                    h.vstr("stop"),
+                                    h.vstr("{id}"),
                                 }) },
                             }),
                         }) },
@@ -2173,6 +2529,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$ARRAY`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
@@ -2216,9 +2573,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/moveTid") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("moveTid"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("moveTid") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -2228,6 +2589,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("moveTid"),
                                 }) },
                             }),
                         }) },
@@ -2252,6 +2617,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$ARRAY`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
@@ -2285,9 +2651,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/removeProductsFromPackage") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("removeProductsFromPackage"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("removeProductsFromPackage") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -2297,6 +2667,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("removeProductsFromPackage"),
                                 }) },
                             }),
                         }) },
@@ -2313,6 +2687,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
@@ -2324,6 +2699,10 @@ pub fn make_config() Value {
                         .{ "short", h.vstr("Response message.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
+                }) },
+                .{ "id", h.jo(&.{
+                    .{ "field", h.vstr("id") },
+                    .{ "name", h.vstr("id") },
                 }) },
                 .{ "name", h.vstr("output_start") },
                 .{ "op", h.jo(&.{
@@ -2346,11 +2725,19 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/start") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("batch"),
-                                    h.vstr("registerAdditionalTerminal"),
-                                    h.vstr("start"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("batch") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("registerAdditionalTerminal") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("start") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -2360,6 +2747,12 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("batch"),
+                                    h.vstr("registerAdditionalTerminal"),
+                                    h.vstr("start"),
                                 }) },
                             }),
                         }) },
@@ -2376,10 +2769,12 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("percentage") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
@@ -2395,6 +2790,10 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("status") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
+                }) },
+                .{ "id", h.jo(&.{
+                    .{ "field", h.vstr("id") },
+                    .{ "name", h.vstr("id") },
                 }) },
                 .{ "name", h.vstr("output_status") },
                 .{ "op", h.jo(&.{
@@ -2426,12 +2825,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/status/{id}") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("batch"),
-                                    h.vstr("registerAdditionalTerminal"),
-                                    h.vstr("status"),
-                                    h.vstr("{id}"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("batch") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("registerAdditionalTerminal") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("status") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "var", h.vstr("id") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -2442,6 +2851,13 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("batch"),
+                                    h.vstr("registerAdditionalTerminal"),
+                                    h.vstr("status"),
+                                    h.vstr("{id}"),
                                 }) },
                             }),
                         }) },
@@ -2505,6 +2921,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
@@ -2543,9 +2960,13 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/updateProduct") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("updateProduct"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("merchantportalws") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("updateProduct") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -2555,6 +2976,10 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("updateProduct"),
                                 }) },
                             }),
                         }) },

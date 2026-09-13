@@ -52,7 +52,7 @@ func TestOutputStartEntity(t *testing.T) {
 		// CREATE
 		outputStartRef01Ent := client.OutputStart(nil)
 		outputStartRef01Data := core.ToMapAny(vs.GetProp(
-			vs.GetPath([]any{"new", "output_start"}, setup.data), "output_start_ref01"))
+			vs.GetPath(setup.data, []any{"new", "output_start"}), "output_start_ref01"))
 
 		outputStartRef01DataResult, err := outputStartRef01Ent.Create(outputStartRef01Data, nil)
 		if err != nil {
@@ -93,7 +93,7 @@ func output_startBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"output_start01", "output_start02", "output_start03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -121,10 +121,22 @@ func output_startBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewBluefinTecsMerchantPortalSDK(core.ToMapAny(mergedOpts))
 	}

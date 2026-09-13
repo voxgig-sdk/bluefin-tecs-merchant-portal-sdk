@@ -66,6 +66,7 @@ main: kit: entity: output_update_product: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: true
       short: "Response code."
@@ -104,9 +105,13 @@ main: kit: entity: output_update_product: {
           }
           method: "POST"
           orig: "/merchantportalws/updateProduct"
-          parts: [
-            "merchantportalws"
-            "updateProduct"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "updateProduct"
+            }
           ]
           select: {
             exist: [

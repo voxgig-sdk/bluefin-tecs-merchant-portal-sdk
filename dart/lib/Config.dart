@@ -12,6 +12,7 @@ import 'feature/test/TestFeature.dart';
 import 'feature/timeout/TimeoutFeature.dart';
 
 
+
 // ignore: non_constant_identifier_names
 final Map<String, BaseFeature Function()> FEATURE_CLASS = {
     'audit': () => AuditFeature(),
@@ -26,6 +27,24 @@ final Map<String, BaseFeature Function()> FEATURE_CLASS = {
   'test': () => TestFeature(),
   'timeout': () => TimeoutFeature(),
 
+};
+
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. The named `show` imports above make each definition statically
+// reachable, so an SDK carries exactly the plugin libraries its model
+// selects - the same leanness the old side-effect registry bought, without
+// a registry.
+//
+// Emitted UNCONDITIONALLY, empty when no group is active: SecretsFeature
+// imports this name, and the feature source can be present in a tree whose
+// model selects no plugin group at all. An emission conditional on the map
+// having entries would make that tree fail `dart analyze`.
+//
+// ignore: non_constant_identifier_names
+final Map<String, List<dynamic>> FEATURE_PLUGINS = <String, List<dynamic>>{
+  
 };
 
 class Config {
@@ -195,6 +214,7 @@ class Config {
     'merchant_portal_api_controller': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
+          'format': 'int32',
           'name': 'account_number',
           'short': 'Account number provided by the acquirer.',
           'type': '`\$INTEGER`',
@@ -234,12 +254,14 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'merchant_category_code',
           'req': true,
           'short': 'Merchant category code as defined by the payment network.',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
+          'format': 'email',
           'name': 'merchant_email',
           'short': 'Merchant\'s email address for receiving notifications.',
           'type': '`\$STRING`',
@@ -295,6 +317,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'sorting_code',
           'short': 'Sorting code provided by the acquirer.',
           'type': '`\$INTEGER`',
@@ -335,6 +358,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalid',
           'req': true,
           'short': 'TECS terminalid given by Tecs processing engine.',
@@ -346,6 +370,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'email',
           'name': 'user_email',
           'short': 'Email address of the user acting on behalf of the merchant.',
           'type': '`\$STRING`',
@@ -367,6 +392,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'uri',
           'name': 'web_shop_url',
           'short': 'URL of the merchant\'s web shop.',
           'type': '`\$STRING`',
@@ -399,9 +425,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/deactivateTerminal',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'deactivateTerminal',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'deactivateTerminal',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -412,6 +442,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'deactivateTerminal',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -428,9 +462,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/reactivateTerminal',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'reactivateTerminal',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'reactivateTerminal',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -441,6 +479,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'reactivateTerminal',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -457,9 +499,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/registerAdditionalTerminal',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'registerAdditionalTerminal',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'registerAdditionalTerminal',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -470,6 +516,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'registerAdditionalTerminal',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -486,9 +536,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/registerNewMerchant',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'registerNewMerchant',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'registerNewMerchant',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -499,6 +553,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'registerNewMerchant',
+              ],
             },
           ],
         },
@@ -520,30 +578,46 @@ class Config {
               'kind': 'http',
               'method': 'GET',
               'orig': '/merchantportalws/logDeveloperInfo',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'logDeveloperInfo',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'logDeveloperInfo',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'logDeveloperInfo',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{},
               'kind': 'http',
               'method': 'GET',
               'orig': '/merchantportalws/version',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'version',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'version',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'version',
+              ],
             },
           ],
         },
@@ -586,9 +660,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/generateContract',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'generateContract',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'generateContract',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -599,6 +677,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'generateContract',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -615,9 +697,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/uploadContract',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'uploadContract',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'uploadContract',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -628,6 +714,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'uploadContract',
+              ],
             },
           ],
         },
@@ -675,9 +765,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/documentsList',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'documentsList',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'documentsList',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -688,6 +782,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'documentsList',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -704,9 +802,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/downloadDocument',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'downloadDocument',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'downloadDocument',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -717,6 +819,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'downloadDocument',
+              ],
             },
           ],
         },
@@ -807,9 +913,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/applicationForm',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'applicationForm',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'applicationForm',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -820,6 +930,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'applicationForm',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -836,9 +950,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/packageForm',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'packageForm',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'packageForm',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -849,6 +967,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'packageForm',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -865,9 +987,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/reopenForm',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'reopenForm',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'reopenForm',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -878,6 +1004,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'reopenForm',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -894,9 +1024,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/secretKey',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'secretKey',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'secretKey',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -907,6 +1041,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'secretKey',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -923,9 +1061,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/submitForm',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'submitForm',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'submitForm',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -936,6 +1078,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'submitForm',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -952,9 +1098,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/submitValues',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'submitValues',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'submitValues',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -965,6 +1115,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'submitValues',
+              ],
             },
           ],
         },
@@ -1015,9 +1169,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/createMandatorConfig',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'createMandatorConfig',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'createMandatorConfig',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1028,6 +1186,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'createMandatorConfig',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -1044,9 +1206,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/introduceMandatorPackage',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'introduceMandatorPackage',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'introduceMandatorPackage',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1057,6 +1223,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'introduceMandatorPackage',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -1073,9 +1243,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/selfRegistrationLink',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'selfRegistrationLink',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'selfRegistrationLink',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1086,6 +1260,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'selfRegistrationLink',
+              ],
             },
           ],
         },
@@ -1260,9 +1438,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/contractNumber',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'contractNumber',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'contractNumber',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1273,6 +1455,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'contractNumber',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -1289,9 +1475,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/registerAdditionalAcquiring',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'registerAdditionalAcquiring',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'registerAdditionalAcquiring',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1302,6 +1492,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'registerAdditionalAcquiring',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -1318,9 +1512,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/updateMerchant',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'updateMerchant',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'updateMerchant',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1331,21 +1529,33 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'updateMerchant',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{},
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/registerMerchant',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'registerMerchant',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'registerMerchant',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'registerMerchant',
+              ],
             },
           ],
         },
@@ -1434,9 +1644,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/availablePackages',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'availablePackages',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'availablePackages',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1447,6 +1661,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'availablePackages',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -1463,9 +1681,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/orderPackage',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'orderPackage',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'orderPackage',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1476,6 +1698,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'orderPackage',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -1492,9 +1718,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/orderedPackages',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'orderedPackages',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'orderedPackages',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1505,6 +1735,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'orderedPackages',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -1521,9 +1755,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/packageTemplates',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'packageTemplates',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'packageTemplates',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1534,6 +1772,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'packageTemplates',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -1549,9 +1791,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/updatePackageData',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'updatePackageData',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'updatePackageData',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1562,6 +1808,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'updatePackageData',
+              ],
             },
           ],
         },
@@ -1639,9 +1889,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/approveProduct',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'approveProduct',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'approveProduct',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1652,6 +1906,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'approveProduct',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -1668,9 +1926,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/declineProduct',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'declineProduct',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'declineProduct',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1681,6 +1943,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'declineProduct',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -1697,9 +1963,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/orderAdditionalProduct',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'orderAdditionalProduct',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'orderAdditionalProduct',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1710,6 +1980,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'orderAdditionalProduct',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -1726,9 +2000,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/productsList',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'productsList',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'productsList',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1739,6 +2017,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'productsList',
+              ],
             },
           ],
         },
@@ -1762,6 +2044,7 @@ class Config {
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'req': true,
           'short': 'Response code.',
@@ -1795,9 +2078,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/addProductsToPackage',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'addProductsToPackage',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'addProductsToPackage',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1808,6 +2095,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'addProductsToPackage',
+              ],
             },
           ],
         },
@@ -1871,6 +2162,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'req': true,
           'short': 'Response code.',
@@ -1922,9 +2214,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/createNewProduct',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'createNewProduct',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'createNewProduct',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1935,6 +2231,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'createNewProduct',
+              ],
             },
           ],
         },
@@ -1962,6 +2262,10 @@ class Config {
           'type': '`\$OBJECT`',
         },
       ],
+      'id': <String, dynamic>{
+        'field': 'id',
+        'name': 'id',
+      },
       'name': 'output_detail',
       'op': <String, dynamic>{
         'load': <String, dynamic>{
@@ -1992,12 +2296,22 @@ class Config {
               'kind': 'http',
               'method': 'GET',
               'orig': '/merchantportalws/batch/registerAdditionalTerminal/details/{id}',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'batch',
-                'registerAdditionalTerminal',
-                'details',
-                '{id}',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'batch',
+                },
+                <String, dynamic>{
+                  'lit': 'registerAdditionalTerminal',
+                },
+                <String, dynamic>{
+                  'lit': 'details',
+                },
+                <String, dynamic>{
+                  'var': 'id',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -2009,6 +2323,13 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body.details`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'batch',
+                'registerAdditionalTerminal',
+                'details',
+                '{id}',
+              ],
             },
           ],
         },
@@ -2034,6 +2355,7 @@ class Config {
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'req': true,
           'short': 'Response code.',
@@ -2071,11 +2393,19 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/batch/registerAdditionalTerminal/list',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'batch',
-                'registerAdditionalTerminal',
-                'list',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'batch',
+                },
+                <String, dynamic>{
+                  'lit': 'registerAdditionalTerminal',
+                },
+                <String, dynamic>{
+                  'lit': 'list',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -2086,6 +2416,12 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'batch',
+                'registerAdditionalTerminal',
+                'list',
+              ],
             },
           ],
         },
@@ -2101,6 +2437,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'req': true,
           'short': 'Response code.',
@@ -2113,6 +2450,10 @@ class Config {
           'type': '`\$STRING`',
         },
       ],
+      'id': <String, dynamic>{
+        'field': 'id',
+        'name': 'id',
+      },
       'name': 'output_message',
       'op': <String, dynamic>{
         'load': <String, dynamic>{
@@ -2143,12 +2484,22 @@ class Config {
               'kind': 'http',
               'method': 'GET',
               'orig': '/merchantportalws/batch/registerAdditionalTerminal/restart/{id}',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'batch',
-                'registerAdditionalTerminal',
-                'restart',
-                '{id}',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'batch',
+                },
+                <String, dynamic>{
+                  'lit': 'registerAdditionalTerminal',
+                },
+                <String, dynamic>{
+                  'lit': 'restart',
+                },
+                <String, dynamic>{
+                  'var': 'id',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -2160,6 +2511,13 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'batch',
+                'registerAdditionalTerminal',
+                'restart',
+                '{id}',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{
@@ -2185,12 +2543,22 @@ class Config {
               'kind': 'http',
               'method': 'GET',
               'orig': '/merchantportalws/batch/registerAdditionalTerminal/stop/{id}',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'batch',
-                'registerAdditionalTerminal',
-                'stop',
-                '{id}',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'batch',
+                },
+                <String, dynamic>{
+                  'lit': 'registerAdditionalTerminal',
+                },
+                <String, dynamic>{
+                  'lit': 'stop',
+                },
+                <String, dynamic>{
+                  'var': 'id',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -2202,6 +2570,13 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'batch',
+                'registerAdditionalTerminal',
+                'stop',
+                '{id}',
+              ],
             },
           ],
         },
@@ -2218,6 +2593,7 @@ class Config {
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'req': true,
           'short': 'Response code.',
@@ -2261,9 +2637,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/moveTid',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'moveTid',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'moveTid',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -2274,6 +2654,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'moveTid',
+              ],
             },
           ],
         },
@@ -2297,6 +2681,7 @@ class Config {
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'req': true,
           'short': 'Response code.',
@@ -2330,9 +2715,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/removeProductsFromPackage',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'removeProductsFromPackage',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'removeProductsFromPackage',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -2343,6 +2732,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'removeProductsFromPackage',
+              ],
             },
           ],
         },
@@ -2358,6 +2751,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'req': true,
           'short': 'Response code.',
@@ -2370,6 +2764,10 @@ class Config {
           'type': '`\$STRING`',
         },
       ],
+      'id': <String, dynamic>{
+        'field': 'id',
+        'name': 'id',
+      },
       'name': 'output_start',
       'op': <String, dynamic>{
         'create': <String, dynamic>{
@@ -2391,11 +2789,19 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/batch/registerAdditionalTerminal/start',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'batch',
-                'registerAdditionalTerminal',
-                'start',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'batch',
+                },
+                <String, dynamic>{
+                  'lit': 'registerAdditionalTerminal',
+                },
+                <String, dynamic>{
+                  'lit': 'start',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -2406,6 +2812,12 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'batch',
+                'registerAdditionalTerminal',
+                'start',
+              ],
             },
           ],
         },
@@ -2421,10 +2833,12 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'percentage',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'req': true,
           'short': 'Response code.',
@@ -2441,6 +2855,10 @@ class Config {
           'type': '`\$STRING`',
         },
       ],
+      'id': <String, dynamic>{
+        'field': 'id',
+        'name': 'id',
+      },
       'name': 'output_status',
       'op': <String, dynamic>{
         'load': <String, dynamic>{
@@ -2471,12 +2889,22 @@ class Config {
               'kind': 'http',
               'method': 'GET',
               'orig': '/merchantportalws/batch/registerAdditionalTerminal/status/{id}',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'batch',
-                'registerAdditionalTerminal',
-                'status',
-                '{id}',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'batch',
+                },
+                <String, dynamic>{
+                  'lit': 'registerAdditionalTerminal',
+                },
+                <String, dynamic>{
+                  'lit': 'status',
+                },
+                <String, dynamic>{
+                  'var': 'id',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -2488,6 +2916,13 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'batch',
+                'registerAdditionalTerminal',
+                'status',
+                '{id}',
+              ],
             },
           ],
         },
@@ -2550,6 +2985,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'req': true,
           'short': 'Response code.',
@@ -2588,9 +3024,13 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/updateProduct',
-              'parts': <dynamic>[
-                'merchantportalws',
-                'updateProduct',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'merchantportalws',
+                },
+                <String, dynamic>{
+                  'lit': 'updateProduct',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -2601,6 +3041,10 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'merchantportalws',
+                'updateProduct',
+              ],
             },
           ],
         },

@@ -94,9 +94,17 @@ public class MerchantPortalCommonControllerDirectTest
 
         if (live)
         {
-            var liveClient = new BluefinTecsMerchantPortalSDK(new Dictionary<string, object?>
+            // sdk-test-control.json's test.client.options goes UNDER the
+            // generated fields: it adds to the live client, it does not
+            // redirect it, so the generated entries overwrite it here.
+            var liveOpts = TestRunner.LiveClientOptions();
+            foreach (var _kv in new Dictionary<string, object?>
             {
-            });
+            })
+            {
+                liveOpts[_kv.Key] = _kv.Value;
+            }
+            var liveClient = new BluefinTecsMerchantPortalSDK(liveOpts);
 
             var idmap = new Dictionary<string, object?>();
             var entidRaw = env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID"];

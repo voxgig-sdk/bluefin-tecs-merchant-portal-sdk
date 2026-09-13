@@ -6,6 +6,7 @@ main: kit: entity: merchant_portal_api_controller: {
 
   fields: [
     {
+      format: "int32"
       name: "account_number"
       req: false
       short: "Account number provided by the acquirer."
@@ -48,12 +49,14 @@ main: kit: entity: merchant_portal_api_controller: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "merchant_category_code"
       req: true
       short: "Merchant category code as defined by the payment network."
       type: "`$INTEGER`"
     }
     {
+      format: "email"
       name: "merchant_email"
       req: false
       short: "Merchant's email address for receiving notifications."
@@ -114,6 +117,7 @@ main: kit: entity: merchant_portal_api_controller: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "sorting_code"
       req: false
       short: "Sorting code provided by the acquirer."
@@ -156,6 +160,7 @@ main: kit: entity: merchant_portal_api_controller: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "terminalid"
       req: true
       short: "TECS terminalid given by Tecs processing engine."
@@ -168,6 +173,7 @@ main: kit: entity: merchant_portal_api_controller: {
       type: "`$STRING`"
     }
     {
+      format: "email"
       name: "user_email"
       req: false
       short: "Email address of the user acting on behalf of the merchant."
@@ -192,6 +198,7 @@ main: kit: entity: merchant_portal_api_controller: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "web_shop_url"
       req: false
       short: "URL of the merchant's web shop."
@@ -224,9 +231,13 @@ main: kit: entity: merchant_portal_api_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/deactivateTerminal"
-          parts: [
-            "merchantportalws"
-            "deactivateTerminal"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "deactivateTerminal"
+            }
           ]
           select: {
             exist: [
@@ -252,9 +263,13 @@ main: kit: entity: merchant_portal_api_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/reactivateTerminal"
-          parts: [
-            "merchantportalws"
-            "reactivateTerminal"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "reactivateTerminal"
+            }
           ]
           select: {
             exist: [
@@ -280,9 +295,13 @@ main: kit: entity: merchant_portal_api_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/registerAdditionalTerminal"
-          parts: [
-            "merchantportalws"
-            "registerAdditionalTerminal"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "registerAdditionalTerminal"
+            }
           ]
           select: {
             exist: [
@@ -308,9 +327,13 @@ main: kit: entity: merchant_portal_api_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/registerNewMerchant"
-          parts: [
-            "merchantportalws"
-            "registerNewMerchant"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "registerNewMerchant"
+            }
           ]
           select: {
             exist: [

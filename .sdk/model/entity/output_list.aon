@@ -22,6 +22,7 @@ main: kit: entity: output_list: {
       type: "`$OBJECT`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: true
       short: "Response code."
@@ -59,11 +60,19 @@ main: kit: entity: output_list: {
           }
           method: "POST"
           orig: "/merchantportalws/batch/registerAdditionalTerminal/list"
-          parts: [
-            "merchantportalws"
-            "batch"
-            "registerAdditionalTerminal"
-            "list"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "batch"
+            }
+            {
+              lit: "registerAdditionalTerminal"
+            }
+            {
+              lit: "list"
+            }
           ]
           select: {
             exist: [

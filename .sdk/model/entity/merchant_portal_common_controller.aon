@@ -12,9 +12,13 @@ main: kit: entity: merchant_portal_common_controller: {
         {
           method: "GET"
           orig: "/merchantportalws/logDeveloperInfo"
-          parts: [
-            "merchantportalws"
-            "logDeveloperInfo"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "logDeveloperInfo"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -24,9 +28,13 @@ main: kit: entity: merchant_portal_common_controller: {
         {
           method: "GET"
           orig: "/merchantportalws/version"
-          parts: [
-            "merchantportalws"
-            "version"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "version"
+            }
           ]
           transform: {
             req: "`reqdata`"

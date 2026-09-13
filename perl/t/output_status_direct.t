@@ -88,7 +88,11 @@ sub output_status_direct_setup {
   my $live = ((($env->{'BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE'}) || '') eq 'TRUE') ? 1 : 0;
 
   if ($live) {
+    # live_client_options() FIRST so the generated fields below win:
+    # sdk-test-control.json's test.client.options adds to the live client,
+    # it does not redirect it (a later key wins in a Perl hash literal).
     my $client = BluefinTecsMerchantPortalSDK->new({
+      %{ BluefinTecsMerchantPortalTestRunner::live_client_options() },
     });
     return {
       'client' => $client,

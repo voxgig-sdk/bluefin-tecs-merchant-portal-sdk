@@ -182,9 +182,13 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/contractNumber"
-          parts: [
-            "merchantportalws"
-            "contractNumber"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "contractNumber"
+            }
           ]
           select: {
             exist: [
@@ -210,9 +214,13 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/registerAdditionalAcquiring"
-          parts: [
-            "merchantportalws"
-            "registerAdditionalAcquiring"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "registerAdditionalAcquiring"
+            }
           ]
           select: {
             exist: [
@@ -238,9 +246,13 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/updateMerchant"
-          parts: [
-            "merchantportalws"
-            "updateMerchant"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "updateMerchant"
+            }
           ]
           select: {
             exist: [
@@ -255,9 +267,13 @@ main: kit: entity: merchant_portal_pam_merchant_controller: {
         {
           method: "POST"
           orig: "/merchantportalws/registerMerchant"
-          parts: [
-            "merchantportalws"
-            "registerMerchant"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "registerMerchant"
+            }
           ]
           transform: {
             req: "`reqdata`"

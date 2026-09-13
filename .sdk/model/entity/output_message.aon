@@ -11,6 +11,7 @@ main: kit: entity: output_message: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: true
       short: "Response code."
@@ -57,12 +58,22 @@ main: kit: entity: output_message: {
           }
           method: "GET"
           orig: "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}"
-          parts: [
-            "merchantportalws"
-            "batch"
-            "registerAdditionalTerminal"
-            "restart"
-            "{id}"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "batch"
+            }
+            {
+              lit: "registerAdditionalTerminal"
+            }
+            {
+              lit: "restart"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [
@@ -98,12 +109,22 @@ main: kit: entity: output_message: {
           }
           method: "GET"
           orig: "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}"
-          parts: [
-            "merchantportalws"
-            "batch"
-            "registerAdditionalTerminal"
-            "stop"
-            "{id}"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "batch"
+            }
+            {
+              lit: "registerAdditionalTerminal"
+            }
+            {
+              lit: "stop"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [

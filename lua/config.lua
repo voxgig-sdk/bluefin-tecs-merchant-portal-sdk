@@ -147,6 +147,7 @@ local function make_config()
       ["merchant_portal_api_controller"] = {
         ["fields"] = {
           {
+            ["format"] = "int32",
             ["name"] = "account_number",
             ["short"] = "Account number provided by the acquirer.",
             ["type"] = "`$INTEGER`",
@@ -186,12 +187,14 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "merchant_category_code",
             ["req"] = true,
             ["short"] = "Merchant category code as defined by the payment network.",
             ["type"] = "`$INTEGER`",
           },
           {
+            ["format"] = "email",
             ["name"] = "merchant_email",
             ["short"] = "Merchant's email address for receiving notifications.",
             ["type"] = "`$STRING`",
@@ -247,6 +250,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "sorting_code",
             ["short"] = "Sorting code provided by the acquirer.",
             ["type"] = "`$INTEGER`",
@@ -287,6 +291,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "terminalid",
             ["req"] = true,
             ["short"] = "TECS terminalid given by Tecs processing engine.",
@@ -298,6 +303,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "email",
             ["name"] = "user_email",
             ["short"] = "Email address of the user acting on behalf of the merchant.",
             ["type"] = "`$STRING`",
@@ -319,6 +325,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "web_shop_url",
             ["short"] = "URL of the merchant's web shop.",
             ["type"] = "`$STRING`",
@@ -351,9 +358,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/deactivateTerminal",
-                ["parts"] = {
-                  "merchantportalws",
-                  "deactivateTerminal",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "deactivateTerminal",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -363,6 +374,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "deactivateTerminal",
                 },
               },
               {
@@ -380,9 +395,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/reactivateTerminal",
-                ["parts"] = {
-                  "merchantportalws",
-                  "reactivateTerminal",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "reactivateTerminal",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -392,6 +411,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "reactivateTerminal",
                 },
               },
               {
@@ -409,9 +432,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/registerAdditionalTerminal",
-                ["parts"] = {
-                  "merchantportalws",
-                  "registerAdditionalTerminal",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "registerAdditionalTerminal",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -421,6 +448,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "registerAdditionalTerminal",
                 },
               },
               {
@@ -438,9 +469,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/registerNewMerchant",
-                ["parts"] = {
-                  "merchantportalws",
-                  "registerNewMerchant",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "registerNewMerchant",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -450,6 +485,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "registerNewMerchant",
                 },
               },
             },
@@ -472,14 +511,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/merchantportalws/logDeveloperInfo",
-                ["parts"] = {
-                  "merchantportalws",
-                  "logDeveloperInfo",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "logDeveloperInfo",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "logDeveloperInfo",
                 },
               },
               {
@@ -487,14 +534,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/merchantportalws/version",
-                ["parts"] = {
-                  "merchantportalws",
-                  "version",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "version",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "version",
                 },
               },
             },
@@ -538,9 +593,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/generateContract",
-                ["parts"] = {
-                  "merchantportalws",
-                  "generateContract",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "generateContract",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -550,6 +609,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "generateContract",
                 },
               },
               {
@@ -567,9 +630,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/uploadContract",
-                ["parts"] = {
-                  "merchantportalws",
-                  "uploadContract",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "uploadContract",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -579,6 +646,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "uploadContract",
                 },
               },
             },
@@ -627,9 +698,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/documentsList",
-                ["parts"] = {
-                  "merchantportalws",
-                  "documentsList",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "documentsList",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -639,6 +714,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "documentsList",
                 },
               },
               {
@@ -656,9 +735,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/downloadDocument",
-                ["parts"] = {
-                  "merchantportalws",
-                  "downloadDocument",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "downloadDocument",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -668,6 +751,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "downloadDocument",
                 },
               },
             },
@@ -759,9 +846,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/applicationForm",
-                ["parts"] = {
-                  "merchantportalws",
-                  "applicationForm",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "applicationForm",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -771,6 +862,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "applicationForm",
                 },
               },
               {
@@ -788,9 +883,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/packageForm",
-                ["parts"] = {
-                  "merchantportalws",
-                  "packageForm",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "packageForm",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -800,6 +899,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "packageForm",
                 },
               },
               {
@@ -817,9 +920,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/reopenForm",
-                ["parts"] = {
-                  "merchantportalws",
-                  "reopenForm",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "reopenForm",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -829,6 +936,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "reopenForm",
                 },
               },
               {
@@ -846,9 +957,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/secretKey",
-                ["parts"] = {
-                  "merchantportalws",
-                  "secretKey",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "secretKey",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -858,6 +973,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "secretKey",
                 },
               },
               {
@@ -875,9 +994,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/submitForm",
-                ["parts"] = {
-                  "merchantportalws",
-                  "submitForm",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "submitForm",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -887,6 +1010,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "submitForm",
                 },
               },
               {
@@ -904,9 +1031,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/submitValues",
-                ["parts"] = {
-                  "merchantportalws",
-                  "submitValues",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "submitValues",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -916,6 +1047,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "submitValues",
                 },
               },
             },
@@ -967,9 +1102,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/createMandatorConfig",
-                ["parts"] = {
-                  "merchantportalws",
-                  "createMandatorConfig",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "createMandatorConfig",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -979,6 +1118,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "createMandatorConfig",
                 },
               },
               {
@@ -996,9 +1139,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/introduceMandatorPackage",
-                ["parts"] = {
-                  "merchantportalws",
-                  "introduceMandatorPackage",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "introduceMandatorPackage",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1008,6 +1155,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "introduceMandatorPackage",
                 },
               },
               {
@@ -1025,9 +1176,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/selfRegistrationLink",
-                ["parts"] = {
-                  "merchantportalws",
-                  "selfRegistrationLink",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "selfRegistrationLink",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1037,6 +1192,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "selfRegistrationLink",
                 },
               },
             },
@@ -1212,9 +1371,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/contractNumber",
-                ["parts"] = {
-                  "merchantportalws",
-                  "contractNumber",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "contractNumber",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1224,6 +1387,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "contractNumber",
                 },
               },
               {
@@ -1241,9 +1408,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/registerAdditionalAcquiring",
-                ["parts"] = {
-                  "merchantportalws",
-                  "registerAdditionalAcquiring",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "registerAdditionalAcquiring",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1253,6 +1424,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "registerAdditionalAcquiring",
                 },
               },
               {
@@ -1270,9 +1445,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/updateMerchant",
-                ["parts"] = {
-                  "merchantportalws",
-                  "updateMerchant",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "updateMerchant",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1283,20 +1462,32 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
+                ["parts"] = {
+                  "merchantportalws",
+                  "updateMerchant",
+                },
               },
               {
                 ["args"] = {},
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/registerMerchant",
-                ["parts"] = {
-                  "merchantportalws",
-                  "registerMerchant",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "registerMerchant",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "registerMerchant",
                 },
               },
             },
@@ -1386,9 +1577,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/availablePackages",
-                ["parts"] = {
-                  "merchantportalws",
-                  "availablePackages",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "availablePackages",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1398,6 +1593,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "availablePackages",
                 },
               },
               {
@@ -1415,9 +1614,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/orderPackage",
-                ["parts"] = {
-                  "merchantportalws",
-                  "orderPackage",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "orderPackage",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1427,6 +1630,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "orderPackage",
                 },
               },
               {
@@ -1444,9 +1651,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/orderedPackages",
-                ["parts"] = {
-                  "merchantportalws",
-                  "orderedPackages",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "orderedPackages",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1456,6 +1667,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "orderedPackages",
                 },
               },
               {
@@ -1473,9 +1688,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/packageTemplates",
-                ["parts"] = {
-                  "merchantportalws",
-                  "packageTemplates",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "packageTemplates",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1485,6 +1704,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "packageTemplates",
                 },
               },
               {
@@ -1501,9 +1724,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/updatePackageData",
-                ["parts"] = {
-                  "merchantportalws",
-                  "updatePackageData",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "updatePackageData",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1513,6 +1740,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "updatePackageData",
                 },
               },
             },
@@ -1591,9 +1822,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/approveProduct",
-                ["parts"] = {
-                  "merchantportalws",
-                  "approveProduct",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "approveProduct",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1603,6 +1838,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "approveProduct",
                 },
               },
               {
@@ -1620,9 +1859,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/declineProduct",
-                ["parts"] = {
-                  "merchantportalws",
-                  "declineProduct",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "declineProduct",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1632,6 +1875,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "declineProduct",
                 },
               },
               {
@@ -1649,9 +1896,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/orderAdditionalProduct",
-                ["parts"] = {
-                  "merchantportalws",
-                  "orderAdditionalProduct",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "orderAdditionalProduct",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1661,6 +1912,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "orderAdditionalProduct",
                 },
               },
               {
@@ -1678,9 +1933,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/productsList",
-                ["parts"] = {
-                  "merchantportalws",
-                  "productsList",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "productsList",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1690,6 +1949,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "productsList",
                 },
               },
             },
@@ -1714,6 +1977,7 @@ local function make_config()
             ["type"] = "`$ARRAY`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["req"] = true,
             ["short"] = "Response code.",
@@ -1747,9 +2011,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/addProductsToPackage",
-                ["parts"] = {
-                  "merchantportalws",
-                  "addProductsToPackage",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "addProductsToPackage",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1759,6 +2027,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "addProductsToPackage",
                 },
               },
             },
@@ -1823,6 +2095,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["req"] = true,
             ["short"] = "Response code.",
@@ -1874,9 +2147,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/createNewProduct",
-                ["parts"] = {
-                  "merchantportalws",
-                  "createNewProduct",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "createNewProduct",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1886,6 +2163,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "createNewProduct",
                 },
               },
             },
@@ -1913,6 +2194,10 @@ local function make_config()
             ["name"] = "progress",
             ["type"] = "`$OBJECT`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "output_detail",
         ["op"] = {
@@ -1944,12 +2229,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/details/{id}",
-                ["parts"] = {
-                  "merchantportalws",
-                  "batch",
-                  "registerAdditionalTerminal",
-                  "details",
-                  "{id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "batch",
+                  },
+                  {
+                    ["lit"] = "registerAdditionalTerminal",
+                  },
+                  {
+                    ["lit"] = "details",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1960,6 +2255,13 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.details`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "batch",
+                  "registerAdditionalTerminal",
+                  "details",
+                  "{id}",
                 },
               },
             },
@@ -1986,6 +2288,7 @@ local function make_config()
             ["type"] = "`$OBJECT`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["req"] = true,
             ["short"] = "Response code.",
@@ -2023,11 +2326,19 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/list",
-                ["parts"] = {
-                  "merchantportalws",
-                  "batch",
-                  "registerAdditionalTerminal",
-                  "list",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "batch",
+                  },
+                  {
+                    ["lit"] = "registerAdditionalTerminal",
+                  },
+                  {
+                    ["lit"] = "list",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -2037,6 +2348,12 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "batch",
+                  "registerAdditionalTerminal",
+                  "list",
                 },
               },
             },
@@ -2053,6 +2370,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["req"] = true,
             ["short"] = "Response code.",
@@ -2064,6 +2382,10 @@ local function make_config()
             ["short"] = "Response message.",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "output_message",
         ["op"] = {
@@ -2095,12 +2417,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}",
-                ["parts"] = {
-                  "merchantportalws",
-                  "batch",
-                  "registerAdditionalTerminal",
-                  "restart",
-                  "{id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "batch",
+                  },
+                  {
+                    ["lit"] = "registerAdditionalTerminal",
+                  },
+                  {
+                    ["lit"] = "restart",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -2111,6 +2443,13 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "batch",
+                  "registerAdditionalTerminal",
+                  "restart",
+                  "{id}",
                 },
               },
               {
@@ -2137,12 +2476,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}",
-                ["parts"] = {
-                  "merchantportalws",
-                  "batch",
-                  "registerAdditionalTerminal",
-                  "stop",
-                  "{id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "batch",
+                  },
+                  {
+                    ["lit"] = "registerAdditionalTerminal",
+                  },
+                  {
+                    ["lit"] = "stop",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -2153,6 +2502,13 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "batch",
+                  "registerAdditionalTerminal",
+                  "stop",
+                  "{id}",
                 },
               },
             },
@@ -2170,6 +2526,7 @@ local function make_config()
             ["type"] = "`$ARRAY`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["req"] = true,
             ["short"] = "Response code.",
@@ -2213,9 +2570,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/moveTid",
-                ["parts"] = {
-                  "merchantportalws",
-                  "moveTid",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "moveTid",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -2225,6 +2586,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "moveTid",
                 },
               },
             },
@@ -2249,6 +2614,7 @@ local function make_config()
             ["type"] = "`$ARRAY`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["req"] = true,
             ["short"] = "Response code.",
@@ -2282,9 +2648,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/removeProductsFromPackage",
-                ["parts"] = {
-                  "merchantportalws",
-                  "removeProductsFromPackage",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "removeProductsFromPackage",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -2294,6 +2664,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "removeProductsFromPackage",
                 },
               },
             },
@@ -2310,6 +2684,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["req"] = true,
             ["short"] = "Response code.",
@@ -2321,6 +2696,10 @@ local function make_config()
             ["short"] = "Response message.",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "output_start",
         ["op"] = {
@@ -2343,11 +2722,19 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/start",
-                ["parts"] = {
-                  "merchantportalws",
-                  "batch",
-                  "registerAdditionalTerminal",
-                  "start",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "batch",
+                  },
+                  {
+                    ["lit"] = "registerAdditionalTerminal",
+                  },
+                  {
+                    ["lit"] = "start",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -2357,6 +2744,12 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "batch",
+                  "registerAdditionalTerminal",
+                  "start",
                 },
               },
             },
@@ -2373,10 +2766,12 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "percentage",
             ["type"] = "`$INTEGER`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["req"] = true,
             ["short"] = "Response code.",
@@ -2392,6 +2787,10 @@ local function make_config()
             ["name"] = "status",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "output_status",
         ["op"] = {
@@ -2423,12 +2822,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/status/{id}",
-                ["parts"] = {
-                  "merchantportalws",
-                  "batch",
-                  "registerAdditionalTerminal",
-                  "status",
-                  "{id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "batch",
+                  },
+                  {
+                    ["lit"] = "registerAdditionalTerminal",
+                  },
+                  {
+                    ["lit"] = "status",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -2439,6 +2848,13 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "batch",
+                  "registerAdditionalTerminal",
+                  "status",
+                  "{id}",
                 },
               },
             },
@@ -2502,6 +2918,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["req"] = true,
             ["short"] = "Response code.",
@@ -2540,9 +2957,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/merchantportalws/updateProduct",
-                ["parts"] = {
-                  "merchantportalws",
-                  "updateProduct",
+                ["segments"] = {
+                  {
+                    ["lit"] = "merchantportalws",
+                  },
+                  {
+                    ["lit"] = "updateProduct",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -2552,6 +2973,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "merchantportalws",
+                  "updateProduct",
                 },
               },
             },

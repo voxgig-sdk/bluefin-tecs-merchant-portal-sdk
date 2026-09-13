@@ -92,9 +92,13 @@ main: kit: entity: merchant_portal_pam_package_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/availablePackages"
-          parts: [
-            "merchantportalws"
-            "availablePackages"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "availablePackages"
+            }
           ]
           select: {
             exist: [
@@ -120,9 +124,13 @@ main: kit: entity: merchant_portal_pam_package_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/orderPackage"
-          parts: [
-            "merchantportalws"
-            "orderPackage"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "orderPackage"
+            }
           ]
           select: {
             exist: [
@@ -148,9 +156,13 @@ main: kit: entity: merchant_portal_pam_package_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/orderedPackages"
-          parts: [
-            "merchantportalws"
-            "orderedPackages"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "orderedPackages"
+            }
           ]
           select: {
             exist: [
@@ -176,9 +188,13 @@ main: kit: entity: merchant_portal_pam_package_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/packageTemplates"
-          parts: [
-            "merchantportalws"
-            "packageTemplates"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "packageTemplates"
+            }
           ]
           select: {
             exist: [
@@ -204,9 +220,13 @@ main: kit: entity: merchant_portal_pam_package_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/updatePackageData"
-          parts: [
-            "merchantportalws"
-            "updatePackageData"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "updatePackageData"
+            }
           ]
           select: {
             exist: [

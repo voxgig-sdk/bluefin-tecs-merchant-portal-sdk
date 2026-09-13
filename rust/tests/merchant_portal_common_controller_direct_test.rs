@@ -34,7 +34,16 @@ fn merchant_portal_common_controller_direct_setup(mockres: Value) -> MerchantPor
     let live = getp(&env, "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE") == Value::str("TRUE");
 
     if live {
-        let client = BluefinTecsMerchantPortalSDK::new(jo(vec![]));
+        // live_client_options() FIRST, so the generated entries below win:
+        // sdk-test-control.json's test.client.options adds to the live
+        // client, it does not redirect it.
+        let client = BluefinTecsMerchantPortalSDK::new(to_map(&vs::merge(
+            &ja(vec![
+                live_client_options(),
+                jo(vec![]),
+            ]),
+            None,
+        )));
         let idmap = match to_map(&getp(&env, "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID")) {
             Value::Map(m) => Value::Map(m),
             _ => Value::empty_map(),

@@ -11,6 +11,7 @@ main: kit: entity: output_start: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: true
       short: "Response code."
@@ -48,11 +49,19 @@ main: kit: entity: output_start: {
           }
           method: "POST"
           orig: "/merchantportalws/batch/registerAdditionalTerminal/start"
-          parts: [
-            "merchantportalws"
-            "batch"
-            "registerAdditionalTerminal"
-            "start"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "batch"
+            }
+            {
+              lit: "registerAdditionalTerminal"
+            }
+            {
+              lit: "start"
+            }
           ]
           select: {
             exist: [

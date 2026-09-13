@@ -91,9 +91,13 @@ main: kit: entity: merchant_portal_pam_form_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/applicationForm"
-          parts: [
-            "merchantportalws"
-            "applicationForm"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "applicationForm"
+            }
           ]
           select: {
             exist: [
@@ -119,9 +123,13 @@ main: kit: entity: merchant_portal_pam_form_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/packageForm"
-          parts: [
-            "merchantportalws"
-            "packageForm"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "packageForm"
+            }
           ]
           select: {
             exist: [
@@ -147,9 +155,13 @@ main: kit: entity: merchant_portal_pam_form_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/reopenForm"
-          parts: [
-            "merchantportalws"
-            "reopenForm"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "reopenForm"
+            }
           ]
           select: {
             exist: [
@@ -175,9 +187,13 @@ main: kit: entity: merchant_portal_pam_form_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/secretKey"
-          parts: [
-            "merchantportalws"
-            "secretKey"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "secretKey"
+            }
           ]
           select: {
             exist: [
@@ -203,9 +219,13 @@ main: kit: entity: merchant_portal_pam_form_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/submitForm"
-          parts: [
-            "merchantportalws"
-            "submitForm"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "submitForm"
+            }
           ]
           select: {
             exist: [
@@ -231,9 +251,13 @@ main: kit: entity: merchant_portal_pam_form_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/submitValues"
-          parts: [
-            "merchantportalws"
-            "submitValues"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "submitValues"
+            }
           ]
           select: {
             exist: [

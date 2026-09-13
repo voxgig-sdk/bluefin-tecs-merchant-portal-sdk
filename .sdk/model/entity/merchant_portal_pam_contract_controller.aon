@@ -36,9 +36,13 @@ main: kit: entity: merchant_portal_pam_contract_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/generateContract"
-          parts: [
-            "merchantportalws"
-            "generateContract"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "generateContract"
+            }
           ]
           select: {
             exist: [
@@ -64,9 +68,13 @@ main: kit: entity: merchant_portal_pam_contract_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/uploadContract"
-          parts: [
-            "merchantportalws"
-            "uploadContract"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "uploadContract"
+            }
           ]
           select: {
             exist: [

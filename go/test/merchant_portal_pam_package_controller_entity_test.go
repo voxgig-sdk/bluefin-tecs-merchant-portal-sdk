@@ -52,7 +52,7 @@ func TestMerchantPortalPamPackageControllerEntity(t *testing.T) {
 		// CREATE
 		merchantPortalPamPackageControllerRef01Ent := client.MerchantPortalPamPackageController(nil)
 		merchantPortalPamPackageControllerRef01Data := core.ToMapAny(vs.GetProp(
-			vs.GetPath([]any{"new", "merchant_portal_pam_package_controller"}, setup.data), "merchant_portal_pam_package_controller_ref01"))
+			vs.GetPath(setup.data, []any{"new", "merchant_portal_pam_package_controller"}), "merchant_portal_pam_package_controller_ref01"))
 
 		merchantPortalPamPackageControllerRef01DataResult, err := merchantPortalPamPackageControllerRef01Ent.Create(merchantPortalPamPackageControllerRef01Data, nil)
 		if err != nil {
@@ -90,7 +90,7 @@ func merchant_portal_pam_package_controllerBasicSetup(extra map[string]any) *ent
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"merchant_portal_pam_package_controller01", "merchant_portal_pam_package_controller02", "merchant_portal_pam_package_controller03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -118,10 +118,22 @@ func merchant_portal_pam_package_controllerBasicSetup(extra map[string]any) *ent
 	}
 
 	if env["BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewBluefinTecsMerchantPortalSDK(core.ToMapAny(mergedOpts))
 	}

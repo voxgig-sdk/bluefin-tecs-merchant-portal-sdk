@@ -11,11 +11,13 @@ main: kit: entity: output_status: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "percentage"
       req: false
       type: "`$INTEGER`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: true
       short: "Response code."
@@ -67,12 +69,22 @@ main: kit: entity: output_status: {
           }
           method: "GET"
           orig: "/merchantportalws/batch/registerAdditionalTerminal/status/{id}"
-          parts: [
-            "merchantportalws"
-            "batch"
-            "registerAdditionalTerminal"
-            "status"
-            "{id}"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "batch"
+            }
+            {
+              lit: "registerAdditionalTerminal"
+            }
+            {
+              lit: "status"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [

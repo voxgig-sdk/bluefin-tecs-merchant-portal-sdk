@@ -46,9 +46,13 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/createMandatorConfig"
-          parts: [
-            "merchantportalws"
-            "createMandatorConfig"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "createMandatorConfig"
+            }
           ]
           select: {
             exist: [
@@ -74,9 +78,13 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/introduceMandatorPackage"
-          parts: [
-            "merchantportalws"
-            "introduceMandatorPackage"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "introduceMandatorPackage"
+            }
           ]
           select: {
             exist: [
@@ -102,9 +110,13 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/selfRegistrationLink"
-          parts: [
-            "merchantportalws"
-            "selfRegistrationLink"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "selfRegistrationLink"
+            }
           ]
           select: {
             exist: [

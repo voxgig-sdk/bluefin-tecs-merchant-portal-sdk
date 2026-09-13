@@ -122,6 +122,7 @@ let make_config () : value =
       ("merchant_portal_api_controller", (jo [
         ("fields", (ja [
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "account_number"));
             ("short", (Str "Account number provided by the acquirer."));
             ("type", (Str "`$INTEGER`")) ]);
@@ -154,11 +155,13 @@ let make_config () : value =
             ("short", (Str "Transaction currency (must be in \"ISO 4217\" format)."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "merchant_category_code"));
             ("req", (Bool true));
             ("short", (Str "Merchant category code as defined by the payment network."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
+            ("format", (Str "email"));
             ("name", (Str "merchant_email"));
             ("short", (Str "Merchant's email address for receiving notifications."));
             ("type", (Str "`$STRING`")) ]);
@@ -204,6 +207,7 @@ let make_config () : value =
             ("short", (Str "Reason for terminal reactivation."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "sorting_code"));
             ("short", (Str "Sorting code provided by the acquirer."));
             ("type", (Str "`$INTEGER`")) ]);
@@ -237,6 +241,7 @@ let make_config () : value =
             ("short", (Str "Terminal serial number."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalid"));
             ("req", (Bool true));
             ("short", (Str "TECS terminalid given by Tecs processing engine."));
@@ -246,6 +251,7 @@ let make_config () : value =
             ("short", (Str "Terminal ID as set by the acquirer (optional)."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "email"));
             ("name", (Str "user_email"));
             ("short", (Str "Email address of the user acting on behalf of the merchant."));
             ("type", (Str "`$STRING`")) ]);
@@ -263,6 +269,7 @@ let make_config () : value =
             ("short", (Str "Merchant contract number with the acquirer."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "uri"));
             ("name", (Str "web_shop_url"));
             ("short", (Str "URL of the merchant's web shop."));
             ("type", (Str "`$STRING`")) ]);
@@ -289,15 +296,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/deactivateTerminal"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "deactivateTerminal") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "deactivateTerminal")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "deactivateTerminal") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -310,15 +322,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/reactivateTerminal"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "reactivateTerminal") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "reactivateTerminal")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "reactivateTerminal") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -331,15 +348,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/registerAdditionalTerminal"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "registerAdditionalTerminal") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "registerAdditionalTerminal")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "registerAdditionalTerminal") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -352,15 +374,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/registerNewMerchant"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "registerNewMerchant") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "registerNewMerchant")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "registerNewMerchant") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_common_controller", (jo [
@@ -376,25 +403,35 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/merchantportalws/logDeveloperInfo"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "logDeveloperInfo") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "logDeveloperInfo")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "logDeveloperInfo") ])) ]);
               (jo [
                 ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/merchantportalws/version"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "version") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "version")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "version") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_pam_contract_controller", (jo [
@@ -425,15 +462,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/generateContract"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "generateContract") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "generateContract")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "generateContract") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -446,15 +488,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/uploadContract"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "uploadContract") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "uploadContract")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "uploadContract") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_pam_document_controller", (jo [
@@ -489,15 +536,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/documentsList"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "documentsList") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "documentsList")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "documentsList") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -510,15 +562,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/downloadDocument"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "downloadDocument") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "downloadDocument")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "downloadDocument") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_pam_form_controller", (jo [
@@ -584,15 +641,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/applicationForm"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "applicationForm") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "applicationForm")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "applicationForm") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -605,15 +667,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/packageForm"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "packageForm") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "packageForm")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "packageForm") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -626,15 +693,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/reopenForm"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "reopenForm") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "reopenForm")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "reopenForm") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -647,15 +719,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/secretKey"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "secretKey") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "secretKey")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "secretKey") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -668,15 +745,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/submitForm"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "submitForm") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "submitForm")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "submitForm") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -689,15 +771,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/submitValues"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "submitValues") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "submitValues")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "submitValues") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_pam_mandator_controller", (jo [
@@ -734,15 +821,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/createMandatorConfig"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "createMandatorConfig") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "createMandatorConfig")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "createMandatorConfig") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -755,15 +847,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/introduceMandatorPackage"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "introduceMandatorPackage") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "introduceMandatorPackage")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "introduceMandatorPackage") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -776,15 +873,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/selfRegistrationLink"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "selfRegistrationLink") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "selfRegistrationLink")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "selfRegistrationLink") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_pam_merchant_controller", (jo [
@@ -921,15 +1023,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/contractNumber"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "contractNumber") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "contractNumber")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "contractNumber") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -942,15 +1049,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/registerAdditionalAcquiring"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "registerAdditionalAcquiring") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "registerAdditionalAcquiring")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "registerAdditionalAcquiring") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -963,27 +1075,37 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/updateMerchant"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "updateMerchant") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "updateMerchant")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "updateMerchant") ])) ]);
               (jo [
                 ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/registerMerchant"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "registerMerchant") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "registerMerchant")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "registerMerchant") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_pam_package_controller", (jo [
@@ -1049,15 +1171,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/availablePackages"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "availablePackages") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "availablePackages")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "availablePackages") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -1070,15 +1197,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/orderPackage"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "orderPackage") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "orderPackage")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "orderPackage") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -1091,15 +1223,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/orderedPackages"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "orderedPackages") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "orderedPackages")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "orderedPackages") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -1112,15 +1249,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/packageTemplates"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "packageTemplates") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "packageTemplates")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "packageTemplates") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -1132,15 +1274,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/updatePackageData"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "updatePackageData") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "updatePackageData")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "updatePackageData") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_pam_product_controller", (jo [
@@ -1198,15 +1345,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/approveProduct"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "approveProduct") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "approveProduct")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "approveProduct") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -1219,15 +1371,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/declineProduct"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "declineProduct") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "declineProduct")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "declineProduct") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -1240,15 +1397,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/orderAdditionalProduct"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "orderAdditionalProduct") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "orderAdditionalProduct")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "orderAdditionalProduct") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -1261,15 +1423,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/productsList"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "productsList") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "productsList")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "productsList") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_add_product", (jo [
@@ -1285,6 +1452,7 @@ let make_config () : value =
             ("short", (Str "The list of unique identifiers of the products."));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("short", (Str "Response code."));
@@ -1312,15 +1480,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/addProductsToPackage"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "addProductsToPackage") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "addProductsToPackage")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "addProductsToPackage") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_create_product", (jo [
@@ -1369,6 +1542,7 @@ let make_config () : value =
             ("short", (Str "Name of the product."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("short", (Str "Response code."));
@@ -1411,15 +1585,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/createNewProduct"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "createNewProduct") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "createNewProduct")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "createNewProduct") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_detail", (jo [
@@ -1436,6 +1615,9 @@ let make_config () : value =
           (jo [
             ("name", (Str "progress"));
             ("type", (Str "`$OBJECT`")) ]) ]));
+        ("id", (jo [
+          ("field", (Str "id"));
+          ("name", (Str "id")) ]));
         ("name", (Str "output_detail"));
         ("op", (jo [
           ("load", (jo [
@@ -1461,19 +1643,30 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/merchantportalws/batch/registerAdditionalTerminal/details/{id}"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "batch");
-                  (Str "registerAdditionalTerminal");
-                  (Str "details");
-                  (Str "{id}") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "batch")) ]);
+                  (jo [
+                    ("lit", (Str "registerAdditionalTerminal")) ]);
+                  (jo [
+                    ("lit", (Str "details")) ]);
+                  (jo [
+                    ("var", (Str "id")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization");
                     (Str "id") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body.details`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body.details`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "batch");
+                  (Str "registerAdditionalTerminal");
+                  (Str "details");
+                  (Str "{id}") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_list", (jo [
@@ -1489,6 +1682,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("short", (Str "Response code."));
@@ -1519,17 +1713,26 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/batch/registerAdditionalTerminal/list"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "batch");
-                  (Str "registerAdditionalTerminal");
-                  (Str "list") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "batch")) ]);
+                  (jo [
+                    ("lit", (Str "registerAdditionalTerminal")) ]);
+                  (jo [
+                    ("lit", (Str "list")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "batch");
+                  (Str "registerAdditionalTerminal");
+                  (Str "list") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_message", (jo [
@@ -1538,6 +1741,7 @@ let make_config () : value =
             ("name", (Str "id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("short", (Str "Response code."));
@@ -1547,6 +1751,9 @@ let make_config () : value =
             ("req", (Bool true));
             ("short", (Str "Response message."));
             ("type", (Str "`$STRING`")) ]) ]));
+        ("id", (jo [
+          ("field", (Str "id"));
+          ("name", (Str "id")) ]));
         ("name", (Str "output_message"));
         ("op", (jo [
           ("load", (jo [
@@ -1572,19 +1779,30 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "batch");
-                  (Str "registerAdditionalTerminal");
-                  (Str "restart");
-                  (Str "{id}") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "batch")) ]);
+                  (jo [
+                    ("lit", (Str "registerAdditionalTerminal")) ]);
+                  (jo [
+                    ("lit", (Str "restart")) ]);
+                  (jo [
+                    ("var", (Str "id")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization");
                     (Str "id") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "batch");
+                  (Str "registerAdditionalTerminal");
+                  (Str "restart");
+                  (Str "{id}") ])) ]);
               (jo [
                 ("args", (jo [
                   ("header", (ja [
@@ -1604,19 +1822,30 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "batch");
-                  (Str "registerAdditionalTerminal");
-                  (Str "stop");
-                  (Str "{id}") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "batch")) ]);
+                  (jo [
+                    ("lit", (Str "registerAdditionalTerminal")) ]);
+                  (jo [
+                    ("lit", (Str "stop")) ]);
+                  (jo [
+                    ("var", (Str "id")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization");
                     (Str "id") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "batch");
+                  (Str "registerAdditionalTerminal");
+                  (Str "stop");
+                  (Str "{id}") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_move_tid", (jo [
@@ -1626,6 +1855,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("short", (Str "Response code."));
@@ -1661,15 +1891,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/moveTid"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "moveTid") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "moveTid")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "moveTid") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_remove_product", (jo [
@@ -1685,6 +1920,7 @@ let make_config () : value =
             ("short", (Str "List of product unique identifiers."));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("short", (Str "Response code."));
@@ -1712,15 +1948,20 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/removeProductsFromPackage"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "removeProductsFromPackage") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "removeProductsFromPackage")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "removeProductsFromPackage") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_start", (jo [
@@ -1729,6 +1970,7 @@ let make_config () : value =
             ("name", (Str "id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("short", (Str "Response code."));
@@ -1738,6 +1980,9 @@ let make_config () : value =
             ("req", (Bool true));
             ("short", (Str "Response message."));
             ("type", (Str "`$STRING`")) ]) ]));
+        ("id", (jo [
+          ("field", (Str "id"));
+          ("name", (Str "id")) ]));
         ("name", (Str "output_start"));
         ("op", (jo [
           ("create", (jo [
@@ -1756,17 +2001,26 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/batch/registerAdditionalTerminal/start"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "batch");
-                  (Str "registerAdditionalTerminal");
-                  (Str "start") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "batch")) ]);
+                  (jo [
+                    ("lit", (Str "registerAdditionalTerminal")) ]);
+                  (jo [
+                    ("lit", (Str "start")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "batch");
+                  (Str "registerAdditionalTerminal");
+                  (Str "start") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_status", (jo [
@@ -1775,9 +2029,11 @@ let make_config () : value =
             ("name", (Str "id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "percentage"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("short", (Str "Response code."));
@@ -1790,6 +2046,9 @@ let make_config () : value =
           (jo [
             ("name", (Str "status"));
             ("type", (Str "`$STRING`")) ]) ]));
+        ("id", (jo [
+          ("field", (Str "id"));
+          ("name", (Str "id")) ]));
         ("name", (Str "output_status"));
         ("op", (jo [
           ("load", (jo [
@@ -1815,19 +2074,30 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/merchantportalws/batch/registerAdditionalTerminal/status/{id}"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "batch");
-                  (Str "registerAdditionalTerminal");
-                  (Str "status");
-                  (Str "{id}") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "batch")) ]);
+                  (jo [
+                    ("lit", (Str "registerAdditionalTerminal")) ]);
+                  (jo [
+                    ("lit", (Str "status")) ]);
+                  (jo [
+                    ("var", (Str "id")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization");
                     (Str "id") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "batch");
+                  (Str "registerAdditionalTerminal");
+                  (Str "status");
+                  (Str "{id}") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_update_product", (jo [
@@ -1874,6 +2144,7 @@ let make_config () : value =
             ("short", (Str "The UUID of the product to update"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("req", (Bool true));
             ("short", (Str "Response code."));
@@ -1905,17 +2176,26 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/merchantportalws/updateProduct"));
-                ("parts", (ja [
-                  (Str "merchantportalws");
-                  (Str "updateProduct") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "merchantportalws")) ]);
+                  (jo [
+                    ("lit", (Str "updateProduct")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "merchantportalws");
+                  (Str "updateProduct") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ])) ])) ])
+
+(* The plugin definitions the model selected, per feature: none - no
+ * plugin-bearing feature is active in this SDK. *)
+let feature_plugins (_name : string) = []
 
 let make_feature (name : string) : feature =
   match name with

@@ -8,6 +8,7 @@
       "merchant_portal_api_controller" (vs/jm
         "fields" (vs/jt
           (vs/jm
+            "format" "int32"
             "name" "account_number"
             "short" "Account number provided by the acquirer."
             "type" "`$INTEGER`")
@@ -40,11 +41,13 @@
             "short" "Transaction currency (must be in \"ISO 4217\" format)."
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "merchant_category_code"
             "req" true
             "short" "Merchant category code as defined by the payment network."
             "type" "`$INTEGER`")
           (vs/jm
+            "format" "email"
             "name" "merchant_email"
             "short" "Merchant's email address for receiving notifications."
             "type" "`$STRING`")
@@ -90,6 +93,7 @@
             "short" "Reason for terminal reactivation."
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "sorting_code"
             "short" "Sorting code provided by the acquirer."
             "type" "`$INTEGER`")
@@ -123,6 +127,7 @@
             "short" "Terminal serial number."
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalid"
             "req" true
             "short" "TECS terminalid given by Tecs processing engine."
@@ -132,6 +137,7 @@
             "short" "Terminal ID as set by the acquirer (optional)."
             "type" "`$STRING`")
           (vs/jm
+            "format" "email"
             "name" "user_email"
             "short" "Email address of the user acting on behalf of the merchant."
             "type" "`$STRING`")
@@ -149,6 +155,7 @@
             "short" "Merchant contract number with the acquirer."
             "type" "`$STRING`")
           (vs/jm
+            "format" "uri"
             "name" "web_shop_url"
             "short" "URL of the merchant's web shop."
             "type" "`$STRING`")
@@ -178,6 +185,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "deactivateTerminal")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "deactivateTerminal"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -199,6 +211,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "reactivateTerminal")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "reactivateTerminal"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -220,6 +237,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "registerAdditionalTerminal")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "registerAdditionalTerminal"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -241,6 +263,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "registerNewMerchant")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "registerNewMerchant"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -265,6 +292,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "logDeveloperInfo")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "logDeveloperInfo"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -277,6 +309,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "version")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "version"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -314,6 +351,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "generateContract")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "generateContract"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -335,6 +377,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "uploadContract")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "uploadContract"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -378,6 +425,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "documentsList")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "documentsList"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -399,6 +451,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "downloadDocument")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "downloadDocument"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -473,6 +530,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "applicationForm")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "applicationForm"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -494,6 +556,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "packageForm")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "packageForm"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -515,6 +582,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "reopenForm")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "reopenForm"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -536,6 +608,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "secretKey")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "secretKey"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -557,6 +634,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "submitForm")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "submitForm"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -578,6 +660,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "submitValues")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "submitValues"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -623,6 +710,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "createMandatorConfig")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "createMandatorConfig"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -644,6 +736,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "introduceMandatorPackage")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "introduceMandatorPackage"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -665,6 +762,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "selfRegistrationLink")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "selfRegistrationLink"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -810,6 +912,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "contractNumber")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "contractNumber"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -831,6 +938,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "registerAdditionalAcquiring")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "registerAdditionalAcquiring"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -852,6 +964,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "updateMerchant")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "updateMerchant"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -866,6 +983,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "registerMerchant")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "registerMerchant"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -938,6 +1060,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "availablePackages")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "availablePackages"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -959,6 +1086,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "orderPackage")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "orderPackage"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -980,6 +1112,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "orderedPackages")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "orderedPackages"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1001,6 +1138,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "packageTemplates")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "packageTemplates"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1021,6 +1163,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "updatePackageData")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "updatePackageData"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1087,6 +1234,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "approveProduct")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "approveProduct"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1108,6 +1260,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "declineProduct")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "declineProduct"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1129,6 +1286,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "orderAdditionalProduct")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "orderAdditionalProduct"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1150,6 +1312,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "productsList")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "productsList"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1171,6 +1338,7 @@
             "short" "The list of unique identifiers of the products."
             "type" "`$ARRAY`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
@@ -1201,6 +1369,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "addProductsToPackage")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "addProductsToPackage"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1255,6 +1428,7 @@
             "short" "Name of the product."
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
@@ -1300,6 +1474,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "createNewProduct")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "createNewProduct"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1322,6 +1501,9 @@
           (vs/jm
             "name" "progress"
             "type" "`$OBJECT`"))
+        "id" (vs/jm
+          "field" "id"
+          "name" "id")
         "name" "output_detail"
         "op" (vs/jm
           "load" (vs/jm
@@ -1353,6 +1535,17 @@
                   "registerAdditionalTerminal"
                   "details"
                   "{id}")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "batch")
+                  (vs/jm
+                    "lit" "registerAdditionalTerminal")
+                  (vs/jm
+                    "lit" "details")
+                  (vs/jm
+                    "var" "id"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"
@@ -1375,6 +1568,7 @@
             "req" true
             "type" "`$OBJECT`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
@@ -1410,6 +1604,15 @@
                   "batch"
                   "registerAdditionalTerminal"
                   "list")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "batch")
+                  (vs/jm
+                    "lit" "registerAdditionalTerminal")
+                  (vs/jm
+                    "lit" "list"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1424,6 +1627,7 @@
             "name" "id"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
@@ -1433,6 +1637,9 @@
             "req" true
             "short" "Response message."
             "type" "`$STRING`"))
+        "id" (vs/jm
+          "field" "id"
+          "name" "id")
         "name" "output_message"
         "op" (vs/jm
           "load" (vs/jm
@@ -1464,6 +1671,17 @@
                   "registerAdditionalTerminal"
                   "restart"
                   "{id}")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "batch")
+                  (vs/jm
+                    "lit" "registerAdditionalTerminal")
+                  (vs/jm
+                    "lit" "restart")
+                  (vs/jm
+                    "var" "id"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"
@@ -1496,6 +1714,17 @@
                   "registerAdditionalTerminal"
                   "stop"
                   "{id}")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "batch")
+                  (vs/jm
+                    "lit" "registerAdditionalTerminal")
+                  (vs/jm
+                    "lit" "stop")
+                  (vs/jm
+                    "var" "id"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"
@@ -1512,6 +1741,7 @@
             "req" true
             "type" "`$ARRAY`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
@@ -1550,6 +1780,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "moveTid")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "moveTid"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1571,6 +1806,7 @@
             "short" "List of product unique identifiers."
             "type" "`$ARRAY`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
@@ -1601,6 +1837,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "removeProductsFromPackage")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "removeProductsFromPackage"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1615,6 +1856,7 @@
             "name" "id"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
@@ -1624,6 +1866,9 @@
             "req" true
             "short" "Response message."
             "type" "`$STRING`"))
+        "id" (vs/jm
+          "field" "id"
+          "name" "id")
         "name" "output_start"
         "op" (vs/jm
           "create" (vs/jm
@@ -1647,6 +1892,15 @@
                   "batch"
                   "registerAdditionalTerminal"
                   "start")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "batch")
+                  (vs/jm
+                    "lit" "registerAdditionalTerminal")
+                  (vs/jm
+                    "lit" "start"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1661,9 +1915,11 @@
             "name" "id"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "percentage"
             "type" "`$INTEGER`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
@@ -1676,6 +1932,9 @@
           (vs/jm
             "name" "status"
             "type" "`$STRING`"))
+        "id" (vs/jm
+          "field" "id"
+          "name" "id")
         "name" "output_status"
         "op" (vs/jm
           "load" (vs/jm
@@ -1707,6 +1966,17 @@
                   "registerAdditionalTerminal"
                   "status"
                   "{id}")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "batch")
+                  (vs/jm
+                    "lit" "registerAdditionalTerminal")
+                  (vs/jm
+                    "lit" "status")
+                  (vs/jm
+                    "var" "id"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"
@@ -1760,6 +2030,7 @@
             "short" "The UUID of the product to update"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
@@ -1794,6 +2065,11 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "updateProduct")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "merchantportalws")
+                  (vs/jm
+                    "lit" "updateProduct"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1910,3 +2186,9 @@
         "output_update_product" (vs/jm))
       "headers" (vs/jm
         "content-type" "application/json"))))
+
+(def feature-plugins
+  {})
+
+(def feature-extra
+  {})

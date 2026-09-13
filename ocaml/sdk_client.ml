@@ -119,3 +119,27 @@ let output_status (client : sdk_client) (entopts : value) : entity_obj =
 (* OutputUpdateProduct entity bound to a client:  output_update_product client entopts *)
 let output_update_product (client : sdk_client) (entopts : value) : entity_obj =
   Sdk_entity_output_update_product.make client entopts
+
+(* Entity by name (None for a name this SDK did not generate). *)
+let entity (client : sdk_client) (name : string) (entopts : value) : entity_obj option =
+  match name with
+  | "merchant_portal_api_controller" -> Some (Sdk_entity_merchant_portal_api_controller.make client entopts)
+  | "merchant_portal_common_controller" -> Some (Sdk_entity_merchant_portal_common_controller.make client entopts)
+  | "merchant_portal_pam_contract_controller" -> Some (Sdk_entity_merchant_portal_pam_contract_controller.make client entopts)
+  | "merchant_portal_pam_document_controller" -> Some (Sdk_entity_merchant_portal_pam_document_controller.make client entopts)
+  | "merchant_portal_pam_form_controller" -> Some (Sdk_entity_merchant_portal_pam_form_controller.make client entopts)
+  | "merchant_portal_pam_mandator_controller" -> Some (Sdk_entity_merchant_portal_pam_mandator_controller.make client entopts)
+  | "merchant_portal_pam_merchant_controller" -> Some (Sdk_entity_merchant_portal_pam_merchant_controller.make client entopts)
+  | "merchant_portal_pam_package_controller" -> Some (Sdk_entity_merchant_portal_pam_package_controller.make client entopts)
+  | "merchant_portal_pam_product_controller" -> Some (Sdk_entity_merchant_portal_pam_product_controller.make client entopts)
+  | "output_add_product" -> Some (Sdk_entity_output_add_product.make client entopts)
+  | "output_create_product" -> Some (Sdk_entity_output_create_product.make client entopts)
+  | "output_detail" -> Some (Sdk_entity_output_detail.make client entopts)
+  | "output_list" -> Some (Sdk_entity_output_list.make client entopts)
+  | "output_message" -> Some (Sdk_entity_output_message.make client entopts)
+  | "output_move_tid" -> Some (Sdk_entity_output_move_tid.make client entopts)
+  | "output_remove_product" -> Some (Sdk_entity_output_remove_product.make client entopts)
+  | "output_start" -> Some (Sdk_entity_output_start.make client entopts)
+  | "output_status" -> Some (Sdk_entity_output_status.make client entopts)
+  | "output_update_product" -> Some (Sdk_entity_output_update_product.make client entopts)
+  | _ -> None

@@ -77,9 +77,13 @@ main: kit: entity: merchant_portal_pam_product_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/approveProduct"
-          parts: [
-            "merchantportalws"
-            "approveProduct"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "approveProduct"
+            }
           ]
           select: {
             exist: [
@@ -105,9 +109,13 @@ main: kit: entity: merchant_portal_pam_product_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/declineProduct"
-          parts: [
-            "merchantportalws"
-            "declineProduct"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "declineProduct"
+            }
           ]
           select: {
             exist: [
@@ -133,9 +141,13 @@ main: kit: entity: merchant_portal_pam_product_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/orderAdditionalProduct"
-          parts: [
-            "merchantportalws"
-            "orderAdditionalProduct"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "orderAdditionalProduct"
+            }
           ]
           select: {
             exist: [
@@ -161,9 +173,13 @@ main: kit: entity: merchant_portal_pam_product_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/productsList"
-          parts: [
-            "merchantportalws"
-            "productsList"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "productsList"
+            }
           ]
           select: {
             exist: [

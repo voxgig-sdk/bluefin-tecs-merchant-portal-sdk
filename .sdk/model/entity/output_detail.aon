@@ -60,12 +60,22 @@ main: kit: entity: output_detail: {
           }
           method: "GET"
           orig: "/merchantportalws/batch/registerAdditionalTerminal/details/{id}"
-          parts: [
-            "merchantportalws"
-            "batch"
-            "registerAdditionalTerminal"
-            "details"
-            "{id}"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "batch"
+            }
+            {
+              lit: "registerAdditionalTerminal"
+            }
+            {
+              lit: "details"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [

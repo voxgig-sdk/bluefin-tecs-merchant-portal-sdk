@@ -99,6 +99,9 @@ sub output_update_product_basic_setup {
 
   if ((($env->{'BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE'}) || '') eq 'TRUE') {
     my $merged_opts = Voxgig::Struct::merge([
+      # FIRST, so the generated fields below win: sdk-test-control.json's
+      # test.client.options adds to the live client, it does not redirect it.
+      BluefinTecsMerchantPortalTestRunner::live_client_options(),
       {
       },
       (Voxgig::Struct::ismap($extra) ? $extra : {}),

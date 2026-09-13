@@ -18,6 +18,7 @@ main: kit: entity: output_remove_product: {
       type: "`$ARRAY`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: true
       short: "Response code."
@@ -50,9 +51,13 @@ main: kit: entity: output_remove_product: {
           }
           method: "POST"
           orig: "/merchantportalws/removeProductsFromPackage"
-          parts: [
-            "merchantportalws"
-            "removeProductsFromPackage"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "removeProductsFromPackage"
+            }
           ]
           select: {
             exist: [

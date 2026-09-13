@@ -1,6 +1,14 @@
 # BluefinTecsMerchantPortal SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -168,6 +176,7 @@ def make_config():
       "merchant_portal_api_controller": {
         "fields": [
           {
+            "format": "int32",
             "name": "account_number",
             "short": "Account number provided by the acquirer.",
             "type": "`$INTEGER`",
@@ -207,12 +216,14 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "merchant_category_code",
             "req": True,
             "short": "Merchant category code as defined by the payment network.",
             "type": "`$INTEGER`",
           },
           {
+            "format": "email",
             "name": "merchant_email",
             "short": "Merchant's email address for receiving notifications.",
             "type": "`$STRING`",
@@ -268,6 +279,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "sorting_code",
             "short": "Sorting code provided by the acquirer.",
             "type": "`$INTEGER`",
@@ -308,6 +320,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalid",
             "req": True,
             "short": "TECS terminalid given by Tecs processing engine.",
@@ -319,6 +332,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "email",
             "name": "user_email",
             "short": "Email address of the user acting on behalf of the merchant.",
             "type": "`$STRING`",
@@ -340,6 +354,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "web_shop_url",
             "short": "URL of the merchant's web shop.",
             "type": "`$STRING`",
@@ -372,9 +387,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/deactivateTerminal",
-                "parts": [
-                  "merchantportalws",
-                  "deactivateTerminal",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "deactivateTerminal",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -385,6 +404,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "deactivateTerminal",
+                ],
               },
               {
                 "args": {
@@ -401,9 +424,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/reactivateTerminal",
-                "parts": [
-                  "merchantportalws",
-                  "reactivateTerminal",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "reactivateTerminal",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -414,6 +441,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "reactivateTerminal",
+                ],
               },
               {
                 "args": {
@@ -430,9 +461,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/registerAdditionalTerminal",
-                "parts": [
-                  "merchantportalws",
-                  "registerAdditionalTerminal",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "registerAdditionalTerminal",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -443,6 +478,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "registerAdditionalTerminal",
+                ],
               },
               {
                 "args": {
@@ -459,9 +498,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/registerNewMerchant",
-                "parts": [
-                  "merchantportalws",
-                  "registerNewMerchant",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "registerNewMerchant",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -472,6 +515,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "registerNewMerchant",
+                ],
               },
             ],
           },
@@ -493,30 +540,46 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/merchantportalws/logDeveloperInfo",
-                "parts": [
-                  "merchantportalws",
-                  "logDeveloperInfo",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "logDeveloperInfo",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "logDeveloperInfo",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/merchantportalws/version",
-                "parts": [
-                  "merchantportalws",
-                  "version",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "version",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "version",
+                ],
               },
             ],
           },
@@ -559,9 +622,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/generateContract",
-                "parts": [
-                  "merchantportalws",
-                  "generateContract",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "generateContract",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -572,6 +639,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "generateContract",
+                ],
               },
               {
                 "args": {
@@ -588,9 +659,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/uploadContract",
-                "parts": [
-                  "merchantportalws",
-                  "uploadContract",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "uploadContract",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -601,6 +676,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "uploadContract",
+                ],
               },
             ],
           },
@@ -648,9 +727,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/documentsList",
-                "parts": [
-                  "merchantportalws",
-                  "documentsList",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "documentsList",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -661,6 +744,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "documentsList",
+                ],
               },
               {
                 "args": {
@@ -677,9 +764,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/downloadDocument",
-                "parts": [
-                  "merchantportalws",
-                  "downloadDocument",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "downloadDocument",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -690,6 +781,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "downloadDocument",
+                ],
               },
             ],
           },
@@ -780,9 +875,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/applicationForm",
-                "parts": [
-                  "merchantportalws",
-                  "applicationForm",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "applicationForm",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -793,6 +892,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "applicationForm",
+                ],
               },
               {
                 "args": {
@@ -809,9 +912,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/packageForm",
-                "parts": [
-                  "merchantportalws",
-                  "packageForm",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "packageForm",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -822,6 +929,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "packageForm",
+                ],
               },
               {
                 "args": {
@@ -838,9 +949,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/reopenForm",
-                "parts": [
-                  "merchantportalws",
-                  "reopenForm",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "reopenForm",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -851,6 +966,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "reopenForm",
+                ],
               },
               {
                 "args": {
@@ -867,9 +986,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/secretKey",
-                "parts": [
-                  "merchantportalws",
-                  "secretKey",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "secretKey",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -880,6 +1003,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "secretKey",
+                ],
               },
               {
                 "args": {
@@ -896,9 +1023,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/submitForm",
-                "parts": [
-                  "merchantportalws",
-                  "submitForm",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "submitForm",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -909,6 +1040,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "submitForm",
+                ],
               },
               {
                 "args": {
@@ -925,9 +1060,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/submitValues",
-                "parts": [
-                  "merchantportalws",
-                  "submitValues",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "submitValues",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -938,6 +1077,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "submitValues",
+                ],
               },
             ],
           },
@@ -988,9 +1131,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/createMandatorConfig",
-                "parts": [
-                  "merchantportalws",
-                  "createMandatorConfig",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "createMandatorConfig",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1001,6 +1148,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "createMandatorConfig",
+                ],
               },
               {
                 "args": {
@@ -1017,9 +1168,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/introduceMandatorPackage",
-                "parts": [
-                  "merchantportalws",
-                  "introduceMandatorPackage",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "introduceMandatorPackage",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1030,6 +1185,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "introduceMandatorPackage",
+                ],
               },
               {
                 "args": {
@@ -1046,9 +1205,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/selfRegistrationLink",
-                "parts": [
-                  "merchantportalws",
-                  "selfRegistrationLink",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "selfRegistrationLink",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1059,6 +1222,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "selfRegistrationLink",
+                ],
               },
             ],
           },
@@ -1233,9 +1400,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/contractNumber",
-                "parts": [
-                  "merchantportalws",
-                  "contractNumber",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "contractNumber",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1246,6 +1417,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "contractNumber",
+                ],
               },
               {
                 "args": {
@@ -1262,9 +1437,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/registerAdditionalAcquiring",
-                "parts": [
-                  "merchantportalws",
-                  "registerAdditionalAcquiring",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "registerAdditionalAcquiring",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1275,6 +1454,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "registerAdditionalAcquiring",
+                ],
               },
               {
                 "args": {
@@ -1291,9 +1474,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/updateMerchant",
-                "parts": [
-                  "merchantportalws",
-                  "updateMerchant",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "updateMerchant",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1304,21 +1491,33 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "updateMerchant",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/registerMerchant",
-                "parts": [
-                  "merchantportalws",
-                  "registerMerchant",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "registerMerchant",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "registerMerchant",
+                ],
               },
             ],
           },
@@ -1407,9 +1606,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/availablePackages",
-                "parts": [
-                  "merchantportalws",
-                  "availablePackages",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "availablePackages",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1420,6 +1623,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "availablePackages",
+                ],
               },
               {
                 "args": {
@@ -1436,9 +1643,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/orderPackage",
-                "parts": [
-                  "merchantportalws",
-                  "orderPackage",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "orderPackage",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1449,6 +1660,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "orderPackage",
+                ],
               },
               {
                 "args": {
@@ -1465,9 +1680,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/orderedPackages",
-                "parts": [
-                  "merchantportalws",
-                  "orderedPackages",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "orderedPackages",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1478,6 +1697,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "orderedPackages",
+                ],
               },
               {
                 "args": {
@@ -1494,9 +1717,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/packageTemplates",
-                "parts": [
-                  "merchantportalws",
-                  "packageTemplates",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "packageTemplates",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1507,6 +1734,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "packageTemplates",
+                ],
               },
               {
                 "args": {
@@ -1522,9 +1753,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/updatePackageData",
-                "parts": [
-                  "merchantportalws",
-                  "updatePackageData",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "updatePackageData",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1535,6 +1770,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "updatePackageData",
+                ],
               },
             ],
           },
@@ -1612,9 +1851,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/approveProduct",
-                "parts": [
-                  "merchantportalws",
-                  "approveProduct",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "approveProduct",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1625,6 +1868,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "approveProduct",
+                ],
               },
               {
                 "args": {
@@ -1641,9 +1888,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/declineProduct",
-                "parts": [
-                  "merchantportalws",
-                  "declineProduct",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "declineProduct",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1654,6 +1905,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "declineProduct",
+                ],
               },
               {
                 "args": {
@@ -1670,9 +1925,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/orderAdditionalProduct",
-                "parts": [
-                  "merchantportalws",
-                  "orderAdditionalProduct",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "orderAdditionalProduct",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1683,6 +1942,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "orderAdditionalProduct",
+                ],
               },
               {
                 "args": {
@@ -1699,9 +1962,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/productsList",
-                "parts": [
-                  "merchantportalws",
-                  "productsList",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "productsList",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1712,6 +1979,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "productsList",
+                ],
               },
             ],
           },
@@ -1735,6 +2006,7 @@ def make_config():
             "type": "`$ARRAY`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "req": True,
             "short": "Response code.",
@@ -1768,9 +2040,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/addProductsToPackage",
-                "parts": [
-                  "merchantportalws",
-                  "addProductsToPackage",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "addProductsToPackage",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1781,6 +2057,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "addProductsToPackage",
+                ],
               },
             ],
           },
@@ -1844,6 +2124,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "req": True,
             "short": "Response code.",
@@ -1895,9 +2176,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/createNewProduct",
-                "parts": [
-                  "merchantportalws",
-                  "createNewProduct",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "createNewProduct",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1908,6 +2193,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "createNewProduct",
+                ],
               },
             ],
           },
@@ -1935,6 +2224,10 @@ def make_config():
             "type": "`$OBJECT`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "output_detail",
         "op": {
           "load": {
@@ -1965,12 +2258,22 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/merchantportalws/batch/registerAdditionalTerminal/details/{id}",
-                "parts": [
-                  "merchantportalws",
-                  "batch",
-                  "registerAdditionalTerminal",
-                  "details",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "batch",
+                  },
+                  {
+                    "lit": "registerAdditionalTerminal",
+                  },
+                  {
+                    "lit": "details",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1982,6 +2285,13 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.details`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "batch",
+                  "registerAdditionalTerminal",
+                  "details",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -2007,6 +2317,7 @@ def make_config():
             "type": "`$OBJECT`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "req": True,
             "short": "Response code.",
@@ -2044,11 +2355,19 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/batch/registerAdditionalTerminal/list",
-                "parts": [
-                  "merchantportalws",
-                  "batch",
-                  "registerAdditionalTerminal",
-                  "list",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "batch",
+                  },
+                  {
+                    "lit": "registerAdditionalTerminal",
+                  },
+                  {
+                    "lit": "list",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -2059,6 +2378,12 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "batch",
+                  "registerAdditionalTerminal",
+                  "list",
+                ],
               },
             ],
           },
@@ -2074,6 +2399,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "req": True,
             "short": "Response code.",
@@ -2086,6 +2412,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "output_message",
         "op": {
           "load": {
@@ -2116,12 +2446,22 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}",
-                "parts": [
-                  "merchantportalws",
-                  "batch",
-                  "registerAdditionalTerminal",
-                  "restart",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "batch",
+                  },
+                  {
+                    "lit": "registerAdditionalTerminal",
+                  },
+                  {
+                    "lit": "restart",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -2133,6 +2473,13 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "batch",
+                  "registerAdditionalTerminal",
+                  "restart",
+                  "{id}",
+                ],
               },
               {
                 "args": {
@@ -2158,12 +2505,22 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}",
-                "parts": [
-                  "merchantportalws",
-                  "batch",
-                  "registerAdditionalTerminal",
-                  "stop",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "batch",
+                  },
+                  {
+                    "lit": "registerAdditionalTerminal",
+                  },
+                  {
+                    "lit": "stop",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -2175,6 +2532,13 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "batch",
+                  "registerAdditionalTerminal",
+                  "stop",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -2191,6 +2555,7 @@ def make_config():
             "type": "`$ARRAY`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "req": True,
             "short": "Response code.",
@@ -2234,9 +2599,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/moveTid",
-                "parts": [
-                  "merchantportalws",
-                  "moveTid",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "moveTid",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -2247,6 +2616,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "moveTid",
+                ],
               },
             ],
           },
@@ -2270,6 +2643,7 @@ def make_config():
             "type": "`$ARRAY`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "req": True,
             "short": "Response code.",
@@ -2303,9 +2677,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/removeProductsFromPackage",
-                "parts": [
-                  "merchantportalws",
-                  "removeProductsFromPackage",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "removeProductsFromPackage",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -2316,6 +2694,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "removeProductsFromPackage",
+                ],
               },
             ],
           },
@@ -2331,6 +2713,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "req": True,
             "short": "Response code.",
@@ -2343,6 +2726,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "output_start",
         "op": {
           "create": {
@@ -2364,11 +2751,19 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/batch/registerAdditionalTerminal/start",
-                "parts": [
-                  "merchantportalws",
-                  "batch",
-                  "registerAdditionalTerminal",
-                  "start",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "batch",
+                  },
+                  {
+                    "lit": "registerAdditionalTerminal",
+                  },
+                  {
+                    "lit": "start",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -2379,6 +2774,12 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "batch",
+                  "registerAdditionalTerminal",
+                  "start",
+                ],
               },
             ],
           },
@@ -2394,10 +2795,12 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "percentage",
             "type": "`$INTEGER`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "req": True,
             "short": "Response code.",
@@ -2414,6 +2817,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "output_status",
         "op": {
           "load": {
@@ -2444,12 +2851,22 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/merchantportalws/batch/registerAdditionalTerminal/status/{id}",
-                "parts": [
-                  "merchantportalws",
-                  "batch",
-                  "registerAdditionalTerminal",
-                  "status",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "batch",
+                  },
+                  {
+                    "lit": "registerAdditionalTerminal",
+                  },
+                  {
+                    "lit": "status",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -2461,6 +2878,13 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "batch",
+                  "registerAdditionalTerminal",
+                  "status",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -2523,6 +2947,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "req": True,
             "short": "Response code.",
@@ -2561,9 +2986,13 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/merchantportalws/updateProduct",
-                "parts": [
-                  "merchantportalws",
-                  "updateProduct",
+                "segments": [
+                  {
+                    "lit": "merchantportalws",
+                  },
+                  {
+                    "lit": "updateProduct",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -2574,6 +3003,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "merchantportalws",
+                  "updateProduct",
+                ],
               },
             ],
           },

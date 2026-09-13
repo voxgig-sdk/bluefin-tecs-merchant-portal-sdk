@@ -43,9 +43,13 @@ main: kit: entity: merchant_portal_pam_document_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/documentsList"
-          parts: [
-            "merchantportalws"
-            "documentsList"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "documentsList"
+            }
           ]
           select: {
             exist: [
@@ -71,9 +75,13 @@ main: kit: entity: merchant_portal_pam_document_controller: {
           }
           method: "POST"
           orig: "/merchantportalws/downloadDocument"
-          parts: [
-            "merchantportalws"
-            "downloadDocument"
+          segments: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "downloadDocument"
+            }
           ]
           select: {
             exist: [

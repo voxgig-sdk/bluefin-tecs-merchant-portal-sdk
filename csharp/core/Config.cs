@@ -185,6 +185,7 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "account_number",
                             ["short"] = "Account number provided by the acquirer.",
                             ["type"] = "`$INTEGER`",
@@ -231,6 +232,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "merchant_category_code",
                             ["req"] = true,
                             ["short"] = "Merchant category code as defined by the payment network.",
@@ -238,6 +240,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "email",
                             ["name"] = "merchant_email",
                             ["short"] = "Merchant's email address for receiving notifications.",
                             ["type"] = "`$STRING`",
@@ -303,6 +306,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "sorting_code",
                             ["short"] = "Sorting code provided by the acquirer.",
                             ["type"] = "`$INTEGER`",
@@ -350,6 +354,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalid",
                             ["req"] = true,
                             ["short"] = "TECS terminalid given by Tecs processing engine.",
@@ -363,6 +368,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "email",
                             ["name"] = "user_email",
                             ["short"] = "Email address of the user acting on behalf of the merchant.",
                             ["type"] = "`$STRING`",
@@ -388,6 +394,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "uri",
                             ["name"] = "web_shop_url",
                             ["short"] = "URL of the merchant's web shop.",
                             ["type"] = "`$STRING`",
@@ -428,10 +435,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/deactivateTerminal",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "deactivateTerminal",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "deactivateTerminal",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -444,6 +457,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "deactivateTerminal",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -465,10 +483,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/reactivateTerminal",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "reactivateTerminal",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "reactivateTerminal",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -481,6 +505,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "reactivateTerminal",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -502,10 +531,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/registerAdditionalTerminal",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "registerAdditionalTerminal",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "registerAdditionalTerminal",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -518,6 +553,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "registerAdditionalTerminal",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -539,10 +579,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/registerNewMerchant",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "registerNewMerchant",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "registerNewMerchant",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -555,6 +601,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "registerNewMerchant",
                                     },
                                 },
                             },
@@ -583,16 +634,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/merchantportalws/logDeveloperInfo",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "logDeveloperInfo",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "logDeveloperInfo",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "logDeveloperInfo",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -601,16 +663,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/merchantportalws/version",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "version",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "version",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "version",
                                     },
                                 },
                             },
@@ -666,10 +739,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/generateContract",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "generateContract",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "generateContract",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -682,6 +761,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "generateContract",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -703,10 +787,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/uploadContract",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "uploadContract",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "uploadContract",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -719,6 +809,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "uploadContract",
                                     },
                                 },
                             },
@@ -780,10 +875,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/documentsList",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "documentsList",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "documentsList",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -796,6 +897,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "documentsList",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -817,10 +923,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/downloadDocument",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "downloadDocument",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "downloadDocument",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -833,6 +945,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "downloadDocument",
                                     },
                                 },
                             },
@@ -949,10 +1066,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/applicationForm",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "applicationForm",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "applicationForm",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -965,6 +1088,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "applicationForm",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -986,10 +1114,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/packageForm",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "packageForm",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "packageForm",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1002,6 +1136,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "packageForm",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1023,10 +1162,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/reopenForm",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "reopenForm",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "reopenForm",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1039,6 +1184,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "reopenForm",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1060,10 +1210,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/secretKey",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "secretKey",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "secretKey",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1076,6 +1232,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "secretKey",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1097,10 +1258,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/submitForm",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "submitForm",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "submitForm",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1113,6 +1280,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "submitForm",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1134,10 +1306,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/submitValues",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "submitValues",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "submitValues",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1150,6 +1328,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "submitValues",
                                     },
                                 },
                             },
@@ -1215,10 +1398,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/createMandatorConfig",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "createMandatorConfig",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "createMandatorConfig",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1231,6 +1420,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "createMandatorConfig",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1252,10 +1446,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/introduceMandatorPackage",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "introduceMandatorPackage",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "introduceMandatorPackage",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1268,6 +1468,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "introduceMandatorPackage",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1289,10 +1494,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/selfRegistrationLink",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "selfRegistrationLink",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "selfRegistrationLink",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1305,6 +1516,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "selfRegistrationLink",
                                     },
                                 },
                             },
@@ -1518,10 +1734,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/contractNumber",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "contractNumber",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "contractNumber",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1534,6 +1756,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "contractNumber",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1555,10 +1782,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/registerAdditionalAcquiring",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "registerAdditionalAcquiring",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "registerAdditionalAcquiring",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1571,6 +1804,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "registerAdditionalAcquiring",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1592,10 +1830,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/updateMerchant",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "updateMerchant",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "updateMerchant",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1609,6 +1853,11 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "updateMerchant",
+                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
@@ -1616,16 +1865,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/registerMerchant",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "registerMerchant",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "registerMerchant",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "registerMerchant",
                                     },
                                 },
                             },
@@ -1738,10 +1998,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/availablePackages",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "availablePackages",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "availablePackages",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1754,6 +2020,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "availablePackages",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1775,10 +2046,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/orderPackage",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "orderPackage",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "orderPackage",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1791,6 +2068,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "orderPackage",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1812,10 +2094,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/orderedPackages",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "orderedPackages",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "orderedPackages",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1828,6 +2116,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "orderedPackages",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1849,10 +2142,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/packageTemplates",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "packageTemplates",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "packageTemplates",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1865,6 +2164,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "packageTemplates",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1885,10 +2189,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/updatePackageData",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "updatePackageData",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "updatePackageData",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1901,6 +2211,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "updatePackageData",
                                     },
                                 },
                             },
@@ -1999,10 +2314,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/approveProduct",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "approveProduct",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "approveProduct",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2015,6 +2336,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "approveProduct",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -2036,10 +2362,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/declineProduct",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "declineProduct",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "declineProduct",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2052,6 +2384,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "declineProduct",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -2073,10 +2410,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/orderAdditionalProduct",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "orderAdditionalProduct",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "orderAdditionalProduct",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2089,6 +2432,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "orderAdditionalProduct",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -2110,10 +2458,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/productsList",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "productsList",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "productsList",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2126,6 +2480,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "productsList",
                                     },
                                 },
                             },
@@ -2156,6 +2515,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["req"] = true,
                             ["short"] = "Response code.",
@@ -2197,10 +2557,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/addProductsToPackage",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "addProductsToPackage",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "addProductsToPackage",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2213,6 +2579,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "addProductsToPackage",
                                     },
                                 },
                             },
@@ -2290,6 +2661,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["req"] = true,
                             ["short"] = "Response code.",
@@ -2352,10 +2724,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/createNewProduct",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "createNewProduct",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "createNewProduct",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2368,6 +2746,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "createNewProduct",
                                     },
                                 },
                             },
@@ -2402,6 +2785,11 @@ public static class SdkConfig
                             ["name"] = "progress",
                             ["type"] = "`$OBJECT`",
                         },
+                    },
+                    ["id"] = new Dictionary<string, object?>
+                    {
+                        ["field"] = "id",
+                        ["name"] = "id",
                     },
                     ["name"] = "output_detail",
                     ["op"] = new Dictionary<string, object?>
@@ -2442,13 +2830,28 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/details/{id}",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "batch",
-                                        "registerAdditionalTerminal",
-                                        "details",
-                                        "{id}",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "batch",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "registerAdditionalTerminal",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "details",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["var"] = "id",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2462,6 +2865,14 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body.details`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "batch",
+                                        "registerAdditionalTerminal",
+                                        "details",
+                                        "{id}",
                                     },
                                 },
                             },
@@ -2496,6 +2907,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["req"] = true,
                             ["short"] = "Response code.",
@@ -2542,12 +2954,24 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/list",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "batch",
-                                        "registerAdditionalTerminal",
-                                        "list",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "batch",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "registerAdditionalTerminal",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "list",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2560,6 +2984,13 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "batch",
+                                        "registerAdditionalTerminal",
+                                        "list",
                                     },
                                 },
                             },
@@ -2581,6 +3012,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["req"] = true,
                             ["short"] = "Response code.",
@@ -2593,6 +3025,11 @@ public static class SdkConfig
                             ["short"] = "Response message.",
                             ["type"] = "`$STRING`",
                         },
+                    },
+                    ["id"] = new Dictionary<string, object?>
+                    {
+                        ["field"] = "id",
+                        ["name"] = "id",
                     },
                     ["name"] = "output_message",
                     ["op"] = new Dictionary<string, object?>
@@ -2633,13 +3070,28 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "batch",
-                                        "registerAdditionalTerminal",
-                                        "restart",
-                                        "{id}",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "batch",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "registerAdditionalTerminal",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "restart",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["var"] = "id",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2653,6 +3105,14 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "batch",
+                                        "registerAdditionalTerminal",
+                                        "restart",
+                                        "{id}",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -2685,13 +3145,28 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "batch",
-                                        "registerAdditionalTerminal",
-                                        "stop",
-                                        "{id}",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "batch",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "registerAdditionalTerminal",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "stop",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["var"] = "id",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2705,6 +3180,14 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "batch",
+                                        "registerAdditionalTerminal",
+                                        "stop",
+                                        "{id}",
                                     },
                                 },
                             },
@@ -2727,6 +3210,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["req"] = true,
                             ["short"] = "Response code.",
@@ -2780,10 +3264,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/moveTid",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "moveTid",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "moveTid",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2796,6 +3286,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "moveTid",
                                     },
                                 },
                             },
@@ -2826,6 +3321,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["req"] = true,
                             ["short"] = "Response code.",
@@ -2867,10 +3363,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/removeProductsFromPackage",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "removeProductsFromPackage",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "removeProductsFromPackage",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2883,6 +3385,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "removeProductsFromPackage",
                                     },
                                 },
                             },
@@ -2904,6 +3411,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["req"] = true,
                             ["short"] = "Response code.",
@@ -2916,6 +3424,11 @@ public static class SdkConfig
                             ["short"] = "Response message.",
                             ["type"] = "`$STRING`",
                         },
+                    },
+                    ["id"] = new Dictionary<string, object?>
+                    {
+                        ["field"] = "id",
+                        ["name"] = "id",
                     },
                     ["name"] = "output_start",
                     ["op"] = new Dictionary<string, object?>
@@ -2945,12 +3458,24 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/start",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "batch",
-                                        "registerAdditionalTerminal",
-                                        "start",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "batch",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "registerAdditionalTerminal",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "start",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2963,6 +3488,13 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "batch",
+                                        "registerAdditionalTerminal",
+                                        "start",
                                     },
                                 },
                             },
@@ -2984,11 +3516,13 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "percentage",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["req"] = true,
                             ["short"] = "Response code.",
@@ -3006,6 +3540,11 @@ public static class SdkConfig
                             ["name"] = "status",
                             ["type"] = "`$STRING`",
                         },
+                    },
+                    ["id"] = new Dictionary<string, object?>
+                    {
+                        ["field"] = "id",
+                        ["name"] = "id",
                     },
                     ["name"] = "output_status",
                     ["op"] = new Dictionary<string, object?>
@@ -3046,13 +3585,28 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/status/{id}",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "batch",
-                                        "registerAdditionalTerminal",
-                                        "status",
-                                        "{id}",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "batch",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "registerAdditionalTerminal",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "status",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["var"] = "id",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -3066,6 +3620,14 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "batch",
+                                        "registerAdditionalTerminal",
+                                        "status",
+                                        "{id}",
                                     },
                                 },
                             },
@@ -3143,6 +3705,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["req"] = true,
                             ["short"] = "Response code.",
@@ -3190,10 +3753,16 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/updateProduct",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "merchantportalws",
-                                        "updateProduct",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "merchantportalws",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "updateProduct",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -3206,6 +3775,11 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "updateProduct",
                                     },
                                 },
                             },
@@ -3230,6 +3804,15 @@ public static class SdkConfig
     public static Dictionary<string, object?> SharedConfig()
     {
         return SharedConfigVal.Value;
+    }
+
+    public static List<object?> FeaturePlugins(string name)
+    {
+        switch (name)
+        {
+            default:
+                return new List<object?>();
+        }
     }
 
     public static Feature.BaseFeature MakeFeature(string name)
