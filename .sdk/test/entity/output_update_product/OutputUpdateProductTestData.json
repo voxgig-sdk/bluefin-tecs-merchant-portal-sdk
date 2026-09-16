@@ -12,7 +12,7 @@
         "productName": "s89",
         "productStatus": "s8a",
         "productUUID": "s8b",
-        "responseCode": "s8c",
+        "responseCode": 140,
         "responseMessage": "s8d",
         "vendorName": "s8e",
         "id": "OUTPUT_UPDATE_PRODUCT00"
@@ -28,7 +28,7 @@
         "productName": "s10b",
         "productStatus": "s10c",
         "productUUID": "s10d",
-        "responseCode": "s10e",
+        "responseCode": 270,
         "responseMessage": "s10f",
         "vendorName": "s110",
         "id": "OUTPUT_UPDATE_PRODUCT01"
@@ -44,7 +44,7 @@
         "productName": "s18d",
         "productStatus": "s18e",
         "productUUID": "s18f",
-        "responseCode": "s190",
+        "responseCode": 400,
         "responseMessage": "s191",
         "vendorName": "s192",
         "id": "OUTPUT_UPDATE_PRODUCT02"
@@ -64,9 +64,132 @@
         "productName": "s20f",
         "productStatus": "s210",
         "productUUID": "s211",
-        "responseCode": "s212",
+        "responseCode": 530,
         "responseMessage": "s213",
         "vendorName": "s214"
+      }
+    }
+  },
+  "requests": {
+    "POST /merchantportalws/updateProduct": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "updateProductUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "allowMultipleOrders": {
+                    "description": "An attribute to indicate if multiple orders are allowed",
+                    "example": true,
+                    "type": "boolean"
+                  },
+                  "appFormName": {
+                    "description": "The name of the application form",
+                    "example": "My Application Form Name",
+                    "type": "string"
+                  },
+                  "contractNeeded": {
+                    "description": "An attribute to indicate if a contract is needed",
+                    "example": true,
+                    "type": "boolean"
+                  },
+                  "credentialsNeeded": {
+                    "description": "An attribute to indicate if credentials are needed",
+                    "example": true,
+                    "type": "boolean"
+                  },
+                  "descriptionKey": {
+                    "description": "The description of the product",
+                    "example": "My Product Description",
+                    "type": "string"
+                  },
+                  "nameKey": {
+                    "description": "The key of the product name",
+                    "example": "My Product Name Key",
+                    "type": "string"
+                  },
+                  "prescreeningAllowed": {
+                    "description": "An attribute to indicate if prescreening is allowed",
+                    "example": true,
+                    "type": "boolean"
+                  },
+                  "productName": {
+                    "description": "The name of the product",
+                    "example": "My Product Name",
+                    "type": "string"
+                  },
+                  "productStatus": {
+                    "description": "The status of the product",
+                    "example": "ACTIVE",
+                    "type": "string"
+                  },
+                  "productUUID": {
+                    "description": "The UUID of the product to update",
+                    "example": "123e4567-e89b-12d3-a456-426614174000",
+                    "type": "string"
+                  },
+                  "vendorName": {
+                    "description": "The name of the vendor",
+                    "example": "My Vendor Name",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "productUUID"
+                ],
+                "title": "InputUpdateProduct",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputUpdateProduct",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputUpdateProduct",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

@@ -121,5 +121,517 @@
         "vu_nummer": "s429"
       }
     }
+  },
+  "requests": {
+    "POST /merchantportalws/contractNumber": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "contractNumberUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "merchantContractNumber": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "merchantContractNumber"
+                ],
+                "title": "InputContractNumber",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputContractNumber",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputContractNumber",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "POST /merchantportalws/registerAdditionalAcquiring": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "registerAdditionalAcquiringUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization header containing valid credentials. Example: \"Bearer AT-2359-DFYpOWfDFSls4DeKDmGOXDyynx0a8Trwk\"\n",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "additional_data": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "description": "Optional additional merchant-specific data related to enabling acquiring.\nThis may include custom key-value pairs that provide further context.\n",
+                    "example": {
+                      "firstname": "John",
+                      "surname": "Doe",
+                      "type": "tx-300",
+                      "version": "v1.2.3"
+                    },
+                    "type": "object"
+                  },
+                  "currency": {
+                    "description": "Transaction currency in ISO 4217 format.",
+                    "example": "EUR",
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "type": "string"
+                  },
+                  "packageorderuuid": {
+                    "description": "Unique identifier for the registered merchant in the TECS system. This value is provided by TECS during the initial merchant registration and must be used for subsequent terminal or acquirer registrations.\n",
+                    "example": "16acb5a4-e573-423c-a024-fae90ea45d70",
+                    "type": "string"
+                  },
+                  "productid_acquirer": {
+                    "description": "Identifier of the product for which acquiring is to be enabled. If not provided, the default product as defined in the package may be used.\n",
+                    "example": "874d84a8-a6f4-47fa-b594-944593fc394b",
+                    "type": "string"
+                  },
+                  "terminalIds": {
+                    "description": "Optional list of terminal IDs for which acquiring should be activated. If omitted, acquiring will be enabled for all terminals associated with the merchant.\n",
+                    "example": [
+                      77000001,
+                      77000002,
+                      77000003
+                    ],
+                    "items": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "type": "array"
+                  },
+                  "terminalid_acquirer": {
+                    "description": "Optional terminal ID provided by the acquirer.",
+                    "example": "66000001",
+                    "type": "string"
+                  },
+                  "vu_nummer": {
+                    "description": "Merchant contract number with the acquirer.",
+                    "example": "VU-20230501-00123",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "currency",
+                  "packageorderuuid",
+                  "productid_acquirer",
+                  "vu_nummer"
+                ],
+                "title": "InputRegisterAdditionalAcquiring",
+                "type": "object"
+              }
+            }
+          },
+          "description": "JSON payload containing details for registering additional acquiring. This includes the package order UUID, transaction currency, acquirer product identifier, merchant contract number, and optional terminal IDs.\n",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputRegisterAdditionalAcquiring",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful registration of additional acquiring."
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "response_code": {
+                      "description": "Response code: 0 indicates success, any non-zero value indicates an error.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "response_message": {
+                      "description": "A human-readable error message.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "response_code",
+                    "response_message"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad Request – Missing or invalid parameters."
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "response_code": {
+                      "description": "Response code: 0 indicates success, any non-zero value indicates an error.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "response_message": {
+                      "description": "A human-readable error message.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "response_code",
+                    "response_message"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized – Invalid authentication credentials provided."
+          },
+          "403": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "response_code": {
+                      "description": "Response code: 0 indicates success, any non-zero value indicates an error.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "response_message": {
+                      "description": "A human-readable error message.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "response_code",
+                    "response_message"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden – The caller does not have sufficient permissions."
+          },
+          "500": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "response_code": {
+                      "description": "Response code: 0 indicates success, any non-zero value indicates an error.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "response_message": {
+                      "description": "A human-readable error message.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "response_code",
+                    "response_message"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal Server Error – An unexpected error occurred on the server."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "POST /merchantportalws/updateMerchant": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "updateMerchantUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "city": {
+                    "description": "City where the merchant is located.",
+                    "example": "Vienna",
+                    "type": "string"
+                  },
+                  "corporateUUID": {
+                    "description": "Unique identifier for the corporate entity.",
+                    "example": "123e4567-e89b-12d3-a456-426614174000",
+                    "type": "string"
+                  },
+                  "country": {
+                    "description": "Country where the merchant is located.",
+                    "example": "Austria",
+                    "type": "string"
+                  },
+                  "merchantContractNumber": {
+                    "description": "Unique identifier for the merchant within a specific system.",
+                    "example": 987654321,
+                    "type": "string"
+                  },
+                  "merchantName": {
+                    "description": "Name of the merchant.",
+                    "example": "Acme Corporation",
+                    "type": "string"
+                  },
+                  "merchant_category_code": {
+                    "description": "Merchant Category Code (MCC) describing the merchant’s type of business.",
+                    "example": 1234,
+                    "type": "string"
+                  },
+                  "postalCode": {
+                    "description": "Postal or ZIP code of the merchant’s location.",
+                    "example": 1010,
+                    "type": "string"
+                  },
+                  "region": {
+                    "description": "State or province where the merchant is located.",
+                    "example": "Vienna",
+                    "type": "string"
+                  },
+                  "registrationNumber": {
+                    "description": "Business registration number.",
+                    "example": 1234567890,
+                    "type": "string"
+                  },
+                  "street": {
+                    "description": "Street address of the merchant.",
+                    "example": "Main Street 123",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "corporateUUID"
+                ],
+                "title": "InputUpdateMerchant",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputUpdateMerchant",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputUpdateMerchant",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "POST /merchantportalws/registerMerchant": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "registerMerchantUsingPOST",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "businessRegistrationNumber": {
+                    "type": "string"
+                  },
+                  "companyName": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "language": {
+                    "type": "string"
+                  },
+                  "login": {
+                    "type": "string"
+                  },
+                  "mandator": {
+                    "description": "Mandator name assigned by TECS.",
+                    "example": "MY_MANDATOR",
+                    "type": "string"
+                  },
+                  "packageUUID": {
+                    "description": "UUID of the package.",
+                    "example": "aabdf175-3035-435e-b982-4fd82ed9f763",
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  },
+                  "signature": {
+                    "description": "Signature value = saltAsHex-hashAsHex. Salt as hex value = Hex.encodeHexString(saltAsByte). Hash as hex value = DigestUtils.sha256Hex(packageUUID + \"|\" + mandator + \"|\" + clientSecret + \"|\" + saltAsString).",
+                    "example": "If packageUUID is: aabdf175-3035-435e-b982-4fd82ed9f763, mandator is: MY_MANDATOR, client secret is: MY_CLIENT_SECRET, salt is: MY_SALT then signature will be 4d595f53414c54-1ec8296e5e95f99cf0495a3ad99546ad63f942e36c72de936396f881bd6ddddd",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "businessRegistrationNumber",
+                  "companyName",
+                  "email",
+                  "language",
+                  "login",
+                  "mandator",
+                  "phoneNumber"
+                ],
+                "title": "InputRegisterMerchant",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputRegisterMerchant",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputRegisterMerchant",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

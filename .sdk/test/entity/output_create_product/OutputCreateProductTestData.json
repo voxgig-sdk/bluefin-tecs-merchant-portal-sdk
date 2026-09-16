@@ -11,7 +11,7 @@
         "nameKey": "s92",
         "prescreeningAllowed": false,
         "productName": "s94",
-        "responseCode": "s95",
+        "responseCode": 149,
         "responseMessage": "s96",
         "terminalTemplateName": "s97",
         "vendorName": "s98",
@@ -28,7 +28,7 @@
         "nameKey": "s11e",
         "prescreeningAllowed": false,
         "productName": "s120",
-        "responseCode": "s121",
+        "responseCode": 289,
         "responseMessage": "s122",
         "terminalTemplateName": "s123",
         "vendorName": "s124",
@@ -45,7 +45,7 @@
         "nameKey": "s1aa",
         "prescreeningAllowed": false,
         "productName": "s1ac",
-        "responseCode": "s1ad",
+        "responseCode": 429,
         "responseMessage": "s1ae",
         "terminalTemplateName": "s1af",
         "vendorName": "s1b0",
@@ -66,11 +66,148 @@
         "nameKey": "s236",
         "prescreeningAllowed": false,
         "productName": "s238",
-        "responseCode": "s239",
+        "responseCode": 569,
         "responseMessage": "s23a",
         "terminalTemplateName": "s23b",
         "vendorName": "s23c",
         "xmlTemplateFile": "s23d"
+      }
+    }
+  },
+  "requests": {
+    "POST /merchantportalws/createNewProduct": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "createNewProductUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "acquirerId": {
+                    "description": "Unique identifier for the acquirer. Only numeric values are allowed.",
+                    "example": 123456789,
+                    "type": "string"
+                  },
+                  "allowMultipleOrders": {
+                    "description": "Indication whether multiple orders are allowed or not.",
+                    "example": false,
+                    "type": "boolean"
+                  },
+                  "appFormTemplateName": {
+                    "description": "Name of the application form template.",
+                    "example": "AppForm_123",
+                    "type": "string"
+                  },
+                  "contractNeeded": {
+                    "description": "Indication whether contract is needed or not.",
+                    "example": true,
+                    "type": "boolean"
+                  },
+                  "credentialsNeeded": {
+                    "description": "Indication whether credentials are needed or not.",
+                    "example": true,
+                    "type": "boolean"
+                  },
+                  "descriptionKey": {
+                    "description": "Key indicator for product description.",
+                    "example": "Desc_123",
+                    "type": "string"
+                  },
+                  "nameKey": {
+                    "description": "Key indicator for product name.",
+                    "example": "Key_123",
+                    "type": "string"
+                  },
+                  "prescreeningAllowed": {
+                    "description": "Indication whether prescreening is allowed or not.",
+                    "example": true,
+                    "type": "boolean"
+                  },
+                  "productName": {
+                    "description": "Name of the product.",
+                    "example": "Product_123",
+                    "type": "string"
+                  },
+                  "terminalTemplateName": {
+                    "description": "Name of the terminal template.",
+                    "example": "TerminalTemplate_123",
+                    "type": "string"
+                  },
+                  "vendorName": {
+                    "description": "Name of the vendor.",
+                    "example": "Vendor_123",
+                    "type": "string"
+                  },
+                  "xmlTemplateFile": {
+                    "description": "A string value containing the XML template file encoded in Base64.",
+                    "example": "PFRlcm1pbmFsVGVtcGxhdGU+PGRlc2NyaXB0aW9uPjxEZXNjcmlwdGlvblRleHQ+VGVybWluYWwgcmVnaXN0cmF0aW9uIHRlbXBsYXRlIFRlc3Q8L0Rlc2NyaXB0aW9uVGV4dD48L2Rlc2NyaXB0aW9uPjwvVGVybWluYWxUZW1wbGF0ZT4=",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "allowMultipleOrders",
+                  "appFormTemplateName",
+                  "contractNeeded",
+                  "descriptionKey",
+                  "nameKey",
+                  "prescreeningAllowed",
+                  "productName",
+                  "terminalTemplateName",
+                  "vendorName",
+                  "xmlTemplateFile"
+                ],
+                "title": "InputCreateProduct",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputCreateProduct",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputCreateProduct",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

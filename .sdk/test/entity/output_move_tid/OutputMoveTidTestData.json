@@ -3,7 +3,7 @@
     "output_move_tid": {
       "OUTPUT_MOVE_TID00": {
         "productOrderUUIDs": [],
-        "responseCode": "s33",
+        "responseCode": 51,
         "responseMessage": "s34",
         "targetPackageOrderUUID": "s35",
         "targetProductOrderUUID": "s36",
@@ -11,7 +11,7 @@
       },
       "OUTPUT_MOVE_TID01": {
         "productOrderUUIDs": [],
-        "responseCode": "s65",
+        "responseCode": 101,
         "responseMessage": "s66",
         "targetPackageOrderUUID": "s67",
         "targetProductOrderUUID": "s68",
@@ -19,7 +19,7 @@
       },
       "OUTPUT_MOVE_TID02": {
         "productOrderUUIDs": [],
-        "responseCode": "s97",
+        "responseCode": 151,
         "responseMessage": "s98",
         "targetPackageOrderUUID": "s99",
         "targetProductOrderUUID": "s9a",
@@ -31,10 +31,93 @@
     "output_move_tid": {
       "output_move_tid_ref01": {
         "productOrderUUIDs": [],
-        "responseCode": "sc9",
+        "responseCode": 201,
         "responseMessage": "sca",
         "targetPackageOrderUUID": "scb",
         "targetProductOrderUUID": "scc"
+      }
+    }
+  },
+  "requests": {
+    "POST /merchantportalws/moveTid": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "moveTidUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "productOrderUUIDs": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "targetPackageOrderUUID": {
+                    "type": "string"
+                  },
+                  "targetProductOrderUUID": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "productOrderUUIDs",
+                  "targetPackageOrderUUID",
+                  "targetProductOrderUUID"
+                ],
+                "title": "InputMoveTid",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputMoveTid",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputMoveTid",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

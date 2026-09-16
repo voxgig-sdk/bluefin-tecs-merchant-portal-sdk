@@ -4,7 +4,7 @@
       "OUTPUT_LIST00": {
         "items": [],
         "pagination": {},
-        "responseCode": "s34",
+        "responseCode": 52,
         "responseMessage": "s35",
         "sorting": {},
         "id": "OUTPUT_LIST00"
@@ -12,7 +12,7 @@
       "OUTPUT_LIST01": {
         "items": [],
         "pagination": {},
-        "responseCode": "s66",
+        "responseCode": 102,
         "responseMessage": "s67",
         "sorting": {},
         "id": "OUTPUT_LIST01"
@@ -20,7 +20,7 @@
       "OUTPUT_LIST02": {
         "items": [],
         "pagination": {},
-        "responseCode": "s98",
+        "responseCode": 152,
         "responseMessage": "s99",
         "sorting": {},
         "id": "OUTPUT_LIST02"
@@ -32,9 +32,173 @@
       "output_list_ref01": {
         "items": [],
         "pagination": {},
-        "responseCode": "sca",
+        "responseCode": 202,
         "responseMessage": "scb",
         "sorting": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /merchantportalws/batch/registerAdditionalTerminal/list": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "listUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "pagination": {
+                    "properties": {
+                      "page": {
+                        "description": "Number of the page to display.",
+                        "example": 1,
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "size": {
+                        "description": "Number of elements per page to display.",
+                        "example": 10,
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "title": "Pagination",
+                    "type": "object"
+                  },
+                  "sorting": {
+                    "properties": {
+                      "name": {
+                        "description": "Sort attribute name.",
+                        "example": "requestorID",
+                        "type": "string"
+                      },
+                      "type": {
+                        "description": "Sort type ASC / DESC.",
+                        "example": "ASC",
+                        "type": "string"
+                      }
+                    },
+                    "title": "Sorting",
+                    "type": "object"
+                  }
+                },
+                "title": "InputList",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputList",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "items": {
+                      "items": {
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "owner": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "enum": [
+                              "COMPLETED_SUCCESSFULLY",
+                              "COMPLETED_WITH_ERRORS",
+                              "RUNNING",
+                              "STOPPED"
+                            ],
+                            "type": "string"
+                          },
+                          "timestamp": {
+                            "type": "string"
+                          }
+                        },
+                        "title": "Batch",
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "pagination": {
+                      "properties": {
+                        "page": {
+                          "description": "Number of the page to display.",
+                          "example": 1,
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "size": {
+                          "description": "Number of elements per page to display.",
+                          "example": 10,
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "totalElements": {
+                          "description": "Number of total elements available.",
+                          "example": 1587,
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "totalPages": {
+                          "description": "Number of total pages available.",
+                          "example": 10,
+                          "format": "int32",
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "totalElements",
+                        "totalPages"
+                      ],
+                      "title": "OutputPagination",
+                      "type": "object"
+                    },
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "pagination",
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputList",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

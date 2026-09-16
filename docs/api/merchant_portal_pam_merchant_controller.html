@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>MerchantPortalPamMerchantController | Merchant Portal Web Service Documentation</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Merchant Portal Web Service Documentation<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk">voxgig-sdk/bluefin-tecs-merchant-portal-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Merchant Portal Web Service Documentation</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/merchant_portal_api_controller.html">MerchantPortalApiController</a>
+<a href="../api/merchant_portal_common_controller.html">MerchantPortalCommonController</a>
+<a href="../api/merchant_portal_pam_contract_controller.html">MerchantPortalPamContractController</a>
+<a href="../api/merchant_portal_pam_document_controller.html">MerchantPortalPamDocumentController</a>
+<a href="../api/merchant_portal_pam_form_controller.html">MerchantPortalPamFormController</a>
+<a href="../api/merchant_portal_pam_mandator_controller.html">MerchantPortalPamMandatorController</a>
+<a aria-current="page" href="../api/merchant_portal_pam_merchant_controller.html">MerchantPortalPamMerchantController</a><div class="nav-sections"><a class="nav-section" href="#post-merchantportalwscontractnumber">POST /merchantportalws/contractNumber</a>
+<a class="nav-section" href="#post-merchantportalwsregisteradditionalacquiring">POST /merchantportalws/registerAdditionalAcquiring</a>
+<a class="nav-section" href="#post-merchantportalwsupdatemerchant">POST /merchantportalws/updateMerchant</a>
+<a class="nav-section" href="#post-merchantportalwsregistermerchant">POST /merchantportalws/registerMerchant</a></div>
+<a href="../api/merchant_portal_pam_package_controller.html">MerchantPortalPamPackageController</a>
+<a href="../api/merchant_portal_pam_product_controller.html">MerchantPortalPamProductController</a>
+<a href="../api/output_add_product.html">OutputAddProduct</a>
+<a href="../api/output_create_product.html">OutputCreateProduct</a>
+<a href="../api/output_detail.html">OutputDetail</a>
+<a href="../api/output_list.html">OutputList</a>
+<a href="../api/output_message.html">OutputMessage</a>
+<a href="../api/output_move_tid.html">OutputMoveTid</a>
+<a href="../api/output_remove_product.html">OutputRemoveProduct</a>
+<a href="../api/output_start.html">OutputStart</a>
+<a href="../api/output_status.html">OutputStatus</a>
+<a href="../api/output_update_product.html">OutputUpdateProduct</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/c.html">C</a>
+<a href="../sdks/clojure.html">Clojure</a>
+<a href="../sdks/cpp.html">C++</a>
+<a href="../sdks/csharp.html">C#</a>
+<a href="../sdks/dart.html">Dart</a>
+<a href="../sdks/elixir.html">Elixir</a>
+<a href="../sdks/go.html">Golang</a>
+<a href="../sdks/haskell.html">Haskell</a>
+<a href="../sdks/java.html">Java</a>
+<a href="../sdks/js.html">JavaScript</a>
+<a href="../sdks/kotlin.html">Kotlin</a>
+<a href="../sdks/lean.html">Lean</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/ocaml.html">OCaml</a>
+<a href="../sdks/perl.html">Perl</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/rust.html">Rust</a>
+<a href="../sdks/scala.html">Scala</a>
+<a href="../sdks/swift.html">Swift</a>
+<a href="../sdks/ts.html">TypeScript</a>
+<a href="../sdks/zig.html">Zig</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/audit.html">Structured audit trail of operations</a>
+<a href="../features/clienttrack.html">Client identity and per-request correlation headers</a>
+<a href="../features/debug.html">Request/response capture ring buffer for debugging</a>
+<a href="../features/idempotency.html">Idempotency keys for safe retries of mutating operations</a>
+<a href="../features/log.html">Structured request and response logging</a>
+<a href="../features/metrics.html">Statistics capture: per-operation counters and latency</a>
+<a href="../features/paging.html">Pagination signals for list operations</a>
+<a href="../features/ratelimit.html">Client-side rate limiting via a token bucket</a>
+<a href="../features/retry.html">Automatic retry of transient failures with exponential backoff</a>
+<a href="../features/telemetry.html">Distributed tracing spans with W3C trace-context propagation</a>
+<a href="../features/test.html">In-memory mock transport for testing without a live server</a>
+<a href="../features/timeout.html">Per-request timeout with transport abort</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="merchantportalpammerchantcontroller">MerchantPortalPamMerchantController</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-merchantportalwscontractnumber"><code>/merchantportalws/contractNumber</code></a></td>
+<td><code>create</code></td>
+<td>OK</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-merchantportalwsregisteradditionalacquiring"><code>/merchantportalws/registerAdditionalAcquiring</code></a></td>
+<td><code>create</code></td>
+<td>Successful registration of additional acquiring</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-merchantportalwsupdatemerchant"><code>/merchantportalws/updateMerchant</code></a></td>
+<td><code>create</code></td>
+<td>OK</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-merchantportalwsregistermerchant"><code>/merchantportalws/registerMerchant</code></a></td>
+<td><code>create</code></td>
+<td>OK</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>additional_data</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Optional additional merchant-specific data related to enabling acquiring.</td>
+</tr>
+<tr>
+<td><code>businessRegistrationNumber</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>City where the merchant is located.</td>
+</tr>
+<tr>
+<td><code>companyName</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>corporateUUID</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the corporate entity.</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Country where the merchant is located.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Transaction currency in ISO 4217 format.</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>login</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mandator</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Mandator name assigned by TECS.</td>
+</tr>
+<tr>
+<td><code>merchantContractNumber</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the merchant within a specific system.</td>
+</tr>
+<tr>
+<td><code>merchantName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Name of the merchant.</td>
+</tr>
+<tr>
+<td><code>merchant_category_code</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Merchant Category Code (MCC) describing the merchant’s type of business.</td>
+</tr>
+<tr>
+<td><code>packageUUID</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>UUID of the package.</td>
+</tr>
+<tr>
+<td><code>packageorderuuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the registered merchant in the TECS system.</td>
+</tr>
+<tr>
+<td><code>phoneNumber</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>postalCode</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Postal or ZIP code of the merchant’s location.</td>
+</tr>
+<tr>
+<td><code>productid_acquirer</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Identifier of the product for which acquiring is to be enabled.</td>
+</tr>
+<tr>
+<td><code>region</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>State or province where the merchant is located.</td>
+</tr>
+<tr>
+<td><code>registrationNumber</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Business registration number.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Signature value = saltAsHex-hashAsHex.</td>
+</tr>
+<tr>
+<td><code>street</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Street address of the merchant.</td>
+</tr>
+<tr>
+<td><code>terminalIds</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Optional list of terminal IDs for which acquiring should be activated.</td>
+</tr>
+<tr>
+<td><code>terminalid_acquirer</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional terminal ID provided by the acquirer.</td>
+</tr>
+<tr>
+<td><code>vu_nummer</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Merchant contract number with the acquirer.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-merchantportalwscontractnumber" class="operation" data-method="post"><code>POST</code> /merchantportalws/contractNumber</h3>
+<p>Operation ID: <code>contractNumberUsingPOST</code>.</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>Authorization</code> | <code>header</code> | <code>string</code> | Yes | Authorization |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>merchantContractNumber</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-ok" class="status" data-status="2xx">200: OK</h5>
+<p><code>*/*</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td>Response code. For success state 0. For failure state lower than 0.</td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Response message. For success state OK. For failure state description of the cause.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-merchantportalwsregisteradditionalacquiring" class="operation" data-method="post"><code>POST</code> /merchantportalws/registerAdditionalAcquiring</h3>
+<p>Operation ID: <code>registerAdditionalAcquiringUsingPOST</code>.</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>Authorization</code> | <code>header</code> | <code>string</code> | Yes | Authorization header containing valid credentials. Example: &quot;Bearer AT-2359-DFYpOWfDFSls4DeKDmGOXDyynx0a8Trwk&quot; |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>additional_data</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Optional additional merchant-specific data related to enabling acquiring. This may include custom key-value pairs that provide further context.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Transaction currency in ISO 4217 format.</td>
+</tr>
+<tr>
+<td><code>packageorderuuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the registered merchant in the TECS system. This value is provided by TECS during the initial merchant registration and must be used for subsequent terminal or acquirer registrations.</td>
+</tr>
+<tr>
+<td><code>productid_acquirer</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Identifier of the product for which acquiring is to be enabled. If not provided, the default product as defined in the package may be used.</td>
+</tr>
+<tr>
+<td><code>terminalIds</code></td>
+<td><code>array of integer (int32)</code></td>
+<td>No</td>
+<td>Optional list of terminal IDs for which acquiring should be activated. If omitted, acquiring will be enabled for all terminals associated with the merchant.</td>
+</tr>
+<tr>
+<td><code>terminalid_acquirer</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional terminal ID provided by the acquirer.</td>
+</tr>
+<tr>
+<td><code>vu_nummer</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Merchant contract number with the acquirer.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-successful-registration-of-additional-acquiring" class="status" data-status="2xx">200: Successful registration of additional acquiring</h5>
+<p><code>*/*</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td>Response code. For success state 0. For failure state lower than 0.</td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Response message. For success state OK. For failure state description of the cause.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request--missing-or-invalid-parameters" class="status" data-status="4xx">400: Bad Request – Missing or invalid parameters</h5>
+<p><code>*/*</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>response_code</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td>Response code: 0 indicates success, any non-zero value indicates an error.</td>
+</tr>
+<tr>
+<td><code>response_message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>A human-readable error message.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="401-unauthorized--invalid-authentication-credentials-provided" class="status" data-status="4xx">401: Unauthorized – Invalid authentication credentials provided</h5>
+<p><code>*/*</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>response_code</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td>Response code: 0 indicates success, any non-zero value indicates an error.</td>
+</tr>
+<tr>
+<td><code>response_message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>A human-readable error message.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="403-forbidden--the-caller-does-not-have-sufficient-permissions" class="status" data-status="4xx">403: Forbidden – The caller does not have sufficient permissions</h5>
+<p><code>*/*</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>response_code</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td>Response code: 0 indicates success, any non-zero value indicates an error.</td>
+</tr>
+<tr>
+<td><code>response_message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>A human-readable error message.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="500-internal-server-error--an-unexpected-error-occurred-on-the-server" class="status" data-status="5xx">500: Internal Server Error – An unexpected error occurred on the server</h5>
+<p><code>*/*</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>response_code</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td>Response code: 0 indicates success, any non-zero value indicates an error.</td>
+</tr>
+<tr>
+<td><code>response_message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>A human-readable error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-merchantportalwsupdatemerchant" class="operation" data-method="post"><code>POST</code> /merchantportalws/updateMerchant</h3>
+<p>Operation ID: <code>updateMerchantUsingPOST</code>.</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>Authorization</code> | <code>header</code> | <code>string</code> | Yes | Authorization |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>city</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>City where the merchant is located.</td>
+</tr>
+<tr>
+<td><code>corporateUUID</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the corporate entity.</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Country where the merchant is located.</td>
+</tr>
+<tr>
+<td><code>merchantContractNumber</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Unique identifier for the merchant within a specific system.</td>
+</tr>
+<tr>
+<td><code>merchantName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Name of the merchant.</td>
+</tr>
+<tr>
+<td><code>merchant_category_code</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Merchant Category Code (MCC) describing the merchant’s type of business.</td>
+</tr>
+<tr>
+<td><code>postalCode</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Postal or ZIP code of the merchant’s location.</td>
+</tr>
+<tr>
+<td><code>region</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>State or province where the merchant is located.</td>
+</tr>
+<tr>
+<td><code>registrationNumber</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Business registration number.</td>
+</tr>
+<tr>
+<td><code>street</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Street address of the merchant.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-ok-1" class="status" data-status="2xx">200: OK</h5>
+<p><code>*/*</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td>Response code. For success state 0. For failure state lower than 0.</td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Response message. For success state OK. For failure state description of the cause.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-merchantportalwsregistermerchant" class="operation" data-method="post"><code>POST</code> /merchantportalws/registerMerchant</h3>
+<p>Operation ID: <code>registerMerchantUsingPOST</code>.</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>businessRegistrationNumber</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>companyName</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>login</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mandator</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Mandator name assigned by TECS.</td>
+</tr>
+<tr>
+<td><code>packageUUID</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>UUID of the package.</td>
+</tr>
+<tr>
+<td><code>phoneNumber</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Signature value = saltAsHex-hashAsHex. Salt as hex value = Hex.encodeHexString(saltAsByte). Hash as hex value = DigestUtils.sha256Hex(packageUUID + &quot;|&quot; + mandator + &quot;|&quot; + clientSecret + &quot;|&quot; + saltAsString).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-ok-2" class="status" data-status="2xx">200: OK</h5>
+<p><code>*/*</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td>Response code. For success state 0. For failure state lower than 0.</td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Response message. For success state OK. For failure state description of the cause.</td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

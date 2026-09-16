@@ -35,6 +35,9 @@ func init() {
 	core.NewClienttrackFeatureFunc = func() core.Feature {
 		return feature.NewClienttrackFeature()
 	}
+	core.NewDebugFeatureFunc = func() core.Feature {
+		return feature.NewDebugFeature()
+	}
 	core.NewIdempotencyFeatureFunc = func() core.Feature {
 		return feature.NewIdempotencyFeature()
 	}
@@ -141,6 +144,7 @@ func Test() *BluefinTecsMerchantPortalSDK { return TestSDK(nil, nil) }
 var NewBaseFeature = feature.NewBaseFeature
 var NewAuditFeature = feature.NewAuditFeature
 var NewClienttrackFeature = feature.NewClienttrackFeature
+var NewDebugFeature = feature.NewDebugFeature
 var NewIdempotencyFeature = feature.NewIdempotencyFeature
 var NewLogFeature = feature.NewLogFeature
 var NewMetricsFeature = feature.NewMetricsFeature

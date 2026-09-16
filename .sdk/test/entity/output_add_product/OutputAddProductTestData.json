@@ -4,21 +4,21 @@
       "OUTPUT_ADD_PRODUCT00": {
         "packageUUID": "s28",
         "productUUIDs": [],
-        "responseCode": "s2a",
+        "responseCode": 42,
         "responseMessage": "s2b",
         "id": "OUTPUT_ADD_PRODUCT00"
       },
       "OUTPUT_ADD_PRODUCT01": {
         "packageUUID": "s50",
         "productUUIDs": [],
-        "responseCode": "s52",
+        "responseCode": 82,
         "responseMessage": "s53",
         "id": "OUTPUT_ADD_PRODUCT01"
       },
       "OUTPUT_ADD_PRODUCT02": {
         "packageUUID": "s78",
         "productUUIDs": [],
-        "responseCode": "s7a",
+        "responseCode": 122,
         "responseMessage": "s7b",
         "id": "OUTPUT_ADD_PRODUCT02"
       }
@@ -29,8 +29,94 @@
       "output_add_product_ref01": {
         "packageUUID": "sa0",
         "productUUIDs": [],
-        "responseCode": "sa2",
+        "responseCode": 162,
         "responseMessage": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "POST /merchantportalws/addProductsToPackage": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "addProductsToPackageUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "packageUUID": {
+                    "description": "Unique identifier for the package.",
+                    "example": "123e4567-e89b-12d3-a456-426614174000",
+                    "type": "string"
+                  },
+                  "productUUIDs": {
+                    "description": "The list of unique identifiers of the products.",
+                    "example": [
+                      "123e4567-e89b-12d3-a456-426614174000",
+                      "123e4567-e89b-12d3-a456-426614174001"
+                    ],
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                  }
+                },
+                "required": [
+                  "packageUUID",
+                  "productUUIDs"
+                ],
+                "title": "InputAddProducts",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputAddProducts",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputAddProducts",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

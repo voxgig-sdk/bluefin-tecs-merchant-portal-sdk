@@ -44,6 +44,12 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
               }
             ]
           }
+          contract: {
+            id: "POST /merchantportalws/createMandatorConfig"
+            json: "{\"operationId\":\"createMandatorConfigUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"clientSecret\":{\"type\":\"string\"},\"mandatorName\":{\"type\":\"string\"},\"notificationEmail\":{\"type\":\"string\"}},\"required\":[\"mandatorName\"],\"title\":\"InputCreateMandatorConfig\",\"type\":\"object\"}}},\"description\":\"inputCreateMandatorConfig\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputCreateMandatorConfig\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "POST"
           orig: "/merchantportalws/createMandatorConfig"
           segments: [
@@ -76,6 +82,12 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
               }
             ]
           }
+          contract: {
+            id: "POST /merchantportalws/introduceMandatorPackage"
+            json: "{\"operationId\":\"introduceMandatorPackageUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"packageUUID\":{\"type\":\"string\"}},\"required\":[\"packageUUID\"],\"title\":\"InputIntroduceMandatorPackage\",\"type\":\"object\"}}},\"description\":\"inputIntroduceMandatorPackage\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"packageUUID\":{\"type\":\"string\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"packageUUID\",\"responseCode\",\"responseMessage\"],\"title\":\"OutputIntroduceMandatorPackage\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "POST"
           orig: "/merchantportalws/introduceMandatorPackage"
           segments: [
@@ -107,6 +119,12 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "POST /merchantportalws/selfRegistrationLink"
+            json: "{\"operationId\":\"selfRegistrationLinkUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"packageUUID\":{\"type\":\"string\"}},\"required\":[\"packageUUID\"],\"title\":\"InputSelfRegistrationLink\",\"type\":\"object\"}}},\"description\":\"inputSelfRegistrationLink\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"},\"selfRegistrationLink\":{\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputSelfRegistrationLink\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "POST"
           orig: "/merchantportalws/selfRegistrationLink"

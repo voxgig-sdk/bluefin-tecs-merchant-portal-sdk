@@ -47,6 +47,12 @@ main: kit: entity: output_start: {
               }
             ]
           }
+          contract: {
+            id: "POST /merchantportalws/batch/registerAdditionalTerminal/start"
+            json: "{\"operationId\":\"startUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"multipart/form-data\":{\"schema\":{\"properties\":{\"inputCsvFile\":{\"description\":\"inputCsvFile\",\"format\":\"binary\",\"type\":\"string\"},\"inputJsonMessage\":{\"type\":\"string\"}},\"required\":[\"inputCsvFile\"],\"type\":\"object\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"id\":{\"type\":\"string\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputStart\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "POST"
           orig: "/merchantportalws/batch/registerAdditionalTerminal/start"
           segments: [

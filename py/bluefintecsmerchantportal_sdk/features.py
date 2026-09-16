@@ -3,6 +3,7 @@
 from bluefintecsmerchantportal_sdk.feature.base_feature import BluefinTecsMerchantPortalBaseFeature
 from bluefintecsmerchantportal_sdk.feature.audit_feature import BluefinTecsMerchantPortalAuditFeature
 from bluefintecsmerchantportal_sdk.feature.clienttrack_feature import BluefinTecsMerchantPortalClienttrackFeature
+from bluefintecsmerchantportal_sdk.feature.debug_feature import BluefinTecsMerchantPortalDebugFeature
 from bluefintecsmerchantportal_sdk.feature.idempotency_feature import BluefinTecsMerchantPortalIdempotencyFeature
 from bluefintecsmerchantportal_sdk.feature.log_feature import BluefinTecsMerchantPortalLogFeature
 from bluefintecsmerchantportal_sdk.feature.metrics_feature import BluefinTecsMerchantPortalMetricsFeature
@@ -18,6 +19,7 @@ _FEATURES = {
     "base": lambda: BluefinTecsMerchantPortalBaseFeature(),
     "audit": lambda: BluefinTecsMerchantPortalAuditFeature(),
     "clienttrack": lambda: BluefinTecsMerchantPortalClienttrackFeature(),
+    "debug": lambda: BluefinTecsMerchantPortalDebugFeature(),
     "idempotency": lambda: BluefinTecsMerchantPortalIdempotencyFeature(),
     "log": lambda: BluefinTecsMerchantPortalLogFeature(),
     "metrics": lambda: BluefinTecsMerchantPortalMetricsFeature(),

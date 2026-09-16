@@ -49,6 +49,12 @@ main: kit: entity: output_add_product: {
               }
             ]
           }
+          contract: {
+            id: "POST /merchantportalws/addProductsToPackage"
+            json: "{\"operationId\":\"addProductsToPackageUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"packageUUID\":{\"description\":\"Unique identifier for the package.\",\"example\":\"123e4567-e89b-12d3-a456-426614174000\",\"type\":\"string\"},\"productUUIDs\":{\"description\":\"The list of unique identifiers of the products.\",\"example\":[\"123e4567-e89b-12d3-a456-426614174000\",\"123e4567-e89b-12d3-a456-426614174001\"],\"items\":{\"type\":\"string\"},\"type\":\"array\",\"uniqueItems\":true}},\"required\":[\"packageUUID\",\"productUUIDs\"],\"title\":\"InputAddProducts\",\"type\":\"object\"}}},\"description\":\"inputAddProducts\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputAddProducts\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "POST"
           orig: "/merchantportalws/addProductsToPackage"
           segments: [

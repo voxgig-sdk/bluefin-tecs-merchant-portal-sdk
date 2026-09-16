@@ -61,5 +61,833 @@
         "sorting": {}
       }
     }
+  },
+  "requests": {
+    "POST /merchantportalws/availablePackages": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "availablePackagesUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "filter": {
+                    "properties": {
+                      "packageStatus": {
+                        "description": "Name of the package status",
+                        "example": "Active",
+                        "type": "string"
+                      },
+                      "packageUUID": {
+                        "type": "string"
+                      },
+                      "productType": {
+                        "description": "Name of the product type",
+                        "example": "MERCHANT_CONTRACT",
+                        "type": "string"
+                      }
+                    },
+                    "title": "InputAvailablePackages_Filter",
+                    "type": "object"
+                  },
+                  "language": {
+                    "type": "string"
+                  },
+                  "pagination": {
+                    "properties": {
+                      "page": {
+                        "description": "Number of the page to display.",
+                        "example": 1,
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "size": {
+                        "description": "Number of elements per page to display.",
+                        "example": 10,
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "title": "Pagination",
+                    "type": "object"
+                  },
+                  "sorting": {
+                    "properties": {
+                      "name": {
+                        "description": "Sort attribute name.",
+                        "example": "requestorID",
+                        "type": "string"
+                      },
+                      "type": {
+                        "description": "Sort type ASC / DESC.",
+                        "example": "ASC",
+                        "type": "string"
+                      }
+                    },
+                    "title": "Sorting",
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "language"
+                ],
+                "title": "InputAvailablePackages",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputAvailablePackages",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "packages": {
+                      "items": {
+                        "properties": {
+                          "country": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "packageStatus": {
+                            "type": "string"
+                          },
+                          "products": {
+                            "items": {
+                              "properties": {
+                                "allowMultipleOrders": {
+                                  "type": "boolean"
+                                },
+                                "description": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "productName": {
+                                  "type": "string"
+                                },
+                                "uuid": {
+                                  "type": "string"
+                                }
+                              },
+                              "title": "OutputAvailablePackages_Product",
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "uuid": {
+                            "type": "string"
+                          }
+                        },
+                        "title": "OutputAvailablePackages_Package",
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "pagination": {
+                      "properties": {
+                        "page": {
+                          "description": "Number of the page to display.",
+                          "example": 1,
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "size": {
+                          "description": "Number of elements per page to display.",
+                          "example": 10,
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "totalElements": {
+                          "description": "Number of total elements available.",
+                          "example": 1587,
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "totalPages": {
+                          "description": "Number of total pages available.",
+                          "example": 10,
+                          "format": "int32",
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "totalElements",
+                        "totalPages"
+                      ],
+                      "title": "OutputPagination",
+                      "type": "object"
+                    },
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "pagination",
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputAvailablePackages",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "POST /merchantportalws/orderPackage": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "orderPackageUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "consumerUUID": {
+                    "type": "string"
+                  },
+                  "corporateUUID": {
+                    "type": "string"
+                  },
+                  "language": {
+                    "type": "string"
+                  },
+                  "packageUUID": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "packageUUID"
+                ],
+                "title": "InputOrderPackage",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputOrderPackage",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "packageOrderUUID": {
+                      "type": "string"
+                    },
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputOrderPackage",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "POST /merchantportalws/orderedPackages": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "orderedPackagesUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "filter": {
+                    "properties": {
+                      "consumerUUID": {
+                        "type": "string"
+                      },
+                      "corporateUUID": {
+                        "type": "string"
+                      },
+                      "dateFrom": {
+                        "format": "date-time",
+                        "type": "string"
+                      },
+                      "dateTo": {
+                        "format": "date-time",
+                        "type": "string"
+                      },
+                      "packageOrderStatus": {
+                        "description": "Name of the package order status",
+                        "example": "New",
+                        "type": "string"
+                      },
+                      "packageOrderUUID": {
+                        "type": "string"
+                      },
+                      "packageStatus": {
+                        "description": "Name of the package status",
+                        "example": "Active",
+                        "type": "string"
+                      },
+                      "packageUUID": {
+                        "type": "string"
+                      },
+                      "productOrderStatus": {
+                        "description": "Name of the product order status",
+                        "example": "New",
+                        "type": "string"
+                      },
+                      "productOrderUUID": {
+                        "type": "string"
+                      },
+                      "productUUID": {
+                        "type": "string"
+                      }
+                    },
+                    "title": "InputOrderedPackages_Filter",
+                    "type": "object"
+                  },
+                  "language": {
+                    "type": "string"
+                  },
+                  "pagination": {
+                    "properties": {
+                      "page": {
+                        "description": "Number of the page to display.",
+                        "example": 1,
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "size": {
+                        "description": "Number of elements per page to display.",
+                        "example": 10,
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "title": "Pagination",
+                    "type": "object"
+                  },
+                  "sorting": {
+                    "properties": {
+                      "name": {
+                        "description": "Sort attribute name.",
+                        "example": "requestorID",
+                        "type": "string"
+                      },
+                      "type": {
+                        "description": "Sort type ASC / DESC.",
+                        "example": "ASC",
+                        "type": "string"
+                      }
+                    },
+                    "title": "Sorting",
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "language"
+                ],
+                "title": "InputOrderedPackages",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputOrderedPackages",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "packageOrders": {
+                      "items": {
+                        "properties": {
+                          "consumerUUID": {
+                            "type": "string"
+                          },
+                          "corporateName": {
+                            "type": "string"
+                          },
+                          "corporateUUID": {
+                            "type": "string"
+                          },
+                          "country": {
+                            "type": "string"
+                          },
+                          "datetimeCreated": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "numberOfRequiredFields": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "numberOfSubmittedFields": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "packageOrderStatus": {
+                            "type": "string"
+                          },
+                          "packageOrderUUID": {
+                            "type": "string"
+                          },
+                          "packageUUID": {
+                            "type": "string"
+                          },
+                          "productOrders": {
+                            "items": {
+                              "properties": {
+                                "allowMultipleOrders": {
+                                  "type": "boolean"
+                                },
+                                "consumerUUID": {
+                                  "type": "string"
+                                },
+                                "datetimeCreated": {
+                                  "format": "date-time",
+                                  "type": "string"
+                                },
+                                "numberOfRequiredFields": {
+                                  "format": "int32",
+                                  "type": "integer"
+                                },
+                                "numberOfSubmittedFields": {
+                                  "format": "int32",
+                                  "type": "integer"
+                                },
+                                "productDescription": {
+                                  "type": "string"
+                                },
+                                "productName": {
+                                  "type": "string"
+                                },
+                                "productOrderStatus": {
+                                  "type": "string"
+                                },
+                                "productOrderUUID": {
+                                  "type": "string"
+                                },
+                                "productType": {
+                                  "type": "string"
+                                },
+                                "productUUID": {
+                                  "type": "string"
+                                },
+                                "terminal": {
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "location": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "title": "OutputOrderedPackages_Terminal",
+                                  "type": "object"
+                                }
+                              },
+                              "title": "OutputOrderedPackages_ProductOrder",
+                              "type": "object"
+                            },
+                            "type": "array"
+                          }
+                        },
+                        "title": "OutputOrderedPackages_PackageOrder",
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "pagination": {
+                      "properties": {
+                        "page": {
+                          "description": "Number of the page to display.",
+                          "example": 1,
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "size": {
+                          "description": "Number of elements per page to display.",
+                          "example": 10,
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "totalElements": {
+                          "description": "Number of total elements available.",
+                          "example": 1587,
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "totalPages": {
+                          "description": "Number of total pages available.",
+                          "example": 10,
+                          "format": "int32",
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "totalElements",
+                        "totalPages"
+                      ],
+                      "title": "OutputPagination",
+                      "type": "object"
+                    },
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "pagination",
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputOrderedPackages",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "POST /merchantportalws/packageTemplates": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "packageTemplatesUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "filter": {
+                    "properties": {
+                      "descriptionKey": {
+                        "type": "string"
+                      }
+                    },
+                    "title": "InputPackageTemplates_Filter",
+                    "type": "object"
+                  },
+                  "pagination": {
+                    "properties": {
+                      "page": {
+                        "description": "Number of the page to display.",
+                        "example": 1,
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "size": {
+                        "description": "Number of elements per page to display.",
+                        "example": 10,
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "title": "Pagination",
+                    "type": "object"
+                  },
+                  "sorting": {
+                    "properties": {
+                      "name": {
+                        "description": "Sort attribute name.",
+                        "example": "requestorID",
+                        "type": "string"
+                      },
+                      "type": {
+                        "description": "Sort type ASC / DESC.",
+                        "example": "ASC",
+                        "type": "string"
+                      }
+                    },
+                    "title": "Sorting",
+                    "type": "object"
+                  }
+                },
+                "title": "InputPackageTemplates",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputPackageTemplates",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "packages": {
+                      "items": {
+                        "properties": {
+                          "descriptionKey": {
+                            "type": "string"
+                          },
+                          "nameKey": {
+                            "type": "string"
+                          },
+                          "packageUUID": {
+                            "type": "string"
+                          }
+                        },
+                        "title": "OutputPackageTemplates_Package",
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "pagination": {
+                      "properties": {
+                        "page": {
+                          "description": "Number of the page to display.",
+                          "example": 1,
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "size": {
+                          "description": "Number of elements per page to display.",
+                          "example": 10,
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "totalElements": {
+                          "description": "Number of total elements available.",
+                          "example": 1587,
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "totalPages": {
+                          "description": "Number of total pages available.",
+                          "example": 10,
+                          "format": "int32",
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "totalElements",
+                        "totalPages"
+                      ],
+                      "title": "OutputPagination",
+                      "type": "object"
+                    },
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "pagination",
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputPackageTemplates",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "POST /merchantportalws/updatePackageData": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "updatePackageDataUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "country": {
+                    "description": "Country associated with the package.",
+                    "example": "AT",
+                    "type": "string"
+                  },
+                  "descriptionKey": {
+                    "description": "Key for the description of the package.",
+                    "example": "package_description_key",
+                    "type": "string"
+                  },
+                  "nameKey": {
+                    "description": "Key for the name of the package.",
+                    "example": "package_name_key",
+                    "type": "string"
+                  },
+                  "packageStatus": {
+                    "description": "Status of the package. Possible values: Active/Inactive",
+                    "example": "Active",
+                    "type": "string"
+                  },
+                  "packageUUID": {
+                    "description": "Unique identifier for the package.",
+                    "example": "123e4567-e89b-12d3-a456-426655440000",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "packageUUID"
+                ],
+                "title": "InputUpdatePackageData",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputUpdatePackageData",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputUpdatePackageData",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

@@ -5,6 +5,7 @@ defmodule BluefinTecsMerchantPortal.Features do
     case name do
       "audit" -> BluefinTecsMerchantPortal.Feature.Audit.new()
       "clienttrack" -> BluefinTecsMerchantPortal.Feature.Clienttrack.new()
+      "debug" -> BluefinTecsMerchantPortal.Feature.Debug.new()
       "idempotency" -> BluefinTecsMerchantPortal.Feature.Idempotency.new()
       "log" -> BluefinTecsMerchantPortal.Feature.Log.new()
       "metrics" -> BluefinTecsMerchantPortal.Feature.Metrics.new()

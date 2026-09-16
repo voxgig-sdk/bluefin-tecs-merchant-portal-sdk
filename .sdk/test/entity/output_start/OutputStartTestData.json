@@ -3,17 +3,17 @@
     "output_start": {
       "OUTPUT_START00": {
         "id": "OUTPUT_START00",
-        "responseCode": "s1f",
+        "responseCode": 31,
         "responseMessage": "s20"
       },
       "OUTPUT_START01": {
         "id": "OUTPUT_START01",
-        "responseCode": "s3d",
+        "responseCode": 61,
         "responseMessage": "s3e"
       },
       "OUTPUT_START02": {
         "id": "OUTPUT_START02",
-        "responseCode": "s5b",
+        "responseCode": 91,
         "responseMessage": "s5c"
       }
     }
@@ -21,8 +21,84 @@
   "new": {
     "output_start": {
       "output_start_ref01": {
-        "responseCode": "s79",
+        "responseCode": 121,
         "responseMessage": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "POST /merchantportalws/batch/registerAdditionalTerminal/start": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "startUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "inputCsvFile": {
+                    "description": "inputCsvFile",
+                    "format": "binary",
+                    "type": "string"
+                  },
+                  "inputJsonMessage": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "inputCsvFile"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputStart",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

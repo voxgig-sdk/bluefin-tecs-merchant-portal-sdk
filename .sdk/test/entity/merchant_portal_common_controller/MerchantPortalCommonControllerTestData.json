@@ -16,5 +16,79 @@
     "merchant_portal_common_controller": {
       "merchant_portal_common_controller_ref01": {}
     }
+  },
+  "requests": {
+    "GET /merchantportalws/logDeveloperInfo": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "logDeveloperInfoUsingGET",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputMessage",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /merchantportalws/version": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "versionUsingGET",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "appName": {
+                      "type": "string"
+                    },
+                    "buildDate": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "title": "Version",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

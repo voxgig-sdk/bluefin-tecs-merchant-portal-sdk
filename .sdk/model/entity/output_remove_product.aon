@@ -49,6 +49,12 @@ main: kit: entity: output_remove_product: {
               }
             ]
           }
+          contract: {
+            id: "POST /merchantportalws/removeProductsFromPackage"
+            json: "{\"operationId\":\"removeProductsFromPackageUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"packageUUID\":{\"description\":\"Unique identifier for the package.\",\"example\":\"654e3217-e98b-21d3-a456-426614174999\",\"type\":\"string\"},\"productUUIDs\":{\"description\":\"List of product unique identifiers.\",\"example\":[\"567e4345-e84b-34d2-b356-125614243567\",\"678f4543-f34c-23d1-c345-234615453451\"],\"items\":{\"type\":\"string\"},\"type\":\"array\",\"uniqueItems\":true}},\"required\":[\"packageUUID\",\"productUUIDs\"],\"title\":\"InputRemoveProducts\",\"type\":\"object\"}}},\"description\":\"inputRemoveProducts\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputRemoveProducts\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "POST"
           orig: "/merchantportalws/removeProductsFromPackage"
           segments: [

@@ -2,14 +2,14 @@
   "existing": {
     "merchant_portal_api_controller": {
       "MERCHANT_PORTAL_API_CONTROLLER00": {
-        "account_number": "s14a",
+        "account_number": 330,
         "additional_data": {},
         "business_reg_number": "s14c",
         "city": "s14d",
         "corporateuuid": "s14e",
         "country": "s14f",
         "currency": "s150",
-        "merchant_category_code": "s151",
+        "merchant_category_code": 337,
         "merchant_email": "s152",
         "merchant_name": "s153",
         "merchant_phone_number": "s154",
@@ -20,14 +20,14 @@
         "productid_acquirer": "s159",
         "reason_deactivation": "s15a",
         "reason_reactivation": "s15b",
-        "sorting_code": "s15c",
+        "sorting_code": 348,
         "state": "s15d",
         "street": "s15e",
         "terminal_country_code": "s15f",
         "terminal_language_code": "s160",
         "terminal_location": "s161",
         "terminal_serial_number": "s162",
-        "terminalid": "s163",
+        "terminalid": 355,
         "terminalid_acquirer": "s164",
         "user_email": "s165",
         "user_phone_number": "s166",
@@ -38,14 +38,14 @@
         "id": "MERCHANT_PORTAL_API_CONTROLLER00"
       },
       "MERCHANT_PORTAL_API_CONTROLLER01": {
-        "account_number": "s294",
+        "account_number": 660,
         "additional_data": {},
         "business_reg_number": "s296",
         "city": "s297",
         "corporateuuid": "s298",
         "country": "s299",
         "currency": "s29a",
-        "merchant_category_code": "s29b",
+        "merchant_category_code": 667,
         "merchant_email": "s29c",
         "merchant_name": "s29d",
         "merchant_phone_number": "s29e",
@@ -56,14 +56,14 @@
         "productid_acquirer": "s2a3",
         "reason_deactivation": "s2a4",
         "reason_reactivation": "s2a5",
-        "sorting_code": "s2a6",
+        "sorting_code": 678,
         "state": "s2a7",
         "street": "s2a8",
         "terminal_country_code": "s2a9",
         "terminal_language_code": "s2aa",
         "terminal_location": "s2ab",
         "terminal_serial_number": "s2ac",
-        "terminalid": "s2ad",
+        "terminalid": 685,
         "terminalid_acquirer": "s2ae",
         "user_email": "s2af",
         "user_phone_number": "s2b0",
@@ -74,14 +74,14 @@
         "id": "MERCHANT_PORTAL_API_CONTROLLER01"
       },
       "MERCHANT_PORTAL_API_CONTROLLER02": {
-        "account_number": "s3de",
+        "account_number": 990,
         "additional_data": {},
         "business_reg_number": "s3e0",
         "city": "s3e1",
         "corporateuuid": "s3e2",
         "country": "s3e3",
         "currency": "s3e4",
-        "merchant_category_code": "s3e5",
+        "merchant_category_code": 997,
         "merchant_email": "s3e6",
         "merchant_name": "s3e7",
         "merchant_phone_number": "s3e8",
@@ -92,14 +92,14 @@
         "productid_acquirer": "s3ed",
         "reason_deactivation": "s3ee",
         "reason_reactivation": "s3ef",
-        "sorting_code": "s3f0",
+        "sorting_code": 1008,
         "state": "s3f1",
         "street": "s3f2",
         "terminal_country_code": "s3f3",
         "terminal_language_code": "s3f4",
         "terminal_location": "s3f5",
         "terminal_serial_number": "s3f6",
-        "terminalid": "s3f7",
+        "terminalid": 1015,
         "terminalid_acquirer": "s3f8",
         "user_email": "s3f9",
         "user_phone_number": "s3fa",
@@ -114,14 +114,14 @@
   "new": {
     "merchant_portal_api_controller": {
       "merchant_portal_api_controller_ref01": {
-        "account_number": "s528",
+        "account_number": 1320,
         "additional_data": {},
         "business_reg_number": "s52a",
         "city": "s52b",
         "corporateuuid": "s52c",
         "country": "s52d",
         "currency": "s52e",
-        "merchant_category_code": "s52f",
+        "merchant_category_code": 1327,
         "merchant_email": "s530",
         "merchant_name": "s531",
         "merchant_phone_number": "s532",
@@ -132,14 +132,14 @@
         "productid_acquirer": "s537",
         "reason_deactivation": "s538",
         "reason_reactivation": "s539",
-        "sorting_code": "s53a",
+        "sorting_code": 1338,
         "state": "s53b",
         "street": "s53c",
         "terminal_country_code": "s53d",
         "terminal_language_code": "s53e",
         "terminal_location": "s53f",
         "terminal_serial_number": "s540",
-        "terminalid": "s541",
+        "terminalid": 1345,
         "terminalid_acquirer": "s542",
         "user_email": "s543",
         "user_phone_number": "s544",
@@ -147,6 +147,817 @@
         "vu_nummer": "s546",
         "web_shop_url": "s547",
         "zipcode": "s548"
+      }
+    }
+  },
+  "requests": {
+    "POST /merchantportalws/deactivateTerminal": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "deactivateTerminalUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "reason_deactivation": {
+                    "description": "Reason for terminal deactivation.",
+                    "example": "Terminal was stolen",
+                    "type": "string"
+                  },
+                  "terminalid": {
+                    "description": "TECS terminalid given by Tecs processing engine.",
+                    "example": 88091105,
+                    "format": "int32",
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "reason_deactivation",
+                  "terminalid"
+                ],
+                "title": "InputDeactivateTerminal",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputDeactivateTerminal",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code (0 = OK, otherwise an error code).",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Human readable response code representation.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputDeactivateTerminal",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "POST /merchantportalws/reactivateTerminal": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "reactivateTerminalUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "reason_reactivation": {
+                    "description": "Reason for terminal reactivation.",
+                    "example": "Terminal is again in use",
+                    "type": "string"
+                  },
+                  "terminalid": {
+                    "description": "TECS terminalid given by Tecs processing engine.",
+                    "example": 88091105,
+                    "format": "int32",
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "reason_reactivation",
+                  "terminalid"
+                ],
+                "title": "InputReactivateTerminal",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputReactivateTerminal",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code (0 = OK, otherwise an error code).",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Human readable response code representation.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputReactivateTerminal",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "POST /merchantportalws/registerAdditionalTerminal": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "registerAdditionalTerminalUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization header containing a valid Bearer token or Basic authentication credentials. Example: \"Bearer AT-2359-DFYpOWfDFSls4DeKDmGOXDyynx0a8Trwk\"\n",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "additional_data": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "description": "Arbitrary merchant-specific data related to terminal registration.\nProvide any additional key-value pairs as required.\n",
+                    "example": {
+                      "firstname": "John",
+                      "surname": "Doe",
+                      "type": "tx-300",
+                      "version": "v1.2.3"
+                    },
+                    "type": "object"
+                  },
+                  "packageorderuuid": {
+                    "description": "Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call.\n",
+                    "example": "dccb9a6a-b02c-46e3-aef3-a28f0b7bf993",
+                    "type": "string"
+                  },
+                  "password": {
+                    "description": "Merchant password for MPOS. If not provided, TECS will generate a password and return it in the response.\n",
+                    "example": "testpassword",
+                    "type": "string"
+                  },
+                  "productid": {
+                    "description": "Identifier of the product for which terminal registration is to be performed. If omitted, a default product may be used.\n",
+                    "example": "d8af7e4f-a04f-42ea-91ac-bed20c5eebfe",
+                    "type": "string"
+                  },
+                  "terminal_country_code": {
+                    "description": "Terminal country code (must be in 'ISO-3166 ALPHA-3' format).",
+                    "example": "SVK",
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "type": "string"
+                  },
+                  "terminal_language_code": {
+                    "description": "Terminal language code (must be in 'ISO 639-1' format).",
+                    "example": "EN",
+                    "maxLength": 2,
+                    "minLength": 2,
+                    "type": "string"
+                  },
+                  "terminal_location": {
+                    "description": "Physical or logical location of the terminal.",
+                    "example": "Palisady 12 BA",
+                    "type": "string"
+                  },
+                  "terminal_serial_number": {
+                    "description": "Terminal serial number.",
+                    "example": "325-320-924",
+                    "type": "string"
+                  },
+                  "terminalid_acquirer": {
+                    "description": "Terminal ID as set by the acquirer (optional).",
+                    "example": "66000001",
+                    "type": "string"
+                  },
+                  "user_email": {
+                    "description": "Email address of the user acting on behalf of the merchant.",
+                    "example": "testemail@tecs.at",
+                    "format": "email",
+                    "type": "string"
+                  },
+                  "user_phone_number": {
+                    "description": "Phone number of the user acting on behalf of the merchant. Must be in international format (e.g., +421910711234).\n",
+                    "example": "+421910876567",
+                    "type": "string"
+                  },
+                  "username": {
+                    "description": "Merchant username for MPOS. If not provided, TECS will generate a username and include it in the response.\n",
+                    "example": "testuser",
+                    "type": "string"
+                  },
+                  "web_shop_url": {
+                    "description": "URL of the merchant's web shop.",
+                    "example": "https://www.tecs.at",
+                    "format": "uri",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "packageorderuuid",
+                  "terminal_country_code",
+                  "terminal_language_code",
+                  "terminal_location",
+                  "terminal_serial_number"
+                ],
+                "title": "InputRegisterAdditionalTerminal",
+                "type": "object"
+              }
+            }
+          },
+          "description": "JSON payload containing the details required to register an additional terminal. This includes the package order UUID and terminal-specific details.\n",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "password": {
+                      "description": "TECS generated merchant password in case if not provided in request.",
+                      "example": "testpassword",
+                      "type": "string"
+                    },
+                    "responseCode": {
+                      "description": "Response code (0 = OK, otherwise an error code).",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Human readable response code representation.",
+                      "example": "OK",
+                      "type": "string"
+                    },
+                    "terminalid": {
+                      "description": "TECS terminalid given by TECS processing engine.",
+                      "example": 88091104,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "username": {
+                      "description": "TECS generated merchant username in case if not provided in request.",
+                      "example": "testuser",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputRegisterAdditionalTerminal",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful registration of an additional terminal."
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "response_code": {
+                      "description": "Response code: 0 indicates success, any non-zero value indicates an error.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "response_message": {
+                      "description": "A human-readable error message.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "response_code",
+                    "response_message"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad Request – One or more required fields are missing or incorrectly formatted."
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "response_code": {
+                      "description": "Response code: 0 indicates success, any non-zero value indicates an error.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "response_message": {
+                      "description": "A human-readable error message.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "response_code",
+                    "response_message"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized – Invalid authentication credentials provided."
+          },
+          "403": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "response_code": {
+                      "description": "Response code: 0 indicates success, any non-zero value indicates an error.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "response_message": {
+                      "description": "A human-readable error message.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "response_code",
+                    "response_message"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden – The caller does not have permission to register an additional terminal."
+          },
+          "500": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "response_code": {
+                      "description": "Response code: 0 indicates success, any non-zero value indicates an error.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "response_message": {
+                      "description": "A human-readable error message.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "response_code",
+                    "response_message"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal Server Error – An unexpected error occurred on the server."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "POST /merchantportalws/registerNewMerchant": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "registerNewMerchantUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization credentials (Bearer token or Basic authentication).  Example: \"Bearer AT-2359-DFYpOWfDFSls4DeKDmGOXDyynx0a8Trwk\"\n",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "account_number": {
+                    "description": "Account number provided by the acquirer.",
+                    "example": 123456,
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "additional_data": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "description": "Arbitrary merchant-specific data related to enabling acquiring or terminal registration.\nThis object can contain key-value pairs where the value is a string.\n",
+                    "example": {
+                      "firstname": "John",
+                      "surname": "Doe",
+                      "type": "tx-300",
+                      "version": "v1.2.3"
+                    },
+                    "type": "object"
+                  },
+                  "business_reg_number": {
+                    "description": "Merchant business registration number as stated in the company registry. Typically a 9-character alphanumeric string.",
+                    "example": "345345345",
+                    "type": "string"
+                  },
+                  "city": {
+                    "description": "Merchant's address: city.",
+                    "example": "Bratislava",
+                    "type": "string"
+                  },
+                  "corporateuuid": {
+                    "description": "Unique identifier for the corporate entity (UUID format).",
+                    "example": "123e4567-e89b-12d3-a456-426614174000",
+                    "type": "string"
+                  },
+                  "country": {
+                    "description": "Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format).",
+                    "example": "SVK",
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "type": "string"
+                  },
+                  "currency": {
+                    "description": "Transaction currency (must be in \"ISO 4217\" format).",
+                    "example": "EUR",
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "type": "string"
+                  },
+                  "merchant_category_code": {
+                    "description": "Merchant category code as defined by the payment network.",
+                    "example": 5999,
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "merchant_email": {
+                    "description": "Merchant's email address for receiving notifications.",
+                    "example": "testemail@tecs.at",
+                    "format": "email",
+                    "type": "string"
+                  },
+                  "merchant_name": {
+                    "description": "The officially incorporated company name of the merchant.",
+                    "example": "Test merchant",
+                    "type": "string"
+                  },
+                  "merchant_phone_number": {
+                    "description": "Merchant's phone number for notifications. Must be in international format (e.g., +421910711234).",
+                    "example": "+421910876567",
+                    "type": "string"
+                  },
+                  "packageid": {
+                    "description": "Identifier of the package in the TECS processing engine provided by TECS. Typically a UUID.",
+                    "example": "87055654-3158-42fc-9838-74f1fc77f42b",
+                    "type": "string"
+                  },
+                  "password": {
+                    "description": "Merchant password for MPOS. If not provided, TECS will generate a password and return it in the response.\n",
+                    "example": "testpassword",
+                    "type": "string"
+                  },
+                  "productid": {
+                    "description": "Identifier of the product for which terminal registration is being performed.",
+                    "example": "d8af7e4f-a04f-42ea-91ac-bed20c5eebfe",
+                    "type": "string"
+                  },
+                  "productid_acquirer": {
+                    "description": "Identifier of the product for which acquiring is enabled.",
+                    "example": "874d84a8-a6f4-47fa-b594-944593fc394b",
+                    "type": "string"
+                  },
+                  "sorting_code": {
+                    "description": "Sorting code provided by the acquirer.",
+                    "example": 123456,
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "state": {
+                    "description": "Merchant's address: state. May be null if not applicable.",
+                    "example": "null",
+                    "type": "string"
+                  },
+                  "street": {
+                    "description": "Merchant's address: street and house number.",
+                    "example": "Palisady 12",
+                    "type": "string"
+                  },
+                  "terminal_country_code": {
+                    "description": "Terminal country code (must be in \"ISO-3166 ALPHA-3\" format).",
+                    "example": "SVK",
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "type": "string"
+                  },
+                  "terminal_language_code": {
+                    "description": "Terminal language code (must be in \"ISO 639-1\" format).",
+                    "example": "EN",
+                    "maxLength": 2,
+                    "minLength": 2,
+                    "type": "string"
+                  },
+                  "terminal_location": {
+                    "description": "Physical or logical location of the terminal.",
+                    "example": "Palisady 12 BA",
+                    "type": "string"
+                  },
+                  "terminal_serial_number": {
+                    "description": "Terminal serial number.",
+                    "example": "325-320-924",
+                    "type": "string"
+                  },
+                  "terminalid_acquirer": {
+                    "description": "Terminal ID as provided by the acquirer (if applicable).",
+                    "example": "66000001",
+                    "type": "string"
+                  },
+                  "user_email": {
+                    "description": "Email address of the user acting on behalf of the merchant.",
+                    "example": "testemail12@tecs.at",
+                    "format": "email",
+                    "type": "string"
+                  },
+                  "user_phone_number": {
+                    "description": "Phone number of the user acting on behalf of the merchant. Must be in international format (e.g., +421910711234).",
+                    "example": "+421910876568",
+                    "type": "string"
+                  },
+                  "username": {
+                    "description": "Merchant username for MPOS. If not provided, TECS will generate a username and include it in the response.\n",
+                    "example": "testuser",
+                    "type": "string"
+                  },
+                  "vu_nummer": {
+                    "description": "Merchant contract number with the acquirer.",
+                    "example": "9034520",
+                    "type": "string"
+                  },
+                  "web_shop_url": {
+                    "description": "URL of the merchant's web shop.",
+                    "example": "https://www.tecs.at",
+                    "format": "uri",
+                    "type": "string"
+                  },
+                  "zipcode": {
+                    "description": "Merchant's address: postal code.",
+                    "example": "81106",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "business_reg_number",
+                  "city",
+                  "country",
+                  "currency",
+                  "merchant_category_code",
+                  "merchant_name",
+                  "packageid",
+                  "street",
+                  "terminal_country_code",
+                  "terminal_language_code",
+                  "terminal_location",
+                  "terminal_serial_number",
+                  "vu_nummer",
+                  "zipcode"
+                ],
+                "title": "InputRegisterNewMerchant",
+                "type": "object"
+              }
+            }
+          },
+          "description": "JSON payload containing all required fields for merchant and terminal registration.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "corporateuuid": {
+                      "description": "An UUID of the newly registered corporate (if created during the flow - it is an optional value).",
+                      "example": "fd1b6927-9105-4e2a-92c0-07c6da71624d",
+                      "type": "string"
+                    },
+                    "packageorderuuid": {
+                      "description": "Unique identifier, which could be used later for registering additional terminals for existing merchants.",
+                      "example": "16acb5a4-e573-423c-a024-fae90ea45d70",
+                      "type": "string"
+                    },
+                    "password": {
+                      "description": "TECS generated merchant password in case if not provided in request.",
+                      "example": "testpassword",
+                      "type": "string"
+                    },
+                    "responseCode": {
+                      "description": "Response code (0 = OK, otherwise an error code).",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Human readable response code representation.",
+                      "example": "OK",
+                      "type": "string"
+                    },
+                    "terminalid": {
+                      "description": "TECS terminalid given by TECS processing engine.",
+                      "example": 88091104,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "username": {
+                      "description": "TECS generated merchant username in case if not provided in request.",
+                      "example": "testuser",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputRegisterNewMerchant",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful merchant and terminal registration."
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "response_code": {
+                      "description": "Response code: 0 indicates success, any non-zero value indicates an error.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "response_message": {
+                      "description": "A human-readable error message.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "response_code",
+                    "response_message"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad Request - One or more required fields are missing or in an incorrect format."
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "response_code": {
+                      "description": "Response code: 0 indicates success, any non-zero value indicates an error.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "response_message": {
+                      "description": "A human-readable error message.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "response_code",
+                    "response_message"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Invalid credentials provided."
+          },
+          "403": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "response_code": {
+                      "description": "Response code: 0 indicates success, any non-zero value indicates an error.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "response_message": {
+                      "description": "A human-readable error message.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "response_code",
+                    "response_message"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden - The caller does not have the necessary permissions to perform this operation."
+          },
+          "500": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "response_code": {
+                      "description": "Response code: 0 indicates success, any non-zero value indicates an error.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "response_message": {
+                      "description": "A human-readable error message.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "response_code",
+                    "response_message"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal Server Error - An unexpected error occurred on the server."
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

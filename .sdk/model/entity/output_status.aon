@@ -67,6 +67,12 @@ main: kit: entity: output_status: {
               }
             ]
           }
+          contract: {
+            id: "GET /merchantportalws/batch/registerAdditionalTerminal/status/{id}"
+            json: "{\"operationId\":\"statusUsingGET\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}},{\"description\":\"id\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"percentage\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"},\"status\":{\"enum\":[\"COMPLETED_SUCCESSFULLY\",\"COMPLETED_WITH_ERRORS\",\"RUNNING\",\"STOPPED\"],\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputStatus\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/merchantportalws/batch/registerAdditionalTerminal/status/{id}"
           segments: [

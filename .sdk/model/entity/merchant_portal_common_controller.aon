@@ -10,6 +10,12 @@ main: kit: entity: merchant_portal_common_controller: {
       name: "load"
       points: [
         {
+          contract: {
+            id: "GET /merchantportalws/logDeveloperInfo"
+            json: "{\"operationId\":\"logDeveloperInfoUsingGET\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputMessage\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/merchantportalws/logDeveloperInfo"
           segments: [
@@ -26,6 +32,12 @@ main: kit: entity: merchant_portal_common_controller: {
           }
         }
         {
+          contract: {
+            id: "GET /merchantportalws/version"
+            json: "{\"operationId\":\"versionUsingGET\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"appName\":{\"type\":\"string\"},\"buildDate\":{\"type\":\"string\"},\"version\":{\"type\":\"string\"}},\"title\":\"Version\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/merchantportalws/version"
           segments: [

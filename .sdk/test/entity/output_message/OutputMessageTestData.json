@@ -3,17 +3,17 @@
     "output_message": {
       "OUTPUT_MESSAGE00": {
         "id": "OUTPUT_MESSAGE00",
-        "responseCode": "s1f",
+        "responseCode": 31,
         "responseMessage": "s20"
       },
       "OUTPUT_MESSAGE01": {
         "id": "OUTPUT_MESSAGE01",
-        "responseCode": "s3d",
+        "responseCode": 61,
         "responseMessage": "s3e"
       },
       "OUTPUT_MESSAGE02": {
         "id": "OUTPUT_MESSAGE02",
-        "responseCode": "s5b",
+        "responseCode": 91,
         "responseMessage": "s5c"
       }
     }
@@ -21,8 +21,126 @@
   "new": {
     "output_message": {
       "output_message_ref01": {
-        "responseCode": "s79",
+        "responseCode": 121,
         "responseMessage": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "GET /merchantportalws/batch/registerAdditionalTerminal/restart/{id}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "restartUsingGET",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputMessage",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /merchantportalws/batch/registerAdditionalTerminal/stop/{id}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "stopUsingGET",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputMessage",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

@@ -75,6 +75,12 @@ main: kit: entity: merchant_portal_pam_product_controller: {
               }
             ]
           }
+          contract: {
+            id: "POST /merchantportalws/approveProduct"
+            json: "{\"operationId\":\"approveProductUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"merchantID\":{\"type\":\"string\"},\"productOrderUUID\":{\"type\":\"string\"}},\"required\":[\"productOrderUUID\"],\"title\":\"InputApproveProduct\",\"type\":\"object\"}}},\"description\":\"inputApproveProduct\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputApproveProduct\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "POST"
           orig: "/merchantportalws/approveProduct"
           segments: [
@@ -106,6 +112,12 @@ main: kit: entity: merchant_portal_pam_product_controller: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "POST /merchantportalws/declineProduct"
+            json: "{\"operationId\":\"declineProductUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"productOrderUUID\":{\"type\":\"string\"},\"reason_decline\":{\"description\":\"Reason for product decline.\",\"example\":\"Switch to new product\",\"type\":\"string\"}},\"required\":[\"productOrderUUID\",\"reason_decline\"],\"title\":\"InputDeclineProduct\",\"type\":\"object\"}}},\"description\":\"inputDeclineProduct\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputDeclineProduct\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "POST"
           orig: "/merchantportalws/declineProduct"
@@ -139,6 +151,12 @@ main: kit: entity: merchant_portal_pam_product_controller: {
               }
             ]
           }
+          contract: {
+            id: "POST /merchantportalws/orderAdditionalProduct"
+            json: "{\"operationId\":\"orderAdditionalProductUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"consumerUUID\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"packageOrderUUID\":{\"type\":\"string\"},\"productUUID\":{\"type\":\"string\"}},\"required\":[\"packageOrderUUID\",\"productUUID\"],\"title\":\"InputOrderAdditionalProduct\",\"type\":\"object\"}}},\"description\":\"inputOrderAdditionalProduct\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"productOrderUUID\":{\"type\":\"string\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputOrderAdditionalProduct\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "POST"
           orig: "/merchantportalws/orderAdditionalProduct"
           segments: [
@@ -170,6 +188,12 @@ main: kit: entity: merchant_portal_pam_product_controller: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "POST /merchantportalws/productsList"
+            json: "{\"operationId\":\"productsListUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"filter\":{\"properties\":{\"productUUID\":{\"description\":\"UUID of the product.\",\"example\":\"d0a0b0c0-d0a0-b0c0-d0a0-b0c0d0a0b0c0\",\"type\":\"string\"}},\"title\":\"InputProductsList_Filter\",\"type\":\"object\"},\"pagination\":{\"properties\":{\"page\":{\"description\":\"Number of the page to display.\",\"example\":1,\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"description\":\"Number of elements per page to display.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"}},\"title\":\"Pagination\",\"type\":\"object\"},\"sorting\":{\"properties\":{\"name\":{\"description\":\"Sort attribute name.\",\"example\":\"requestorID\",\"type\":\"string\"},\"type\":{\"description\":\"Sort type ASC / DESC.\",\"example\":\"ASC\",\"type\":\"string\"}},\"title\":\"Sorting\",\"type\":\"object\"}},\"title\":\"InputProductsList\",\"type\":\"object\"}}},\"description\":\"inputProductsList\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"pagination\":{\"properties\":{\"page\":{\"description\":\"Number of the page to display.\",\"example\":1,\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"description\":\"Number of elements per page to display.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"},\"totalElements\":{\"description\":\"Number of total elements available.\",\"example\":1587,\"format\":\"int64\",\"type\":\"integer\"},\"totalPages\":{\"description\":\"Number of total pages available.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"}},\"required\":[\"totalElements\",\"totalPages\"],\"title\":\"OutputPagination\",\"type\":\"object\"},\"products\":{\"items\":{\"properties\":{\"productDescriptionKey\":{\"description\":\"Key of the product description.\",\"example\":\"MPI software component of the 3D Secure version 1.0.2\",\"type\":\"string\"},\"productName\":{\"description\":\"Name of the product.\",\"example\":\"3D Secure version 1.0.2\",\"type\":\"string\"},\"productUUID\":{\"description\":\"UUID of the product.\",\"example\":\"d0a0b0c0-d0a0-b0c0-d0a0-b0c0d0a0b0c0\",\"type\":\"string\"},\"terminalTemplateDescription\":{\"description\":\"Description of the terminal template.\",\"example\":\"Template for the terminal configuration N9100\",\"type\":\"string\"},\"vendorName\":{\"description\":\"Name of the vendor.\",\"example\":\"TECS telecommunication & e-commerce solutions GmbH\",\"type\":\"string\"}},\"title\":\"OutputProductsList_Product\",\"type\":\"object\"},\"type\":\"array\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"pagination\",\"responseCode\",\"responseMessage\"],\"title\":\"OutputProductsList\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "POST"
           orig: "/merchantportalws/productsList"

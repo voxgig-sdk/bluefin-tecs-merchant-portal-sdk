@@ -25,5 +25,164 @@
         "productOrderUUID": "s51"
       }
     }
+  },
+  "requests": {
+    "POST /merchantportalws/generateContract": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "generateContractUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "language": {
+                    "type": "string"
+                  },
+                  "productOrderUUID": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "language",
+                  "productOrderUUID"
+                ],
+                "title": "InputGenerateContract",
+                "type": "object"
+              }
+            }
+          },
+          "description": "inputGenerateContract",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "file": {
+                      "format": "binary",
+                      "type": "string"
+                    },
+                    "filename": {
+                      "type": "string"
+                    },
+                    "inputStream": {
+                      "title": "InputStream",
+                      "type": "object"
+                    },
+                    "open": {
+                      "type": "boolean"
+                    },
+                    "readable": {
+                      "type": "boolean"
+                    },
+                    "uri": {
+                      "format": "uri",
+                      "type": "string"
+                    },
+                    "url": {
+                      "format": "url",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Resource",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "POST /merchantportalws/uploadContract": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "uploadContractUsingPOST",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "inputMessage": {
+                    "type": "string"
+                  },
+                  "pdfFile": {
+                    "description": "Binary multipart file in PDF format",
+                    "format": "binary",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "pdfFile"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputUploadContract",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

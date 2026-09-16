@@ -3,22 +3,22 @@
     "output_status": {
       "OUTPUT_STATUS00": {
         "id": "OUTPUT_STATUS00",
-        "percentage": "s33",
-        "responseCode": "s34",
+        "percentage": 51,
+        "responseCode": 52,
         "responseMessage": "s35",
         "status": "s36"
       },
       "OUTPUT_STATUS01": {
         "id": "OUTPUT_STATUS01",
-        "percentage": "s65",
-        "responseCode": "s66",
+        "percentage": 101,
+        "responseCode": 102,
         "responseMessage": "s67",
         "status": "s68"
       },
       "OUTPUT_STATUS02": {
         "id": "OUTPUT_STATUS02",
-        "percentage": "s97",
-        "responseCode": "s98",
+        "percentage": 151,
+        "responseCode": 152,
         "responseMessage": "s99",
         "status": "s9a"
       }
@@ -27,10 +27,83 @@
   "new": {
     "output_status": {
       "output_status_ref01": {
-        "percentage": "sc9",
-        "responseCode": "sca",
+        "percentage": 201,
+        "responseCode": 202,
         "responseMessage": "scb",
         "status": "scc"
+      }
+    }
+  },
+  "requests": {
+    "GET /merchantportalws/batch/registerAdditionalTerminal/status/{id}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "statusUsingGET",
+        "parameters": [
+          {
+            "description": "Authorization",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "percentage": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseCode": {
+                      "description": "Response code. For success state 0. For failure state lower than 0.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "Response message. For success state OK. For failure state description of the cause.",
+                      "example": "OK",
+                      "type": "string"
+                    },
+                    "status": {
+                      "enum": [
+                        "COMPLETED_SUCCESSFULLY",
+                        "COMPLETED_WITH_ERRORS",
+                        "RUNNING",
+                        "STOPPED"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "responseCode",
+                    "responseMessage"
+                  ],
+                  "title": "OutputStatus",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

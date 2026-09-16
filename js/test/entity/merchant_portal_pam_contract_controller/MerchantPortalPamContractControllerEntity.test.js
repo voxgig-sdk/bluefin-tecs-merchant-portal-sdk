@@ -1,12 +1,14 @@
 
 const envlocal = __dirname + '/../../../.env.local'
-require('dotenv').config({ quiet: true, path: [envlocal] })
+require('../../utility').loadEnvLocal(envlocal)
 
 const Path = require('node:path')
 const Fs = require('node:fs')
 
 const { test, describe, afterEach } = require('node:test')
 const assert = require('node:assert')
+const { createLiveTransport } = require('../../live-runner')
+const { runLiveEntity } = require('../../live-entity')
 
 
 const { BluefinTecsMerchantPortalSDK, BaseFeature, stdutil, config } = require('../../..')
@@ -36,9 +38,13 @@ describe('MerchantPortalPamContractControllerEntity', async () => {
   })
 
 
-  test('basic', async () => {
+  test('basic', async (t) => {
 
+    
     const setup = basicSetup()
+    if (setup.live) {
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":[{"active":true,"name":"language","req":true,"type":"`$STRING`","index$":0},{"active":true,"name":"productOrderUUID","req":true,"type":"`$STRING`","index$":1}],"name":"merchant_portal_pam_contract_controller","op":{"create":{"input":"data","name":"create","points":[{"active":true,"args":{"header":[{"active":true,"kind":"header","name":"authorization","orig":"authorization","reqd":true,"type":"`$STRING`"}]},"contract":{"id":"POST /merchantportalws/generateContract","json":"{\"operationId\":\"generateContractUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"language\":{\"type\":\"string\"},\"productOrderUUID\":{\"type\":\"string\"}},\"required\":[\"language\",\"productOrderUUID\"],\"title\":\"InputGenerateContract\",\"type\":\"object\"}}},\"description\":\"inputGenerateContract\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"description\":{\"type\":\"string\"},\"file\":{\"format\":\"binary\",\"type\":\"string\"},\"filename\":{\"type\":\"string\"},\"inputStream\":{\"title\":\"InputStream\",\"type\":\"object\"},\"open\":{\"type\":\"boolean\"},\"readable\":{\"type\":\"boolean\"},\"uri\":{\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"format\":\"url\",\"type\":\"string\"}},\"title\":\"Resource\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}","source":"openapi3","version":1},"kind":"http","method":"POST","orig":"/merchantportalws/generateContract","segments":[{"lit":"merchantportalws"},{"lit":"generateContract"}],"select":{"exist":["authorization"]},"transform":{"req":"`reqdata`","res":"`body`"},"index$":0},{"active":true,"args":{"header":[{"active":true,"kind":"header","name":"authorization","orig":"authorization","reqd":true,"type":"`$STRING`"}]},"contract":{"id":"POST /merchantportalws/uploadContract","json":"{\"operationId\":\"uploadContractUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"multipart/form-data\":{\"schema\":{\"properties\":{\"inputMessage\":{\"type\":\"string\"},\"pdfFile\":{\"description\":\"Binary multipart file in PDF format\",\"format\":\"binary\",\"type\":\"string\"}},\"required\":[\"pdfFile\"],\"type\":\"object\"}}}},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputUploadContract\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}","source":"openapi3","version":1},"kind":"http","method":"POST","orig":"/merchantportalws/uploadContract","segments":[{"lit":"merchantportalws"},{"lit":"uploadContract"}],"select":{"exist":["authorization"]},"transform":{"req":"`reqdata`","res":"`body`"},"index$":1}],"key$":"create"}},"relations":{"ancestors":[]},"key$":"merchant_portal_pam_contract_controller","name__orig":"merchant_portal_pam_contract_controller","Name":"MerchantPortalPamContractController","name_":"merchant_portal_pam_contract_controller","name-":"merchant-portal-pam-contract-controller","NAME":"MERCHANT_PORTAL_PAM_CONTRACT_CONTROLLER","index$":2}, {"active":true,"entity":"merchant_portal_pam_contract_controller","key$":"BasicMerchantPortalPamContractControllerFlow","kind":"basic","name":"BasicMerchantPortalPamContractControllerFlow","param":{},"step":[{"active":true,"data":{},"input":{"ref":"merchant_portal_pam_contract_controller_ref01"},"match":{},"op":"create","spec":[],"valid":[],"index$":0}]}, 'MerchantPortalPamContractController')
+    }
     const client = setup.client
     const struct = setup.struct
 
@@ -98,7 +104,14 @@ function basicSetup(extra) {
 
   idmap = env['BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_CONTRACT_CONTROLLER_ENTID']
 
-  if ('TRUE' === env.BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE) {
+  const live = 'TRUE' === env.BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE
+  const transport = createLiveTransport()
+  if (live) {
+    const rawIds = process.env['BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_CONTRACT_CONTROLLER_ENTID']
+    idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {}
+    if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+      throw new Error('Live ENTID must be a JSON object')
+    }
     client = new BluefinTecsMerchantPortalSDK(merge([
       // FIRST, so the generated fields below win: sdk-test-control.json's
       // test.client.options adds to the live client, it does not redirect it.
@@ -109,7 +122,8 @@ function basicSetup(extra) {
       // the last entry is undefined, and basicSetup is normally called with no
       // argument at all - so a bare 'extra' silently discarded the apikey and
       // server values above and handed the SDK undefined.
-      extra || {}
+      extra || {},
+      { system: { fetch: transport.fetch } }
     ]))
   }
 
@@ -121,6 +135,8 @@ function basicSetup(extra) {
     struct,
     data: entityData,
     explain: 'TRUE' === env.BLUEFIN_TECS_MERCHANT_PORTAL_TEST_EXPLAIN,
+    live,
+    transport,
     now: Date.now(),
   }
 

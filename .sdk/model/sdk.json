@@ -33,7 +33,93 @@
         "repr": "auto"
       },
       "contributor": {},
-      "docs": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "github-pages": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "github-pages",
+            "name": "github-pages",
+            "origname": "",
+            "output": {
+              "path": "docs"
+            },
+            "package": "@voxgig/docgen",
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          },
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "merchant_portal_api_controller": {
           "active": true,
@@ -300,6 +386,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/deactivateTerminal",
+                    "json": "{\"operationId\":\"deactivateTerminalUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"reason_deactivation\":{\"description\":\"Reason for terminal deactivation.\",\"example\":\"Terminal was stolen\",\"type\":\"string\"},\"terminalid\":{\"description\":\"TECS terminalid given by Tecs processing engine.\",\"example\":88091105,\"format\":\"int32\",\"type\":\"integer\"}},\"required\":[\"reason_deactivation\",\"terminalid\"],\"title\":\"InputDeactivateTerminal\",\"type\":\"object\"}}},\"description\":\"inputDeactivateTerminal\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code (0 = OK, otherwise an error code).\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Human readable response code representation.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputDeactivateTerminal\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/deactivateTerminal",
@@ -334,6 +426,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/reactivateTerminal",
+                    "json": "{\"operationId\":\"reactivateTerminalUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"reason_reactivation\":{\"description\":\"Reason for terminal reactivation.\",\"example\":\"Terminal is again in use\",\"type\":\"string\"},\"terminalid\":{\"description\":\"TECS terminalid given by Tecs processing engine.\",\"example\":88091105,\"format\":\"int32\",\"type\":\"integer\"}},\"required\":[\"reason_reactivation\",\"terminalid\"],\"title\":\"InputReactivateTerminal\",\"type\":\"object\"}}},\"description\":\"inputReactivateTerminal\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code (0 = OK, otherwise an error code).\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Human readable response code representation.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputReactivateTerminal\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -370,6 +468,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/registerAdditionalTerminal",
+                    "json": "{\"operationId\":\"registerAdditionalTerminalUsingPOST\",\"parameters\":[{\"description\":\"Authorization header containing a valid Bearer token or Basic authentication credentials. Example: \\\"Bearer AT-2359-DFYpOWfDFSls4DeKDmGOXDyynx0a8Trwk\\\"\\n\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"additional_data\":{\"additionalProperties\":{\"type\":\"string\"},\"description\":\"Arbitrary merchant-specific data related to terminal registration.\\nProvide any additional key-value pairs as required.\\n\",\"example\":{\"firstname\":\"John\",\"surname\":\"Doe\",\"type\":\"tx-300\",\"version\":\"v1.2.3\"},\"type\":\"object\"},\"packageorderuuid\":{\"description\":\"Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call.\\n\",\"example\":\"dccb9a6a-b02c-46e3-aef3-a28f0b7bf993\",\"type\":\"string\"},\"password\":{\"description\":\"Merchant password for MPOS. If not provided, TECS will generate a password and return it in the response.\\n\",\"example\":\"testpassword\",\"type\":\"string\"},\"productid\":{\"description\":\"Identifier of the product for which terminal registration is to be performed. If omitted, a default product may be used.\\n\",\"example\":\"d8af7e4f-a04f-42ea-91ac-bed20c5eebfe\",\"type\":\"string\"},\"terminal_country_code\":{\"description\":\"Terminal country code (must be in 'ISO-3166 ALPHA-3' format).\",\"example\":\"SVK\",\"maxLength\":3,\"minLength\":3,\"type\":\"string\"},\"terminal_language_code\":{\"description\":\"Terminal language code (must be in 'ISO 639-1' format).\",\"example\":\"EN\",\"maxLength\":2,\"minLength\":2,\"type\":\"string\"},\"terminal_location\":{\"description\":\"Physical or logical location of the terminal.\",\"example\":\"Palisady 12 BA\",\"type\":\"string\"},\"terminal_serial_number\":{\"description\":\"Terminal serial number.\",\"example\":\"325-320-924\",\"type\":\"string\"},\"terminalid_acquirer\":{\"description\":\"Terminal ID as set by the acquirer (optional).\",\"example\":\"66000001\",\"type\":\"string\"},\"user_email\":{\"description\":\"Email address of the user acting on behalf of the merchant.\",\"example\":\"testemail@tecs.at\",\"format\":\"email\",\"type\":\"string\"},\"user_phone_number\":{\"description\":\"Phone number of the user acting on behalf of the merchant. Must be in international format (e.g., +421910711234).\\n\",\"example\":\"+421910876567\",\"type\":\"string\"},\"username\":{\"description\":\"Merchant username for MPOS. If not provided, TECS will generate a username and include it in the response.\\n\",\"example\":\"testuser\",\"type\":\"string\"},\"web_shop_url\":{\"description\":\"URL of the merchant's web shop.\",\"example\":\"https://www.tecs.at\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"packageorderuuid\",\"terminal_country_code\",\"terminal_language_code\",\"terminal_location\",\"terminal_serial_number\"],\"title\":\"InputRegisterAdditionalTerminal\",\"type\":\"object\"}}},\"description\":\"JSON payload containing the details required to register an additional terminal. This includes the package order UUID and terminal-specific details.\\n\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"password\":{\"description\":\"TECS generated merchant password in case if not provided in request.\",\"example\":\"testpassword\",\"type\":\"string\"},\"responseCode\":{\"description\":\"Response code (0 = OK, otherwise an error code).\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Human readable response code representation.\",\"example\":\"OK\",\"type\":\"string\"},\"terminalid\":{\"description\":\"TECS terminalid given by TECS processing engine.\",\"example\":88091104,\"format\":\"int32\",\"type\":\"integer\"},\"username\":{\"description\":\"TECS generated merchant username in case if not provided in request.\",\"example\":\"testuser\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputRegisterAdditionalTerminal\",\"type\":\"object\"}}},\"description\":\"Successful registration of an additional terminal.\"},\"400\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"response_code\":{\"description\":\"Response code: 0 indicates success, any non-zero value indicates an error.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"response_message\":{\"description\":\"A human-readable error message.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"response_code\",\"response_message\"],\"type\":\"object\"}}},\"description\":\"Bad Request – One or more required fields are missing or incorrectly formatted.\"},\"401\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"response_code\":{\"description\":\"Response code: 0 indicates success, any non-zero value indicates an error.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"response_message\":{\"description\":\"A human-readable error message.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"response_code\",\"response_message\"],\"type\":\"object\"}}},\"description\":\"Unauthorized – Invalid authentication credentials provided.\"},\"403\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"response_code\":{\"description\":\"Response code: 0 indicates success, any non-zero value indicates an error.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"response_message\":{\"description\":\"A human-readable error message.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"response_code\",\"response_message\"],\"type\":\"object\"}}},\"description\":\"Forbidden – The caller does not have permission to register an additional terminal.\"},\"500\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"response_code\":{\"description\":\"Response code: 0 indicates success, any non-zero value indicates an error.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"response_message\":{\"description\":\"A human-readable error message.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"response_code\",\"response_message\"],\"type\":\"object\"}}},\"description\":\"Internal Server Error – An unexpected error occurred on the server.\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/registerAdditionalTerminal",
@@ -404,6 +508,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/registerNewMerchant",
+                    "json": "{\"operationId\":\"registerNewMerchantUsingPOST\",\"parameters\":[{\"description\":\"Authorization credentials (Bearer token or Basic authentication).  Example: \\\"Bearer AT-2359-DFYpOWfDFSls4DeKDmGOXDyynx0a8Trwk\\\"\\n\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"account_number\":{\"description\":\"Account number provided by the acquirer.\",\"example\":123456,\"format\":\"int32\",\"type\":\"integer\"},\"additional_data\":{\"additionalProperties\":{\"type\":\"string\"},\"description\":\"Arbitrary merchant-specific data related to enabling acquiring or terminal registration.\\nThis object can contain key-value pairs where the value is a string.\\n\",\"example\":{\"firstname\":\"John\",\"surname\":\"Doe\",\"type\":\"tx-300\",\"version\":\"v1.2.3\"},\"type\":\"object\"},\"business_reg_number\":{\"description\":\"Merchant business registration number as stated in the company registry. Typically a 9-character alphanumeric string.\",\"example\":\"345345345\",\"type\":\"string\"},\"city\":{\"description\":\"Merchant's address: city.\",\"example\":\"Bratislava\",\"type\":\"string\"},\"corporateuuid\":{\"description\":\"Unique identifier for the corporate entity (UUID format).\",\"example\":\"123e4567-e89b-12d3-a456-426614174000\",\"type\":\"string\"},\"country\":{\"description\":\"Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format).\",\"example\":\"SVK\",\"maxLength\":3,\"minLength\":3,\"type\":\"string\"},\"currency\":{\"description\":\"Transaction currency (must be in \\\"ISO 4217\\\" format).\",\"example\":\"EUR\",\"maxLength\":3,\"minLength\":3,\"type\":\"string\"},\"merchant_category_code\":{\"description\":\"Merchant category code as defined by the payment network.\",\"example\":5999,\"format\":\"int32\",\"type\":\"integer\"},\"merchant_email\":{\"description\":\"Merchant's email address for receiving notifications.\",\"example\":\"testemail@tecs.at\",\"format\":\"email\",\"type\":\"string\"},\"merchant_name\":{\"description\":\"The officially incorporated company name of the merchant.\",\"example\":\"Test merchant\",\"type\":\"string\"},\"merchant_phone_number\":{\"description\":\"Merchant's phone number for notifications. Must be in international format (e.g., +421910711234).\",\"example\":\"+421910876567\",\"type\":\"string\"},\"packageid\":{\"description\":\"Identifier of the package in the TECS processing engine provided by TECS. Typically a UUID.\",\"example\":\"87055654-3158-42fc-9838-74f1fc77f42b\",\"type\":\"string\"},\"password\":{\"description\":\"Merchant password for MPOS. If not provided, TECS will generate a password and return it in the response.\\n\",\"example\":\"testpassword\",\"type\":\"string\"},\"productid\":{\"description\":\"Identifier of the product for which terminal registration is being performed.\",\"example\":\"d8af7e4f-a04f-42ea-91ac-bed20c5eebfe\",\"type\":\"string\"},\"productid_acquirer\":{\"description\":\"Identifier of the product for which acquiring is enabled.\",\"example\":\"874d84a8-a6f4-47fa-b594-944593fc394b\",\"type\":\"string\"},\"sorting_code\":{\"description\":\"Sorting code provided by the acquirer.\",\"example\":123456,\"format\":\"int32\",\"type\":\"integer\"},\"state\":{\"description\":\"Merchant's address: state. May be null if not applicable.\",\"example\":\"null\",\"type\":\"string\"},\"street\":{\"description\":\"Merchant's address: street and house number.\",\"example\":\"Palisady 12\",\"type\":\"string\"},\"terminal_country_code\":{\"description\":\"Terminal country code (must be in \\\"ISO-3166 ALPHA-3\\\" format).\",\"example\":\"SVK\",\"maxLength\":3,\"minLength\":3,\"type\":\"string\"},\"terminal_language_code\":{\"description\":\"Terminal language code (must be in \\\"ISO 639-1\\\" format).\",\"example\":\"EN\",\"maxLength\":2,\"minLength\":2,\"type\":\"string\"},\"terminal_location\":{\"description\":\"Physical or logical location of the terminal.\",\"example\":\"Palisady 12 BA\",\"type\":\"string\"},\"terminal_serial_number\":{\"description\":\"Terminal serial number.\",\"example\":\"325-320-924\",\"type\":\"string\"},\"terminalid_acquirer\":{\"description\":\"Terminal ID as provided by the acquirer (if applicable).\",\"example\":\"66000001\",\"type\":\"string\"},\"user_email\":{\"description\":\"Email address of the user acting on behalf of the merchant.\",\"example\":\"testemail12@tecs.at\",\"format\":\"email\",\"type\":\"string\"},\"user_phone_number\":{\"description\":\"Phone number of the user acting on behalf of the merchant. Must be in international format (e.g., +421910711234).\",\"example\":\"+421910876568\",\"type\":\"string\"},\"username\":{\"description\":\"Merchant username for MPOS. If not provided, TECS will generate a username and include it in the response.\\n\",\"example\":\"testuser\",\"type\":\"string\"},\"vu_nummer\":{\"description\":\"Merchant contract number with the acquirer.\",\"example\":\"9034520\",\"type\":\"string\"},\"web_shop_url\":{\"description\":\"URL of the merchant's web shop.\",\"example\":\"https://www.tecs.at\",\"format\":\"uri\",\"type\":\"string\"},\"zipcode\":{\"description\":\"Merchant's address: postal code.\",\"example\":\"81106\",\"type\":\"string\"}},\"required\":[\"business_reg_number\",\"city\",\"country\",\"currency\",\"merchant_category_code\",\"merchant_name\",\"packageid\",\"street\",\"terminal_country_code\",\"terminal_language_code\",\"terminal_location\",\"terminal_serial_number\",\"vu_nummer\",\"zipcode\"],\"title\":\"InputRegisterNewMerchant\",\"type\":\"object\"}}},\"description\":\"JSON payload containing all required fields for merchant and terminal registration.\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"corporateuuid\":{\"description\":\"An UUID of the newly registered corporate (if created during the flow - it is an optional value).\",\"example\":\"fd1b6927-9105-4e2a-92c0-07c6da71624d\",\"type\":\"string\"},\"packageorderuuid\":{\"description\":\"Unique identifier, which could be used later for registering additional terminals for existing merchants.\",\"example\":\"16acb5a4-e573-423c-a024-fae90ea45d70\",\"type\":\"string\"},\"password\":{\"description\":\"TECS generated merchant password in case if not provided in request.\",\"example\":\"testpassword\",\"type\":\"string\"},\"responseCode\":{\"description\":\"Response code (0 = OK, otherwise an error code).\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Human readable response code representation.\",\"example\":\"OK\",\"type\":\"string\"},\"terminalid\":{\"description\":\"TECS terminalid given by TECS processing engine.\",\"example\":88091104,\"format\":\"int32\",\"type\":\"integer\"},\"username\":{\"description\":\"TECS generated merchant username in case if not provided in request.\",\"example\":\"testuser\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputRegisterNewMerchant\",\"type\":\"object\"}}},\"description\":\"Successful merchant and terminal registration.\"},\"400\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"response_code\":{\"description\":\"Response code: 0 indicates success, any non-zero value indicates an error.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"response_message\":{\"description\":\"A human-readable error message.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"response_code\",\"response_message\"],\"type\":\"object\"}}},\"description\":\"Bad Request - One or more required fields are missing or in an incorrect format.\"},\"401\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"response_code\":{\"description\":\"Response code: 0 indicates success, any non-zero value indicates an error.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"response_message\":{\"description\":\"A human-readable error message.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"response_code\",\"response_message\"],\"type\":\"object\"}}},\"description\":\"Unauthorized - Invalid credentials provided.\"},\"403\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"response_code\":{\"description\":\"Response code: 0 indicates success, any non-zero value indicates an error.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"response_message\":{\"description\":\"A human-readable error message.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"response_code\",\"response_message\"],\"type\":\"object\"}}},\"description\":\"Forbidden - The caller does not have the necessary permissions to perform this operation.\"},\"500\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"response_code\":{\"description\":\"Response code: 0 indicates success, any non-zero value indicates an error.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"response_message\":{\"description\":\"A human-readable error message.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"response_code\",\"response_message\"],\"type\":\"object\"}}},\"description\":\"Internal Server Error - An unexpected error occurred on the server.\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -448,6 +558,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "GET /merchantportalws/logDeveloperInfo",
+                    "json": "{\"operationId\":\"logDeveloperInfoUsingGET\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputMessage\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/logDeveloperInfo",
@@ -468,6 +584,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "GET /merchantportalws/version",
+                    "json": "{\"operationId\":\"versionUsingGET\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"appName\":{\"type\":\"string\"},\"buildDate\":{\"type\":\"string\"},\"version\":{\"type\":\"string\"}},\"title\":\"Version\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/version",
@@ -531,6 +653,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/generateContract",
+                    "json": "{\"operationId\":\"generateContractUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"language\":{\"type\":\"string\"},\"productOrderUUID\":{\"type\":\"string\"}},\"required\":[\"language\",\"productOrderUUID\"],\"title\":\"InputGenerateContract\",\"type\":\"object\"}}},\"description\":\"inputGenerateContract\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"description\":{\"type\":\"string\"},\"file\":{\"format\":\"binary\",\"type\":\"string\"},\"filename\":{\"type\":\"string\"},\"inputStream\":{\"title\":\"InputStream\",\"type\":\"object\"},\"open\":{\"type\":\"boolean\"},\"readable\":{\"type\":\"boolean\"},\"uri\":{\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"format\":\"url\",\"type\":\"string\"}},\"title\":\"Resource\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/generateContract",
@@ -565,6 +693,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/uploadContract",
+                    "json": "{\"operationId\":\"uploadContractUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"multipart/form-data\":{\"schema\":{\"properties\":{\"inputMessage\":{\"type\":\"string\"},\"pdfFile\":{\"description\":\"Binary multipart file in PDF format\",\"format\":\"binary\",\"type\":\"string\"}},\"required\":[\"pdfFile\"],\"type\":\"object\"}}}},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputUploadContract\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -641,6 +775,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/documentsList",
+                    "json": "{\"operationId\":\"documentsListUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"packageOrderUUID\":{\"description\":\"UUID of the package order. NOTE: Either package order UUID or product order UUID has to be present. If none is present error is returned. If both are present error is returned.\",\"type\":\"string\"},\"productOrderUUID\":{\"description\":\"UUID of the product order. NOTE: Either package order UUID or product order UUID has to be present. If none is present error is returned. If both are present error is returned.\",\"type\":\"string\"}},\"title\":\"InputDocumentsList\",\"type\":\"object\"}}},\"description\":\"inputDocumentsList\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"documents\":{\"items\":{\"properties\":{\"content\":{\"description\":\"Data URL value as used for providing inline content in HTML / CSS. Pattern: data:[MEDIA_TYPE];[ENCODING],[DATA]. For example: data:application/pdf;base64,UERGIGRhdGEuLi4=. Currently supported media types are: application/pdf, image/jpeg. If it is not possible to identify one of mentioned types then common media type: application/octet-stream is returned. Currently we support only Base64 encoding.\",\"type\":\"string\"},\"name\":{\"type\":\"string\"}},\"title\":\"OutputDocumentsList_Document\",\"type\":\"object\"},\"type\":\"array\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputDocumentsList\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/documentsList",
@@ -675,6 +815,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/downloadDocument",
+                    "json": "{\"operationId\":\"downloadDocumentUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"appFormFieldDescUUID\":{\"type\":\"string\"},\"packageOrderUUID\":{\"description\":\"UUID of the package order. NOTE: Either package order UUID or product order UUID has to be present. If none is present error is returned. If both are present error is returned.\",\"type\":\"string\"},\"productOrderUUID\":{\"description\":\"UUID of the product order. NOTE: Either package order UUID or product order UUID has to be present. If none is present error is returned. If both are present error is returned.\",\"type\":\"string\"}},\"required\":[\"appFormFieldDescUUID\"],\"title\":\"InputDownloadDocument\",\"type\":\"object\"}}},\"description\":\"inputDownloadDocument\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"content\":{\"description\":\"Data URL value as used for providing inline content in HTML / CSS. Pattern: data:[MEDIA_TYPE];[ENCODING],[DATA]. For example: data:application/pdf;base64,UERGIGRhdGEuLi4=. Currently supported media types are: application/pdf, image/jpeg. If it is not possible to identify one of mentioned types then common media type: application/octet-stream is returned. Currently we support only Base64 encoding.\",\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputDownloadDocument\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -805,6 +951,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/applicationForm",
+                    "json": "{\"operationId\":\"applicationFormUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"filter\":{\"properties\":{\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"productOrderUUID\":{\"type\":\"string\"}},\"title\":\"InputApplicationForm_Filter\",\"type\":\"object\"},\"language\":{\"type\":\"string\"},\"packageOrderUUID\":{\"type\":\"string\"}},\"required\":[\"language\",\"packageOrderUUID\"],\"title\":\"InputApplicationForm\",\"type\":\"object\"}}},\"description\":\"inputApplicationForm\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"packageOrder\":{\"properties\":{\"packageApplicationForm\":{\"items\":{\"properties\":{\"appFormFieldDescUUID\":{\"type\":\"string\"},\"defaultValue\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fieldInputTypeDescription\":{\"type\":\"string\"},\"mandatory\":{\"type\":\"boolean\"},\"merchantAppFormsValue\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"originalReopenReason\":{\"type\":\"string\"},\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"placeHolder\":{\"type\":\"string\"},\"position\":{\"format\":\"int32\",\"type\":\"integer\"},\"possibleValues\":{\"type\":\"string\"},\"readOnly\":{\"type\":\"boolean\"},\"reopenReason\":{\"type\":\"string\"},\"visible\":{\"type\":\"boolean\"}},\"title\":\"OutputApplicationForm_ApplicationFormItem\",\"type\":\"object\"},\"type\":\"array\"},\"pagesCount\":{\"format\":\"int32\",\"type\":\"integer\"},\"statusDescription\":{\"type\":\"string\"},\"uuid\":{\"type\":\"string\"}},\"title\":\"OutputApplicationForm_PackageOrder\",\"type\":\"object\"},\"productOrders\":{\"items\":{\"properties\":{\"applicationForm\":{\"items\":{\"properties\":{\"appFormFieldDescUUID\":{\"type\":\"string\"},\"defaultValue\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fieldInputTypeDescription\":{\"type\":\"string\"},\"mandatory\":{\"type\":\"boolean\"},\"merchantAppFormsValue\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"originalReopenReason\":{\"type\":\"string\"},\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"placeHolder\":{\"type\":\"string\"},\"position\":{\"format\":\"int32\",\"type\":\"integer\"},\"possibleValues\":{\"type\":\"string\"},\"readOnly\":{\"type\":\"boolean\"},\"reopenReason\":{\"type\":\"string\"},\"visible\":{\"type\":\"boolean\"}},\"title\":\"OutputApplicationForm_ApplicationFormItem\",\"type\":\"object\"},\"type\":\"array\"},\"pagesCount\":{\"format\":\"int32\",\"type\":\"integer\"},\"productName\":{\"type\":\"string\"},\"statusDescription\":{\"type\":\"string\"},\"uuid\":{\"type\":\"string\"}},\"title\":\"OutputApplicationForm_ProductOrder\",\"type\":\"object\"},\"type\":\"array\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputApplicationForm\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/applicationForm",
@@ -839,6 +991,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/packageForm",
+                    "json": "{\"operationId\":\"merchantFormUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"filter\":{\"properties\":{\"productType\":{\"description\":\"Name of the product type\",\"example\":\"MERCHANT_CONTRACT\",\"type\":\"string\"},\"productUUID\":{\"type\":\"string\"}},\"title\":\"InputMerchantForm_Filter\",\"type\":\"object\"},\"language\":{\"type\":\"string\"},\"packageUUID\":{\"type\":\"string\"}},\"title\":\"InputMerchantForm\",\"type\":\"object\"}}},\"description\":\"inputMerchantForm\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"packages\":{\"items\":{\"properties\":{\"packageFormItems\":{\"items\":{\"properties\":{\"appFormFieldDescUUID\":{\"type\":\"string\"},\"backendMappingDescription\":{\"type\":\"string\"},\"backendMappingField\":{\"type\":\"string\"},\"backendMappingService\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"defaultValue\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fieldConstraints\":{\"items\":{\"properties\":{\"name\":{\"type\":\"string\"},\"value\":{\"type\":\"string\"}},\"title\":\"OutputMerchantForm_FieldConstraint\",\"type\":\"object\"},\"type\":\"array\"},\"fieldInputTypeDescription\":{\"type\":\"string\"},\"mandatory\":{\"type\":\"boolean\"},\"name\":{\"type\":\"string\"},\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"placeHolder\":{\"type\":\"string\"},\"position\":{\"format\":\"int32\",\"type\":\"integer\"},\"possibleValues\":{\"type\":\"string\"},\"readOnly\":{\"type\":\"boolean\"},\"visible\":{\"type\":\"boolean\"}},\"title\":\"OutputMerchantForm_ApplicationFormItem\",\"type\":\"object\"},\"type\":\"array\"},\"pagesCount\":{\"format\":\"int32\",\"type\":\"integer\"}},\"title\":\"OutputMerchantForm_Package\",\"type\":\"object\"},\"type\":\"array\"},\"products\":{\"items\":{\"properties\":{\"pagesCount\":{\"format\":\"int32\",\"type\":\"integer\"},\"productFormItems\":{\"items\":{\"properties\":{\"appFormFieldDescUUID\":{\"type\":\"string\"},\"backendMappingDescription\":{\"type\":\"string\"},\"backendMappingField\":{\"type\":\"string\"},\"backendMappingService\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"defaultValue\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fieldConstraints\":{\"items\":{\"properties\":{\"name\":{\"type\":\"string\"},\"value\":{\"type\":\"string\"}},\"title\":\"OutputMerchantForm_FieldConstraint\",\"type\":\"object\"},\"type\":\"array\"},\"fieldInputTypeDescription\":{\"type\":\"string\"},\"mandatory\":{\"type\":\"boolean\"},\"name\":{\"type\":\"string\"},\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"placeHolder\":{\"type\":\"string\"},\"position\":{\"format\":\"int32\",\"type\":\"integer\"},\"possibleValues\":{\"type\":\"string\"},\"readOnly\":{\"type\":\"boolean\"},\"visible\":{\"type\":\"boolean\"}},\"title\":\"OutputMerchantForm_ApplicationFormItem\",\"type\":\"object\"},\"type\":\"array\"},\"productName\":{\"type\":\"string\"}},\"title\":\"OutputMerchantForm_Product\",\"type\":\"object\"},\"type\":\"array\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputMerchantForm\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -875,6 +1033,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/reopenForm",
+                    "json": "{\"operationId\":\"reopenFormUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"appFormFieldsDescUUID\":{\"type\":\"string\"},\"packageOrderUUID\":{\"description\":\"UUID of the package order. NOTE: Either package order UUID or product order UUID has to be present. If none is present error is returned. If both are present error is returned.\",\"type\":\"string\"},\"productOrderUUID\":{\"description\":\"UUID of the product order. NOTE: Either package order UUID or product order UUID has to be present. If none is present error is returned. If both are present error is returned.\",\"type\":\"string\"},\"reasonOfReopening\":{\"type\":\"string\"}},\"required\":[\"appFormFieldsDescUUID\",\"reasonOfReopening\"],\"title\":\"InputReopenForm\",\"type\":\"object\"}}},\"description\":\"inputReopenForm\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputReopenForm\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/reopenForm",
@@ -909,6 +1073,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/secretKey",
+                    "json": "{\"operationId\":\"secretKeyUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"productOrderUUID\":{\"type\":\"string\"}},\"required\":[\"productOrderUUID\"],\"title\":\"InputSecretKey\",\"type\":\"object\"}}},\"description\":\"inputSecretKey\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"},\"tecsWebSecretKey\":{\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputSecretKey\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -945,6 +1115,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/submitForm",
+                    "json": "{\"operationId\":\"submitFormUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"productOrderUUID\":{\"type\":\"string\"}},\"required\":[\"productOrderUUID\"],\"title\":\"InputSubmitForm\",\"type\":\"object\"}}},\"description\":\"inputSubmitForm\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"missingFields\":{\"items\":{\"properties\":{\"appFormFieldDescUUID\":{\"type\":\"string\"},\"packageOrderUUID\":{\"type\":\"string\"},\"productOrderUUID\":{\"type\":\"string\"}},\"title\":\"OutputSubmitForm_MissingField\",\"type\":\"object\"},\"type\":\"array\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputSubmitForm\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/submitForm",
@@ -979,6 +1155,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/submitValues",
+                    "json": "{\"operationId\":\"submitValuesUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"packageOrder\":{\"properties\":{\"applicationForms\":{\"items\":{\"properties\":{\"appFormFieldDescUUID\":{\"type\":\"string\"},\"document\":{\"description\":\"Base64 encoded byte array of document. The following types are supported: PDF, JPEG.\",\"example\":\"JVBERi0=\",\"type\":\"string\"},\"merchantAppFormsValue\":{\"type\":\"string\"}},\"required\":[\"appFormFieldDescUUID\",\"merchantAppFormsValue\"],\"title\":\"InputSubmitValues_ApplicationForm\",\"type\":\"object\"},\"type\":\"array\"},\"uuid\":{\"type\":\"string\"}},\"title\":\"InputSubmitValues_PackageOrder\",\"type\":\"object\"},\"productOrders\":{\"items\":{\"properties\":{\"applicationForms\":{\"items\":{\"properties\":{\"appFormFieldDescUUID\":{\"type\":\"string\"},\"document\":{\"description\":\"Base64 encoded byte array of document. The following types are supported: PDF, JPEG.\",\"example\":\"JVBERi0=\",\"type\":\"string\"},\"merchantAppFormsValue\":{\"type\":\"string\"}},\"required\":[\"appFormFieldDescUUID\",\"merchantAppFormsValue\"],\"title\":\"InputSubmitValues_ApplicationForm\",\"type\":\"object\"},\"type\":\"array\"},\"uuid\":{\"type\":\"string\"}},\"title\":\"InputSubmitValues_ProductOrder\",\"type\":\"object\"},\"type\":\"array\"}},\"title\":\"InputSubmitValues\",\"type\":\"object\"}}},\"description\":\"inputSubmitValues\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputSubmitValues\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -1059,6 +1241,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/createMandatorConfig",
+                    "json": "{\"operationId\":\"createMandatorConfigUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"clientSecret\":{\"type\":\"string\"},\"mandatorName\":{\"type\":\"string\"},\"notificationEmail\":{\"type\":\"string\"}},\"required\":[\"mandatorName\"],\"title\":\"InputCreateMandatorConfig\",\"type\":\"object\"}}},\"description\":\"inputCreateMandatorConfig\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputCreateMandatorConfig\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/createMandatorConfig",
@@ -1094,6 +1282,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/introduceMandatorPackage",
+                    "json": "{\"operationId\":\"introduceMandatorPackageUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"packageUUID\":{\"type\":\"string\"}},\"required\":[\"packageUUID\"],\"title\":\"InputIntroduceMandatorPackage\",\"type\":\"object\"}}},\"description\":\"inputIntroduceMandatorPackage\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"packageUUID\":{\"type\":\"string\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"packageUUID\",\"responseCode\",\"responseMessage\"],\"title\":\"OutputIntroduceMandatorPackage\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/introduceMandatorPackage",
@@ -1128,6 +1322,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/selfRegistrationLink",
+                    "json": "{\"operationId\":\"selfRegistrationLinkUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"packageUUID\":{\"type\":\"string\"}},\"required\":[\"packageUUID\"],\"title\":\"InputSelfRegistrationLink\",\"type\":\"object\"}}},\"description\":\"inputSelfRegistrationLink\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"},\"selfRegistrationLink\":{\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputSelfRegistrationLink\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -1366,6 +1566,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/contractNumber",
+                    "json": "{\"operationId\":\"contractNumberUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"merchantContractNumber\":{\"type\":\"string\"}},\"required\":[\"merchantContractNumber\"],\"title\":\"InputContractNumber\",\"type\":\"object\"}}},\"description\":\"inputContractNumber\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputContractNumber\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/contractNumber",
@@ -1400,6 +1606,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/registerAdditionalAcquiring",
+                    "json": "{\"operationId\":\"registerAdditionalAcquiringUsingPOST\",\"parameters\":[{\"description\":\"Authorization header containing valid credentials. Example: \\\"Bearer AT-2359-DFYpOWfDFSls4DeKDmGOXDyynx0a8Trwk\\\"\\n\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"additional_data\":{\"additionalProperties\":{\"type\":\"string\"},\"description\":\"Optional additional merchant-specific data related to enabling acquiring.\\nThis may include custom key-value pairs that provide further context.\\n\",\"example\":{\"firstname\":\"John\",\"surname\":\"Doe\",\"type\":\"tx-300\",\"version\":\"v1.2.3\"},\"type\":\"object\"},\"currency\":{\"description\":\"Transaction currency in ISO 4217 format.\",\"example\":\"EUR\",\"maxLength\":3,\"minLength\":3,\"type\":\"string\"},\"packageorderuuid\":{\"description\":\"Unique identifier for the registered merchant in the TECS system. This value is provided by TECS during the initial merchant registration and must be used for subsequent terminal or acquirer registrations.\\n\",\"example\":\"16acb5a4-e573-423c-a024-fae90ea45d70\",\"type\":\"string\"},\"productid_acquirer\":{\"description\":\"Identifier of the product for which acquiring is to be enabled. If not provided, the default product as defined in the package may be used.\\n\",\"example\":\"874d84a8-a6f4-47fa-b594-944593fc394b\",\"type\":\"string\"},\"terminalIds\":{\"description\":\"Optional list of terminal IDs for which acquiring should be activated. If omitted, acquiring will be enabled for all terminals associated with the merchant.\\n\",\"example\":[77000001,77000002,77000003],\"items\":{\"format\":\"int32\",\"type\":\"integer\"},\"type\":\"array\"},\"terminalid_acquirer\":{\"description\":\"Optional terminal ID provided by the acquirer.\",\"example\":\"66000001\",\"type\":\"string\"},\"vu_nummer\":{\"description\":\"Merchant contract number with the acquirer.\",\"example\":\"VU-20230501-00123\",\"type\":\"string\"}},\"required\":[\"currency\",\"packageorderuuid\",\"productid_acquirer\",\"vu_nummer\"],\"title\":\"InputRegisterAdditionalAcquiring\",\"type\":\"object\"}}},\"description\":\"JSON payload containing details for registering additional acquiring. This includes the package order UUID, transaction currency, acquirer product identifier, merchant contract number, and optional terminal IDs.\\n\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputRegisterAdditionalAcquiring\",\"type\":\"object\"}}},\"description\":\"Successful registration of additional acquiring.\"},\"400\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"response_code\":{\"description\":\"Response code: 0 indicates success, any non-zero value indicates an error.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"response_message\":{\"description\":\"A human-readable error message.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"response_code\",\"response_message\"],\"type\":\"object\"}}},\"description\":\"Bad Request – Missing or invalid parameters.\"},\"401\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"response_code\":{\"description\":\"Response code: 0 indicates success, any non-zero value indicates an error.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"response_message\":{\"description\":\"A human-readable error message.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"response_code\",\"response_message\"],\"type\":\"object\"}}},\"description\":\"Unauthorized – Invalid authentication credentials provided.\"},\"403\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"response_code\":{\"description\":\"Response code: 0 indicates success, any non-zero value indicates an error.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"response_message\":{\"description\":\"A human-readable error message.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"response_code\",\"response_message\"],\"type\":\"object\"}}},\"description\":\"Forbidden – The caller does not have sufficient permissions.\"},\"500\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"response_code\":{\"description\":\"Response code: 0 indicates success, any non-zero value indicates an error.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"response_message\":{\"description\":\"A human-readable error message.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"response_code\",\"response_message\"],\"type\":\"object\"}}},\"description\":\"Internal Server Error – An unexpected error occurred on the server.\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -1436,6 +1648,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/updateMerchant",
+                    "json": "{\"operationId\":\"updateMerchantUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"city\":{\"description\":\"City where the merchant is located.\",\"example\":\"Vienna\",\"type\":\"string\"},\"corporateUUID\":{\"description\":\"Unique identifier for the corporate entity.\",\"example\":\"123e4567-e89b-12d3-a456-426614174000\",\"type\":\"string\"},\"country\":{\"description\":\"Country where the merchant is located.\",\"example\":\"Austria\",\"type\":\"string\"},\"merchantContractNumber\":{\"description\":\"Unique identifier for the merchant within a specific system.\",\"example\":987654321,\"type\":\"string\"},\"merchantName\":{\"description\":\"Name of the merchant.\",\"example\":\"Acme Corporation\",\"type\":\"string\"},\"merchant_category_code\":{\"description\":\"Merchant Category Code (MCC) describing the merchant’s type of business.\",\"example\":1234,\"type\":\"string\"},\"postalCode\":{\"description\":\"Postal or ZIP code of the merchant’s location.\",\"example\":1010,\"type\":\"string\"},\"region\":{\"description\":\"State or province where the merchant is located.\",\"example\":\"Vienna\",\"type\":\"string\"},\"registrationNumber\":{\"description\":\"Business registration number.\",\"example\":1234567890,\"type\":\"string\"},\"street\":{\"description\":\"Street address of the merchant.\",\"example\":\"Main Street 123\",\"type\":\"string\"}},\"required\":[\"corporateUUID\"],\"title\":\"InputUpdateMerchant\",\"type\":\"object\"}}},\"description\":\"inputUpdateMerchant\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputUpdateMerchant\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/updateMerchant",
@@ -1460,6 +1678,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /merchantportalws/registerMerchant",
+                    "json": "{\"operationId\":\"registerMerchantUsingPOST\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"businessRegistrationNumber\":{\"type\":\"string\"},\"companyName\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"login\":{\"type\":\"string\"},\"mandator\":{\"description\":\"Mandator name assigned by TECS.\",\"example\":\"MY_MANDATOR\",\"type\":\"string\"},\"packageUUID\":{\"description\":\"UUID of the package.\",\"example\":\"aabdf175-3035-435e-b982-4fd82ed9f763\",\"type\":\"string\"},\"phoneNumber\":{\"type\":\"string\"},\"signature\":{\"description\":\"Signature value = saltAsHex-hashAsHex. Salt as hex value = Hex.encodeHexString(saltAsByte). Hash as hex value = DigestUtils.sha256Hex(packageUUID + \\\"|\\\" + mandator + \\\"|\\\" + clientSecret + \\\"|\\\" + saltAsString).\",\"example\":\"If packageUUID is: aabdf175-3035-435e-b982-4fd82ed9f763, mandator is: MY_MANDATOR, client secret is: MY_CLIENT_SECRET, salt is: MY_SALT then signature will be 4d595f53414c54-1ec8296e5e95f99cf0495a3ad99546ad63f942e36c72de936396f881bd6ddddd\",\"type\":\"string\"}},\"required\":[\"businessRegistrationNumber\",\"companyName\",\"email\",\"language\",\"login\",\"mandator\",\"phoneNumber\"],\"title\":\"InputRegisterMerchant\",\"type\":\"object\"}}},\"description\":\"inputRegisterMerchant\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputRegisterMerchant\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/registerMerchant",
@@ -1588,6 +1812,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/availablePackages",
+                    "json": "{\"operationId\":\"availablePackagesUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"filter\":{\"properties\":{\"packageStatus\":{\"description\":\"Name of the package status\",\"example\":\"Active\",\"type\":\"string\"},\"packageUUID\":{\"type\":\"string\"},\"productType\":{\"description\":\"Name of the product type\",\"example\":\"MERCHANT_CONTRACT\",\"type\":\"string\"}},\"title\":\"InputAvailablePackages_Filter\",\"type\":\"object\"},\"language\":{\"type\":\"string\"},\"pagination\":{\"properties\":{\"page\":{\"description\":\"Number of the page to display.\",\"example\":1,\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"description\":\"Number of elements per page to display.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"}},\"title\":\"Pagination\",\"type\":\"object\"},\"sorting\":{\"properties\":{\"name\":{\"description\":\"Sort attribute name.\",\"example\":\"requestorID\",\"type\":\"string\"},\"type\":{\"description\":\"Sort type ASC / DESC.\",\"example\":\"ASC\",\"type\":\"string\"}},\"title\":\"Sorting\",\"type\":\"object\"}},\"required\":[\"language\"],\"title\":\"InputAvailablePackages\",\"type\":\"object\"}}},\"description\":\"inputAvailablePackages\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"packages\":{\"items\":{\"properties\":{\"country\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"packageStatus\":{\"type\":\"string\"},\"products\":{\"items\":{\"properties\":{\"allowMultipleOrders\":{\"type\":\"boolean\"},\"description\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"productName\":{\"type\":\"string\"},\"uuid\":{\"type\":\"string\"}},\"title\":\"OutputAvailablePackages_Product\",\"type\":\"object\"},\"type\":\"array\"},\"uuid\":{\"type\":\"string\"}},\"title\":\"OutputAvailablePackages_Package\",\"type\":\"object\"},\"type\":\"array\"},\"pagination\":{\"properties\":{\"page\":{\"description\":\"Number of the page to display.\",\"example\":1,\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"description\":\"Number of elements per page to display.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"},\"totalElements\":{\"description\":\"Number of total elements available.\",\"example\":1587,\"format\":\"int64\",\"type\":\"integer\"},\"totalPages\":{\"description\":\"Number of total pages available.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"}},\"required\":[\"totalElements\",\"totalPages\"],\"title\":\"OutputPagination\",\"type\":\"object\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"pagination\",\"responseCode\",\"responseMessage\"],\"title\":\"OutputAvailablePackages\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/availablePackages",
@@ -1622,6 +1852,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/orderPackage",
+                    "json": "{\"operationId\":\"orderPackageUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"consumerUUID\":{\"type\":\"string\"},\"corporateUUID\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"packageUUID\":{\"type\":\"string\"}},\"required\":[\"packageUUID\"],\"title\":\"InputOrderPackage\",\"type\":\"object\"}}},\"description\":\"inputOrderPackage\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"packageOrderUUID\":{\"type\":\"string\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputOrderPackage\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -1658,6 +1894,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/orderedPackages",
+                    "json": "{\"operationId\":\"orderedPackagesUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"filter\":{\"properties\":{\"consumerUUID\":{\"type\":\"string\"},\"corporateUUID\":{\"type\":\"string\"},\"dateFrom\":{\"format\":\"date-time\",\"type\":\"string\"},\"dateTo\":{\"format\":\"date-time\",\"type\":\"string\"},\"packageOrderStatus\":{\"description\":\"Name of the package order status\",\"example\":\"New\",\"type\":\"string\"},\"packageOrderUUID\":{\"type\":\"string\"},\"packageStatus\":{\"description\":\"Name of the package status\",\"example\":\"Active\",\"type\":\"string\"},\"packageUUID\":{\"type\":\"string\"},\"productOrderStatus\":{\"description\":\"Name of the product order status\",\"example\":\"New\",\"type\":\"string\"},\"productOrderUUID\":{\"type\":\"string\"},\"productUUID\":{\"type\":\"string\"}},\"title\":\"InputOrderedPackages_Filter\",\"type\":\"object\"},\"language\":{\"type\":\"string\"},\"pagination\":{\"properties\":{\"page\":{\"description\":\"Number of the page to display.\",\"example\":1,\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"description\":\"Number of elements per page to display.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"}},\"title\":\"Pagination\",\"type\":\"object\"},\"sorting\":{\"properties\":{\"name\":{\"description\":\"Sort attribute name.\",\"example\":\"requestorID\",\"type\":\"string\"},\"type\":{\"description\":\"Sort type ASC / DESC.\",\"example\":\"ASC\",\"type\":\"string\"}},\"title\":\"Sorting\",\"type\":\"object\"}},\"required\":[\"language\"],\"title\":\"InputOrderedPackages\",\"type\":\"object\"}}},\"description\":\"inputOrderedPackages\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"packageOrders\":{\"items\":{\"properties\":{\"consumerUUID\":{\"type\":\"string\"},\"corporateName\":{\"type\":\"string\"},\"corporateUUID\":{\"type\":\"string\"},\"country\":{\"type\":\"string\"},\"datetimeCreated\":{\"format\":\"date-time\",\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"numberOfRequiredFields\":{\"format\":\"int32\",\"type\":\"integer\"},\"numberOfSubmittedFields\":{\"format\":\"int32\",\"type\":\"integer\"},\"packageOrderStatus\":{\"type\":\"string\"},\"packageOrderUUID\":{\"type\":\"string\"},\"packageUUID\":{\"type\":\"string\"},\"productOrders\":{\"items\":{\"properties\":{\"allowMultipleOrders\":{\"type\":\"boolean\"},\"consumerUUID\":{\"type\":\"string\"},\"datetimeCreated\":{\"format\":\"date-time\",\"type\":\"string\"},\"numberOfRequiredFields\":{\"format\":\"int32\",\"type\":\"integer\"},\"numberOfSubmittedFields\":{\"format\":\"int32\",\"type\":\"integer\"},\"productDescription\":{\"type\":\"string\"},\"productName\":{\"type\":\"string\"},\"productOrderStatus\":{\"type\":\"string\"},\"productOrderUUID\":{\"type\":\"string\"},\"productType\":{\"type\":\"string\"},\"productUUID\":{\"type\":\"string\"},\"terminal\":{\"properties\":{\"id\":{\"type\":\"string\"},\"location\":{\"type\":\"string\"}},\"title\":\"OutputOrderedPackages_Terminal\",\"type\":\"object\"}},\"title\":\"OutputOrderedPackages_ProductOrder\",\"type\":\"object\"},\"type\":\"array\"}},\"title\":\"OutputOrderedPackages_PackageOrder\",\"type\":\"object\"},\"type\":\"array\"},\"pagination\":{\"properties\":{\"page\":{\"description\":\"Number of the page to display.\",\"example\":1,\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"description\":\"Number of elements per page to display.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"},\"totalElements\":{\"description\":\"Number of total elements available.\",\"example\":1587,\"format\":\"int64\",\"type\":\"integer\"},\"totalPages\":{\"description\":\"Number of total pages available.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"}},\"required\":[\"totalElements\",\"totalPages\"],\"title\":\"OutputPagination\",\"type\":\"object\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"pagination\",\"responseCode\",\"responseMessage\"],\"title\":\"OutputOrderedPackages\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/orderedPackages",
@@ -1693,6 +1935,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/packageTemplates",
+                    "json": "{\"operationId\":\"packageTemplatesUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"filter\":{\"properties\":{\"descriptionKey\":{\"type\":\"string\"}},\"title\":\"InputPackageTemplates_Filter\",\"type\":\"object\"},\"pagination\":{\"properties\":{\"page\":{\"description\":\"Number of the page to display.\",\"example\":1,\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"description\":\"Number of elements per page to display.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"}},\"title\":\"Pagination\",\"type\":\"object\"},\"sorting\":{\"properties\":{\"name\":{\"description\":\"Sort attribute name.\",\"example\":\"requestorID\",\"type\":\"string\"},\"type\":{\"description\":\"Sort type ASC / DESC.\",\"example\":\"ASC\",\"type\":\"string\"}},\"title\":\"Sorting\",\"type\":\"object\"}},\"title\":\"InputPackageTemplates\",\"type\":\"object\"}}},\"description\":\"inputPackageTemplates\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"packages\":{\"items\":{\"properties\":{\"descriptionKey\":{\"type\":\"string\"},\"nameKey\":{\"type\":\"string\"},\"packageUUID\":{\"type\":\"string\"}},\"title\":\"OutputPackageTemplates_Package\",\"type\":\"object\"},\"type\":\"array\"},\"pagination\":{\"properties\":{\"page\":{\"description\":\"Number of the page to display.\",\"example\":1,\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"description\":\"Number of elements per page to display.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"},\"totalElements\":{\"description\":\"Number of total elements available.\",\"example\":1587,\"format\":\"int64\",\"type\":\"integer\"},\"totalPages\":{\"description\":\"Number of total pages available.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"}},\"required\":[\"totalElements\",\"totalPages\"],\"title\":\"OutputPagination\",\"type\":\"object\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"pagination\",\"responseCode\",\"responseMessage\"],\"title\":\"OutputPackageTemplates\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/packageTemplates",
@@ -1727,6 +1975,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/updatePackageData",
+                    "json": "{\"operationId\":\"updatePackageDataUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"country\":{\"description\":\"Country associated with the package.\",\"example\":\"AT\",\"type\":\"string\"},\"descriptionKey\":{\"description\":\"Key for the description of the package.\",\"example\":\"package_description_key\",\"type\":\"string\"},\"nameKey\":{\"description\":\"Key for the name of the package.\",\"example\":\"package_name_key\",\"type\":\"string\"},\"packageStatus\":{\"description\":\"Status of the package. Possible values: Active/Inactive\",\"example\":\"Active\",\"type\":\"string\"},\"packageUUID\":{\"description\":\"Unique identifier for the package.\",\"example\":\"123e4567-e89b-12d3-a456-426655440000\",\"type\":\"string\"}},\"required\":[\"packageUUID\"],\"title\":\"InputUpdatePackageData\",\"type\":\"object\"}}},\"description\":\"inputUpdatePackageData\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputUpdatePackageData\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -1844,6 +2098,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/approveProduct",
+                    "json": "{\"operationId\":\"approveProductUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"merchantID\":{\"type\":\"string\"},\"productOrderUUID\":{\"type\":\"string\"}},\"required\":[\"productOrderUUID\"],\"title\":\"InputApproveProduct\",\"type\":\"object\"}}},\"description\":\"inputApproveProduct\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputApproveProduct\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/approveProduct",
@@ -1878,6 +2138,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/declineProduct",
+                    "json": "{\"operationId\":\"declineProductUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"productOrderUUID\":{\"type\":\"string\"},\"reason_decline\":{\"description\":\"Reason for product decline.\",\"example\":\"Switch to new product\",\"type\":\"string\"}},\"required\":[\"productOrderUUID\",\"reason_decline\"],\"title\":\"InputDeclineProduct\",\"type\":\"object\"}}},\"description\":\"inputDeclineProduct\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputDeclineProduct\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -1914,6 +2180,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/orderAdditionalProduct",
+                    "json": "{\"operationId\":\"orderAdditionalProductUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"consumerUUID\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"packageOrderUUID\":{\"type\":\"string\"},\"productUUID\":{\"type\":\"string\"}},\"required\":[\"packageOrderUUID\",\"productUUID\"],\"title\":\"InputOrderAdditionalProduct\",\"type\":\"object\"}}},\"description\":\"inputOrderAdditionalProduct\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"productOrderUUID\":{\"type\":\"string\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputOrderAdditionalProduct\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/orderAdditionalProduct",
@@ -1948,6 +2220,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/productsList",
+                    "json": "{\"operationId\":\"productsListUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"filter\":{\"properties\":{\"productUUID\":{\"description\":\"UUID of the product.\",\"example\":\"d0a0b0c0-d0a0-b0c0-d0a0-b0c0d0a0b0c0\",\"type\":\"string\"}},\"title\":\"InputProductsList_Filter\",\"type\":\"object\"},\"pagination\":{\"properties\":{\"page\":{\"description\":\"Number of the page to display.\",\"example\":1,\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"description\":\"Number of elements per page to display.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"}},\"title\":\"Pagination\",\"type\":\"object\"},\"sorting\":{\"properties\":{\"name\":{\"description\":\"Sort attribute name.\",\"example\":\"requestorID\",\"type\":\"string\"},\"type\":{\"description\":\"Sort type ASC / DESC.\",\"example\":\"ASC\",\"type\":\"string\"}},\"title\":\"Sorting\",\"type\":\"object\"}},\"title\":\"InputProductsList\",\"type\":\"object\"}}},\"description\":\"inputProductsList\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"*/*\":{\"schema\":{\"properties\":{\"pagination\":{\"properties\":{\"page\":{\"description\":\"Number of the page to display.\",\"example\":1,\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"description\":\"Number of elements per page to display.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"},\"totalElements\":{\"description\":\"Number of total elements available.\",\"example\":1587,\"format\":\"int64\",\"type\":\"integer\"},\"totalPages\":{\"description\":\"Number of total pages available.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"}},\"required\":[\"totalElements\",\"totalPages\"],\"title\":\"OutputPagination\",\"type\":\"object\"},\"products\":{\"items\":{\"properties\":{\"productDescriptionKey\":{\"description\":\"Key of the product description.\",\"example\":\"MPI software component of the 3D Secure version 1.0.2\",\"type\":\"string\"},\"productName\":{\"description\":\"Name of the product.\",\"example\":\"3D Secure version 1.0.2\",\"type\":\"string\"},\"productUUID\":{\"description\":\"UUID of the product.\",\"example\":\"d0a0b0c0-d0a0-b0c0-d0a0-b0c0d0a0b0c0\",\"type\":\"string\"},\"terminalTemplateDescription\":{\"description\":\"Description of the terminal template.\",\"example\":\"Template for the terminal configuration N9100\",\"type\":\"string\"},\"vendorName\":{\"description\":\"Name of the vendor.\",\"example\":\"TECS telecommunication & e-commerce solutions GmbH\",\"type\":\"string\"}},\"title\":\"OutputProductsList_Product\",\"type\":\"object\"},\"type\":\"array\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"pagination\",\"responseCode\",\"responseMessage\"],\"title\":\"OutputProductsList\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -2032,6 +2310,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/addProductsToPackage",
+                    "json": "{\"operationId\":\"addProductsToPackageUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"packageUUID\":{\"description\":\"Unique identifier for the package.\",\"example\":\"123e4567-e89b-12d3-a456-426614174000\",\"type\":\"string\"},\"productUUIDs\":{\"description\":\"The list of unique identifiers of the products.\",\"example\":[\"123e4567-e89b-12d3-a456-426614174000\",\"123e4567-e89b-12d3-a456-426614174001\"],\"items\":{\"type\":\"string\"},\"type\":\"array\",\"uniqueItems\":true}},\"required\":[\"packageUUID\",\"productUUIDs\"],\"title\":\"InputAddProducts\",\"type\":\"object\"}}},\"description\":\"inputAddProducts\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputAddProducts\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -2187,6 +2471,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/createNewProduct",
+                    "json": "{\"operationId\":\"createNewProductUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"acquirerId\":{\"description\":\"Unique identifier for the acquirer. Only numeric values are allowed.\",\"example\":123456789,\"type\":\"string\"},\"allowMultipleOrders\":{\"description\":\"Indication whether multiple orders are allowed or not.\",\"example\":false,\"type\":\"boolean\"},\"appFormTemplateName\":{\"description\":\"Name of the application form template.\",\"example\":\"AppForm_123\",\"type\":\"string\"},\"contractNeeded\":{\"description\":\"Indication whether contract is needed or not.\",\"example\":true,\"type\":\"boolean\"},\"credentialsNeeded\":{\"description\":\"Indication whether credentials are needed or not.\",\"example\":true,\"type\":\"boolean\"},\"descriptionKey\":{\"description\":\"Key indicator for product description.\",\"example\":\"Desc_123\",\"type\":\"string\"},\"nameKey\":{\"description\":\"Key indicator for product name.\",\"example\":\"Key_123\",\"type\":\"string\"},\"prescreeningAllowed\":{\"description\":\"Indication whether prescreening is allowed or not.\",\"example\":true,\"type\":\"boolean\"},\"productName\":{\"description\":\"Name of the product.\",\"example\":\"Product_123\",\"type\":\"string\"},\"terminalTemplateName\":{\"description\":\"Name of the terminal template.\",\"example\":\"TerminalTemplate_123\",\"type\":\"string\"},\"vendorName\":{\"description\":\"Name of the vendor.\",\"example\":\"Vendor_123\",\"type\":\"string\"},\"xmlTemplateFile\":{\"description\":\"A string value containing the XML template file encoded in Base64.\",\"example\":\"PFRlcm1pbmFsVGVtcGxhdGU+PGRlc2NyaXB0aW9uPjxEZXNjcmlwdGlvblRleHQ+VGVybWluYWwgcmVnaXN0cmF0aW9uIHRlbXBsYXRlIFRlc3Q8L0Rlc2NyaXB0aW9uVGV4dD48L2Rlc2NyaXB0aW9uPjwvVGVybWluYWxUZW1wbGF0ZT4=\",\"type\":\"string\"}},\"required\":[\"allowMultipleOrders\",\"appFormTemplateName\",\"contractNeeded\",\"descriptionKey\",\"nameKey\",\"prescreeningAllowed\",\"productName\",\"terminalTemplateName\",\"vendorName\",\"xmlTemplateFile\"],\"title\":\"InputCreateProduct\",\"type\":\"object\"}}},\"description\":\"inputCreateProduct\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputCreateProduct\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/createNewProduct",
@@ -2279,6 +2569,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /merchantportalws/batch/registerAdditionalTerminal/details/{id}",
+                    "json": "{\"operationId\":\"detailsUsingGET\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}},{\"description\":\"id\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"details\":{\"properties\":{\"batch\":{\"properties\":{\"id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"owner\":{\"type\":\"string\"},\"status\":{\"enum\":[\"COMPLETED_SUCCESSFULLY\",\"COMPLETED_WITH_ERRORS\",\"RUNNING\",\"STOPPED\"],\"type\":\"string\"},\"timestamp\":{\"type\":\"string\"}},\"title\":\"Batch\",\"type\":\"object\"},\"lines\":{\"additionalProperties\":{\"properties\":{\"data\":{\"properties\":{\"value\":{\"type\":\"string\"}},\"title\":\"Data\",\"type\":\"object\"},\"flow\":{\"properties\":{\"input\":{\"properties\":{\"additional_data\":{\"additionalProperties\":{\"type\":\"string\"},\"description\":\"Arbitrary merchant specific data related to register terminal steps.\",\"example\":{\"firstname\":\"John\",\"surname\":\"Doe\",\"type\":\"tx-300\",\"version\":\"v1.2.3\"},\"type\":\"object\"},\"currency\":{\"description\":\"Transaction currency (Has to be in \\\"ISO 4217\\\" format).\",\"example\":\"EUR\",\"type\":\"string\"},\"packageorderuuid\":{\"description\":\"Identifier of registered merchant in TECS system, provided by TECS in \\\"Merchant and terminal registration\\\" call.\",\"example\":\"dccb9a6a-b02c-46e3-aef3-a28f0b7bf993\",\"type\":\"string\"},\"password\":{\"description\":\"Merchant password for MPOS (In case if not provided, will be generated by TECS and provided in response parameters of the call).\",\"example\":\"testpassword\",\"type\":\"string\"},\"productid\":{\"description\":\"Identifier of the product for which terminal registration has to be performed.\",\"example\":\"d8af7e4f-a04f-42ea-91ac-bed20c5eebfe\",\"type\":\"string\"},\"terminal_country_code\":{\"description\":\"Terminal country code (Has to be in \\\"ISO-3166 ALPHA-3\\\" format).\",\"example\":\"SVK\",\"type\":\"string\"},\"terminal_language_code\":{\"description\":\"Terminal language code (Has to be in \\\"ISO 639-1\\\" format).\",\"example\":\"EN\",\"type\":\"string\"},\"terminal_location\":{\"description\":\"Terminal location.\",\"example\":\"Palisady 12 BA\",\"type\":\"string\"},\"terminal_serial_number\":{\"description\":\"Terminal serial number.\",\"example\":\"325-320-924\",\"type\":\"string\"},\"terminalid_acquirer\":{\"description\":\"A terminal ID set by acquirer\",\"example\":66000001,\"type\":\"string\"},\"user_email\":{\"description\":\"Email address of user, which acts in behalf of the merchant.\",\"example\":\"testemail@tecs.at\",\"type\":\"string\"},\"user_phone_number\":{\"description\":\"Phone number of user, which acts in behalf of the merchant (Has to be in international format: + country code + phone number. Example: +421910711234).\",\"example\":\"+421910876567\",\"type\":\"string\"},\"username\":{\"description\":\"Merchant username for MPOS (In case if not provided, will be generated by TECS and provided in response parameters of the call).\",\"example\":\"testuser\",\"type\":\"string\"}},\"required\":[\"currency\",\"packageorderuuid\",\"terminal_country_code\",\"terminal_language_code\",\"terminal_location\",\"terminal_serial_number\"],\"title\":\"FlowInput\",\"type\":\"object\"},\"output\":{\"properties\":{\"password\":{\"description\":\"TECS generated merchant password in case if not provided in request.\",\"example\":\"testpassword\",\"type\":\"string\"},\"responseCode\":{\"description\":\"Response code (0 = OK, otherwise an error code).\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Human readable response code representation.\",\"example\":\"OK\",\"type\":\"string\"},\"terminalid\":{\"description\":\"TECS terminalid given by TECS processing engine.\",\"example\":88091104,\"format\":\"int32\",\"type\":\"integer\"},\"username\":{\"description\":\"TECS generated merchant username in case if not provided in request.\",\"example\":\"testuser\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"FlowOutput\",\"type\":\"object\"}},\"title\":\"Flow\",\"type\":\"object\"}},\"title\":\"Line\",\"type\":\"object\"},\"type\":\"object\"},\"progress\":{\"properties\":{\"line\":{\"type\":\"string\"},\"percentage\":{\"format\":\"int32\",\"type\":\"integer\"}},\"title\":\"Progress\",\"type\":\"object\"}},\"title\":\"Details\",\"type\":\"object\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputDetails\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -2384,6 +2680,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/batch/registerAdditionalTerminal/list",
+                    "json": "{\"operationId\":\"listUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"pagination\":{\"properties\":{\"page\":{\"description\":\"Number of the page to display.\",\"example\":1,\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"description\":\"Number of elements per page to display.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"}},\"title\":\"Pagination\",\"type\":\"object\"},\"sorting\":{\"properties\":{\"name\":{\"description\":\"Sort attribute name.\",\"example\":\"requestorID\",\"type\":\"string\"},\"type\":{\"description\":\"Sort type ASC / DESC.\",\"example\":\"ASC\",\"type\":\"string\"}},\"title\":\"Sorting\",\"type\":\"object\"}},\"title\":\"InputList\",\"type\":\"object\"}}},\"description\":\"inputList\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"items\":{\"items\":{\"properties\":{\"id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"owner\":{\"type\":\"string\"},\"status\":{\"enum\":[\"COMPLETED_SUCCESSFULLY\",\"COMPLETED_WITH_ERRORS\",\"RUNNING\",\"STOPPED\"],\"type\":\"string\"},\"timestamp\":{\"type\":\"string\"}},\"title\":\"Batch\",\"type\":\"object\"},\"type\":\"array\"},\"pagination\":{\"properties\":{\"page\":{\"description\":\"Number of the page to display.\",\"example\":1,\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"description\":\"Number of elements per page to display.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"},\"totalElements\":{\"description\":\"Number of total elements available.\",\"example\":1587,\"format\":\"int64\",\"type\":\"integer\"},\"totalPages\":{\"description\":\"Number of total pages available.\",\"example\":10,\"format\":\"int32\",\"type\":\"integer\"}},\"required\":[\"totalElements\",\"totalPages\"],\"title\":\"OutputPagination\",\"type\":\"object\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"pagination\",\"responseCode\",\"responseMessage\"],\"title\":\"OutputList\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/batch/registerAdditionalTerminal/list",
@@ -2480,6 +2782,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /merchantportalws/batch/registerAdditionalTerminal/restart/{id}",
+                    "json": "{\"operationId\":\"restartUsingGET\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}},{\"description\":\"id\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputMessage\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}",
@@ -2534,6 +2842,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /merchantportalws/batch/registerAdditionalTerminal/stop/{id}",
+                    "json": "{\"operationId\":\"stopUsingGET\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}},{\"description\":\"id\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputMessage\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -2633,6 +2947,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/moveTid",
+                    "json": "{\"operationId\":\"moveTidUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"productOrderUUIDs\":{\"items\":{\"type\":\"string\"},\"type\":\"array\",\"uniqueItems\":true},\"targetPackageOrderUUID\":{\"type\":\"string\"},\"targetProductOrderUUID\":{\"type\":\"string\"}},\"required\":[\"productOrderUUIDs\",\"targetPackageOrderUUID\",\"targetProductOrderUUID\"],\"title\":\"InputMoveTid\",\"type\":\"object\"}}},\"description\":\"inputMoveTid\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputMoveTid\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/moveTid",
@@ -2717,6 +3037,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/removeProductsFromPackage",
+                    "json": "{\"operationId\":\"removeProductsFromPackageUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"packageUUID\":{\"description\":\"Unique identifier for the package.\",\"example\":\"654e3217-e98b-21d3-a456-426614174999\",\"type\":\"string\"},\"productUUIDs\":{\"description\":\"List of product unique identifiers.\",\"example\":[\"567e4345-e84b-34d2-b356-125614243567\",\"678f4543-f34c-23d1-c345-234615453451\"],\"items\":{\"type\":\"string\"},\"type\":\"array\",\"uniqueItems\":true}},\"required\":[\"packageUUID\",\"productUUIDs\"],\"title\":\"InputRemoveProducts\",\"type\":\"object\"}}},\"description\":\"inputRemoveProducts\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputRemoveProducts\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/removeProductsFromPackage",
@@ -2796,6 +3122,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /merchantportalws/batch/registerAdditionalTerminal/start",
+                    "json": "{\"operationId\":\"startUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"multipart/form-data\":{\"schema\":{\"properties\":{\"inputCsvFile\":{\"description\":\"inputCsvFile\",\"format\":\"binary\",\"type\":\"string\"},\"inputJsonMessage\":{\"type\":\"string\"}},\"required\":[\"inputCsvFile\"],\"type\":\"object\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"id\":{\"type\":\"string\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputStart\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -2905,6 +3237,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /merchantportalws/batch/registerAdditionalTerminal/status/{id}",
+                    "json": "{\"operationId\":\"statusUsingGET\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}},{\"description\":\"id\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"percentage\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"},\"status\":{\"enum\":[\"COMPLETED_SUCCESSFULLY\",\"COMPLETED_WITH_ERRORS\",\"RUNNING\",\"STOPPED\"],\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputStatus\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -3063,6 +3401,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /merchantportalws/updateProduct",
+                    "json": "{\"operationId\":\"updateProductUsingPOST\",\"parameters\":[{\"description\":\"Authorization\",\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"allowMultipleOrders\":{\"description\":\"An attribute to indicate if multiple orders are allowed\",\"example\":true,\"type\":\"boolean\"},\"appFormName\":{\"description\":\"The name of the application form\",\"example\":\"My Application Form Name\",\"type\":\"string\"},\"contractNeeded\":{\"description\":\"An attribute to indicate if a contract is needed\",\"example\":true,\"type\":\"boolean\"},\"credentialsNeeded\":{\"description\":\"An attribute to indicate if credentials are needed\",\"example\":true,\"type\":\"boolean\"},\"descriptionKey\":{\"description\":\"The description of the product\",\"example\":\"My Product Description\",\"type\":\"string\"},\"nameKey\":{\"description\":\"The key of the product name\",\"example\":\"My Product Name Key\",\"type\":\"string\"},\"prescreeningAllowed\":{\"description\":\"An attribute to indicate if prescreening is allowed\",\"example\":true,\"type\":\"boolean\"},\"productName\":{\"description\":\"The name of the product\",\"example\":\"My Product Name\",\"type\":\"string\"},\"productStatus\":{\"description\":\"The status of the product\",\"example\":\"ACTIVE\",\"type\":\"string\"},\"productUUID\":{\"description\":\"The UUID of the product to update\",\"example\":\"123e4567-e89b-12d3-a456-426614174000\",\"type\":\"string\"},\"vendorName\":{\"description\":\"The name of the vendor\",\"example\":\"My Vendor Name\",\"type\":\"string\"}},\"required\":[\"productUUID\"],\"title\":\"InputUpdateProduct\",\"type\":\"object\"}}},\"description\":\"inputUpdateProduct\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"description\":\"Response code. For success state 0. For failure state lower than 0.\",\"example\":0,\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"description\":\"Response message. For success state OK. For failure state description of the cause.\",\"example\":\"OK\",\"type\":\"string\"}},\"required\":[\"responseCode\",\"responseMessage\"],\"title\":\"OutputUpdateProduct\",\"type\":\"object\"}}},\"description\":\"OK\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/merchantportalws/updateProduct",
@@ -3101,7 +3445,12 @@
               "active": false,
               "actor": "anonymous",
               "max": 1000
-            }
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sink": "`$FUNCTION`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -3251,7 +3600,15 @@
             "options": {
               "active": false,
               "clientVersion": "0.0.1"
-            }
+            },
+            "optspec": {
+              "clientName": "`$STRING`",
+              "clientVersion": "`$STRING`",
+              "headers": "`$MAP`",
+              "idgen": "`$FUNCTION`",
+              "sessionId": "`$STRING`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -3386,6 +3743,170 @@
           "transport": "none",
           "version": "0.0.1"
         },
+        "debug": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "max": 100,
+              "redact": [
+                "authorization",
+                "cookie",
+                "set-cookie",
+                "api-key",
+                "apikey",
+                "x-api-key",
+                "idempotency-key"
+              ]
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "onEntry": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreDone": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "PreUnexpected": {
+              "active": true,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "debug",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "c": {
+              "deps": {}
+            },
+            "clojure": {
+              "deps": {}
+            },
+            "cpp": {
+              "deps": {}
+            },
+            "csharp": {
+              "deps": {}
+            },
+            "dart": {
+              "deps": {}
+            },
+            "elixir": {
+              "deps": {}
+            },
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "haskell": {
+              "deps": {}
+            },
+            "java": {
+              "deps": {}
+            },
+            "js": {
+              "deps": {}
+            },
+            "kotlin": {
+              "deps": {}
+            },
+            "lean": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "ocaml": {
+              "deps": {}
+            },
+            "perl": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "rust": {
+              "deps": {}
+            },
+            "scala": {
+              "deps": {}
+            },
+            "swift": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            },
+            "zig": {
+              "deps": {}
+            }
+          },
+          "title": "Request/response capture ring buffer for debugging",
+          "transport": "none",
+          "version": "0.0.1"
+        },
         "idempotency": {
           "active": true,
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
@@ -3404,7 +3925,11 @@
                 "update",
                 "remove"
               ]
-            }
+            },
+            "optspec": {
+              "keygen": "`$FUNCTION`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -3545,7 +4070,12 @@
           "config": {
             "options": {
               "active": true
-            }
+            },
+            "optspec": {
+              "level": "`$STRING`",
+              "logger": "`$ANY`"
+            },
+            "strict": false
           },
           "deps": {
             "js": {
@@ -3720,7 +4250,11 @@
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "now": "`$FUNCTION`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -3879,7 +4413,12 @@
               "limitParam": "limit",
               "pageParam": "page",
               "startPage": 1
-            }
+            },
+            "optspec": {
+              "limit": "`$NUMBER`",
+              "ops": "`$LIST`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -4022,7 +4561,12 @@
               "active": false,
               "burst": 5,
               "rate": 5
-            }
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -4176,7 +4720,12 @@
                 503,
                 504
               ]
-            }
+            },
+            "optspec": {
+              "jitter": "`$BOOLEAN`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -4317,7 +4866,14 @@
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "exporter": "`$FUNCTION`",
+              "headers": "`$MAP`",
+              "idgen": "`$FUNCTION`",
+              "now": "`$FUNCTION`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -4470,7 +5026,12 @@
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -4620,7 +5181,12 @@
             "options": {
               "active": false,
               "ms": 30000
-            }
+            },
+            "optspec": {
+              "clearTimer": "`$FUNCTION`",
+              "setTimer": "`$FUNCTION`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -5224,6 +5790,48 @@
         "website": "https://test.tecs.at"
       },
       "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
       "repo": {
         "host": "github.com",
         "path": ""
@@ -6031,6 +6639,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -6865,6 +7474,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -6971,7 +7581,7 @@
         "live": {
           "app": false,
           "base": "",
-          "strict": false
+          "strict": true
         }
       }
     }
