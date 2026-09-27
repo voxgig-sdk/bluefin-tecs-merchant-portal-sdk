@@ -1,0 +1,106 @@
+# Entity: output_detail
+
+main: kit: entity: output_detail: {
+
+  alias: field: {}
+
+  fields: {
+    batch: {
+      h: "Batch"
+      n: "batch"
+      r: false
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    lines: {
+      h: "Lines"
+      n: "lines"
+      r: false
+      t: "`$OBJECT`"
+    }
+    progress: {
+      h: "Progress"
+      n: "progress"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "output_detail"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /merchantportalws/batch/registerAdditionalTerminal/details/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/merchantportalws/batch/registerAdditionalTerminal/details/{id}"
+          q: {
+            exist: [
+              "authorization"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "batch"
+            }
+            {
+              lit: "registerAdditionalTerminal"
+            }
+            {
+              lit: "details"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.details`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -279,226 +279,259 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "account_number",
-                            ["short"] = "Account number provided by the acquirer.",
+                            ["title"] = "Account Number",
                             ["type"] = "`$INTEGER`",
+                            ["short"] = "Account number provided by the acquirer.",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "additional_data",
-                            ["short"] = "Arbitrary merchant-specific data related to terminal registration.",
+                            ["title"] = "Additional Data",
                             ["type"] = "`$OBJECT`",
+                            ["short"] = "Arbitrary merchant-specific data related to terminal registration.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "business_reg_number",
+                            ["title"] = "Business Reg Number",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Merchant business registration number as stated in the company registry.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "city",
+                            ["title"] = "City",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Merchant's address: city.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "corporateuuid",
-                            ["short"] = "Unique identifier for the corporate entity (UUID format).",
+                            ["title"] = "Corporateuuid",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Unique identifier for the corporate entity (UUID format).",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "country",
+                            ["title"] = "Country",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format).",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "currency",
+                            ["title"] = "Currency",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Transaction currency (must be in \"ISO 4217\" format).",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "merchant_category_code",
+                            ["title"] = "Merchant Category Code",
+                            ["type"] = "`$INTEGER`",
                             ["req"] = true,
                             ["short"] = "Merchant category code as defined by the payment network.",
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "email",
                             ["name"] = "merchant_email",
-                            ["short"] = "Merchant's email address for receiving notifications.",
+                            ["title"] = "Merchant Email",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Merchant's email address for receiving notifications.",
+                            ["format"] = "email",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchant_name",
+                            ["title"] = "Merchant Name",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "The officially incorporated company name of the merchant.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchant_phone_number",
-                            ["short"] = "Merchant's phone number for notifications.",
+                            ["title"] = "Merchant Phone Number",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Merchant's phone number for notifications.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageid",
+                            ["title"] = "Packageid",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Identifier of the package in the TECS processing engine provided by TECS.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageorderuuid",
+                            ["title"] = "Packageorderuuid",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "password",
-                            ["short"] = "Merchant password for MPOS.",
+                            ["title"] = "Password",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Merchant password for MPOS.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productid",
-                            ["short"] = "Identifier of the product for which terminal registration is to be performed.",
+                            ["title"] = "Productid",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Identifier of the product for which terminal registration is to be performed.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productid_acquirer",
-                            ["short"] = "Identifier of the product for which acquiring is enabled.",
+                            ["title"] = "Productid Acquirer",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Identifier of the product for which acquiring is enabled.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "reason_deactivation",
+                            ["title"] = "Reason Deactivation",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Reason for terminal deactivation.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "reason_reactivation",
+                            ["title"] = "Reason Reactivation",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Reason for terminal reactivation.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "sorting_code",
-                            ["short"] = "Sorting code provided by the acquirer.",
+                            ["title"] = "Sorting Code",
                             ["type"] = "`$INTEGER`",
+                            ["short"] = "Sorting code provided by the acquirer.",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "state",
-                            ["short"] = "Merchant's address: state.",
+                            ["title"] = "State",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Merchant's address: state.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "street",
+                            ["title"] = "Street",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Merchant's address: street and house number.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminal_country_code",
+                            ["title"] = "Terminal Country Code",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Terminal country code (must be in 'ISO-3166 ALPHA-3' format).",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminal_language_code",
+                            ["title"] = "Terminal Language Code",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Terminal language code (must be in 'ISO 639-1' format).",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminal_location",
+                            ["title"] = "Terminal Location",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Physical or logical location of the terminal.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminal_serial_number",
+                            ["title"] = "Terminal Serial Number",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Terminal serial number.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalid",
+                            ["title"] = "Terminalid",
+                            ["type"] = "`$INTEGER`",
                             ["req"] = true,
                             ["short"] = "TECS terminalid given by Tecs processing engine.",
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalid_acquirer",
-                            ["short"] = "Terminal ID as set by the acquirer (optional).",
+                            ["title"] = "Terminalid Acquirer",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Terminal ID as set by the acquirer (optional).",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "email",
                             ["name"] = "user_email",
-                            ["short"] = "Email address of the user acting on behalf of the merchant.",
+                            ["title"] = "User Email",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Email address of the user acting on behalf of the merchant.",
+                            ["format"] = "email",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "user_phone_number",
-                            ["short"] = "Phone number of the user acting on behalf of the merchant.",
+                            ["title"] = "User Phone Number",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Phone number of the user acting on behalf of the merchant.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "username",
-                            ["short"] = "Merchant username for MPOS.",
+                            ["title"] = "Username",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Merchant username for MPOS.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "vu_nummer",
+                            ["title"] = "Vu Nummer",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Merchant contract number with the acquirer.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "uri",
                             ["name"] = "web_shop_url",
-                            ["short"] = "URL of the merchant's web shop.",
+                            ["title"] = "Web Shop Url",
                             ["type"] = "`$STRING`",
+                            ["short"] = "URL of the merchant's web shop.",
+                            ["format"] = "uri",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "zipcode",
+                            ["title"] = "Zipcode",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Merchant's address: postal code.",
-                            ["type"] = "`$STRING`",
                         },
                     },
                     ["name"] = "merchant_portal_api_controller",
@@ -512,20 +545,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/deactivateTerminal",
@@ -540,6 +559,31 @@ public static class SdkConfig
                                             ["lit"] = "deactivateTerminal",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "deactivateTerminal",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -547,33 +591,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "deactivateTerminal",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/reactivateTerminal",
@@ -588,6 +608,31 @@ public static class SdkConfig
                                             ["lit"] = "reactivateTerminal",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "reactivateTerminal",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -595,33 +640,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "reactivateTerminal",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/registerAdditionalTerminal",
@@ -636,6 +657,31 @@ public static class SdkConfig
                                             ["lit"] = "registerAdditionalTerminal",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "registerAdditionalTerminal",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -643,33 +689,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "registerAdditionalTerminal",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/registerNewMerchant",
@@ -684,22 +706,37 @@ public static class SdkConfig
                                             ["lit"] = "registerNewMerchant",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "registerNewMerchant",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "registerNewMerchant",
                                     },
                                 },
                             },
@@ -724,7 +761,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/merchantportalws/logDeveloperInfo",
@@ -739,21 +775,22 @@ public static class SdkConfig
                                             ["lit"] = "logDeveloperInfo",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "merchantportalws",
                                         "logDeveloperInfo",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/merchantportalws/version",
@@ -768,17 +805,19 @@ public static class SdkConfig
                                             ["lit"] = "version",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "merchantportalws",
                                         "version",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -795,14 +834,16 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "language",
-                            ["req"] = true,
+                            ["title"] = "Language",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productOrderUUID",
-                            ["req"] = true,
+                            ["title"] = "Product Order Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                     },
                     ["name"] = "merchant_portal_pam_contract_controller",
@@ -816,20 +857,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/generateContract",
@@ -844,6 +871,31 @@ public static class SdkConfig
                                             ["lit"] = "generateContract",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "generateContract",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -851,33 +903,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "generateContract",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/uploadContract",
@@ -892,22 +920,37 @@ public static class SdkConfig
                                             ["lit"] = "uploadContract",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "uploadContract",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "uploadContract",
                                     },
                                 },
                             },
@@ -925,20 +968,23 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "appFormFieldDescUUID",
-                            ["req"] = true,
+                            ["title"] = "App Form Field Desc Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageOrderUUID",
-                            ["short"] = "UUID of the package order.",
+                            ["title"] = "Package Order Uuid",
                             ["type"] = "`$STRING`",
+                            ["short"] = "UUID of the package order.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productOrderUUID",
-                            ["short"] = "UUID of the product order.",
+                            ["title"] = "Product Order Uuid",
                             ["type"] = "`$STRING`",
+                            ["short"] = "UUID of the product order.",
                         },
                     },
                     ["name"] = "merchant_portal_pam_document_controller",
@@ -952,20 +998,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/documentsList",
@@ -980,6 +1012,31 @@ public static class SdkConfig
                                             ["lit"] = "documentsList",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "documentsList",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -987,33 +1044,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "documentsList",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/downloadDocument",
@@ -1028,22 +1061,37 @@ public static class SdkConfig
                                             ["lit"] = "downloadDocument",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "downloadDocument",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "downloadDocument",
                                     },
                                 },
                             },
@@ -1061,17 +1109,22 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "appFormFieldsDescUUID",
-                            ["req"] = true,
+                            ["title"] = "App Form Fields Desc Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "filter",
+                            ["title"] = "Filter",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "language",
+                            ["title"] = "Language",
+                            ["type"] = "`$STRING`",
+                            ["req"] = true,
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -1079,17 +1132,19 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["req"] = true,
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageOrder",
+                            ["title"] = "Package Order",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageOrderUUID",
+                            ["title"] = "Package Order Uuid",
+                            ["type"] = "`$STRING`",
+                            ["req"] = true,
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -1097,18 +1152,19 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["req"] = true,
                             ["short"] = "UUID of the package order.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageUUID",
+                            ["title"] = "Package Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productOrderUUID",
+                            ["title"] = "Product Order Uuid",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -1118,18 +1174,19 @@ public static class SdkConfig
                                 },
                             },
                             ["short"] = "UUID of the product order.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productOrders",
+                            ["title"] = "Product Orders",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "reasonOfReopening",
-                            ["req"] = true,
+                            ["title"] = "Reason Of Reopening",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                     },
                     ["name"] = "merchant_portal_pam_form_controller",
@@ -1143,20 +1200,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/applicationForm",
@@ -1171,6 +1214,31 @@ public static class SdkConfig
                                             ["lit"] = "applicationForm",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "applicationForm",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -1178,33 +1246,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "applicationForm",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/packageForm",
@@ -1219,6 +1263,31 @@ public static class SdkConfig
                                             ["lit"] = "packageForm",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "packageForm",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -1226,33 +1295,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "packageForm",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/reopenForm",
@@ -1267,6 +1312,31 @@ public static class SdkConfig
                                             ["lit"] = "reopenForm",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "reopenForm",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -1274,33 +1344,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "reopenForm",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/secretKey",
@@ -1315,6 +1361,31 @@ public static class SdkConfig
                                             ["lit"] = "secretKey",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "secretKey",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -1322,33 +1393,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "secretKey",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/submitForm",
@@ -1363,6 +1410,31 @@ public static class SdkConfig
                                             ["lit"] = "submitForm",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "submitForm",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -1370,33 +1442,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "submitForm",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/submitValues",
@@ -1411,22 +1459,37 @@ public static class SdkConfig
                                             ["lit"] = "submitValues",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "submitValues",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "submitValues",
                                     },
                                 },
                             },
@@ -1444,24 +1507,28 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clientSecret",
+                            ["title"] = "Client Secret",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "mandatorName",
-                            ["req"] = true,
+                            ["title"] = "Mandator Name",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "notificationEmail",
+                            ["title"] = "Notification Email",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageUUID",
-                            ["req"] = true,
+                            ["title"] = "Package Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                     },
                     ["name"] = "merchant_portal_pam_mandator_controller",
@@ -1475,20 +1542,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/createMandatorConfig",
@@ -1503,6 +1556,31 @@ public static class SdkConfig
                                             ["lit"] = "createMandatorConfig",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "createMandatorConfig",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -1510,33 +1588,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "createMandatorConfig",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/introduceMandatorPackage",
@@ -1551,6 +1605,31 @@ public static class SdkConfig
                                             ["lit"] = "introduceMandatorPackage",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "introduceMandatorPackage",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -1558,33 +1637,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "introduceMandatorPackage",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/selfRegistrationLink",
@@ -1599,22 +1654,37 @@ public static class SdkConfig
                                             ["lit"] = "selfRegistrationLink",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "selfRegistrationLink",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "selfRegistrationLink",
                                     },
                                 },
                             },
@@ -1632,75 +1702,89 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "additional_data",
-                            ["short"] = "Optional additional merchant-specific data related to enabling acquiring.",
+                            ["title"] = "Additional Data",
                             ["type"] = "`$OBJECT`",
+                            ["short"] = "Optional additional merchant-specific data related to enabling acquiring.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "businessRegistrationNumber",
-                            ["req"] = true,
+                            ["title"] = "Business Registration Number",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "city",
-                            ["short"] = "City where the merchant is located.",
+                            ["title"] = "City",
                             ["type"] = "`$STRING`",
+                            ["short"] = "City where the merchant is located.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "companyName",
-                            ["req"] = true,
+                            ["title"] = "Company Name",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "corporateUUID",
+                            ["title"] = "Corporate Uuid",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Unique identifier for the corporate entity.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "country",
-                            ["short"] = "Country where the merchant is located.",
+                            ["title"] = "Country",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Country where the merchant is located.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "currency",
+                            ["title"] = "Currency",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Transaction currency in ISO 4217 format.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "email",
-                            ["req"] = true,
+                            ["title"] = "Email",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "language",
-                            ["req"] = true,
+                            ["title"] = "Language",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "login",
-                            ["req"] = true,
+                            ["title"] = "Login",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "mandator",
+                            ["title"] = "Mandator",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Mandator name assigned by TECS.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantContractNumber",
+                            ["title"] = "Merchant Contract Number",
+                            ["type"] = "`$STRING`",
+                            ["req"] = true,
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -1708,96 +1792,108 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["req"] = true,
                             ["short"] = "Unique identifier for the merchant within a specific system.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantName",
-                            ["short"] = "Name of the merchant.",
+                            ["title"] = "Merchant Name",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Name of the merchant.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchant_category_code",
-                            ["short"] = "Merchant Category Code (MCC) describing the merchant’s type of business.",
+                            ["title"] = "Merchant Category Code",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Merchant Category Code (MCC) describing the merchant’s type of business.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageUUID",
-                            ["short"] = "UUID of the package.",
+                            ["title"] = "Package Uuid",
                             ["type"] = "`$STRING`",
+                            ["short"] = "UUID of the package.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageorderuuid",
+                            ["title"] = "Packageorderuuid",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Unique identifier for the registered merchant in the TECS system.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "phoneNumber",
-                            ["req"] = true,
+                            ["title"] = "Phone Number",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "postalCode",
-                            ["short"] = "Postal or ZIP code of the merchant’s location.",
+                            ["title"] = "Postal Code",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Postal or ZIP code of the merchant’s location.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productid_acquirer",
+                            ["title"] = "Productid Acquirer",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Identifier of the product for which acquiring is to be enabled.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "region",
-                            ["short"] = "State or province where the merchant is located.",
+                            ["title"] = "Region",
                             ["type"] = "`$STRING`",
+                            ["short"] = "State or province where the merchant is located.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "registrationNumber",
-                            ["short"] = "Business registration number.",
+                            ["title"] = "Registration Number",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Business registration number.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "signature",
-                            ["short"] = "Signature value = saltAsHex-hashAsHex.",
+                            ["title"] = "Signature",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Signature value = saltAsHex-hashAsHex.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "street",
-                            ["short"] = "Street address of the merchant.",
+                            ["title"] = "Street",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Street address of the merchant.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalIds",
-                            ["short"] = "Optional list of terminal IDs for which acquiring should be activated.",
+                            ["title"] = "Terminal Ids",
                             ["type"] = "`$ARRAY`",
+                            ["short"] = "Optional list of terminal IDs for which acquiring should be activated.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalid_acquirer",
-                            ["short"] = "Optional terminal ID provided by the acquirer.",
+                            ["title"] = "Terminalid Acquirer",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Optional terminal ID provided by the acquirer.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "vu_nummer",
+                            ["title"] = "Vu Nummer",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Merchant contract number with the acquirer.",
-                            ["type"] = "`$STRING`",
                         },
                     },
                     ["name"] = "merchant_portal_pam_merchant_controller",
@@ -1811,20 +1907,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/contractNumber",
@@ -1839,6 +1921,31 @@ public static class SdkConfig
                                             ["lit"] = "contractNumber",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "contractNumber",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -1846,33 +1953,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "contractNumber",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/registerAdditionalAcquiring",
@@ -1887,6 +1970,31 @@ public static class SdkConfig
                                             ["lit"] = "registerAdditionalAcquiring",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "registerAdditionalAcquiring",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -1894,33 +2002,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "registerAdditionalAcquiring",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/updateMerchant",
@@ -1935,6 +2019,31 @@ public static class SdkConfig
                                             ["lit"] = "updateMerchant",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "updateMerchant",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -1942,20 +2051,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "updateMerchant",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/registerMerchant",
@@ -1970,17 +2068,19 @@ public static class SdkConfig
                                             ["lit"] = "registerMerchant",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "merchantportalws",
                                         "registerMerchant",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -1997,33 +2097,41 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerUUID",
+                            ["title"] = "Consumer Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "corporateUUID",
+                            ["title"] = "Corporate Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "country",
-                            ["short"] = "Country associated with the package.",
+                            ["title"] = "Country",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Country associated with the package.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "descriptionKey",
-                            ["short"] = "Key for the description of the package.",
+                            ["title"] = "Description Key",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Key for the description of the package.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "filter",
+                            ["title"] = "Filter",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "language",
+                            ["title"] = "Language",
+                            ["type"] = "`$STRING`",
+                            ["req"] = true,
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -2031,36 +2139,39 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["req"] = true,
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "nameKey",
-                            ["short"] = "Key for the name of the package.",
+                            ["title"] = "Name Key",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Key for the name of the package.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageStatus",
-                            ["short"] = "Status of the package.",
+                            ["title"] = "Package Status",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Status of the package.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageUUID",
+                            ["title"] = "Package Uuid",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Unique identifier for the package.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "pagination",
+                            ["title"] = "Pagination",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "sorting",
+                            ["title"] = "Sorting",
                             ["type"] = "`$OBJECT`",
                         },
                     },
@@ -2075,20 +2186,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/availablePackages",
@@ -2103,6 +2200,31 @@ public static class SdkConfig
                                             ["lit"] = "availablePackages",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "availablePackages",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -2110,33 +2232,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "availablePackages",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/orderPackage",
@@ -2151,6 +2249,31 @@ public static class SdkConfig
                                             ["lit"] = "orderPackage",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "orderPackage",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -2158,33 +2281,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "orderPackage",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/orderedPackages",
@@ -2199,6 +2298,31 @@ public static class SdkConfig
                                             ["lit"] = "orderedPackages",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "orderedPackages",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -2206,33 +2330,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "orderedPackages",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/packageTemplates",
@@ -2247,6 +2347,31 @@ public static class SdkConfig
                                             ["lit"] = "packageTemplates",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "packageTemplates",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -2254,32 +2379,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "packageTemplates",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/updatePackageData",
@@ -2294,22 +2396,36 @@ public static class SdkConfig
                                             ["lit"] = "updatePackageData",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "updatePackageData",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "updatePackageData",
                                     },
                                 },
                             },
@@ -2327,56 +2443,66 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerUUID",
+                            ["title"] = "Consumer Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "filter",
+                            ["title"] = "Filter",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "language",
+                            ["title"] = "Language",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantID",
+                            ["title"] = "Merchant Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageOrderUUID",
-                            ["req"] = true,
+                            ["title"] = "Package Order Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "pagination",
+                            ["title"] = "Pagination",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productOrderUUID",
-                            ["req"] = true,
+                            ["title"] = "Product Order Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productUUID",
-                            ["req"] = true,
+                            ["title"] = "Product Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "reason_decline",
+                            ["title"] = "Reason Decline",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Reason for product decline.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "sorting",
+                            ["title"] = "Sorting",
                             ["type"] = "`$OBJECT`",
                         },
                     },
@@ -2391,20 +2517,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/approveProduct",
@@ -2419,6 +2531,31 @@ public static class SdkConfig
                                             ["lit"] = "approveProduct",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "approveProduct",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -2426,33 +2563,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "approveProduct",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/declineProduct",
@@ -2467,6 +2580,31 @@ public static class SdkConfig
                                             ["lit"] = "declineProduct",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "declineProduct",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -2474,33 +2612,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "declineProduct",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/orderAdditionalProduct",
@@ -2515,6 +2629,31 @@ public static class SdkConfig
                                             ["lit"] = "orderAdditionalProduct",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "orderAdditionalProduct",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -2522,33 +2661,9 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "orderAdditionalProduct",
-                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/productsList",
@@ -2563,22 +2678,37 @@ public static class SdkConfig
                                             ["lit"] = "productsList",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "productsList",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "productsList",
                                     },
                                 },
                             },
@@ -2596,31 +2726,35 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageUUID",
+                            ["title"] = "Package Uuid",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Unique identifier for the package.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productUUIDs",
+                            ["title"] = "Product Uui Ds",
+                            ["type"] = "`$ARRAY`",
                             ["req"] = true,
                             ["short"] = "The list of unique identifiers of the products.",
-                            ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
+                            ["type"] = "`$INTEGER`",
                             ["req"] = true,
                             ["short"] = "Response code.",
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Response message.",
-                            ["type"] = "`$STRING`",
                         },
                     },
                     ["name"] = "output_add_product",
@@ -2634,20 +2768,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/addProductsToPackage",
@@ -2662,22 +2782,37 @@ public static class SdkConfig
                                             ["lit"] = "addProductsToPackage",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "addProductsToPackage",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "addProductsToPackage",
                                     },
                                 },
                             },
@@ -2695,99 +2830,113 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "acquirerId",
-                            ["short"] = "Unique identifier for the acquirer.",
+                            ["title"] = "Acquirer Id",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Unique identifier for the acquirer.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "allowMultipleOrders",
+                            ["title"] = "Allow Multiple Orders",
+                            ["type"] = "`$BOOLEAN`",
                             ["req"] = true,
                             ["short"] = "Indication whether multiple orders are allowed or not.",
-                            ["type"] = "`$BOOLEAN`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "appFormTemplateName",
+                            ["title"] = "App Form Template Name",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Name of the application form template.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "contractNeeded",
+                            ["title"] = "Contract Needed",
+                            ["type"] = "`$BOOLEAN`",
                             ["req"] = true,
                             ["short"] = "Indication whether contract is needed or not.",
-                            ["type"] = "`$BOOLEAN`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "credentialsNeeded",
-                            ["short"] = "Indication whether credentials are needed or not.",
+                            ["title"] = "Credentials Needed",
                             ["type"] = "`$BOOLEAN`",
+                            ["short"] = "Indication whether credentials are needed or not.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "descriptionKey",
+                            ["title"] = "Description Key",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Key indicator for product description.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "nameKey",
+                            ["title"] = "Name Key",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Key indicator for product name.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "prescreeningAllowed",
+                            ["title"] = "Prescreening Allowed",
+                            ["type"] = "`$BOOLEAN`",
                             ["req"] = true,
                             ["short"] = "Indication whether prescreening is allowed or not.",
-                            ["type"] = "`$BOOLEAN`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productName",
+                            ["title"] = "Product Name",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Name of the product.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
+                            ["type"] = "`$INTEGER`",
                             ["req"] = true,
                             ["short"] = "Response code.",
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Response message.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalTemplateName",
+                            ["title"] = "Terminal Template Name",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Name of the terminal template.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "vendorName",
+                            ["title"] = "Vendor Name",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Name of the vendor.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "xmlTemplateFile",
+                            ["title"] = "Xml Template File",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "A string value containing the XML template file encoded in Base64.",
-                            ["type"] = "`$STRING`",
                         },
                     },
                     ["name"] = "output_create_product",
@@ -2801,20 +2950,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/createNewProduct",
@@ -2829,22 +2964,37 @@ public static class SdkConfig
                                             ["lit"] = "createNewProduct",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "createNewProduct",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "createNewProduct",
                                     },
                                 },
                             },
@@ -2862,21 +3012,25 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "batch",
+                            ["title"] = "Batch",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "id",
+                            ["title"] = "Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "lines",
+                            ["title"] = "Lines",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "progress",
+                            ["title"] = "Progress",
                             ["type"] = "`$OBJECT`",
                         },
                     },
@@ -2896,31 +3050,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                        ["params"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "param",
-                                                ["name"] = "id",
-                                                ["orig"] = "id",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/details/{id}",
@@ -2947,19 +3076,6 @@ public static class SdkConfig
                                             ["var"] = "id",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>
-                                    {
-                                        ["exist"] = new List<object?>
-                                        {
-                                            "authorization",
-                                            "id",
-                                        },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body.details`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "merchantportalws",
@@ -2967,6 +3083,45 @@ public static class SdkConfig
                                         "registerAdditionalTerminal",
                                         "details",
                                         "{id}",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body.details`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                        ["params"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "id",
+                                                ["orig"] = "id",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "param",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
+                                    ["select"] = new Dictionary<string, object?>
+                                    {
+                                        ["exist"] = new List<object?>
+                                        {
+                                            "authorization",
+                                            "id",
+                                        },
                                     },
                                 },
                             },
@@ -2984,11 +3139,15 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "items",
+                            ["title"] = "Items",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "pagination",
+                            ["title"] = "Pagination",
+                            ["type"] = "`$OBJECT`",
+                            ["req"] = true,
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -2996,27 +3155,28 @@ public static class SdkConfig
                                     ["type"] = "`$OBJECT`",
                                 },
                             },
-                            ["req"] = true,
-                            ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
+                            ["type"] = "`$INTEGER`",
                             ["req"] = true,
                             ["short"] = "Response code.",
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Response message.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "sorting",
+                            ["title"] = "Sorting",
                             ["type"] = "`$OBJECT`",
                         },
                     },
@@ -3031,20 +3191,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/list",
@@ -3067,24 +3213,39 @@ public static class SdkConfig
                                             ["lit"] = "list",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>
-                                    {
-                                        ["exist"] = new List<object?>
-                                        {
-                                            "authorization",
-                                        },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "merchantportalws",
                                         "batch",
                                         "registerAdditionalTerminal",
                                         "list",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
+                                    ["select"] = new Dictionary<string, object?>
+                                    {
+                                        ["exist"] = new List<object?>
+                                        {
+                                            "authorization",
+                                        },
                                     },
                                 },
                             },
@@ -3102,22 +3263,25 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "id",
+                            ["title"] = "Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
+                            ["type"] = "`$INTEGER`",
                             ["req"] = true,
                             ["short"] = "Response code.",
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Response message.",
-                            ["type"] = "`$STRING`",
                         },
                     },
                     ["id"] = new Dictionary<string, object?>
@@ -3136,31 +3300,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                        ["params"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "param",
-                                                ["name"] = "id",
-                                                ["orig"] = "id",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}",
@@ -3187,19 +3326,6 @@ public static class SdkConfig
                                             ["var"] = "id",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>
-                                    {
-                                        ["exist"] = new List<object?>
-                                        {
-                                            "authorization",
-                                            "id",
-                                        },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "merchantportalws",
@@ -3208,34 +3334,48 @@ public static class SdkConfig
                                         "restart",
                                         "{id}",
                                     },
-                                },
-                                new Dictionary<string, object?>
-                                {
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
-                                                ["reqd"] = true,
                                                 ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
                                             },
                                         },
                                         ["params"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["kind"] = "param",
                                                 ["name"] = "id",
                                                 ["orig"] = "id",
-                                                ["reqd"] = true,
                                                 ["type"] = "`$STRING`",
+                                                ["kind"] = "param",
+                                                ["reqd"] = true,
                                             },
                                         },
                                     },
+                                    ["select"] = new Dictionary<string, object?>
+                                    {
+                                        ["exist"] = new List<object?>
+                                        {
+                                            "authorization",
+                                            "id",
+                                        },
+                                    },
+                                },
+                                new Dictionary<string, object?>
+                                {
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}",
@@ -3262,19 +3402,6 @@ public static class SdkConfig
                                             ["var"] = "id",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>
-                                    {
-                                        ["exist"] = new List<object?>
-                                        {
-                                            "authorization",
-                                            "id",
-                                        },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "merchantportalws",
@@ -3282,6 +3409,45 @@ public static class SdkConfig
                                         "registerAdditionalTerminal",
                                         "stop",
                                         "{id}",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                        ["params"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "id",
+                                                ["orig"] = "id",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "param",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
+                                    ["select"] = new Dictionary<string, object?>
+                                    {
+                                        ["exist"] = new List<object?>
+                                        {
+                                            "authorization",
+                                            "id",
+                                        },
                                     },
                                 },
                             },
@@ -3299,35 +3465,40 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productOrderUUIDs",
-                            ["req"] = true,
+                            ["title"] = "Product Order Uui Ds",
                             ["type"] = "`$ARRAY`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
+                            ["type"] = "`$INTEGER`",
                             ["req"] = true,
                             ["short"] = "Response code.",
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Response message.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "targetPackageOrderUUID",
-                            ["req"] = true,
+                            ["title"] = "Target Package Order Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "targetProductOrderUUID",
-                            ["req"] = true,
+                            ["title"] = "Target Product Order Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                     },
                     ["name"] = "output_move_tid",
@@ -3341,20 +3512,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/moveTid",
@@ -3369,22 +3526,37 @@ public static class SdkConfig
                                             ["lit"] = "moveTid",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "moveTid",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "moveTid",
                                     },
                                 },
                             },
@@ -3402,31 +3574,35 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageUUID",
+                            ["title"] = "Package Uuid",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Unique identifier for the package.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productUUIDs",
+                            ["title"] = "Product Uui Ds",
+                            ["type"] = "`$ARRAY`",
                             ["req"] = true,
                             ["short"] = "List of product unique identifiers.",
-                            ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
+                            ["type"] = "`$INTEGER`",
                             ["req"] = true,
                             ["short"] = "Response code.",
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Response message.",
-                            ["type"] = "`$STRING`",
                         },
                     },
                     ["name"] = "output_remove_product",
@@ -3440,20 +3616,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/removeProductsFromPackage",
@@ -3468,22 +3630,37 @@ public static class SdkConfig
                                             ["lit"] = "removeProductsFromPackage",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "removeProductsFromPackage",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "removeProductsFromPackage",
                                     },
                                 },
                             },
@@ -3501,22 +3678,25 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "id",
+                            ["title"] = "Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
+                            ["type"] = "`$INTEGER`",
                             ["req"] = true,
                             ["short"] = "Response code.",
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Response message.",
-                            ["type"] = "`$STRING`",
                         },
                     },
                     ["id"] = new Dictionary<string, object?>
@@ -3535,20 +3715,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/start",
@@ -3571,24 +3737,39 @@ public static class SdkConfig
                                             ["lit"] = "start",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>
-                                    {
-                                        ["exist"] = new List<object?>
-                                        {
-                                            "authorization",
-                                        },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "merchantportalws",
                                         "batch",
                                         "registerAdditionalTerminal",
                                         "start",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
+                                    ["select"] = new Dictionary<string, object?>
+                                    {
+                                        ["exist"] = new List<object?>
+                                        {
+                                            "authorization",
+                                        },
                                     },
                                 },
                             },
@@ -3606,32 +3787,37 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "id",
+                            ["title"] = "Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "percentage",
+                            ["title"] = "Percentage",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
+                            ["type"] = "`$INTEGER`",
                             ["req"] = true,
                             ["short"] = "Response code.",
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Response message.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "status",
+                            ["title"] = "Status",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -3651,31 +3837,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                        ["params"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "param",
-                                                ["name"] = "id",
-                                                ["orig"] = "id",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/merchantportalws/batch/registerAdditionalTerminal/status/{id}",
@@ -3702,19 +3863,6 @@ public static class SdkConfig
                                             ["var"] = "id",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>
-                                    {
-                                        ["exist"] = new List<object?>
-                                        {
-                                            "authorization",
-                                            "id",
-                                        },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "merchantportalws",
@@ -3722,6 +3870,45 @@ public static class SdkConfig
                                         "registerAdditionalTerminal",
                                         "status",
                                         "{id}",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                        ["params"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "id",
+                                                ["orig"] = "id",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "param",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
+                                    ["select"] = new Dictionary<string, object?>
+                                    {
+                                        ["exist"] = new List<object?>
+                                        {
+                                            "authorization",
+                                            "id",
+                                        },
                                     },
                                 },
                             },
@@ -3739,84 +3926,97 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "allowMultipleOrders",
-                            ["short"] = "An attribute to indicate if multiple orders are allowed",
+                            ["title"] = "Allow Multiple Orders",
                             ["type"] = "`$BOOLEAN`",
+                            ["short"] = "An attribute to indicate if multiple orders are allowed",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "appFormName",
-                            ["short"] = "The name of the application form",
+                            ["title"] = "App Form Name",
                             ["type"] = "`$STRING`",
+                            ["short"] = "The name of the application form",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "contractNeeded",
-                            ["short"] = "An attribute to indicate if a contract is needed",
+                            ["title"] = "Contract Needed",
                             ["type"] = "`$BOOLEAN`",
+                            ["short"] = "An attribute to indicate if a contract is needed",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "credentialsNeeded",
-                            ["short"] = "An attribute to indicate if credentials are needed",
+                            ["title"] = "Credentials Needed",
                             ["type"] = "`$BOOLEAN`",
+                            ["short"] = "An attribute to indicate if credentials are needed",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "descriptionKey",
-                            ["short"] = "The description of the product",
+                            ["title"] = "Description Key",
                             ["type"] = "`$STRING`",
+                            ["short"] = "The description of the product",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "nameKey",
-                            ["short"] = "The key of the product name",
+                            ["title"] = "Name Key",
                             ["type"] = "`$STRING`",
+                            ["short"] = "The key of the product name",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "prescreeningAllowed",
-                            ["short"] = "An attribute to indicate if prescreening is allowed",
+                            ["title"] = "Prescreening Allowed",
                             ["type"] = "`$BOOLEAN`",
+                            ["short"] = "An attribute to indicate if prescreening is allowed",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productName",
-                            ["short"] = "The name of the product",
+                            ["title"] = "Product Name",
                             ["type"] = "`$STRING`",
+                            ["short"] = "The name of the product",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productStatus",
-                            ["short"] = "The status of the product",
+                            ["title"] = "Product Status",
                             ["type"] = "`$STRING`",
+                            ["short"] = "The status of the product",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productUUID",
+                            ["title"] = "Product Uuid",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "The UUID of the product to update",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
+                            ["type"] = "`$INTEGER`",
                             ["req"] = true,
                             ["short"] = "Response code.",
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Response message.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "vendorName",
-                            ["short"] = "The name of the vendor",
+                            ["title"] = "Vendor Name",
                             ["type"] = "`$STRING`",
+                            ["short"] = "The name of the vendor",
                         },
                     },
                     ["name"] = "output_update_product",
@@ -3830,20 +4030,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/merchantportalws/updateProduct",
@@ -3858,22 +4044,37 @@ public static class SdkConfig
                                             ["lit"] = "updateProduct",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "merchantportalws",
+                                        "updateProduct",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "merchantportalws",
-                                        "updateProduct",
                                     },
                                 },
                             },

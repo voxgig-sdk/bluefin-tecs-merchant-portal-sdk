@@ -50,7 +50,7 @@ static MerchantPortalApiControllerSetup merchant_portal_api_controller_basic_set
 
   MerchantPortalApiControllerSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

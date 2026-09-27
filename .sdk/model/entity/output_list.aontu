@@ -1,0 +1,103 @@
+# Entity: output_list
+
+main: kit: entity: output_list: {
+
+  alias: field: {}
+
+  fields: {
+    items: {
+      h: "Items"
+      n: "items"
+      r: false
+      t: "`$ARRAY`"
+    }
+    pagination: {
+      h: "Pagination"
+      n: "pagination"
+      op: {
+        create: {
+          req: false
+          type: "`$OBJECT`"
+        }
+      }
+      r: true
+      t: "`$OBJECT`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: true
+      sh: "Response code."
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: true
+      sh: "Response message."
+      t: "`$STRING`"
+    }
+    sorting: {
+      h: "Sorting"
+      n: "sorting"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "output_list"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /merchantportalws/batch/registerAdditionalTerminal/list"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/batch/registerAdditionalTerminal/list"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "batch"
+            }
+            {
+              lit: "registerAdditionalTerminal"
+            }
+            {
+              lit: "list"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -198,29 +198,33 @@ declare class Config {
     entity: {
         merchant_portal_api_controller: {
             fields: ({
-                format: string;
                 name: string;
-                short: string;
+                title: string;
                 type: string;
+                short: string;
+                format: string;
                 req?: undefined;
             } | {
                 name: string;
-                short: string;
+                title: string;
                 type: string;
+                short: string;
                 format?: undefined;
                 req?: undefined;
             } | {
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
                 format?: undefined;
             } | {
-                format: string;
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
+                format: string;
             })[];
             name: string;
             op: {
@@ -228,29 +232,30 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -266,19 +271,20 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {};
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {};
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {};
+                        select: {};
                     }[];
                 };
             };
@@ -289,8 +295,9 @@ declare class Config {
         merchant_portal_pam_contract_controller: {
             fields: {
                 name: string;
-                req: boolean;
+                title: string;
                 type: string;
+                req: boolean;
             }[];
             name: string;
             op: {
@@ -298,29 +305,30 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -331,13 +339,15 @@ declare class Config {
         merchant_portal_pam_document_controller: {
             fields: ({
                 name: string;
-                req: boolean;
+                title: string;
                 type: string;
+                req: boolean;
                 short?: undefined;
             } | {
                 name: string;
-                short: string;
+                title: string;
                 type: string;
+                short: string;
                 req?: undefined;
             })[];
             name: string;
@@ -346,29 +356,30 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -379,40 +390,46 @@ declare class Config {
         merchant_portal_pam_form_controller: {
             fields: ({
                 name: string;
-                req: boolean;
+                title: string;
                 type: string;
+                req: boolean;
                 op?: undefined;
                 short?: undefined;
             } | {
                 name: string;
+                title: string;
                 type: string;
                 req?: undefined;
                 op?: undefined;
                 short?: undefined;
             } | {
                 name: string;
+                title: string;
+                type: string;
+                req: boolean;
                 op: {
                     create: {
                         type: string;
                         req?: undefined;
                     };
                 };
-                req: boolean;
-                type: string;
                 short?: undefined;
             } | {
                 name: string;
+                title: string;
+                type: string;
+                req: boolean;
                 op: {
                     create: {
                         type: string;
                         req?: undefined;
                     };
                 };
-                req: boolean;
                 short: string;
-                type: string;
             } | {
                 name: string;
+                title: string;
+                type: string;
                 op: {
                     create: {
                         req: boolean;
@@ -420,7 +437,6 @@ declare class Config {
                     };
                 };
                 short: string;
-                type: string;
                 req?: undefined;
             })[];
             name: string;
@@ -429,29 +445,30 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -462,12 +479,14 @@ declare class Config {
         merchant_portal_pam_mandator_controller: {
             fields: ({
                 name: string;
+                title: string;
                 type: string;
                 req?: undefined;
             } | {
                 name: string;
-                req: boolean;
+                title: string;
                 type: string;
+                req: boolean;
             })[];
             name: string;
             op: {
@@ -475,29 +494,30 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -508,32 +528,36 @@ declare class Config {
         merchant_portal_pam_merchant_controller: {
             fields: ({
                 name: string;
-                short: string;
+                title: string;
                 type: string;
+                short: string;
                 req?: undefined;
                 op?: undefined;
             } | {
                 name: string;
-                req: boolean;
+                title: string;
                 type: string;
+                req: boolean;
                 short?: undefined;
                 op?: undefined;
             } | {
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
                 op?: undefined;
             } | {
                 name: string;
+                title: string;
+                type: string;
+                req: boolean;
                 op: {
                     create: {
                         type: string;
                     };
                 };
-                req: boolean;
                 short: string;
-                type: string;
             })[];
             name: string;
             op: {
@@ -541,47 +565,49 @@ declare class Config {
                     input: string;
                     name: string;
                     points: ({
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
+                        parts: string[];
+                        rename: {};
+                        transform: {
+                            req: string;
+                            res: string;
+                        };
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
                         select: {
                             exist: string[];
                         };
-                        transform: {
-                            req: string;
-                            res: string;
-                        };
-                        parts: string[];
                     } | {
-                        args: {
-                            header?: undefined;
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist?: undefined;
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header?: undefined;
+                        };
+                        select: {
+                            exist?: undefined;
+                        };
                     })[];
                 };
             };
@@ -592,31 +618,35 @@ declare class Config {
         merchant_portal_pam_package_controller: {
             fields: ({
                 name: string;
+                title: string;
                 type: string;
                 short?: undefined;
-                op?: undefined;
                 req?: undefined;
+                op?: undefined;
             } | {
                 name: string;
-                short: string;
+                title: string;
                 type: string;
-                op?: undefined;
+                short: string;
                 req?: undefined;
+                op?: undefined;
             } | {
                 name: string;
+                title: string;
+                type: string;
+                req: boolean;
                 op: {
                     create: {
                         type: string;
                     };
                 };
-                req: boolean;
-                type: string;
                 short?: undefined;
             } | {
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
                 op?: undefined;
             })[];
             name: string;
@@ -625,52 +655,54 @@ declare class Config {
                     input: string;
                     name: string;
                     points: ({
+                        kind: string;
+                        method: string;
+                        orig: string;
+                        segments: {
+                            lit: string;
+                        }[];
+                        parts: string[];
+                        rename: {};
+                        transform: {
+                            req: string;
+                            res: string;
+                        };
                         args: {
                             header: {
-                                kind: string;
                                 name: string;
                                 orig: string;
+                                type: string;
+                                kind: string;
                                 reqd: boolean;
-                                type: string;
                             }[];
                         };
+                        select: {
+                            exist: string[];
+                        };
+                    } | {
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
-                    } | {
                         args: {
                             header: {
-                                kind: string;
                                 name: string;
                                 orig: string;
                                 type: string;
+                                kind: string;
                             }[];
                         };
-                        kind: string;
-                        method: string;
-                        orig: string;
-                        segments: {
-                            lit: string;
-                        }[];
                         select: {
                             exist: string[];
                         };
-                        transform: {
-                            req: string;
-                            res: string;
-                        };
-                        parts: string[];
                     })[];
                 };
             };
@@ -681,19 +713,22 @@ declare class Config {
         merchant_portal_pam_product_controller: {
             fields: ({
                 name: string;
+                title: string;
                 type: string;
                 req?: undefined;
                 short?: undefined;
             } | {
                 name: string;
-                req: boolean;
+                title: string;
                 type: string;
+                req: boolean;
                 short?: undefined;
             } | {
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
             })[];
             name: string;
             op: {
@@ -701,29 +736,30 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -734,16 +770,18 @@ declare class Config {
         output_add_product: {
             fields: ({
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
                 format?: undefined;
             } | {
-                format: string;
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
+                format: string;
             })[];
             name: string;
             op: {
@@ -751,29 +789,30 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -784,22 +823,25 @@ declare class Config {
         output_create_product: {
             fields: ({
                 name: string;
-                short: string;
+                title: string;
                 type: string;
+                short: string;
                 req?: undefined;
                 format?: undefined;
             } | {
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
                 format?: undefined;
             } | {
-                format: string;
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
+                format: string;
             })[];
             name: string;
             op: {
@@ -807,29 +849,30 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -840,6 +883,7 @@ declare class Config {
         output_detail: {
             fields: {
                 name: string;
+                title: string;
                 type: string;
             }[];
             id: {
@@ -852,22 +896,6 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                            params: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
@@ -878,14 +906,31 @@ declare class Config {
                             var: string;
                             lit?: undefined;
                         })[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                            params: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -896,34 +941,38 @@ declare class Config {
         output_list: {
             fields: ({
                 name: string;
+                title: string;
                 type: string;
-                op?: undefined;
                 req?: undefined;
-                format?: undefined;
+                op?: undefined;
                 short?: undefined;
+                format?: undefined;
             } | {
                 name: string;
+                title: string;
+                type: string;
+                req: boolean;
                 op: {
                     create: {
                         type: string;
                     };
                 };
-                req: boolean;
-                type: string;
-                format?: undefined;
                 short?: undefined;
+                format?: undefined;
             } | {
-                format: string;
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
+                format: string;
                 op?: undefined;
             } | {
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
                 op?: undefined;
                 format?: undefined;
             })[];
@@ -933,29 +982,30 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -966,21 +1016,24 @@ declare class Config {
         output_message: {
             fields: ({
                 name: string;
+                title: string;
                 type: string;
-                format?: undefined;
                 req?: undefined;
                 short?: undefined;
+                format?: undefined;
             } | {
+                name: string;
+                title: string;
+                type: string;
+                req: boolean;
+                short: string;
                 format: string;
-                name: string;
-                req: boolean;
-                short: string;
-                type: string;
             } | {
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
                 format?: undefined;
             })[];
             id: {
@@ -993,22 +1046,6 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                            params: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
@@ -1019,14 +1056,31 @@ declare class Config {
                             var: string;
                             lit?: undefined;
                         })[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                            params: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -1037,21 +1091,24 @@ declare class Config {
         output_move_tid: {
             fields: ({
                 name: string;
-                req: boolean;
+                title: string;
                 type: string;
-                format?: undefined;
+                req: boolean;
                 short?: undefined;
+                format?: undefined;
             } | {
+                name: string;
+                title: string;
+                type: string;
+                req: boolean;
+                short: string;
                 format: string;
-                name: string;
-                req: boolean;
-                short: string;
-                type: string;
             } | {
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
                 format?: undefined;
             })[];
             name: string;
@@ -1060,29 +1117,30 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -1093,16 +1151,18 @@ declare class Config {
         output_remove_product: {
             fields: ({
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
                 format?: undefined;
             } | {
-                format: string;
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
+                format: string;
             })[];
             name: string;
             op: {
@@ -1110,29 +1170,30 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -1143,21 +1204,24 @@ declare class Config {
         output_start: {
             fields: ({
                 name: string;
+                title: string;
                 type: string;
-                format?: undefined;
                 req?: undefined;
                 short?: undefined;
+                format?: undefined;
             } | {
+                name: string;
+                title: string;
+                type: string;
+                req: boolean;
+                short: string;
                 format: string;
-                name: string;
-                req: boolean;
-                short: string;
-                type: string;
             } | {
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
                 format?: undefined;
             })[];
             id: {
@@ -1170,29 +1234,30 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -1203,27 +1268,31 @@ declare class Config {
         output_status: {
             fields: ({
                 name: string;
+                title: string;
                 type: string;
                 format?: undefined;
                 req?: undefined;
                 short?: undefined;
             } | {
-                format: string;
                 name: string;
+                title: string;
                 type: string;
+                format: string;
                 req?: undefined;
                 short?: undefined;
             } | {
-                format: string;
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
+                format: string;
             } | {
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
                 format?: undefined;
             })[];
             id: {
@@ -1236,22 +1305,6 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                            params: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
@@ -1262,14 +1315,31 @@ declare class Config {
                             var: string;
                             lit?: undefined;
                         })[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                            params: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };
@@ -1280,22 +1350,25 @@ declare class Config {
         output_update_product: {
             fields: ({
                 name: string;
-                short: string;
+                title: string;
                 type: string;
+                short: string;
                 req?: undefined;
                 format?: undefined;
             } | {
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
                 format?: undefined;
             } | {
-                format: string;
                 name: string;
+                title: string;
+                type: string;
                 req: boolean;
                 short: string;
-                type: string;
+                format: string;
             })[];
             name: string;
             op: {
@@ -1303,29 +1376,30 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {
+                            header: {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                reqd: boolean;
+                            }[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };

@@ -1,0 +1,230 @@
+# Entity: merchant_portal_pam_product_controller
+
+main: kit: entity: merchant_portal_pam_product_controller: {
+
+  alias: field: {}
+
+  fields: {
+    consumerUUID: {
+      h: "Consumer Uuid"
+      n: "consumerUUID"
+      r: false
+      t: "`$STRING`"
+    }
+    filter: {
+      h: "Filter"
+      n: "filter"
+      r: false
+      t: "`$OBJECT`"
+    }
+    language: {
+      h: "Language"
+      n: "language"
+      r: false
+      t: "`$STRING`"
+    }
+    merchantID: {
+      h: "Merchant Id"
+      n: "merchantID"
+      r: false
+      t: "`$STRING`"
+    }
+    packageOrderUUID: {
+      h: "Package Order Uuid"
+      n: "packageOrderUUID"
+      r: true
+      t: "`$STRING`"
+    }
+    pagination: {
+      h: "Pagination"
+      n: "pagination"
+      r: false
+      t: "`$OBJECT`"
+    }
+    productOrderUUID: {
+      h: "Product Order Uuid"
+      n: "productOrderUUID"
+      r: true
+      t: "`$STRING`"
+    }
+    productUUID: {
+      h: "Product Uuid"
+      n: "productUUID"
+      r: true
+      t: "`$STRING`"
+    }
+    reason_decline: {
+      h: "Reason Decline"
+      n: "reason_decline"
+      r: true
+      sh: "Reason for product decline."
+      t: "`$STRING`"
+    }
+    sorting: {
+      h: "Sorting"
+      n: "sorting"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "merchant_portal_pam_product_controller"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /merchantportalws/approveProduct"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/approveProduct"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "approveProduct"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/declineProduct"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/declineProduct"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "declineProduct"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/orderAdditionalProduct"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/orderAdditionalProduct"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "orderAdditionalProduct"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/productsList"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/productsList"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "productsList"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -230,194 +230,227 @@ func MakeConfig() map[string]any {
 			"merchant_portal_api_controller": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"format": "int32",
 						"name": "account_number",
-						"short": "Account number provided by the acquirer.",
+						"title": "Account Number",
 						"type": "`$INTEGER`",
+						"short": "Account number provided by the acquirer.",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "additional_data",
-						"short": "Arbitrary merchant-specific data related to terminal registration.",
+						"title": "Additional Data",
 						"type": "`$OBJECT`",
+						"short": "Arbitrary merchant-specific data related to terminal registration.",
 					},
 					map[string]any{
 						"name": "business_reg_number",
+						"title": "Business Reg Number",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Merchant business registration number as stated in the company registry.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "city",
+						"title": "City",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Merchant's address: city.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "corporateuuid",
-						"short": "Unique identifier for the corporate entity (UUID format).",
+						"title": "Corporateuuid",
 						"type": "`$STRING`",
+						"short": "Unique identifier for the corporate entity (UUID format).",
 					},
 					map[string]any{
 						"name": "country",
+						"title": "Country",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format).",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "currency",
+						"title": "Currency",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Transaction currency (must be in \"ISO 4217\" format).",
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "merchant_category_code",
+						"title": "Merchant Category Code",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "Merchant category code as defined by the payment network.",
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
-						"format": "email",
 						"name": "merchant_email",
-						"short": "Merchant's email address for receiving notifications.",
+						"title": "Merchant Email",
 						"type": "`$STRING`",
+						"short": "Merchant's email address for receiving notifications.",
+						"format": "email",
 					},
 					map[string]any{
 						"name": "merchant_name",
+						"title": "Merchant Name",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The officially incorporated company name of the merchant.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchant_phone_number",
-						"short": "Merchant's phone number for notifications.",
+						"title": "Merchant Phone Number",
 						"type": "`$STRING`",
+						"short": "Merchant's phone number for notifications.",
 					},
 					map[string]any{
 						"name": "packageid",
+						"title": "Packageid",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Identifier of the package in the TECS processing engine provided by TECS.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "packageorderuuid",
+						"title": "Packageorderuuid",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "password",
-						"short": "Merchant password for MPOS.",
+						"title": "Password",
 						"type": "`$STRING`",
+						"short": "Merchant password for MPOS.",
 					},
 					map[string]any{
 						"name": "productid",
-						"short": "Identifier of the product for which terminal registration is to be performed.",
+						"title": "Productid",
 						"type": "`$STRING`",
+						"short": "Identifier of the product for which terminal registration is to be performed.",
 					},
 					map[string]any{
 						"name": "productid_acquirer",
-						"short": "Identifier of the product for which acquiring is enabled.",
+						"title": "Productid Acquirer",
 						"type": "`$STRING`",
+						"short": "Identifier of the product for which acquiring is enabled.",
 					},
 					map[string]any{
 						"name": "reason_deactivation",
+						"title": "Reason Deactivation",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Reason for terminal deactivation.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "reason_reactivation",
+						"title": "Reason Reactivation",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Reason for terminal reactivation.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "sorting_code",
-						"short": "Sorting code provided by the acquirer.",
+						"title": "Sorting Code",
 						"type": "`$INTEGER`",
+						"short": "Sorting code provided by the acquirer.",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "state",
-						"short": "Merchant's address: state.",
+						"title": "State",
 						"type": "`$STRING`",
+						"short": "Merchant's address: state.",
 					},
 					map[string]any{
 						"name": "street",
+						"title": "Street",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Merchant's address: street and house number.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminal_country_code",
+						"title": "Terminal Country Code",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Terminal country code (must be in 'ISO-3166 ALPHA-3' format).",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminal_language_code",
+						"title": "Terminal Language Code",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Terminal language code (must be in 'ISO 639-1' format).",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminal_location",
+						"title": "Terminal Location",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Physical or logical location of the terminal.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminal_serial_number",
+						"title": "Terminal Serial Number",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Terminal serial number.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalid",
+						"title": "Terminalid",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "TECS terminalid given by Tecs processing engine.",
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "terminalid_acquirer",
-						"short": "Terminal ID as set by the acquirer (optional).",
+						"title": "Terminalid Acquirer",
 						"type": "`$STRING`",
+						"short": "Terminal ID as set by the acquirer (optional).",
 					},
 					map[string]any{
-						"format": "email",
 						"name": "user_email",
-						"short": "Email address of the user acting on behalf of the merchant.",
+						"title": "User Email",
 						"type": "`$STRING`",
+						"short": "Email address of the user acting on behalf of the merchant.",
+						"format": "email",
 					},
 					map[string]any{
 						"name": "user_phone_number",
-						"short": "Phone number of the user acting on behalf of the merchant.",
+						"title": "User Phone Number",
 						"type": "`$STRING`",
+						"short": "Phone number of the user acting on behalf of the merchant.",
 					},
 					map[string]any{
 						"name": "username",
-						"short": "Merchant username for MPOS.",
+						"title": "Username",
 						"type": "`$STRING`",
+						"short": "Merchant username for MPOS.",
 					},
 					map[string]any{
 						"name": "vu_nummer",
+						"title": "Vu Nummer",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Merchant contract number with the acquirer.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "web_shop_url",
-						"short": "URL of the merchant's web shop.",
+						"title": "Web Shop Url",
 						"type": "`$STRING`",
+						"short": "URL of the merchant's web shop.",
+						"format": "uri",
 					},
 					map[string]any{
 						"name": "zipcode",
+						"title": "Zipcode",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Merchant's address: postal code.",
-						"type": "`$STRING`",
 					},
 				},
 				"name": "merchant_portal_api_controller",
@@ -427,17 +460,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/deactivateTerminal",
@@ -449,32 +471,33 @@ func MakeConfig() map[string]any {
 										"lit": "deactivateTerminal",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"deactivateTerminal",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"deactivateTerminal",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/reactivateTerminal",
@@ -486,32 +509,33 @@ func MakeConfig() map[string]any {
 										"lit": "reactivateTerminal",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"reactivateTerminal",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"reactivateTerminal",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/registerAdditionalTerminal",
@@ -523,32 +547,33 @@ func MakeConfig() map[string]any {
 										"lit": "registerAdditionalTerminal",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"registerAdditionalTerminal",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"registerAdditionalTerminal",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/registerNewMerchant",
@@ -560,18 +585,30 @@ func MakeConfig() map[string]any {
 										"lit": "registerNewMerchant",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
+								"parts": []any{
+									"merchantportalws",
+									"registerNewMerchant",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"merchantportalws",
-									"registerNewMerchant",
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+									},
 								},
 							},
 						},
@@ -590,7 +627,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/merchantportalws/logDeveloperInfo",
@@ -602,18 +638,19 @@ func MakeConfig() map[string]any {
 										"lit": "logDeveloperInfo",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"merchantportalws",
 									"logDeveloperInfo",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/merchantportalws/version",
@@ -625,15 +662,17 @@ func MakeConfig() map[string]any {
 										"lit": "version",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"merchantportalws",
 									"version",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -646,13 +685,15 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "language",
-						"req": true,
+						"title": "Language",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "productOrderUUID",
-						"req": true,
+						"title": "Product Order Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 				},
 				"name": "merchant_portal_pam_contract_controller",
@@ -662,17 +703,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/generateContract",
@@ -684,32 +714,33 @@ func MakeConfig() map[string]any {
 										"lit": "generateContract",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"generateContract",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"generateContract",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/uploadContract",
@@ -721,18 +752,30 @@ func MakeConfig() map[string]any {
 										"lit": "uploadContract",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
+								"parts": []any{
+									"merchantportalws",
+									"uploadContract",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"merchantportalws",
-									"uploadContract",
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+									},
 								},
 							},
 						},
@@ -746,18 +789,21 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "appFormFieldDescUUID",
-						"req": true,
+						"title": "App Form Field Desc Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "packageOrderUUID",
-						"short": "UUID of the package order.",
+						"title": "Package Order Uuid",
 						"type": "`$STRING`",
+						"short": "UUID of the package order.",
 					},
 					map[string]any{
 						"name": "productOrderUUID",
-						"short": "UUID of the product order.",
+						"title": "Product Order Uuid",
 						"type": "`$STRING`",
+						"short": "UUID of the product order.",
 					},
 				},
 				"name": "merchant_portal_pam_document_controller",
@@ -767,17 +813,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/documentsList",
@@ -789,32 +824,33 @@ func MakeConfig() map[string]any {
 										"lit": "documentsList",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"documentsList",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"documentsList",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/downloadDocument",
@@ -826,18 +862,30 @@ func MakeConfig() map[string]any {
 										"lit": "downloadDocument",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
+								"parts": []any{
+									"merchantportalws",
+									"downloadDocument",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"merchantportalws",
-									"downloadDocument",
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+									},
 								},
 							},
 						},
@@ -851,44 +899,52 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "appFormFieldsDescUUID",
-						"req": true,
+						"title": "App Form Fields Desc Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "filter",
+						"title": "Filter",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "language",
+						"title": "Language",
+						"type": "`$STRING`",
+						"req": true,
 						"op": map[string]any{
 							"create": map[string]any{
 								"type": "`$STRING`",
 							},
 						},
-						"req": true,
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "packageOrder",
+						"title": "Package Order",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "packageOrderUUID",
+						"title": "Package Order Uuid",
+						"type": "`$STRING`",
+						"req": true,
 						"op": map[string]any{
 							"create": map[string]any{
 								"type": "`$STRING`",
 							},
 						},
-						"req": true,
 						"short": "UUID of the package order.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "packageUUID",
+						"title": "Package Uuid",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productOrderUUID",
+						"title": "Product Order Uuid",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
@@ -896,16 +952,17 @@ func MakeConfig() map[string]any {
 							},
 						},
 						"short": "UUID of the product order.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productOrders",
+						"title": "Product Orders",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "reasonOfReopening",
-						"req": true,
+						"title": "Reason Of Reopening",
 						"type": "`$STRING`",
+						"req": true,
 					},
 				},
 				"name": "merchant_portal_pam_form_controller",
@@ -915,17 +972,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/applicationForm",
@@ -937,32 +983,33 @@ func MakeConfig() map[string]any {
 										"lit": "applicationForm",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"applicationForm",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"applicationForm",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/packageForm",
@@ -974,32 +1021,33 @@ func MakeConfig() map[string]any {
 										"lit": "packageForm",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"packageForm",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"packageForm",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/reopenForm",
@@ -1011,32 +1059,33 @@ func MakeConfig() map[string]any {
 										"lit": "reopenForm",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"reopenForm",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"reopenForm",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/secretKey",
@@ -1048,32 +1097,33 @@ func MakeConfig() map[string]any {
 										"lit": "secretKey",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"secretKey",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"secretKey",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/submitForm",
@@ -1085,32 +1135,33 @@ func MakeConfig() map[string]any {
 										"lit": "submitForm",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"submitForm",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"submitForm",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/submitValues",
@@ -1122,18 +1173,30 @@ func MakeConfig() map[string]any {
 										"lit": "submitValues",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
+								"parts": []any{
+									"merchantportalws",
+									"submitValues",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"merchantportalws",
-									"submitValues",
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+									},
 								},
 							},
 						},
@@ -1147,21 +1210,25 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "clientSecret",
+						"title": "Client Secret",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "mandatorName",
-						"req": true,
+						"title": "Mandator Name",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "notificationEmail",
+						"title": "Notification Email",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "packageUUID",
-						"req": true,
+						"title": "Package Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 				},
 				"name": "merchant_portal_pam_mandator_controller",
@@ -1171,17 +1238,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/createMandatorConfig",
@@ -1193,32 +1249,33 @@ func MakeConfig() map[string]any {
 										"lit": "createMandatorConfig",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"createMandatorConfig",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"createMandatorConfig",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/introduceMandatorPackage",
@@ -1230,32 +1287,33 @@ func MakeConfig() map[string]any {
 										"lit": "introduceMandatorPackage",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"introduceMandatorPackage",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"introduceMandatorPackage",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/selfRegistrationLink",
@@ -1267,18 +1325,30 @@ func MakeConfig() map[string]any {
 										"lit": "selfRegistrationLink",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
+								"parts": []any{
+									"merchantportalws",
+									"selfRegistrationLink",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"merchantportalws",
-									"selfRegistrationLink",
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+									},
 								},
 							},
 						},
@@ -1292,145 +1362,171 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "additional_data",
-						"short": "Optional additional merchant-specific data related to enabling acquiring.",
+						"title": "Additional Data",
 						"type": "`$OBJECT`",
+						"short": "Optional additional merchant-specific data related to enabling acquiring.",
 					},
 					map[string]any{
 						"name": "businessRegistrationNumber",
-						"req": true,
+						"title": "Business Registration Number",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "city",
-						"short": "City where the merchant is located.",
+						"title": "City",
 						"type": "`$STRING`",
+						"short": "City where the merchant is located.",
 					},
 					map[string]any{
 						"name": "companyName",
-						"req": true,
+						"title": "Company Name",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "corporateUUID",
+						"title": "Corporate Uuid",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Unique identifier for the corporate entity.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "country",
-						"short": "Country where the merchant is located.",
+						"title": "Country",
 						"type": "`$STRING`",
+						"short": "Country where the merchant is located.",
 					},
 					map[string]any{
 						"name": "currency",
+						"title": "Currency",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Transaction currency in ISO 4217 format.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "email",
-						"req": true,
+						"title": "Email",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "language",
-						"req": true,
+						"title": "Language",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "login",
-						"req": true,
+						"title": "Login",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "mandator",
+						"title": "Mandator",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Mandator name assigned by TECS.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantContractNumber",
+						"title": "Merchant Contract Number",
+						"type": "`$STRING`",
+						"req": true,
 						"op": map[string]any{
 							"create": map[string]any{
 								"type": "`$STRING`",
 							},
 						},
-						"req": true,
 						"short": "Unique identifier for the merchant within a specific system.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantName",
-						"short": "Name of the merchant.",
+						"title": "Merchant Name",
 						"type": "`$STRING`",
+						"short": "Name of the merchant.",
 					},
 					map[string]any{
 						"name": "merchant_category_code",
-						"short": "Merchant Category Code (MCC) describing the merchant’s type of business.",
+						"title": "Merchant Category Code",
 						"type": "`$STRING`",
+						"short": "Merchant Category Code (MCC) describing the merchant’s type of business.",
 					},
 					map[string]any{
 						"name": "packageUUID",
-						"short": "UUID of the package.",
+						"title": "Package Uuid",
 						"type": "`$STRING`",
+						"short": "UUID of the package.",
 					},
 					map[string]any{
 						"name": "packageorderuuid",
+						"title": "Packageorderuuid",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Unique identifier for the registered merchant in the TECS system.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "phoneNumber",
-						"req": true,
+						"title": "Phone Number",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "postalCode",
-						"short": "Postal or ZIP code of the merchant’s location.",
+						"title": "Postal Code",
 						"type": "`$STRING`",
+						"short": "Postal or ZIP code of the merchant’s location.",
 					},
 					map[string]any{
 						"name": "productid_acquirer",
+						"title": "Productid Acquirer",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Identifier of the product for which acquiring is to be enabled.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "region",
-						"short": "State or province where the merchant is located.",
+						"title": "Region",
 						"type": "`$STRING`",
+						"short": "State or province where the merchant is located.",
 					},
 					map[string]any{
 						"name": "registrationNumber",
-						"short": "Business registration number.",
+						"title": "Registration Number",
 						"type": "`$STRING`",
+						"short": "Business registration number.",
 					},
 					map[string]any{
 						"name": "signature",
-						"short": "Signature value = saltAsHex-hashAsHex.",
+						"title": "Signature",
 						"type": "`$STRING`",
+						"short": "Signature value = saltAsHex-hashAsHex.",
 					},
 					map[string]any{
 						"name": "street",
-						"short": "Street address of the merchant.",
+						"title": "Street",
 						"type": "`$STRING`",
+						"short": "Street address of the merchant.",
 					},
 					map[string]any{
 						"name": "terminalIds",
-						"short": "Optional list of terminal IDs for which acquiring should be activated.",
+						"title": "Terminal Ids",
 						"type": "`$ARRAY`",
+						"short": "Optional list of terminal IDs for which acquiring should be activated.",
 					},
 					map[string]any{
 						"name": "terminalid_acquirer",
-						"short": "Optional terminal ID provided by the acquirer.",
+						"title": "Terminalid Acquirer",
 						"type": "`$STRING`",
+						"short": "Optional terminal ID provided by the acquirer.",
 					},
 					map[string]any{
 						"name": "vu_nummer",
+						"title": "Vu Nummer",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Merchant contract number with the acquirer.",
-						"type": "`$STRING`",
 					},
 				},
 				"name": "merchant_portal_pam_merchant_controller",
@@ -1440,17 +1536,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/contractNumber",
@@ -1462,32 +1547,33 @@ func MakeConfig() map[string]any {
 										"lit": "contractNumber",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"contractNumber",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"contractNumber",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/registerAdditionalAcquiring",
@@ -1499,32 +1585,33 @@ func MakeConfig() map[string]any {
 										"lit": "registerAdditionalAcquiring",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"registerAdditionalAcquiring",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"registerAdditionalAcquiring",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/updateMerchant",
@@ -1536,22 +1623,33 @@ func MakeConfig() map[string]any {
 										"lit": "updateMerchant",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"updateMerchant",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"updateMerchant",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/registerMerchant",
@@ -1563,15 +1661,17 @@ func MakeConfig() map[string]any {
 										"lit": "registerMerchant",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"merchantportalws",
 									"registerMerchant",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1584,58 +1684,69 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "consumerUUID",
+						"title": "Consumer Uuid",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "corporateUUID",
+						"title": "Corporate Uuid",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "country",
-						"short": "Country associated with the package.",
+						"title": "Country",
 						"type": "`$STRING`",
+						"short": "Country associated with the package.",
 					},
 					map[string]any{
 						"name": "descriptionKey",
-						"short": "Key for the description of the package.",
+						"title": "Description Key",
 						"type": "`$STRING`",
+						"short": "Key for the description of the package.",
 					},
 					map[string]any{
 						"name": "filter",
+						"title": "Filter",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "language",
+						"title": "Language",
+						"type": "`$STRING`",
+						"req": true,
 						"op": map[string]any{
 							"create": map[string]any{
 								"type": "`$STRING`",
 							},
 						},
-						"req": true,
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nameKey",
-						"short": "Key for the name of the package.",
+						"title": "Name Key",
 						"type": "`$STRING`",
+						"short": "Key for the name of the package.",
 					},
 					map[string]any{
 						"name": "packageStatus",
-						"short": "Status of the package.",
+						"title": "Package Status",
 						"type": "`$STRING`",
+						"short": "Status of the package.",
 					},
 					map[string]any{
 						"name": "packageUUID",
+						"title": "Package Uuid",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Unique identifier for the package.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "pagination",
+						"title": "Pagination",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "sorting",
+						"title": "Sorting",
 						"type": "`$OBJECT`",
 					},
 				},
@@ -1646,17 +1757,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/availablePackages",
@@ -1668,32 +1768,33 @@ func MakeConfig() map[string]any {
 										"lit": "availablePackages",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"availablePackages",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"availablePackages",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/orderPackage",
@@ -1705,32 +1806,33 @@ func MakeConfig() map[string]any {
 										"lit": "orderPackage",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"orderPackage",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"orderPackage",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/orderedPackages",
@@ -1742,32 +1844,33 @@ func MakeConfig() map[string]any {
 										"lit": "orderedPackages",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"orderedPackages",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"orderedPackages",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/packageTemplates",
@@ -1779,31 +1882,33 @@ func MakeConfig() map[string]any {
 										"lit": "packageTemplates",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"packageTemplates",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"packageTemplates",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/updatePackageData",
@@ -1815,18 +1920,29 @@ func MakeConfig() map[string]any {
 										"lit": "updatePackageData",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
+								"parts": []any{
+									"merchantportalws",
+									"updatePackageData",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"merchantportalws",
-									"updatePackageData",
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+									},
 								},
 							},
 						},
@@ -1840,47 +1956,57 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "consumerUUID",
+						"title": "Consumer Uuid",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "filter",
+						"title": "Filter",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "language",
+						"title": "Language",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantID",
+						"title": "Merchant Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "packageOrderUUID",
-						"req": true,
+						"title": "Package Order Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "pagination",
+						"title": "Pagination",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "productOrderUUID",
-						"req": true,
+						"title": "Product Order Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "productUUID",
-						"req": true,
+						"title": "Product Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "reason_decline",
+						"title": "Reason Decline",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Reason for product decline.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "sorting",
+						"title": "Sorting",
 						"type": "`$OBJECT`",
 					},
 				},
@@ -1891,17 +2017,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/approveProduct",
@@ -1913,32 +2028,33 @@ func MakeConfig() map[string]any {
 										"lit": "approveProduct",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"approveProduct",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"approveProduct",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/declineProduct",
@@ -1950,32 +2066,33 @@ func MakeConfig() map[string]any {
 										"lit": "declineProduct",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"declineProduct",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"declineProduct",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/orderAdditionalProduct",
@@ -1987,32 +2104,33 @@ func MakeConfig() map[string]any {
 										"lit": "orderAdditionalProduct",
 									},
 								},
+								"parts": []any{
+									"merchantportalws",
+									"orderAdditionalProduct",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"merchantportalws",
-									"orderAdditionalProduct",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/productsList",
@@ -2024,18 +2142,30 @@ func MakeConfig() map[string]any {
 										"lit": "productsList",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
+								"parts": []any{
+									"merchantportalws",
+									"productsList",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"merchantportalws",
-									"productsList",
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+									},
 								},
 							},
 						},
@@ -2049,28 +2179,32 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "packageUUID",
+						"title": "Package Uuid",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Unique identifier for the package.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productUUIDs",
+						"title": "Product Uui Ds",
+						"type": "`$ARRAY`",
 						"req": true,
 						"short": "The list of unique identifiers of the products.",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "Response code.",
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Response message.",
-						"type": "`$STRING`",
 					},
 				},
 				"name": "output_add_product",
@@ -2080,17 +2214,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/addProductsToPackage",
@@ -2102,18 +2225,30 @@ func MakeConfig() map[string]any {
 										"lit": "addProductsToPackage",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
+								"parts": []any{
+									"merchantportalws",
+									"addProductsToPackage",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"merchantportalws",
-									"addProductsToPackage",
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+									},
 								},
 							},
 						},
@@ -2127,86 +2262,100 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "acquirerId",
-						"short": "Unique identifier for the acquirer.",
+						"title": "Acquirer Id",
 						"type": "`$STRING`",
+						"short": "Unique identifier for the acquirer.",
 					},
 					map[string]any{
 						"name": "allowMultipleOrders",
+						"title": "Allow Multiple Orders",
+						"type": "`$BOOLEAN`",
 						"req": true,
 						"short": "Indication whether multiple orders are allowed or not.",
-						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "appFormTemplateName",
+						"title": "App Form Template Name",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Name of the application form template.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "contractNeeded",
+						"title": "Contract Needed",
+						"type": "`$BOOLEAN`",
 						"req": true,
 						"short": "Indication whether contract is needed or not.",
-						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "credentialsNeeded",
-						"short": "Indication whether credentials are needed or not.",
+						"title": "Credentials Needed",
 						"type": "`$BOOLEAN`",
+						"short": "Indication whether credentials are needed or not.",
 					},
 					map[string]any{
 						"name": "descriptionKey",
+						"title": "Description Key",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Key indicator for product description.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nameKey",
+						"title": "Name Key",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Key indicator for product name.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "prescreeningAllowed",
+						"title": "Prescreening Allowed",
+						"type": "`$BOOLEAN`",
 						"req": true,
 						"short": "Indication whether prescreening is allowed or not.",
-						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "productName",
+						"title": "Product Name",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Name of the product.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "Response code.",
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Response message.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminalTemplateName",
+						"title": "Terminal Template Name",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Name of the terminal template.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "vendorName",
+						"title": "Vendor Name",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Name of the vendor.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "xmlTemplateFile",
+						"title": "Xml Template File",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "A string value containing the XML template file encoded in Base64.",
-						"type": "`$STRING`",
 					},
 				},
 				"name": "output_create_product",
@@ -2216,17 +2365,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/createNewProduct",
@@ -2238,18 +2376,30 @@ func MakeConfig() map[string]any {
 										"lit": "createNewProduct",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
+								"parts": []any{
+									"merchantportalws",
+									"createNewProduct",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"merchantportalws",
-									"createNewProduct",
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+									},
 								},
 							},
 						},
@@ -2263,18 +2413,22 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "batch",
+						"title": "Batch",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "lines",
+						"title": "Lines",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "progress",
+						"title": "Progress",
 						"type": "`$OBJECT`",
 					},
 				},
@@ -2289,26 +2443,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "id",
-											"orig": "id",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/merchantportalws/batch/registerAdditionalTerminal/details/{id}",
@@ -2329,22 +2463,43 @@ func MakeConfig() map[string]any {
 										"var": "id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-										"id",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.details`",
-								},
 								"parts": []any{
 									"merchantportalws",
 									"batch",
 									"registerAdditionalTerminal",
 									"details",
 									"{id}",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.details`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "id",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+										"id",
+									},
 								},
 							},
 						},
@@ -2358,33 +2513,38 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "items",
+						"title": "Items",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "pagination",
+						"title": "Pagination",
+						"type": "`$OBJECT`",
+						"req": true,
 						"op": map[string]any{
 							"create": map[string]any{
 								"type": "`$OBJECT`",
 							},
 						},
-						"req": true,
-						"type": "`$OBJECT`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "Response code.",
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Response message.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "sorting",
+						"title": "Sorting",
 						"type": "`$OBJECT`",
 					},
 				},
@@ -2395,17 +2555,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/batch/registerAdditionalTerminal/list",
@@ -2423,20 +2572,32 @@ func MakeConfig() map[string]any {
 										"lit": "list",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"merchantportalws",
 									"batch",
 									"registerAdditionalTerminal",
 									"list",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+									},
 								},
 							},
 						},
@@ -2450,20 +2611,23 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "id",
+						"title": "Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "Response code.",
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Response message.",
-						"type": "`$STRING`",
 					},
 				},
 				"id": map[string]any{
@@ -2477,26 +2641,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "id",
-											"orig": "id",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}",
@@ -2517,16 +2661,6 @@ func MakeConfig() map[string]any {
 										"var": "id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-										"id",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"merchantportalws",
 									"batch",
@@ -2534,28 +2668,39 @@ func MakeConfig() map[string]any {
 									"restart",
 									"{id}",
 								},
-							},
-							map[string]any{
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
-											"reqd": true,
 											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
 										},
 									},
 									"params": []any{
 										map[string]any{
-											"kind": "param",
 											"name": "id",
 											"orig": "id",
-											"reqd": true,
 											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
 										},
 									},
 								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+										"id",
+									},
+								},
+							},
+							map[string]any{
 								"kind": "http",
 								"method": "GET",
 								"orig": "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}",
@@ -2576,22 +2721,43 @@ func MakeConfig() map[string]any {
 										"var": "id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-										"id",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"merchantportalws",
 									"batch",
 									"registerAdditionalTerminal",
 									"stop",
 									"{id}",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "id",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+										"id",
+									},
 								},
 							},
 						},
@@ -2605,31 +2771,36 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "productOrderUUIDs",
-						"req": true,
+						"title": "Product Order Uui Ds",
 						"type": "`$ARRAY`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "Response code.",
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Response message.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "targetPackageOrderUUID",
-						"req": true,
+						"title": "Target Package Order Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "targetProductOrderUUID",
-						"req": true,
+						"title": "Target Product Order Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 				},
 				"name": "output_move_tid",
@@ -2639,17 +2810,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/moveTid",
@@ -2661,18 +2821,30 @@ func MakeConfig() map[string]any {
 										"lit": "moveTid",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
+								"parts": []any{
+									"merchantportalws",
+									"moveTid",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"merchantportalws",
-									"moveTid",
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+									},
 								},
 							},
 						},
@@ -2686,28 +2858,32 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "packageUUID",
+						"title": "Package Uuid",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Unique identifier for the package.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productUUIDs",
+						"title": "Product Uui Ds",
+						"type": "`$ARRAY`",
 						"req": true,
 						"short": "List of product unique identifiers.",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "Response code.",
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Response message.",
-						"type": "`$STRING`",
 					},
 				},
 				"name": "output_remove_product",
@@ -2717,17 +2893,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/removeProductsFromPackage",
@@ -2739,18 +2904,30 @@ func MakeConfig() map[string]any {
 										"lit": "removeProductsFromPackage",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
+								"parts": []any{
+									"merchantportalws",
+									"removeProductsFromPackage",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"merchantportalws",
-									"removeProductsFromPackage",
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+									},
 								},
 							},
 						},
@@ -2764,20 +2941,23 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "id",
+						"title": "Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "Response code.",
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Response message.",
-						"type": "`$STRING`",
 					},
 				},
 				"id": map[string]any{
@@ -2791,17 +2971,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/batch/registerAdditionalTerminal/start",
@@ -2819,20 +2988,32 @@ func MakeConfig() map[string]any {
 										"lit": "start",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"merchantportalws",
 									"batch",
 									"registerAdditionalTerminal",
 									"start",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+									},
 								},
 							},
 						},
@@ -2846,28 +3027,33 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "id",
+						"title": "Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "percentage",
+						"title": "Percentage",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "Response code.",
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Response message.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"title": "Status",
 						"type": "`$STRING`",
 					},
 				},
@@ -2882,26 +3068,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "id",
-											"orig": "id",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/merchantportalws/batch/registerAdditionalTerminal/status/{id}",
@@ -2922,22 +3088,43 @@ func MakeConfig() map[string]any {
 										"var": "id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-										"id",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"merchantportalws",
 									"batch",
 									"registerAdditionalTerminal",
 									"status",
 									"{id}",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "id",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+										"id",
+									},
 								},
 							},
 						},
@@ -2951,72 +3138,85 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "allowMultipleOrders",
-						"short": "An attribute to indicate if multiple orders are allowed",
+						"title": "Allow Multiple Orders",
 						"type": "`$BOOLEAN`",
+						"short": "An attribute to indicate if multiple orders are allowed",
 					},
 					map[string]any{
 						"name": "appFormName",
-						"short": "The name of the application form",
+						"title": "App Form Name",
 						"type": "`$STRING`",
+						"short": "The name of the application form",
 					},
 					map[string]any{
 						"name": "contractNeeded",
-						"short": "An attribute to indicate if a contract is needed",
+						"title": "Contract Needed",
 						"type": "`$BOOLEAN`",
+						"short": "An attribute to indicate if a contract is needed",
 					},
 					map[string]any{
 						"name": "credentialsNeeded",
-						"short": "An attribute to indicate if credentials are needed",
+						"title": "Credentials Needed",
 						"type": "`$BOOLEAN`",
+						"short": "An attribute to indicate if credentials are needed",
 					},
 					map[string]any{
 						"name": "descriptionKey",
-						"short": "The description of the product",
+						"title": "Description Key",
 						"type": "`$STRING`",
+						"short": "The description of the product",
 					},
 					map[string]any{
 						"name": "nameKey",
-						"short": "The key of the product name",
+						"title": "Name Key",
 						"type": "`$STRING`",
+						"short": "The key of the product name",
 					},
 					map[string]any{
 						"name": "prescreeningAllowed",
-						"short": "An attribute to indicate if prescreening is allowed",
+						"title": "Prescreening Allowed",
 						"type": "`$BOOLEAN`",
+						"short": "An attribute to indicate if prescreening is allowed",
 					},
 					map[string]any{
 						"name": "productName",
-						"short": "The name of the product",
+						"title": "Product Name",
 						"type": "`$STRING`",
+						"short": "The name of the product",
 					},
 					map[string]any{
 						"name": "productStatus",
-						"short": "The status of the product",
+						"title": "Product Status",
 						"type": "`$STRING`",
+						"short": "The status of the product",
 					},
 					map[string]any{
 						"name": "productUUID",
+						"title": "Product Uuid",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The UUID of the product to update",
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "Response code.",
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Response message.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "vendorName",
-						"short": "The name of the vendor",
+						"title": "Vendor Name",
 						"type": "`$STRING`",
+						"short": "The name of the vendor",
 					},
 				},
 				"name": "output_update_product",
@@ -3026,17 +3226,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/merchantportalws/updateProduct",
@@ -3048,18 +3237,30 @@ func MakeConfig() map[string]any {
 										"lit": "updateProduct",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
+								"parts": []any{
+									"merchantportalws",
+									"updateProduct",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"merchantportalws",
-									"updateProduct",
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"authorization",
+									},
 								},
 							},
 						},

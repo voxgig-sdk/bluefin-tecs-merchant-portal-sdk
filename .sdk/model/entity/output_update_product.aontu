@@ -1,0 +1,150 @@
+# Entity: output_update_product
+
+main: kit: entity: output_update_product: {
+
+  alias: field: {}
+
+  fields: {
+    allowMultipleOrders: {
+      h: "Allow Multiple Orders"
+      n: "allowMultipleOrders"
+      r: false
+      sh: "An attribute to indicate if multiple orders are allowed"
+      t: "`$BOOLEAN`"
+    }
+    appFormName: {
+      h: "App Form Name"
+      n: "appFormName"
+      r: false
+      sh: "The name of the application form"
+      t: "`$STRING`"
+    }
+    contractNeeded: {
+      h: "Contract Needed"
+      n: "contractNeeded"
+      r: false
+      sh: "An attribute to indicate if a contract is needed"
+      t: "`$BOOLEAN`"
+    }
+    credentialsNeeded: {
+      h: "Credentials Needed"
+      n: "credentialsNeeded"
+      r: false
+      sh: "An attribute to indicate if credentials are needed"
+      t: "`$BOOLEAN`"
+    }
+    descriptionKey: {
+      h: "Description Key"
+      n: "descriptionKey"
+      r: false
+      sh: "The description of the product"
+      t: "`$STRING`"
+    }
+    nameKey: {
+      h: "Name Key"
+      n: "nameKey"
+      r: false
+      sh: "The key of the product name"
+      t: "`$STRING`"
+    }
+    prescreeningAllowed: {
+      h: "Prescreening Allowed"
+      n: "prescreeningAllowed"
+      r: false
+      sh: "An attribute to indicate if prescreening is allowed"
+      t: "`$BOOLEAN`"
+    }
+    productName: {
+      h: "Product Name"
+      n: "productName"
+      r: false
+      sh: "The name of the product"
+      t: "`$STRING`"
+    }
+    productStatus: {
+      h: "Product Status"
+      n: "productStatus"
+      r: false
+      sh: "The status of the product"
+      t: "`$STRING`"
+    }
+    productUUID: {
+      h: "Product Uuid"
+      n: "productUUID"
+      r: true
+      sh: "The UUID of the product to update"
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: true
+      sh: "Response code."
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: true
+      sh: "Response message."
+      t: "`$STRING`"
+    }
+    vendorName: {
+      h: "Vendor Name"
+      n: "vendorName"
+      r: false
+      sh: "The name of the vendor"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "output_update_product"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /merchantportalws/updateProduct"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/updateProduct"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "updateProduct"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

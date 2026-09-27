@@ -1,0 +1,157 @@
+# Entity: output_create_product
+
+main: kit: entity: output_create_product: {
+
+  alias: field: {}
+
+  fields: {
+    acquirerId: {
+      h: "Acquirer Id"
+      n: "acquirerId"
+      r: false
+      sh: "Unique identifier for the acquirer."
+      t: "`$STRING`"
+    }
+    allowMultipleOrders: {
+      h: "Allow Multiple Orders"
+      n: "allowMultipleOrders"
+      r: true
+      sh: "Indication whether multiple orders are allowed or not."
+      t: "`$BOOLEAN`"
+    }
+    appFormTemplateName: {
+      h: "App Form Template Name"
+      n: "appFormTemplateName"
+      r: true
+      sh: "Name of the application form template."
+      t: "`$STRING`"
+    }
+    contractNeeded: {
+      h: "Contract Needed"
+      n: "contractNeeded"
+      r: true
+      sh: "Indication whether contract is needed or not."
+      t: "`$BOOLEAN`"
+    }
+    credentialsNeeded: {
+      h: "Credentials Needed"
+      n: "credentialsNeeded"
+      r: false
+      sh: "Indication whether credentials are needed or not."
+      t: "`$BOOLEAN`"
+    }
+    descriptionKey: {
+      h: "Description Key"
+      n: "descriptionKey"
+      r: true
+      sh: "Key indicator for product description."
+      t: "`$STRING`"
+    }
+    nameKey: {
+      h: "Name Key"
+      n: "nameKey"
+      r: true
+      sh: "Key indicator for product name."
+      t: "`$STRING`"
+    }
+    prescreeningAllowed: {
+      h: "Prescreening Allowed"
+      n: "prescreeningAllowed"
+      r: true
+      sh: "Indication whether prescreening is allowed or not."
+      t: "`$BOOLEAN`"
+    }
+    productName: {
+      h: "Product Name"
+      n: "productName"
+      r: true
+      sh: "Name of the product."
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: true
+      sh: "Response code."
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: true
+      sh: "Response message."
+      t: "`$STRING`"
+    }
+    terminalTemplateName: {
+      h: "Terminal Template Name"
+      n: "terminalTemplateName"
+      r: true
+      sh: "Name of the terminal template."
+      t: "`$STRING`"
+    }
+    vendorName: {
+      h: "Vendor Name"
+      n: "vendorName"
+      r: true
+      sh: "Name of the vendor."
+      t: "`$STRING`"
+    }
+    xmlTemplateFile: {
+      h: "Xml Template File"
+      n: "xmlTemplateFile"
+      r: true
+      sh: "A string value containing the XML template file encoded in Base64."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "output_create_product"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /merchantportalws/createNewProduct"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/createNewProduct"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "createNewProduct"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

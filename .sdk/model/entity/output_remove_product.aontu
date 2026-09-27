@@ -1,0 +1,87 @@
+# Entity: output_remove_product
+
+main: kit: entity: output_remove_product: {
+
+  alias: field: {}
+
+  fields: {
+    packageUUID: {
+      h: "Package Uuid"
+      n: "packageUUID"
+      r: true
+      sh: "Unique identifier for the package."
+      t: "`$STRING`"
+    }
+    productUUIDs: {
+      h: "Product Uui Ds"
+      n: "productUUIDs"
+      r: true
+      sh: "List of product unique identifiers."
+      t: "`$ARRAY`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: true
+      sh: "Response code."
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: true
+      sh: "Response message."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "output_remove_product"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /merchantportalws/removeProductsFromPackage"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/removeProductsFromPackage"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "removeProductsFromPackage"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,107 @@
+# Entity: merchant_portal_pam_contract_controller
+
+main: kit: entity: merchant_portal_pam_contract_controller: {
+
+  alias: field: {}
+
+  fields: {
+    language: {
+      h: "Language"
+      n: "language"
+      r: true
+      t: "`$STRING`"
+    }
+    productOrderUUID: {
+      h: "Product Order Uuid"
+      n: "productOrderUUID"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "merchant_portal_pam_contract_controller"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /merchantportalws/generateContract"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/generateContract"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "generateContract"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/uploadContract"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/uploadContract"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "uploadContract"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

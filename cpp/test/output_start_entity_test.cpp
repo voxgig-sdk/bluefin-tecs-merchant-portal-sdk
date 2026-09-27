@@ -50,7 +50,7 @@ static OutputStartSetup output_start_basic_setup(const Value& extra) {
 
   OutputStartSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

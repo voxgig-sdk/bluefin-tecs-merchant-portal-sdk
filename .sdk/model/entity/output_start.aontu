@@ -1,0 +1,90 @@
+# Entity: output_start
+
+main: kit: entity: output_start: {
+
+  alias: field: {}
+
+  fields: {
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: true
+      sh: "Response code."
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: true
+      sh: "Response message."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "output_start"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /merchantportalws/batch/registerAdditionalTerminal/start"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/batch/registerAdditionalTerminal/start"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "batch"
+            }
+            {
+              lit: "registerAdditionalTerminal"
+            }
+            {
+              lit: "start"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

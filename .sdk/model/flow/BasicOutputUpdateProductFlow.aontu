@@ -1,0 +1,18 @@
+# BasicOutputUpdateProductFlow
+
+main: kit: flow: BasicOutputUpdateProductFlow:
+{
+  entity: "output_update_product",
+  kind: "basic",
+  name: "BasicOutputUpdateProductFlow",
+  step: [
+    {
+      i: {
+        ref: "output_update_product_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicOutputUpdateProductFlow"
+}

@@ -1,0 +1,407 @@
+# Entity: merchant_portal_api_controller
+
+main: kit: entity: merchant_portal_api_controller: {
+
+  alias: field: {}
+
+  fields: {
+    account_number: {
+      fo: "int32"
+      h: "Account Number"
+      n: "account_number"
+      r: false
+      sh: "Account number provided by the acquirer."
+      t: "`$INTEGER`"
+    }
+    additional_data: {
+      h: "Additional Data"
+      n: "additional_data"
+      r: false
+      sh: "Arbitrary merchant-specific data related to terminal registration."
+      t: "`$OBJECT`"
+    }
+    business_reg_number: {
+      h: "Business Reg Number"
+      n: "business_reg_number"
+      r: true
+      sh: "Merchant business registration number as stated in the company registry."
+      t: "`$STRING`"
+    }
+    city: {
+      h: "City"
+      n: "city"
+      r: true
+      sh: "Merchant's address: city."
+      t: "`$STRING`"
+    }
+    corporateuuid: {
+      h: "Corporateuuid"
+      n: "corporateuuid"
+      r: false
+      sh: "Unique identifier for the corporate entity (UUID format)."
+      t: "`$STRING`"
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: true
+      sh: "Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format)."
+      t: "`$STRING`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Transaction currency (must be in \"ISO 4217\" format)."
+      t: "`$STRING`"
+    }
+    merchant_category_code: {
+      fo: "int32"
+      h: "Merchant Category Code"
+      n: "merchant_category_code"
+      r: true
+      sh: "Merchant category code as defined by the payment network."
+      t: "`$INTEGER`"
+    }
+    merchant_email: {
+      fo: "email"
+      h: "Merchant Email"
+      n: "merchant_email"
+      r: false
+      sh: "Merchant's email address for receiving notifications."
+      t: "`$STRING`"
+    }
+    merchant_name: {
+      h: "Merchant Name"
+      n: "merchant_name"
+      r: true
+      sh: "The officially incorporated company name of the merchant."
+      t: "`$STRING`"
+    }
+    merchant_phone_number: {
+      h: "Merchant Phone Number"
+      n: "merchant_phone_number"
+      r: false
+      sh: "Merchant's phone number for notifications."
+      t: "`$STRING`"
+    }
+    packageid: {
+      h: "Packageid"
+      n: "packageid"
+      r: true
+      sh: "Identifier of the package in the TECS processing engine provided by TECS."
+      t: "`$STRING`"
+    }
+    packageorderuuid: {
+      h: "Packageorderuuid"
+      n: "packageorderuuid"
+      r: true
+      sh: "Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call."
+      t: "`$STRING`"
+    }
+    password: {
+      h: "Password"
+      n: "password"
+      r: false
+      sh: "Merchant password for MPOS."
+      t: "`$STRING`"
+    }
+    productid: {
+      h: "Productid"
+      n: "productid"
+      r: false
+      sh: "Identifier of the product for which terminal registration is to be performed."
+      t: "`$STRING`"
+    }
+    productid_acquirer: {
+      h: "Productid Acquirer"
+      n: "productid_acquirer"
+      r: false
+      sh: "Identifier of the product for which acquiring is enabled."
+      t: "`$STRING`"
+    }
+    reason_deactivation: {
+      h: "Reason Deactivation"
+      n: "reason_deactivation"
+      r: true
+      sh: "Reason for terminal deactivation."
+      t: "`$STRING`"
+    }
+    reason_reactivation: {
+      h: "Reason Reactivation"
+      n: "reason_reactivation"
+      r: true
+      sh: "Reason for terminal reactivation."
+      t: "`$STRING`"
+    }
+    sorting_code: {
+      fo: "int32"
+      h: "Sorting Code"
+      n: "sorting_code"
+      r: false
+      sh: "Sorting code provided by the acquirer."
+      t: "`$INTEGER`"
+    }
+    state: {
+      h: "State"
+      n: "state"
+      r: false
+      sh: "Merchant's address: state."
+      t: "`$STRING`"
+    }
+    street: {
+      h: "Street"
+      n: "street"
+      r: true
+      sh: "Merchant's address: street and house number."
+      t: "`$STRING`"
+    }
+    terminal_country_code: {
+      h: "Terminal Country Code"
+      n: "terminal_country_code"
+      r: true
+      sh: "Terminal country code (must be in 'ISO-3166 ALPHA-3' format)."
+      t: "`$STRING`"
+    }
+    terminal_language_code: {
+      h: "Terminal Language Code"
+      n: "terminal_language_code"
+      r: true
+      sh: "Terminal language code (must be in 'ISO 639-1' format)."
+      t: "`$STRING`"
+    }
+    terminal_location: {
+      h: "Terminal Location"
+      n: "terminal_location"
+      r: true
+      sh: "Physical or logical location of the terminal."
+      t: "`$STRING`"
+    }
+    terminal_serial_number: {
+      h: "Terminal Serial Number"
+      n: "terminal_serial_number"
+      r: true
+      sh: "Terminal serial number."
+      t: "`$STRING`"
+    }
+    terminalid: {
+      fo: "int32"
+      h: "Terminalid"
+      n: "terminalid"
+      r: true
+      sh: "TECS terminalid given by Tecs processing engine."
+      t: "`$INTEGER`"
+    }
+    terminalid_acquirer: {
+      h: "Terminalid Acquirer"
+      n: "terminalid_acquirer"
+      r: false
+      sh: "Terminal ID as set by the acquirer (optional)."
+      t: "`$STRING`"
+    }
+    user_email: {
+      fo: "email"
+      h: "User Email"
+      n: "user_email"
+      r: false
+      sh: "Email address of the user acting on behalf of the merchant."
+      t: "`$STRING`"
+    }
+    user_phone_number: {
+      h: "User Phone Number"
+      n: "user_phone_number"
+      r: false
+      sh: "Phone number of the user acting on behalf of the merchant."
+      t: "`$STRING`"
+    }
+    username: {
+      h: "Username"
+      n: "username"
+      r: false
+      sh: "Merchant username for MPOS."
+      t: "`$STRING`"
+    }
+    vu_nummer: {
+      h: "Vu Nummer"
+      n: "vu_nummer"
+      r: true
+      sh: "Merchant contract number with the acquirer."
+      t: "`$STRING`"
+    }
+    web_shop_url: {
+      fo: "uri"
+      h: "Web Shop Url"
+      n: "web_shop_url"
+      r: false
+      sh: "URL of the merchant's web shop."
+      t: "`$STRING`"
+    }
+    zipcode: {
+      h: "Zipcode"
+      n: "zipcode"
+      r: true
+      sh: "Merchant's address: postal code."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "merchant_portal_api_controller"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /merchantportalws/deactivateTerminal"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/deactivateTerminal"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "deactivateTerminal"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/reactivateTerminal"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/reactivateTerminal"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "reactivateTerminal"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/registerAdditionalTerminal"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/registerAdditionalTerminal"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "registerAdditionalTerminal"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/registerNewMerchant"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/registerNewMerchant"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "registerNewMerchant"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

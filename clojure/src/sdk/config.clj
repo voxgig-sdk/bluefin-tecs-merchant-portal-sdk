@@ -11,158 +11,191 @@
             "format" "int32"
             "name" "account_number"
             "short" "Account number provided by the acquirer."
+            "title" "Account Number"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "additional_data"
             "short" "Arbitrary merchant-specific data related to terminal registration."
+            "title" "Additional Data"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "business_reg_number"
             "req" true
             "short" "Merchant business registration number as stated in the company registry."
+            "title" "Business Reg Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "city"
             "req" true
             "short" "Merchant's address: city."
+            "title" "City"
             "type" "`$STRING`")
           (vs/jm
             "name" "corporateuuid"
             "short" "Unique identifier for the corporate entity (UUID format)."
+            "title" "Corporateuuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "country"
             "req" true
             "short" "Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format)."
+            "title" "Country"
             "type" "`$STRING`")
           (vs/jm
             "name" "currency"
             "req" true
             "short" "Transaction currency (must be in \"ISO 4217\" format)."
+            "title" "Currency"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "merchant_category_code"
             "req" true
             "short" "Merchant category code as defined by the payment network."
+            "title" "Merchant Category Code"
             "type" "`$INTEGER`")
           (vs/jm
             "format" "email"
             "name" "merchant_email"
             "short" "Merchant's email address for receiving notifications."
+            "title" "Merchant Email"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchant_name"
             "req" true
             "short" "The officially incorporated company name of the merchant."
+            "title" "Merchant Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchant_phone_number"
             "short" "Merchant's phone number for notifications."
+            "title" "Merchant Phone Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageid"
             "req" true
             "short" "Identifier of the package in the TECS processing engine provided by TECS."
+            "title" "Packageid"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageorderuuid"
             "req" true
             "short" "Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call."
+            "title" "Packageorderuuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "password"
             "short" "Merchant password for MPOS."
+            "title" "Password"
             "type" "`$STRING`")
           (vs/jm
             "name" "productid"
             "short" "Identifier of the product for which terminal registration is to be performed."
+            "title" "Productid"
             "type" "`$STRING`")
           (vs/jm
             "name" "productid_acquirer"
             "short" "Identifier of the product for which acquiring is enabled."
+            "title" "Productid Acquirer"
             "type" "`$STRING`")
           (vs/jm
             "name" "reason_deactivation"
             "req" true
             "short" "Reason for terminal deactivation."
+            "title" "Reason Deactivation"
             "type" "`$STRING`")
           (vs/jm
             "name" "reason_reactivation"
             "req" true
             "short" "Reason for terminal reactivation."
+            "title" "Reason Reactivation"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "sorting_code"
             "short" "Sorting code provided by the acquirer."
+            "title" "Sorting Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "state"
             "short" "Merchant's address: state."
+            "title" "State"
             "type" "`$STRING`")
           (vs/jm
             "name" "street"
             "req" true
             "short" "Merchant's address: street and house number."
+            "title" "Street"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminal_country_code"
             "req" true
             "short" "Terminal country code (must be in 'ISO-3166 ALPHA-3' format)."
+            "title" "Terminal Country Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminal_language_code"
             "req" true
             "short" "Terminal language code (must be in 'ISO 639-1' format)."
+            "title" "Terminal Language Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminal_location"
             "req" true
             "short" "Physical or logical location of the terminal."
+            "title" "Terminal Location"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminal_serial_number"
             "req" true
             "short" "Terminal serial number."
+            "title" "Terminal Serial Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalid"
             "req" true
             "short" "TECS terminalid given by Tecs processing engine."
+            "title" "Terminalid"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "terminalid_acquirer"
             "short" "Terminal ID as set by the acquirer (optional)."
+            "title" "Terminalid Acquirer"
             "type" "`$STRING`")
           (vs/jm
             "format" "email"
             "name" "user_email"
             "short" "Email address of the user acting on behalf of the merchant."
+            "title" "User Email"
             "type" "`$STRING`")
           (vs/jm
             "name" "user_phone_number"
             "short" "Phone number of the user acting on behalf of the merchant."
+            "title" "User Phone Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "username"
             "short" "Merchant username for MPOS."
+            "title" "Username"
             "type" "`$STRING`")
           (vs/jm
             "name" "vu_nummer"
             "req" true
             "short" "Merchant contract number with the acquirer."
+            "title" "Vu Nummer"
             "type" "`$STRING`")
           (vs/jm
             "format" "uri"
             "name" "web_shop_url"
             "short" "URL of the merchant's web shop."
+            "title" "Web Shop Url"
             "type" "`$STRING`")
           (vs/jm
             "name" "zipcode"
             "req" true
             "short" "Merchant's address: postal code."
+            "title" "Zipcode"
             "type" "`$STRING`"))
         "name" "merchant_portal_api_controller"
         "op" (vs/jm
@@ -185,6 +218,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "deactivateTerminal")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -211,6 +245,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "reactivateTerminal")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -237,6 +272,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "registerAdditionalTerminal")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -263,6 +299,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "registerNewMerchant")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -292,6 +329,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "logDeveloperInfo")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -309,6 +347,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "version")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -325,10 +364,12 @@
           (vs/jm
             "name" "language"
             "req" true
+            "title" "Language"
             "type" "`$STRING`")
           (vs/jm
             "name" "productOrderUUID"
             "req" true
+            "title" "Product Order Uuid"
             "type" "`$STRING`"))
         "name" "merchant_portal_pam_contract_controller"
         "op" (vs/jm
@@ -351,6 +392,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "generateContract")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -377,6 +419,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "uploadContract")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -395,14 +438,17 @@
           (vs/jm
             "name" "appFormFieldDescUUID"
             "req" true
+            "title" "App Form Field Desc Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageOrderUUID"
             "short" "UUID of the package order."
+            "title" "Package Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "productOrderUUID"
             "short" "UUID of the product order."
+            "title" "Product Order Uuid"
             "type" "`$STRING`"))
         "name" "merchant_portal_pam_document_controller"
         "op" (vs/jm
@@ -425,6 +471,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "documentsList")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -451,6 +498,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "downloadDocument")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -469,9 +517,11 @@
           (vs/jm
             "name" "appFormFieldsDescUUID"
             "req" true
+            "title" "App Form Fields Desc Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "filter"
+            "title" "Filter"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "language"
@@ -479,9 +529,11 @@
               "create" (vs/jm
                 "type" "`$STRING`"))
             "req" true
+            "title" "Language"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageOrder"
+            "title" "Package Order"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "packageOrderUUID"
@@ -490,9 +542,11 @@
                 "type" "`$STRING`"))
             "req" true
             "short" "UUID of the package order."
+            "title" "Package Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageUUID"
+            "title" "Package Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "productOrderUUID"
@@ -501,13 +555,16 @@
                 "req" true
                 "type" "`$STRING`"))
             "short" "UUID of the product order."
+            "title" "Product Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "productOrders"
+            "title" "Product Orders"
             "type" "`$ARRAY`")
           (vs/jm
             "name" "reasonOfReopening"
             "req" true
+            "title" "Reason Of Reopening"
             "type" "`$STRING`"))
         "name" "merchant_portal_pam_form_controller"
         "op" (vs/jm
@@ -530,6 +587,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "applicationForm")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -556,6 +614,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "packageForm")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -582,6 +641,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "reopenForm")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -608,6 +668,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "secretKey")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -634,6 +695,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "submitForm")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -660,6 +722,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "submitValues")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -677,17 +740,21 @@
         "fields" (vs/jt
           (vs/jm
             "name" "clientSecret"
+            "title" "Client Secret"
             "type" "`$STRING`")
           (vs/jm
             "name" "mandatorName"
             "req" true
+            "title" "Mandator Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "notificationEmail"
+            "title" "Notification Email"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageUUID"
             "req" true
+            "title" "Package Uuid"
             "type" "`$STRING`"))
         "name" "merchant_portal_pam_mandator_controller"
         "op" (vs/jm
@@ -710,6 +777,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "createMandatorConfig")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -736,6 +804,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "introduceMandatorPackage")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -762,6 +831,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "selfRegistrationLink")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -780,49 +850,60 @@
           (vs/jm
             "name" "additional_data"
             "short" "Optional additional merchant-specific data related to enabling acquiring."
+            "title" "Additional Data"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "businessRegistrationNumber"
             "req" true
+            "title" "Business Registration Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "city"
             "short" "City where the merchant is located."
+            "title" "City"
             "type" "`$STRING`")
           (vs/jm
             "name" "companyName"
             "req" true
+            "title" "Company Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "corporateUUID"
             "req" true
             "short" "Unique identifier for the corporate entity."
+            "title" "Corporate Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "country"
             "short" "Country where the merchant is located."
+            "title" "Country"
             "type" "`$STRING`")
           (vs/jm
             "name" "currency"
             "req" true
             "short" "Transaction currency in ISO 4217 format."
+            "title" "Currency"
             "type" "`$STRING`")
           (vs/jm
             "name" "email"
             "req" true
+            "title" "Email"
             "type" "`$STRING`")
           (vs/jm
             "name" "language"
             "req" true
+            "title" "Language"
             "type" "`$STRING`")
           (vs/jm
             "name" "login"
             "req" true
+            "title" "Login"
             "type" "`$STRING`")
           (vs/jm
             "name" "mandator"
             "req" true
             "short" "Mandator name assigned by TECS."
+            "title" "Mandator"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantContractNumber"
@@ -831,65 +912,80 @@
                 "type" "`$STRING`"))
             "req" true
             "short" "Unique identifier for the merchant within a specific system."
+            "title" "Merchant Contract Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantName"
             "short" "Name of the merchant."
+            "title" "Merchant Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchant_category_code"
             "short" "Merchant Category Code (MCC) describing the merchant’s type of business."
+            "title" "Merchant Category Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageUUID"
             "short" "UUID of the package."
+            "title" "Package Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageorderuuid"
             "req" true
             "short" "Unique identifier for the registered merchant in the TECS system."
+            "title" "Packageorderuuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "phoneNumber"
             "req" true
+            "title" "Phone Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "postalCode"
             "short" "Postal or ZIP code of the merchant’s location."
+            "title" "Postal Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "productid_acquirer"
             "req" true
             "short" "Identifier of the product for which acquiring is to be enabled."
+            "title" "Productid Acquirer"
             "type" "`$STRING`")
           (vs/jm
             "name" "region"
             "short" "State or province where the merchant is located."
+            "title" "Region"
             "type" "`$STRING`")
           (vs/jm
             "name" "registrationNumber"
             "short" "Business registration number."
+            "title" "Registration Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "signature"
             "short" "Signature value = saltAsHex-hashAsHex."
+            "title" "Signature"
             "type" "`$STRING`")
           (vs/jm
             "name" "street"
             "short" "Street address of the merchant."
+            "title" "Street"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalIds"
             "short" "Optional list of terminal IDs for which acquiring should be activated."
+            "title" "Terminal Ids"
             "type" "`$ARRAY`")
           (vs/jm
             "name" "terminalid_acquirer"
             "short" "Optional terminal ID provided by the acquirer."
+            "title" "Terminalid Acquirer"
             "type" "`$STRING`")
           (vs/jm
             "name" "vu_nummer"
             "req" true
             "short" "Merchant contract number with the acquirer."
+            "title" "Vu Nummer"
             "type" "`$STRING`"))
         "name" "merchant_portal_pam_merchant_controller"
         "op" (vs/jm
@@ -912,6 +1008,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "contractNumber")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -938,6 +1035,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "registerAdditionalAcquiring")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -964,6 +1062,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "updateMerchant")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -983,6 +1082,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "registerMerchant")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -998,20 +1098,25 @@
         "fields" (vs/jt
           (vs/jm
             "name" "consumerUUID"
+            "title" "Consumer Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "corporateUUID"
+            "title" "Corporate Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "country"
             "short" "Country associated with the package."
+            "title" "Country"
             "type" "`$STRING`")
           (vs/jm
             "name" "descriptionKey"
             "short" "Key for the description of the package."
+            "title" "Description Key"
             "type" "`$STRING`")
           (vs/jm
             "name" "filter"
+            "title" "Filter"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "language"
@@ -1019,25 +1124,31 @@
               "create" (vs/jm
                 "type" "`$STRING`"))
             "req" true
+            "title" "Language"
             "type" "`$STRING`")
           (vs/jm
             "name" "nameKey"
             "short" "Key for the name of the package."
+            "title" "Name Key"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageStatus"
             "short" "Status of the package."
+            "title" "Package Status"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageUUID"
             "req" true
             "short" "Unique identifier for the package."
+            "title" "Package Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "pagination"
+            "title" "Pagination"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "sorting"
+            "title" "Sorting"
             "type" "`$OBJECT`"))
         "name" "merchant_portal_pam_package_controller"
         "op" (vs/jm
@@ -1060,6 +1171,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "availablePackages")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1086,6 +1198,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "orderPackage")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1112,6 +1225,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "orderedPackages")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1138,6 +1252,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "packageTemplates")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1163,6 +1278,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "updatePackageData")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1180,38 +1296,48 @@
         "fields" (vs/jt
           (vs/jm
             "name" "consumerUUID"
+            "title" "Consumer Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "filter"
+            "title" "Filter"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "language"
+            "title" "Language"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantID"
+            "title" "Merchant Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageOrderUUID"
             "req" true
+            "title" "Package Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "pagination"
+            "title" "Pagination"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "productOrderUUID"
             "req" true
+            "title" "Product Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "productUUID"
             "req" true
+            "title" "Product Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "reason_decline"
             "req" true
             "short" "Reason for product decline."
+            "title" "Reason Decline"
             "type" "`$STRING`")
           (vs/jm
             "name" "sorting"
+            "title" "Sorting"
             "type" "`$OBJECT`"))
         "name" "merchant_portal_pam_product_controller"
         "op" (vs/jm
@@ -1234,6 +1360,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "approveProduct")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1260,6 +1387,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "declineProduct")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1286,6 +1414,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "orderAdditionalProduct")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1312,6 +1441,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "productsList")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1331,22 +1461,26 @@
             "name" "packageUUID"
             "req" true
             "short" "Unique identifier for the package."
+            "title" "Package Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "productUUIDs"
             "req" true
             "short" "The list of unique identifiers of the products."
+            "title" "Product Uui Ds"
             "type" "`$ARRAY`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "req" true
             "short" "Response message."
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_add_product"
         "op" (vs/jm
@@ -1369,6 +1503,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "addProductsToPackage")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1387,71 +1522,85 @@
           (vs/jm
             "name" "acquirerId"
             "short" "Unique identifier for the acquirer."
+            "title" "Acquirer Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "allowMultipleOrders"
             "req" true
             "short" "Indication whether multiple orders are allowed or not."
+            "title" "Allow Multiple Orders"
             "type" "`$BOOLEAN`")
           (vs/jm
             "name" "appFormTemplateName"
             "req" true
             "short" "Name of the application form template."
+            "title" "App Form Template Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "contractNeeded"
             "req" true
             "short" "Indication whether contract is needed or not."
+            "title" "Contract Needed"
             "type" "`$BOOLEAN`")
           (vs/jm
             "name" "credentialsNeeded"
             "short" "Indication whether credentials are needed or not."
+            "title" "Credentials Needed"
             "type" "`$BOOLEAN`")
           (vs/jm
             "name" "descriptionKey"
             "req" true
             "short" "Key indicator for product description."
+            "title" "Description Key"
             "type" "`$STRING`")
           (vs/jm
             "name" "nameKey"
             "req" true
             "short" "Key indicator for product name."
+            "title" "Name Key"
             "type" "`$STRING`")
           (vs/jm
             "name" "prescreeningAllowed"
             "req" true
             "short" "Indication whether prescreening is allowed or not."
+            "title" "Prescreening Allowed"
             "type" "`$BOOLEAN`")
           (vs/jm
             "name" "productName"
             "req" true
             "short" "Name of the product."
+            "title" "Product Name"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "req" true
             "short" "Response message."
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalTemplateName"
             "req" true
             "short" "Name of the terminal template."
+            "title" "Terminal Template Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "vendorName"
             "req" true
             "short" "Name of the vendor."
+            "title" "Vendor Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "xmlTemplateFile"
             "req" true
             "short" "A string value containing the XML template file encoded in Base64."
+            "title" "Xml Template File"
             "type" "`$STRING`"))
         "name" "output_create_product"
         "op" (vs/jm
@@ -1474,6 +1623,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "createNewProduct")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1491,15 +1641,19 @@
         "fields" (vs/jt
           (vs/jm
             "name" "batch"
+            "title" "Batch"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "id"
+            "title" "Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "lines"
+            "title" "Lines"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "progress"
+            "title" "Progress"
             "type" "`$OBJECT`"))
         "id" (vs/jm
           "field" "id"
@@ -1535,6 +1689,7 @@
                   "registerAdditionalTerminal"
                   "details"
                   "{id}")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1559,6 +1714,7 @@
         "fields" (vs/jt
           (vs/jm
             "name" "items"
+            "title" "Items"
             "type" "`$ARRAY`")
           (vs/jm
             "name" "pagination"
@@ -1566,20 +1722,24 @@
               "create" (vs/jm
                 "type" "`$OBJECT`"))
             "req" true
+            "title" "Pagination"
             "type" "`$OBJECT`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "req" true
             "short" "Response message."
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "sorting"
+            "title" "Sorting"
             "type" "`$OBJECT`"))
         "name" "output_list"
         "op" (vs/jm
@@ -1604,6 +1764,7 @@
                   "batch"
                   "registerAdditionalTerminal"
                   "list")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1625,17 +1786,20 @@
         "fields" (vs/jt
           (vs/jm
             "name" "id"
+            "title" "Id"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "req" true
             "short" "Response message."
+            "title" "Response Message"
             "type" "`$STRING`"))
         "id" (vs/jm
           "field" "id"
@@ -1671,6 +1835,7 @@
                   "registerAdditionalTerminal"
                   "restart"
                   "{id}")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1714,6 +1879,7 @@
                   "registerAdditionalTerminal"
                   "stop"
                   "{id}")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1739,25 +1905,30 @@
           (vs/jm
             "name" "productOrderUUIDs"
             "req" true
+            "title" "Product Order Uui Ds"
             "type" "`$ARRAY`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "req" true
             "short" "Response message."
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "targetPackageOrderUUID"
             "req" true
+            "title" "Target Package Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "targetProductOrderUUID"
             "req" true
+            "title" "Target Product Order Uuid"
             "type" "`$STRING`"))
         "name" "output_move_tid"
         "op" (vs/jm
@@ -1780,6 +1951,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "moveTid")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1799,22 +1971,26 @@
             "name" "packageUUID"
             "req" true
             "short" "Unique identifier for the package."
+            "title" "Package Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "productUUIDs"
             "req" true
             "short" "List of product unique identifiers."
+            "title" "Product Uui Ds"
             "type" "`$ARRAY`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "req" true
             "short" "Response message."
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_remove_product"
         "op" (vs/jm
@@ -1837,6 +2013,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "removeProductsFromPackage")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1854,17 +2031,20 @@
         "fields" (vs/jt
           (vs/jm
             "name" "id"
+            "title" "Id"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "req" true
             "short" "Response message."
+            "title" "Response Message"
             "type" "`$STRING`"))
         "id" (vs/jm
           "field" "id"
@@ -1892,6 +2072,7 @@
                   "batch"
                   "registerAdditionalTerminal"
                   "start")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1913,24 +2094,29 @@
         "fields" (vs/jt
           (vs/jm
             "name" "id"
+            "title" "Id"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "percentage"
+            "title" "Percentage"
             "type" "`$INTEGER`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "req" true
             "short" "Response message."
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "status"
+            "title" "Status"
             "type" "`$STRING`"))
         "id" (vs/jm
           "field" "id"
@@ -1966,6 +2152,7 @@
                   "registerAdditionalTerminal"
                   "status"
                   "{id}")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1991,58 +2178,71 @@
           (vs/jm
             "name" "allowMultipleOrders"
             "short" "An attribute to indicate if multiple orders are allowed"
+            "title" "Allow Multiple Orders"
             "type" "`$BOOLEAN`")
           (vs/jm
             "name" "appFormName"
             "short" "The name of the application form"
+            "title" "App Form Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "contractNeeded"
             "short" "An attribute to indicate if a contract is needed"
+            "title" "Contract Needed"
             "type" "`$BOOLEAN`")
           (vs/jm
             "name" "credentialsNeeded"
             "short" "An attribute to indicate if credentials are needed"
+            "title" "Credentials Needed"
             "type" "`$BOOLEAN`")
           (vs/jm
             "name" "descriptionKey"
             "short" "The description of the product"
+            "title" "Description Key"
             "type" "`$STRING`")
           (vs/jm
             "name" "nameKey"
             "short" "The key of the product name"
+            "title" "Name Key"
             "type" "`$STRING`")
           (vs/jm
             "name" "prescreeningAllowed"
             "short" "An attribute to indicate if prescreening is allowed"
+            "title" "Prescreening Allowed"
             "type" "`$BOOLEAN`")
           (vs/jm
             "name" "productName"
             "short" "The name of the product"
+            "title" "Product Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "productStatus"
             "short" "The status of the product"
+            "title" "Product Status"
             "type" "`$STRING`")
           (vs/jm
             "name" "productUUID"
             "req" true
             "short" "The UUID of the product to update"
+            "title" "Product Uuid"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
             "req" true
             "short" "Response code."
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "req" true
             "short" "Response message."
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "vendorName"
             "short" "The name of the vendor"
+            "title" "Vendor Name"
             "type" "`$STRING`"))
         "name" "output_update_product"
         "op" (vs/jm
@@ -2065,6 +2265,7 @@
                 "parts" (vs/jt
                   "merchantportalws"
                   "updateProduct")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")

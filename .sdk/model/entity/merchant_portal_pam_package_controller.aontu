@@ -1,0 +1,283 @@
+# Entity: merchant_portal_pam_package_controller
+
+main: kit: entity: merchant_portal_pam_package_controller: {
+
+  alias: field: {}
+
+  fields: {
+    consumerUUID: {
+      h: "Consumer Uuid"
+      n: "consumerUUID"
+      r: false
+      t: "`$STRING`"
+    }
+    corporateUUID: {
+      h: "Corporate Uuid"
+      n: "corporateUUID"
+      r: false
+      t: "`$STRING`"
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: false
+      sh: "Country associated with the package."
+      t: "`$STRING`"
+    }
+    descriptionKey: {
+      h: "Description Key"
+      n: "descriptionKey"
+      r: false
+      sh: "Key for the description of the package."
+      t: "`$STRING`"
+    }
+    filter: {
+      h: "Filter"
+      n: "filter"
+      r: false
+      t: "`$OBJECT`"
+    }
+    language: {
+      h: "Language"
+      n: "language"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    nameKey: {
+      h: "Name Key"
+      n: "nameKey"
+      r: false
+      sh: "Key for the name of the package."
+      t: "`$STRING`"
+    }
+    packageStatus: {
+      h: "Package Status"
+      n: "packageStatus"
+      r: false
+      sh: "Status of the package."
+      t: "`$STRING`"
+    }
+    packageUUID: {
+      h: "Package Uuid"
+      n: "packageUUID"
+      r: true
+      sh: "Unique identifier for the package."
+      t: "`$STRING`"
+    }
+    pagination: {
+      h: "Pagination"
+      n: "pagination"
+      r: false
+      t: "`$OBJECT`"
+    }
+    sorting: {
+      h: "Sorting"
+      n: "sorting"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "merchant_portal_pam_package_controller"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /merchantportalws/availablePackages"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/availablePackages"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "availablePackages"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/orderPackage"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/orderPackage"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "orderPackage"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/orderedPackages"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/orderedPackages"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "orderedPackages"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/packageTemplates"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/packageTemplates"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "packageTemplates"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/updatePackageData"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/updatePackageData"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "updatePackageData"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

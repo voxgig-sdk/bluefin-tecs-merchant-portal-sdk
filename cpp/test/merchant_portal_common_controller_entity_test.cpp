@@ -50,7 +50,7 @@ static MerchantPortalCommonControllerSetup merchant_portal_common_controller_bas
 
   MerchantPortalCommonControllerSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

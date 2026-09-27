@@ -295,194 +295,227 @@ class Config {
     'merchant_portal_api_controller': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'format': 'int32',
           'name': 'account_number',
-          'short': 'Account number provided by the acquirer.',
+          'title': 'Account Number',
           'type': '`\$INTEGER`',
+          'short': 'Account number provided by the acquirer.',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'additional_data',
-          'short': 'Arbitrary merchant-specific data related to terminal registration.',
+          'title': 'Additional Data',
           'type': '`\$OBJECT`',
+          'short': 'Arbitrary merchant-specific data related to terminal registration.',
         },
         <String, dynamic>{
           'name': 'business_reg_number',
+          'title': 'Business Reg Number',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Merchant business registration number as stated in the company registry.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'city',
+          'title': 'City',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Merchant\'s address: city.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'corporateuuid',
-          'short': 'Unique identifier for the corporate entity (UUID format).',
+          'title': 'Corporateuuid',
           'type': '`\$STRING`',
+          'short': 'Unique identifier for the corporate entity (UUID format).',
         },
         <String, dynamic>{
           'name': 'country',
+          'title': 'Country',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Merchant\'s address: country (must be in \'ISO-3166 ALPHA-3\' format).',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'currency',
+          'title': 'Currency',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Transaction currency (must be in "ISO 4217" format).',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'merchant_category_code',
+          'title': 'Merchant Category Code',
+          'type': '`\$INTEGER`',
           'req': true,
           'short': 'Merchant category code as defined by the payment network.',
-          'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
-          'format': 'email',
           'name': 'merchant_email',
-          'short': 'Merchant\'s email address for receiving notifications.',
+          'title': 'Merchant Email',
           'type': '`\$STRING`',
+          'short': 'Merchant\'s email address for receiving notifications.',
+          'format': 'email',
         },
         <String, dynamic>{
           'name': 'merchant_name',
+          'title': 'Merchant Name',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'The officially incorporated company name of the merchant.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'merchant_phone_number',
-          'short': 'Merchant\'s phone number for notifications.',
+          'title': 'Merchant Phone Number',
           'type': '`\$STRING`',
+          'short': 'Merchant\'s phone number for notifications.',
         },
         <String, dynamic>{
           'name': 'packageid',
+          'title': 'Packageid',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Identifier of the package in the TECS processing engine provided by TECS.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'packageorderuuid',
+          'title': 'Packageorderuuid',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'password',
-          'short': 'Merchant password for MPOS.',
+          'title': 'Password',
           'type': '`\$STRING`',
+          'short': 'Merchant password for MPOS.',
         },
         <String, dynamic>{
           'name': 'productid',
-          'short': 'Identifier of the product for which terminal registration is to be performed.',
+          'title': 'Productid',
           'type': '`\$STRING`',
+          'short': 'Identifier of the product for which terminal registration is to be performed.',
         },
         <String, dynamic>{
           'name': 'productid_acquirer',
-          'short': 'Identifier of the product for which acquiring is enabled.',
+          'title': 'Productid Acquirer',
           'type': '`\$STRING`',
+          'short': 'Identifier of the product for which acquiring is enabled.',
         },
         <String, dynamic>{
           'name': 'reason_deactivation',
+          'title': 'Reason Deactivation',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Reason for terminal deactivation.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'reason_reactivation',
+          'title': 'Reason Reactivation',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Reason for terminal reactivation.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'sorting_code',
-          'short': 'Sorting code provided by the acquirer.',
+          'title': 'Sorting Code',
           'type': '`\$INTEGER`',
+          'short': 'Sorting code provided by the acquirer.',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'state',
-          'short': 'Merchant\'s address: state.',
+          'title': 'State',
           'type': '`\$STRING`',
+          'short': 'Merchant\'s address: state.',
         },
         <String, dynamic>{
           'name': 'street',
+          'title': 'Street',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Merchant\'s address: street and house number.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'terminal_country_code',
+          'title': 'Terminal Country Code',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Terminal country code (must be in \'ISO-3166 ALPHA-3\' format).',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'terminal_language_code',
+          'title': 'Terminal Language Code',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Terminal language code (must be in \'ISO 639-1\' format).',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'terminal_location',
+          'title': 'Terminal Location',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Physical or logical location of the terminal.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'terminal_serial_number',
+          'title': 'Terminal Serial Number',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Terminal serial number.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'terminalid',
+          'title': 'Terminalid',
+          'type': '`\$INTEGER`',
           'req': true,
           'short': 'TECS terminalid given by Tecs processing engine.',
-          'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'terminalid_acquirer',
-          'short': 'Terminal ID as set by the acquirer (optional).',
+          'title': 'Terminalid Acquirer',
           'type': '`\$STRING`',
+          'short': 'Terminal ID as set by the acquirer (optional).',
         },
         <String, dynamic>{
-          'format': 'email',
           'name': 'user_email',
-          'short': 'Email address of the user acting on behalf of the merchant.',
+          'title': 'User Email',
           'type': '`\$STRING`',
+          'short': 'Email address of the user acting on behalf of the merchant.',
+          'format': 'email',
         },
         <String, dynamic>{
           'name': 'user_phone_number',
-          'short': 'Phone number of the user acting on behalf of the merchant.',
+          'title': 'User Phone Number',
           'type': '`\$STRING`',
+          'short': 'Phone number of the user acting on behalf of the merchant.',
         },
         <String, dynamic>{
           'name': 'username',
-          'short': 'Merchant username for MPOS.',
+          'title': 'Username',
           'type': '`\$STRING`',
+          'short': 'Merchant username for MPOS.',
         },
         <String, dynamic>{
           'name': 'vu_nummer',
+          'title': 'Vu Nummer',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Merchant contract number with the acquirer.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'uri',
           'name': 'web_shop_url',
-          'short': 'URL of the merchant\'s web shop.',
+          'title': 'Web Shop Url',
           'type': '`\$STRING`',
+          'short': 'URL of the merchant\'s web shop.',
+          'format': 'uri',
         },
         <String, dynamic>{
           'name': 'zipcode',
+          'title': 'Zipcode',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Merchant\'s address: postal code.',
-          'type': '`\$STRING`',
         },
       ],
       'name': 'merchant_portal_api_controller',
@@ -492,17 +525,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/deactivateTerminal',
@@ -514,32 +536,33 @@ class Config {
                   'lit': 'deactivateTerminal',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'deactivateTerminal',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'deactivateTerminal',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/reactivateTerminal',
@@ -551,32 +574,33 @@ class Config {
                   'lit': 'reactivateTerminal',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'reactivateTerminal',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'reactivateTerminal',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/registerAdditionalTerminal',
@@ -588,32 +612,33 @@ class Config {
                   'lit': 'registerAdditionalTerminal',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'registerAdditionalTerminal',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'registerAdditionalTerminal',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/registerNewMerchant',
@@ -625,19 +650,31 @@ class Config {
                   'lit': 'registerNewMerchant',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'registerNewMerchant',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'registerNewMerchant',
-              ],
             },
           ],
         },
@@ -655,7 +692,6 @@ class Config {
           'name': 'load',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{},
               'kind': 'http',
               'method': 'GET',
               'orig': '/merchantportalws/logDeveloperInfo',
@@ -667,18 +703,19 @@ class Config {
                   'lit': 'logDeveloperInfo',
                 },
               ],
-              'select': <String, dynamic>{},
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
               'parts': <dynamic>[
                 'merchantportalws',
                 'logDeveloperInfo',
               ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{},
+              'select': <String, dynamic>{},
             },
             <String, dynamic>{
-              'args': <String, dynamic>{},
               'kind': 'http',
               'method': 'GET',
               'orig': '/merchantportalws/version',
@@ -690,15 +727,17 @@ class Config {
                   'lit': 'version',
                 },
               ],
-              'select': <String, dynamic>{},
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
               'parts': <dynamic>[
                 'merchantportalws',
                 'version',
               ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{},
+              'select': <String, dynamic>{},
             },
           ],
         },
@@ -711,13 +750,15 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'language',
-          'req': true,
+          'title': 'Language',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'productOrderUUID',
-          'req': true,
+          'title': 'Product Order Uuid',
           'type': '`\$STRING`',
+          'req': true,
         },
       ],
       'name': 'merchant_portal_pam_contract_controller',
@@ -727,17 +768,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/generateContract',
@@ -749,32 +779,33 @@ class Config {
                   'lit': 'generateContract',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'generateContract',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'generateContract',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/uploadContract',
@@ -786,19 +817,31 @@ class Config {
                   'lit': 'uploadContract',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'uploadContract',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'uploadContract',
-              ],
             },
           ],
         },
@@ -811,18 +854,21 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'appFormFieldDescUUID',
-          'req': true,
+          'title': 'App Form Field Desc Uuid',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'packageOrderUUID',
-          'short': 'UUID of the package order.',
+          'title': 'Package Order Uuid',
           'type': '`\$STRING`',
+          'short': 'UUID of the package order.',
         },
         <String, dynamic>{
           'name': 'productOrderUUID',
-          'short': 'UUID of the product order.',
+          'title': 'Product Order Uuid',
           'type': '`\$STRING`',
+          'short': 'UUID of the product order.',
         },
       ],
       'name': 'merchant_portal_pam_document_controller',
@@ -832,17 +878,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/documentsList',
@@ -854,32 +889,33 @@ class Config {
                   'lit': 'documentsList',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'documentsList',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'documentsList',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/downloadDocument',
@@ -891,19 +927,31 @@ class Config {
                   'lit': 'downloadDocument',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'downloadDocument',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'downloadDocument',
-              ],
             },
           ],
         },
@@ -916,44 +964,52 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'appFormFieldsDescUUID',
-          'req': true,
+          'title': 'App Form Fields Desc Uuid',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'filter',
+          'title': 'Filter',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
           'name': 'language',
+          'title': 'Language',
+          'type': '`\$STRING`',
+          'req': true,
           'op': <String, dynamic>{
             'create': <String, dynamic>{
               'type': '`\$STRING`',
             },
           },
-          'req': true,
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'packageOrder',
+          'title': 'Package Order',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
           'name': 'packageOrderUUID',
+          'title': 'Package Order Uuid',
+          'type': '`\$STRING`',
+          'req': true,
           'op': <String, dynamic>{
             'create': <String, dynamic>{
               'type': '`\$STRING`',
             },
           },
-          'req': true,
           'short': 'UUID of the package order.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'packageUUID',
+          'title': 'Package Uuid',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'productOrderUUID',
+          'title': 'Product Order Uuid',
+          'type': '`\$STRING`',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
               'req': true,
@@ -961,16 +1017,17 @@ class Config {
             },
           },
           'short': 'UUID of the product order.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'productOrders',
+          'title': 'Product Orders',
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
           'name': 'reasonOfReopening',
-          'req': true,
+          'title': 'Reason Of Reopening',
           'type': '`\$STRING`',
+          'req': true,
         },
       ],
       'name': 'merchant_portal_pam_form_controller',
@@ -980,17 +1037,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/applicationForm',
@@ -1002,32 +1048,33 @@ class Config {
                   'lit': 'applicationForm',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'applicationForm',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'applicationForm',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/packageForm',
@@ -1039,32 +1086,33 @@ class Config {
                   'lit': 'packageForm',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'packageForm',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'packageForm',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/reopenForm',
@@ -1076,32 +1124,33 @@ class Config {
                   'lit': 'reopenForm',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'reopenForm',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'reopenForm',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/secretKey',
@@ -1113,32 +1162,33 @@ class Config {
                   'lit': 'secretKey',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'secretKey',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'secretKey',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/submitForm',
@@ -1150,32 +1200,33 @@ class Config {
                   'lit': 'submitForm',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'submitForm',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'submitForm',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/submitValues',
@@ -1187,19 +1238,31 @@ class Config {
                   'lit': 'submitValues',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'submitValues',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'submitValues',
-              ],
             },
           ],
         },
@@ -1212,21 +1275,25 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'clientSecret',
+          'title': 'Client Secret',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'mandatorName',
-          'req': true,
+          'title': 'Mandator Name',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'notificationEmail',
+          'title': 'Notification Email',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'packageUUID',
-          'req': true,
+          'title': 'Package Uuid',
           'type': '`\$STRING`',
+          'req': true,
         },
       ],
       'name': 'merchant_portal_pam_mandator_controller',
@@ -1236,17 +1303,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/createMandatorConfig',
@@ -1258,32 +1314,33 @@ class Config {
                   'lit': 'createMandatorConfig',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'createMandatorConfig',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'createMandatorConfig',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/introduceMandatorPackage',
@@ -1295,32 +1352,33 @@ class Config {
                   'lit': 'introduceMandatorPackage',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'introduceMandatorPackage',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'introduceMandatorPackage',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/selfRegistrationLink',
@@ -1332,19 +1390,31 @@ class Config {
                   'lit': 'selfRegistrationLink',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'selfRegistrationLink',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'selfRegistrationLink',
-              ],
             },
           ],
         },
@@ -1357,145 +1427,171 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'additional_data',
-          'short': 'Optional additional merchant-specific data related to enabling acquiring.',
+          'title': 'Additional Data',
           'type': '`\$OBJECT`',
+          'short': 'Optional additional merchant-specific data related to enabling acquiring.',
         },
         <String, dynamic>{
           'name': 'businessRegistrationNumber',
-          'req': true,
+          'title': 'Business Registration Number',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'city',
-          'short': 'City where the merchant is located.',
+          'title': 'City',
           'type': '`\$STRING`',
+          'short': 'City where the merchant is located.',
         },
         <String, dynamic>{
           'name': 'companyName',
-          'req': true,
+          'title': 'Company Name',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'corporateUUID',
+          'title': 'Corporate Uuid',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Unique identifier for the corporate entity.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'country',
-          'short': 'Country where the merchant is located.',
+          'title': 'Country',
           'type': '`\$STRING`',
+          'short': 'Country where the merchant is located.',
         },
         <String, dynamic>{
           'name': 'currency',
+          'title': 'Currency',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Transaction currency in ISO 4217 format.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'email',
-          'req': true,
+          'title': 'Email',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'language',
-          'req': true,
+          'title': 'Language',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'login',
-          'req': true,
+          'title': 'Login',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'mandator',
+          'title': 'Mandator',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Mandator name assigned by TECS.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'merchantContractNumber',
+          'title': 'Merchant Contract Number',
+          'type': '`\$STRING`',
+          'req': true,
           'op': <String, dynamic>{
             'create': <String, dynamic>{
               'type': '`\$STRING`',
             },
           },
-          'req': true,
           'short': 'Unique identifier for the merchant within a specific system.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'merchantName',
-          'short': 'Name of the merchant.',
+          'title': 'Merchant Name',
           'type': '`\$STRING`',
+          'short': 'Name of the merchant.',
         },
         <String, dynamic>{
           'name': 'merchant_category_code',
-          'short': 'Merchant Category Code (MCC) describing the merchant’s type of business.',
+          'title': 'Merchant Category Code',
           'type': '`\$STRING`',
+          'short': 'Merchant Category Code (MCC) describing the merchant’s type of business.',
         },
         <String, dynamic>{
           'name': 'packageUUID',
-          'short': 'UUID of the package.',
+          'title': 'Package Uuid',
           'type': '`\$STRING`',
+          'short': 'UUID of the package.',
         },
         <String, dynamic>{
           'name': 'packageorderuuid',
+          'title': 'Packageorderuuid',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Unique identifier for the registered merchant in the TECS system.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'phoneNumber',
-          'req': true,
+          'title': 'Phone Number',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'postalCode',
-          'short': 'Postal or ZIP code of the merchant’s location.',
+          'title': 'Postal Code',
           'type': '`\$STRING`',
+          'short': 'Postal or ZIP code of the merchant’s location.',
         },
         <String, dynamic>{
           'name': 'productid_acquirer',
+          'title': 'Productid Acquirer',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Identifier of the product for which acquiring is to be enabled.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'region',
-          'short': 'State or province where the merchant is located.',
+          'title': 'Region',
           'type': '`\$STRING`',
+          'short': 'State or province where the merchant is located.',
         },
         <String, dynamic>{
           'name': 'registrationNumber',
-          'short': 'Business registration number.',
+          'title': 'Registration Number',
           'type': '`\$STRING`',
+          'short': 'Business registration number.',
         },
         <String, dynamic>{
           'name': 'signature',
-          'short': 'Signature value = saltAsHex-hashAsHex.',
+          'title': 'Signature',
           'type': '`\$STRING`',
+          'short': 'Signature value = saltAsHex-hashAsHex.',
         },
         <String, dynamic>{
           'name': 'street',
-          'short': 'Street address of the merchant.',
+          'title': 'Street',
           'type': '`\$STRING`',
+          'short': 'Street address of the merchant.',
         },
         <String, dynamic>{
           'name': 'terminalIds',
-          'short': 'Optional list of terminal IDs for which acquiring should be activated.',
+          'title': 'Terminal Ids',
           'type': '`\$ARRAY`',
+          'short': 'Optional list of terminal IDs for which acquiring should be activated.',
         },
         <String, dynamic>{
           'name': 'terminalid_acquirer',
-          'short': 'Optional terminal ID provided by the acquirer.',
+          'title': 'Terminalid Acquirer',
           'type': '`\$STRING`',
+          'short': 'Optional terminal ID provided by the acquirer.',
         },
         <String, dynamic>{
           'name': 'vu_nummer',
+          'title': 'Vu Nummer',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Merchant contract number with the acquirer.',
-          'type': '`\$STRING`',
         },
       ],
       'name': 'merchant_portal_pam_merchant_controller',
@@ -1505,17 +1601,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/contractNumber',
@@ -1527,32 +1612,33 @@ class Config {
                   'lit': 'contractNumber',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'contractNumber',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'contractNumber',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/registerAdditionalAcquiring',
@@ -1564,32 +1650,33 @@ class Config {
                   'lit': 'registerAdditionalAcquiring',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'registerAdditionalAcquiring',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'registerAdditionalAcquiring',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/updateMerchant',
@@ -1601,22 +1688,33 @@ class Config {
                   'lit': 'updateMerchant',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'updateMerchant',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'updateMerchant',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{},
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/registerMerchant',
@@ -1628,15 +1726,17 @@ class Config {
                   'lit': 'registerMerchant',
                 },
               ],
-              'select': <String, dynamic>{},
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
               'parts': <dynamic>[
                 'merchantportalws',
                 'registerMerchant',
               ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{},
+              'select': <String, dynamic>{},
             },
           ],
         },
@@ -1649,58 +1749,69 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'consumerUUID',
+          'title': 'Consumer Uuid',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'corporateUUID',
+          'title': 'Corporate Uuid',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'country',
-          'short': 'Country associated with the package.',
+          'title': 'Country',
           'type': '`\$STRING`',
+          'short': 'Country associated with the package.',
         },
         <String, dynamic>{
           'name': 'descriptionKey',
-          'short': 'Key for the description of the package.',
+          'title': 'Description Key',
           'type': '`\$STRING`',
+          'short': 'Key for the description of the package.',
         },
         <String, dynamic>{
           'name': 'filter',
+          'title': 'Filter',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
           'name': 'language',
+          'title': 'Language',
+          'type': '`\$STRING`',
+          'req': true,
           'op': <String, dynamic>{
             'create': <String, dynamic>{
               'type': '`\$STRING`',
             },
           },
-          'req': true,
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'nameKey',
-          'short': 'Key for the name of the package.',
+          'title': 'Name Key',
           'type': '`\$STRING`',
+          'short': 'Key for the name of the package.',
         },
         <String, dynamic>{
           'name': 'packageStatus',
-          'short': 'Status of the package.',
+          'title': 'Package Status',
           'type': '`\$STRING`',
+          'short': 'Status of the package.',
         },
         <String, dynamic>{
           'name': 'packageUUID',
+          'title': 'Package Uuid',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Unique identifier for the package.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'pagination',
+          'title': 'Pagination',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
           'name': 'sorting',
+          'title': 'Sorting',
           'type': '`\$OBJECT`',
         },
       ],
@@ -1711,17 +1822,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/availablePackages',
@@ -1733,32 +1833,33 @@ class Config {
                   'lit': 'availablePackages',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'availablePackages',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'availablePackages',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/orderPackage',
@@ -1770,32 +1871,33 @@ class Config {
                   'lit': 'orderPackage',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'orderPackage',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'orderPackage',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/orderedPackages',
@@ -1807,32 +1909,33 @@ class Config {
                   'lit': 'orderedPackages',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'orderedPackages',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'orderedPackages',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/packageTemplates',
@@ -1844,31 +1947,33 @@ class Config {
                   'lit': 'packageTemplates',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'packageTemplates',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'packageTemplates',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/updatePackageData',
@@ -1880,19 +1985,30 @@ class Config {
                   'lit': 'updatePackageData',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'updatePackageData',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'updatePackageData',
-              ],
             },
           ],
         },
@@ -1905,47 +2021,57 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'consumerUUID',
+          'title': 'Consumer Uuid',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'filter',
+          'title': 'Filter',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
           'name': 'language',
+          'title': 'Language',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'merchantID',
+          'title': 'Merchant Id',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'packageOrderUUID',
-          'req': true,
+          'title': 'Package Order Uuid',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'pagination',
+          'title': 'Pagination',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
           'name': 'productOrderUUID',
-          'req': true,
+          'title': 'Product Order Uuid',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'productUUID',
-          'req': true,
+          'title': 'Product Uuid',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'reason_decline',
+          'title': 'Reason Decline',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Reason for product decline.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'sorting',
+          'title': 'Sorting',
           'type': '`\$OBJECT`',
         },
       ],
@@ -1956,17 +2082,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/approveProduct',
@@ -1978,32 +2093,33 @@ class Config {
                   'lit': 'approveProduct',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'approveProduct',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'approveProduct',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/declineProduct',
@@ -2015,32 +2131,33 @@ class Config {
                   'lit': 'declineProduct',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'declineProduct',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'declineProduct',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/orderAdditionalProduct',
@@ -2052,32 +2169,33 @@ class Config {
                   'lit': 'orderAdditionalProduct',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'orderAdditionalProduct',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'orderAdditionalProduct',
-              ],
             },
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/productsList',
@@ -2089,19 +2207,31 @@ class Config {
                   'lit': 'productsList',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'productsList',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'productsList',
-              ],
             },
           ],
         },
@@ -2114,28 +2244,32 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'packageUUID',
+          'title': 'Package Uuid',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Unique identifier for the package.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'productUUIDs',
+          'title': 'Product Uui Ds',
+          'type': '`\$ARRAY`',
           'req': true,
           'short': 'The list of unique identifiers of the products.',
-          'type': '`\$ARRAY`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
+          'type': '`\$INTEGER`',
           'req': true,
           'short': 'Response code.',
-          'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Response message.',
-          'type': '`\$STRING`',
         },
       ],
       'name': 'output_add_product',
@@ -2145,17 +2279,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/addProductsToPackage',
@@ -2167,19 +2290,31 @@ class Config {
                   'lit': 'addProductsToPackage',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'addProductsToPackage',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'addProductsToPackage',
-              ],
             },
           ],
         },
@@ -2192,86 +2327,100 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'acquirerId',
-          'short': 'Unique identifier for the acquirer.',
+          'title': 'Acquirer Id',
           'type': '`\$STRING`',
+          'short': 'Unique identifier for the acquirer.',
         },
         <String, dynamic>{
           'name': 'allowMultipleOrders',
+          'title': 'Allow Multiple Orders',
+          'type': '`\$BOOLEAN`',
           'req': true,
           'short': 'Indication whether multiple orders are allowed or not.',
-          'type': '`\$BOOLEAN`',
         },
         <String, dynamic>{
           'name': 'appFormTemplateName',
+          'title': 'App Form Template Name',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Name of the application form template.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'contractNeeded',
+          'title': 'Contract Needed',
+          'type': '`\$BOOLEAN`',
           'req': true,
           'short': 'Indication whether contract is needed or not.',
-          'type': '`\$BOOLEAN`',
         },
         <String, dynamic>{
           'name': 'credentialsNeeded',
-          'short': 'Indication whether credentials are needed or not.',
+          'title': 'Credentials Needed',
           'type': '`\$BOOLEAN`',
+          'short': 'Indication whether credentials are needed or not.',
         },
         <String, dynamic>{
           'name': 'descriptionKey',
+          'title': 'Description Key',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Key indicator for product description.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'nameKey',
+          'title': 'Name Key',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Key indicator for product name.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'prescreeningAllowed',
+          'title': 'Prescreening Allowed',
+          'type': '`\$BOOLEAN`',
           'req': true,
           'short': 'Indication whether prescreening is allowed or not.',
-          'type': '`\$BOOLEAN`',
         },
         <String, dynamic>{
           'name': 'productName',
+          'title': 'Product Name',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Name of the product.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
+          'type': '`\$INTEGER`',
           'req': true,
           'short': 'Response code.',
-          'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Response message.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'terminalTemplateName',
+          'title': 'Terminal Template Name',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Name of the terminal template.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'vendorName',
+          'title': 'Vendor Name',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Name of the vendor.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'xmlTemplateFile',
+          'title': 'Xml Template File',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'A string value containing the XML template file encoded in Base64.',
-          'type': '`\$STRING`',
         },
       ],
       'name': 'output_create_product',
@@ -2281,17 +2430,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/createNewProduct',
@@ -2303,19 +2441,31 @@ class Config {
                   'lit': 'createNewProduct',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'createNewProduct',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'createNewProduct',
-              ],
             },
           ],
         },
@@ -2328,18 +2478,22 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'batch',
+          'title': 'Batch',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
           'name': 'id',
+          'title': 'Id',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'lines',
+          'title': 'Lines',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
           'name': 'progress',
+          'title': 'Progress',
           'type': '`\$OBJECT`',
         },
       ],
@@ -2354,26 +2508,6 @@ class Config {
           'name': 'load',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-                'params': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'param',
-                    'name': 'id',
-                    'orig': 'id',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'GET',
               'orig': '/merchantportalws/batch/registerAdditionalTerminal/details/{id}',
@@ -2394,16 +2528,6 @@ class Config {
                   'var': 'id',
                 },
               ],
-              'select': <String, dynamic>{
-                'exist': <dynamic>[
-                  'authorization',
-                  'id',
-                ],
-              },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body.details`',
-              },
               'parts': <dynamic>[
                 'merchantportalws',
                 'batch',
@@ -2411,6 +2535,37 @@ class Config {
                 'details',
                 '{id}',
               ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body.details`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+                'params': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'id',
+                    'orig': 'id',
+                    'type': '`\$STRING`',
+                    'kind': 'param',
+                    'reqd': true,
+                  },
+                ],
+              },
+              'select': <String, dynamic>{
+                'exist': <dynamic>[
+                  'authorization',
+                  'id',
+                ],
+              },
             },
           ],
         },
@@ -2423,33 +2578,38 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'items',
+          'title': 'Items',
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
           'name': 'pagination',
+          'title': 'Pagination',
+          'type': '`\$OBJECT`',
+          'req': true,
           'op': <String, dynamic>{
             'create': <String, dynamic>{
               'type': '`\$OBJECT`',
             },
           },
-          'req': true,
-          'type': '`\$OBJECT`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
+          'type': '`\$INTEGER`',
           'req': true,
           'short': 'Response code.',
-          'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Response message.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'sorting',
+          'title': 'Sorting',
           'type': '`\$OBJECT`',
         },
       ],
@@ -2460,17 +2620,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/batch/registerAdditionalTerminal/list',
@@ -2488,21 +2637,33 @@ class Config {
                   'lit': 'list',
                 },
               ],
-              'select': <String, dynamic>{
-                'exist': <dynamic>[
-                  'authorization',
-                ],
-              },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
               'parts': <dynamic>[
                 'merchantportalws',
                 'batch',
                 'registerAdditionalTerminal',
                 'list',
               ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
+              'select': <String, dynamic>{
+                'exist': <dynamic>[
+                  'authorization',
+                ],
+              },
             },
           ],
         },
@@ -2515,20 +2676,23 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'id',
+          'title': 'Id',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
+          'type': '`\$INTEGER`',
           'req': true,
           'short': 'Response code.',
-          'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Response message.',
-          'type': '`\$STRING`',
         },
       ],
       'id': <String, dynamic>{
@@ -2542,26 +2706,6 @@ class Config {
           'name': 'load',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-                'params': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'param',
-                    'name': 'id',
-                    'orig': 'id',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'GET',
               'orig': '/merchantportalws/batch/registerAdditionalTerminal/restart/{id}',
@@ -2582,16 +2726,6 @@ class Config {
                   'var': 'id',
                 },
               ],
-              'select': <String, dynamic>{
-                'exist': <dynamic>[
-                  'authorization',
-                  'id',
-                ],
-              },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
               'parts': <dynamic>[
                 'merchantportalws',
                 'batch',
@@ -2599,28 +2733,39 @@ class Config {
                 'restart',
                 '{id}',
               ],
-            },
-            <String, dynamic>{
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
-                    'reqd': true,
                     'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
                   },
                 ],
                 'params': <dynamic>[
                   <String, dynamic>{
-                    'kind': 'param',
                     'name': 'id',
                     'orig': 'id',
-                    'reqd': true,
                     'type': '`\$STRING`',
+                    'kind': 'param',
+                    'reqd': true,
                   },
                 ],
               },
+              'select': <String, dynamic>{
+                'exist': <dynamic>[
+                  'authorization',
+                  'id',
+                ],
+              },
+            },
+            <String, dynamic>{
               'kind': 'http',
               'method': 'GET',
               'orig': '/merchantportalws/batch/registerAdditionalTerminal/stop/{id}',
@@ -2641,16 +2786,6 @@ class Config {
                   'var': 'id',
                 },
               ],
-              'select': <String, dynamic>{
-                'exist': <dynamic>[
-                  'authorization',
-                  'id',
-                ],
-              },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
               'parts': <dynamic>[
                 'merchantportalws',
                 'batch',
@@ -2658,6 +2793,37 @@ class Config {
                 'stop',
                 '{id}',
               ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+                'params': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'id',
+                    'orig': 'id',
+                    'type': '`\$STRING`',
+                    'kind': 'param',
+                    'reqd': true,
+                  },
+                ],
+              },
+              'select': <String, dynamic>{
+                'exist': <dynamic>[
+                  'authorization',
+                  'id',
+                ],
+              },
             },
           ],
         },
@@ -2670,31 +2836,36 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'productOrderUUIDs',
-          'req': true,
+          'title': 'Product Order Uui Ds',
           'type': '`\$ARRAY`',
+          'req': true,
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
+          'type': '`\$INTEGER`',
           'req': true,
           'short': 'Response code.',
-          'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Response message.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'targetPackageOrderUUID',
-          'req': true,
+          'title': 'Target Package Order Uuid',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'targetProductOrderUUID',
-          'req': true,
+          'title': 'Target Product Order Uuid',
           'type': '`\$STRING`',
+          'req': true,
         },
       ],
       'name': 'output_move_tid',
@@ -2704,17 +2875,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/moveTid',
@@ -2726,19 +2886,31 @@ class Config {
                   'lit': 'moveTid',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'moveTid',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'moveTid',
-              ],
             },
           ],
         },
@@ -2751,28 +2923,32 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'packageUUID',
+          'title': 'Package Uuid',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Unique identifier for the package.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'productUUIDs',
+          'title': 'Product Uui Ds',
+          'type': '`\$ARRAY`',
           'req': true,
           'short': 'List of product unique identifiers.',
-          'type': '`\$ARRAY`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
+          'type': '`\$INTEGER`',
           'req': true,
           'short': 'Response code.',
-          'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Response message.',
-          'type': '`\$STRING`',
         },
       ],
       'name': 'output_remove_product',
@@ -2782,17 +2958,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/removeProductsFromPackage',
@@ -2804,19 +2969,31 @@ class Config {
                   'lit': 'removeProductsFromPackage',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'removeProductsFromPackage',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'removeProductsFromPackage',
-              ],
             },
           ],
         },
@@ -2829,20 +3006,23 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'id',
+          'title': 'Id',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
+          'type': '`\$INTEGER`',
           'req': true,
           'short': 'Response code.',
-          'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Response message.',
-          'type': '`\$STRING`',
         },
       ],
       'id': <String, dynamic>{
@@ -2856,17 +3036,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/batch/registerAdditionalTerminal/start',
@@ -2884,21 +3053,33 @@ class Config {
                   'lit': 'start',
                 },
               ],
-              'select': <String, dynamic>{
-                'exist': <dynamic>[
-                  'authorization',
-                ],
-              },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
               'parts': <dynamic>[
                 'merchantportalws',
                 'batch',
                 'registerAdditionalTerminal',
                 'start',
               ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
+              'select': <String, dynamic>{
+                'exist': <dynamic>[
+                  'authorization',
+                ],
+              },
             },
           ],
         },
@@ -2911,28 +3092,33 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'id',
+          'title': 'Id',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'percentage',
+          'title': 'Percentage',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
+          'type': '`\$INTEGER`',
           'req': true,
           'short': 'Response code.',
-          'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Response message.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'status',
+          'title': 'Status',
           'type': '`\$STRING`',
         },
       ],
@@ -2947,26 +3133,6 @@ class Config {
           'name': 'load',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-                'params': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'param',
-                    'name': 'id',
-                    'orig': 'id',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'GET',
               'orig': '/merchantportalws/batch/registerAdditionalTerminal/status/{id}',
@@ -2987,16 +3153,6 @@ class Config {
                   'var': 'id',
                 },
               ],
-              'select': <String, dynamic>{
-                'exist': <dynamic>[
-                  'authorization',
-                  'id',
-                ],
-              },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
               'parts': <dynamic>[
                 'merchantportalws',
                 'batch',
@@ -3004,6 +3160,37 @@ class Config {
                 'status',
                 '{id}',
               ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+                'params': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'id',
+                    'orig': 'id',
+                    'type': '`\$STRING`',
+                    'kind': 'param',
+                    'reqd': true,
+                  },
+                ],
+              },
+              'select': <String, dynamic>{
+                'exist': <dynamic>[
+                  'authorization',
+                  'id',
+                ],
+              },
             },
           ],
         },
@@ -3016,72 +3203,85 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'allowMultipleOrders',
-          'short': 'An attribute to indicate if multiple orders are allowed',
+          'title': 'Allow Multiple Orders',
           'type': '`\$BOOLEAN`',
+          'short': 'An attribute to indicate if multiple orders are allowed',
         },
         <String, dynamic>{
           'name': 'appFormName',
-          'short': 'The name of the application form',
+          'title': 'App Form Name',
           'type': '`\$STRING`',
+          'short': 'The name of the application form',
         },
         <String, dynamic>{
           'name': 'contractNeeded',
-          'short': 'An attribute to indicate if a contract is needed',
+          'title': 'Contract Needed',
           'type': '`\$BOOLEAN`',
+          'short': 'An attribute to indicate if a contract is needed',
         },
         <String, dynamic>{
           'name': 'credentialsNeeded',
-          'short': 'An attribute to indicate if credentials are needed',
+          'title': 'Credentials Needed',
           'type': '`\$BOOLEAN`',
+          'short': 'An attribute to indicate if credentials are needed',
         },
         <String, dynamic>{
           'name': 'descriptionKey',
-          'short': 'The description of the product',
+          'title': 'Description Key',
           'type': '`\$STRING`',
+          'short': 'The description of the product',
         },
         <String, dynamic>{
           'name': 'nameKey',
-          'short': 'The key of the product name',
+          'title': 'Name Key',
           'type': '`\$STRING`',
+          'short': 'The key of the product name',
         },
         <String, dynamic>{
           'name': 'prescreeningAllowed',
-          'short': 'An attribute to indicate if prescreening is allowed',
+          'title': 'Prescreening Allowed',
           'type': '`\$BOOLEAN`',
+          'short': 'An attribute to indicate if prescreening is allowed',
         },
         <String, dynamic>{
           'name': 'productName',
-          'short': 'The name of the product',
+          'title': 'Product Name',
           'type': '`\$STRING`',
+          'short': 'The name of the product',
         },
         <String, dynamic>{
           'name': 'productStatus',
-          'short': 'The status of the product',
+          'title': 'Product Status',
           'type': '`\$STRING`',
+          'short': 'The status of the product',
         },
         <String, dynamic>{
           'name': 'productUUID',
+          'title': 'Product Uuid',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'The UUID of the product to update',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
+          'type': '`\$INTEGER`',
           'req': true,
           'short': 'Response code.',
-          'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Response message.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'vendorName',
-          'short': 'The name of the vendor',
+          'title': 'Vendor Name',
           'type': '`\$STRING`',
+          'short': 'The name of the vendor',
         },
       ],
       'name': 'output_update_product',
@@ -3091,17 +3291,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/merchantportalws/updateProduct',
@@ -3113,19 +3302,31 @@ class Config {
                   'lit': 'updateProduct',
                 },
               ],
+              'parts': <dynamic>[
+                'merchantportalws',
+                'updateProduct',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'merchantportalws',
-                'updateProduct',
-              ],
             },
           ],
         },

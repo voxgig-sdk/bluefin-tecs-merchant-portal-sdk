@@ -50,7 +50,7 @@ static MerchantPortalPamProductControllerSetup merchant_portal_pam_product_contr
 
   MerchantPortalPamProductControllerSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

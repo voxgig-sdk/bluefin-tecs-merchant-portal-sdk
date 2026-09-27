@@ -1,0 +1,115 @@
+# Entity: merchant_portal_pam_document_controller
+
+main: kit: entity: merchant_portal_pam_document_controller: {
+
+  alias: field: {}
+
+  fields: {
+    appFormFieldDescUUID: {
+      h: "App Form Field Desc Uuid"
+      n: "appFormFieldDescUUID"
+      r: true
+      t: "`$STRING`"
+    }
+    packageOrderUUID: {
+      h: "Package Order Uuid"
+      n: "packageOrderUUID"
+      r: false
+      sh: "UUID of the package order."
+      t: "`$STRING`"
+    }
+    productOrderUUID: {
+      h: "Product Order Uuid"
+      n: "productOrderUUID"
+      r: false
+      sh: "UUID of the product order."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "merchant_portal_pam_document_controller"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /merchantportalws/documentsList"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/documentsList"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "documentsList"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/downloadDocument"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/downloadDocument"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "downloadDocument"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

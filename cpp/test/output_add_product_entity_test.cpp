@@ -50,7 +50,7 @@ static OutputAddProductSetup output_add_product_basic_setup(const Value& extra) 
 
   OutputAddProductSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

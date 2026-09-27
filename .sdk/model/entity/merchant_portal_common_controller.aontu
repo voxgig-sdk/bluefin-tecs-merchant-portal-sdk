@@ -1,0 +1,63 @@
+# Entity: merchant_portal_common_controller
+
+main: kit: entity: merchant_portal_common_controller: {
+
+  alias: field: {}
+
+  name: "merchant_portal_common_controller"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /merchantportalws/logDeveloperInfo"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/merchantportalws/logDeveloperInfo"
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "logDeveloperInfo"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /merchantportalws/version"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/merchantportalws/version"
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "version"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

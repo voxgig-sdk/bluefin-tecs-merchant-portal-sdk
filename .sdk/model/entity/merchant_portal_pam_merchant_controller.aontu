@@ -1,0 +1,335 @@
+# Entity: merchant_portal_pam_merchant_controller
+
+main: kit: entity: merchant_portal_pam_merchant_controller: {
+
+  alias: field: {}
+
+  fields: {
+    additional_data: {
+      h: "Additional Data"
+      n: "additional_data"
+      r: false
+      sh: "Optional additional merchant-specific data related to enabling acquiring."
+      t: "`$OBJECT`"
+    }
+    businessRegistrationNumber: {
+      h: "Business Registration Number"
+      n: "businessRegistrationNumber"
+      r: true
+      t: "`$STRING`"
+    }
+    city: {
+      h: "City"
+      n: "city"
+      r: false
+      sh: "City where the merchant is located."
+      t: "`$STRING`"
+    }
+    companyName: {
+      h: "Company Name"
+      n: "companyName"
+      r: true
+      t: "`$STRING`"
+    }
+    corporateUUID: {
+      h: "Corporate Uuid"
+      n: "corporateUUID"
+      r: true
+      sh: "Unique identifier for the corporate entity."
+      t: "`$STRING`"
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: false
+      sh: "Country where the merchant is located."
+      t: "`$STRING`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Transaction currency in ISO 4217 format."
+      t: "`$STRING`"
+    }
+    email: {
+      h: "Email"
+      n: "email"
+      r: true
+      t: "`$STRING`"
+    }
+    language: {
+      h: "Language"
+      n: "language"
+      r: true
+      t: "`$STRING`"
+    }
+    login: {
+      h: "Login"
+      n: "login"
+      r: true
+      t: "`$STRING`"
+    }
+    mandator: {
+      h: "Mandator"
+      n: "mandator"
+      r: true
+      sh: "Mandator name assigned by TECS."
+      t: "`$STRING`"
+    }
+    merchantContractNumber: {
+      h: "Merchant Contract Number"
+      n: "merchantContractNumber"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "Unique identifier for the merchant within a specific system."
+      t: "`$STRING`"
+    }
+    merchantName: {
+      h: "Merchant Name"
+      n: "merchantName"
+      r: false
+      sh: "Name of the merchant."
+      t: "`$STRING`"
+    }
+    merchant_category_code: {
+      h: "Merchant Category Code"
+      n: "merchant_category_code"
+      r: false
+      sh: "Merchant Category Code (MCC) describing the merchant’s type of business."
+      t: "`$STRING`"
+    }
+    packageUUID: {
+      h: "Package Uuid"
+      n: "packageUUID"
+      r: false
+      sh: "UUID of the package."
+      t: "`$STRING`"
+    }
+    packageorderuuid: {
+      h: "Packageorderuuid"
+      n: "packageorderuuid"
+      r: true
+      sh: "Unique identifier for the registered merchant in the TECS system."
+      t: "`$STRING`"
+    }
+    phoneNumber: {
+      h: "Phone Number"
+      n: "phoneNumber"
+      r: true
+      t: "`$STRING`"
+    }
+    postalCode: {
+      h: "Postal Code"
+      n: "postalCode"
+      r: false
+      sh: "Postal or ZIP code of the merchant’s location."
+      t: "`$STRING`"
+    }
+    productid_acquirer: {
+      h: "Productid Acquirer"
+      n: "productid_acquirer"
+      r: true
+      sh: "Identifier of the product for which acquiring is to be enabled."
+      t: "`$STRING`"
+    }
+    region: {
+      h: "Region"
+      n: "region"
+      r: false
+      sh: "State or province where the merchant is located."
+      t: "`$STRING`"
+    }
+    registrationNumber: {
+      h: "Registration Number"
+      n: "registrationNumber"
+      r: false
+      sh: "Business registration number."
+      t: "`$STRING`"
+    }
+    signature: {
+      h: "Signature"
+      n: "signature"
+      r: false
+      sh: "Signature value = saltAsHex-hashAsHex."
+      t: "`$STRING`"
+    }
+    street: {
+      h: "Street"
+      n: "street"
+      r: false
+      sh: "Street address of the merchant."
+      t: "`$STRING`"
+    }
+    terminalIds: {
+      h: "Terminal Ids"
+      n: "terminalIds"
+      r: false
+      sh: "Optional list of terminal IDs for which acquiring should be activated."
+      t: "`$ARRAY`"
+    }
+    terminalid_acquirer: {
+      h: "Terminalid Acquirer"
+      n: "terminalid_acquirer"
+      r: false
+      sh: "Optional terminal ID provided by the acquirer."
+      t: "`$STRING`"
+    }
+    vu_nummer: {
+      h: "Vu Nummer"
+      n: "vu_nummer"
+      r: true
+      sh: "Merchant contract number with the acquirer."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "merchant_portal_pam_merchant_controller"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /merchantportalws/contractNumber"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/contractNumber"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "contractNumber"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/registerAdditionalAcquiring"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/registerAdditionalAcquiring"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "registerAdditionalAcquiring"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/updateMerchant"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/updateMerchant"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "updateMerchant"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/registerMerchant"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/merchantportalws/registerMerchant"
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "registerMerchant"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

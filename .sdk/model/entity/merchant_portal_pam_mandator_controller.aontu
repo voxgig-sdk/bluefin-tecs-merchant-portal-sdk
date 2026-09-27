@@ -1,0 +1,156 @@
+# Entity: merchant_portal_pam_mandator_controller
+
+main: kit: entity: merchant_portal_pam_mandator_controller: {
+
+  alias: field: {}
+
+  fields: {
+    clientSecret: {
+      h: "Client Secret"
+      n: "clientSecret"
+      r: false
+      t: "`$STRING`"
+    }
+    mandatorName: {
+      h: "Mandator Name"
+      n: "mandatorName"
+      r: true
+      t: "`$STRING`"
+    }
+    notificationEmail: {
+      h: "Notification Email"
+      n: "notificationEmail"
+      r: false
+      t: "`$STRING`"
+    }
+    packageUUID: {
+      h: "Package Uuid"
+      n: "packageUUID"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "merchant_portal_pam_mandator_controller"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /merchantportalws/createMandatorConfig"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/createMandatorConfig"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "createMandatorConfig"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/introduceMandatorPackage"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/introduceMandatorPackage"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "introduceMandatorPackage"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/selfRegistrationLink"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/selfRegistrationLink"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "selfRegistrationLink"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

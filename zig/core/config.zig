@@ -229,194 +229,227 @@ pub fn make_config() Value {
             .{ "merchant_portal_api_controller", h.jo(&.{
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
-                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("account_number") },
-                        .{ "short", h.vstr("Account number provided by the acquirer.") },
+                        .{ "title", h.vstr("Account Number") },
                         .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "short", h.vstr("Account number provided by the acquirer.") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("additional_data") },
-                        .{ "short", h.vstr("Arbitrary merchant-specific data related to terminal registration.") },
+                        .{ "title", h.vstr("Additional Data") },
                         .{ "type", h.vstr("`$OBJECT`") },
+                        .{ "short", h.vstr("Arbitrary merchant-specific data related to terminal registration.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("business_reg_number") },
+                        .{ "title", h.vstr("Business Reg Number") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Merchant business registration number as stated in the company registry.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("city") },
+                        .{ "title", h.vstr("City") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Merchant's address: city.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("corporateuuid") },
-                        .{ "short", h.vstr("Unique identifier for the corporate entity (UUID format).") },
+                        .{ "title", h.vstr("Corporateuuid") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Unique identifier for the corporate entity (UUID format).") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("country") },
+                        .{ "title", h.vstr("Country") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format).") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("currency") },
+                        .{ "title", h.vstr("Currency") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Transaction currency (must be in \"ISO 4217\" format).") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("merchant_category_code") },
+                        .{ "title", h.vstr("Merchant Category Code") },
+                        .{ "type", h.vstr("`$INTEGER`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Merchant category code as defined by the payment network.") },
-                        .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("email") },
                         .{ "name", h.vstr("merchant_email") },
-                        .{ "short", h.vstr("Merchant's email address for receiving notifications.") },
+                        .{ "title", h.vstr("Merchant Email") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Merchant's email address for receiving notifications.") },
+                        .{ "format", h.vstr("email") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("merchant_name") },
+                        .{ "title", h.vstr("Merchant Name") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("The officially incorporated company name of the merchant.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("merchant_phone_number") },
-                        .{ "short", h.vstr("Merchant's phone number for notifications.") },
+                        .{ "title", h.vstr("Merchant Phone Number") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Merchant's phone number for notifications.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageid") },
+                        .{ "title", h.vstr("Packageid") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Identifier of the package in the TECS processing engine provided by TECS.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageorderuuid") },
+                        .{ "title", h.vstr("Packageorderuuid") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("password") },
-                        .{ "short", h.vstr("Merchant password for MPOS.") },
+                        .{ "title", h.vstr("Password") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Merchant password for MPOS.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productid") },
-                        .{ "short", h.vstr("Identifier of the product for which terminal registration is to be performed.") },
+                        .{ "title", h.vstr("Productid") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Identifier of the product for which terminal registration is to be performed.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productid_acquirer") },
-                        .{ "short", h.vstr("Identifier of the product for which acquiring is enabled.") },
+                        .{ "title", h.vstr("Productid Acquirer") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Identifier of the product for which acquiring is enabled.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("reason_deactivation") },
+                        .{ "title", h.vstr("Reason Deactivation") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Reason for terminal deactivation.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("reason_reactivation") },
+                        .{ "title", h.vstr("Reason Reactivation") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Reason for terminal reactivation.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("sorting_code") },
-                        .{ "short", h.vstr("Sorting code provided by the acquirer.") },
+                        .{ "title", h.vstr("Sorting Code") },
                         .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "short", h.vstr("Sorting code provided by the acquirer.") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("state") },
-                        .{ "short", h.vstr("Merchant's address: state.") },
+                        .{ "title", h.vstr("State") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Merchant's address: state.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("street") },
+                        .{ "title", h.vstr("Street") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Merchant's address: street and house number.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminal_country_code") },
+                        .{ "title", h.vstr("Terminal Country Code") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Terminal country code (must be in 'ISO-3166 ALPHA-3' format).") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminal_language_code") },
+                        .{ "title", h.vstr("Terminal Language Code") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Terminal language code (must be in 'ISO 639-1' format).") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminal_location") },
+                        .{ "title", h.vstr("Terminal Location") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Physical or logical location of the terminal.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminal_serial_number") },
+                        .{ "title", h.vstr("Terminal Serial Number") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Terminal serial number.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalid") },
+                        .{ "title", h.vstr("Terminalid") },
+                        .{ "type", h.vstr("`$INTEGER`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("TECS terminalid given by Tecs processing engine.") },
-                        .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminalid_acquirer") },
-                        .{ "short", h.vstr("Terminal ID as set by the acquirer (optional).") },
+                        .{ "title", h.vstr("Terminalid Acquirer") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Terminal ID as set by the acquirer (optional).") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("email") },
                         .{ "name", h.vstr("user_email") },
-                        .{ "short", h.vstr("Email address of the user acting on behalf of the merchant.") },
+                        .{ "title", h.vstr("User Email") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Email address of the user acting on behalf of the merchant.") },
+                        .{ "format", h.vstr("email") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("user_phone_number") },
-                        .{ "short", h.vstr("Phone number of the user acting on behalf of the merchant.") },
+                        .{ "title", h.vstr("User Phone Number") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Phone number of the user acting on behalf of the merchant.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("username") },
-                        .{ "short", h.vstr("Merchant username for MPOS.") },
+                        .{ "title", h.vstr("Username") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Merchant username for MPOS.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("vu_nummer") },
+                        .{ "title", h.vstr("Vu Nummer") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Merchant contract number with the acquirer.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("uri") },
                         .{ "name", h.vstr("web_shop_url") },
-                        .{ "short", h.vstr("URL of the merchant's web shop.") },
+                        .{ "title", h.vstr("Web Shop Url") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("URL of the merchant's web shop.") },
+                        .{ "format", h.vstr("uri") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("zipcode") },
+                        .{ "title", h.vstr("Zipcode") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Merchant's address: postal code.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
                 .{ "name", h.vstr("merchant_portal_api_controller") },
@@ -426,17 +459,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/deactivateTerminal") },
@@ -448,32 +470,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("deactivateTerminal") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("deactivateTerminal"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("deactivateTerminal"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/reactivateTerminal") },
@@ -485,32 +508,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("reactivateTerminal") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("reactivateTerminal"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("reactivateTerminal"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/registerAdditionalTerminal") },
@@ -522,32 +546,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("registerAdditionalTerminal") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("registerAdditionalTerminal"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("registerAdditionalTerminal"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/registerNewMerchant") },
@@ -559,18 +584,30 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("registerNewMerchant") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("registerNewMerchant"),
                                 }) },
+                                .{ "rename", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
                                 }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("registerNewMerchant"),
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -589,7 +626,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("load") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.omap() },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/logDeveloperInfo") },
@@ -601,18 +637,19 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("logDeveloperInfo") },
                                     }),
                                 }) },
-                                .{ "select", h.omap() },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
                                 .{ "parts", h.ja(&.{
                                     h.vstr("merchantportalws"),
                                     h.vstr("logDeveloperInfo"),
                                 }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.omap() },
+                                .{ "select", h.omap() },
                             }),
                             h.jo(&.{
-                                .{ "args", h.omap() },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/version") },
@@ -624,15 +661,17 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("version") },
                                     }),
                                 }) },
-                                .{ "select", h.omap() },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
                                 .{ "parts", h.ja(&.{
                                     h.vstr("merchantportalws"),
                                     h.vstr("version"),
                                 }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.omap() },
+                                .{ "select", h.omap() },
                             }),
                         }) },
                     }) },
@@ -645,13 +684,15 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("language") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Language") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productOrderUUID") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Product Order Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                 }) },
                 .{ "name", h.vstr("merchant_portal_pam_contract_controller") },
@@ -661,17 +702,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/generateContract") },
@@ -683,32 +713,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("generateContract") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("generateContract"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("generateContract"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/uploadContract") },
@@ -720,18 +751,30 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("uploadContract") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("uploadContract"),
                                 }) },
+                                .{ "rename", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
                                 }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("uploadContract"),
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -745,18 +788,21 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("appFormFieldDescUUID") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("App Form Field Desc Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageOrderUUID") },
-                        .{ "short", h.vstr("UUID of the package order.") },
+                        .{ "title", h.vstr("Package Order Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("UUID of the package order.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productOrderUUID") },
-                        .{ "short", h.vstr("UUID of the product order.") },
+                        .{ "title", h.vstr("Product Order Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("UUID of the product order.") },
                     }),
                 }) },
                 .{ "name", h.vstr("merchant_portal_pam_document_controller") },
@@ -766,17 +812,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/documentsList") },
@@ -788,32 +823,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("documentsList") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("documentsList"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("documentsList"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/downloadDocument") },
@@ -825,18 +861,30 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("downloadDocument") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("downloadDocument"),
                                 }) },
+                                .{ "rename", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
                                 }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("downloadDocument"),
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -850,44 +898,52 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("appFormFieldsDescUUID") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("App Form Fields Desc Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("filter") },
+                        .{ "title", h.vstr("Filter") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("language") },
+                        .{ "title", h.vstr("Language") },
+                        .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
                                 .{ "type", h.vstr("`$STRING`") },
                             }) },
                         }) },
-                        .{ "req", h.vbool(true) },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageOrder") },
+                        .{ "title", h.vstr("Package Order") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageOrderUUID") },
+                        .{ "title", h.vstr("Package Order Uuid") },
+                        .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
                                 .{ "type", h.vstr("`$STRING`") },
                             }) },
                         }) },
-                        .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("UUID of the package order.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageUUID") },
+                        .{ "title", h.vstr("Package Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productOrderUUID") },
+                        .{ "title", h.vstr("Product Order Uuid") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
                                 .{ "req", h.vbool(true) },
@@ -895,16 +951,17 @@ pub fn make_config() Value {
                             }) },
                         }) },
                         .{ "short", h.vstr("UUID of the product order.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productOrders") },
+                        .{ "title", h.vstr("Product Orders") },
                         .{ "type", h.vstr("`$ARRAY`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("reasonOfReopening") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Reason Of Reopening") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                 }) },
                 .{ "name", h.vstr("merchant_portal_pam_form_controller") },
@@ -914,17 +971,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/applicationForm") },
@@ -936,32 +982,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("applicationForm") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("applicationForm"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("applicationForm"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/packageForm") },
@@ -973,32 +1020,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("packageForm") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("packageForm"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("packageForm"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/reopenForm") },
@@ -1010,32 +1058,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("reopenForm") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("reopenForm"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("reopenForm"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/secretKey") },
@@ -1047,32 +1096,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("secretKey") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("secretKey"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("secretKey"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/submitForm") },
@@ -1084,32 +1134,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("submitForm") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("submitForm"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("submitForm"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/submitValues") },
@@ -1121,18 +1172,30 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("submitValues") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("submitValues"),
                                 }) },
+                                .{ "rename", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
                                 }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("submitValues"),
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -1146,21 +1209,25 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("clientSecret") },
+                        .{ "title", h.vstr("Client Secret") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("mandatorName") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Mandator Name") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("notificationEmail") },
+                        .{ "title", h.vstr("Notification Email") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageUUID") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Package Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                 }) },
                 .{ "name", h.vstr("merchant_portal_pam_mandator_controller") },
@@ -1170,17 +1237,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/createMandatorConfig") },
@@ -1192,32 +1248,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("createMandatorConfig") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("createMandatorConfig"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("createMandatorConfig"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/introduceMandatorPackage") },
@@ -1229,32 +1286,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("introduceMandatorPackage") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("introduceMandatorPackage"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("introduceMandatorPackage"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/selfRegistrationLink") },
@@ -1266,18 +1324,30 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("selfRegistrationLink") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("selfRegistrationLink"),
                                 }) },
+                                .{ "rename", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
                                 }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("selfRegistrationLink"),
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -1291,145 +1361,171 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("additional_data") },
-                        .{ "short", h.vstr("Optional additional merchant-specific data related to enabling acquiring.") },
+                        .{ "title", h.vstr("Additional Data") },
                         .{ "type", h.vstr("`$OBJECT`") },
+                        .{ "short", h.vstr("Optional additional merchant-specific data related to enabling acquiring.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("businessRegistrationNumber") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Business Registration Number") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("city") },
-                        .{ "short", h.vstr("City where the merchant is located.") },
+                        .{ "title", h.vstr("City") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("City where the merchant is located.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("companyName") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Company Name") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("corporateUUID") },
+                        .{ "title", h.vstr("Corporate Uuid") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Unique identifier for the corporate entity.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("country") },
-                        .{ "short", h.vstr("Country where the merchant is located.") },
+                        .{ "title", h.vstr("Country") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Country where the merchant is located.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("currency") },
+                        .{ "title", h.vstr("Currency") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Transaction currency in ISO 4217 format.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("email") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Email") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("language") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Language") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("login") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Login") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("mandator") },
+                        .{ "title", h.vstr("Mandator") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Mandator name assigned by TECS.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("merchantContractNumber") },
+                        .{ "title", h.vstr("Merchant Contract Number") },
+                        .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
                                 .{ "type", h.vstr("`$STRING`") },
                             }) },
                         }) },
-                        .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Unique identifier for the merchant within a specific system.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("merchantName") },
-                        .{ "short", h.vstr("Name of the merchant.") },
+                        .{ "title", h.vstr("Merchant Name") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Name of the merchant.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("merchant_category_code") },
-                        .{ "short", h.vstr("Merchant Category Code (MCC) describing the merchant’s type of business.") },
+                        .{ "title", h.vstr("Merchant Category Code") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Merchant Category Code (MCC) describing the merchant’s type of business.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageUUID") },
-                        .{ "short", h.vstr("UUID of the package.") },
+                        .{ "title", h.vstr("Package Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("UUID of the package.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageorderuuid") },
+                        .{ "title", h.vstr("Packageorderuuid") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Unique identifier for the registered merchant in the TECS system.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("phoneNumber") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Phone Number") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("postalCode") },
-                        .{ "short", h.vstr("Postal or ZIP code of the merchant’s location.") },
+                        .{ "title", h.vstr("Postal Code") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Postal or ZIP code of the merchant’s location.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productid_acquirer") },
+                        .{ "title", h.vstr("Productid Acquirer") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Identifier of the product for which acquiring is to be enabled.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("region") },
-                        .{ "short", h.vstr("State or province where the merchant is located.") },
+                        .{ "title", h.vstr("Region") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("State or province where the merchant is located.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("registrationNumber") },
-                        .{ "short", h.vstr("Business registration number.") },
+                        .{ "title", h.vstr("Registration Number") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Business registration number.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("signature") },
-                        .{ "short", h.vstr("Signature value = saltAsHex-hashAsHex.") },
+                        .{ "title", h.vstr("Signature") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Signature value = saltAsHex-hashAsHex.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("street") },
-                        .{ "short", h.vstr("Street address of the merchant.") },
+                        .{ "title", h.vstr("Street") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Street address of the merchant.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminalIds") },
-                        .{ "short", h.vstr("Optional list of terminal IDs for which acquiring should be activated.") },
+                        .{ "title", h.vstr("Terminal Ids") },
                         .{ "type", h.vstr("`$ARRAY`") },
+                        .{ "short", h.vstr("Optional list of terminal IDs for which acquiring should be activated.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminalid_acquirer") },
-                        .{ "short", h.vstr("Optional terminal ID provided by the acquirer.") },
+                        .{ "title", h.vstr("Terminalid Acquirer") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Optional terminal ID provided by the acquirer.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("vu_nummer") },
+                        .{ "title", h.vstr("Vu Nummer") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Merchant contract number with the acquirer.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
                 .{ "name", h.vstr("merchant_portal_pam_merchant_controller") },
@@ -1439,17 +1535,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/contractNumber") },
@@ -1461,32 +1546,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("contractNumber") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("contractNumber"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("contractNumber"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/registerAdditionalAcquiring") },
@@ -1498,32 +1584,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("registerAdditionalAcquiring") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("registerAdditionalAcquiring"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("registerAdditionalAcquiring"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/updateMerchant") },
@@ -1535,22 +1622,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("updateMerchant") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("updateMerchant"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("updateMerchant"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.omap() },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/registerMerchant") },
@@ -1562,15 +1660,17 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("registerMerchant") },
                                     }),
                                 }) },
-                                .{ "select", h.omap() },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
                                 .{ "parts", h.ja(&.{
                                     h.vstr("merchantportalws"),
                                     h.vstr("registerMerchant"),
                                 }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.omap() },
+                                .{ "select", h.omap() },
                             }),
                         }) },
                     }) },
@@ -1583,58 +1683,69 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("consumerUUID") },
+                        .{ "title", h.vstr("Consumer Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("corporateUUID") },
+                        .{ "title", h.vstr("Corporate Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("country") },
-                        .{ "short", h.vstr("Country associated with the package.") },
+                        .{ "title", h.vstr("Country") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Country associated with the package.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("descriptionKey") },
-                        .{ "short", h.vstr("Key for the description of the package.") },
+                        .{ "title", h.vstr("Description Key") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Key for the description of the package.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("filter") },
+                        .{ "title", h.vstr("Filter") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("language") },
+                        .{ "title", h.vstr("Language") },
+                        .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
                                 .{ "type", h.vstr("`$STRING`") },
                             }) },
                         }) },
-                        .{ "req", h.vbool(true) },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("nameKey") },
-                        .{ "short", h.vstr("Key for the name of the package.") },
+                        .{ "title", h.vstr("Name Key") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Key for the name of the package.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageStatus") },
-                        .{ "short", h.vstr("Status of the package.") },
+                        .{ "title", h.vstr("Package Status") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Status of the package.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageUUID") },
+                        .{ "title", h.vstr("Package Uuid") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Unique identifier for the package.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("pagination") },
+                        .{ "title", h.vstr("Pagination") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("sorting") },
+                        .{ "title", h.vstr("Sorting") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                 }) },
@@ -1645,17 +1756,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/availablePackages") },
@@ -1667,32 +1767,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("availablePackages") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("availablePackages"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("availablePackages"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/orderPackage") },
@@ -1704,32 +1805,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("orderPackage") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("orderPackage"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("orderPackage"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/orderedPackages") },
@@ -1741,32 +1843,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("orderedPackages") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("orderedPackages"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("orderedPackages"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/packageTemplates") },
@@ -1778,31 +1881,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("packageTemplates") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("packageTemplates"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("packageTemplates"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/updatePackageData") },
@@ -1814,18 +1919,29 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("updatePackageData") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("updatePackageData"),
                                 }) },
+                                .{ "rename", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
                                 }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("updatePackageData"),
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -1839,47 +1955,57 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("consumerUUID") },
+                        .{ "title", h.vstr("Consumer Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("filter") },
+                        .{ "title", h.vstr("Filter") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("language") },
+                        .{ "title", h.vstr("Language") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("merchantID") },
+                        .{ "title", h.vstr("Merchant Id") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("packageOrderUUID") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Package Order Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("pagination") },
+                        .{ "title", h.vstr("Pagination") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productOrderUUID") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Product Order Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productUUID") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Product Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("reason_decline") },
+                        .{ "title", h.vstr("Reason Decline") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Reason for product decline.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("sorting") },
+                        .{ "title", h.vstr("Sorting") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                 }) },
@@ -1890,17 +2016,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/approveProduct") },
@@ -1912,32 +2027,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("approveProduct") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("approveProduct"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("approveProduct"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/declineProduct") },
@@ -1949,32 +2065,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("declineProduct") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("declineProduct"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("declineProduct"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/orderAdditionalProduct") },
@@ -1986,32 +2103,33 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("orderAdditionalProduct") },
                                     }),
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("orderAdditionalProduct"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
                                 }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("orderAdditionalProduct"),
-                                }) },
                             }),
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/productsList") },
@@ -2023,18 +2141,30 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("productsList") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("productsList"),
                                 }) },
+                                .{ "rename", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
                                 }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("productsList"),
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -2048,28 +2178,32 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("packageUUID") },
+                        .{ "title", h.vstr("Package Uuid") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Unique identifier for the package.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productUUIDs") },
+                        .{ "title", h.vstr("Product Uui Ds") },
+                        .{ "type", h.vstr("`$ARRAY`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("The list of unique identifiers of the products.") },
-                        .{ "type", h.vstr("`$ARRAY`") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
+                        .{ "title", h.vstr("Response Code") },
+                        .{ "type", h.vstr("`$INTEGER`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
-                        .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
+                        .{ "title", h.vstr("Response Message") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response message.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
                 .{ "name", h.vstr("output_add_product") },
@@ -2079,17 +2213,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/addProductsToPackage") },
@@ -2101,18 +2224,30 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("addProductsToPackage") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("addProductsToPackage"),
                                 }) },
+                                .{ "rename", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
                                 }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("addProductsToPackage"),
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -2126,86 +2261,100 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("acquirerId") },
-                        .{ "short", h.vstr("Unique identifier for the acquirer.") },
+                        .{ "title", h.vstr("Acquirer Id") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("Unique identifier for the acquirer.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("allowMultipleOrders") },
+                        .{ "title", h.vstr("Allow Multiple Orders") },
+                        .{ "type", h.vstr("`$BOOLEAN`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Indication whether multiple orders are allowed or not.") },
-                        .{ "type", h.vstr("`$BOOLEAN`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("appFormTemplateName") },
+                        .{ "title", h.vstr("App Form Template Name") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Name of the application form template.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("contractNeeded") },
+                        .{ "title", h.vstr("Contract Needed") },
+                        .{ "type", h.vstr("`$BOOLEAN`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Indication whether contract is needed or not.") },
-                        .{ "type", h.vstr("`$BOOLEAN`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("credentialsNeeded") },
-                        .{ "short", h.vstr("Indication whether credentials are needed or not.") },
+                        .{ "title", h.vstr("Credentials Needed") },
                         .{ "type", h.vstr("`$BOOLEAN`") },
+                        .{ "short", h.vstr("Indication whether credentials are needed or not.") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("descriptionKey") },
+                        .{ "title", h.vstr("Description Key") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Key indicator for product description.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("nameKey") },
+                        .{ "title", h.vstr("Name Key") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Key indicator for product name.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("prescreeningAllowed") },
+                        .{ "title", h.vstr("Prescreening Allowed") },
+                        .{ "type", h.vstr("`$BOOLEAN`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Indication whether prescreening is allowed or not.") },
-                        .{ "type", h.vstr("`$BOOLEAN`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productName") },
+                        .{ "title", h.vstr("Product Name") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Name of the product.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
+                        .{ "title", h.vstr("Response Code") },
+                        .{ "type", h.vstr("`$INTEGER`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
-                        .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
+                        .{ "title", h.vstr("Response Message") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response message.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminalTemplateName") },
+                        .{ "title", h.vstr("Terminal Template Name") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Name of the terminal template.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("vendorName") },
+                        .{ "title", h.vstr("Vendor Name") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Name of the vendor.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("xmlTemplateFile") },
+                        .{ "title", h.vstr("Xml Template File") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("A string value containing the XML template file encoded in Base64.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
                 .{ "name", h.vstr("output_create_product") },
@@ -2215,17 +2364,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/createNewProduct") },
@@ -2237,18 +2375,30 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("createNewProduct") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("createNewProduct"),
                                 }) },
+                                .{ "rename", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
                                 }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("createNewProduct"),
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -2262,18 +2412,22 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("batch") },
+                        .{ "title", h.vstr("Batch") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("id") },
+                        .{ "title", h.vstr("Id") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("lines") },
+                        .{ "title", h.vstr("Lines") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("progress") },
+                        .{ "title", h.vstr("Progress") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                 }) },
@@ -2288,26 +2442,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("load") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                    .{ "params", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("param") },
-                                            .{ "name", h.vstr("id") },
-                                            .{ "orig", h.vstr("id") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/details/{id}") },
@@ -2328,22 +2462,43 @@ pub fn make_config() Value {
                                         .{ "var", h.vstr("id") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                        h.vstr("id"),
-                                    }) },
-                                }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body.details`") },
-                                }) },
                                 .{ "parts", h.ja(&.{
                                     h.vstr("merchantportalws"),
                                     h.vstr("batch"),
                                     h.vstr("registerAdditionalTerminal"),
                                     h.vstr("details"),
                                     h.vstr("{id}"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body.details`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                    .{ "params", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("id") },
+                                            .{ "orig", h.vstr("id") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("param") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                        h.vstr("id"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -2357,33 +2512,38 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("items") },
+                        .{ "title", h.vstr("Items") },
                         .{ "type", h.vstr("`$ARRAY`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("pagination") },
+                        .{ "title", h.vstr("Pagination") },
+                        .{ "type", h.vstr("`$OBJECT`") },
+                        .{ "req", h.vbool(true) },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
                                 .{ "type", h.vstr("`$OBJECT`") },
                             }) },
                         }) },
-                        .{ "req", h.vbool(true) },
-                        .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
+                        .{ "title", h.vstr("Response Code") },
+                        .{ "type", h.vstr("`$INTEGER`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
-                        .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
+                        .{ "title", h.vstr("Response Message") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response message.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("sorting") },
+                        .{ "title", h.vstr("Sorting") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                 }) },
@@ -2394,17 +2554,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/list") },
@@ -2422,20 +2571,32 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("list") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
-                                }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
                                 .{ "parts", h.ja(&.{
                                     h.vstr("merchantportalws"),
                                     h.vstr("batch"),
                                     h.vstr("registerAdditionalTerminal"),
                                     h.vstr("list"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -2449,20 +2610,23 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("id") },
+                        .{ "title", h.vstr("Id") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
+                        .{ "title", h.vstr("Response Code") },
+                        .{ "type", h.vstr("`$INTEGER`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
-                        .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
+                        .{ "title", h.vstr("Response Message") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response message.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
                 .{ "id", h.jo(&.{
@@ -2476,26 +2640,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("load") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                    .{ "params", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("param") },
-                                            .{ "name", h.vstr("id") },
-                                            .{ "orig", h.vstr("id") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/restart/{id}") },
@@ -2516,16 +2660,6 @@ pub fn make_config() Value {
                                         .{ "var", h.vstr("id") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                        h.vstr("id"),
-                                    }) },
-                                }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
                                 .{ "parts", h.ja(&.{
                                     h.vstr("merchantportalws"),
                                     h.vstr("batch"),
@@ -2533,28 +2667,39 @@ pub fn make_config() Value {
                                     h.vstr("restart"),
                                     h.vstr("{id}"),
                                 }) },
-                            }),
-                            h.jo(&.{
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
                                 .{ "args", h.jo(&.{
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
                                             .{ "name", h.vstr("authorization") },
                                             .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
                                             .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
                                         }),
                                     }) },
                                     .{ "params", h.ja(&.{
                                         h.jo(&.{
-                                            .{ "kind", h.vstr("param") },
                                             .{ "name", h.vstr("id") },
                                             .{ "orig", h.vstr("id") },
-                                            .{ "reqd", h.vbool(true) },
                                             .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("param") },
+                                            .{ "reqd", h.vbool(true) },
                                         }),
                                     }) },
                                 }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                        h.vstr("id"),
+                                    }) },
+                                }) },
+                            }),
+                            h.jo(&.{
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/stop/{id}") },
@@ -2575,22 +2720,43 @@ pub fn make_config() Value {
                                         .{ "var", h.vstr("id") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                        h.vstr("id"),
-                                    }) },
-                                }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
                                 .{ "parts", h.ja(&.{
                                     h.vstr("merchantportalws"),
                                     h.vstr("batch"),
                                     h.vstr("registerAdditionalTerminal"),
                                     h.vstr("stop"),
                                     h.vstr("{id}"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                    .{ "params", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("id") },
+                                            .{ "orig", h.vstr("id") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("param") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                        h.vstr("id"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -2604,31 +2770,36 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("productOrderUUIDs") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Product Order Uui Ds") },
                         .{ "type", h.vstr("`$ARRAY`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
+                        .{ "title", h.vstr("Response Code") },
+                        .{ "type", h.vstr("`$INTEGER`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
-                        .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
+                        .{ "title", h.vstr("Response Message") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response message.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("targetPackageOrderUUID") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Target Package Order Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("targetProductOrderUUID") },
-                        .{ "req", h.vbool(true) },
+                        .{ "title", h.vstr("Target Product Order Uuid") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
                     }),
                 }) },
                 .{ "name", h.vstr("output_move_tid") },
@@ -2638,17 +2809,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/moveTid") },
@@ -2660,18 +2820,30 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("moveTid") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("moveTid"),
                                 }) },
+                                .{ "rename", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
                                 }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("moveTid"),
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -2685,28 +2857,32 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("packageUUID") },
+                        .{ "title", h.vstr("Package Uuid") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Unique identifier for the package.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productUUIDs") },
+                        .{ "title", h.vstr("Product Uui Ds") },
+                        .{ "type", h.vstr("`$ARRAY`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("List of product unique identifiers.") },
-                        .{ "type", h.vstr("`$ARRAY`") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
+                        .{ "title", h.vstr("Response Code") },
+                        .{ "type", h.vstr("`$INTEGER`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
-                        .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
+                        .{ "title", h.vstr("Response Message") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response message.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
                 .{ "name", h.vstr("output_remove_product") },
@@ -2716,17 +2892,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/removeProductsFromPackage") },
@@ -2738,18 +2903,30 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("removeProductsFromPackage") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("removeProductsFromPackage"),
                                 }) },
+                                .{ "rename", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
                                 }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("removeProductsFromPackage"),
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -2763,20 +2940,23 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("id") },
+                        .{ "title", h.vstr("Id") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
+                        .{ "title", h.vstr("Response Code") },
+                        .{ "type", h.vstr("`$INTEGER`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
-                        .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
+                        .{ "title", h.vstr("Response Message") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response message.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
                 .{ "id", h.jo(&.{
@@ -2790,17 +2970,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/start") },
@@ -2818,20 +2987,32 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("start") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
-                                }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
                                 .{ "parts", h.ja(&.{
                                     h.vstr("merchantportalws"),
                                     h.vstr("batch"),
                                     h.vstr("registerAdditionalTerminal"),
                                     h.vstr("start"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -2845,28 +3026,33 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("id") },
+                        .{ "title", h.vstr("Id") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("percentage") },
+                        .{ "title", h.vstr("Percentage") },
                         .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
+                        .{ "title", h.vstr("Response Code") },
+                        .{ "type", h.vstr("`$INTEGER`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
-                        .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
+                        .{ "title", h.vstr("Response Message") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response message.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("status") },
+                        .{ "title", h.vstr("Status") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -2881,26 +3067,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("load") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                    .{ "params", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("param") },
-                                            .{ "name", h.vstr("id") },
-                                            .{ "orig", h.vstr("id") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/merchantportalws/batch/registerAdditionalTerminal/status/{id}") },
@@ -2921,22 +3087,43 @@ pub fn make_config() Value {
                                         .{ "var", h.vstr("id") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                        h.vstr("id"),
-                                    }) },
-                                }) },
-                                .{ "transform", h.jo(&.{
-                                    .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body`") },
-                                }) },
                                 .{ "parts", h.ja(&.{
                                     h.vstr("merchantportalws"),
                                     h.vstr("batch"),
                                     h.vstr("registerAdditionalTerminal"),
                                     h.vstr("status"),
                                     h.vstr("{id}"),
+                                }) },
+                                .{ "rename", h.omap() },
+                                .{ "transform", h.jo(&.{
+                                    .{ "req", h.vstr("`reqdata`") },
+                                    .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                    .{ "params", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("id") },
+                                            .{ "orig", h.vstr("id") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("param") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                        h.vstr("id"),
+                                    }) },
                                 }) },
                             }),
                         }) },
@@ -2950,72 +3137,85 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("allowMultipleOrders") },
-                        .{ "short", h.vstr("An attribute to indicate if multiple orders are allowed") },
+                        .{ "title", h.vstr("Allow Multiple Orders") },
                         .{ "type", h.vstr("`$BOOLEAN`") },
+                        .{ "short", h.vstr("An attribute to indicate if multiple orders are allowed") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("appFormName") },
-                        .{ "short", h.vstr("The name of the application form") },
+                        .{ "title", h.vstr("App Form Name") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("The name of the application form") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("contractNeeded") },
-                        .{ "short", h.vstr("An attribute to indicate if a contract is needed") },
+                        .{ "title", h.vstr("Contract Needed") },
                         .{ "type", h.vstr("`$BOOLEAN`") },
+                        .{ "short", h.vstr("An attribute to indicate if a contract is needed") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("credentialsNeeded") },
-                        .{ "short", h.vstr("An attribute to indicate if credentials are needed") },
+                        .{ "title", h.vstr("Credentials Needed") },
                         .{ "type", h.vstr("`$BOOLEAN`") },
+                        .{ "short", h.vstr("An attribute to indicate if credentials are needed") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("descriptionKey") },
-                        .{ "short", h.vstr("The description of the product") },
+                        .{ "title", h.vstr("Description Key") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("The description of the product") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("nameKey") },
-                        .{ "short", h.vstr("The key of the product name") },
+                        .{ "title", h.vstr("Name Key") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("The key of the product name") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("prescreeningAllowed") },
-                        .{ "short", h.vstr("An attribute to indicate if prescreening is allowed") },
+                        .{ "title", h.vstr("Prescreening Allowed") },
                         .{ "type", h.vstr("`$BOOLEAN`") },
+                        .{ "short", h.vstr("An attribute to indicate if prescreening is allowed") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productName") },
-                        .{ "short", h.vstr("The name of the product") },
+                        .{ "title", h.vstr("Product Name") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("The name of the product") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productStatus") },
-                        .{ "short", h.vstr("The status of the product") },
+                        .{ "title", h.vstr("Product Status") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("The status of the product") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("productUUID") },
+                        .{ "title", h.vstr("Product Uuid") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("The UUID of the product to update") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
-                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
+                        .{ "title", h.vstr("Response Code") },
+                        .{ "type", h.vstr("`$INTEGER`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response code.") },
-                        .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
+                        .{ "title", h.vstr("Response Message") },
+                        .{ "type", h.vstr("`$STRING`") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Response message.") },
-                        .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("vendorName") },
-                        .{ "short", h.vstr("The name of the vendor") },
+                        .{ "title", h.vstr("Vendor Name") },
                         .{ "type", h.vstr("`$STRING`") },
+                        .{ "short", h.vstr("The name of the vendor") },
                     }),
                 }) },
                 .{ "name", h.vstr("output_update_product") },
@@ -3025,17 +3225,6 @@ pub fn make_config() Value {
                         .{ "name", h.vstr("create") },
                         .{ "points", h.ja(&.{
                             h.jo(&.{
-                                .{ "args", h.jo(&.{
-                                    .{ "header", h.ja(&.{
-                                        h.jo(&.{
-                                            .{ "kind", h.vstr("header") },
-                                            .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
-                                            .{ "reqd", h.vbool(true) },
-                                            .{ "type", h.vstr("`$STRING`") },
-                                        }),
-                                    }) },
-                                }) },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/merchantportalws/updateProduct") },
@@ -3047,18 +3236,30 @@ pub fn make_config() Value {
                                         .{ "lit", h.vstr("updateProduct") },
                                     }),
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("merchantportalws"),
+                                    h.vstr("updateProduct"),
                                 }) },
+                                .{ "rename", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
                                 }) },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("merchantportalws"),
-                                    h.vstr("updateProduct"),
+                                .{ "args", h.jo(&.{
+                                    .{ "header", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "type", h.vstr("`$STRING`") },
+                                            .{ "kind", h.vstr("header") },
+                                            .{ "reqd", h.vbool(true) },
+                                        }),
+                                    }) },
+                                }) },
+                                .{ "select", h.jo(&.{
+                                    .{ "exist", h.ja(&.{
+                                        h.vstr("authorization"),
+                                    }) },
                                 }) },
                             }),
                         }) },

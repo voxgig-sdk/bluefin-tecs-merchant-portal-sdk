@@ -1,0 +1,32 @@
+# BasicOutputDetailFlow
+
+main: kit: flow: BasicOutputDetailFlow:
+{
+  entity: "output_detail",
+  kind: "basic",
+  name: "BasicOutputDetailFlow",
+  step: [
+    {
+      i: {
+        ref: "output_detail_ref01",
+        srcdatavar: "output_detail_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "output_detail01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-output_detail_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOutputDetailFlow"
+}

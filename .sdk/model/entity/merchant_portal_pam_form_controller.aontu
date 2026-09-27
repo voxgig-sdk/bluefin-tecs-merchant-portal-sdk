@@ -1,0 +1,317 @@
+# Entity: merchant_portal_pam_form_controller
+
+main: kit: entity: merchant_portal_pam_form_controller: {
+
+  alias: field: {}
+
+  fields: {
+    appFormFieldsDescUUID: {
+      h: "App Form Fields Desc Uuid"
+      n: "appFormFieldsDescUUID"
+      r: true
+      t: "`$STRING`"
+    }
+    filter: {
+      h: "Filter"
+      n: "filter"
+      r: false
+      t: "`$OBJECT`"
+    }
+    language: {
+      h: "Language"
+      n: "language"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    packageOrder: {
+      h: "Package Order"
+      n: "packageOrder"
+      r: false
+      t: "`$OBJECT`"
+    }
+    packageOrderUUID: {
+      h: "Package Order Uuid"
+      n: "packageOrderUUID"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "UUID of the package order."
+      t: "`$STRING`"
+    }
+    packageUUID: {
+      h: "Package Uuid"
+      n: "packageUUID"
+      r: false
+      t: "`$STRING`"
+    }
+    productOrderUUID: {
+      h: "Product Order Uuid"
+      n: "productOrderUUID"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      sh: "UUID of the product order."
+      t: "`$STRING`"
+    }
+    productOrders: {
+      h: "Product Orders"
+      n: "productOrders"
+      r: false
+      t: "`$ARRAY`"
+    }
+    reasonOfReopening: {
+      h: "Reason Of Reopening"
+      n: "reasonOfReopening"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "merchant_portal_pam_form_controller"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /merchantportalws/applicationForm"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/applicationForm"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "applicationForm"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/packageForm"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/packageForm"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "packageForm"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/reopenForm"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/reopenForm"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "reopenForm"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/secretKey"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/secretKey"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "secretKey"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/submitForm"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/submitForm"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "submitForm"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /merchantportalws/submitValues"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/submitValues"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "submitValues"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

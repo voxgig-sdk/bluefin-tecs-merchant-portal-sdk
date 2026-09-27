@@ -102,6 +102,7 @@ SDK operations: `create`.
 
 Key fields to recognise:
 
+- `productUUID`: UUID of the product.
 - `reason_decline`: Reason for product decline.
 
 ### [OutputAddProduct](docs/api/output_add_product.html)

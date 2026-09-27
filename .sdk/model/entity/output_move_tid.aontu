@@ -1,0 +1,91 @@
+# Entity: output_move_tid
+
+main: kit: entity: output_move_tid: {
+
+  alias: field: {}
+
+  fields: {
+    productOrderUUIDs: {
+      h: "Product Order Uui Ds"
+      n: "productOrderUUIDs"
+      r: true
+      t: "`$ARRAY`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: true
+      sh: "Response code."
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: true
+      sh: "Response message."
+      t: "`$STRING`"
+    }
+    targetPackageOrderUUID: {
+      h: "Target Package Order Uuid"
+      n: "targetPackageOrderUUID"
+      r: true
+      t: "`$STRING`"
+    }
+    targetProductOrderUUID: {
+      h: "Target Product Order Uuid"
+      n: "targetProductOrderUUID"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "output_move_tid"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /merchantportalws/moveTid"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/merchantportalws/moveTid"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "merchantportalws"
+            }
+            {
+              lit: "moveTid"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

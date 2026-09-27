@@ -1,0 +1,18 @@
+# BasicOutputStartFlow
+
+main: kit: flow: BasicOutputStartFlow:
+{
+  entity: "output_start",
+  kind: "basic",
+  name: "BasicOutputStartFlow",
+  step: [
+    {
+      i: {
+        ref: "output_start_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicOutputStartFlow"
+}

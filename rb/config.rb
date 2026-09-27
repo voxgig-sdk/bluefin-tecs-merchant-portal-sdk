@@ -238,194 +238,227 @@ module BluefinTecsMerchantPortalConfig
         "merchant_portal_api_controller" => {
           "fields" => [
             {
-              "format" => "int32",
               "name" => "account_number",
-              "short" => "Account number provided by the acquirer.",
+              "title" => "Account Number",
               "type" => "`$INTEGER`",
+              "short" => "Account number provided by the acquirer.",
+              "format" => "int32",
             },
             {
               "name" => "additional_data",
-              "short" => "Arbitrary merchant-specific data related to terminal registration.",
+              "title" => "Additional Data",
               "type" => "`$OBJECT`",
+              "short" => "Arbitrary merchant-specific data related to terminal registration.",
             },
             {
               "name" => "business_reg_number",
+              "title" => "Business Reg Number",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Merchant business registration number as stated in the company registry.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "city",
+              "title" => "City",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Merchant's address: city.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "corporateuuid",
-              "short" => "Unique identifier for the corporate entity (UUID format).",
+              "title" => "Corporateuuid",
               "type" => "`$STRING`",
+              "short" => "Unique identifier for the corporate entity (UUID format).",
             },
             {
               "name" => "country",
+              "title" => "Country",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Merchant's address: country (must be in 'ISO-3166 ALPHA-3' format).",
-              "type" => "`$STRING`",
             },
             {
               "name" => "currency",
+              "title" => "Currency",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Transaction currency (must be in \"ISO 4217\" format).",
-              "type" => "`$STRING`",
             },
             {
-              "format" => "int32",
               "name" => "merchant_category_code",
+              "title" => "Merchant Category Code",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "Merchant category code as defined by the payment network.",
-              "type" => "`$INTEGER`",
+              "format" => "int32",
             },
             {
-              "format" => "email",
               "name" => "merchant_email",
-              "short" => "Merchant's email address for receiving notifications.",
+              "title" => "Merchant Email",
               "type" => "`$STRING`",
+              "short" => "Merchant's email address for receiving notifications.",
+              "format" => "email",
             },
             {
               "name" => "merchant_name",
+              "title" => "Merchant Name",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "The officially incorporated company name of the merchant.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "merchant_phone_number",
-              "short" => "Merchant's phone number for notifications.",
+              "title" => "Merchant Phone Number",
               "type" => "`$STRING`",
+              "short" => "Merchant's phone number for notifications.",
             },
             {
               "name" => "packageid",
+              "title" => "Packageid",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Identifier of the package in the TECS processing engine provided by TECS.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "packageorderuuid",
+              "title" => "Packageorderuuid",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Identifier of the registered merchant in the TECS system, provided in the response of the registerNewMerchant call.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "password",
-              "short" => "Merchant password for MPOS.",
+              "title" => "Password",
               "type" => "`$STRING`",
+              "short" => "Merchant password for MPOS.",
             },
             {
               "name" => "productid",
-              "short" => "Identifier of the product for which terminal registration is to be performed.",
+              "title" => "Productid",
               "type" => "`$STRING`",
+              "short" => "Identifier of the product for which terminal registration is to be performed.",
             },
             {
               "name" => "productid_acquirer",
-              "short" => "Identifier of the product for which acquiring is enabled.",
+              "title" => "Productid Acquirer",
               "type" => "`$STRING`",
+              "short" => "Identifier of the product for which acquiring is enabled.",
             },
             {
               "name" => "reason_deactivation",
+              "title" => "Reason Deactivation",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Reason for terminal deactivation.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "reason_reactivation",
+              "title" => "Reason Reactivation",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Reason for terminal reactivation.",
-              "type" => "`$STRING`",
             },
             {
-              "format" => "int32",
               "name" => "sorting_code",
-              "short" => "Sorting code provided by the acquirer.",
+              "title" => "Sorting Code",
               "type" => "`$INTEGER`",
+              "short" => "Sorting code provided by the acquirer.",
+              "format" => "int32",
             },
             {
               "name" => "state",
-              "short" => "Merchant's address: state.",
+              "title" => "State",
               "type" => "`$STRING`",
+              "short" => "Merchant's address: state.",
             },
             {
               "name" => "street",
+              "title" => "Street",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Merchant's address: street and house number.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "terminal_country_code",
+              "title" => "Terminal Country Code",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Terminal country code (must be in 'ISO-3166 ALPHA-3' format).",
-              "type" => "`$STRING`",
             },
             {
               "name" => "terminal_language_code",
+              "title" => "Terminal Language Code",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Terminal language code (must be in 'ISO 639-1' format).",
-              "type" => "`$STRING`",
             },
             {
               "name" => "terminal_location",
+              "title" => "Terminal Location",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Physical or logical location of the terminal.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "terminal_serial_number",
+              "title" => "Terminal Serial Number",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Terminal serial number.",
-              "type" => "`$STRING`",
             },
             {
-              "format" => "int32",
               "name" => "terminalid",
+              "title" => "Terminalid",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "TECS terminalid given by Tecs processing engine.",
-              "type" => "`$INTEGER`",
+              "format" => "int32",
             },
             {
               "name" => "terminalid_acquirer",
-              "short" => "Terminal ID as set by the acquirer (optional).",
+              "title" => "Terminalid Acquirer",
               "type" => "`$STRING`",
+              "short" => "Terminal ID as set by the acquirer (optional).",
             },
             {
-              "format" => "email",
               "name" => "user_email",
-              "short" => "Email address of the user acting on behalf of the merchant.",
+              "title" => "User Email",
               "type" => "`$STRING`",
+              "short" => "Email address of the user acting on behalf of the merchant.",
+              "format" => "email",
             },
             {
               "name" => "user_phone_number",
-              "short" => "Phone number of the user acting on behalf of the merchant.",
+              "title" => "User Phone Number",
               "type" => "`$STRING`",
+              "short" => "Phone number of the user acting on behalf of the merchant.",
             },
             {
               "name" => "username",
-              "short" => "Merchant username for MPOS.",
+              "title" => "Username",
               "type" => "`$STRING`",
+              "short" => "Merchant username for MPOS.",
             },
             {
               "name" => "vu_nummer",
+              "title" => "Vu Nummer",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Merchant contract number with the acquirer.",
-              "type" => "`$STRING`",
             },
             {
-              "format" => "uri",
               "name" => "web_shop_url",
-              "short" => "URL of the merchant's web shop.",
+              "title" => "Web Shop Url",
               "type" => "`$STRING`",
+              "short" => "URL of the merchant's web shop.",
+              "format" => "uri",
             },
             {
               "name" => "zipcode",
+              "title" => "Zipcode",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Merchant's address: postal code.",
-              "type" => "`$STRING`",
             },
           ],
           "name" => "merchant_portal_api_controller",
@@ -435,17 +468,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/deactivateTerminal",
@@ -457,32 +479,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "deactivateTerminal",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "deactivateTerminal",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "deactivateTerminal",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/reactivateTerminal",
@@ -494,32 +517,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "reactivateTerminal",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "reactivateTerminal",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "reactivateTerminal",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/registerAdditionalTerminal",
@@ -531,32 +555,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "registerAdditionalTerminal",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "registerAdditionalTerminal",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "registerAdditionalTerminal",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/registerNewMerchant",
@@ -568,19 +593,31 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "registerNewMerchant",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "registerNewMerchant",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "registerNewMerchant",
-                  ],
                 },
               ],
             },
@@ -598,7 +635,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {},
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/merchantportalws/logDeveloperInfo",
@@ -610,18 +646,19 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "logDeveloperInfo",
                     },
                   ],
-                  "select" => {},
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "merchantportalws",
                     "logDeveloperInfo",
                   ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {},
+                  "select" => {},
                 },
                 {
-                  "args" => {},
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/merchantportalws/version",
@@ -633,15 +670,17 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "version",
                     },
                   ],
-                  "select" => {},
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "merchantportalws",
                     "version",
                   ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {},
+                  "select" => {},
                 },
               ],
             },
@@ -654,13 +693,15 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "language",
-              "req" => true,
+              "title" => "Language",
               "type" => "`$STRING`",
+              "req" => true,
             },
             {
               "name" => "productOrderUUID",
-              "req" => true,
+              "title" => "Product Order Uuid",
               "type" => "`$STRING`",
+              "req" => true,
             },
           ],
           "name" => "merchant_portal_pam_contract_controller",
@@ -670,17 +711,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/generateContract",
@@ -692,32 +722,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "generateContract",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "generateContract",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "generateContract",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/uploadContract",
@@ -729,19 +760,31 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "uploadContract",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "uploadContract",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "uploadContract",
-                  ],
                 },
               ],
             },
@@ -754,18 +797,21 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "appFormFieldDescUUID",
-              "req" => true,
+              "title" => "App Form Field Desc Uuid",
               "type" => "`$STRING`",
+              "req" => true,
             },
             {
               "name" => "packageOrderUUID",
-              "short" => "UUID of the package order.",
+              "title" => "Package Order Uuid",
               "type" => "`$STRING`",
+              "short" => "UUID of the package order.",
             },
             {
               "name" => "productOrderUUID",
-              "short" => "UUID of the product order.",
+              "title" => "Product Order Uuid",
               "type" => "`$STRING`",
+              "short" => "UUID of the product order.",
             },
           ],
           "name" => "merchant_portal_pam_document_controller",
@@ -775,17 +821,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/documentsList",
@@ -797,32 +832,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "documentsList",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "documentsList",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "documentsList",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/downloadDocument",
@@ -834,19 +870,31 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "downloadDocument",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "downloadDocument",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "downloadDocument",
-                  ],
                 },
               ],
             },
@@ -859,44 +907,52 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "appFormFieldsDescUUID",
-              "req" => true,
+              "title" => "App Form Fields Desc Uuid",
               "type" => "`$STRING`",
+              "req" => true,
             },
             {
               "name" => "filter",
+              "title" => "Filter",
               "type" => "`$OBJECT`",
             },
             {
               "name" => "language",
+              "title" => "Language",
+              "type" => "`$STRING`",
+              "req" => true,
               "op" => {
                 "create" => {
                   "type" => "`$STRING`",
                 },
               },
-              "req" => true,
-              "type" => "`$STRING`",
             },
             {
               "name" => "packageOrder",
+              "title" => "Package Order",
               "type" => "`$OBJECT`",
             },
             {
               "name" => "packageOrderUUID",
+              "title" => "Package Order Uuid",
+              "type" => "`$STRING`",
+              "req" => true,
               "op" => {
                 "create" => {
                   "type" => "`$STRING`",
                 },
               },
-              "req" => true,
               "short" => "UUID of the package order.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "packageUUID",
+              "title" => "Package Uuid",
               "type" => "`$STRING`",
             },
             {
               "name" => "productOrderUUID",
+              "title" => "Product Order Uuid",
+              "type" => "`$STRING`",
               "op" => {
                 "create" => {
                   "req" => true,
@@ -904,16 +960,17 @@ module BluefinTecsMerchantPortalConfig
                 },
               },
               "short" => "UUID of the product order.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "productOrders",
+              "title" => "Product Orders",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "reasonOfReopening",
-              "req" => true,
+              "title" => "Reason Of Reopening",
               "type" => "`$STRING`",
+              "req" => true,
             },
           ],
           "name" => "merchant_portal_pam_form_controller",
@@ -923,17 +980,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/applicationForm",
@@ -945,32 +991,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "applicationForm",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "applicationForm",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "applicationForm",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/packageForm",
@@ -982,32 +1029,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "packageForm",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "packageForm",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "packageForm",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/reopenForm",
@@ -1019,32 +1067,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "reopenForm",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "reopenForm",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "reopenForm",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/secretKey",
@@ -1056,32 +1105,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "secretKey",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "secretKey",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "secretKey",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/submitForm",
@@ -1093,32 +1143,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "submitForm",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "submitForm",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "submitForm",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/submitValues",
@@ -1130,19 +1181,31 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "submitValues",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "submitValues",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "submitValues",
-                  ],
                 },
               ],
             },
@@ -1155,21 +1218,25 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "clientSecret",
+              "title" => "Client Secret",
               "type" => "`$STRING`",
             },
             {
               "name" => "mandatorName",
-              "req" => true,
+              "title" => "Mandator Name",
               "type" => "`$STRING`",
+              "req" => true,
             },
             {
               "name" => "notificationEmail",
+              "title" => "Notification Email",
               "type" => "`$STRING`",
             },
             {
               "name" => "packageUUID",
-              "req" => true,
+              "title" => "Package Uuid",
               "type" => "`$STRING`",
+              "req" => true,
             },
           ],
           "name" => "merchant_portal_pam_mandator_controller",
@@ -1179,17 +1246,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/createMandatorConfig",
@@ -1201,32 +1257,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "createMandatorConfig",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "createMandatorConfig",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "createMandatorConfig",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/introduceMandatorPackage",
@@ -1238,32 +1295,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "introduceMandatorPackage",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "introduceMandatorPackage",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "introduceMandatorPackage",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/selfRegistrationLink",
@@ -1275,19 +1333,31 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "selfRegistrationLink",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "selfRegistrationLink",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "selfRegistrationLink",
-                  ],
                 },
               ],
             },
@@ -1300,145 +1370,171 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "additional_data",
-              "short" => "Optional additional merchant-specific data related to enabling acquiring.",
+              "title" => "Additional Data",
               "type" => "`$OBJECT`",
+              "short" => "Optional additional merchant-specific data related to enabling acquiring.",
             },
             {
               "name" => "businessRegistrationNumber",
-              "req" => true,
+              "title" => "Business Registration Number",
               "type" => "`$STRING`",
+              "req" => true,
             },
             {
               "name" => "city",
-              "short" => "City where the merchant is located.",
+              "title" => "City",
               "type" => "`$STRING`",
+              "short" => "City where the merchant is located.",
             },
             {
               "name" => "companyName",
-              "req" => true,
+              "title" => "Company Name",
               "type" => "`$STRING`",
+              "req" => true,
             },
             {
               "name" => "corporateUUID",
+              "title" => "Corporate Uuid",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Unique identifier for the corporate entity.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "country",
-              "short" => "Country where the merchant is located.",
+              "title" => "Country",
               "type" => "`$STRING`",
+              "short" => "Country where the merchant is located.",
             },
             {
               "name" => "currency",
+              "title" => "Currency",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Transaction currency in ISO 4217 format.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "email",
-              "req" => true,
+              "title" => "Email",
               "type" => "`$STRING`",
+              "req" => true,
             },
             {
               "name" => "language",
-              "req" => true,
+              "title" => "Language",
               "type" => "`$STRING`",
+              "req" => true,
             },
             {
               "name" => "login",
-              "req" => true,
+              "title" => "Login",
               "type" => "`$STRING`",
+              "req" => true,
             },
             {
               "name" => "mandator",
+              "title" => "Mandator",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Mandator name assigned by TECS.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "merchantContractNumber",
+              "title" => "Merchant Contract Number",
+              "type" => "`$STRING`",
+              "req" => true,
               "op" => {
                 "create" => {
                   "type" => "`$STRING`",
                 },
               },
-              "req" => true,
               "short" => "Unique identifier for the merchant within a specific system.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "merchantName",
-              "short" => "Name of the merchant.",
+              "title" => "Merchant Name",
               "type" => "`$STRING`",
+              "short" => "Name of the merchant.",
             },
             {
               "name" => "merchant_category_code",
-              "short" => "Merchant Category Code (MCC) describing the merchant’s type of business.",
+              "title" => "Merchant Category Code",
               "type" => "`$STRING`",
+              "short" => "Merchant Category Code (MCC) describing the merchant’s type of business.",
             },
             {
               "name" => "packageUUID",
-              "short" => "UUID of the package.",
+              "title" => "Package Uuid",
               "type" => "`$STRING`",
+              "short" => "UUID of the package.",
             },
             {
               "name" => "packageorderuuid",
+              "title" => "Packageorderuuid",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Unique identifier for the registered merchant in the TECS system.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "phoneNumber",
-              "req" => true,
+              "title" => "Phone Number",
               "type" => "`$STRING`",
+              "req" => true,
             },
             {
               "name" => "postalCode",
-              "short" => "Postal or ZIP code of the merchant’s location.",
+              "title" => "Postal Code",
               "type" => "`$STRING`",
+              "short" => "Postal or ZIP code of the merchant’s location.",
             },
             {
               "name" => "productid_acquirer",
+              "title" => "Productid Acquirer",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Identifier of the product for which acquiring is to be enabled.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "region",
-              "short" => "State or province where the merchant is located.",
+              "title" => "Region",
               "type" => "`$STRING`",
+              "short" => "State or province where the merchant is located.",
             },
             {
               "name" => "registrationNumber",
-              "short" => "Business registration number.",
+              "title" => "Registration Number",
               "type" => "`$STRING`",
+              "short" => "Business registration number.",
             },
             {
               "name" => "signature",
-              "short" => "Signature value = saltAsHex-hashAsHex.",
+              "title" => "Signature",
               "type" => "`$STRING`",
+              "short" => "Signature value = saltAsHex-hashAsHex.",
             },
             {
               "name" => "street",
-              "short" => "Street address of the merchant.",
+              "title" => "Street",
               "type" => "`$STRING`",
+              "short" => "Street address of the merchant.",
             },
             {
               "name" => "terminalIds",
-              "short" => "Optional list of terminal IDs for which acquiring should be activated.",
+              "title" => "Terminal Ids",
               "type" => "`$ARRAY`",
+              "short" => "Optional list of terminal IDs for which acquiring should be activated.",
             },
             {
               "name" => "terminalid_acquirer",
-              "short" => "Optional terminal ID provided by the acquirer.",
+              "title" => "Terminalid Acquirer",
               "type" => "`$STRING`",
+              "short" => "Optional terminal ID provided by the acquirer.",
             },
             {
               "name" => "vu_nummer",
+              "title" => "Vu Nummer",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Merchant contract number with the acquirer.",
-              "type" => "`$STRING`",
             },
           ],
           "name" => "merchant_portal_pam_merchant_controller",
@@ -1448,17 +1544,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/contractNumber",
@@ -1470,32 +1555,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "contractNumber",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "contractNumber",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "contractNumber",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/registerAdditionalAcquiring",
@@ -1507,32 +1593,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "registerAdditionalAcquiring",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "registerAdditionalAcquiring",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "registerAdditionalAcquiring",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/updateMerchant",
@@ -1544,22 +1631,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "updateMerchant",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "updateMerchant",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "updateMerchant",
-                  ],
                 },
                 {
-                  "args" => {},
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/registerMerchant",
@@ -1571,15 +1669,17 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "registerMerchant",
                     },
                   ],
-                  "select" => {},
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "merchantportalws",
                     "registerMerchant",
                   ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {},
+                  "select" => {},
                 },
               ],
             },
@@ -1592,58 +1692,69 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "consumerUUID",
+              "title" => "Consumer Uuid",
               "type" => "`$STRING`",
             },
             {
               "name" => "corporateUUID",
+              "title" => "Corporate Uuid",
               "type" => "`$STRING`",
             },
             {
               "name" => "country",
-              "short" => "Country associated with the package.",
+              "title" => "Country",
               "type" => "`$STRING`",
+              "short" => "Country associated with the package.",
             },
             {
               "name" => "descriptionKey",
-              "short" => "Key for the description of the package.",
+              "title" => "Description Key",
               "type" => "`$STRING`",
+              "short" => "Key for the description of the package.",
             },
             {
               "name" => "filter",
+              "title" => "Filter",
               "type" => "`$OBJECT`",
             },
             {
               "name" => "language",
+              "title" => "Language",
+              "type" => "`$STRING`",
+              "req" => true,
               "op" => {
                 "create" => {
                   "type" => "`$STRING`",
                 },
               },
-              "req" => true,
-              "type" => "`$STRING`",
             },
             {
               "name" => "nameKey",
-              "short" => "Key for the name of the package.",
+              "title" => "Name Key",
               "type" => "`$STRING`",
+              "short" => "Key for the name of the package.",
             },
             {
               "name" => "packageStatus",
-              "short" => "Status of the package.",
+              "title" => "Package Status",
               "type" => "`$STRING`",
+              "short" => "Status of the package.",
             },
             {
               "name" => "packageUUID",
+              "title" => "Package Uuid",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Unique identifier for the package.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "pagination",
+              "title" => "Pagination",
               "type" => "`$OBJECT`",
             },
             {
               "name" => "sorting",
+              "title" => "Sorting",
               "type" => "`$OBJECT`",
             },
           ],
@@ -1654,17 +1765,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/availablePackages",
@@ -1676,32 +1776,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "availablePackages",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "availablePackages",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "availablePackages",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/orderPackage",
@@ -1713,32 +1814,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "orderPackage",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "orderPackage",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "orderPackage",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/orderedPackages",
@@ -1750,32 +1852,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "orderedPackages",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "orderedPackages",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "orderedPackages",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/packageTemplates",
@@ -1787,31 +1890,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "packageTemplates",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "packageTemplates",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "packageTemplates",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/updatePackageData",
@@ -1823,19 +1928,30 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "updatePackageData",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "updatePackageData",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "updatePackageData",
-                  ],
                 },
               ],
             },
@@ -1848,47 +1964,57 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "consumerUUID",
+              "title" => "Consumer Uuid",
               "type" => "`$STRING`",
             },
             {
               "name" => "filter",
+              "title" => "Filter",
               "type" => "`$OBJECT`",
             },
             {
               "name" => "language",
+              "title" => "Language",
               "type" => "`$STRING`",
             },
             {
               "name" => "merchantID",
+              "title" => "Merchant Id",
               "type" => "`$STRING`",
             },
             {
               "name" => "packageOrderUUID",
-              "req" => true,
+              "title" => "Package Order Uuid",
               "type" => "`$STRING`",
+              "req" => true,
             },
             {
               "name" => "pagination",
+              "title" => "Pagination",
               "type" => "`$OBJECT`",
             },
             {
               "name" => "productOrderUUID",
-              "req" => true,
+              "title" => "Product Order Uuid",
               "type" => "`$STRING`",
+              "req" => true,
             },
             {
               "name" => "productUUID",
-              "req" => true,
+              "title" => "Product Uuid",
               "type" => "`$STRING`",
+              "req" => true,
             },
             {
               "name" => "reason_decline",
+              "title" => "Reason Decline",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Reason for product decline.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "sorting",
+              "title" => "Sorting",
               "type" => "`$OBJECT`",
             },
           ],
@@ -1899,17 +2025,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/approveProduct",
@@ -1921,32 +2036,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "approveProduct",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "approveProduct",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "approveProduct",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/declineProduct",
@@ -1958,32 +2074,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "declineProduct",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "declineProduct",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "declineProduct",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/orderAdditionalProduct",
@@ -1995,32 +2112,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "orderAdditionalProduct",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "orderAdditionalProduct",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "orderAdditionalProduct",
-                  ],
                 },
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/productsList",
@@ -2032,19 +2150,31 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "productsList",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "productsList",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "productsList",
-                  ],
                 },
               ],
             },
@@ -2057,28 +2187,32 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "packageUUID",
+              "title" => "Package Uuid",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Unique identifier for the package.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "productUUIDs",
+              "title" => "Product Uui Ds",
+              "type" => "`$ARRAY`",
               "req" => true,
               "short" => "The list of unique identifiers of the products.",
-              "type" => "`$ARRAY`",
             },
             {
-              "format" => "int32",
               "name" => "responseCode",
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "Response code.",
-              "type" => "`$INTEGER`",
+              "format" => "int32",
             },
             {
               "name" => "responseMessage",
+              "title" => "Response Message",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Response message.",
-              "type" => "`$STRING`",
             },
           ],
           "name" => "output_add_product",
@@ -2088,17 +2222,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/addProductsToPackage",
@@ -2110,19 +2233,31 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "addProductsToPackage",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "addProductsToPackage",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "addProductsToPackage",
-                  ],
                 },
               ],
             },
@@ -2135,86 +2270,100 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "acquirerId",
-              "short" => "Unique identifier for the acquirer.",
+              "title" => "Acquirer Id",
               "type" => "`$STRING`",
+              "short" => "Unique identifier for the acquirer.",
             },
             {
               "name" => "allowMultipleOrders",
+              "title" => "Allow Multiple Orders",
+              "type" => "`$BOOLEAN`",
               "req" => true,
               "short" => "Indication whether multiple orders are allowed or not.",
-              "type" => "`$BOOLEAN`",
             },
             {
               "name" => "appFormTemplateName",
+              "title" => "App Form Template Name",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Name of the application form template.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "contractNeeded",
+              "title" => "Contract Needed",
+              "type" => "`$BOOLEAN`",
               "req" => true,
               "short" => "Indication whether contract is needed or not.",
-              "type" => "`$BOOLEAN`",
             },
             {
               "name" => "credentialsNeeded",
-              "short" => "Indication whether credentials are needed or not.",
+              "title" => "Credentials Needed",
               "type" => "`$BOOLEAN`",
+              "short" => "Indication whether credentials are needed or not.",
             },
             {
               "name" => "descriptionKey",
+              "title" => "Description Key",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Key indicator for product description.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "nameKey",
+              "title" => "Name Key",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Key indicator for product name.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "prescreeningAllowed",
+              "title" => "Prescreening Allowed",
+              "type" => "`$BOOLEAN`",
               "req" => true,
               "short" => "Indication whether prescreening is allowed or not.",
-              "type" => "`$BOOLEAN`",
             },
             {
               "name" => "productName",
+              "title" => "Product Name",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Name of the product.",
-              "type" => "`$STRING`",
             },
             {
-              "format" => "int32",
               "name" => "responseCode",
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "Response code.",
-              "type" => "`$INTEGER`",
+              "format" => "int32",
             },
             {
               "name" => "responseMessage",
+              "title" => "Response Message",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Response message.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "terminalTemplateName",
+              "title" => "Terminal Template Name",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Name of the terminal template.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "vendorName",
+              "title" => "Vendor Name",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Name of the vendor.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "xmlTemplateFile",
+              "title" => "Xml Template File",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "A string value containing the XML template file encoded in Base64.",
-              "type" => "`$STRING`",
             },
           ],
           "name" => "output_create_product",
@@ -2224,17 +2373,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/createNewProduct",
@@ -2246,19 +2384,31 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "createNewProduct",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "createNewProduct",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "createNewProduct",
-                  ],
                 },
               ],
             },
@@ -2271,18 +2421,22 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "batch",
+              "title" => "Batch",
               "type" => "`$OBJECT`",
             },
             {
               "name" => "id",
+              "title" => "Id",
               "type" => "`$STRING`",
             },
             {
               "name" => "lines",
+              "title" => "Lines",
               "type" => "`$OBJECT`",
             },
             {
               "name" => "progress",
+              "title" => "Progress",
               "type" => "`$OBJECT`",
             },
           ],
@@ -2297,26 +2451,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                    "params" => [
-                      {
-                        "kind" => "param",
-                        "name" => "id",
-                        "orig" => "id",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/merchantportalws/batch/registerAdditionalTerminal/details/{id}",
@@ -2337,16 +2471,6 @@ module BluefinTecsMerchantPortalConfig
                       "var" => "id",
                     },
                   ],
-                  "select" => {
-                    "exist" => [
-                      "authorization",
-                      "id",
-                    ],
-                  },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body.details`",
-                  },
                   "parts" => [
                     "merchantportalws",
                     "batch",
@@ -2354,6 +2478,37 @@ module BluefinTecsMerchantPortalConfig
                     "details",
                     "{id}",
                   ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body.details`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                    "params" => [
+                      {
+                        "name" => "id",
+                        "orig" => "id",
+                        "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
+                  "select" => {
+                    "exist" => [
+                      "authorization",
+                      "id",
+                    ],
+                  },
                 },
               ],
             },
@@ -2366,33 +2521,38 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "items",
+              "title" => "Items",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "pagination",
+              "title" => "Pagination",
+              "type" => "`$OBJECT`",
+              "req" => true,
               "op" => {
                 "create" => {
                   "type" => "`$OBJECT`",
                 },
               },
-              "req" => true,
-              "type" => "`$OBJECT`",
             },
             {
-              "format" => "int32",
               "name" => "responseCode",
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "Response code.",
-              "type" => "`$INTEGER`",
+              "format" => "int32",
             },
             {
               "name" => "responseMessage",
+              "title" => "Response Message",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Response message.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "sorting",
+              "title" => "Sorting",
               "type" => "`$OBJECT`",
             },
           ],
@@ -2403,17 +2563,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/batch/registerAdditionalTerminal/list",
@@ -2431,21 +2580,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "list",
                     },
                   ],
-                  "select" => {
-                    "exist" => [
-                      "authorization",
-                    ],
-                  },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "merchantportalws",
                     "batch",
                     "registerAdditionalTerminal",
                     "list",
                   ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
+                  "select" => {
+                    "exist" => [
+                      "authorization",
+                    ],
+                  },
                 },
               ],
             },
@@ -2458,20 +2619,23 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "id",
+              "title" => "Id",
               "type" => "`$STRING`",
             },
             {
-              "format" => "int32",
               "name" => "responseCode",
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "Response code.",
-              "type" => "`$INTEGER`",
+              "format" => "int32",
             },
             {
               "name" => "responseMessage",
+              "title" => "Response Message",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Response message.",
-              "type" => "`$STRING`",
             },
           ],
           "id" => {
@@ -2485,26 +2649,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                    "params" => [
-                      {
-                        "kind" => "param",
-                        "name" => "id",
-                        "orig" => "id",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/merchantportalws/batch/registerAdditionalTerminal/restart/{id}",
@@ -2525,16 +2669,6 @@ module BluefinTecsMerchantPortalConfig
                       "var" => "id",
                     },
                   ],
-                  "select" => {
-                    "exist" => [
-                      "authorization",
-                      "id",
-                    ],
-                  },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "merchantportalws",
                     "batch",
@@ -2542,28 +2676,39 @@ module BluefinTecsMerchantPortalConfig
                     "restart",
                     "{id}",
                   ],
-                },
-                {
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
                   "args" => {
                     "header" => [
                       {
-                        "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
-                        "reqd" => true,
                         "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
                       },
                     ],
                     "params" => [
                       {
-                        "kind" => "param",
                         "name" => "id",
                         "orig" => "id",
-                        "reqd" => true,
                         "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
                       },
                     ],
                   },
+                  "select" => {
+                    "exist" => [
+                      "authorization",
+                      "id",
+                    ],
+                  },
+                },
+                {
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/merchantportalws/batch/registerAdditionalTerminal/stop/{id}",
@@ -2584,16 +2729,6 @@ module BluefinTecsMerchantPortalConfig
                       "var" => "id",
                     },
                   ],
-                  "select" => {
-                    "exist" => [
-                      "authorization",
-                      "id",
-                    ],
-                  },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "merchantportalws",
                     "batch",
@@ -2601,6 +2736,37 @@ module BluefinTecsMerchantPortalConfig
                     "stop",
                     "{id}",
                   ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                    "params" => [
+                      {
+                        "name" => "id",
+                        "orig" => "id",
+                        "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
+                  "select" => {
+                    "exist" => [
+                      "authorization",
+                      "id",
+                    ],
+                  },
                 },
               ],
             },
@@ -2613,31 +2779,36 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "productOrderUUIDs",
-              "req" => true,
+              "title" => "Product Order Uui Ds",
               "type" => "`$ARRAY`",
+              "req" => true,
             },
             {
-              "format" => "int32",
               "name" => "responseCode",
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "Response code.",
-              "type" => "`$INTEGER`",
+              "format" => "int32",
             },
             {
               "name" => "responseMessage",
+              "title" => "Response Message",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Response message.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "targetPackageOrderUUID",
-              "req" => true,
+              "title" => "Target Package Order Uuid",
               "type" => "`$STRING`",
+              "req" => true,
             },
             {
               "name" => "targetProductOrderUUID",
-              "req" => true,
+              "title" => "Target Product Order Uuid",
               "type" => "`$STRING`",
+              "req" => true,
             },
           ],
           "name" => "output_move_tid",
@@ -2647,17 +2818,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/moveTid",
@@ -2669,19 +2829,31 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "moveTid",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "moveTid",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "moveTid",
-                  ],
                 },
               ],
             },
@@ -2694,28 +2866,32 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "packageUUID",
+              "title" => "Package Uuid",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Unique identifier for the package.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "productUUIDs",
+              "title" => "Product Uui Ds",
+              "type" => "`$ARRAY`",
               "req" => true,
               "short" => "List of product unique identifiers.",
-              "type" => "`$ARRAY`",
             },
             {
-              "format" => "int32",
               "name" => "responseCode",
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "Response code.",
-              "type" => "`$INTEGER`",
+              "format" => "int32",
             },
             {
               "name" => "responseMessage",
+              "title" => "Response Message",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Response message.",
-              "type" => "`$STRING`",
             },
           ],
           "name" => "output_remove_product",
@@ -2725,17 +2901,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/removeProductsFromPackage",
@@ -2747,19 +2912,31 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "removeProductsFromPackage",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "removeProductsFromPackage",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "removeProductsFromPackage",
-                  ],
                 },
               ],
             },
@@ -2772,20 +2949,23 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "id",
+              "title" => "Id",
               "type" => "`$STRING`",
             },
             {
-              "format" => "int32",
               "name" => "responseCode",
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "Response code.",
-              "type" => "`$INTEGER`",
+              "format" => "int32",
             },
             {
               "name" => "responseMessage",
+              "title" => "Response Message",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Response message.",
-              "type" => "`$STRING`",
             },
           ],
           "id" => {
@@ -2799,17 +2979,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/batch/registerAdditionalTerminal/start",
@@ -2827,21 +2996,33 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "start",
                     },
                   ],
-                  "select" => {
-                    "exist" => [
-                      "authorization",
-                    ],
-                  },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "merchantportalws",
                     "batch",
                     "registerAdditionalTerminal",
                     "start",
                   ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
+                  "select" => {
+                    "exist" => [
+                      "authorization",
+                    ],
+                  },
                 },
               ],
             },
@@ -2854,28 +3035,33 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "id",
+              "title" => "Id",
               "type" => "`$STRING`",
             },
             {
-              "format" => "int32",
               "name" => "percentage",
+              "title" => "Percentage",
               "type" => "`$INTEGER`",
+              "format" => "int32",
             },
             {
-              "format" => "int32",
               "name" => "responseCode",
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "Response code.",
-              "type" => "`$INTEGER`",
+              "format" => "int32",
             },
             {
               "name" => "responseMessage",
+              "title" => "Response Message",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Response message.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "status",
+              "title" => "Status",
               "type" => "`$STRING`",
             },
           ],
@@ -2890,26 +3076,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                    "params" => [
-                      {
-                        "kind" => "param",
-                        "name" => "id",
-                        "orig" => "id",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/merchantportalws/batch/registerAdditionalTerminal/status/{id}",
@@ -2930,16 +3096,6 @@ module BluefinTecsMerchantPortalConfig
                       "var" => "id",
                     },
                   ],
-                  "select" => {
-                    "exist" => [
-                      "authorization",
-                      "id",
-                    ],
-                  },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "merchantportalws",
                     "batch",
@@ -2947,6 +3103,37 @@ module BluefinTecsMerchantPortalConfig
                     "status",
                     "{id}",
                   ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                    "params" => [
+                      {
+                        "name" => "id",
+                        "orig" => "id",
+                        "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
+                  "select" => {
+                    "exist" => [
+                      "authorization",
+                      "id",
+                    ],
+                  },
                 },
               ],
             },
@@ -2959,72 +3146,85 @@ module BluefinTecsMerchantPortalConfig
           "fields" => [
             {
               "name" => "allowMultipleOrders",
-              "short" => "An attribute to indicate if multiple orders are allowed",
+              "title" => "Allow Multiple Orders",
               "type" => "`$BOOLEAN`",
+              "short" => "An attribute to indicate if multiple orders are allowed",
             },
             {
               "name" => "appFormName",
-              "short" => "The name of the application form",
+              "title" => "App Form Name",
               "type" => "`$STRING`",
+              "short" => "The name of the application form",
             },
             {
               "name" => "contractNeeded",
-              "short" => "An attribute to indicate if a contract is needed",
+              "title" => "Contract Needed",
               "type" => "`$BOOLEAN`",
+              "short" => "An attribute to indicate if a contract is needed",
             },
             {
               "name" => "credentialsNeeded",
-              "short" => "An attribute to indicate if credentials are needed",
+              "title" => "Credentials Needed",
               "type" => "`$BOOLEAN`",
+              "short" => "An attribute to indicate if credentials are needed",
             },
             {
               "name" => "descriptionKey",
-              "short" => "The description of the product",
+              "title" => "Description Key",
               "type" => "`$STRING`",
+              "short" => "The description of the product",
             },
             {
               "name" => "nameKey",
-              "short" => "The key of the product name",
+              "title" => "Name Key",
               "type" => "`$STRING`",
+              "short" => "The key of the product name",
             },
             {
               "name" => "prescreeningAllowed",
-              "short" => "An attribute to indicate if prescreening is allowed",
+              "title" => "Prescreening Allowed",
               "type" => "`$BOOLEAN`",
+              "short" => "An attribute to indicate if prescreening is allowed",
             },
             {
               "name" => "productName",
-              "short" => "The name of the product",
+              "title" => "Product Name",
               "type" => "`$STRING`",
+              "short" => "The name of the product",
             },
             {
               "name" => "productStatus",
-              "short" => "The status of the product",
+              "title" => "Product Status",
               "type" => "`$STRING`",
+              "short" => "The status of the product",
             },
             {
               "name" => "productUUID",
+              "title" => "Product Uuid",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "The UUID of the product to update",
-              "type" => "`$STRING`",
             },
             {
-              "format" => "int32",
               "name" => "responseCode",
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "Response code.",
-              "type" => "`$INTEGER`",
+              "format" => "int32",
             },
             {
               "name" => "responseMessage",
+              "title" => "Response Message",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Response message.",
-              "type" => "`$STRING`",
             },
             {
               "name" => "vendorName",
-              "short" => "The name of the vendor",
+              "title" => "Vendor Name",
               "type" => "`$STRING`",
+              "short" => "The name of the vendor",
             },
           ],
           "name" => "output_update_product",
@@ -3034,17 +3234,6 @@ module BluefinTecsMerchantPortalConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {
-                    "header" => [
-                      {
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/merchantportalws/updateProduct",
@@ -3056,19 +3245,31 @@ module BluefinTecsMerchantPortalConfig
                       "lit" => "updateProduct",
                     },
                   ],
+                  "parts" => [
+                    "merchantportalws",
+                    "updateProduct",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "header" => [
+                      {
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "authorization",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "merchantportalws",
-                    "updateProduct",
-                  ],
                 },
               ],
             },
