@@ -5,9 +5,9 @@ main: kit: entity: output_detail: {
   alias: field: {}
 
   fields: {
-    batch: {
-      h: "Batch"
-      n: "batch"
+    details: {
+      h: "Details"
+      n: "details"
       r: false
       t: "`$OBJECT`"
     }
@@ -17,17 +17,20 @@ main: kit: entity: output_detail: {
       r: false
       t: "`$STRING`"
     }
-    lines: {
-      h: "Lines"
-      n: "lines"
-      r: false
-      t: "`$OBJECT`"
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: true
+      sh: "Response code."
+      t: "`$INTEGER`"
     }
-    progress: {
-      h: "Progress"
-      n: "progress"
-      r: false
-      t: "`$OBJECT`"
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: true
+      sh: "Response message."
+      t: "`$STRING`"
     }
   }
 
@@ -52,7 +55,7 @@ main: kit: entity: output_detail: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -75,6 +78,10 @@ main: kit: entity: output_detail: {
               "id"
             ]
           }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "merchantportalws"
@@ -94,7 +101,7 @@ main: kit: entity: output_detail: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body.details`"
+            res: "`body`"
           }
         }
       ]

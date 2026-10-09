@@ -201,6 +201,7 @@ module BluefinTecsMerchantPortalConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -492,7 +493,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -503,6 +504,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -530,7 +535,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -541,6 +546,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -568,7 +577,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -579,6 +588,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -606,7 +619,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -617,6 +630,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -657,6 +674,10 @@ module BluefinTecsMerchantPortalConfig
                   },
                   "args" => {},
                   "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
+                  },
                 },
                 {
                   "kind" => "http",
@@ -681,6 +702,10 @@ module BluefinTecsMerchantPortalConfig
                   },
                   "args" => {},
                   "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
+                  },
                 },
               ],
             },
@@ -735,7 +760,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -746,6 +771,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -773,7 +802,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -784,6 +813,23 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "body" => {
+                    "fields" => [
+                      {
+                        "name" => "inputMessage",
+                      },
+                      {
+                        "binary" => true,
+                        "name" => "pdfFile",
+                      },
+                    ],
+                    "kind" => "multipart",
+                    "media" => "multipart/form-data",
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -845,7 +891,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -856,6 +902,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -883,7 +933,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -894,6 +944,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -1004,7 +1058,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1015,6 +1069,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1042,7 +1100,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1053,6 +1111,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1080,7 +1142,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1091,6 +1153,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1118,7 +1184,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1129,6 +1195,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1156,7 +1226,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1167,6 +1237,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1194,7 +1268,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1205,6 +1279,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -1270,7 +1348,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1281,6 +1359,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1308,7 +1390,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1319,6 +1401,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1346,7 +1432,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1357,6 +1443,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -1568,7 +1658,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1579,6 +1669,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1606,7 +1700,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1617,6 +1711,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1644,7 +1742,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1655,6 +1753,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1680,6 +1782,10 @@ module BluefinTecsMerchantPortalConfig
                   },
                   "args" => {},
                   "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
+                  },
                 },
               ],
             },
@@ -1789,7 +1895,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1800,6 +1906,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1827,7 +1937,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1838,6 +1948,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1865,7 +1979,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1876,6 +1990,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1903,7 +2021,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -1914,6 +2032,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1941,16 +2063,16 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "authorization",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -2049,7 +2171,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -2060,6 +2182,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -2087,7 +2213,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -2098,6 +2224,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -2125,7 +2255,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -2136,6 +2266,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -2163,7 +2297,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -2174,6 +2308,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -2246,7 +2384,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -2257,6 +2395,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -2397,7 +2539,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -2408,6 +2550,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -2420,8 +2566,8 @@ module BluefinTecsMerchantPortalConfig
         "output_detail" => {
           "fields" => [
             {
-              "name" => "batch",
-              "title" => "Batch",
+              "name" => "details",
+              "title" => "Details",
               "type" => "`$OBJECT`",
             },
             {
@@ -2430,14 +2576,19 @@ module BluefinTecsMerchantPortalConfig
               "type" => "`$STRING`",
             },
             {
-              "name" => "lines",
-              "title" => "Lines",
-              "type" => "`$OBJECT`",
+              "name" => "responseCode",
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "req" => true,
+              "short" => "Response code.",
+              "format" => "int32",
             },
             {
-              "name" => "progress",
-              "title" => "Progress",
-              "type" => "`$OBJECT`",
+              "name" => "responseMessage",
+              "title" => "Response Message",
+              "type" => "`$STRING`",
+              "req" => true,
+              "short" => "Response message.",
             },
           ],
           "id" => {
@@ -2481,13 +2632,13 @@ module BluefinTecsMerchantPortalConfig
                   "rename" => {},
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body.details`",
+                    "res" => "`body`",
                   },
                   "args" => {
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -2508,6 +2659,10 @@ module BluefinTecsMerchantPortalConfig
                       "authorization",
                       "id",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -2595,7 +2750,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -2606,6 +2761,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -2685,7 +2844,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -2706,6 +2865,10 @@ module BluefinTecsMerchantPortalConfig
                       "authorization",
                       "id",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -2745,7 +2908,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -2766,6 +2929,10 @@ module BluefinTecsMerchantPortalConfig
                       "authorization",
                       "id",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -2842,7 +3009,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -2853,6 +3020,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -2925,7 +3096,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -2936,6 +3107,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -3011,7 +3186,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -3022,6 +3197,23 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "body" => {
+                    "fields" => [
+                      {
+                        "binary" => true,
+                        "name" => "inputCsvFile",
+                      },
+                      {
+                        "name" => "inputJsonMessage",
+                      },
+                    ],
+                    "kind" => "multipart",
+                    "media" => "multipart/form-data",
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -3112,7 +3304,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -3133,6 +3325,10 @@ module BluefinTecsMerchantPortalConfig
                       "authorization",
                       "id",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -3258,7 +3454,7 @@ module BluefinTecsMerchantPortalConfig
                     "header" => [
                       {
                         "name" => "authorization",
-                        "orig" => "authorization",
+                        "orig" => "Authorization",
                         "type" => "`$STRING`",
                         "kind" => "header",
                         "reqd" => true,
@@ -3269,6 +3465,10 @@ module BluefinTecsMerchantPortalConfig
                     "exist" => [
                       "authorization",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],

@@ -9,7 +9,7 @@ import { createLiveTransport } from '../../live-runner'
 import { runLiveEntity } from '../../live-entity'
 
 
-import { BluefinTecsMerchantPortalSDK, BaseFeature, stdutil } from '../../..'
+import { BluefinTecsMerchantPortalSDK, BaseFeature, config, stdutil } from '../../..'
 
 import {
   envOverride,
@@ -41,6 +41,18 @@ describe('OutputRemoveProductEntity', async () => {
   })
 
 
+  test('validate', async (t) => {
+    if (null == (config as any).feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = BluefinTecsMerchantPortalSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.OutputRemoveProduct().create({"packageUUID":1,"productUUIDs":"x","responseCode":1,"responseMessage":"x"} as any),
+      (err: any) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE
@@ -51,7 +63,7 @@ describe('OutputRemoveProductEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"packageUUID":{"a":true,"h":"Package Uuid","n":"packageUUID","r":true,"sh":"Unique identifier for the package.","t":"`$STRING`","key$":"packageUUID","index$":0},"productUUIDs":{"a":true,"h":"Product Uui Ds","n":"productUUIDs","r":true,"sh":"List of product unique identifiers.","t":"`$ARRAY`","key$":"productUUIDs","index$":1},"responseCode":{"a":true,"fo":"int32","h":"Response Code","n":"responseCode","r":true,"sh":"Response code.","t":"`$INTEGER`","key$":"responseCode","index$":2},"responseMessage":{"a":true,"h":"Response Message","n":"responseMessage","r":true,"sh":"Response message.","t":"`$STRING`","key$":"responseMessage","index$":3}},"name":"output_remove_product","op":{"create":{"input":"data","name":"create","points":[{"a":true,"co":{"id":"POST /merchantportalws/removeProductsFromPackage","source":"openapi3","version":2},"g":{"header":[{"a":true,"k":"header","n":"authorization","or":"authorization","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/merchantportalws/removeProductsFromPackage","q":{"exist":["authorization"]},"r":{},"s":[{"lit":"merchantportalws"},{"lit":"removeProductsFromPackage"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"create"}},"relations":{"ancestors":[]},"key$":"output_remove_product","name__orig":"output_remove_product","Name":"OutputRemoveProduct","name_":"output_remove_product","name-":"output-remove-product","NAME":"OUTPUT_REMOVE_PRODUCT","index$":15}, {"active":true,"entity":"output_remove_product","key$":"BasicOutputRemoveProductFlow","kind":"basic","name":"BasicOutputRemoveProductFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"output_remove_product_ref01"},"m":{},"o":"create","s":[],"v":[],"index$":0}]}, 'OutputRemoveProduct', {"POST /merchantportalws/removeProductsFromPackage":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","required":["packageUUID","productUUIDs"],"properties":{"packageUUID":{"type":"string","example":"654e3217-e98b-21d3-a456-426614174999","description":"Unique identifier for the package.","key$":"packageUUID"},"productUUIDs":{"type":"array","example":["567e4345-e84b-34d2-b356-125614243567","678f4543-f34c-23d1-c345-234615453451"],"description":"List of product unique identifiers.","uniqueItems":true,"items":{"type":"string"},"key$":"productUUIDs"}},"title":"InputRemoveProducts","x-ref":"#/components/schemas/InputRemoveProducts","index$":1}}},"description":"inputRemoveProducts","required":true},"parameters":[{"name":"Authorization","in":"header","description":"Authorization","required":true,"schema":{"type":"string"},"index$":0}]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"packageUUID":{"a":true,"h":"Package Uuid","n":"packageUUID","r":true,"sh":"Unique identifier for the package.","t":"`$STRING`","key$":"packageUUID","index$":0},"productUUIDs":{"a":true,"h":"Product Uui Ds","n":"productUUIDs","r":true,"sh":"List of product unique identifiers.","t":"`$ARRAY`","key$":"productUUIDs","index$":1},"responseCode":{"a":true,"fo":"int32","h":"Response Code","n":"responseCode","r":true,"sh":"Response code.","t":"`$INTEGER`","key$":"responseCode","index$":2},"responseMessage":{"a":true,"h":"Response Message","n":"responseMessage","r":true,"sh":"Response message.","t":"`$STRING`","key$":"responseMessage","index$":3}},"name":"output_remove_product","op":{"create":{"input":"data","name":"create","points":[{"a":true,"bf":["packageUUID","productUUIDs"],"co":{"id":"POST /merchantportalws/removeProductsFromPackage","source":"openapi3","version":2},"g":{"header":[{"a":true,"k":"header","n":"authorization","or":"Authorization","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/merchantportalws/removeProductsFromPackage","q":{"exist":["authorization"]},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"merchantportalws"},{"lit":"removeProductsFromPackage"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"create"}},"relations":{"ancestors":[]},"key$":"output_remove_product","name__orig":"output_remove_product","Name":"OutputRemoveProduct","name_":"output_remove_product","name-":"output-remove-product","NAME":"OUTPUT_REMOVE_PRODUCT","index$":15}, {"active":true,"entity":"output_remove_product","key$":"BasicOutputRemoveProductFlow","kind":"basic","name":"BasicOutputRemoveProductFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"output_remove_product_ref01"},"m":{},"o":"create","s":[],"v":[],"index$":0}]}, 'OutputRemoveProduct', {"POST /merchantportalws/removeProductsFromPackage":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","required":["packageUUID","productUUIDs"],"properties":{"packageUUID":{"type":"string","example":"654e3217-e98b-21d3-a456-426614174999","description":"Unique identifier for the package.","key$":"packageUUID"},"productUUIDs":{"type":"array","example":["567e4345-e84b-34d2-b356-125614243567","678f4543-f34c-23d1-c345-234615453451"],"description":"List of product unique identifiers.","uniqueItems":true,"items":{"type":"string"},"key$":"productUUIDs"}},"title":"InputRemoveProducts","x-ref":"#/components/schemas/InputRemoveProducts","index$":1}}},"description":"inputRemoveProducts","required":true},"parameters":[{"name":"Authorization","in":"header","description":"Authorization","required":true,"schema":{"type":"string"},"index$":0}]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -72,6 +84,12 @@ describe('OutputRemoveProductEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra?: any) {
   // TODO: fix test def options

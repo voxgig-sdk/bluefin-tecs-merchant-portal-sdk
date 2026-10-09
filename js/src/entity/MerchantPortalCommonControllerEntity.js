@@ -24,7 +24,7 @@ class MerchantPortalCommonControllerEntity extends BluefinTecsMerchantPortalEnti
   /**
    * @param {MerchantPortalCommonControllerLoadMatch} [reqmatch]
    * @param {Object} [ctrl]
-   * @returns {Promise<MerchantPortalCommonController>}
+   * @returns {Promise<MerchantPortalCommonControllerEntity>}
    */
   async load(reqmatch, ctrl) {
 
@@ -129,9 +129,15 @@ class MerchantPortalCommonControllerEntity extends BluefinTecsMerchantPortalEnti
       return (ctx.result && ctx.result.ok) ? this : out
     }
     catch (err) {
+      // What a hook throws here must not escape the cleaning below.
+      try {
 
-      fres = featureHook(ctx, 'PreUnexpected')
-      if (fres instanceof Promise) { await fres }
+        fres = featureHook(ctx, 'PreUnexpected')
+        if (fres instanceof Promise) { await fres }
+      }
+      catch (hookerr) {
+        err = hookerr
+      }
 
       err = this._unexpected(ctx, err)
 
@@ -143,6 +149,7 @@ class MerchantPortalCommonControllerEntity extends BluefinTecsMerchantPortalEnti
       }
     }
   }
+
 
 
 

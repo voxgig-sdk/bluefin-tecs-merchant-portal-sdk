@@ -54,6 +54,14 @@ const utility_1 = require("../../utility");
         const ent = testsdk.OutputStart();
         (0, node_assert_1.default)(null != ent);
     });
+    (0, node_test_1.test)('validate', async (t) => {
+        if (null == __1.config.feature?.validate) {
+            t.skip('feature not present in this SDK: validate');
+            return;
+        }
+        const client = __1.BluefinTecsMerchantPortalSDK.test(undefined, { feature: { validate: { active: true } } });
+        await node_assert_1.default.rejects(client.OutputStart().create({ "id": 1, "responseCode": 1, "responseMessage": "x" }), (err) => 'validate_failed' === err.code);
+    });
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE;
         for (const op of ['create']) {
@@ -62,7 +70,7 @@ const utility_1 = require("../../utility");
         }
         const setup = basicSetup();
         if (setup.live) {
-            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "id": { "a": true, "h": "Id", "n": "id", "r": false, "t": "`$STRING`", "key$": "id", "index$": 0 }, "responseCode": { "a": true, "fo": "int32", "h": "Response Code", "n": "responseCode", "r": true, "sh": "Response code.", "t": "`$INTEGER`", "key$": "responseCode", "index$": 1 }, "responseMessage": { "a": true, "h": "Response Message", "n": "responseMessage", "r": true, "sh": "Response message.", "t": "`$STRING`", "key$": "responseMessage", "index$": 2 } }, "id": { "field": "id", "name": "id" }, "name": "output_start", "op": { "create": { "input": "data", "name": "create", "points": [{ "a": true, "co": { "id": "POST /merchantportalws/batch/registerAdditionalTerminal/start", "source": "openapi3", "version": 2 }, "g": { "header": [{ "a": true, "k": "header", "n": "authorization", "or": "authorization", "r": true, "t": "`$STRING`", "index$": 0 }] }, "k": "http", "m": "POST", "o": "/merchantportalws/batch/registerAdditionalTerminal/start", "q": { "exist": ["authorization"] }, "r": {}, "s": [{ "lit": "merchantportalws" }, { "lit": "batch" }, { "lit": "registerAdditionalTerminal" }, { "lit": "start" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "create" } }, "relations": { "ancestors": [] }, "key$": "output_start", "name__orig": "output_start", "Name": "OutputStart", "name_": "output_start", "name-": "output-start", "NAME": "OUTPUT_START", "index$": 16 }, { "active": true, "entity": "output_start", "key$": "BasicOutputStartFlow", "kind": "basic", "name": "BasicOutputStartFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": { "ref": "output_start_ref01" }, "m": {}, "o": "create", "s": [], "v": [], "index$": 0 }] }, 'OutputStart', { "POST /merchantportalws/batch/registerAdditionalTerminal/start": { "protocol": "http", "requestBody": { "content": { "multipart/form-data": { "schema": { "type": "object", "properties": { "inputJsonMessage": { "type": "string" }, "inputCsvFile": { "description": "inputCsvFile", "type": "string", "format": "binary" } }, "required": ["inputCsvFile"] } } } }, "parameters": [{ "name": "Authorization", "in": "header", "description": "Authorization", "required": true, "schema": { "type": "string" }, "index$": 0 }] } });
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "id": { "a": true, "h": "Id", "n": "id", "r": false, "t": "`$STRING`", "key$": "id", "index$": 0 }, "responseCode": { "a": true, "fo": "int32", "h": "Response Code", "n": "responseCode", "r": true, "sh": "Response code.", "t": "`$INTEGER`", "key$": "responseCode", "index$": 1 }, "responseMessage": { "a": true, "h": "Response Message", "n": "responseMessage", "r": true, "sh": "Response message.", "t": "`$STRING`", "key$": "responseMessage", "index$": 2 } }, "id": { "field": "id", "name": "id" }, "name": "output_start", "op": { "create": { "input": "data", "name": "create", "points": [{ "a": true, "co": { "id": "POST /merchantportalws/batch/registerAdditionalTerminal/start", "source": "openapi3", "version": 2 }, "g": { "header": [{ "a": true, "k": "header", "n": "authorization", "or": "Authorization", "r": true, "t": "`$STRING`", "index$": 0 }] }, "k": "http", "m": "POST", "o": "/merchantportalws/batch/registerAdditionalTerminal/start", "q": { "exist": ["authorization"] }, "r": {}, "rb": { "fields": [{ "binary": true, "name": "inputCsvFile" }, { "name": "inputJsonMessage" }], "kind": "multipart", "media": "multipart/form-data" }, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "merchantportalws" }, { "lit": "batch" }, { "lit": "registerAdditionalTerminal" }, { "lit": "start" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "create" } }, "relations": { "ancestors": [] }, "key$": "output_start", "name__orig": "output_start", "Name": "OutputStart", "name_": "output_start", "name-": "output-start", "NAME": "OUTPUT_START", "index$": 16 }, { "active": true, "entity": "output_start", "key$": "BasicOutputStartFlow", "kind": "basic", "name": "BasicOutputStartFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": { "ref": "output_start_ref01" }, "m": {}, "o": "create", "s": [], "v": [], "index$": 0 }] }, 'OutputStart', { "POST /merchantportalws/batch/registerAdditionalTerminal/start": { "protocol": "http", "requestBody": { "content": { "multipart/form-data": { "schema": { "type": "object", "properties": { "inputJsonMessage": { "type": "string" }, "inputCsvFile": { "description": "inputCsvFile", "type": "string", "format": "binary" } }, "required": ["inputCsvFile"] } } } }, "parameters": [{ "name": "Authorization", "in": "header", "description": "Authorization", "required": true, "schema": { "type": "string" }, "index$": 0 }] } }, { strict: LIVE_STRICT, t });
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -75,6 +83,11 @@ const utility_1 = require("../../utility");
         (0, node_assert_1.default)(null != output_start_ref01_data.id);
     });
 });
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true;
 function basicSetup(extra) {
     // TODO: fix test def options
     const options = {}; // null

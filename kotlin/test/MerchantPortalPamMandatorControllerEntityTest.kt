@@ -6,18 +6,29 @@ import java.nio.file.Paths
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Assumptions
 import org.junit.jupiter.api.Test
 
+import voxgig.bluefintecsmerchantportalsdk.core.Config
+import voxgig.bluefintecsmerchantportalsdk.core.Context
 import voxgig.bluefintecsmerchantportalsdk.core.Helpers
 import voxgig.bluefintecsmerchantportalsdk.core.SdkEntity
+import voxgig.bluefintecsmerchantportalsdk.core.SdkError
 import voxgig.bluefintecsmerchantportalsdk.core.BluefinTecsMerchantPortalSDK
+import voxgig.bluefintecsmerchantportalsdk.feature.BaseFeature
 import voxgig.bluefintecsmerchantportalsdk.utility.Json
 import voxgig.bluefintecsmerchantportalsdk.utility.struct.Struct
 
 @Suppress("UNCHECKED_CAST", "UNUSED_VARIABLE", "UNUSED_VALUE")
 class MerchantPortalPamMandatorControllerEntityTest {
+
+  // main.kit.test.live.strict is true (the default is true): a live
+  // request that fails, or a live test missing an input it needs,
+  // fails the test.
+  // An account with no record for a test to read skips it either way.
+  private val LIVE_STRICT = true
 
   @Test
   fun instance() {
@@ -38,10 +49,6 @@ class MerchantPortalPamMandatorControllerEntityTest {
         if (reason == null || "" == reason) "skipped via sdk-test-control.json" else reason,
       )
     }
-    Assumptions.assumeFalse(
-      setup.syntheticOnly,
-      "live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER_ENTID JSON to run live",
-    )
     val client = setup.client
 
     // CREATE
@@ -53,6 +60,23 @@ class MerchantPortalPamMandatorControllerEntityTest {
     merchantPortalPamMandatorControllerRef01Data = Helpers.toMapAny(if (merchantPortalPamMandatorControllerRef01DataResult is SdkEntity) merchantPortalPamMandatorControllerRef01DataResult.data() else merchantPortalPamMandatorControllerRef01DataResult) ?: linkedMapOf()
     assertNotNull(merchantPortalPamMandatorControllerRef01Data, "expected create result to be a map")
 
+  }
+
+  private fun hasFeature(name: String): Boolean {
+    val fm = Helpers.toMapAny(Config.sharedConfig()["feature"])
+    return fm != null && fm[name] != null
+  }
+
+  @Test
+  fun validate() {
+    Assumptions.assumeTrue(hasFeature("validate"), "feature not present in this SDK: validate")
+    val client = BluefinTecsMerchantPortalSDK.testSDK(null, linkedMapOf<String, Any?>(
+      "feature" to linkedMapOf<String, Any?>(
+        "validate" to linkedMapOf<String, Any?>("active" to true))))
+    val err = assertThrows(SdkError::class.java) {
+      client.merchantPortalPamMandatorController(null).create(linkedMapOf<String, Any?>("clientSecret" to 1, "mandatorName" to "x", "packageUUID" to "x"), null)
+    }
+    assertEquals("validate_failed", err.code)
   }
 
   companion object {
@@ -84,7 +108,7 @@ class MerchantPortalPamMandatorControllerEntityTest {
           "\"`\$VAL`\": [\"`\$FORMAT`\", \"upper\", \"`\$COPY`\"]" +
           "}]}"))
 
-      // Detect ENTID env override before envOverride consumes it.
+      // Whether *_ENTID supplied the idmap, read before envOverride consumes it.
       val entidEnvRaw = RunnerSupport.getenv("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_MANDATOR_CONTROLLER_ENTID")
       val idmapOverridden = entidEnvRaw != null && entidEnvRaw.trim().startsWith("{")
 

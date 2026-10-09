@@ -17,7 +17,7 @@ keeps the cognitive load low.
 This package is not yet published to a SwiftPM registry. The generated SDK
 is a dependency-free SwiftPM package (Foundation only, plus the vendored
 Voxgig Struct port). Depend on it from the GitHub release tag
-(`swift/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases)) by adding it to
+(`swift/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags)) by adding it to
 your `Package.swift`:
 
 ```swift
@@ -63,14 +63,15 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 ```ts
 try {
   const outputdetail = await client.OutputDetail().load({ id: "example_id" })
-  console.log(outputdetail)
+  console.log(outputdetail.data())
 } catch (err) {
   console.error('load failed:', err)
 }
 ```
 
 The low-level `direct()` method does **not** throw — it returns the
-value or an `Error`, so check the result before using it:
+result envelope. Branch on `ok`; on failure `status` holds the HTTP status
+(for error responses) and `err` holds the error:
 
 ```ts
 const result = await client.direct({
@@ -79,8 +80,8 @@ const result = await client.direct({
   params: { id: 'example_id' },
 })
 
-if (result instanceof Error) {
-  throw result
+if (!result.ok) {
+  console.error('request failed:', result.status, result.err)
 }
 ```
 
@@ -132,11 +133,12 @@ Create a mock client for unit testing — no server required:
 ```swift
 let client = BluefinTecsMerchantPortalSDK.testSDK(nil, nil)
 
-// Entity ops return the ENTITY and throws on error;
-// call data() for the record.
+// Entity ops return the entity, wrapped in a Value; they throw on error.
 let outputDetail = try client.OutputDetail().load(VMap([("id", .string("test01"))]), nil)
-// outputDetail holds the mock response record
-print(outputDetail)
+// data() reads the entity's mock record
+if let outputDetailEntity = outputDetail.asNative as? Entity {
+    print(outputDetailEntity.data())
+}
 ```
 
 ### Use a custom fetch function
@@ -237,8 +239,8 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) throws -> Value` | Load a single entity by match criteria. Throws on error. |
-| `create` | `(reqdata, ctrl) throws -> Value` | Create a new entity. Throws on error. |
+| `load` | `(reqmatch, ctrl) throws -> Value` | Load a single entity by match criteria, and return it. Throws on error. |
+| `create` | `(reqdata, ctrl) throws -> Value` | Create a new entity, and return it. Throws on error. |
 | `data` | `(newdata?) -> Value` | Get or set entity data. |
 | `matchv` | `(newmatch?) -> Value` | Get or set entity match criteria. |
 | `make` | `() -> Entity` | Create a new instance with the same options. |
@@ -246,9 +248,10 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the ENTITY (call data() for the record) (a `Value` map for
-single-entity ops, a `Value` list for `list`) and throw on error. Wrap
-calls in `do`/`catch` to handle failures.
+Entity operations return the entity, and `list` a `Value` list of entities,
+one per record; each entity comes wrapped in a native `Value`, which
+`asNative as? Entity` unwraps, and its `data()` reads the record. They
+throw on error, so wrap calls in `do`/`catch` to handle failures.
 
 The `direct()` escape hatch never throws — it returns a result `VMap` you
 branch on via `result.entries["ok"]`:
@@ -483,10 +486,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Load.
 
@@ -1037,10 +1040,10 @@ Create an instance: `let outputDetail = client.OutputDetail()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `VMap` |  |
+| `details` | `VMap` |  |
 | `id` | `String` |  |
-| `lines` | `VMap` |  |
-| `progress` | `VMap` |  |
+| `responseCode` | `Int` | Response code. |
+| `responseMessage` | `String` | Response message. |
 
 #### Example: Load
 

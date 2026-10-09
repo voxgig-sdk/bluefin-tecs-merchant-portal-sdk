@@ -275,10 +275,10 @@ export interface OutputCreateProductCreateData {
     xmlTemplateFile: string;
 }
 export interface OutputDetail {
-    batch?: Record<string, any>;
+    details?: Record<string, any>;
     id?: string;
-    lines?: Record<string, any>;
-    progress?: Record<string, any>;
+    responseCode: number;
+    responseMessage: string;
 }
 export interface OutputDetailLoadMatch {
     id: string;

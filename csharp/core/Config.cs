@@ -235,6 +235,7 @@ public static class SdkConfig
                     ["optspec"] = new Dictionary<string, object?>
                     {
                         ["clearTimer"] = "`$FUNCTION`",
+                        ["now"] = "`$FUNCTION`",
                         ["setTimer"] = "`$FUNCTION`",
                     },
                     ["strict"] = false,
@@ -577,7 +578,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -590,6 +591,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -626,7 +632,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -639,6 +645,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -675,7 +686,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -688,6 +699,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -724,7 +740,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -737,6 +753,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -788,6 +809,11 @@ public static class SdkConfig
                                     },
                                     ["args"] = new Dictionary<string, object?>(),
                                     ["select"] = new Dictionary<string, object?>(),
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
+                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
@@ -818,6 +844,11 @@ public static class SdkConfig
                                     },
                                     ["args"] = new Dictionary<string, object?>(),
                                     ["select"] = new Dictionary<string, object?>(),
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
+                                    },
                                 },
                             },
                         },
@@ -889,7 +920,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -902,6 +933,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -938,7 +974,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -951,6 +987,28 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["body"] = new Dictionary<string, object?>
+                                    {
+                                        ["fields"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "inputMessage",
+                                            },
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["binary"] = true,
+                                                ["name"] = "pdfFile",
+                                            },
+                                        },
+                                        ["kind"] = "multipart",
+                                        ["media"] = "multipart/form-data",
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -1030,7 +1088,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -1043,6 +1101,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1079,7 +1142,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -1092,6 +1155,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -1232,7 +1300,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -1245,6 +1313,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1281,7 +1354,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -1294,6 +1367,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1330,7 +1408,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -1343,6 +1421,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1379,7 +1462,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -1392,6 +1475,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1428,7 +1516,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -1441,6 +1529,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1477,7 +1570,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -1490,6 +1583,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -1574,7 +1672,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -1587,6 +1685,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1623,7 +1726,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -1636,6 +1739,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1672,7 +1780,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -1685,6 +1793,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -1939,7 +2052,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -1952,6 +2065,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -1988,7 +2106,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -2001,6 +2119,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -2037,7 +2160,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -2050,6 +2173,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -2081,6 +2209,11 @@ public static class SdkConfig
                                     },
                                     ["args"] = new Dictionary<string, object?>(),
                                     ["select"] = new Dictionary<string, object?>(),
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
+                                    },
                                 },
                             },
                         },
@@ -2218,7 +2351,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -2231,6 +2364,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -2267,7 +2405,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -2280,6 +2418,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -2316,7 +2459,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -2329,6 +2472,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -2365,7 +2513,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -2378,6 +2526,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -2414,18 +2567,17 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                             },
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>
+                                    ["select"] = new Dictionary<string, object?>(),
+                                    ["response"] = new Dictionary<string, object?>
                                     {
-                                        ["exist"] = new List<object?>
-                                        {
-                                            "authorization",
-                                        },
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -2549,7 +2701,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -2562,6 +2714,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -2598,7 +2755,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -2611,6 +2768,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -2647,7 +2809,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -2660,6 +2822,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -2696,7 +2863,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -2709,6 +2876,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -2800,7 +2972,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -2813,6 +2985,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -2982,7 +3159,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -2995,6 +3172,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -3011,8 +3193,8 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["name"] = "batch",
-                            ["title"] = "Batch",
+                            ["name"] = "details",
+                            ["title"] = "Details",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
@@ -3023,15 +3205,20 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
-                            ["name"] = "lines",
-                            ["title"] = "Lines",
-                            ["type"] = "`$OBJECT`",
+                            ["name"] = "responseCode",
+                            ["title"] = "Response Code",
+                            ["type"] = "`$INTEGER`",
+                            ["req"] = true,
+                            ["short"] = "Response code.",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["name"] = "progress",
-                            ["title"] = "Progress",
-                            ["type"] = "`$OBJECT`",
+                            ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
+                            ["type"] = "`$STRING`",
+                            ["req"] = true,
+                            ["short"] = "Response message.",
                         },
                     },
                     ["id"] = new Dictionary<string, object?>
@@ -3088,7 +3275,7 @@ public static class SdkConfig
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
-                                        ["res"] = "`body.details`",
+                                        ["res"] = "`body`",
                                     },
                                     ["args"] = new Dictionary<string, object?>
                                     {
@@ -3097,7 +3284,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -3122,6 +3309,11 @@ public static class SdkConfig
                                             "authorization",
                                             "id",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -3233,7 +3425,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -3246,6 +3438,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -3347,7 +3544,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -3372,6 +3569,11 @@ public static class SdkConfig
                                             "authorization",
                                             "id",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -3423,7 +3625,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -3448,6 +3650,11 @@ public static class SdkConfig
                                             "authorization",
                                             "id",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -3544,7 +3751,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -3557,6 +3764,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -3648,7 +3860,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -3661,6 +3873,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -3757,7 +3974,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -3770,6 +3987,28 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["body"] = new Dictionary<string, object?>
+                                    {
+                                        ["fields"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["binary"] = true,
+                                                ["name"] = "inputCsvFile",
+                                            },
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "inputJsonMessage",
+                                            },
+                                        },
+                                        ["kind"] = "multipart",
+                                        ["media"] = "multipart/form-data",
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -3884,7 +4123,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -3909,6 +4148,11 @@ public static class SdkConfig
                                             "authorization",
                                             "id",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },
@@ -4062,7 +4306,7 @@ public static class SdkConfig
                                             new Dictionary<string, object?>
                                             {
                                                 ["name"] = "authorization",
-                                                ["orig"] = "authorization",
+                                                ["orig"] = "Authorization",
                                                 ["type"] = "`$STRING`",
                                                 ["kind"] = "header",
                                                 ["reqd"] = true,
@@ -4075,6 +4319,11 @@ public static class SdkConfig
                                         {
                                             "authorization",
                                         },
+                                    },
+                                    ["response"] = new Dictionary<string, object?>
+                                    {
+                                        ["kind"] = "json",
+                                        ["media"] = "application/json",
                                     },
                                 },
                             },

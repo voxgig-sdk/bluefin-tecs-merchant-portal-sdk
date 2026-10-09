@@ -105,6 +105,19 @@ main: kit: entity: output_update_product: {
       name: "create"
       points: [
         {
+          bf: [
+            "allowMultipleOrders"
+            "appFormName"
+            "contractNeeded"
+            "credentialsNeeded"
+            "descriptionKey"
+            "nameKey"
+            "prescreeningAllowed"
+            "productName"
+            "productStatus"
+            "productUUID"
+            "vendorName"
+          ]
           co: {
             id: "POST /merchantportalws/updateProduct"
             source: "openapi3"
@@ -115,7 +128,7 @@ main: kit: entity: output_update_product: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -127,6 +140,10 @@ main: kit: entity: output_update_product: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

@@ -40,7 +40,7 @@ loading a specific record.
 
 ```haskell
 import qualified SdkClient as Sdk
-import VoxgigStruct (Value (..), emptyMap)
+import VoxgigStruct (Value (..), emptyMap, stringify)
 import SdkHelpers (jo)
 
 main :: IO ()
@@ -48,9 +48,9 @@ main = do
   sdk <- Sdk.newSdk0
 ```
 
-Entity operations raise on error (via `Control.Exception.throwIO`) and
-return the bare result `Value`. Wrap a call in `Control.Exception.try`
-to recover from failures.
+Entity operations return the entity, whose record `eDataGet` reads, and
+raise on error (via `Control.Exception.throwIO`). Wrap a call in
+`Control.Exception.try` to recover from failures.
 
 ### 4. Create, update, and remove
 
@@ -59,7 +59,7 @@ to recover from failures.
   d <- jo [("business_reg_number", VStr "example_business_reg_number"), ("city", VStr "example_city"), ("country", VStr "example_country"), ("currency", VStr "example_currency"), ("merchant_category_code", VNum 1), ("merchant_name", VStr "example_merchant_name"), ("packageid", VStr "example_packageid"), ("packageorderuuid", VStr "example_packageorderuuid"), ("reason_deactivation", VStr "example_reason_deactivation"), ("reason_reactivation", VStr "example_reason_reactivation"), ("street", VStr "example_street"), ("terminal_country_code", VStr "example_terminal_country_code"), ("terminal_language_code", VStr "example_terminal_language_code"), ("terminal_location", VStr "example_terminal_location"), ("terminal_serial_number", VStr "example_terminal_serial_number"), ("terminalid", VNum 1), ("vu_nummer", VStr "example_vu_nummer"), ("zipcode", VStr "example_zipcode")]
   cctrl <- emptyMap
   created <- Sdk.eCreate createEnt d cctrl
-  print =<< Sdk.eDataGet created
+  putStrLn =<< stringify =<< Sdk.eDataGet created
 ```
 
 
@@ -70,14 +70,15 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 ```ts
 try {
   const outputdetail = await client.OutputDetail().load({ id: "example_id" })
-  console.log(outputdetail)
+  console.log(outputdetail.data())
 } catch (err) {
   console.error('load failed:', err)
 }
 ```
 
 The low-level `direct()` method does **not** throw — it returns the
-value or an `Error`, so check the result before using it:
+result envelope. Branch on `ok`; on failure `status` holds the HTTP status
+(for error responses) and `err` holds the error:
 
 ```ts
 const result = await client.direct({
@@ -86,8 +87,8 @@ const result = await client.direct({
   params: { id: 'example_id' },
 })
 
-if (result instanceof Error) {
-  throw result
+if (!result.ok) {
+  console.error('request failed:', result.status, result.err)
 }
 ```
 
@@ -102,7 +103,7 @@ raises and returns a result `Value` you branch on via its `ok` field:
 ```haskell
 import qualified SdkClient as Sdk
 import qualified SdkFeatures as F
-import VoxgigStruct (Value (..))
+import VoxgigStruct (Value (..), stringify)
 import SdkHelpers (jo, getp)
 
 main :: IO ()
@@ -116,13 +117,15 @@ main = do
     VBool True -> do
       status <- getp result "status"   -- e.g. VNum 200
       body <- getp result "data"       -- the response body
-      print (status, body)
+      putStrLn =<< stringify status
+      putStrLn =<< stringify body
     _ -> do
       -- A non-2xx response carries status + data (the error body); a
       -- transport-level failure carries err instead.
       status <- getp result "status"
       err <- getp result "err"
-      print (status, err)
+      putStrLn =<< stringify status
+      putStrLn =<< stringify err
 ```
 
 ### Prepare a request without sending it
@@ -130,7 +133,7 @@ main = do
 ```haskell
 import qualified SdkClient as Sdk
 import qualified SdkFeatures as F
-import VoxgigStruct (Value (..))
+import VoxgigStruct (Value (..), stringify)
 import SdkHelpers (jo, getp)
 
 main :: IO ()
@@ -142,7 +145,8 @@ main = do
   fetchdef <- F.prepare sdk args
   url <- getp fetchdef "url"
   method <- getp fetchdef "method"
-  print (url, method)
+  putStrLn =<< stringify url
+  putStrLn =<< stringify method
 ```
 
 ### Use test mode
@@ -152,7 +156,7 @@ Create a mock client for unit testing — no server required:
 ```haskell
 import qualified SdkClient as Sdk
 import qualified SdkFeatures as F
-import VoxgigStruct (Value (..), emptyMap)
+import VoxgigStruct (Value (..), emptyMap, stringify)
 import SdkHelpers (jo)
 
 main :: IO ()
@@ -161,9 +165,10 @@ main = do
   ent <- Sdk.output_detail sdk VNoval
   arg <- jo [("id", VStr "test01")]
   ctrl <- emptyMap
-  -- Entity ops return the bare record and raise on error.
+  -- Entity ops return the entity and raise on error;
+  -- eDataGet reads its mock record.
   output_detail <- Sdk.eLoad ent arg ctrl
-  print output_detail
+  putStrLn =<< stringify =<< Sdk.eDataGet output_detail
 ```
 
 ### Use a custom fetch function
@@ -285,7 +290,7 @@ All entities share the same record interface (fields of the `Entity` type).
 Entity operations resolve to the ENTITY, not the raw record — `eList` to
 one entity per record — and raise on error. The record is reached through
 `eDataGet`, which returns the entity's data container. `eRemove` resolves to
-the entity marked deleted (`eDeleted`); it keeps the data it held. Wrap calls
+the entity marked as deleted (`eDeleted`); it keeps the data it held. Wrap calls
 in `Control.Exception.try` to handle failures.
 
 The `direct` escape hatch never raises — it returns a result `Value`
@@ -521,10 +526,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Load.
 
@@ -1120,10 +1125,10 @@ Create an instance: `output_detail <- Sdk.output_detail sdk VNoval`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `Value` |  |
+| `details` | `Value` |  |
 | `id` | `String` |  |
-| `lines` | `Value` |  |
-| `progress` | `Value` |  |
+| `responseCode` | `Int` | Response code. |
+| `responseMessage` | `String` | Response message. |
 
 #### Example: Load
 

@@ -146,7 +146,6 @@ guide: {
   entity: output_detail: {
     path: "/merchantportalws/batch/registerAdditionalTerminal/details/{id}": {
       op: load: method: *GET
-      op: load: transform: res: *("`body.details`")|top
     }
   }
 

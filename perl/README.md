@@ -15,8 +15,10 @@ keeps the cognitive load low.
 
 
 ## Install
+The SDK needs perl 5.18 or later.
+
 This package is not yet published to CPAN. Install it from the GitHub
-release tag (`perl/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases)) or
+release tag (`perl/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags)) or
 from a source checkout.
 
 The SDK is pure Perl with zero non-core runtime dependencies, so no build
@@ -58,14 +60,15 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 ```ts
 try {
   const outputdetail = await client.OutputDetail().load({ id: "example_id" })
-  console.log(outputdetail)
+  console.log(outputdetail.data())
 } catch (err) {
   console.error('load failed:', err)
 }
 ```
 
 The low-level `direct()` method does **not** throw — it returns the
-value or an `Error`, so check the result before using it:
+result envelope. Branch on `ok`; on failure `status` holds the HTTP status
+(for error responses) and `err` holds the error:
 
 ```ts
 const result = await client.direct({
@@ -74,8 +77,8 @@ const result = await client.direct({
   params: { id: 'example_id' },
 })
 
-if (result instanceof Error) {
-  throw result
+if (!result.ok) {
+  console.error('request failed:', result.status, result.err)
 }
 ```
 
@@ -127,10 +130,9 @@ Create a mock client for unit testing — no server required:
 ```perl
 my $client = BluefinTecsMerchantPortalSDK->test(undef, undef);
 
-# Entity ops return the ENTITY and dies on error;
-# call data_get for the record.
+# Entity ops return the entity, and list one per record; they die on error.
 my $outputdetail = $client->OutputDetail->load({ 'id' => 'test01' });
-# $outputdetail contains the mock response record
+# data_get on an entity reads its mock response record
 ```
 
 ### Use a custom fetch function
@@ -233,8 +235,8 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `($reqmatch, $ctrl) -> hashref` | Load a single entity by match criteria. Dies on error. |
-| `create` | `($reqdata, $ctrl) -> hashref` | Create a new entity. Dies on error. |
+| `load` | `($reqmatch, $ctrl) -> entity` | Load a single entity by match criteria, and return it. Dies on error. |
+| `create` | `($reqdata, $ctrl) -> entity` | Create a new entity, and return it. Dies on error. |
 | `data_get` | `() -> hashref` | Get entity data. |
 | `data_set` | `($data)` | Set entity data. |
 | `match_get` | `() -> hashref` | Get entity match criteria. |
@@ -244,9 +246,10 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the ENTITY (call data_get for the record) (a `hashref` for single-entity
-ops, an `arrayref` for `list`) and die on error. Wrap calls in
-`eval { ... }` and inspect `$@` to handle failures.
+Entity operations return the entity, and `list` an `arrayref` of
+entities, one per record; `data_get` reads an entity's record (a
+`hashref`). They die on error, so wrap calls in `eval { ... }` and
+inspect `$@` to handle failures.
 
 The `direct()` escape hatch never dies — it returns a result `hashref`
 you branch on via `$result->{ok}`:
@@ -481,10 +484,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Load.
 
@@ -1035,10 +1038,10 @@ Create an instance: `my $output_detail = $client->OutputDetail;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `hashref` |  |
+| `details` | `hashref` |  |
 | `id` | `string` |  |
-| `lines` | `hashref` |  |
-| `progress` | `hashref` |  |
+| `responseCode` | `integer` | Response code. |
+| `responseMessage` | `string` | Response message. |
 
 #### Example: Load
 

@@ -5,16 +5,36 @@
 
 import java.util.{ArrayList, LinkedHashMap, List => JList, Map => JMap}
 
-import voxgig.bluefintecsmerchantportalsdk.core.{Helpers, SdkEntity, BluefinTecsMerchantPortalSDK}
+import voxgig.bluefintecsmerchantportalsdk.core.{Config, Context, Helpers, SdkEntity, SdkError, BluefinTecsMerchantPortalSDK}
+import voxgig.bluefintecsmerchantportalsdk.feature.BaseFeature
 import voxgig.bluefintecsmerchantportalsdk.utility.struct.Struct
 
 object MerchantPortalPamContractControllerEntityTest {
+
+  import SdkTestSupport.{B, I, jl, om}
+
+  private def hasFeature(name: String): Boolean = {
+    val fm = Helpers.toMapAny(Config.sharedConfig().get("feature"))
+    fm != null && fm.get(name) != null
+  }
 
   def run(rep: SdkTestReport): Unit = {
     rep.scope("merchant_portal_pam_contract_controller.instance") {
       val testsdk = BluefinTecsMerchantPortalSDK.testSDK()
       val ent = testsdk.merchantPortalPamContractController(null)
       rep.check("merchant_portal_pam_contract_controller.instance", ent != null, "expected non-null merchant_portal_pam_contract_controller entity")
+    }
+
+    rep.scope("merchant_portal_pam_contract_controller.validate") {
+      if (hasFeature("validate")) {
+        val client = BluefinTecsMerchantPortalSDK.testSDK(null, om("feature" -> om("validate" -> om("active" -> B(true)))))
+        val err = try {
+          client.merchantPortalPamContractController(null).create(om("language" -> I(1), "productOrderUUID" -> "x"), null)
+          null
+        } catch { case e: SdkError => e }
+        rep.check("merchant_portal_pam_contract_controller.validate", err != null && "validate_failed" == err.code,
+          "expected validate_failed, got " + err)
+      }
     }
 
     rep.scope("merchant_portal_pam_contract_controller.basic") {

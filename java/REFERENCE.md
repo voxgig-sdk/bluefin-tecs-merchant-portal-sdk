@@ -217,28 +217,28 @@ SdkEntity merchantPortalApiController = client.merchantPortalApiController(null)
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
-Object result = client.merchantPortalApiController(null).create(Map.of(
-    "business_reg_number", "example_business_reg_number",  // String
-    "city", "example_city",  // String
-    "country", "example_country",  // String
-    "currency", "example_currency",  // String
-    "merchant_category_code", 1L,  // Long
-    "merchant_name", "example_merchant_name",  // String
-    "packageid", "example_packageid",  // String
-    "packageorderuuid", "example_packageorderuuid",  // String
-    "reason_deactivation", "example_reason_deactivation",  // String
-    "reason_reactivation", "example_reason_reactivation",  // String
-    "street", "example_street",  // String
-    "terminal_country_code", "example_terminal_country_code",  // String
-    "terminal_language_code", "example_terminal_language_code",  // String
-    "terminal_location", "example_terminal_location",  // String
-    "terminal_serial_number", "example_terminal_serial_number",  // String
-    "terminalid", 1L,  // Long
-    "vu_nummer", "example_vu_nummer",  // String
-    "zipcode", "example_zipcode"  // String
+Object result = client.merchantPortalApiController(null).create(Map.ofEntries(
+    Map.entry("business_reg_number", "example_business_reg_number"),  // String
+    Map.entry("city", "example_city"),  // String
+    Map.entry("country", "example_country"),  // String
+    Map.entry("currency", "example_currency"),  // String
+    Map.entry("merchant_category_code", 1L),  // Long
+    Map.entry("merchant_name", "example_merchant_name"),  // String
+    Map.entry("packageid", "example_packageid"),  // String
+    Map.entry("packageorderuuid", "example_packageorderuuid"),  // String
+    Map.entry("reason_deactivation", "example_reason_deactivation"),  // String
+    Map.entry("reason_reactivation", "example_reason_reactivation"),  // String
+    Map.entry("street", "example_street"),  // String
+    Map.entry("terminal_country_code", "example_terminal_country_code"),  // String
+    Map.entry("terminal_language_code", "example_terminal_language_code"),  // String
+    Map.entry("terminal_location", "example_terminal_location"),  // String
+    Map.entry("terminal_serial_number", "example_terminal_serial_number"),  // String
+    Map.entry("terminalid", 1L),  // Long
+    Map.entry("vu_nummer", "example_vu_nummer"),  // String
+    Map.entry("zipcode", "example_zipcode")  // String
 ), null);
 ```
 
@@ -273,7 +273,7 @@ SdkEntity merchantPortalCommonController = client.merchantPortalCommonController
 
 #### `load(reqmatch, ctrl) -> Object`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and raises on error.
 
 ```java
 Object result = client.merchantPortalCommonController(null).load(null, null);
@@ -317,7 +317,7 @@ SdkEntity merchantPortalPamContractController = client.merchantPortalPamContract
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
 Object result = client.merchantPortalPamContractController(null).create(Map.of(
@@ -325,6 +325,8 @@ Object result = client.merchantPortalPamContractController(null).create(Map.of(
     "productOrderUUID", "example_productOrderUUID"  // String
 ), null);
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -365,7 +367,7 @@ SdkEntity merchantPortalPamDocumentController = client.merchantPortalPamDocument
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
 Object result = client.merchantPortalPamDocumentController(null).create(Map.of(
@@ -432,7 +434,7 @@ SdkEntity merchantPortalPamFormController = client.merchantPortalPamFormControll
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
 Object result = client.merchantPortalPamFormController(null).create(Map.of(
@@ -483,7 +485,7 @@ SdkEntity merchantPortalPamMandatorController = client.merchantPortalPamMandator
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
 Object result = client.merchantPortalPamMandatorController(null).create(Map.of(
@@ -585,23 +587,23 @@ SdkEntity merchantPortalPamMerchantController = client.merchantPortalPamMerchant
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
-Object result = client.merchantPortalPamMerchantController(null).create(Map.of(
-    "businessRegistrationNumber", "example_businessRegistrationNumber",  // String
-    "companyName", "example_companyName",  // String
-    "corporateUUID", "example_corporateUUID",  // String
-    "currency", "example_currency",  // String
-    "email", "example_email",  // String
-    "language", "example_language",  // String
-    "login", "example_login",  // String
-    "mandator", "example_mandator",  // String
-    "merchantContractNumber", "example_merchantContractNumber",  // String
-    "packageorderuuid", "example_packageorderuuid",  // String
-    "phoneNumber", "example_phoneNumber",  // String
-    "productid_acquirer", "example_productid_acquirer",  // String
-    "vu_nummer", "example_vu_nummer"  // String
+Object result = client.merchantPortalPamMerchantController(null).create(Map.ofEntries(
+    Map.entry("businessRegistrationNumber", "example_businessRegistrationNumber"),  // String
+    Map.entry("companyName", "example_companyName"),  // String
+    Map.entry("corporateUUID", "example_corporateUUID"),  // String
+    Map.entry("currency", "example_currency"),  // String
+    Map.entry("email", "example_email"),  // String
+    Map.entry("language", "example_language"),  // String
+    Map.entry("login", "example_login"),  // String
+    Map.entry("mandator", "example_mandator"),  // String
+    Map.entry("merchantContractNumber", "example_merchantContractNumber"),  // String
+    Map.entry("packageorderuuid", "example_packageorderuuid"),  // String
+    Map.entry("phoneNumber", "example_phoneNumber"),  // String
+    Map.entry("productid_acquirer", "example_productid_acquirer"),  // String
+    Map.entry("vu_nummer", "example_vu_nummer")  // String
 ), null);
 ```
 
@@ -668,7 +670,7 @@ SdkEntity merchantPortalPamPackageController = client.merchantPortalPamPackageCo
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
 Object result = client.merchantPortalPamPackageController(null).create(Map.of(
@@ -723,7 +725,7 @@ SdkEntity merchantPortalPamProductController = client.merchantPortalPamProductCo
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
 Object result = client.merchantPortalPamProductController(null).create(Map.of(
@@ -774,7 +776,7 @@ SdkEntity outputAddProduct = client.outputAddProduct(null);
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
 Object result = client.outputAddProduct(null).create(Map.of(
@@ -835,22 +837,22 @@ SdkEntity outputCreateProduct = client.outputCreateProduct(null);
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
-Object result = client.outputCreateProduct(null).create(Map.of(
-    "allowMultipleOrders", true,  // Boolean
-    "appFormTemplateName", "example_appFormTemplateName",  // String
-    "contractNeeded", true,  // Boolean
-    "descriptionKey", "example_descriptionKey",  // String
-    "nameKey", "example_nameKey",  // String
-    "prescreeningAllowed", true,  // Boolean
-    "productName", "example_productName",  // String
-    "responseCode", 1L,  // Long
-    "responseMessage", "example_responseMessage",  // String
-    "terminalTemplateName", "example_terminalTemplateName",  // String
-    "vendorName", "example_vendorName",  // String
-    "xmlTemplateFile", "example_xmlTemplateFile"  // String
+Object result = client.outputCreateProduct(null).create(Map.ofEntries(
+    Map.entry("allowMultipleOrders", true),  // Boolean
+    Map.entry("appFormTemplateName", "example_appFormTemplateName"),  // String
+    Map.entry("contractNeeded", true),  // Boolean
+    Map.entry("descriptionKey", "example_descriptionKey"),  // String
+    Map.entry("nameKey", "example_nameKey"),  // String
+    Map.entry("prescreeningAllowed", true),  // Boolean
+    Map.entry("productName", "example_productName"),  // String
+    Map.entry("responseCode", 1L),  // Long
+    Map.entry("responseMessage", "example_responseMessage"),  // String
+    Map.entry("terminalTemplateName", "example_terminalTemplateName"),  // String
+    Map.entry("vendorName", "example_vendorName"),  // String
+    Map.entry("xmlTemplateFile", "example_xmlTemplateFile")  // String
 ), null);
 ```
 
@@ -885,16 +887,16 @@ SdkEntity outputDetail = client.outputDetail(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `Map<String, Object>` | No |  |
+| `details` | `Map<String, Object>` | No |  |
 | `id` | `String` | No |  |
-| `lines` | `Map<String, Object>` | No |  |
-| `progress` | `Map<String, Object>` | No |  |
+| `responseCode` | `Long` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
 
 ### Operations
 
 #### `load(reqmatch, ctrl) -> Object`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and raises on error.
 
 ```java
 Object result = client.outputDetail(null).load(Map.of("id", "output_detail_id"), null);
@@ -951,7 +953,7 @@ SdkEntity outputList = client.outputList(null);
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
 Object result = client.outputList(null).create(Map.of(
@@ -1000,7 +1002,7 @@ SdkEntity outputMessage = client.outputMessage(null);
 
 #### `load(reqmatch, ctrl) -> Object`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and raises on error.
 
 ```java
 Object result = client.outputMessage(null).load(Map.of("id", "output_message_id"), null);
@@ -1047,7 +1049,7 @@ SdkEntity outputMoveTid = client.outputMoveTid(null);
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
 Object result = client.outputMoveTid(null).create(Map.of(
@@ -1099,7 +1101,7 @@ SdkEntity outputRemoveProduct = client.outputRemoveProduct(null);
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
 Object result = client.outputRemoveProduct(null).create(Map.of(
@@ -1149,7 +1151,7 @@ SdkEntity outputStart = client.outputStart(null);
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
 Object result = client.outputStart(null).create(Map.of(
@@ -1157,6 +1159,8 @@ Object result = client.outputStart(null).create(Map.of(
     "responseMessage", "example_responseMessage"  // String
 ), null);
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -1199,7 +1203,7 @@ SdkEntity outputStatus = client.outputStatus(null);
 
 #### `load(reqmatch, ctrl) -> Object`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and raises on error.
 
 ```java
 Object result = client.outputStatus(null).load(Map.of("id", "output_status_id"), null);
@@ -1254,7 +1258,7 @@ SdkEntity outputUpdateProduct = client.outputUpdateProduct(null);
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```java
 Object result = client.outputUpdateProduct(null).create(Map.of(
@@ -1706,6 +1710,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

@@ -2,6 +2,7 @@
 
 using System.Text.Json;
 
+using BluefinTecsMerchantPortalSdk.Feature;
 using Voxgig.Struct;
 using Xunit;
 
@@ -9,6 +10,12 @@ namespace BluefinTecsMerchantPortalSdk.Test;
 
 public class OutputStartEntityTest
 {
+    // main.kit.test.live.strict is true (the default is true): a live
+    // request that fails, or a live test missing an input it needs,
+    // fails the test.
+    // An account with no record for a test to read skips it either way.
+    private const bool LIVE_STRICT = true;
+
     [Fact]
     public void Instance()
     {
@@ -33,13 +40,6 @@ public class OutputStartEntityTest
                 return; // skipped via sdk-test-control.json
             }
         }
-        // The basic flow consumes synthetic IDs from the fixture. In live
-        // mode without an *_ENTID env override, those IDs hit the live API
-        // and 4xx; set BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_START_ENTID JSON to run live.
-        if (setup.SyntheticOnly)
-        {
-            return;
-        }
         var client = setup.Client;
 
         // CREATE
@@ -53,6 +53,21 @@ public class OutputStartEntityTest
         Assert.True(outputStartRef01Data != null, "expected create result to be a map");
         Assert.True(outputStartRef01Data!["id"] != null, "expected created entity to have an id");
 
+    }
+
+    [Fact]
+    public void Validate()
+    {
+        if (!Fh.HasFeature("validate"))
+        {
+            Console.WriteLine("skip: feature not present in this SDK: validate");
+            return;
+        }
+        var client = BluefinTecsMerchantPortalSDK.TestSDK(null,
+            new Dictionary<string, object?> { ["feature"] = new Dictionary<string, object?> { ["validate"] = new Dictionary<string, object?> { ["active"] = true } } });
+        var err = Assert.ThrowsAny<BluefinTecsMerchantPortalError>(() => client.OutputStart().Create(
+            new Dictionary<string, object?> { ["id"] = 1, ["responseCode"] = 1, ["responseMessage"] = "x" }, null));
+        Assert.Equal("validate_failed", err.Code);
     }
 
     private static EntityTestSetup OutputStartBasicSetup(
@@ -94,9 +109,8 @@ public class OutputStartEntityTest
                 },
             });
 
-        // Detect ENTID env override before EnvOverride consumes it. When
-        // live mode is on without a real override, the basic test runs
-        // against synthetic IDs from the fixture and 4xx's.
+        // Whether *_ENTID supplied the idmap, read before EnvOverride consumes
+        // it: without it, the ids a live flow binds are the fixture's synthetic ones.
         var entidEnvRaw = Environment.GetEnvironmentVariable(
             "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_START_ENTID") ?? "";
         var idmapOverridden = entidEnvRaw != "" &&

@@ -4,23 +4,6 @@ defmodule BluefinTecsMerchantPortal.MerchantPortalPamMerchantControllerEntityTes
   use ExUnit.Case
 
   alias Voxgig.Struct, as: S
-  alias BluefinTecsMerchantPortal.Helpers, as: H
-  alias BluefinTecsMerchantPortal.Json
-
-  defp fixture do
-    Json.parse(File.read!("../.sdk/test/entity/merchant_portal_pam_merchant_controller/MerchantPortalPamMerchantControllerTestData.json"))
-  end
-
-  defp mk_sdk do
-    existing = H.or_(S.getpath(fixture(), "existing"), S.jm([]))
-    BluefinTecsMerchantPortal.test(S.jm(["entity", existing]))
-  end
-
-  defp first_id do
-    existing = H.or_(S.getpath(fixture(), "existing.merchant_portal_pam_merchant_controller"), S.jm([]))
-    keys = S.keysof(existing)
-    if keys == [], do: nil, else: hd(keys)
-  end
 
   test "should create instance" do
     sdk = BluefinTecsMerchantPortal.test()
@@ -35,5 +18,18 @@ defmodule BluefinTecsMerchantPortal.MerchantPortalPamMerchantControllerEntityTes
     made = BluefinTecsMerchantPortal.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
+  end
+
+  test "should refuse an invalid request" do
+    if BluefinTecsMerchantPortal.FeatureHarness.has_feature("validate") do
+      client = BluefinTecsMerchantPortal.test(nil, S.jm(["feature", S.jm(["validate", S.jm(["active", true])])]))
+
+      err =
+        assert_raise BluefinTecsMerchantPortal.Error, fn ->
+          BluefinTecsMerchantPortal.Entity.MerchantPortalPamMerchantController.create(BluefinTecsMerchantPortal.merchant_portal_pam_merchant_controller(client), S.jm(["businessRegistrationNumber", 1, "companyName", "x", "corporateUUID", "x", "currency", "x", "email", "x", "language", "x", "login", "x", "mandator", "x", "merchantContractNumber", "x", "packageorderuuid", "x", "phoneNumber", "x", "productid_acquirer", "x", "vu_nummer", "x"]))
+        end
+
+      assert err.code == "validate_failed"
+    end
   end
 end

@@ -332,10 +332,10 @@ public struct OutputCreateProductCreateData {
 
 /// OutputDetail is the typed data model for the output_detail entity.
 public struct OutputDetail {
-  public var batch: VMap?
+  public var details: VMap?
   public var id: String?
-  public var lines: VMap?
-  public var progress: VMap?
+  public var responseCode: Int
+  public var responseMessage: String
 }
 
 /// OutputDetailLoadMatch is the typed request payload for OutputDetail.load.

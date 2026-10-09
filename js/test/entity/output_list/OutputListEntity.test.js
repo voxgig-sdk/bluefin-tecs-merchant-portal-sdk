@@ -38,12 +38,24 @@ describe('OutputListEntity', async () => {
   })
 
 
+  test('validate', async (t) => {
+    if (null == config.feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = BluefinTecsMerchantPortalSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.OutputList().create({"pagination":"x","responseCode":"x","responseMessage":"x"}),
+      (err) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"items":{"a":true,"h":"Items","n":"items","r":false,"t":"`$ARRAY`","key$":"items","index$":0},"pagination":{"a":true,"h":"Pagination","n":"pagination","op":{"create":{"req":false,"type":"`$OBJECT`"}},"r":true,"t":"`$OBJECT`","key$":"pagination","index$":1},"responseCode":{"a":true,"fo":"int32","h":"Response Code","n":"responseCode","r":true,"sh":"Response code.","t":"`$INTEGER`","key$":"responseCode","index$":2},"responseMessage":{"a":true,"h":"Response Message","n":"responseMessage","r":true,"sh":"Response message.","t":"`$STRING`","key$":"responseMessage","index$":3},"sorting":{"a":true,"h":"Sorting","n":"sorting","r":false,"t":"`$OBJECT`","key$":"sorting","index$":4}},"name":"output_list","op":{"create":{"input":"data","name":"create","points":[{"a":true,"co":{"id":"POST /merchantportalws/batch/registerAdditionalTerminal/list","source":"openapi3","version":2},"g":{"header":[{"a":true,"k":"header","n":"authorization","or":"authorization","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/merchantportalws/batch/registerAdditionalTerminal/list","q":{"exist":["authorization"]},"r":{},"s":[{"lit":"merchantportalws"},{"lit":"batch"},{"lit":"registerAdditionalTerminal"},{"lit":"list"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"create"}},"relations":{"ancestors":[]},"key$":"output_list","name__orig":"output_list","Name":"OutputList","name_":"output_list","name-":"output-list","NAME":"OUTPUT_LIST","index$":12}, {"active":true,"entity":"output_list","key$":"BasicOutputListFlow","kind":"basic","name":"BasicOutputListFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"output_list_ref01"},"m":{},"o":"create","s":[],"v":[],"index$":0}]}, 'OutputList', {"POST /merchantportalws/batch/registerAdditionalTerminal/list":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"pagination":{"type":"object","properties":{"page":{"type":"integer","format":"int32","example":1,"description":"Number of the page to display."},"size":{"type":"integer","format":"int32","example":10,"description":"Number of elements per page to display."}},"title":"Pagination","x-ref":"#/components/schemas/Pagination","key$":"pagination"},"sorting":{"type":"object","properties":{"name":{"type":"string","example":"requestorID","description":"Sort attribute name."},"type":{"type":"string","example":"ASC","description":"Sort type ASC / DESC."}},"title":"Sorting","x-ref":"#/components/schemas/Sorting","key$":"sorting"}},"title":"InputList","x-ref":"#/components/schemas/InputList","index$":1}}},"description":"inputList","required":true},"parameters":[{"name":"Authorization","in":"header","description":"Authorization","required":true,"schema":{"type":"string"},"index$":0}]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"items":{"a":true,"h":"Items","n":"items","r":false,"t":"`$ARRAY`","key$":"items","index$":0},"pagination":{"a":true,"h":"Pagination","n":"pagination","op":{"create":{"req":false,"type":"`$OBJECT`"}},"r":true,"t":"`$OBJECT`","key$":"pagination","index$":1},"responseCode":{"a":true,"fo":"int32","h":"Response Code","n":"responseCode","r":true,"sh":"Response code.","t":"`$INTEGER`","key$":"responseCode","index$":2},"responseMessage":{"a":true,"h":"Response Message","n":"responseMessage","r":true,"sh":"Response message.","t":"`$STRING`","key$":"responseMessage","index$":3},"sorting":{"a":true,"h":"Sorting","n":"sorting","r":false,"t":"`$OBJECT`","key$":"sorting","index$":4}},"name":"output_list","op":{"create":{"input":"data","name":"create","points":[{"a":true,"bf":["pagination","sorting"],"co":{"id":"POST /merchantportalws/batch/registerAdditionalTerminal/list","source":"openapi3","version":2},"g":{"header":[{"a":true,"k":"header","n":"authorization","or":"Authorization","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/merchantportalws/batch/registerAdditionalTerminal/list","q":{"exist":["authorization"]},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"merchantportalws"},{"lit":"batch"},{"lit":"registerAdditionalTerminal"},{"lit":"list"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"create"}},"relations":{"ancestors":[]},"key$":"output_list","name__orig":"output_list","Name":"OutputList","name_":"output_list","name-":"output-list","NAME":"OUTPUT_LIST","index$":12}, {"active":true,"entity":"output_list","key$":"BasicOutputListFlow","kind":"basic","name":"BasicOutputListFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"output_list_ref01"},"m":{},"o":"create","s":[],"v":[],"index$":0}]}, 'OutputList', {"POST /merchantportalws/batch/registerAdditionalTerminal/list":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"pagination":{"type":"object","properties":{"page":{"type":"integer","format":"int32","example":1,"description":"Number of the page to display."},"size":{"type":"integer","format":"int32","example":10,"description":"Number of elements per page to display."}},"title":"Pagination","x-ref":"#/components/schemas/Pagination","key$":"pagination"},"sorting":{"type":"object","properties":{"name":{"type":"string","example":"requestorID","description":"Sort attribute name."},"type":{"type":"string","example":"ASC","description":"Sort type ASC / DESC."}},"title":"Sorting","x-ref":"#/components/schemas/Sorting","key$":"sorting"}},"title":"InputList","x-ref":"#/components/schemas/InputList","index$":1}}},"description":"inputList","required":true},"parameters":[{"name":"Authorization","in":"header","description":"Authorization","required":true,"schema":{"type":"string"},"index$":0}]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -64,6 +76,12 @@ describe('OutputListEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra) {
   // TODO: fix test def options

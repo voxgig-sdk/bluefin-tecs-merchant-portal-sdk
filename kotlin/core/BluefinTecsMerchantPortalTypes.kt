@@ -60,7 +60,7 @@ object BluefinTecsMerchantPortalTypes {
 
   data class OutputCreateProductCreateData(val acquirerId: String?, val allowMultipleOrders: Boolean?, val appFormTemplateName: String?, val contractNeeded: Boolean?, val credentialsNeeded: Boolean?, val descriptionKey: String?, val nameKey: String?, val prescreeningAllowed: Boolean?, val productName: String?, val responseCode: Long?, val responseMessage: String?, val terminalTemplateName: String?, val vendorName: String?, val xmlTemplateFile: String?)
 
-  data class OutputDetail(val batch: Map<String, Any?>?, val id: String?, val lines: Map<String, Any?>?, val progress: Map<String, Any?>?)
+  data class OutputDetail(val details: Map<String, Any?>?, val id: String?, val responseCode: Long?, val responseMessage: String?)
 
   data class OutputDetailLoadMatch(val id: String?)
 

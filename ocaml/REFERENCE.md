@@ -10,6 +10,7 @@ Complete API reference for the BluefinTecsMerchantPortal OCaml SDK.
 ```ocaml
 open Voxgig_struct
 open Sdk_helpers
+open Sdk_types
 
 let client = Sdk_client.make options
 ```
@@ -196,7 +197,7 @@ let merchant_portal_api_controller = Sdk_client.merchant_portal_api_controller c
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.merchant_portal_api_controller client Noval).e_create (jo [
@@ -261,7 +262,7 @@ let merchant_portal_common_controller = Sdk_client.merchant_portal_common_contro
 
 #### `e_load reqmatch ctrl : entity_obj`
 
-Load a single entity matching the given criteria. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `e_data_get` reads, and raises on error.
 
 ```ocaml
 let result = (Sdk_client.merchant_portal_common_controller client Noval).e_load (Noval) Noval
@@ -314,7 +315,7 @@ let merchant_portal_pam_contract_controller = Sdk_client.merchant_portal_pam_con
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.merchant_portal_pam_contract_controller client Noval).e_create (jo [
@@ -323,6 +324,8 @@ let result = (Sdk_client.merchant_portal_pam_contract_controller client Noval).e
 ]) Noval
 let result_data = result.e_data_get ()
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Fields
 
@@ -371,7 +374,7 @@ let merchant_portal_pam_document_controller = Sdk_client.merchant_portal_pam_doc
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.merchant_portal_pam_document_controller client Noval).e_create (jo [
@@ -447,7 +450,7 @@ let merchant_portal_pam_form_controller = Sdk_client.merchant_portal_pam_form_co
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.merchant_portal_pam_form_controller client Noval).e_create (jo [
@@ -507,7 +510,7 @@ let merchant_portal_pam_mandator_controller = Sdk_client.merchant_portal_pam_man
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.merchant_portal_pam_mandator_controller client Noval).e_create (jo [
@@ -618,7 +621,7 @@ let merchant_portal_pam_merchant_controller = Sdk_client.merchant_portal_pam_mer
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.merchant_portal_pam_merchant_controller client Noval).e_create (jo [
@@ -710,7 +713,7 @@ let merchant_portal_pam_package_controller = Sdk_client.merchant_portal_pam_pack
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.merchant_portal_pam_package_controller client Noval).e_create (jo [
@@ -774,7 +777,7 @@ let merchant_portal_pam_product_controller = Sdk_client.merchant_portal_pam_prod
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.merchant_portal_pam_product_controller client Noval).e_create (jo [
@@ -834,7 +837,7 @@ let output_add_product = Sdk_client.output_add_product client Noval
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_add_product client Noval).e_create (jo [
@@ -904,7 +907,7 @@ let output_create_product = Sdk_client.output_create_product client Noval
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_create_product client Noval).e_create (jo [
@@ -963,16 +966,16 @@ let output_detail = Sdk_client.output_detail client Noval
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `value map` | No |  |
+| `details` | `value map` | No |  |
 | `id` | `string` | No |  |
-| `lines` | `value map` | No |  |
-| `progress` | `value map` | No |  |
+| `responseCode` | `int` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
 
 ### Operations
 
 #### `e_load reqmatch ctrl : entity_obj`
 
-Load a single entity matching the given criteria. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `e_data_get` reads, and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_detail client Noval).e_load (jo [("id", (Str "output_detail_id"))]) Noval
@@ -1038,7 +1041,7 @@ let output_list = Sdk_client.output_list client Noval
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_list client Noval).e_create (jo [
@@ -1096,7 +1099,7 @@ let output_message = Sdk_client.output_message client Noval
 
 #### `e_load reqmatch ctrl : entity_obj`
 
-Load a single entity matching the given criteria. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `e_data_get` reads, and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_message client Noval).e_load (jo [("id", (Str "output_message_id"))]) Noval
@@ -1152,7 +1155,7 @@ let output_move_tid = Sdk_client.output_move_tid client Noval
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_move_tid client Noval).e_create (jo [
@@ -1213,7 +1216,7 @@ let output_remove_product = Sdk_client.output_remove_product client Noval
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_remove_product client Noval).e_create (jo [
@@ -1272,7 +1275,7 @@ let output_start = Sdk_client.output_start client Noval
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_start client Noval).e_create (jo [
@@ -1281,6 +1284,8 @@ let result = (Sdk_client.output_start client Noval).e_create (jo [
 ]) Noval
 let result_data = result.e_data_get ()
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Fields
 
@@ -1331,7 +1336,7 @@ let output_status = Sdk_client.output_status client Noval
 
 #### `e_load reqmatch ctrl : entity_obj`
 
-Load a single entity matching the given criteria. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `e_data_get` reads, and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_status client Noval).e_load (jo [("id", (Str "output_status_id"))]) Noval
@@ -1395,7 +1400,7 @@ let output_update_product = Sdk_client.output_update_product client Noval
 
 #### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_update_product client Noval).e_create (jo [
@@ -1856,6 +1861,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

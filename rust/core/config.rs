@@ -192,6 +192,7 @@ pub fn make_config() -> Value {
                 ])),
                 ("optspec".to_string(), Value::map_of([
                     ("clearTimer".to_string(), Value::str("`$FUNCTION`")),
+                    ("now".to_string(), Value::str("`$FUNCTION`")),
                     ("setTimer".to_string(), Value::str("`$FUNCTION`")),
                 ])),
                 ("strict".to_string(), Value::Bool(false)),
@@ -483,7 +484,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -494,6 +495,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -521,7 +526,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -532,6 +537,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -559,7 +568,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -570,6 +579,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -597,7 +610,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -608,6 +621,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -648,6 +665,10 @@ pub fn make_config() -> Value {
                                 ])),
                                 ("args".to_string(), Value::empty_map()),
                                 ("select".to_string(), Value::empty_map()),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
+                                ])),
                             ]),
                             Value::map_of([
                                 ("kind".to_string(), Value::str("http")),
@@ -672,6 +693,10 @@ pub fn make_config() -> Value {
                                 ])),
                                 ("args".to_string(), Value::empty_map()),
                                 ("select".to_string(), Value::empty_map()),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
+                                ])),
                             ]),
                         ])),
                     ])),
@@ -726,7 +751,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -737,6 +762,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -764,7 +793,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -775,6 +804,23 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("body".to_string(), Value::map_of([
+                                    ("fields".to_string(), Value::list(vec![
+                                        Value::map_of([
+                                            ("name".to_string(), Value::str("inputMessage")),
+                                        ]),
+                                        Value::map_of([
+                                            ("binary".to_string(), Value::Bool(true)),
+                                            ("name".to_string(), Value::str("pdfFile")),
+                                        ]),
+                                    ])),
+                                    ("kind".to_string(), Value::str("multipart")),
+                                    ("media".to_string(), Value::str("multipart/form-data")),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -836,7 +882,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -847,6 +893,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -874,7 +924,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -885,6 +935,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -995,7 +1049,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1006,6 +1060,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1033,7 +1091,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1044,6 +1102,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1071,7 +1133,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1082,6 +1144,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1109,7 +1175,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1120,6 +1186,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1147,7 +1217,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1158,6 +1228,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1185,7 +1259,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1196,6 +1270,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -1261,7 +1339,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1272,6 +1350,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1299,7 +1381,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1310,6 +1392,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1337,7 +1423,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1348,6 +1434,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -1559,7 +1649,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1570,6 +1660,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1597,7 +1691,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1608,6 +1702,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1635,7 +1733,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1646,6 +1744,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1671,6 +1773,10 @@ pub fn make_config() -> Value {
                                 ])),
                                 ("args".to_string(), Value::empty_map()),
                                 ("select".to_string(), Value::empty_map()),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
+                                ])),
                             ]),
                         ])),
                     ])),
@@ -1780,7 +1886,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1791,6 +1897,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1818,7 +1928,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1829,6 +1939,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1856,7 +1970,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1867,6 +1981,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1894,7 +2012,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -1905,6 +2023,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -1932,16 +2054,16 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                         ]),
                                     ])),
                                 ])),
-                                ("select".to_string(), Value::map_of([
-                                    ("exist".to_string(), Value::list(vec![
-                                        Value::str("authorization"),
-                                    ])),
+                                ("select".to_string(), Value::empty_map()),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -2040,7 +2162,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -2051,6 +2173,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -2078,7 +2204,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -2089,6 +2215,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -2116,7 +2246,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -2127,6 +2257,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -2154,7 +2288,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -2165,6 +2299,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -2237,7 +2375,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -2248,6 +2386,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -2388,7 +2530,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -2399,6 +2541,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -2411,8 +2557,8 @@ pub fn make_config() -> Value {
             ("output_detail".to_string(), Value::map_of([
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
-                        ("name".to_string(), Value::str("batch")),
-                        ("title".to_string(), Value::str("Batch")),
+                        ("name".to_string(), Value::str("details")),
+                        ("title".to_string(), Value::str("Details")),
                         ("type".to_string(), Value::str("`$OBJECT`")),
                     ]),
                     Value::map_of([
@@ -2421,14 +2567,19 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
-                        ("name".to_string(), Value::str("lines")),
-                        ("title".to_string(), Value::str("Lines")),
-                        ("type".to_string(), Value::str("`$OBJECT`")),
+                        ("name".to_string(), Value::str("responseCode")),
+                        ("title".to_string(), Value::str("Response Code")),
+                        ("type".to_string(), Value::str("`$INTEGER`")),
+                        ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response code.")),
+                        ("format".to_string(), Value::str("int32")),
                     ]),
                     Value::map_of([
-                        ("name".to_string(), Value::str("progress")),
-                        ("title".to_string(), Value::str("Progress")),
-                        ("type".to_string(), Value::str("`$OBJECT`")),
+                        ("name".to_string(), Value::str("responseMessage")),
+                        ("title".to_string(), Value::str("Response Message")),
+                        ("type".to_string(), Value::str("`$STRING`")),
+                        ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Response message.")),
                     ]),
                 ])),
                 ("id".to_string(), Value::map_of([
@@ -2472,13 +2623,13 @@ pub fn make_config() -> Value {
                                 ("rename".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
-                                    ("res".to_string(), Value::str("`body.details`")),
+                                    ("res".to_string(), Value::str("`body`")),
                                 ])),
                                 ("args".to_string(), Value::map_of([
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -2499,6 +2650,10 @@ pub fn make_config() -> Value {
                                         Value::str("authorization"),
                                         Value::str("id"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -2586,7 +2741,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -2597,6 +2752,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -2676,7 +2835,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -2697,6 +2856,10 @@ pub fn make_config() -> Value {
                                         Value::str("authorization"),
                                         Value::str("id"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                             Value::map_of([
@@ -2736,7 +2899,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -2757,6 +2920,10 @@ pub fn make_config() -> Value {
                                         Value::str("authorization"),
                                         Value::str("id"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -2833,7 +3000,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -2844,6 +3011,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -2916,7 +3087,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -2927,6 +3098,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -3002,7 +3177,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -3013,6 +3188,23 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("body".to_string(), Value::map_of([
+                                    ("fields".to_string(), Value::list(vec![
+                                        Value::map_of([
+                                            ("binary".to_string(), Value::Bool(true)),
+                                            ("name".to_string(), Value::str("inputCsvFile")),
+                                        ]),
+                                        Value::map_of([
+                                            ("name".to_string(), Value::str("inputJsonMessage")),
+                                        ]),
+                                    ])),
+                                    ("kind".to_string(), Value::str("multipart")),
+                                    ("media".to_string(), Value::str("multipart/form-data")),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -3103,7 +3295,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -3124,6 +3316,10 @@ pub fn make_config() -> Value {
                                         Value::str("authorization"),
                                         Value::str("id"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),
@@ -3249,7 +3445,7 @@ pub fn make_config() -> Value {
                                     ("header".to_string(), Value::list(vec![
                                         Value::map_of([
                                             ("name".to_string(), Value::str("authorization")),
-                                            ("orig".to_string(), Value::str("authorization")),
+                                            ("orig".to_string(), Value::str("Authorization")),
                                             ("type".to_string(), Value::str("`$STRING`")),
                                             ("kind".to_string(), Value::str("header")),
                                             ("reqd".to_string(), Value::Bool(true)),
@@ -3260,6 +3456,10 @@ pub fn make_config() -> Value {
                                     ("exist".to_string(), Value::list(vec![
                                         Value::str("authorization"),
                                     ])),
+                                ])),
+                                ("response".to_string(), Value::map_of([
+                                    ("kind".to_string(), Value::str("json")),
+                                    ("media".to_string(), Value::str("application/json")),
                                 ])),
                             ]),
                         ])),

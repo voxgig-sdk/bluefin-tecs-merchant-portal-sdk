@@ -11,10 +11,25 @@ use Cwd ();
 use BluefinTecsMerchantPortalSDK;
 require(Cwd::abs_path("$FindBin::Bin/runner.pm"));
 
+# main.kit.test.live.strict is true (the default is true): a live
+# request that fails, or a live test missing an input it needs,
+# fails the test.
+# An account with no record for a test to read skips it either way.
+use constant LIVE_STRICT => 1;
+
 {
   my $testsdk = BluefinTecsMerchantPortalSDK->test(undef, undef);
   my $ent = $testsdk->OutputStatus(undef);
   ok(defined $ent, 'output_status: create instance');
+}
+
+SKIP: {
+  skip('feature not present in this SDK: validate', 1)
+    unless BluefinTecsMerchantPortalConfig::shared_config()->{feature}{validate};
+  my $client = BluefinTecsMerchantPortalSDK->test(undef, { feature => { validate => { active => 1 } } });
+  my $err = eval { $client->OutputStatus(undef)->load({ 'id' => 1 }, undef); undef } // $@;
+  is(ref $err ? $err->{code} : undef, 'validate_failed',
+    'output_status: an invalid request fails with validate_failed');
 }
 
 BASIC_FLOW: {
@@ -30,11 +45,8 @@ BASIC_FLOW: {
       last BASIC_FLOW;
     }
   }
-  # The basic flow consumes synthetic IDs from the fixture. In live mode
-  # without an *_ENTID env override, those IDs hit the live API and 4xx.
-  if ($setup->{synthetic_only}) {
-    note('live entity test uses synthetic IDs from fixture - set BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_STATUS_ENTID JSON to run live');
-    pass('output_status: basic flow skipped (synthetic IDs only)');
+  if ($setup->{live}) {
+    BluefinTecsMerchantPortalTestRunner::live_miss(LIVE_STRICT, 'output_status: basic flow', 'Live entity test blocked: the flow loads a output_status record it has no list to find');
     last BASIC_FLOW;
   }
   my $client = $setup->{client};
@@ -88,10 +100,8 @@ sub output_status_basic_setup {
     }
   );
 
-  # Detect ENTID env override before env_override consumes it. When live
-  # mode is on without a real override, the basic test runs against
-  # synthetic IDs from the fixture and 4xx's. Surface this so the test can
-  # skip.
+  # Whether *_ENTID supplied the idmap, read before env_override consumes
+  # it: without it, the ids a live flow binds are the fixture's synthetic ones.
   my $entid_env_raw = $ENV{'BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_STATUS_ENTID'};
   my $idmap_overridden = (defined $entid_env_raw && $entid_env_raw =~ /^\s*\{/) ? 1 : 0;
 

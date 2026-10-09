@@ -209,7 +209,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -219,6 +219,9 @@
                   "merchantportalws"
                   "deactivateTerminal")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -236,7 +239,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -246,6 +249,9 @@
                   "merchantportalws"
                   "reactivateTerminal")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -263,7 +269,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -273,6 +279,9 @@
                   "merchantportalws"
                   "registerAdditionalTerminal")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -290,7 +299,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -300,6 +309,9 @@
                   "merchantportalws"
                   "registerNewMerchant")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -330,6 +342,9 @@
                   "merchantportalws"
                   "logDeveloperInfo")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -348,6 +363,9 @@
                   "merchantportalws"
                   "version")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -383,7 +401,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -393,6 +411,9 @@
                   "merchantportalws"
                   "generateContract")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -410,9 +431,18 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
+                "body" (vs/jm
+                  "fields" (vs/jt
+                    (vs/jm
+                      "name" "inputMessage")
+                    (vs/jm
+                      "binary" true
+                      "name" "pdfFile"))
+                  "kind" "multipart"
+                  "media" "multipart/form-data")
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/uploadContract"
@@ -420,6 +450,9 @@
                   "merchantportalws"
                   "uploadContract")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -462,7 +495,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -472,6 +505,9 @@
                   "merchantportalws"
                   "documentsList")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -489,7 +525,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -499,6 +535,9 @@
                   "merchantportalws"
                   "downloadDocument")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -578,7 +617,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -588,6 +627,9 @@
                   "merchantportalws"
                   "applicationForm")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -605,7 +647,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -615,6 +657,9 @@
                   "merchantportalws"
                   "packageForm")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -632,7 +677,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -642,6 +687,9 @@
                   "merchantportalws"
                   "reopenForm")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -659,7 +707,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -669,6 +717,9 @@
                   "merchantportalws"
                   "secretKey")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -686,7 +737,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -696,6 +747,9 @@
                   "merchantportalws"
                   "submitForm")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -713,7 +767,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -723,6 +777,9 @@
                   "merchantportalws"
                   "submitValues")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -768,7 +825,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -778,6 +835,9 @@
                   "merchantportalws"
                   "createMandatorConfig")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -795,7 +855,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -805,6 +865,9 @@
                   "merchantportalws"
                   "introduceMandatorPackage")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -822,7 +885,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -832,6 +895,9 @@
                   "merchantportalws"
                   "selfRegistrationLink")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -999,7 +1065,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1009,6 +1075,9 @@
                   "merchantportalws"
                   "contractNumber")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1026,7 +1095,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1036,6 +1105,9 @@
                   "merchantportalws"
                   "registerAdditionalAcquiring")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1053,7 +1125,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1063,6 +1135,9 @@
                   "merchantportalws"
                   "updateMerchant")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1083,6 +1158,9 @@
                   "merchantportalws"
                   "registerMerchant")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1162,7 +1240,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1172,6 +1250,9 @@
                   "merchantportalws"
                   "availablePackages")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1189,7 +1270,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1199,6 +1280,9 @@
                   "merchantportalws"
                   "orderPackage")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1216,7 +1300,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1226,6 +1310,9 @@
                   "merchantportalws"
                   "orderedPackages")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1243,7 +1330,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1253,6 +1340,9 @@
                   "merchantportalws"
                   "packageTemplates")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1270,7 +1360,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "type" "`$STRING`")))
                 "kind" "http"
                 "method" "POST"
@@ -1279,14 +1369,15 @@
                   "merchantportalws"
                   "updatePackageData")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
                   (vs/jm
                     "lit" "updatePackageData"))
-                "select" (vs/jm
-                  "exist" (vs/jt
-                    "authorization"))
+                "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
                   "res" "`body`")))))
@@ -1351,7 +1442,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1361,6 +1452,9 @@
                   "merchantportalws"
                   "approveProduct")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1378,7 +1472,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1388,6 +1482,9 @@
                   "merchantportalws"
                   "declineProduct")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1405,7 +1502,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1415,6 +1512,9 @@
                   "merchantportalws"
                   "orderAdditionalProduct")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1432,7 +1532,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1442,6 +1542,9 @@
                   "merchantportalws"
                   "productsList")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1494,7 +1597,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1504,6 +1607,9 @@
                   "merchantportalws"
                   "addProductsToPackage")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1614,7 +1720,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1624,6 +1730,9 @@
                   "merchantportalws"
                   "createNewProduct")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1640,21 +1749,26 @@
       "output_detail" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "name" "batch"
-            "title" "Batch"
+            "name" "details"
+            "title" "Details"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "id"
             "title" "Id"
             "type" "`$STRING`")
           (vs/jm
-            "name" "lines"
-            "title" "Lines"
-            "type" "`$OBJECT`")
+            "format" "int32"
+            "name" "responseCode"
+            "req" true
+            "short" "Response code."
+            "title" "Response Code"
+            "type" "`$INTEGER`")
           (vs/jm
-            "name" "progress"
-            "title" "Progress"
-            "type" "`$OBJECT`"))
+            "name" "responseMessage"
+            "req" true
+            "short" "Response message."
+            "title" "Response Message"
+            "type" "`$STRING`"))
         "id" (vs/jm
           "field" "id"
           "name" "id")
@@ -1670,7 +1784,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`"))
                   "params" (vs/jt
@@ -1690,6 +1804,9 @@
                   "details"
                   "{id}")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1707,7 +1824,7 @@
                     "id"))
                 "transform" (vs/jm
                   "req" "`reqdata`"
-                  "res" "`body.details`")))))
+                  "res" "`body`")))))
         "relations" (vs/jm
           "ancestors" (vs/jt)))
       "output_list" (vs/jm
@@ -1753,7 +1870,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1765,6 +1882,9 @@
                   "registerAdditionalTerminal"
                   "list")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1816,7 +1936,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`"))
                   "params" (vs/jt
@@ -1836,6 +1956,9 @@
                   "restart"
                   "{id}")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1860,7 +1983,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`"))
                   "params" (vs/jt
@@ -1880,6 +2003,9 @@
                   "stop"
                   "{id}")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -1942,7 +2068,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -1952,6 +2078,9 @@
                   "merchantportalws"
                   "moveTid")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -2004,7 +2133,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -2014,6 +2143,9 @@
                   "merchantportalws"
                   "removeProductsFromPackage")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -2061,9 +2193,18 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
+                "body" (vs/jm
+                  "fields" (vs/jt
+                    (vs/jm
+                      "binary" true
+                      "name" "inputCsvFile")
+                    (vs/jm
+                      "name" "inputJsonMessage"))
+                  "kind" "multipart"
+                  "media" "multipart/form-data")
                 "kind" "http"
                 "method" "POST"
                 "orig" "/merchantportalws/batch/registerAdditionalTerminal/start"
@@ -2073,6 +2214,9 @@
                   "registerAdditionalTerminal"
                   "start")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -2133,7 +2277,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`"))
                   "params" (vs/jt
@@ -2153,6 +2297,9 @@
                   "status"
                   "{id}")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -2256,7 +2403,7 @@
                     (vs/jm
                       "kind" "header"
                       "name" "authorization"
-                      "orig" "authorization"
+                      "orig" "Authorization"
                       "reqd" true
                       "type" "`$STRING`")))
                 "kind" "http"
@@ -2266,6 +2413,9 @@
                   "merchantportalws"
                   "updateProduct")
                 "rename" (vs/jm)
+                "response" (vs/jm
+                  "kind" "json"
+                  "media" "application/json")
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "merchantportalws")
@@ -2419,6 +2569,7 @@
           "ms" 30000)
         "optspec" (vs/jm
           "clearTimer" "`$FUNCTION`"
+          "now" "`$FUNCTION`"
           "setTimer" "`$FUNCTION`")
         "strict" false
         "transport" "wrap"))

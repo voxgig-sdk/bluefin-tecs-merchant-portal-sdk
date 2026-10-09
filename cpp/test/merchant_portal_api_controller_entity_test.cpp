@@ -50,7 +50,7 @@ static MerchantPortalApiControllerSetup merchant_portal_api_controller_basic_set
 
   MerchantPortalApiControllerSetup s;
   s.client = client;
-  s.d = entity_data;
+  s.data = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;
@@ -65,6 +65,27 @@ static void merchant_portal_api_controller_entity_instance() {
   ASSERT_EQ(ent->getName(), std::string("merchant_portal_api_controller"), "entity name");
 }
 
+
+static bool merchant_portal_api_controller_has_feature(const std::string& name) {
+  Value fm = Helpers::toMapAny(getp(sharedConfig(), "feature"));
+  return fm.is_map() && !getp(fm, name).is_undef();
+}
+
+static void merchant_portal_api_controller_entity_validate() {
+  if (!merchant_portal_api_controller_has_feature("validate")) {
+    std::cerr << "skip: feature not present in this SDK: validate\n";
+    return;
+  }
+  auto vsdk = BluefinTecsMerchantPortalSDK::testSDK(Value::undef(), vmap({{"feature",
+      vmap({{"validate", vmap({{"active", Value(true)}})}})}}));
+  std::string code;
+  try {
+    vsdk->merchant_portal_api_controller()->create(vmap({{"account_number", Value("x")}, {"business_reg_number", Value("x")}, {"city", Value("x")}, {"country", Value("x")}, {"currency", Value("x")}, {"merchant_category_code", Value(1)}, {"merchant_name", Value("x")}, {"packageid", Value("x")}, {"packageorderuuid", Value("x")}, {"reason_deactivation", Value("x")}, {"reason_reactivation", Value("x")}, {"street", Value("x")}, {"terminal_country_code", Value("x")}, {"terminal_language_code", Value("x")}, {"terminal_location", Value("x")}, {"terminal_serial_number", Value("x")}, {"terminalid", Value(1)}, {"vu_nummer", Value("x")}, {"zipcode", Value("x")}}), Value::undef());
+  } catch (const SdkErrorPtr& err) {
+    code = err->code;
+  }
+  ASSERT_EQ(code, std::string("validate_failed"), "an invalid request fails with validate_failed");
+}
 
 static void merchant_portal_api_controller_entity_basic() {
   auto setup = merchant_portal_api_controller_basic_setup(Value::undef());
@@ -89,6 +110,7 @@ static void merchant_portal_api_controller_entity_basic() {
 
 int main() {
   T_RUN(merchant_portal_api_controller_entity_instance);
+  T_RUN(merchant_portal_api_controller_entity_validate);
   T_RUN(merchant_portal_api_controller_entity_basic);
   return sdktest::summary("merchant_portal_api_controller_entity_test");
 }

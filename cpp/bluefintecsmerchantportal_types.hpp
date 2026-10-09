@@ -318,10 +318,10 @@ struct OutputCreateProductCreateData {
 };
 
 struct OutputDetail {
-  std::map<std::string, Value> batch;  // optional
+  std::map<std::string, Value> details;  // optional
   std::string id;  // optional
-  std::map<std::string, Value> lines;  // optional
-  std::map<std::string, Value> progress;  // optional
+  int64_t responseCode;
+  std::string responseMessage;
 };
 
 struct OutputDetailLoadMatch {

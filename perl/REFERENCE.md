@@ -196,9 +196,9 @@ my $merchant_portal_api_controller = $client->MerchantPortalApiController;
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> MerchantPortalApiControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->MerchantPortalApiController->create({
@@ -260,9 +260,9 @@ my $merchant_portal_common_controller = $client->MerchantPortalCommonController;
 
 ### Operations
 
-#### `load($reqmatch, $ctrl) -> hashref`
+#### `load($reqmatch, $ctrl) -> MerchantPortalCommonControllerEntity`
 
-Load a single entity matching the given criteria. Returns the entity data and dies on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get` reads, and dies on error.
 
 ```perl
 my $result = $client->MerchantPortalCommonController->load();
@@ -312,9 +312,9 @@ my $merchant_portal_pam_contract_controller = $client->MerchantPortalPamContract
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> MerchantPortalPamContractControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->MerchantPortalPamContractController->create({
@@ -322,6 +322,8 @@ my $result = $client->MerchantPortalPamContractController->create({
     'productOrderUUID' => 'example_productOrderUUID',  # string
 });
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -368,9 +370,9 @@ my $merchant_portal_pam_document_controller = $client->MerchantPortalPamDocument
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> MerchantPortalPamDocumentControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->MerchantPortalPamDocumentController->create({
@@ -443,9 +445,9 @@ my $merchant_portal_pam_form_controller = $client->MerchantPortalPamFormControll
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> MerchantPortalPamFormControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->MerchantPortalPamFormController->create({
@@ -502,9 +504,9 @@ my $merchant_portal_pam_mandator_controller = $client->MerchantPortalPamMandator
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> MerchantPortalPamMandatorControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->MerchantPortalPamMandatorController->create({
@@ -612,9 +614,9 @@ my $merchant_portal_pam_merchant_controller = $client->MerchantPortalPamMerchant
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> MerchantPortalPamMerchantControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->MerchantPortalPamMerchantController->create({
@@ -703,9 +705,9 @@ my $merchant_portal_pam_package_controller = $client->MerchantPortalPamPackageCo
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> MerchantPortalPamPackageControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->MerchantPortalPamPackageController->create({
@@ -766,9 +768,9 @@ my $merchant_portal_pam_product_controller = $client->MerchantPortalPamProductCo
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> MerchantPortalPamProductControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->MerchantPortalPamProductController->create({
@@ -825,9 +827,9 @@ my $output_add_product = $client->OutputAddProduct;
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> OutputAddProductEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->OutputAddProduct->create({
@@ -894,9 +896,9 @@ my $output_create_product = $client->OutputCreateProduct;
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> OutputCreateProductEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->OutputCreateProduct->create({
@@ -954,16 +956,16 @@ my $output_detail = $client->OutputDetail;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `hashref` | No |  |
+| `details` | `hashref` | No |  |
 | `id` | `string` | No |  |
-| `lines` | `hashref` | No |  |
-| `progress` | `hashref` | No |  |
+| `responseCode` | `integer` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
 
 ### Operations
 
-#### `load($reqmatch, $ctrl) -> hashref`
+#### `load($reqmatch, $ctrl) -> OutputDetailEntity`
 
-Load a single entity matching the given criteria. Returns the entity data and dies on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get` reads, and dies on error.
 
 ```perl
 my $result = $client->OutputDetail->load({ 'id' => 'output_detail_id' });
@@ -1026,9 +1028,9 @@ my $output_list = $client->OutputList;
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> OutputListEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->OutputList->create({
@@ -1083,9 +1085,9 @@ my $output_message = $client->OutputMessage;
 
 ### Operations
 
-#### `load($reqmatch, $ctrl) -> hashref`
+#### `load($reqmatch, $ctrl) -> OutputMessageEntity`
 
-Load a single entity matching the given criteria. Returns the entity data and dies on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get` reads, and dies on error.
 
 ```perl
 my $result = $client->OutputMessage->load({ 'id' => 'output_message_id' });
@@ -1138,9 +1140,9 @@ my $output_move_tid = $client->OutputMoveTid;
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> OutputMoveTidEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->OutputMoveTid->create({
@@ -1198,9 +1200,9 @@ my $output_remove_product = $client->OutputRemoveProduct;
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> OutputRemoveProductEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->OutputRemoveProduct->create({
@@ -1256,9 +1258,9 @@ my $output_start = $client->OutputStart;
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> OutputStartEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->OutputStart->create({
@@ -1266,6 +1268,8 @@ my $result = $client->OutputStart->create({
     'responseMessage' => 'example_responseMessage',  # string
 });
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -1314,9 +1318,9 @@ my $output_status = $client->OutputStatus;
 
 ### Operations
 
-#### `load($reqmatch, $ctrl) -> hashref`
+#### `load($reqmatch, $ctrl) -> OutputStatusEntity`
 
-Load a single entity matching the given criteria. Returns the entity data and dies on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get` reads, and dies on error.
 
 ```perl
 my $result = $client->OutputStatus->load({ 'id' => 'output_status_id' });
@@ -1377,9 +1381,9 @@ my $output_update_product = $client->OutputUpdateProduct;
 
 ### Operations
 
-#### `create($reqdata, $ctrl) -> hashref`
+#### `create($reqdata, $ctrl) -> OutputUpdateProductEntity`
 
-Create a new entity with the given data. Returns the created entity data and dies on error.
+Create a new entity with the given data. Returns the created entity and dies on error.
 
 ```perl
 my $result = $client->OutputUpdateProduct->create({
@@ -1839,6 +1843,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

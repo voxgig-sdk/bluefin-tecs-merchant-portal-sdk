@@ -5,16 +5,36 @@
 
 import java.util.{ArrayList, LinkedHashMap, List => JList, Map => JMap}
 
-import voxgig.bluefintecsmerchantportalsdk.core.{Helpers, SdkEntity, BluefinTecsMerchantPortalSDK}
+import voxgig.bluefintecsmerchantportalsdk.core.{Config, Context, Helpers, SdkEntity, SdkError, BluefinTecsMerchantPortalSDK}
+import voxgig.bluefintecsmerchantportalsdk.feature.BaseFeature
 import voxgig.bluefintecsmerchantportalsdk.utility.struct.Struct
 
 object OutputAddProductEntityTest {
+
+  import SdkTestSupport.{B, I, jl, om}
+
+  private def hasFeature(name: String): Boolean = {
+    val fm = Helpers.toMapAny(Config.sharedConfig().get("feature"))
+    fm != null && fm.get(name) != null
+  }
 
   def run(rep: SdkTestReport): Unit = {
     rep.scope("output_add_product.instance") {
       val testsdk = BluefinTecsMerchantPortalSDK.testSDK()
       val ent = testsdk.outputAddProduct(null)
       rep.check("output_add_product.instance", ent != null, "expected non-null output_add_product entity")
+    }
+
+    rep.scope("output_add_product.validate") {
+      if (hasFeature("validate")) {
+        val client = BluefinTecsMerchantPortalSDK.testSDK(null, om("feature" -> om("validate" -> om("active" -> B(true)))))
+        val err = try {
+          client.outputAddProduct(null).create(om("packageUUID" -> I(1), "productUUIDs" -> "x", "responseCode" -> I(1), "responseMessage" -> "x"), null)
+          null
+        } catch { case e: SdkError => e }
+        rep.check("output_add_product.validate", err != null && "validate_failed" == err.code,
+          "expected validate_failed, got " + err)
+      }
     }
 
     rep.scope("output_add_product.basic") {

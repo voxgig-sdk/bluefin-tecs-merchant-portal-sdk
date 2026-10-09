@@ -15,9 +15,13 @@ predictable and low-friction for both humans and AI agents.
 
 ## Install
 This package is not yet published to npm. Install it from the GitHub
-release tag (`ts/vX.Y.Z`):
+release tag (`ts/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags)), or from a
+clone, which carries the compiled `dist/`:
 
-- Releases: [https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases)
+```bash
+git clone https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk
+npm install ./bluefin-tecs-merchant-portal-sdk/ts
+```
 
 
 ## Tutorial: your first API call
@@ -68,14 +72,15 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 ```ts
 try {
   const outputdetail = await client.OutputDetail().load({ id: "example_id" })
-  console.log(outputdetail)
+  console.log(outputdetail.data())
 } catch (err) {
   console.error('load failed:', err)
 }
 ```
 
 The low-level `direct()` method does **not** throw — it returns the
-value or an `Error`, so check the result before using it:
+result envelope. Branch on `ok`; on failure `status` holds the HTTP status
+(for error responses) and `err` holds the error:
 
 ```ts
 const result = await client.direct({
@@ -84,8 +89,8 @@ const result = await client.direct({
   params: { id: 'example_id' },
 })
 
-if (result instanceof Error) {
-  throw result
+if (!result.ok) {
+  console.error('request failed:', result.status, result.err)
 }
 ```
 
@@ -103,9 +108,6 @@ const result = await client.direct({
   params: { id: 'example' },
 })
 
-if (result instanceof Error) {
-  throw result
-}
 if (result.ok) {
   console.log(result.status)  // 200
   console.log(result.data)    // response body
@@ -135,9 +137,8 @@ Create a mock client for unit testing — no server required:
 const client = BluefinTecsMerchantPortalSDK.test()
 
 const outputdetail = await client.OutputDetail().load({ id: 'test01' })
-// outputdetail is the entity, populated with mock response data
-// — call outputdetail.data() for the record itself
-console.log(outputdetail)
+// outputdetail is the OutputDetail entity; .data() reads its mock record
+console.log(outputdetail.data())
 ```
 
 You can also use the instance method:
@@ -270,8 +271,8 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `load(reqmatch?, ctrl?): Promise<Entity>` | Load a single entity by match criteria. |
-| `create` | `create(reqdata?, ctrl?): Promise<Entity>` | Create a new entity. |
+| `load` | `load(reqmatch?, ctrl?): Promise<Entity>` | Load a single entity by match criteria, and return it. |
+| `create` | `create(reqdata?, ctrl?): Promise<Entity>` | Create a new entity, and return it. |
 | `data` | `data(data?: Partial<Entity>): Entity` | Get or set entity data. |
 | `match` | `match(match?: Partial<Entity>): Partial<Entity>` | Get or set entity match criteria. |
 | `make` | `make(): Entity` | Create a new instance with the same options. |
@@ -280,8 +281,8 @@ All entities share the same interface.
 
 #### Return values
 
-Entity operations resolve to the entity data directly — there is no
-result envelope:
+Entity operations resolve to the entity itself — there is no result
+envelope, and an entity's `data()` reads its record:
 
 - `load` and `create` resolve to a single entity object.
 
@@ -538,10 +539,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: load.
 
@@ -1092,10 +1093,10 @@ Create an instance: `const output_detail = client.OutputDetail()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `Record<string, any>` |  |
+| `details` | `Record<string, any>` |  |
 | `id` | `string` |  |
-| `lines` | `Record<string, any>` |  |
-| `progress` | `Record<string, any>` |  |
+| `responseCode` | `number` | Response code. |
+| `responseMessage` | `string` | Response message. |
 
 #### Example: Load
 

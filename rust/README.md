@@ -15,7 +15,7 @@ keeps the cognitive load low.
 
 ## Install
 This crate is not yet published to crates.io. Depend on it from the GitHub
-release tag (`rust/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases)) or
+release tag (`rust/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags)) or
 from a source checkout by adding it to your `Cargo.toml`:
 
 ```toml
@@ -36,7 +36,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```rust
-use bluefin_tecs_merchant_portal_sdk::{getp, jo, BluefinTecsMerchantPortalSDK, Value};
+use bluefin_tecs_merchant_portal_sdk::{getp, jo, BluefinTecsMerchantPortalEntity, BluefinTecsMerchantPortalSDK, Entity, Value};
 
 let client = BluefinTecsMerchantPortalSDK::new(Value::Noval);
 ```
@@ -44,7 +44,7 @@ let client = BluefinTecsMerchantPortalSDK::new(Value::Noval);
 ### 4. Create, update, and remove
 
 ```rust
-// Create — returns the bare created record
+// Create — returns the created entity
 let created = client.merchant_portal_api_controller(Value::Noval).create(jo(vec![("business_reg_number", Value::str("example_business_reg_number")), ("city", Value::str("example_city")), ("country", Value::str("example_country")), ("currency", Value::str("example_currency")), ("merchant_category_code", Value::Num(1.0)), ("merchant_name", Value::str("example_merchant_name")), ("packageid", Value::str("example_packageid")), ("packageorderuuid", Value::str("example_packageorderuuid")), ("reason_deactivation", Value::str("example_reason_deactivation")), ("reason_reactivation", Value::str("example_reason_reactivation")), ("street", Value::str("example_street")), ("terminal_country_code", Value::str("example_terminal_country_code")), ("terminal_language_code", Value::str("example_terminal_language_code")), ("terminal_location", Value::str("example_terminal_location")), ("terminal_serial_number", Value::str("example_terminal_serial_number")), ("terminalid", Value::Num(1.0)), ("vu_nummer", Value::str("example_vu_nummer")), ("zipcode", Value::str("example_zipcode"))]), Value::Noval).unwrap();
 
 ```
@@ -57,14 +57,15 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 ```ts
 try {
   const outputdetail = await client.OutputDetail().load({ id: "example_id" })
-  console.log(outputdetail)
+  console.log(outputdetail.data())
 } catch (err) {
   console.error('load failed:', err)
 }
 ```
 
 The low-level `direct()` method does **not** throw — it returns the
-value or an `Error`, so check the result before using it:
+result envelope. Branch on `ok`; on failure `status` holds the HTTP status
+(for error responses) and `err` holds the error:
 
 ```ts
 const result = await client.direct({
@@ -73,8 +74,8 @@ const result = await client.direct({
   params: { id: 'example_id' },
 })
 
-if (result instanceof Error) {
-  throw result
+if (!result.ok) {
+  console.error('request failed:', result.status, result.err)
 }
 ```
 
@@ -122,11 +123,13 @@ println!("{:?}", getp(&fetchdef, "headers"));
 Create a mock client for unit testing — no server required:
 
 ```rust
+use bluefin_tecs_merchant_portal_sdk::{jo, test_sdk, BluefinTecsMerchantPortalEntity, Entity, Value};
+
 let client = test_sdk(Value::Noval, Value::Noval);
 
-// Entity ops return the bare record on Ok and Err on failure.
+// Entity ops return the entity on Ok and Err on failure.
 let output_detail = client.output_detail(Value::Noval).load(jo(vec![("id", Value::str("test01"))]), Value::Noval).unwrap();
-// output_detail contains the mock response record
+// output_detail.data(None) is the mock response record
 ```
 
 ### Point at a different server
@@ -220,8 +223,8 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>` | Load a single entity by match criteria. |
-| `create` | `(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>` | Create a new entity. |
+| `load` | `(reqmatch: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>` | Load a single entity by match criteria. |
+| `create` | `(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>` | Create a new entity. |
 | `data` | `(args: Option<&Value>) -> Value` | Get entity data (pass `Some(&map)` to set). |
 | `matchv` | `(args: Option<&Value>) -> Value` | Get entity match criteria (pass `Some(&map)` to set). |
 | `make` | `() -> Rc<dyn Entity>` | Create a new instance with the same options. |
@@ -229,9 +232,11 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `Result<Value, BluefinTecsMerchantPortalError>` — the
-bare result data on `Ok` (a `Value::Map` for single-entity ops, a
-`Value::List` for `list`) and the branded error on `Err`.
+Entity operations return the entity on `Ok`, and `list` a `Vec` of
+entities, one per record; `data(None)` reads an entity's record. `Err` is
+the branded error. The operations are methods of the
+`BluefinTecsMerchantPortalEntity` trait and `data` of the `Entity` trait, so
+import both.
 
 The `direct()` escape hatch resolves to `Ok` even on a non-2xx response —
 it returns a result `Value::Map` you branch on via `getp(&result, "ok")`:
@@ -466,10 +471,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Load.
 
@@ -589,7 +594,7 @@ Create an instance: `let merchant_portal_api_controller = client.merchant_portal
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 
@@ -663,12 +668,13 @@ Create an instance: `let merchant_portal_common_controller = client.merchant_por
 
 | Method | Description |
 | --- | --- |
-| `load(reqmatch, ctrl)` | Load a single entity by match criteria. |
+| `load(reqmatch, ctrl)` | Load a single entity by match criteria. `Ok` is the entity. |
 
 #### Example: Load
 
 ```rust
 let merchant_portal_common_controller = client.merchant_portal_common_controller(Value::Noval).load(Value::Noval, Value::Noval).unwrap();
+println!("{:?}", merchant_portal_common_controller.data(None));
 ```
 
 
@@ -680,7 +686,7 @@ Create an instance: `let merchant_portal_pam_contract_controller = client.mercha
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 
@@ -707,7 +713,7 @@ Create an instance: `let merchant_portal_pam_document_controller = client.mercha
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 
@@ -734,7 +740,7 @@ Create an instance: `let merchant_portal_pam_form_controller = client.merchant_p
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 
@@ -770,7 +776,7 @@ Create an instance: `let merchant_portal_pam_mandator_controller = client.mercha
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 
@@ -799,7 +805,7 @@ Create an instance: `let merchant_portal_pam_merchant_controller = client.mercha
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 
@@ -861,7 +867,7 @@ Create an instance: `let merchant_portal_pam_package_controller = client.merchan
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 
@@ -897,7 +903,7 @@ Create an instance: `let merchant_portal_pam_product_controller = client.merchan
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 
@@ -934,7 +940,7 @@ Create an instance: `let output_add_product = client.output_add_product(Value::N
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 
@@ -965,7 +971,7 @@ Create an instance: `let output_create_product = client.output_create_product(Va
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 
@@ -1014,21 +1020,22 @@ Create an instance: `let output_detail = client.output_detail(Value::Noval);`
 
 | Method | Description |
 | --- | --- |
-| `load(reqmatch, ctrl)` | Load a single entity by match criteria. |
+| `load(reqmatch, ctrl)` | Load a single entity by match criteria. `Ok` is the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `std::collections::HashMap<String, Value>` |  |
+| `details` | `std::collections::HashMap<String, Value>` |  |
 | `id` | `String` |  |
-| `lines` | `std::collections::HashMap<String, Value>` |  |
-| `progress` | `std::collections::HashMap<String, Value>` |  |
+| `responseCode` | `i64` | Response code. |
+| `responseMessage` | `String` | Response message. |
 
 #### Example: Load
 
 ```rust
 let output_detail = client.output_detail(Value::Noval).load(jo(vec![("id", Value::str("output_detail_id"))]), Value::Noval).unwrap();
+println!("{:?}", output_detail.data(None));
 ```
 
 
@@ -1040,7 +1047,7 @@ Create an instance: `let output_list = client.output_list(Value::Noval);`
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 
@@ -1071,7 +1078,7 @@ Create an instance: `let output_message = client.output_message(Value::Noval);`
 
 | Method | Description |
 | --- | --- |
-| `load(reqmatch, ctrl)` | Load a single entity by match criteria. |
+| `load(reqmatch, ctrl)` | Load a single entity by match criteria. `Ok` is the entity. |
 
 #### Fields
 
@@ -1085,6 +1092,7 @@ Create an instance: `let output_message = client.output_message(Value::Noval);`
 
 ```rust
 let output_message = client.output_message(Value::Noval).load(jo(vec![("id", Value::str("output_message_id"))]), Value::Noval).unwrap();
+println!("{:?}", output_message.data(None));
 ```
 
 
@@ -1096,7 +1104,7 @@ Create an instance: `let output_move_tid = client.output_move_tid(Value::Noval);
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 
@@ -1129,7 +1137,7 @@ Create an instance: `let output_remove_product = client.output_remove_product(Va
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 
@@ -1160,7 +1168,7 @@ Create an instance: `let output_start = client.output_start(Value::Noval);`
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 
@@ -1188,7 +1196,7 @@ Create an instance: `let output_status = client.output_status(Value::Noval);`
 
 | Method | Description |
 | --- | --- |
-| `load(reqmatch, ctrl)` | Load a single entity by match criteria. |
+| `load(reqmatch, ctrl)` | Load a single entity by match criteria. `Ok` is the entity. |
 
 #### Fields
 
@@ -1204,6 +1212,7 @@ Create an instance: `let output_status = client.output_status(Value::Noval);`
 
 ```rust
 let output_status = client.output_status(Value::Noval).load(jo(vec![("id", Value::str("output_status_id"))]), Value::Noval).unwrap();
+println!("{:?}", output_status.data(None));
 ```
 
 
@@ -1215,7 +1224,7 @@ Create an instance: `let output_update_product = client.output_update_product(Va
 
 | Method | Description |
 | --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. `Ok` is the entity. |
 
 #### Fields
 

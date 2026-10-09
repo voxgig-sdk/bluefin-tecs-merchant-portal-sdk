@@ -3,6 +3,7 @@ package voxgig.bluefintecsmerchantportalsdk.sdktest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.nio.file.Files;
@@ -16,14 +17,24 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Test;
 
+import voxgig.bluefintecsmerchantportalsdk.core.Config;
+import voxgig.bluefintecsmerchantportalsdk.core.Context;
 import voxgig.bluefintecsmerchantportalsdk.core.Helpers;
 import voxgig.bluefintecsmerchantportalsdk.core.SdkEntity;
+import voxgig.bluefintecsmerchantportalsdk.core.SdkError;
 import voxgig.bluefintecsmerchantportalsdk.core.BluefinTecsMerchantPortalSDK;
+import voxgig.bluefintecsmerchantportalsdk.feature.BaseFeature;
 import voxgig.bluefintecsmerchantportalsdk.utility.Json;
 import voxgig.bluefintecsmerchantportalsdk.utility.struct.Struct;
 
 @SuppressWarnings({"unchecked", "unused"})
 public class MerchantPortalCommonControllerEntityTest {
+
+  // main.kit.test.live.strict is true (the default is true): a live
+  // request that fails, or a live test missing an input it needs,
+  // fails the test.
+  // An account with no record for a test to read skips it either way.
+  static final boolean LIVE_STRICT = true;
 
   @Test
   public void instance() {
@@ -44,10 +55,6 @@ public class MerchantPortalCommonControllerEntityTest {
           reason == null || "".equals(reason)
               ? "skipped via sdk-test-control.json" : reason);
     }
-    // The basic flow consumes synthetic IDs from the fixture. In live mode
-    // without an *_ENTID env override, those IDs hit the live API and 4xx.
-    Assumptions.assumeFalse(setup.syntheticOnly,
-        "live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID JSON to run live");
     BluefinTecsMerchantPortalSDK client = setup.client;
 
     // Bootstrap entity data from existing test data (no create step in flow).
@@ -93,10 +100,8 @@ public class MerchantPortalCommonControllerEntityTest {
         + "\"`$VAL`\": [\"`$FORMAT`\", \"upper\", \"`$COPY`\"]"
         + "}]}"));
 
-    // Detect ENTID env override before envOverride consumes it. When live
-    // mode is on without a real override, the basic test runs against
-    // synthetic IDs from the fixture and 4xx's. Surface this so the test
-    // can skip.
+    // Whether *_ENTID supplied the idmap, read before envOverride consumes
+    // it: without it, the ids a live flow binds are the fixture's synthetic ones.
     String entidEnvRaw = RunnerSupport.getenv("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID");
     boolean idmapOverridden = entidEnvRaw != null
         && entidEnvRaw.trim().startsWith("{");

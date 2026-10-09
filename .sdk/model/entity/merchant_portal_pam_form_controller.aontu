@@ -87,6 +87,11 @@ main: kit: entity: merchant_portal_pam_form_controller: {
       name: "create"
       points: [
         {
+          bf: [
+            "filter"
+            "language"
+            "packageOrderUUID"
+          ]
           co: {
             id: "POST /merchantportalws/applicationForm"
             source: "openapi3"
@@ -97,7 +102,7 @@ main: kit: entity: merchant_portal_pam_form_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -109,6 +114,10 @@ main: kit: entity: merchant_portal_pam_form_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -124,6 +133,11 @@ main: kit: entity: merchant_portal_pam_form_controller: {
           }
         }
         {
+          bf: [
+            "filter"
+            "language"
+            "packageUUID"
+          ]
           co: {
             id: "POST /merchantportalws/packageForm"
             source: "openapi3"
@@ -134,7 +148,7 @@ main: kit: entity: merchant_portal_pam_form_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -146,6 +160,10 @@ main: kit: entity: merchant_portal_pam_form_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -161,6 +179,12 @@ main: kit: entity: merchant_portal_pam_form_controller: {
           }
         }
         {
+          bf: [
+            "appFormFieldsDescUUID"
+            "packageOrderUUID"
+            "productOrderUUID"
+            "reasonOfReopening"
+          ]
           co: {
             id: "POST /merchantportalws/reopenForm"
             source: "openapi3"
@@ -171,7 +195,7 @@ main: kit: entity: merchant_portal_pam_form_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -183,6 +207,10 @@ main: kit: entity: merchant_portal_pam_form_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -198,6 +226,9 @@ main: kit: entity: merchant_portal_pam_form_controller: {
           }
         }
         {
+          bf: [
+            "productOrderUUID"
+          ]
           co: {
             id: "POST /merchantportalws/secretKey"
             source: "openapi3"
@@ -208,7 +239,7 @@ main: kit: entity: merchant_portal_pam_form_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -220,6 +251,10 @@ main: kit: entity: merchant_portal_pam_form_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -235,6 +270,9 @@ main: kit: entity: merchant_portal_pam_form_controller: {
           }
         }
         {
+          bf: [
+            "productOrderUUID"
+          ]
           co: {
             id: "POST /merchantportalws/submitForm"
             source: "openapi3"
@@ -245,7 +283,7 @@ main: kit: entity: merchant_portal_pam_form_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -257,6 +295,10 @@ main: kit: entity: merchant_portal_pam_form_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -272,6 +314,10 @@ main: kit: entity: merchant_portal_pam_form_controller: {
           }
         }
         {
+          bf: [
+            "packageOrder"
+            "productOrders"
+          ]
           co: {
             id: "POST /merchantportalws/submitValues"
             source: "openapi3"
@@ -282,7 +328,7 @@ main: kit: entity: merchant_portal_pam_form_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -294,6 +340,10 @@ main: kit: entity: merchant_portal_pam_form_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

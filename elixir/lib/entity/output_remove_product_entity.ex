@@ -1,7 +1,7 @@
 # BluefinTecsMerchantPortal SDK OutputRemoveProduct entity
 #
 # Per-entity module. Generic construction/data/match operations delegate to
-# EntityBase; each active op (load/list/create/update/remove) builds a ctx
+# EntityBase; each active op (load/list/create/update/patch/remove) builds a ctx
 # and drives it through BluefinTecsMerchantPortal.Pipeline.run_op.
 
 defmodule BluefinTecsMerchantPortal.Entity.OutputRemoveProduct do
@@ -30,9 +30,10 @@ defmodule BluefinTecsMerchantPortal.Entity.OutputRemoveProduct do
   
 
   
-  # Returns the created output_remove_product entity map (BluefinTecsMerchantPortal.Types.output_remove_product/0)
-  # on success; pipeline errors surface as the error value built by
-  # Utility.make_error (shape is utility-configurable), hence term().
+  # Returns the created output_remove_product entity, whose data_get/1 reads its record
+  # (BluefinTecsMerchantPortal.Types.output_remove_product/0), on success; pipeline errors surface as
+  # the error value built by Utility.make_error (shape is
+  # utility-configurable), hence term().
   @spec create(map(), BluefinTecsMerchantPortal.Types.output_remove_product_create_data() | nil, map() | nil) :: term()
   def create(ent, reqdata, ctrl \\ nil) do
     ctx =
@@ -61,6 +62,8 @@ defmodule BluefinTecsMerchantPortal.Entity.OutputRemoveProduct do
   end
 
 
+
+  
 
   
 

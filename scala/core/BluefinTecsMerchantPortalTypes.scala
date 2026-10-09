@@ -60,7 +60,7 @@ object BluefinTecsMerchantPortalTypes {
 
   final case class OutputCreateProductCreateData(acquirerId: String, allowMultipleOrders: java.lang.Boolean, appFormTemplateName: String, contractNeeded: java.lang.Boolean, credentialsNeeded: java.lang.Boolean, descriptionKey: String, nameKey: String, prescreeningAllowed: java.lang.Boolean, productName: String, responseCode: java.lang.Long, responseMessage: String, terminalTemplateName: String, vendorName: String, xmlTemplateFile: String)
 
-  final case class OutputDetail(batch: java.util.Map[String, Object], id: String, lines: java.util.Map[String, Object], progress: java.util.Map[String, Object])
+  final case class OutputDetail(details: java.util.Map[String, Object], id: String, responseCode: java.lang.Long, responseMessage: String)
 
   final case class OutputDetailLoadMatch(id: String)
 

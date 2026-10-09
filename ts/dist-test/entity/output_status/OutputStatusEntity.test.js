@@ -54,6 +54,14 @@ const utility_1 = require("../../utility");
         const ent = testsdk.OutputStatus();
         (0, node_assert_1.default)(null != ent);
     });
+    (0, node_test_1.test)('validate', async (t) => {
+        if (null == __1.config.feature?.validate) {
+            t.skip('feature not present in this SDK: validate');
+            return;
+        }
+        const client = __1.BluefinTecsMerchantPortalSDK.test(undefined, { feature: { validate: { active: true } } });
+        await node_assert_1.default.rejects(client.OutputStatus().load({ "id": 1 }), (err) => 'validate_failed' === err.code);
+    });
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE;
         for (const op of ['load']) {
@@ -62,7 +70,7 @@ const utility_1 = require("../../utility");
         }
         const setup = basicSetup();
         if (setup.live) {
-            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "id": { "a": true, "h": "Id", "n": "id", "r": false, "t": "`$STRING`", "key$": "id", "index$": 0 }, "percentage": { "a": true, "fo": "int32", "h": "Percentage", "n": "percentage", "r": false, "t": "`$INTEGER`", "key$": "percentage", "index$": 1 }, "responseCode": { "a": true, "fo": "int32", "h": "Response Code", "n": "responseCode", "r": true, "sh": "Response code.", "t": "`$INTEGER`", "key$": "responseCode", "index$": 2 }, "responseMessage": { "a": true, "h": "Response Message", "n": "responseMessage", "r": true, "sh": "Response message.", "t": "`$STRING`", "key$": "responseMessage", "index$": 3 }, "status": { "a": true, "h": "Status", "n": "status", "r": false, "t": "`$STRING`", "key$": "status", "index$": 4 } }, "id": { "field": "id", "name": "id" }, "name": "output_status", "op": { "load": { "input": "data", "name": "load", "points": [{ "a": true, "co": { "id": "GET /merchantportalws/batch/registerAdditionalTerminal/status/{id}", "source": "openapi3", "version": 2 }, "g": { "header": [{ "a": true, "k": "header", "n": "authorization", "or": "authorization", "r": true, "t": "`$STRING`", "index$": 0 }], "params": [{ "a": true, "k": "param", "n": "id", "or": "id", "r": true, "t": "`$STRING`", "index$": 0 }] }, "k": "http", "m": "GET", "o": "/merchantportalws/batch/registerAdditionalTerminal/status/{id}", "q": { "exist": ["authorization", "id"] }, "r": {}, "s": [{ "lit": "merchantportalws" }, { "lit": "batch" }, { "lit": "registerAdditionalTerminal" }, { "lit": "status" }, { "var": "id" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "load" } }, "relations": { "ancestors": [] }, "key$": "output_status", "name__orig": "output_status", "Name": "OutputStatus", "name_": "output_status", "name-": "output-status", "NAME": "OUTPUT_STATUS", "index$": 17 }, { "active": true, "entity": "output_status", "key$": "BasicOutputStatusFlow", "kind": "basic", "name": "BasicOutputStatusFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": { "ref": "output_status_ref01", "srcdatavar": "output_status_ref01_data", "suffix": "_dt0" }, "m": { "id": "output_status01" }, "o": "load", "s": [], "v": [{ "apply": "TextFieldMark", "def": { "mark": "Mark01-output_status_ref01" } }], "index$": 0 }] }, 'OutputStatus', { "GET /merchantportalws/batch/registerAdditionalTerminal/status/{id}": { "protocol": "http", "parameters": [{ "name": "Authorization", "in": "header", "description": "Authorization", "required": true, "schema": { "type": "string" }, "index$": 0 }, { "name": "id", "in": "path", "description": "id", "required": true, "schema": { "type": "string" }, "index$": 1 }] } });
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "id": { "a": true, "h": "Id", "n": "id", "r": false, "t": "`$STRING`", "key$": "id", "index$": 0 }, "percentage": { "a": true, "fo": "int32", "h": "Percentage", "n": "percentage", "r": false, "t": "`$INTEGER`", "key$": "percentage", "index$": 1 }, "responseCode": { "a": true, "fo": "int32", "h": "Response Code", "n": "responseCode", "r": true, "sh": "Response code.", "t": "`$INTEGER`", "key$": "responseCode", "index$": 2 }, "responseMessage": { "a": true, "h": "Response Message", "n": "responseMessage", "r": true, "sh": "Response message.", "t": "`$STRING`", "key$": "responseMessage", "index$": 3 }, "status": { "a": true, "h": "Status", "n": "status", "r": false, "t": "`$STRING`", "key$": "status", "index$": 4 } }, "id": { "field": "id", "name": "id" }, "name": "output_status", "op": { "load": { "input": "data", "name": "load", "points": [{ "a": true, "co": { "id": "GET /merchantportalws/batch/registerAdditionalTerminal/status/{id}", "source": "openapi3", "version": 2 }, "g": { "header": [{ "a": true, "k": "header", "n": "authorization", "or": "Authorization", "r": true, "t": "`$STRING`", "index$": 0 }], "params": [{ "a": true, "k": "param", "n": "id", "or": "id", "r": true, "t": "`$STRING`", "index$": 0 }] }, "k": "http", "m": "GET", "o": "/merchantportalws/batch/registerAdditionalTerminal/status/{id}", "q": { "exist": ["authorization", "id"] }, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "merchantportalws" }, { "lit": "batch" }, { "lit": "registerAdditionalTerminal" }, { "lit": "status" }, { "var": "id" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "load" } }, "relations": { "ancestors": [] }, "key$": "output_status", "name__orig": "output_status", "Name": "OutputStatus", "name_": "output_status", "name-": "output-status", "NAME": "OUTPUT_STATUS", "index$": 17 }, { "active": true, "entity": "output_status", "key$": "BasicOutputStatusFlow", "kind": "basic", "name": "BasicOutputStatusFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": { "ref": "output_status_ref01", "srcdatavar": "output_status_ref01_data", "suffix": "_dt0" }, "m": { "id": "output_status01" }, "o": "load", "s": [], "v": [{ "apply": "TextFieldMark", "def": { "mark": "Mark01-output_status_ref01" } }], "index$": 0 }] }, 'OutputStatus', { "GET /merchantportalws/batch/registerAdditionalTerminal/status/{id}": { "protocol": "http", "parameters": [{ "name": "Authorization", "in": "header", "description": "Authorization", "required": true, "schema": { "type": "string" }, "index$": 0 }, { "name": "id", "in": "path", "description": "id", "required": true, "schema": { "type": "string" }, "index$": 1 }] } }, { strict: LIVE_STRICT, t });
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -77,6 +85,11 @@ const utility_1 = require("../../utility");
         (0, node_assert_1.default)(output_status_ref01_data_dt0.id === output_status_ref01_data.id);
     });
 });
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true;
 function basicSetup(extra) {
     // TODO: fix test def options
     const options = {}; // null

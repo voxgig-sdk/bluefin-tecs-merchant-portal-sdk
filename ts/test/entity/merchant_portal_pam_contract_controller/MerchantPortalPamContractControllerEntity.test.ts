@@ -9,7 +9,7 @@ import { createLiveTransport } from '../../live-runner'
 import { runLiveEntity } from '../../live-entity'
 
 
-import { BluefinTecsMerchantPortalSDK, BaseFeature, stdutil } from '../../..'
+import { BluefinTecsMerchantPortalSDK, BaseFeature, config, stdutil } from '../../..'
 
 import {
   envOverride,
@@ -41,6 +41,18 @@ describe('MerchantPortalPamContractControllerEntity', async () => {
   })
 
 
+  test('validate', async (t) => {
+    if (null == (config as any).feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = BluefinTecsMerchantPortalSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.MerchantPortalPamContractController().create({"language":1,"productOrderUUID":"x"} as any),
+      (err: any) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE
@@ -51,7 +63,7 @@ describe('MerchantPortalPamContractControllerEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"language":{"a":true,"h":"Language","n":"language","r":true,"t":"`$STRING`","key$":"language","index$":0},"productOrderUUID":{"a":true,"h":"Product Order Uuid","n":"productOrderUUID","r":true,"t":"`$STRING`","key$":"productOrderUUID","index$":1}},"name":"merchant_portal_pam_contract_controller","op":{"create":{"input":"data","name":"create","points":[{"a":true,"co":{"id":"POST /merchantportalws/generateContract","source":"openapi3","version":2},"g":{"header":[{"a":true,"k":"header","n":"authorization","or":"authorization","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/merchantportalws/generateContract","q":{"exist":["authorization"]},"r":{},"s":[{"lit":"merchantportalws"},{"lit":"generateContract"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"POST /merchantportalws/uploadContract","source":"openapi3","version":2},"g":{"header":[{"a":true,"k":"header","n":"authorization","or":"authorization","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/merchantportalws/uploadContract","q":{"exist":["authorization"]},"r":{},"s":[{"lit":"merchantportalws"},{"lit":"uploadContract"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1}],"key$":"create"}},"relations":{"ancestors":[]},"key$":"merchant_portal_pam_contract_controller","name__orig":"merchant_portal_pam_contract_controller","Name":"MerchantPortalPamContractController","name_":"merchant_portal_pam_contract_controller","name-":"merchant-portal-pam-contract-controller","NAME":"MERCHANT_PORTAL_PAM_CONTRACT_CONTROLLER","index$":2}, {"active":true,"entity":"merchant_portal_pam_contract_controller","key$":"BasicMerchantPortalPamContractControllerFlow","kind":"basic","name":"BasicMerchantPortalPamContractControllerFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"merchant_portal_pam_contract_controller_ref01"},"m":{},"o":"create","s":[],"v":[],"index$":0}]}, 'MerchantPortalPamContractController', {"POST /merchantportalws/generateContract":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","required":["language","productOrderUUID"],"properties":{"language":{"type":"string","key$":"language"},"productOrderUUID":{"type":"string","key$":"productOrderUUID"}},"title":"InputGenerateContract","x-ref":"#/components/schemas/InputGenerateContract","index$":1}}},"description":"inputGenerateContract","required":true},"parameters":[{"name":"Authorization","in":"header","description":"Authorization","required":true,"schema":{"type":"string"},"index$":0}]},"POST /merchantportalws/uploadContract":{"protocol":"http","requestBody":{"content":{"multipart/form-data":{"schema":{"type":"object","properties":{"inputMessage":{"type":"string"},"pdfFile":{"description":"Binary multipart file in PDF format","type":"string","format":"binary"}},"required":["pdfFile"]}}}},"parameters":[{"name":"Authorization","in":"header","description":"Authorization","required":true,"schema":{"type":"string"},"index$":0}]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"language":{"a":true,"h":"Language","n":"language","r":true,"t":"`$STRING`","key$":"language","index$":0},"productOrderUUID":{"a":true,"h":"Product Order Uuid","n":"productOrderUUID","r":true,"t":"`$STRING`","key$":"productOrderUUID","index$":1}},"name":"merchant_portal_pam_contract_controller","op":{"create":{"input":"data","name":"create","points":[{"a":true,"bf":["language","productOrderUUID"],"co":{"id":"POST /merchantportalws/generateContract","source":"openapi3","version":2},"g":{"header":[{"a":true,"k":"header","n":"authorization","or":"Authorization","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/merchantportalws/generateContract","q":{"exist":["authorization"]},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"merchantportalws"},{"lit":"generateContract"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"POST /merchantportalws/uploadContract","source":"openapi3","version":2},"g":{"header":[{"a":true,"k":"header","n":"authorization","or":"Authorization","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/merchantportalws/uploadContract","q":{"exist":["authorization"]},"r":{},"rb":{"fields":[{"name":"inputMessage"},{"binary":true,"name":"pdfFile"}],"kind":"multipart","media":"multipart/form-data"},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"merchantportalws"},{"lit":"uploadContract"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1}],"key$":"create"}},"relations":{"ancestors":[]},"key$":"merchant_portal_pam_contract_controller","name__orig":"merchant_portal_pam_contract_controller","Name":"MerchantPortalPamContractController","name_":"merchant_portal_pam_contract_controller","name-":"merchant-portal-pam-contract-controller","NAME":"MERCHANT_PORTAL_PAM_CONTRACT_CONTROLLER","index$":2}, {"active":true,"entity":"merchant_portal_pam_contract_controller","key$":"BasicMerchantPortalPamContractControllerFlow","kind":"basic","name":"BasicMerchantPortalPamContractControllerFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"merchant_portal_pam_contract_controller_ref01"},"m":{},"o":"create","s":[],"v":[],"index$":0}]}, 'MerchantPortalPamContractController', {"POST /merchantportalws/generateContract":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","required":["language","productOrderUUID"],"properties":{"language":{"type":"string","key$":"language"},"productOrderUUID":{"type":"string","key$":"productOrderUUID"}},"title":"InputGenerateContract","x-ref":"#/components/schemas/InputGenerateContract","index$":1}}},"description":"inputGenerateContract","required":true},"parameters":[{"name":"Authorization","in":"header","description":"Authorization","required":true,"schema":{"type":"string"},"index$":0}]},"POST /merchantportalws/uploadContract":{"protocol":"http","requestBody":{"content":{"multipart/form-data":{"schema":{"type":"object","properties":{"inputMessage":{"type":"string"},"pdfFile":{"description":"Binary multipart file in PDF format","type":"string","format":"binary"}},"required":["pdfFile"]}}}},"parameters":[{"name":"Authorization","in":"header","description":"Authorization","required":true,"schema":{"type":"string"},"index$":0}]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -72,6 +84,12 @@ describe('MerchantPortalPamContractControllerEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra?: any) {
   // TODO: fix test def options

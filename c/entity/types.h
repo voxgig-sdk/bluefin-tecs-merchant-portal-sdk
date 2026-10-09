@@ -338,10 +338,10 @@ typedef struct {
 
 // OutputDetail is the typed data model for the output_detail entity.
 typedef struct {
-  voxgig_value*batch;  // optional
+  voxgig_value*details;  // optional
   char*id;  // optional
-  voxgig_value*lines;  // optional
-  voxgig_value*progress;  // optional
+  int64_t responsecode;
+  char*responsemessage;
 } OutputDetail;
 
 // OutputDetailLoadMatch is the typed request payload for OutputDetail.load.

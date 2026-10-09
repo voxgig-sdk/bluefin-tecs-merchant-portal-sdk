@@ -15,7 +15,7 @@ keeps the cognitive load low.
 
 ## Install
 Zig has no central package registry, so this package is distributed as a
-git tag (`zig/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases)). Add it to
+git tag (`zig/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags)). Add it to
 your `build.zig.zon` dependencies, or build from a source checkout:
 
 ```bash
@@ -53,9 +53,9 @@ const client = sdk.BluefinTecsMerchantPortalSDK.new(h.vnull());
 ### 4. Create, update, and remove
 
 ```zig
-// Create — .ok carries the created record
+// Create — .ok carries the created entity
 switch (client.merchant_portal_api_controller(h.vnull()).create(h.jo(&.{.{ "business_reg_number", h.vstr("example_business_reg_number") }, .{ "city", h.vstr("example_city") }, .{ "country", h.vstr("example_country") }, .{ "currency", h.vstr("example_currency") }, .{ "merchant_category_code", h.vnum(1) }, .{ "merchant_name", h.vstr("example_merchant_name") }, .{ "packageid", h.vstr("example_packageid") }, .{ "packageorderuuid", h.vstr("example_packageorderuuid") }, .{ "reason_deactivation", h.vstr("example_reason_deactivation") }, .{ "reason_reactivation", h.vstr("example_reason_reactivation") }, .{ "street", h.vstr("example_street") }, .{ "terminal_country_code", h.vstr("example_terminal_country_code") }, .{ "terminal_language_code", h.vstr("example_terminal_language_code") }, .{ "terminal_location", h.vstr("example_terminal_location") }, .{ "terminal_serial_number", h.vstr("example_terminal_serial_number") }, .{ "terminalid", h.vnum(1) }, .{ "vu_nummer", h.vstr("example_vu_nummer") }, .{ "zipcode", h.vstr("example_zipcode") }}), h.vnull())) {
-    .ok => |created| std.debug.print("{s}\n", .{h.stringify(created)}),
+    .ok => |created| std.debug.print("{s}\n", .{h.stringify(created.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 
@@ -69,14 +69,15 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 ```ts
 try {
   const outputdetail = await client.OutputDetail().load({ id: "example_id" })
-  console.log(outputdetail)
+  console.log(outputdetail.data())
 } catch (err) {
   console.error('load failed:', err)
 }
 ```
 
 The low-level `direct()` method does **not** throw — it returns the
-value or an `Error`, so check the result before using it:
+result envelope. Branch on `ok`; on failure `status` holds the HTTP status
+(for error responses) and `err` holds the error:
 
 ```ts
 const result = await client.direct({
@@ -85,8 +86,8 @@ const result = await client.direct({
   params: { id: 'example_id' },
 })
 
-if (result instanceof Error) {
-  throw result
+if (!result.ok) {
+  console.error('request failed:', result.status, result.err)
 }
 ```
 
@@ -136,9 +137,9 @@ Create a mock client for unit testing — no server required:
 ```zig
 const client = sdk.test_sdk(h.vnull(), h.vnull());
 
-// Entity ops return an OpResult — .ok carries the record, .err the error.
+// Entity ops return a result union — .ok carries the entity, .err the error.
 switch (client.output_detail(h.vnull()).load(h.jo(&.{.{ "id", h.vstr("test01") }}), h.vnull())) {
-    .ok => |output_detail| std.debug.print("{s}\n", .{h.stringify(output_detail)}), // the mock record
+    .ok => |output_detail| std.debug.print("{s}\n", .{h.stringify(output_detail.asEntity().data(null))}), // the mock record
     .err => |e| std.debug.print("load failed: {s}\n", .{e.msg}),
 }
 ```
@@ -233,18 +234,19 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch: Value, ctrl: Value) OpResult` | Load a single entity by match criteria. |
-| `create` | `(reqdata: Value, ctrl: Value) OpResult` | Create a new entity. |
-| `stream` | `(action: []const u8, args: Value, callopts: Value) []Value` | Run an op through the pipeline and materialise its result items. |
+| `load` | `(reqmatch: Value, ctrl: Value) EntResult` | Load a single entity by match criteria. |
+| `create` | `(reqdata: Value, ctrl: Value) EntResult` | Create a new entity. |
+| `stream` | `(action: []const u8, args: Value, callopts: Value) StreamResult` | Run an op through the pipeline: `.ok` with its result items, or `.err` with the error that failed it. |
 | `data` | `(args: ?Value) Value` | Get entity data (pass a map to set). |
 | `matchv` | `(args: ?Value) Value` | Get entity match criteria (pass a map to set). |
 | `get_name` | `() []const u8` | Return the entity name. |
 
 ### Result shape
 
-Entity operations return an `OpResult` union — `switch` on it: `.ok`
-carries the bare result data (a `Value` object for single-entity ops, a
-`Value` array for `list`), `.err` carries the branded error pointer.
+Entity operations return a result union — `switch` on it: `.ok` carries
+the entity (`EntResult`), or for `list` a slice of entities, one per record
+(`EntListResult`), and `asEntity().data(null)` reads an entity's record;
+`.err` carries the branded error pointer.
 
 The `direct()` escape hatch returns a result `Value` map directly (no
 error union) — even on a non-2xx response — that you branch on via
@@ -480,10 +482,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Load.
 
@@ -605,8 +607,9 @@ Create an instance: `const merchant_portal_api_controller = client.merchant_port
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -669,7 +672,7 @@ switch (client.merchant_portal_api_controller(h.vnull()).create(h.jo(&.{
     .{ "vu_nummer", h.vstr("example_vu_nummer") }, // []const u8
     .{ "zipcode", h.vstr("example_zipcode") }, // []const u8
 }), h.vnull())) {
-    .ok => |merchant_portal_api_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_api_controller)}),
+    .ok => |merchant_portal_api_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_api_controller.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -685,14 +688,15 @@ Create an instance: `const merchant_portal_common_controller = client.merchant_p
 | --- | --- |
 | `load(reqmatch, ctrl)` | Load a single entity by match criteria. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Example: Load
 
 ```zig
 switch (client.merchant_portal_common_controller(h.vnull()).load(h.vnull(), h.vnull())) {
-    .ok => |merchant_portal_common_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_common_controller)}),
+    .ok => |merchant_portal_common_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_common_controller.asEntity().data(null))}),
     .err => |e| std.debug.print("load failed: {s}\n", .{e.msg}),
 }
 ```
@@ -708,8 +712,9 @@ Create an instance: `const merchant_portal_pam_contract_controller = client.merc
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -725,7 +730,7 @@ switch (client.merchant_portal_pam_contract_controller(h.vnull()).create(h.jo(&.
     .{ "language", h.vstr("example_language") }, // []const u8
     .{ "productOrderUUID", h.vstr("example_productOrderUUID") }, // []const u8
 }), h.vnull())) {
-    .ok => |merchant_portal_pam_contract_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_contract_controller)}),
+    .ok => |merchant_portal_pam_contract_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_contract_controller.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -741,8 +746,9 @@ Create an instance: `const merchant_portal_pam_document_controller = client.merc
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -758,7 +764,7 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 switch (client.merchant_portal_pam_document_controller(h.vnull()).create(h.jo(&.{
     .{ "appFormFieldDescUUID", h.vstr("example_appFormFieldDescUUID") }, // []const u8
 }), h.vnull())) {
-    .ok => |merchant_portal_pam_document_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_document_controller)}),
+    .ok => |merchant_portal_pam_document_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_document_controller.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -774,8 +780,9 @@ Create an instance: `const merchant_portal_pam_form_controller = client.merchant
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -800,7 +807,7 @@ switch (client.merchant_portal_pam_form_controller(h.vnull()).create(h.jo(&.{
     .{ "packageOrderUUID", h.vstr("example_packageOrderUUID") }, // []const u8
     .{ "reasonOfReopening", h.vstr("example_reasonOfReopening") }, // []const u8
 }), h.vnull())) {
-    .ok => |merchant_portal_pam_form_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_form_controller)}),
+    .ok => |merchant_portal_pam_form_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_form_controller.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -816,8 +823,9 @@ Create an instance: `const merchant_portal_pam_mandator_controller = client.merc
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -835,7 +843,7 @@ switch (client.merchant_portal_pam_mandator_controller(h.vnull()).create(h.jo(&.
     .{ "mandatorName", h.vstr("example_mandatorName") }, // []const u8
     .{ "packageUUID", h.vstr("example_packageUUID") }, // []const u8
 }), h.vnull())) {
-    .ok => |merchant_portal_pam_mandator_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_mandator_controller)}),
+    .ok => |merchant_portal_pam_mandator_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_mandator_controller.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -851,8 +859,9 @@ Create an instance: `const merchant_portal_pam_merchant_controller = client.merc
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -903,7 +912,7 @@ switch (client.merchant_portal_pam_merchant_controller(h.vnull()).create(h.jo(&.
     .{ "productid_acquirer", h.vstr("example_productid_acquirer") }, // []const u8
     .{ "vu_nummer", h.vstr("example_vu_nummer") }, // []const u8
 }), h.vnull())) {
-    .ok => |merchant_portal_pam_merchant_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_merchant_controller)}),
+    .ok => |merchant_portal_pam_merchant_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_merchant_controller.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -919,8 +928,9 @@ Create an instance: `const merchant_portal_pam_package_controller = client.merch
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -945,7 +955,7 @@ switch (client.merchant_portal_pam_package_controller(h.vnull()).create(h.jo(&.{
     .{ "language", h.vstr("example_language") }, // []const u8
     .{ "packageUUID", h.vstr("example_packageUUID") }, // []const u8
 }), h.vnull())) {
-    .ok => |merchant_portal_pam_package_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_package_controller)}),
+    .ok => |merchant_portal_pam_package_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_package_controller.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -961,8 +971,9 @@ Create an instance: `const merchant_portal_pam_product_controller = client.merch
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -988,7 +999,7 @@ switch (client.merchant_portal_pam_product_controller(h.vnull()).create(h.jo(&.{
     .{ "productUUID", h.vstr("example_productUUID") }, // []const u8
     .{ "reason_decline", h.vstr("example_reason_decline") }, // []const u8
 }), h.vnull())) {
-    .ok => |merchant_portal_pam_product_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_product_controller)}),
+    .ok => |merchant_portal_pam_product_controller| std.debug.print("{s}\n", .{h.stringify(merchant_portal_pam_product_controller.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1004,8 +1015,9 @@ Create an instance: `const output_add_product = client.output_add_product(h.vnul
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -1025,7 +1037,7 @@ switch (client.output_add_product(h.vnull()).create(h.jo(&.{
     .{ "responseCode", h.vnum(1) }, // i64
     .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
-    .ok => |output_add_product| std.debug.print("{s}\n", .{h.stringify(output_add_product)}),
+    .ok => |output_add_product| std.debug.print("{s}\n", .{h.stringify(output_add_product.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1041,8 +1053,9 @@ Create an instance: `const output_create_product = client.output_create_product(
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -1080,7 +1093,7 @@ switch (client.output_create_product(h.vnull()).create(h.jo(&.{
     .{ "vendorName", h.vstr("example_vendorName") }, // []const u8
     .{ "xmlTemplateFile", h.vstr("example_xmlTemplateFile") }, // []const u8
 }), h.vnull())) {
-    .ok => |output_create_product| std.debug.print("{s}\n", .{h.stringify(output_create_product)}),
+    .ok => |output_create_product| std.debug.print("{s}\n", .{h.stringify(output_create_product.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1096,23 +1109,24 @@ Create an instance: `const output_detail = client.output_detail(h.vnull());`
 | --- | --- |
 | `load(reqmatch, ctrl)` | Load a single entity by match criteria. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `Value (object)` |  |
+| `details` | `Value (object)` |  |
 | `id` | `[]const u8` |  |
-| `lines` | `Value (object)` |  |
-| `progress` | `Value (object)` |  |
+| `responseCode` | `i64` | Response code. |
+| `responseMessage` | `[]const u8` | Response message. |
 
 #### Example: Load
 
 ```zig
 switch (client.output_detail(h.vnull()).load(h.jo(&.{.{ "id", h.vstr("output_detail_id") }}), h.vnull())) {
-    .ok => |output_detail| std.debug.print("{s}\n", .{h.stringify(output_detail)}),
+    .ok => |output_detail| std.debug.print("{s}\n", .{h.stringify(output_detail.asEntity().data(null))}),
     .err => |e| std.debug.print("load failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1128,8 +1142,9 @@ Create an instance: `const output_list = client.output_list(h.vnull());`
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -1149,7 +1164,7 @@ switch (client.output_list(h.vnull()).create(h.jo(&.{
     .{ "responseCode", h.vnum(1) }, // i64
     .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
-    .ok => |output_list| std.debug.print("{s}\n", .{h.stringify(output_list)}),
+    .ok => |output_list| std.debug.print("{s}\n", .{h.stringify(output_list.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1165,8 +1180,9 @@ Create an instance: `const output_message = client.output_message(h.vnull());`
 | --- | --- |
 | `load(reqmatch, ctrl)` | Load a single entity by match criteria. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -1180,7 +1196,7 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 ```zig
 switch (client.output_message(h.vnull()).load(h.jo(&.{.{ "id", h.vstr("output_message_id") }}), h.vnull())) {
-    .ok => |output_message| std.debug.print("{s}\n", .{h.stringify(output_message)}),
+    .ok => |output_message| std.debug.print("{s}\n", .{h.stringify(output_message.asEntity().data(null))}),
     .err => |e| std.debug.print("load failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1196,8 +1212,9 @@ Create an instance: `const output_move_tid = client.output_move_tid(h.vnull());`
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -1219,7 +1236,7 @@ switch (client.output_move_tid(h.vnull()).create(h.jo(&.{
     .{ "targetPackageOrderUUID", h.vstr("example_targetPackageOrderUUID") }, // []const u8
     .{ "targetProductOrderUUID", h.vstr("example_targetProductOrderUUID") }, // []const u8
 }), h.vnull())) {
-    .ok => |output_move_tid| std.debug.print("{s}\n", .{h.stringify(output_move_tid)}),
+    .ok => |output_move_tid| std.debug.print("{s}\n", .{h.stringify(output_move_tid.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1235,8 +1252,9 @@ Create an instance: `const output_remove_product = client.output_remove_product(
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -1256,7 +1274,7 @@ switch (client.output_remove_product(h.vnull()).create(h.jo(&.{
     .{ "responseCode", h.vnum(1) }, // i64
     .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
-    .ok => |output_remove_product| std.debug.print("{s}\n", .{h.stringify(output_remove_product)}),
+    .ok => |output_remove_product| std.debug.print("{s}\n", .{h.stringify(output_remove_product.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1272,8 +1290,9 @@ Create an instance: `const output_start = client.output_start(h.vnull());`
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -1290,7 +1309,7 @@ switch (client.output_start(h.vnull()).create(h.jo(&.{
     .{ "responseCode", h.vnum(1) }, // i64
     .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
-    .ok => |output_start| std.debug.print("{s}\n", .{h.stringify(output_start)}),
+    .ok => |output_start| std.debug.print("{s}\n", .{h.stringify(output_start.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1306,8 +1325,9 @@ Create an instance: `const output_status = client.output_status(h.vnull());`
 | --- | --- |
 | `load(reqmatch, ctrl)` | Load a single entity by match criteria. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -1323,7 +1343,7 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 ```zig
 switch (client.output_status(h.vnull()).load(h.jo(&.{.{ "id", h.vstr("output_status_id") }}), h.vnull())) {
-    .ok => |output_status| std.debug.print("{s}\n", .{h.stringify(output_status)}),
+    .ok => |output_status| std.debug.print("{s}\n", .{h.stringify(output_status.asEntity().data(null))}),
     .err => |e| std.debug.print("load failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1339,8 +1359,9 @@ Create an instance: `const output_update_product = client.output_update_product(
 | --- | --- |
 | `create(reqdata, ctrl)` | Create a new entity with the given data. |
 
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
+Each operation returns a result union — `switch` on it: `.ok` carries the
+entity (for `list`, a slice of entities, one per record), whose record
+`asEntity().data(null)` reads, and `.err => |e|` the branded error.
 
 #### Fields
 
@@ -1368,7 +1389,7 @@ switch (client.output_update_product(h.vnull()).create(h.jo(&.{
     .{ "responseCode", h.vnum(1) }, // i64
     .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
-    .ok => |output_update_product| std.debug.print("{s}\n", .{h.stringify(output_update_product)}),
+    .ok => |output_update_product| std.debug.print("{s}\n", .{h.stringify(output_update_product.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```

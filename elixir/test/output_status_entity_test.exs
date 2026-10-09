@@ -40,4 +40,17 @@ defmodule BluefinTecsMerchantPortal.OutputStatusEntityTest do
       assert S.getprop(rec, "id") == id
     end
   end
+
+  test "should refuse an invalid request" do
+    if BluefinTecsMerchantPortal.FeatureHarness.has_feature("validate") do
+      client = BluefinTecsMerchantPortal.test(nil, S.jm(["feature", S.jm(["validate", S.jm(["active", true])])]))
+
+      err =
+        assert_raise BluefinTecsMerchantPortal.Error, fn ->
+          BluefinTecsMerchantPortal.Entity.OutputStatus.load(BluefinTecsMerchantPortal.output_status(client), S.jm(["id", 1]))
+        end
+
+      assert err.code == "validate_failed"
+    end
+  end
 end

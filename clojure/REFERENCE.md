@@ -197,9 +197,9 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -268,9 +268,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(load ent reqmatch ctrl) -> map`
+#### `(load ent reqmatch ctrl) -> entity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `((:data-get ent))` reads, and raises on error.
 
 ```clojure
 (def result (e-merchant_portal_common_controller/load (api/merchant_portal_common_controller client nil) nil nil))
@@ -324,9 +324,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -337,6 +337,8 @@ Create a new entity with the given data. Returns the created entity data and rai
       )
     nil))
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Members
 
@@ -387,9 +389,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -469,9 +471,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -535,9 +537,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -652,9 +654,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -750,9 +752,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -820,9 +822,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -886,9 +888,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -962,9 +964,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -1029,16 +1031,16 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `map` | No |  |
+| `details` | `map` | No |  |
 | `id` | `string` | No |  |
-| `lines` | `map` | No |  |
-| `progress` | `map` | No |  |
+| `responseCode` | `long` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
 
 ### Operations
 
-#### `(load ent reqmatch ctrl) -> map`
+#### `(load ent reqmatch ctrl) -> entity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `((:data-get ent))` reads, and raises on error.
 
 ```clojure
 (def result (e-output_detail/load (api/output_detail client nil) (vs/jm "id" "output_detail_id") nil))
@@ -1105,9 +1107,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -1169,9 +1171,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(load ent reqmatch ctrl) -> map`
+#### `(load ent reqmatch ctrl) -> entity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `((:data-get ent))` reads, and raises on error.
 
 ```clojure
 (def result (e-output_message/load (api/output_message client nil) (vs/jm "id" "output_message_id") nil))
@@ -1228,9 +1230,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -1295,9 +1297,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -1360,9 +1362,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -1373,6 +1375,8 @@ Create a new entity with the given data. Returns the created entity data and rai
       )
     nil))
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Members
 
@@ -1425,9 +1429,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(load ent reqmatch ctrl) -> map`
+#### `(load ent reqmatch ctrl) -> entity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `((:data-get ent))` reads, and raises on error.
 
 ```clojure
 (def result (e-output_status/load (api/output_status client nil) (vs/jm "id" "output_status_id") nil))
@@ -1492,9 +1496,9 @@ Return the entity name.
 
 ### Operations
 
-#### `(create ent reqdata ctrl) -> map`
+#### `(create ent reqdata ctrl) -> entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```clojure
 (def result
@@ -1960,6 +1964,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

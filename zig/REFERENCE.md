@@ -218,9 +218,9 @@ const merchant_portal_api_controller = client.merchant_portal_api_controller(h.v
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.merchant_portal_api_controller(h.vnull()).create(h.jo(&.{
@@ -243,7 +243,7 @@ switch (client.merchant_portal_api_controller(h.vnull()).create(h.jo(&.{
     .{ "vu_nummer", h.vstr("example_vu_nummer") }, // []const u8
     .{ "zipcode", h.vstr("example_zipcode") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -258,9 +258,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -277,13 +281,13 @@ const merchant_portal_common_controller = client.merchant_portal_common_controll
 
 ### Operations
 
-#### `load(reqmatch: Value, ctrl: Value) OpResult`
+#### `load(reqmatch: Value, ctrl: Value) EntResult`
 
-Load a single entity matching the given criteria. `.ok` carries the entity data, `.err` the branded error.
+Load a single entity matching the given criteria. `.ok` carries the entity, whose record `asEntity().data(null)` reads, and `.err` the branded error.
 
 ```zig
 switch (client.merchant_portal_common_controller(h.vnull()).load(h.vnull(), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("load failed: {s}\n", .{e.msg}),
 }
 ```
@@ -298,9 +302,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -324,19 +332,21 @@ const merchant_portal_pam_contract_controller = client.merchant_portal_pam_contr
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.merchant_portal_pam_contract_controller(h.vnull()).create(h.jo(&.{
     .{ "language", h.vstr("example_language") }, // []const u8
     .{ "productOrderUUID", h.vstr("example_productOrderUUID") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -348,9 +358,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -375,15 +389,15 @@ const merchant_portal_pam_document_controller = client.merchant_portal_pam_docum
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.merchant_portal_pam_document_controller(h.vnull()).create(h.jo(&.{
     .{ "appFormFieldDescUUID", h.vstr("example_appFormFieldDescUUID") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -398,9 +412,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -445,9 +463,9 @@ const merchant_portal_pam_form_controller = client.merchant_portal_pam_form_cont
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.merchant_portal_pam_form_controller(h.vnull()).create(h.jo(&.{
@@ -456,7 +474,7 @@ switch (client.merchant_portal_pam_form_controller(h.vnull()).create(h.jo(&.{
     .{ "packageOrderUUID", h.vstr("example_packageOrderUUID") }, // []const u8
     .{ "reasonOfReopening", h.vstr("example_reasonOfReopening") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -471,9 +489,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -499,16 +521,16 @@ const merchant_portal_pam_mandator_controller = client.merchant_portal_pam_manda
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.merchant_portal_pam_mandator_controller(h.vnull()).create(h.jo(&.{
     .{ "mandatorName", h.vstr("example_mandatorName") }, // []const u8
     .{ "packageUUID", h.vstr("example_packageUUID") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -523,9 +545,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -604,9 +630,9 @@ const merchant_portal_pam_merchant_controller = client.merchant_portal_pam_merch
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.merchant_portal_pam_merchant_controller(h.vnull()).create(h.jo(&.{
@@ -624,7 +650,7 @@ switch (client.merchant_portal_pam_merchant_controller(h.vnull()).create(h.jo(&.
     .{ "productid_acquirer", h.vstr("example_productid_acquirer") }, // []const u8
     .{ "vu_nummer", h.vstr("example_vu_nummer") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -639,9 +665,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -690,16 +720,16 @@ const merchant_portal_pam_package_controller = client.merchant_portal_pam_packag
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.merchant_portal_pam_package_controller(h.vnull()).create(h.jo(&.{
     .{ "language", h.vstr("example_language") }, // []const u8
     .{ "packageUUID", h.vstr("example_packageUUID") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -714,9 +744,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -748,9 +782,9 @@ const merchant_portal_pam_product_controller = client.merchant_portal_pam_produc
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.merchant_portal_pam_product_controller(h.vnull()).create(h.jo(&.{
@@ -759,7 +793,7 @@ switch (client.merchant_portal_pam_product_controller(h.vnull()).create(h.jo(&.{
     .{ "productUUID", h.vstr("example_productUUID") }, // []const u8
     .{ "reason_decline", h.vstr("example_reason_decline") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -774,9 +808,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -802,9 +840,9 @@ const output_add_product = client.output_add_product(h.vnull());
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.output_add_product(h.vnull()).create(h.jo(&.{
@@ -813,7 +851,7 @@ switch (client.output_add_product(h.vnull()).create(h.jo(&.{
     .{ "responseCode", h.vnum(1) }, // i64
     .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -828,9 +866,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -866,9 +908,9 @@ const output_create_product = client.output_create_product(h.vnull());
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.output_create_product(h.vnull()).create(h.jo(&.{
@@ -885,7 +927,7 @@ switch (client.output_create_product(h.vnull()).create(h.jo(&.{
     .{ "vendorName", h.vstr("example_vendorName") }, // []const u8
     .{ "xmlTemplateFile", h.vstr("example_xmlTemplateFile") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -900,9 +942,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -921,20 +967,20 @@ const output_detail = client.output_detail(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `Value (object)` | No |  |
+| `details` | `Value (object)` | No |  |
 | `id` | `[]const u8` | No |  |
-| `lines` | `Value (object)` | No |  |
-| `progress` | `Value (object)` | No |  |
+| `responseCode` | `i64` | Yes | Response code. |
+| `responseMessage` | `[]const u8` | Yes | Response message. |
 
 ### Operations
 
-#### `load(reqmatch: Value, ctrl: Value) OpResult`
+#### `load(reqmatch: Value, ctrl: Value) EntResult`
 
-Load a single entity matching the given criteria. `.ok` carries the entity data, `.err` the branded error.
+Load a single entity matching the given criteria. `.ok` carries the entity, whose record `asEntity().data(null)` reads, and `.err` the branded error.
 
 ```zig
 switch (client.output_detail(h.vnull()).load(h.jo(&.{.{ "id", h.vstr("output_detail_id") }}), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("load failed: {s}\n", .{e.msg}),
 }
 ```
@@ -949,9 +995,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -988,9 +1038,9 @@ const output_list = client.output_list(h.vnull());
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.output_list(h.vnull()).create(h.jo(&.{
@@ -998,7 +1048,7 @@ switch (client.output_list(h.vnull()).create(h.jo(&.{
     .{ "responseCode", h.vnum(1) }, // i64
     .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1013,9 +1063,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -1040,13 +1094,13 @@ const output_message = client.output_message(h.vnull());
 
 ### Operations
 
-#### `load(reqmatch: Value, ctrl: Value) OpResult`
+#### `load(reqmatch: Value, ctrl: Value) EntResult`
 
-Load a single entity matching the given criteria. `.ok` carries the entity data, `.err` the branded error.
+Load a single entity matching the given criteria. `.ok` carries the entity, whose record `asEntity().data(null)` reads, and `.err` the branded error.
 
 ```zig
 switch (client.output_message(h.vnull()).load(h.jo(&.{.{ "id", h.vstr("output_message_id") }}), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("load failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1061,9 +1115,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -1090,9 +1148,9 @@ const output_move_tid = client.output_move_tid(h.vnull());
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.output_move_tid(h.vnull()).create(h.jo(&.{
@@ -1102,7 +1160,7 @@ switch (client.output_move_tid(h.vnull()).create(h.jo(&.{
     .{ "targetPackageOrderUUID", h.vstr("example_targetPackageOrderUUID") }, // []const u8
     .{ "targetProductOrderUUID", h.vstr("example_targetProductOrderUUID") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1117,9 +1175,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -1145,9 +1207,9 @@ const output_remove_product = client.output_remove_product(h.vnull());
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.output_remove_product(h.vnull()).create(h.jo(&.{
@@ -1156,7 +1218,7 @@ switch (client.output_remove_product(h.vnull()).create(h.jo(&.{
     .{ "responseCode", h.vnum(1) }, // i64
     .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1171,9 +1233,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -1198,19 +1264,21 @@ const output_start = client.output_start(h.vnull());
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.output_start(h.vnull()).create(h.jo(&.{
     .{ "responseCode", h.vnum(1) }, // i64
     .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -1222,9 +1290,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -1251,13 +1323,13 @@ const output_status = client.output_status(h.vnull());
 
 ### Operations
 
-#### `load(reqmatch: Value, ctrl: Value) OpResult`
+#### `load(reqmatch: Value, ctrl: Value) EntResult`
 
-Load a single entity matching the given criteria. `.ok` carries the entity data, `.err` the branded error.
+Load a single entity matching the given criteria. `.ok` carries the entity, whose record `asEntity().data(null)` reads, and `.err` the branded error.
 
 ```zig
 switch (client.output_status(h.vnull()).load(h.jo(&.{.{ "id", h.vstr("output_status_id") }}), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("load failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1272,9 +1344,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -1309,9 +1385,9 @@ const output_update_product = client.output_update_product(h.vnull());
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) OpResult`
+#### `create(reqdata: Value, ctrl: Value) EntResult`
 
-Create a new entity with the given data. `.ok` carries the created entity data.
+Create a new entity with the given data. `.ok` carries the created entity.
 
 ```zig
 switch (client.output_update_product(h.vnull()).create(h.jo(&.{
@@ -1319,7 +1395,7 @@ switch (client.output_update_product(h.vnull()).create(h.jo(&.{
     .{ "responseCode", h.vnum(1) }, // i64
     .{ "responseMessage", h.vstr("example_responseMessage") }, // []const u8
 }), h.vnull())) {
-    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
+    .ok => |result| std.debug.print("{s}\n", .{h.stringify(result.asEntity().data(null))}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -1334,9 +1410,13 @@ Get the entity data. Pass a map to set it.
 
 Get the entity match criteria. Pass a map to set it.
 
-#### `stream(action: []const u8, args: Value, callopts: Value) []Value`
+#### `stream(action: []const u8, args: Value, callopts: Value) StreamResult`
 
 Run an operation through the pipeline and materialise its result items.
+`StreamResult` is `.ok` with the items, or `.err` with the error that
+failed the operation, as an operation call reports it. Under `throw: false`
+in `callopts.ctrl`, a failed stream is `.ok` with whatever data the
+failure left.
 
 #### `get_name() []const u8`
 
@@ -1766,6 +1846,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

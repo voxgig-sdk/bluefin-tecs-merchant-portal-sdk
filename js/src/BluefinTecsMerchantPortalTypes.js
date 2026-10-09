@@ -328,10 +328,10 @@
 
 /**
  * @typedef {Object} OutputDetail
- * @property {Object} [batch]
+ * @property {Object} [details]
  * @property {string} [id]
- * @property {Object} [lines]
- * @property {Object} [progress]
+ * @property {number} responseCode
+ * @property {string} responseMessage
  */
 
 /**

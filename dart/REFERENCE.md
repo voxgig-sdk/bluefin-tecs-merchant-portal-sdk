@@ -196,7 +196,7 @@ final merchant_portal_api_controller = client.MerchantPortalApiController();
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.MerchantPortalApiController().create({
@@ -252,7 +252,7 @@ final merchant_portal_common_controller = client.MerchantPortalCommonController(
 
 #### `load(reqmatch, [ctrl]) -> Future<dynamic>`
 
-Load a single entity matching the given criteria. Returns the entity data and throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and throws on error.
 
 ```dart
 final result = await client.MerchantPortalCommonController().load();
@@ -296,7 +296,7 @@ final merchant_portal_pam_contract_controller = client.MerchantPortalPamContract
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.MerchantPortalPamContractController().create({
@@ -344,7 +344,7 @@ final merchant_portal_pam_document_controller = client.MerchantPortalPamDocument
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.MerchantPortalPamDocumentController().create({
@@ -411,7 +411,7 @@ final merchant_portal_pam_form_controller = client.MerchantPortalPamFormControll
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.MerchantPortalPamFormController().create({
@@ -462,7 +462,7 @@ final merchant_portal_pam_mandator_controller = client.MerchantPortalPamMandator
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.MerchantPortalPamMandatorController().create({
@@ -564,7 +564,7 @@ final merchant_portal_pam_merchant_controller = client.MerchantPortalPamMerchant
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.MerchantPortalPamMerchantController().create({
@@ -647,7 +647,7 @@ final merchant_portal_pam_package_controller = client.MerchantPortalPamPackageCo
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.MerchantPortalPamPackageController().create({
@@ -702,7 +702,7 @@ final merchant_portal_pam_product_controller = client.MerchantPortalPamProductCo
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.MerchantPortalPamProductController().create({
@@ -753,7 +753,7 @@ final output_add_product = client.OutputAddProduct();
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.OutputAddProduct().create({
@@ -814,7 +814,7 @@ final output_create_product = client.OutputCreateProduct();
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.OutputCreateProduct().create({
@@ -864,16 +864,16 @@ final output_detail = client.OutputDetail();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `Map<String, dynamic>` | No |  |
+| `details` | `Map<String, dynamic>` | No |  |
 | `id` | `String` | No |  |
-| `lines` | `Map<String, dynamic>` | No |  |
-| `progress` | `Map<String, dynamic>` | No |  |
+| `responseCode` | `int` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
 
 ### Operations
 
 #### `load(reqmatch, [ctrl]) -> Future<dynamic>`
 
-Load a single entity matching the given criteria. Returns the entity data and throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and throws on error.
 
 ```dart
 final result = await client.OutputDetail().load({'id': 'output_detail_id'});
@@ -930,7 +930,7 @@ final output_list = client.OutputList();
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.OutputList().create({
@@ -979,7 +979,7 @@ final output_message = client.OutputMessage();
 
 #### `load(reqmatch, [ctrl]) -> Future<dynamic>`
 
-Load a single entity matching the given criteria. Returns the entity data and throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and throws on error.
 
 ```dart
 final result = await client.OutputMessage().load({'id': 'output_message_id'});
@@ -1026,7 +1026,7 @@ final output_move_tid = client.OutputMoveTid();
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.OutputMoveTid().create({
@@ -1078,7 +1078,7 @@ final output_remove_product = client.OutputRemoveProduct();
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.OutputRemoveProduct().create({
@@ -1128,7 +1128,7 @@ final output_start = client.OutputStart();
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.OutputStart().create({
@@ -1178,7 +1178,7 @@ final output_status = client.OutputStatus();
 
 #### `load(reqmatch, [ctrl]) -> Future<dynamic>`
 
-Load a single entity matching the given criteria. Returns the entity data and throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and throws on error.
 
 ```dart
 final result = await client.OutputStatus().load({'id': 'output_status_id'});
@@ -1233,7 +1233,7 @@ final output_update_product = client.OutputUpdateProduct();
 
 #### `create(reqdata, [ctrl]) -> Future<dynamic>`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```dart
 final result = await client.OutputUpdateProduct().create({
@@ -1685,6 +1685,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

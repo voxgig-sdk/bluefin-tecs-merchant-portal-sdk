@@ -25,6 +25,10 @@ main: kit: entity: merchant_portal_pam_contract_controller: {
       name: "create"
       points: [
         {
+          bf: [
+            "language"
+            "productOrderUUID"
+          ]
           co: {
             id: "POST /merchantportalws/generateContract"
             source: "openapi3"
@@ -35,7 +39,7 @@ main: kit: entity: merchant_portal_pam_contract_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -47,6 +51,10 @@ main: kit: entity: merchant_portal_pam_contract_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -72,7 +80,7 @@ main: kit: entity: merchant_portal_pam_contract_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -84,6 +92,23 @@ main: kit: entity: merchant_portal_pam_contract_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rb: {
+            fields: [
+              {
+                name: "inputMessage"
+              }
+              {
+                binary: true
+                name: "pdfFile"
+              }
+            ]
+            kind: "multipart"
+            media: "multipart/form-data"
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

@@ -1,0 +1,140 @@
+{
+  point: "warning"
+  note: "Points POST /merchantportalws/deactivateTerminal, POST /merchantportalws/reactivateTerminal, POST /merchantportalws/registerAdditionalTerminal and POST /merchantportalws/registerNewMerchant on entity=merchant_portal_api_controller op=create have the same selector (exist: authorization), so only POST /merchantportalws/deactivateTerminal is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "merchant_portal_api_controller"
+  op: "create"
+  points: [
+    "POST /merchantportalws/deactivateTerminal"
+    "POST /merchantportalws/reactivateTerminal"
+    "POST /merchantportalws/registerAdditionalTerminal"
+    "POST /merchantportalws/registerNewMerchant"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /merchantportalws/logDeveloperInfo and GET /merchantportalws/version on entity=merchant_portal_common_controller op=load have the same selector (exist: none), so only GET /merchantportalws/logDeveloperInfo is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "merchant_portal_common_controller"
+  op: "load"
+  points: [
+    "GET /merchantportalws/logDeveloperInfo"
+    "GET /merchantportalws/version"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points POST /merchantportalws/generateContract and POST /merchantportalws/uploadContract on entity=merchant_portal_pam_contract_controller op=create have the same selector (exist: authorization), so only POST /merchantportalws/generateContract is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "merchant_portal_pam_contract_controller"
+  op: "create"
+  points: [
+    "POST /merchantportalws/generateContract"
+    "POST /merchantportalws/uploadContract"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points POST /merchantportalws/documentsList and POST /merchantportalws/downloadDocument on entity=merchant_portal_pam_document_controller op=create have the same selector (exist: authorization), so only POST /merchantportalws/documentsList is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "merchant_portal_pam_document_controller"
+  op: "create"
+  points: [
+    "POST /merchantportalws/documentsList"
+    "POST /merchantportalws/downloadDocument"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points POST /merchantportalws/applicationForm, POST /merchantportalws/packageForm, POST /merchantportalws/reopenForm, POST /merchantportalws/secretKey, POST /merchantportalws/submitForm and POST /merchantportalws/submitValues on entity=merchant_portal_pam_form_controller op=create have the same selector (exist: authorization), so only POST /merchantportalws/applicationForm is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "merchant_portal_pam_form_controller"
+  op: "create"
+  points: [
+    "POST /merchantportalws/applicationForm"
+    "POST /merchantportalws/packageForm"
+    "POST /merchantportalws/reopenForm"
+    "POST /merchantportalws/secretKey"
+    "POST /merchantportalws/submitForm"
+    "POST /merchantportalws/submitValues"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points POST /merchantportalws/createMandatorConfig, POST /merchantportalws/introduceMandatorPackage and POST /merchantportalws/selfRegistrationLink on entity=merchant_portal_pam_mandator_controller op=create have the same selector (exist: authorization), so only POST /merchantportalws/createMandatorConfig is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "merchant_portal_pam_mandator_controller"
+  op: "create"
+  points: [
+    "POST /merchantportalws/createMandatorConfig"
+    "POST /merchantportalws/introduceMandatorPackage"
+    "POST /merchantportalws/selfRegistrationLink"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points POST /merchantportalws/contractNumber, POST /merchantportalws/registerAdditionalAcquiring and POST /merchantportalws/updateMerchant on entity=merchant_portal_pam_merchant_controller op=create have the same selector (exist: authorization), so only POST /merchantportalws/contractNumber is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "merchant_portal_pam_merchant_controller"
+  op: "create"
+  points: [
+    "POST /merchantportalws/contractNumber"
+    "POST /merchantportalws/registerAdditionalAcquiring"
+    "POST /merchantportalws/updateMerchant"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points POST /merchantportalws/availablePackages, POST /merchantportalws/orderPackage, POST /merchantportalws/orderedPackages and POST /merchantportalws/packageTemplates on entity=merchant_portal_pam_package_controller op=create have the same selector (exist: authorization), so only POST /merchantportalws/availablePackages is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "merchant_portal_pam_package_controller"
+  op: "create"
+  points: [
+    "POST /merchantportalws/availablePackages"
+    "POST /merchantportalws/orderPackage"
+    "POST /merchantportalws/orderedPackages"
+    "POST /merchantportalws/packageTemplates"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points POST /merchantportalws/approveProduct, POST /merchantportalws/declineProduct, POST /merchantportalws/orderAdditionalProduct and POST /merchantportalws/productsList on entity=merchant_portal_pam_product_controller op=create have the same selector (exist: authorization), so only POST /merchantportalws/approveProduct is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "merchant_portal_pam_product_controller"
+  op: "create"
+  points: [
+    "POST /merchantportalws/approveProduct"
+    "POST /merchantportalws/declineProduct"
+    "POST /merchantportalws/orderAdditionalProduct"
+    "POST /merchantportalws/productsList"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /merchantportalws/batch/registerAdditionalTerminal/restart/{id} and GET /merchantportalws/batch/registerAdditionalTerminal/stop/{id} on entity=output_message op=load have the same selector (exist: authorization,id), so only GET /merchantportalws/batch/registerAdditionalTerminal/restart/{id} is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "output_message"
+  op: "load"
+  points: [
+    "GET /merchantportalws/batch/registerAdditionalTerminal/restart/{id}"
+    "GET /merchantportalws/batch/registerAdditionalTerminal/stop/{id}"
+  ]
+
+}

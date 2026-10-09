@@ -189,6 +189,7 @@ local function make_config()
         },
         ["optspec"] = {
           ["clearTimer"] = "`$FUNCTION`",
+          ["now"] = "`$FUNCTION`",
           ["setTimer"] = "`$FUNCTION`",
         },
         ["strict"] = false,
@@ -480,7 +481,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -491,6 +492,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -518,7 +523,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -529,6 +534,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -556,7 +565,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -567,6 +576,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -594,7 +607,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -605,6 +618,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -645,6 +662,10 @@ local function make_config()
                 },
                 ["args"] = {},
                 ["select"] = {},
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
+                },
               },
               {
                 ["kind"] = "http",
@@ -669,6 +690,10 @@ local function make_config()
                 },
                 ["args"] = {},
                 ["select"] = {},
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
+                },
               },
             },
           },
@@ -723,7 +748,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -734,6 +759,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -761,7 +790,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -772,6 +801,23 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["body"] = {
+                  ["fields"] = {
+                    {
+                      ["name"] = "inputMessage",
+                    },
+                    {
+                      ["binary"] = true,
+                      ["name"] = "pdfFile",
+                    },
+                  },
+                  ["kind"] = "multipart",
+                  ["media"] = "multipart/form-data",
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -833,7 +879,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -844,6 +890,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -871,7 +921,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -882,6 +932,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -992,7 +1046,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1003,6 +1057,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -1030,7 +1088,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1041,6 +1099,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -1068,7 +1130,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1079,6 +1141,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -1106,7 +1172,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1117,6 +1183,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -1144,7 +1214,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1155,6 +1225,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -1182,7 +1256,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1193,6 +1267,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -1258,7 +1336,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1269,6 +1347,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -1296,7 +1378,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1307,6 +1389,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -1334,7 +1420,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1345,6 +1431,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -1556,7 +1646,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1567,6 +1657,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -1594,7 +1688,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1605,6 +1699,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -1632,7 +1730,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1643,6 +1741,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -1668,6 +1770,10 @@ local function make_config()
                 },
                 ["args"] = {},
                 ["select"] = {},
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
+                },
               },
             },
           },
@@ -1777,7 +1883,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1788,6 +1894,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -1815,7 +1925,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1826,6 +1936,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -1853,7 +1967,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1864,6 +1978,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -1891,7 +2009,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -1902,6 +2020,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -1929,16 +2051,16 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                     },
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "authorization",
-                  },
+                ["select"] = {},
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -2037,7 +2159,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -2048,6 +2170,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -2075,7 +2201,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -2086,6 +2212,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -2113,7 +2243,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -2124,6 +2254,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -2151,7 +2285,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -2162,6 +2296,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -2234,7 +2372,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -2245,6 +2383,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -2385,7 +2527,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -2396,6 +2538,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -2408,8 +2554,8 @@ local function make_config()
       ["output_detail"] = {
         ["fields"] = {
           {
-            ["name"] = "batch",
-            ["title"] = "Batch",
+            ["name"] = "details",
+            ["title"] = "Details",
             ["type"] = "`$OBJECT`",
           },
           {
@@ -2418,14 +2564,19 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
-            ["name"] = "lines",
-            ["title"] = "Lines",
-            ["type"] = "`$OBJECT`",
+            ["name"] = "responseCode",
+            ["title"] = "Response Code",
+            ["type"] = "`$INTEGER`",
+            ["req"] = true,
+            ["short"] = "Response code.",
+            ["format"] = "int32",
           },
           {
-            ["name"] = "progress",
-            ["title"] = "Progress",
-            ["type"] = "`$OBJECT`",
+            ["name"] = "responseMessage",
+            ["title"] = "Response Message",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Response message.",
           },
         },
         ["id"] = {
@@ -2469,13 +2620,13 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body.details`",
+                  ["res"] = "`body`",
                 },
                 ["args"] = {
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -2496,6 +2647,10 @@ local function make_config()
                     "authorization",
                     "id",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -2583,7 +2738,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -2594,6 +2749,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -2673,7 +2832,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -2694,6 +2853,10 @@ local function make_config()
                     "authorization",
                     "id",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
               {
@@ -2733,7 +2896,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -2754,6 +2917,10 @@ local function make_config()
                     "authorization",
                     "id",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -2830,7 +2997,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -2841,6 +3008,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -2913,7 +3084,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -2924,6 +3095,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -2999,7 +3174,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -3010,6 +3185,23 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["body"] = {
+                  ["fields"] = {
+                    {
+                      ["binary"] = true,
+                      ["name"] = "inputCsvFile",
+                    },
+                    {
+                      ["name"] = "inputJsonMessage",
+                    },
+                  },
+                  ["kind"] = "multipart",
+                  ["media"] = "multipart/form-data",
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -3100,7 +3292,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -3121,6 +3313,10 @@ local function make_config()
                     "authorization",
                     "id",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -3246,7 +3442,7 @@ local function make_config()
                   ["header"] = {
                     {
                       ["name"] = "authorization",
-                      ["orig"] = "authorization",
+                      ["orig"] = "Authorization",
                       ["type"] = "`$STRING`",
                       ["kind"] = "header",
                       ["reqd"] = true,
@@ -3257,6 +3453,10 @@ local function make_config()
                   ["exist"] = {
                     "authorization",
                   },
+                },
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },

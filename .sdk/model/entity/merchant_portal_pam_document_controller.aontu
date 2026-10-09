@@ -33,6 +33,10 @@ main: kit: entity: merchant_portal_pam_document_controller: {
       name: "create"
       points: [
         {
+          bf: [
+            "packageOrderUUID"
+            "productOrderUUID"
+          ]
           co: {
             id: "POST /merchantportalws/documentsList"
             source: "openapi3"
@@ -43,7 +47,7 @@ main: kit: entity: merchant_portal_pam_document_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -55,6 +59,10 @@ main: kit: entity: merchant_portal_pam_document_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -70,6 +78,11 @@ main: kit: entity: merchant_portal_pam_document_controller: {
           }
         }
         {
+          bf: [
+            "appFormFieldDescUUID"
+            "packageOrderUUID"
+            "productOrderUUID"
+          ]
           co: {
             id: "POST /merchantportalws/downloadDocument"
             source: "openapi3"
@@ -80,7 +93,7 @@ main: kit: entity: merchant_portal_pam_document_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -92,6 +105,10 @@ main: kit: entity: merchant_portal_pam_document_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

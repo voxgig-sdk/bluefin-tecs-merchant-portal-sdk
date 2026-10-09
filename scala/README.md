@@ -17,7 +17,7 @@ keeps the cognitive load low.
 This package is not yet published to Maven Central. The generated SDK is a
 plain-source scala-cli project (no build tool, no third-party runtime
 dependencies). Install it from the GitHub release tag
-(`scala/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases)) or from a source
+(`scala/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags)) or from a source
 checkout — compile it with scala-cli:
 
 ```bash
@@ -34,6 +34,7 @@ loading a specific record.
 
 ```scala
 import voxgig.bluefintecsmerchantportalsdk.core.BluefinTecsMerchantPortalSDK
+import voxgig.bluefintecsmerchantportalsdk.core.SdkEntity
 
 val client = new BluefinTecsMerchantPortalSDK()
 ```
@@ -42,7 +43,7 @@ val client = new BluefinTecsMerchantPortalSDK()
 
 ```scala
 // Create — returns the ENTITY (call data() for the record)
-val created = client.merchantPortalApiController(null).create(java.util.Map.of("business_reg_number", "example_business_reg_number", "city", "example_city", "country", "example_country", "currency", "example_currency", "merchant_category_code", 1L, "merchant_name", "example_merchant_name", "packageid", "example_packageid", "packageorderuuid", "example_packageorderuuid", "reason_deactivation", "example_reason_deactivation", "reason_reactivation", "example_reason_reactivation", "street", "example_street", "terminal_country_code", "example_terminal_country_code", "terminal_language_code", "example_terminal_language_code", "terminal_location", "example_terminal_location", "terminal_serial_number", "example_terminal_serial_number", "terminalid", 1L, "vu_nummer", "example_vu_nummer", "zipcode", "example_zipcode"), null)
+val created = client.merchantPortalApiController(null).create(java.util.Map.ofEntries(java.util.Map.entry("business_reg_number", "example_business_reg_number"), java.util.Map.entry("city", "example_city"), java.util.Map.entry("country", "example_country"), java.util.Map.entry("currency", "example_currency"), java.util.Map.entry("merchant_category_code", 1L), java.util.Map.entry("merchant_name", "example_merchant_name"), java.util.Map.entry("packageid", "example_packageid"), java.util.Map.entry("packageorderuuid", "example_packageorderuuid"), java.util.Map.entry("reason_deactivation", "example_reason_deactivation"), java.util.Map.entry("reason_reactivation", "example_reason_reactivation"), java.util.Map.entry("street", "example_street"), java.util.Map.entry("terminal_country_code", "example_terminal_country_code"), java.util.Map.entry("terminal_language_code", "example_terminal_language_code"), java.util.Map.entry("terminal_location", "example_terminal_location"), java.util.Map.entry("terminal_serial_number", "example_terminal_serial_number"), java.util.Map.entry("terminalid", 1L), java.util.Map.entry("vu_nummer", "example_vu_nummer"), java.util.Map.entry("zipcode", "example_zipcode")), null)
 
 ```
 
@@ -54,14 +55,15 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 ```ts
 try {
   const outputdetail = await client.OutputDetail().load({ id: "example_id" })
-  console.log(outputdetail)
+  console.log(outputdetail.data())
 } catch (err) {
   console.error('load failed:', err)
 }
 ```
 
 The low-level `direct()` method does **not** throw — it returns the
-value or an `Error`, so check the result before using it:
+result envelope. Branch on `ok`; on failure `status` holds the HTTP status
+(for error responses) and `err` holds the error:
 
 ```ts
 const result = await client.direct({
@@ -70,8 +72,8 @@ const result = await client.direct({
   params: { id: 'example_id' },
 })
 
-if (result instanceof Error) {
-  throw result
+if (!result.ok) {
+  console.error('request failed:', result.status, result.err)
 }
 ```
 
@@ -121,11 +123,10 @@ Create a mock client for unit testing — no server required:
 ```scala
 val client = BluefinTecsMerchantPortalSDK.testSDK(null, null)
 
-// Entity ops return the ENTITY and raises on error;
-// call data() for the record.
-val outputDetail = client.outputDetail(null).load(java.util.Map.of("id", "test01"), null)
-// outputDetail holds the mock response record
-println(outputDetail)
+// Entity ops return the entity; they raise on error.
+val outputDetail = client.outputDetail(null).load(java.util.Map.of("id", "test01"), null).asInstanceOf[SdkEntity]
+// data() reads the entity's mock record
+println(outputDetail.data())
 ```
 
 ### Use a custom fetch function
@@ -225,8 +226,8 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> Object` | Load a single entity by match criteria. Raises on error. |
-| `create` | `(reqdata, ctrl) -> Object` | Create a new entity. Raises on error. |
+| `load` | `(reqmatch, ctrl) -> Object` | Load a single entity by match criteria, and return it. Raises on error. |
+| `create` | `(reqdata, ctrl) -> Object` | Create a new entity, and return it. Raises on error. |
 | `data` | `(newdata*) -> Object` | Get or set entity data. |
 | `matchArgs` | `(newmatch*) -> Object` | Get or set entity match criteria. |
 | `make` | `() -> Entity` | Create a new instance with the same options. |
@@ -234,9 +235,10 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the ENTITY (call data() for the record) (a `Map` for single-entity
-ops, an aggregate `List` for `list`) as `Object` and raise on error. Wrap
-calls in `try`/`catch` to handle failures.
+Entity operations return the entity, and `list` a list of entities, one per
+record, as `Object`; an entity is an `SdkEntity`, whose `data()` reads its
+record. They raise on error, so wrap calls in `try`/`catch` to handle
+failures.
 
 The `direct()` escape hatch never raises — it returns a result
 `java.util.Map[String, Object]` you branch on via `result.get("ok")`:
@@ -471,10 +473,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: load.
 
@@ -637,25 +639,25 @@ Create an instance: `val merchantPortalApiController = client.merchantPortalApiC
 #### Example: Create
 
 ```scala
-val merchantPortalApiController = client.merchantPortalApiController(null).create(java.util.Map.of(
-    "business_reg_number", "example_business_reg_number",  // String
-    "city", "example_city",  // String
-    "country", "example_country",  // String
-    "currency", "example_currency",  // String
-    "merchant_category_code", 1L,  // java.lang.Long
-    "merchant_name", "example_merchant_name",  // String
-    "packageid", "example_packageid",  // String
-    "packageorderuuid", "example_packageorderuuid",  // String
-    "reason_deactivation", "example_reason_deactivation",  // String
-    "reason_reactivation", "example_reason_reactivation",  // String
-    "street", "example_street",  // String
-    "terminal_country_code", "example_terminal_country_code",  // String
-    "terminal_language_code", "example_terminal_language_code",  // String
-    "terminal_location", "example_terminal_location",  // String
-    "terminal_serial_number", "example_terminal_serial_number",  // String
-    "terminalid", 1L,  // java.lang.Long
-    "vu_nummer", "example_vu_nummer",  // String
-    "zipcode", "example_zipcode"  // String
+val merchantPortalApiController = client.merchantPortalApiController(null).create(java.util.Map.ofEntries(
+    java.util.Map.entry("business_reg_number", "example_business_reg_number"),  // String
+    java.util.Map.entry("city", "example_city"),  // String
+    java.util.Map.entry("country", "example_country"),  // String
+    java.util.Map.entry("currency", "example_currency"),  // String
+    java.util.Map.entry("merchant_category_code", 1L),  // java.lang.Long
+    java.util.Map.entry("merchant_name", "example_merchant_name"),  // String
+    java.util.Map.entry("packageid", "example_packageid"),  // String
+    java.util.Map.entry("packageorderuuid", "example_packageorderuuid"),  // String
+    java.util.Map.entry("reason_deactivation", "example_reason_deactivation"),  // String
+    java.util.Map.entry("reason_reactivation", "example_reason_reactivation"),  // String
+    java.util.Map.entry("street", "example_street"),  // String
+    java.util.Map.entry("terminal_country_code", "example_terminal_country_code"),  // String
+    java.util.Map.entry("terminal_language_code", "example_terminal_language_code"),  // String
+    java.util.Map.entry("terminal_location", "example_terminal_location"),  // String
+    java.util.Map.entry("terminal_serial_number", "example_terminal_serial_number"),  // String
+    java.util.Map.entry("terminalid", 1L),  // java.lang.Long
+    java.util.Map.entry("vu_nummer", "example_vu_nummer"),  // String
+    java.util.Map.entry("zipcode", "example_zipcode")  // String
 ), null)
 ```
 
@@ -840,20 +842,20 @@ Create an instance: `val merchantPortalPamMerchantController = client.merchantPo
 #### Example: Create
 
 ```scala
-val merchantPortalPamMerchantController = client.merchantPortalPamMerchantController(null).create(java.util.Map.of(
-    "businessRegistrationNumber", "example_businessRegistrationNumber",  // String
-    "companyName", "example_companyName",  // String
-    "corporateUUID", "example_corporateUUID",  // String
-    "currency", "example_currency",  // String
-    "email", "example_email",  // String
-    "language", "example_language",  // String
-    "login", "example_login",  // String
-    "mandator", "example_mandator",  // String
-    "merchantContractNumber", "example_merchantContractNumber",  // String
-    "packageorderuuid", "example_packageorderuuid",  // String
-    "phoneNumber", "example_phoneNumber",  // String
-    "productid_acquirer", "example_productid_acquirer",  // String
-    "vu_nummer", "example_vu_nummer"  // String
+val merchantPortalPamMerchantController = client.merchantPortalPamMerchantController(null).create(java.util.Map.ofEntries(
+    java.util.Map.entry("businessRegistrationNumber", "example_businessRegistrationNumber"),  // String
+    java.util.Map.entry("companyName", "example_companyName"),  // String
+    java.util.Map.entry("corporateUUID", "example_corporateUUID"),  // String
+    java.util.Map.entry("currency", "example_currency"),  // String
+    java.util.Map.entry("email", "example_email"),  // String
+    java.util.Map.entry("language", "example_language"),  // String
+    java.util.Map.entry("login", "example_login"),  // String
+    java.util.Map.entry("mandator", "example_mandator"),  // String
+    java.util.Map.entry("merchantContractNumber", "example_merchantContractNumber"),  // String
+    java.util.Map.entry("packageorderuuid", "example_packageorderuuid"),  // String
+    java.util.Map.entry("phoneNumber", "example_phoneNumber"),  // String
+    java.util.Map.entry("productid_acquirer", "example_productid_acquirer"),  // String
+    java.util.Map.entry("vu_nummer", "example_vu_nummer")  // String
 ), null)
 ```
 
@@ -994,19 +996,19 @@ Create an instance: `val outputCreateProduct = client.outputCreateProduct(null)`
 #### Example: Create
 
 ```scala
-val outputCreateProduct = client.outputCreateProduct(null).create(java.util.Map.of(
-    "allowMultipleOrders", true,  // java.lang.Boolean
-    "appFormTemplateName", "example_appFormTemplateName",  // String
-    "contractNeeded", true,  // java.lang.Boolean
-    "descriptionKey", "example_descriptionKey",  // String
-    "nameKey", "example_nameKey",  // String
-    "prescreeningAllowed", true,  // java.lang.Boolean
-    "productName", "example_productName",  // String
-    "responseCode", 1L,  // java.lang.Long
-    "responseMessage", "example_responseMessage",  // String
-    "terminalTemplateName", "example_terminalTemplateName",  // String
-    "vendorName", "example_vendorName",  // String
-    "xmlTemplateFile", "example_xmlTemplateFile"  // String
+val outputCreateProduct = client.outputCreateProduct(null).create(java.util.Map.ofEntries(
+    java.util.Map.entry("allowMultipleOrders", true),  // java.lang.Boolean
+    java.util.Map.entry("appFormTemplateName", "example_appFormTemplateName"),  // String
+    java.util.Map.entry("contractNeeded", true),  // java.lang.Boolean
+    java.util.Map.entry("descriptionKey", "example_descriptionKey"),  // String
+    java.util.Map.entry("nameKey", "example_nameKey"),  // String
+    java.util.Map.entry("prescreeningAllowed", true),  // java.lang.Boolean
+    java.util.Map.entry("productName", "example_productName"),  // String
+    java.util.Map.entry("responseCode", 1L),  // java.lang.Long
+    java.util.Map.entry("responseMessage", "example_responseMessage"),  // String
+    java.util.Map.entry("terminalTemplateName", "example_terminalTemplateName"),  // String
+    java.util.Map.entry("vendorName", "example_vendorName"),  // String
+    java.util.Map.entry("xmlTemplateFile", "example_xmlTemplateFile")  // String
 ), null)
 ```
 
@@ -1025,10 +1027,10 @@ Create an instance: `val outputDetail = client.outputDetail(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `java.util.Map[String, Object]` |  |
+| `details` | `java.util.Map[String, Object]` |  |
 | `id` | `String` |  |
-| `lines` | `java.util.Map[String, Object]` |  |
-| `progress` | `java.util.Map[String, Object]` |  |
+| `responseCode` | `java.lang.Long` | Response code. |
+| `responseMessage` | `String` | Response message. |
 
 #### Example: Load
 

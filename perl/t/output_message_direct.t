@@ -11,6 +11,18 @@ use Cwd ();
 use BluefinTecsMerchantPortalSDK;
 require(Cwd::abs_path("$FindBin::Bin/runner.pm"));
 
+# main.kit.test.live.strict is true (the default is true): a live
+# request that fails, or a live test missing an input it needs,
+# fails the test.
+# An account with no record for a test to read skips it either way.
+use constant LIVE_STRICT => 1;
+
+sub live_ok {
+  my ($result) = @_;
+  my $status = BluefinTecsMerchantPortalHelpers::to_int($result->{status});
+  return !defined $result->{err} && $result->{ok} && $status >= 200 && $status < 300;
+}
+
 DIRECT_LOAD: {
   my $setup = output_message_direct_setup({ 'id' => 'direct01' });
   my ($_should_skip, $_reason) = BluefinTecsMerchantPortalTestRunner::is_control_skipped(
@@ -21,15 +33,20 @@ DIRECT_LOAD: {
     last DIRECT_LOAD;
   }
   if ($setup->{live}) {
-    note('live direct-load needs real ID - set *_ENTID env var with real IDs to run');
-    pass('direct-load-output_message: skipped (live)');
-    last DIRECT_LOAD;
+    my @missing = grep { !defined $setup->{idmap}{$_} } ('output_message01');
+    if (@missing) {
+      BluefinTecsMerchantPortalTestRunner::live_miss(LIVE_STRICT, 'direct-load-output_message', 'Live test blocked: needs ' . join(', ', @missing) . ' via BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_MESSAGE_ENTID');
+      last DIRECT_LOAD;
+    }
   }
   my $client = $setup->{client};
 
   my $params = {};
   my $query = {};
-  unless ($setup->{live}) {
+  if ($setup->{live}) {
+    $params->{'id'} = $setup->{idmap}{'output_message01'};
+  }
+  else {
     $params->{'id'} = 'direct01';
   }
 
@@ -40,23 +57,12 @@ DIRECT_LOAD: {
     'query' => $query,
   });
   if ($setup->{live}) {
-    # Live mode is lenient: synthetic IDs frequently 4xx. Skip rather
-    # than fail when the load endpoint isn't reachable with the IDs
-    # we can construct from setup idmap.
-    if (defined $result->{err}) {
-      note("load call failed (likely synthetic IDs against live API): $result->{err}");
-      pass('direct-load-output_message: skipped (live)');
+    if (!live_ok($result)) {
+      BluefinTecsMerchantPortalTestRunner::live_miss(LIVE_STRICT, 'direct-load-output_message', 'Live load failed: ' . BluefinTecsMerchantPortalTestRunner::live_describe($result));
       last DIRECT_LOAD;
     }
-    unless ($result->{ok}) {
-      note('load call not ok (likely synthetic IDs against live API)');
-      pass('direct-load-output_message: skipped (live)');
-      last DIRECT_LOAD;
-    }
-    my $status = BluefinTecsMerchantPortalHelpers::to_int($result->{status});
-    if ($status < 200 || $status >= 300) {
-      note("expected 2xx status, got $status");
-      pass('direct-load-output_message: skipped (live)');
+    if (!defined $result->{data}) {
+      BluefinTecsMerchantPortalTestRunner::live_miss(LIVE_STRICT, 'direct-load-output_message', 'Live load returned no data: ' . BluefinTecsMerchantPortalTestRunner::live_describe($result));
       last DIRECT_LOAD;
     }
     pass('direct-load-output_message: live ok');
@@ -94,11 +100,12 @@ sub output_message_direct_setup {
     my $client = BluefinTecsMerchantPortalSDK->new({
       %{ BluefinTecsMerchantPortalTestRunner::live_client_options() },
     });
+    my $idmap = $env->{'BLUEFIN_TECS_MERCHANT_PORTAL_TEST_OUTPUT_MESSAGE_ENTID'};
     return {
       'client' => $client,
       'calls' => $calls,
       'live' => 1,
-      'idmap' => {},
+      'idmap' => ref $idmap eq 'HASH' ? $idmap : {},
     };
   }
 

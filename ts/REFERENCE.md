@@ -303,8 +303,10 @@ Make a direct HTTP request to any API endpoint.
 | `fetchargs.headers` | `object` | Request headers (merged with defaults). |
 | `fetchargs.body` | `any` | Request body (objects are JSON-serialized). |
 | `fetchargs.ctrl` | `object` | Control options (e.g. `{ explain: true }`). |
+| `fetchargs.ctrl.signal` | `AbortSignal` | Aborts the request in flight: `ok` is then `false` and `err.code` is `request_aborted`. |
 
-**Returns:** `Promise<{ ok, status, headers, data } | Error>`
+**Returns:** `Promise<{ ok, status, headers, data }>`. On a failure
+`ok` is `false` and `err` holds the error.
 
 #### `prepare(fetchargs?: object)`
 
@@ -318,6 +320,15 @@ same parameters as `direct()`.
 Alias for `BluefinTecsMerchantPortalSDK.test()`.
 
 **Returns:** `BluefinTecsMerchantPortalSDK` instance in test mode.
+
+#### Cancelling a call
+
+Every entity operation takes an optional `ctrl` object after its match or
+data, and an `AbortSignal` in `ctrl.signal` cancels the request in flight.
+The operation then rejects with an error whose `code` is
+`request_aborted` and whose `cause` is the signal's reason. A request
+whose signal has already aborted is not sent. `stream()` takes the signal
+as `callopts.signal`, and ends when it aborts.
 
 
 ---
@@ -370,7 +381,7 @@ const merchant_portal_api_controller = client.MerchantPortalApiController()
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.MerchantPortalApiController().create({
@@ -433,7 +444,7 @@ const merchant_portal_common_controller = client.MerchantPortalCommonController(
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.MerchantPortalCommonController().load()
@@ -484,7 +495,7 @@ const merchant_portal_pam_contract_controller = client.MerchantPortalPamContract
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.MerchantPortalPamContractController().create({
@@ -492,6 +503,8 @@ const result = await client.MerchantPortalPamContractController().create({
   productOrderUUID: 'example_productOrderUUID',
 })
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -539,7 +552,7 @@ const merchant_portal_pam_document_controller = client.MerchantPortalPamDocument
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.MerchantPortalPamDocumentController().create({
@@ -613,7 +626,7 @@ const merchant_portal_pam_form_controller = client.MerchantPortalPamFormControll
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.MerchantPortalPamFormController().create({
@@ -671,7 +684,7 @@ const merchant_portal_pam_mandator_controller = client.MerchantPortalPamMandator
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.MerchantPortalPamMandatorController().create({
@@ -780,7 +793,7 @@ const merchant_portal_pam_merchant_controller = client.MerchantPortalPamMerchant
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.MerchantPortalPamMerchantController().create({
@@ -870,7 +883,7 @@ const merchant_portal_pam_package_controller = client.MerchantPortalPamPackageCo
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.MerchantPortalPamPackageController().create({
@@ -932,7 +945,7 @@ const merchant_portal_pam_product_controller = client.MerchantPortalPamProductCo
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.MerchantPortalPamProductController().create({
@@ -990,7 +1003,7 @@ const output_add_product = client.OutputAddProduct()
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.OutputAddProduct().create({
@@ -1058,7 +1071,7 @@ const output_create_product = client.OutputCreateProduct()
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.OutputCreateProduct().create({
@@ -1115,16 +1128,16 @@ const output_detail = client.OutputDetail()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `Record<string, any>` | No |  |
+| `details` | `Record<string, any>` | No |  |
 | `id` | `string` | No |  |
-| `lines` | `Record<string, any>` | No |  |
-| `progress` | `Record<string, any>` | No |  |
+| `responseCode` | `number` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
 
 ### Operations
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.OutputDetail().load({ id: 'output_detail_id' })
@@ -1188,7 +1201,7 @@ const output_list = client.OutputList()
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.OutputList().create({
@@ -1244,7 +1257,7 @@ const output_message = client.OutputMessage()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.OutputMessage().load({ id: 'output_message_id' })
@@ -1298,7 +1311,7 @@ const output_move_tid = client.OutputMoveTid()
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.OutputMoveTid().create({
@@ -1357,7 +1370,7 @@ const output_remove_product = client.OutputRemoveProduct()
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.OutputRemoveProduct().create({
@@ -1414,7 +1427,7 @@ const output_start = client.OutputStart()
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.OutputStart().create({
@@ -1422,6 +1435,8 @@ const result = await client.OutputStart().create({
   responseMessage: 'example_responseMessage',
 })
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -1471,7 +1486,7 @@ const output_status = client.OutputStatus()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.OutputStatus().load({ id: 'output_status_id' })
@@ -1533,7 +1548,7 @@ const output_update_product = client.OutputUpdateProduct()
 
 #### `create(data: object, ctrl?: object)`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Resolves to the created entity.
 
 ```ts
 const result = await client.OutputUpdateProduct().create({
@@ -1992,6 +2007,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

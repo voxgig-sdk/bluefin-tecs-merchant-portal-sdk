@@ -26,7 +26,7 @@ class MerchantPortalPamDocumentControllerEntity extends BluefinTecsMerchantPorta
   /**
    * @param {MerchantPortalPamDocumentControllerCreateData} [reqdata]
    * @param {Object} [ctrl]
-   * @returns {Promise<MerchantPortalPamDocumentController>}
+   * @returns {Promise<MerchantPortalPamDocumentControllerEntity>}
    */
   async create(reqdata, ctrl) {
 
@@ -126,9 +126,15 @@ class MerchantPortalPamDocumentControllerEntity extends BluefinTecsMerchantPorta
       return (ctx.result && ctx.result.ok) ? this : out
     }
     catch (err) {
+      // What a hook throws here must not escape the cleaning below.
+      try {
 
-      fres = featureHook(ctx, 'PreUnexpected')
-      if (fres instanceof Promise) { await fres }
+        fres = featureHook(ctx, 'PreUnexpected')
+        if (fres instanceof Promise) { await fres }
+      }
+      catch (hookerr) {
+        err = hookerr
+      }
 
       err = this._unexpected(ctx, err)
 
@@ -140,6 +146,7 @@ class MerchantPortalPamDocumentControllerEntity extends BluefinTecsMerchantPorta
       }
     }
   }
+
 
 
 

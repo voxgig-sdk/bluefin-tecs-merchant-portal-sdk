@@ -357,10 +357,10 @@ class OutputCreateProductCreateData
 /** OutputDetail entity data model. */
 class OutputDetail
 {
-    public ?array $batch = null;
+    public ?array $details = null;
     public ?string $id = null;
-    public ?array $lines = null;
-    public ?array $progress = null;
+    public int $responseCode;
+    public string $responseMessage;
 }
 
 /** Request payload for OutputDetail#load. */

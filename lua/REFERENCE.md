@@ -200,7 +200,7 @@ local merchant_portal_api_controller = client:MerchantPortalApiController(nil)
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:MerchantPortalApiController():create({
@@ -265,7 +265,7 @@ local merchant_portal_common_controller = client:MerchantPortalCommonController(
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:MerchantPortalCommonController():load()
@@ -318,7 +318,7 @@ local merchant_portal_pam_contract_controller = client:MerchantPortalPamContract
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:MerchantPortalPamContractController():create({
@@ -326,6 +326,8 @@ local result, err = client:MerchantPortalPamContractController():create({
   productOrderUUID = --[[ string ]],
 })
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -375,7 +377,7 @@ local merchant_portal_pam_document_controller = client:MerchantPortalPamDocument
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:MerchantPortalPamDocumentController():create({
@@ -451,7 +453,7 @@ local merchant_portal_pam_form_controller = client:MerchantPortalPamFormControll
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:MerchantPortalPamFormController():create({
@@ -511,7 +513,7 @@ local merchant_portal_pam_mandator_controller = client:MerchantPortalPamMandator
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:MerchantPortalPamMandatorController():create({
@@ -622,7 +624,7 @@ local merchant_portal_pam_merchant_controller = client:MerchantPortalPamMerchant
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:MerchantPortalPamMerchantController():create({
@@ -714,7 +716,7 @@ local merchant_portal_pam_package_controller = client:MerchantPortalPamPackageCo
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:MerchantPortalPamPackageController():create({
@@ -778,7 +780,7 @@ local merchant_portal_pam_product_controller = client:MerchantPortalPamProductCo
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:MerchantPortalPamProductController():create({
@@ -838,7 +840,7 @@ local output_add_product = client:OutputAddProduct(nil)
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:OutputAddProduct():create({
@@ -908,7 +910,7 @@ local output_create_product = client:OutputCreateProduct(nil)
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:OutputCreateProduct():create({
@@ -967,16 +969,16 @@ local output_detail = client:OutputDetail(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `table` | No |  |
+| `details` | `table` | No |  |
 | `id` | `string` | No |  |
-| `lines` | `table` | No |  |
-| `progress` | `table` | No |  |
+| `responseCode` | `number` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
 
 ### Operations
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:OutputDetail():load({ id = "output_detail_id" })
@@ -1042,7 +1044,7 @@ local output_list = client:OutputList(nil)
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:OutputList():create({
@@ -1100,7 +1102,7 @@ local output_message = client:OutputMessage(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:OutputMessage():load({ id = "output_message_id" })
@@ -1156,7 +1158,7 @@ local output_move_tid = client:OutputMoveTid(nil)
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:OutputMoveTid():create({
@@ -1217,7 +1219,7 @@ local output_remove_product = client:OutputRemoveProduct(nil)
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:OutputRemoveProduct():create({
@@ -1276,7 +1278,7 @@ local output_start = client:OutputStart(nil)
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:OutputStart():create({
@@ -1284,6 +1286,8 @@ local result, err = client:OutputStart():create({
   responseMessage = --[[ string ]],
 })
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -1335,7 +1339,7 @@ local output_status = client:OutputStatus(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:OutputStatus():load({ id = "output_status_id" })
@@ -1399,7 +1403,7 @@ local output_update_product = client:OutputUpdateProduct(nil)
 
 #### `create(reqdata, ctrl) -> any, err`
 
-Create a new entity with the given data.
+Create a new entity with the given data. Returns the created entity, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:OutputUpdateProduct():create({
@@ -1860,6 +1864,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

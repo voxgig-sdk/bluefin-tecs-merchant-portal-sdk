@@ -250,6 +250,7 @@ class Config {
       },
       'optspec': <String, dynamic>{
         'clearTimer': '`\$FUNCTION`',
+        'now': '`\$FUNCTION`',
         'setTimer': '`\$FUNCTION`',
       },
       'strict': false,
@@ -549,7 +550,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -560,6 +561,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -587,7 +592,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -598,6 +603,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -625,7 +634,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -636,6 +645,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -663,7 +676,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -674,6 +687,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -714,6 +731,10 @@ class Config {
               },
               'args': <String, dynamic>{},
               'select': <String, dynamic>{},
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
+              },
             },
             <String, dynamic>{
               'kind': 'http',
@@ -738,6 +759,10 @@ class Config {
               },
               'args': <String, dynamic>{},
               'select': <String, dynamic>{},
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
+              },
             },
           ],
         },
@@ -792,7 +817,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -803,6 +828,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -830,7 +859,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -841,6 +870,23 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'body': <String, dynamic>{
+                'fields': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'inputMessage',
+                  },
+                  <String, dynamic>{
+                    'binary': true,
+                    'name': 'pdfFile',
+                  },
+                ],
+                'kind': 'multipart',
+                'media': 'multipart/form-data',
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -902,7 +948,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -913,6 +959,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -940,7 +990,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -951,6 +1001,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -1061,7 +1115,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1072,6 +1126,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -1099,7 +1157,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1110,6 +1168,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -1137,7 +1199,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1148,6 +1210,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -1175,7 +1241,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1186,6 +1252,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -1213,7 +1283,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1224,6 +1294,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -1251,7 +1325,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1262,6 +1336,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -1327,7 +1405,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1338,6 +1416,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -1365,7 +1447,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1376,6 +1458,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -1403,7 +1489,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1414,6 +1500,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -1625,7 +1715,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1636,6 +1726,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -1663,7 +1757,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1674,6 +1768,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -1701,7 +1799,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1712,6 +1810,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -1737,6 +1839,10 @@ class Config {
               },
               'args': <String, dynamic>{},
               'select': <String, dynamic>{},
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
+              },
             },
           ],
         },
@@ -1846,7 +1952,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1857,6 +1963,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -1884,7 +1994,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1895,6 +2005,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -1922,7 +2036,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1933,6 +2047,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -1960,7 +2078,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -1971,6 +2089,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -1998,16 +2120,16 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                   },
                 ],
               },
-              'select': <String, dynamic>{
-                'exist': <dynamic>[
-                  'authorization',
-                ],
+              'select': <String, dynamic>{},
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -2106,7 +2228,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -2117,6 +2239,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -2144,7 +2270,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -2155,6 +2281,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -2182,7 +2312,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -2193,6 +2323,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -2220,7 +2354,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -2231,6 +2365,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -2303,7 +2441,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -2314,6 +2452,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -2454,7 +2596,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -2465,6 +2607,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -2477,8 +2623,8 @@ class Config {
     'output_detail': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'name': 'batch',
-          'title': 'Batch',
+          'name': 'details',
+          'title': 'Details',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
@@ -2487,14 +2633,19 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'name': 'lines',
-          'title': 'Lines',
-          'type': '`\$OBJECT`',
+          'name': 'responseCode',
+          'title': 'Response Code',
+          'type': '`\$INTEGER`',
+          'req': true,
+          'short': 'Response code.',
+          'format': 'int32',
         },
         <String, dynamic>{
-          'name': 'progress',
-          'title': 'Progress',
-          'type': '`\$OBJECT`',
+          'name': 'responseMessage',
+          'title': 'Response Message',
+          'type': '`\$STRING`',
+          'req': true,
+          'short': 'Response message.',
         },
       ],
       'id': <String, dynamic>{
@@ -2538,13 +2689,13 @@ class Config {
               'rename': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
-                'res': '`body.details`',
+                'res': '`body`',
               },
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -2565,6 +2716,10 @@ class Config {
                   'authorization',
                   'id',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -2652,7 +2807,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -2663,6 +2818,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -2742,7 +2901,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -2763,6 +2922,10 @@ class Config {
                   'authorization',
                   'id',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
             <String, dynamic>{
@@ -2802,7 +2965,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -2823,6 +2986,10 @@ class Config {
                   'authorization',
                   'id',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -2899,7 +3066,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -2910,6 +3077,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -2982,7 +3153,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -2993,6 +3164,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -3068,7 +3243,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -3079,6 +3254,23 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'body': <String, dynamic>{
+                'fields': <dynamic>[
+                  <String, dynamic>{
+                    'binary': true,
+                    'name': 'inputCsvFile',
+                  },
+                  <String, dynamic>{
+                    'name': 'inputJsonMessage',
+                  },
+                ],
+                'kind': 'multipart',
+                'media': 'multipart/form-data',
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -3169,7 +3361,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -3190,6 +3382,10 @@ class Config {
                   'authorization',
                   'id',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],
@@ -3315,7 +3511,7 @@ class Config {
                 'header': <dynamic>[
                   <String, dynamic>{
                     'name': 'authorization',
-                    'orig': 'authorization',
+                    'orig': 'Authorization',
                     'type': '`\$STRING`',
                     'kind': 'header',
                     'reqd': true,
@@ -3326,6 +3522,10 @@ class Config {
                 'exist': <dynamic>[
                   'authorization',
                 ],
+              },
+              'response': <String, dynamic>{
+                'kind': 'json',
+                'media': 'application/json',
               },
             },
           ],

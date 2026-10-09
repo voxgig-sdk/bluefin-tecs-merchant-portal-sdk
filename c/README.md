@@ -15,7 +15,7 @@ keeps the cognitive load low.
 
 ## Install
 C has no central package registry — a release is the git tag
-(`c/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases)). Build from a
+(`c/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags)). Build from a
 source checkout with the bundled `Makefile`; the voxgig struct library is
 vendored under `utility/struct`, so there are no external dependencies to
 fetch:
@@ -51,8 +51,8 @@ PNError* err = NULL;
 
 ```c
 Entity* merchant_portal_api_controller = bluefintecsmerchantportal_merchant_portal_api_controller(client, NULL);
-// Create — returns the bare created record
-voxgig_value* created = merchant_portal_api_controller->vt->create(merchant_portal_api_controller, cmap(18, "business_reg_number", v_str("example_business_reg_number"), "city", v_str("example_city"), "country", v_str("example_country"), "currency", v_str("example_currency"), "merchant_category_code", v_num(1), "merchant_name", v_str("example_merchant_name"), "packageid", v_str("example_packageid"), "packageorderuuid", v_str("example_packageorderuuid"), "reason_deactivation", v_str("example_reason_deactivation"), "reason_reactivation", v_str("example_reason_reactivation"), "street", v_str("example_street"), "terminal_country_code", v_str("example_terminal_country_code"), "terminal_language_code", v_str("example_terminal_language_code"), "terminal_location", v_str("example_terminal_location"), "terminal_serial_number", v_str("example_terminal_serial_number"), "terminalid", v_num(1), "vu_nummer", v_str("example_vu_nummer"), "zipcode", v_str("example_zipcode")), NULL, &err);
+// Create — returns the created entity, or NULL with *err set
+Entity* created = merchant_portal_api_controller->vt->create(merchant_portal_api_controller, cmap(18, "business_reg_number", v_str("example_business_reg_number"), "city", v_str("example_city"), "country", v_str("example_country"), "currency", v_str("example_currency"), "merchant_category_code", v_num(1), "merchant_name", v_str("example_merchant_name"), "packageid", v_str("example_packageid"), "packageorderuuid", v_str("example_packageorderuuid"), "reason_deactivation", v_str("example_reason_deactivation"), "reason_reactivation", v_str("example_reason_reactivation"), "street", v_str("example_street"), "terminal_country_code", v_str("example_terminal_country_code"), "terminal_language_code", v_str("example_terminal_language_code"), "terminal_location", v_str("example_terminal_location"), "terminal_serial_number", v_str("example_terminal_serial_number"), "terminalid", v_num(1), "vu_nummer", v_str("example_vu_nummer"), "zipcode", v_str("example_zipcode")), NULL, &err);
 
 ```
 
@@ -64,14 +64,15 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 ```ts
 try {
   const outputdetail = await client.OutputDetail().load({ id: "example_id" })
-  console.log(outputdetail)
+  console.log(outputdetail.data())
 } catch (err) {
   console.error('load failed:', err)
 }
 ```
 
 The low-level `direct()` method does **not** throw — it returns the
-value or an `Error`, so check the result before using it:
+result envelope. Branch on `ok`; on failure `status` holds the HTTP status
+(for error responses) and `err` holds the error:
 
 ```ts
 const result = await client.direct({
@@ -80,8 +81,8 @@ const result = await client.direct({
   params: { id: 'example_id' },
 })
 
-if (result instanceof Error) {
-  throw result
+if (!result.ok) {
+  console.error('request failed:', result.status, result.err)
 }
 ```
 
@@ -134,10 +135,10 @@ Create a mock client for unit testing — no server required:
 BluefinTecsMerchantPortalSDK* client = test_sdk(NULL, NULL);
 PNError* err = NULL;
 
-// Entity ops return the bare record and set *err on failure.
+// Entity ops return the entity and set *err on failure.
 Entity* output_detail = bluefintecsmerchantportal_output_detail(client, NULL);
-voxgig_value* output_detail_rec = output_detail->vt->load(output_detail, cmap(1, "id", v_str("test01")), NULL, &err);
-// output_detail_rec contains the mock response record
+Entity* result = output_detail->vt->load(output_detail, cmap(1, "id", v_str("test01")), NULL, &err);
+// result->vt->data(result, NULL) is the mock response record
 ```
 
 ### Use a custom fetch function
@@ -246,8 +247,8 @@ All entities share the same `EntityVT` vtable, reached via `e->vt->...`.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(Entity*, reqmatch, ctrl, PNError**) -> voxgig_value*` | Load a single entity by match criteria. |
-| `create` | `(Entity*, reqdata, ctrl, PNError**) -> voxgig_value*` | Create a new entity. |
+| `load` | `(Entity*, reqmatch, ctrl, PNError**) -> Entity*` | Load a single entity by match criteria. |
+| `create` | `(Entity*, reqdata, ctrl, PNError**) -> Entity*` | Create a new entity. |
 | `data` | `(Entity*, args) -> voxgig_value*` | Get entity data (pass a map to set). |
 | `matchv` | `(Entity*, args) -> voxgig_value*` | Get entity match criteria (pass a map to set). |
 | `make` | `(Entity*) -> Entity*` | Create a new instance with the same options. |
@@ -255,10 +256,10 @@ All entities share the same `EntityVT` vtable, reached via `e->vt->...`.
 
 ### Result shape
 
-Entity operations return the bare result data (a `voxgig_value` map for
-single-entity ops, a List for `list`) and set `*err` to a `PNError*` on
-failure. Always initialise `PNError* err = NULL;` and check it after the
-call.
+Entity operations return the entity, and `list` a `NULL`-terminated array
+of entities, one per record; `vt->data` reads an entity's record. On
+failure they return `NULL` and set `*err` to a `PNError*`. Always
+initialise `PNError* err = NULL;` and check it after the call.
 
 The `sdk_direct()` escape hatch never sets `*err` for a non-2xx response —
 it returns a result map you branch on via `getp(result, "ok")`:
@@ -493,10 +494,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Load.
 
@@ -616,7 +617,7 @@ Create an instance: `Entity* merchant_portal_api_controller = bluefintecsmerchan
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -660,7 +661,7 @@ Create an instance: `Entity* merchant_portal_api_controller = bluefintecsmerchan
 
 ```c
 Entity* merchant_portal_api_controller = bluefintecsmerchantportal_merchant_portal_api_controller(client, NULL);
-voxgig_value* merchant_portal_api_controller_rec = merchant_portal_api_controller->vt->create(merchant_portal_api_controller, cmap(18,
+Entity* created = merchant_portal_api_controller->vt->create(merchant_portal_api_controller, cmap(18,
     "business_reg_number", v_str("example_business_reg_number"),  // char*
     "city", v_str("example_city"),  // char*
     "country", v_str("example_country"),  // char*
@@ -691,13 +692,16 @@ Create an instance: `Entity* merchant_portal_common_controller = bluefintecsmerc
 
 | Method | Description |
 | --- | --- |
-| `vt->load(e, reqmatch, ctrl, &err)` | Load a single entity by match criteria. |
+| `Entity* vt->load(e, reqmatch, ctrl, &err)` | Load a single entity by match criteria. |
 
 #### Example: Load
 
 ```c
 Entity* merchant_portal_common_controller = bluefintecsmerchantportal_merchant_portal_common_controller(client, NULL);
-voxgig_value* merchant_portal_common_controller_rec = merchant_portal_common_controller->vt->load(merchant_portal_common_controller, NULL, NULL, &err);
+Entity* loaded = merchant_portal_common_controller->vt->load(merchant_portal_common_controller, NULL, NULL, &err);
+if (loaded) {
+    printf("%s\n", voxgig_to_json(loaded->vt->data(loaded, NULL)));
+}
 ```
 
 
@@ -709,7 +713,7 @@ Create an instance: `Entity* merchant_portal_pam_contract_controller = bluefinte
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -722,7 +726,7 @@ Create an instance: `Entity* merchant_portal_pam_contract_controller = bluefinte
 
 ```c
 Entity* merchant_portal_pam_contract_controller = bluefintecsmerchantportal_merchant_portal_pam_contract_controller(client, NULL);
-voxgig_value* merchant_portal_pam_contract_controller_rec = merchant_portal_pam_contract_controller->vt->create(merchant_portal_pam_contract_controller, cmap(2,
+Entity* created = merchant_portal_pam_contract_controller->vt->create(merchant_portal_pam_contract_controller, cmap(2,
     "language", v_str("example_language"),  // char*
     "productOrderUUID", v_str("example_productOrderUUID"))  // char*
 , NULL, &err);
@@ -737,7 +741,7 @@ Create an instance: `Entity* merchant_portal_pam_document_controller = bluefinte
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -751,7 +755,7 @@ Create an instance: `Entity* merchant_portal_pam_document_controller = bluefinte
 
 ```c
 Entity* merchant_portal_pam_document_controller = bluefintecsmerchantportal_merchant_portal_pam_document_controller(client, NULL);
-voxgig_value* merchant_portal_pam_document_controller_rec = merchant_portal_pam_document_controller->vt->create(merchant_portal_pam_document_controller, cmap(1,
+Entity* created = merchant_portal_pam_document_controller->vt->create(merchant_portal_pam_document_controller, cmap(1,
     "appFormFieldDescUUID", v_str("example_appFormFieldDescUUID"))  // char*
 , NULL, &err);
 ```
@@ -765,7 +769,7 @@ Create an instance: `Entity* merchant_portal_pam_form_controller = bluefintecsme
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -785,7 +789,7 @@ Create an instance: `Entity* merchant_portal_pam_form_controller = bluefintecsme
 
 ```c
 Entity* merchant_portal_pam_form_controller = bluefintecsmerchantportal_merchant_portal_pam_form_controller(client, NULL);
-voxgig_value* merchant_portal_pam_form_controller_rec = merchant_portal_pam_form_controller->vt->create(merchant_portal_pam_form_controller, cmap(4,
+Entity* created = merchant_portal_pam_form_controller->vt->create(merchant_portal_pam_form_controller, cmap(4,
     "appFormFieldsDescUUID", v_str("example_appFormFieldsDescUUID"),  // char*
     "language", v_str("example_language"),  // char*
     "packageOrderUUID", v_str("example_packageOrderUUID"),  // char*
@@ -802,7 +806,7 @@ Create an instance: `Entity* merchant_portal_pam_mandator_controller = bluefinte
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -817,7 +821,7 @@ Create an instance: `Entity* merchant_portal_pam_mandator_controller = bluefinte
 
 ```c
 Entity* merchant_portal_pam_mandator_controller = bluefintecsmerchantportal_merchant_portal_pam_mandator_controller(client, NULL);
-voxgig_value* merchant_portal_pam_mandator_controller_rec = merchant_portal_pam_mandator_controller->vt->create(merchant_portal_pam_mandator_controller, cmap(2,
+Entity* created = merchant_portal_pam_mandator_controller->vt->create(merchant_portal_pam_mandator_controller, cmap(2,
     "mandatorName", v_str("example_mandatorName"),  // char*
     "packageUUID", v_str("example_packageUUID"))  // char*
 , NULL, &err);
@@ -832,7 +836,7 @@ Create an instance: `Entity* merchant_portal_pam_merchant_controller = bluefinte
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -869,7 +873,7 @@ Create an instance: `Entity* merchant_portal_pam_merchant_controller = bluefinte
 
 ```c
 Entity* merchant_portal_pam_merchant_controller = bluefintecsmerchantportal_merchant_portal_pam_merchant_controller(client, NULL);
-voxgig_value* merchant_portal_pam_merchant_controller_rec = merchant_portal_pam_merchant_controller->vt->create(merchant_portal_pam_merchant_controller, cmap(13,
+Entity* created = merchant_portal_pam_merchant_controller->vt->create(merchant_portal_pam_merchant_controller, cmap(13,
     "businessRegistrationNumber", v_str("example_businessRegistrationNumber"),  // char*
     "companyName", v_str("example_companyName"),  // char*
     "corporateUUID", v_str("example_corporateUUID"),  // char*
@@ -895,7 +899,7 @@ Create an instance: `Entity* merchant_portal_pam_package_controller = bluefintec
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -917,7 +921,7 @@ Create an instance: `Entity* merchant_portal_pam_package_controller = bluefintec
 
 ```c
 Entity* merchant_portal_pam_package_controller = bluefintecsmerchantportal_merchant_portal_pam_package_controller(client, NULL);
-voxgig_value* merchant_portal_pam_package_controller_rec = merchant_portal_pam_package_controller->vt->create(merchant_portal_pam_package_controller, cmap(2,
+Entity* created = merchant_portal_pam_package_controller->vt->create(merchant_portal_pam_package_controller, cmap(2,
     "language", v_str("example_language"),  // char*
     "packageUUID", v_str("example_packageUUID"))  // char*
 , NULL, &err);
@@ -932,7 +936,7 @@ Create an instance: `Entity* merchant_portal_pam_product_controller = bluefintec
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -953,7 +957,7 @@ Create an instance: `Entity* merchant_portal_pam_product_controller = bluefintec
 
 ```c
 Entity* merchant_portal_pam_product_controller = bluefintecsmerchantportal_merchant_portal_pam_product_controller(client, NULL);
-voxgig_value* merchant_portal_pam_product_controller_rec = merchant_portal_pam_product_controller->vt->create(merchant_portal_pam_product_controller, cmap(4,
+Entity* created = merchant_portal_pam_product_controller->vt->create(merchant_portal_pam_product_controller, cmap(4,
     "packageOrderUUID", v_str("example_packageOrderUUID"),  // char*
     "productOrderUUID", v_str("example_productOrderUUID"),  // char*
     "productUUID", v_str("example_productUUID"),  // char*
@@ -970,7 +974,7 @@ Create an instance: `Entity* output_add_product = bluefintecsmerchantportal_outp
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -985,7 +989,7 @@ Create an instance: `Entity* output_add_product = bluefintecsmerchantportal_outp
 
 ```c
 Entity* output_add_product = bluefintecsmerchantportal_output_add_product(client, NULL);
-voxgig_value* output_add_product_rec = output_add_product->vt->create(output_add_product, cmap(4,
+Entity* created = output_add_product->vt->create(output_add_product, cmap(4,
     "packageUUID", v_str("example_packageUUID"),  // char*
     "productUUIDs", v_list(),  // voxgig_value* (list)
     "responseCode", v_num(1),  // int64_t
@@ -1002,7 +1006,7 @@ Create an instance: `Entity* output_create_product = bluefintecsmerchantportal_o
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -1027,7 +1031,7 @@ Create an instance: `Entity* output_create_product = bluefintecsmerchantportal_o
 
 ```c
 Entity* output_create_product = bluefintecsmerchantportal_output_create_product(client, NULL);
-voxgig_value* output_create_product_rec = output_create_product->vt->create(output_create_product, cmap(12,
+Entity* created = output_create_product->vt->create(output_create_product, cmap(12,
     "allowMultipleOrders", v_bool(true),  // bool
     "appFormTemplateName", v_str("example_appFormTemplateName"),  // char*
     "contractNeeded", v_bool(true),  // bool
@@ -1052,22 +1056,25 @@ Create an instance: `Entity* output_detail = bluefintecsmerchantportal_output_de
 
 | Method | Description |
 | --- | --- |
-| `vt->load(e, reqmatch, ctrl, &err)` | Load a single entity by match criteria. |
+| `Entity* vt->load(e, reqmatch, ctrl, &err)` | Load a single entity by match criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `voxgig_value* (map)` |  |
+| `details` | `voxgig_value* (map)` |  |
 | `id` | `char*` |  |
-| `lines` | `voxgig_value* (map)` |  |
-| `progress` | `voxgig_value* (map)` |  |
+| `responseCode` | `int64_t` | Response code. |
+| `responseMessage` | `char*` | Response message. |
 
 #### Example: Load
 
 ```c
 Entity* output_detail = bluefintecsmerchantportal_output_detail(client, NULL);
-voxgig_value* output_detail_rec = output_detail->vt->load(output_detail, cmap(1, "id", v_str("output_detail_id")), NULL, &err);
+Entity* loaded = output_detail->vt->load(output_detail, cmap(1, "id", v_str("output_detail_id")), NULL, &err);
+if (loaded) {
+    printf("%s\n", voxgig_to_json(loaded->vt->data(loaded, NULL)));
+}
 ```
 
 
@@ -1079,7 +1086,7 @@ Create an instance: `Entity* output_list = bluefintecsmerchantportal_output_list
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -1095,7 +1102,7 @@ Create an instance: `Entity* output_list = bluefintecsmerchantportal_output_list
 
 ```c
 Entity* output_list = bluefintecsmerchantportal_output_list(client, NULL);
-voxgig_value* output_list_rec = output_list->vt->create(output_list, cmap(3,
+Entity* created = output_list->vt->create(output_list, cmap(3,
     "pagination", v_map(),  // voxgig_value* (map)
     "responseCode", v_num(1),  // int64_t
     "responseMessage", v_str("example_responseMessage"))  // char*
@@ -1111,7 +1118,7 @@ Create an instance: `Entity* output_message = bluefintecsmerchantportal_output_m
 
 | Method | Description |
 | --- | --- |
-| `vt->load(e, reqmatch, ctrl, &err)` | Load a single entity by match criteria. |
+| `Entity* vt->load(e, reqmatch, ctrl, &err)` | Load a single entity by match criteria. |
 
 #### Fields
 
@@ -1125,7 +1132,10 @@ Create an instance: `Entity* output_message = bluefintecsmerchantportal_output_m
 
 ```c
 Entity* output_message = bluefintecsmerchantportal_output_message(client, NULL);
-voxgig_value* output_message_rec = output_message->vt->load(output_message, cmap(1, "id", v_str("output_message_id")), NULL, &err);
+Entity* loaded = output_message->vt->load(output_message, cmap(1, "id", v_str("output_message_id")), NULL, &err);
+if (loaded) {
+    printf("%s\n", voxgig_to_json(loaded->vt->data(loaded, NULL)));
+}
 ```
 
 
@@ -1137,7 +1147,7 @@ Create an instance: `Entity* output_move_tid = bluefintecsmerchantportal_output_
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -1153,7 +1163,7 @@ Create an instance: `Entity* output_move_tid = bluefintecsmerchantportal_output_
 
 ```c
 Entity* output_move_tid = bluefintecsmerchantportal_output_move_tid(client, NULL);
-voxgig_value* output_move_tid_rec = output_move_tid->vt->create(output_move_tid, cmap(5,
+Entity* created = output_move_tid->vt->create(output_move_tid, cmap(5,
     "productOrderUUIDs", v_list(),  // voxgig_value* (list)
     "responseCode", v_num(1),  // int64_t
     "responseMessage", v_str("example_responseMessage"),  // char*
@@ -1171,7 +1181,7 @@ Create an instance: `Entity* output_remove_product = bluefintecsmerchantportal_o
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -1186,7 +1196,7 @@ Create an instance: `Entity* output_remove_product = bluefintecsmerchantportal_o
 
 ```c
 Entity* output_remove_product = bluefintecsmerchantportal_output_remove_product(client, NULL);
-voxgig_value* output_remove_product_rec = output_remove_product->vt->create(output_remove_product, cmap(4,
+Entity* created = output_remove_product->vt->create(output_remove_product, cmap(4,
     "packageUUID", v_str("example_packageUUID"),  // char*
     "productUUIDs", v_list(),  // voxgig_value* (list)
     "responseCode", v_num(1),  // int64_t
@@ -1203,7 +1213,7 @@ Create an instance: `Entity* output_start = bluefintecsmerchantportal_output_sta
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -1217,7 +1227,7 @@ Create an instance: `Entity* output_start = bluefintecsmerchantportal_output_sta
 
 ```c
 Entity* output_start = bluefintecsmerchantportal_output_start(client, NULL);
-voxgig_value* output_start_rec = output_start->vt->create(output_start, cmap(2,
+Entity* created = output_start->vt->create(output_start, cmap(2,
     "responseCode", v_num(1),  // int64_t
     "responseMessage", v_str("example_responseMessage"))  // char*
 , NULL, &err);
@@ -1232,7 +1242,7 @@ Create an instance: `Entity* output_status = bluefintecsmerchantportal_output_st
 
 | Method | Description |
 | --- | --- |
-| `vt->load(e, reqmatch, ctrl, &err)` | Load a single entity by match criteria. |
+| `Entity* vt->load(e, reqmatch, ctrl, &err)` | Load a single entity by match criteria. |
 
 #### Fields
 
@@ -1248,7 +1258,10 @@ Create an instance: `Entity* output_status = bluefintecsmerchantportal_output_st
 
 ```c
 Entity* output_status = bluefintecsmerchantportal_output_status(client, NULL);
-voxgig_value* output_status_rec = output_status->vt->load(output_status, cmap(1, "id", v_str("output_status_id")), NULL, &err);
+Entity* loaded = output_status->vt->load(output_status, cmap(1, "id", v_str("output_status_id")), NULL, &err);
+if (loaded) {
+    printf("%s\n", voxgig_to_json(loaded->vt->data(loaded, NULL)));
+}
 ```
 
 
@@ -1260,7 +1273,7 @@ Create an instance: `Entity* output_update_product = bluefintecsmerchantportal_o
 
 | Method | Description |
 | --- | --- |
-| `vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
+| `Entity* vt->create(e, reqdata, ctrl, &err)` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -1284,7 +1297,7 @@ Create an instance: `Entity* output_update_product = bluefintecsmerchantportal_o
 
 ```c
 Entity* output_update_product = bluefintecsmerchantportal_output_update_product(client, NULL);
-voxgig_value* output_update_product_rec = output_update_product->vt->create(output_update_product, cmap(3,
+Entity* created = output_update_product->vt->create(output_update_product, cmap(3,
     "productUUID", v_str("example_productUUID"),  // char*
     "responseCode", v_num(1),  // int64_t
     "responseMessage", v_str("example_responseMessage"))  // char*

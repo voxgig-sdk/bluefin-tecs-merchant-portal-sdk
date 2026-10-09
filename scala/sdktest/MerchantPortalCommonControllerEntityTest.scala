@@ -5,10 +5,13 @@
 
 import java.util.{ArrayList, LinkedHashMap, List => JList, Map => JMap}
 
-import voxgig.bluefintecsmerchantportalsdk.core.{Helpers, SdkEntity, BluefinTecsMerchantPortalSDK}
+import voxgig.bluefintecsmerchantportalsdk.core.{Config, Context, Helpers, SdkEntity, SdkError, BluefinTecsMerchantPortalSDK}
+import voxgig.bluefintecsmerchantportalsdk.feature.BaseFeature
 import voxgig.bluefintecsmerchantportalsdk.utility.struct.Struct
 
 object MerchantPortalCommonControllerEntityTest {
+
+  import SdkTestSupport.{B, I, jl, om}
 
   def run(rep: SdkTestReport): Unit = {
     rep.scope("merchant_portal_common_controller.instance") {

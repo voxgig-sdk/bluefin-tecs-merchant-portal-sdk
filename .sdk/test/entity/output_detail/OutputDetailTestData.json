@@ -2,31 +2,31 @@
   "existing": {
     "output_detail": {
       "OUTPUT_DETAIL00": {
-        "batch": {},
+        "details": {},
         "id": "OUTPUT_DETAIL00",
-        "lines": {},
-        "progress": {}
+        "responseCode": 42,
+        "responseMessage": "s2b"
       },
       "OUTPUT_DETAIL01": {
-        "batch": {},
+        "details": {},
         "id": "OUTPUT_DETAIL01",
-        "lines": {},
-        "progress": {}
+        "responseCode": 82,
+        "responseMessage": "s53"
       },
       "OUTPUT_DETAIL02": {
-        "batch": {},
+        "details": {},
         "id": "OUTPUT_DETAIL02",
-        "lines": {},
-        "progress": {}
+        "responseCode": 122,
+        "responseMessage": "s7b"
       }
     }
   },
   "new": {
     "output_detail": {
       "output_detail_ref01": {
-        "batch": {},
-        "lines": {},
-        "progress": {}
+        "details": {},
+        "responseCode": 162,
+        "responseMessage": "sa3"
       }
     }
   },

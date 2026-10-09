@@ -203,7 +203,7 @@ merchant_portal_api_controller = client.MerchantPortalApiController
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.MerchantPortalApiController.create({
@@ -268,7 +268,7 @@ merchant_portal_common_controller = client.MerchantPortalCommonController
 
 #### `load(reqmatch, ctrl = nil) -> result`
 
-Load a single entity matching the given criteria. Raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get` reads, and raises on error.
 
 ```ruby
 result = client.MerchantPortalCommonController.load()
@@ -321,7 +321,7 @@ merchant_portal_pam_contract_controller = client.MerchantPortalPamContractContro
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.MerchantPortalPamContractController.create({
@@ -329,6 +329,8 @@ result = client.MerchantPortalPamContractController.create({
   "productOrderUUID" => "example_productOrderUUID", # String
 })
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -378,7 +380,7 @@ merchant_portal_pam_document_controller = client.MerchantPortalPamDocumentContro
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.MerchantPortalPamDocumentController.create({
@@ -454,7 +456,7 @@ merchant_portal_pam_form_controller = client.MerchantPortalPamFormController
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.MerchantPortalPamFormController.create({
@@ -514,7 +516,7 @@ merchant_portal_pam_mandator_controller = client.MerchantPortalPamMandatorContro
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.MerchantPortalPamMandatorController.create({
@@ -625,7 +627,7 @@ merchant_portal_pam_merchant_controller = client.MerchantPortalPamMerchantContro
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.MerchantPortalPamMerchantController.create({
@@ -717,7 +719,7 @@ merchant_portal_pam_package_controller = client.MerchantPortalPamPackageControll
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.MerchantPortalPamPackageController.create({
@@ -781,7 +783,7 @@ merchant_portal_pam_product_controller = client.MerchantPortalPamProductControll
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.MerchantPortalPamProductController.create({
@@ -841,7 +843,7 @@ output_add_product = client.OutputAddProduct
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.OutputAddProduct.create({
@@ -911,7 +913,7 @@ output_create_product = client.OutputCreateProduct
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.OutputCreateProduct.create({
@@ -970,16 +972,16 @@ output_detail = client.OutputDetail
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `Hash` | No |  |
+| `details` | `Hash` | No |  |
 | `id` | `String` | No |  |
-| `lines` | `Hash` | No |  |
-| `progress` | `Hash` | No |  |
+| `responseCode` | `Integer` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
 
 ### Operations
 
 #### `load(reqmatch, ctrl = nil) -> result`
 
-Load a single entity matching the given criteria. Raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get` reads, and raises on error.
 
 ```ruby
 result = client.OutputDetail.load({ "id" => "output_detail_id" })
@@ -1045,7 +1047,7 @@ output_list = client.OutputList
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.OutputList.create({
@@ -1103,7 +1105,7 @@ output_message = client.OutputMessage
 
 #### `load(reqmatch, ctrl = nil) -> result`
 
-Load a single entity matching the given criteria. Raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get` reads, and raises on error.
 
 ```ruby
 result = client.OutputMessage.load({ "id" => "output_message_id" })
@@ -1159,7 +1161,7 @@ output_move_tid = client.OutputMoveTid
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.OutputMoveTid.create({
@@ -1220,7 +1222,7 @@ output_remove_product = client.OutputRemoveProduct
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.OutputRemoveProduct.create({
@@ -1279,7 +1281,7 @@ output_start = client.OutputStart
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.OutputStart.create({
@@ -1287,6 +1289,8 @@ result = client.OutputStart.create({
   "responseMessage" => "example_responseMessage", # String
 })
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -1338,7 +1342,7 @@ output_status = client.OutputStatus
 
 #### `load(reqmatch, ctrl = nil) -> result`
 
-Load a single entity matching the given criteria. Raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get` reads, and raises on error.
 
 ```ruby
 result = client.OutputStatus.load({ "id" => "output_status_id" })
@@ -1402,7 +1406,7 @@ output_update_product = client.OutputUpdateProduct
 
 #### `create(reqdata, ctrl = nil) -> result`
 
-Create a new entity with the given data. Raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```ruby
 result = client.OutputUpdateProduct.create({
@@ -1863,6 +1867,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

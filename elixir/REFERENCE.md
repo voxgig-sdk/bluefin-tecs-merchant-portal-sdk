@@ -194,12 +194,12 @@ merchant_portal_api_controller = BluefinTecsMerchantPortal.merchant_portal_api_c
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalApiController.create(merchant_portal_api_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_api_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalApiController.create(merchant_portal_api_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "business_reg_number" => "example_business_reg_number",  # String.t()
   "city" => "example_city",  # String.t()
   "country" => "example_country",  # String.t()
@@ -258,12 +258,12 @@ merchant_portal_common_controller = BluefinTecsMerchantPortal.merchant_portal_co
 
 ### Operations
 
-#### `load(entity, reqmatch, ctrl \\ nil) :: map()`
+#### `load(entity, reqmatch, ctrl \\ nil) :: entity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get/1` reads, and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalCommonController.load(merchant_portal_common_controller, BluefinTecsMerchantPortal.Helpers.deep(%{}))
+merchant_portal_common_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalCommonController.load(merchant_portal_common_controller, BluefinTecsMerchantPortal.Helpers.deep(%{}))
 ```
 
 ### Common Functions
@@ -310,16 +310,18 @@ merchant_portal_pam_contract_controller = BluefinTecsMerchantPortal.merchant_por
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamContractController.create(merchant_portal_pam_contract_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_pam_contract_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalPamContractController.create(merchant_portal_pam_contract_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "language" => "example_language",  # String.t()
   "productOrderUUID" => "example_productOrderUUID",  # String.t()
 }))
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Functions
 
@@ -366,12 +368,12 @@ merchant_portal_pam_document_controller = BluefinTecsMerchantPortal.merchant_por
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamDocumentController.create(merchant_portal_pam_document_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_pam_document_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalPamDocumentController.create(merchant_portal_pam_document_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "appFormFieldDescUUID" => "example_appFormFieldDescUUID",  # String.t()
 }))
 ```
@@ -427,12 +429,12 @@ merchant_portal_pam_form_controller = BluefinTecsMerchantPortal.merchant_portal_
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamFormController.create(merchant_portal_pam_form_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_pam_form_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalPamFormController.create(merchant_portal_pam_form_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "appFormFieldsDescUUID" => "example_appFormFieldsDescUUID",  # String.t()
   "language" => "example_language",  # String.t()
   "packageOrderUUID" => "example_packageOrderUUID",  # String.t()
@@ -486,12 +488,12 @@ merchant_portal_pam_mandator_controller = BluefinTecsMerchantPortal.merchant_por
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamMandatorController.create(merchant_portal_pam_mandator_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_pam_mandator_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalPamMandatorController.create(merchant_portal_pam_mandator_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "mandatorName" => "example_mandatorName",  # String.t()
   "packageUUID" => "example_packageUUID",  # String.t()
 }))
@@ -565,12 +567,12 @@ merchant_portal_pam_merchant_controller = BluefinTecsMerchantPortal.merchant_por
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamMerchantController.create(merchant_portal_pam_merchant_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_pam_merchant_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalPamMerchantController.create(merchant_portal_pam_merchant_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "businessRegistrationNumber" => "example_businessRegistrationNumber",  # String.t()
   "companyName" => "example_companyName",  # String.t()
   "corporateUUID" => "example_corporateUUID",  # String.t()
@@ -640,12 +642,12 @@ merchant_portal_pam_package_controller = BluefinTecsMerchantPortal.merchant_port
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamPackageController.create(merchant_portal_pam_package_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_pam_package_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalPamPackageController.create(merchant_portal_pam_package_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "language" => "example_language",  # String.t()
   "packageUUID" => "example_packageUUID",  # String.t()
 }))
@@ -703,12 +705,12 @@ merchant_portal_pam_product_controller = BluefinTecsMerchantPortal.merchant_port
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamProductController.create(merchant_portal_pam_product_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_pam_product_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalPamProductController.create(merchant_portal_pam_product_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "packageOrderUUID" => "example_packageOrderUUID",  # String.t()
   "productOrderUUID" => "example_productOrderUUID",  # String.t()
   "productUUID" => "example_productUUID",  # String.t()
@@ -762,12 +764,12 @@ output_add_product = BluefinTecsMerchantPortal.output_add_product(sdk)
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.OutputAddProduct.create(output_add_product, BluefinTecsMerchantPortal.Helpers.deep(%{
+output_add_product = BluefinTecsMerchantPortal.Entity.OutputAddProduct.create(output_add_product, BluefinTecsMerchantPortal.Helpers.deep(%{
   "packageUUID" => "example_packageUUID",  # String.t()
   "productUUIDs" => [],  # list()
   "responseCode" => 1,  # integer()
@@ -831,12 +833,12 @@ output_create_product = BluefinTecsMerchantPortal.output_create_product(sdk)
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.OutputCreateProduct.create(output_create_product, BluefinTecsMerchantPortal.Helpers.deep(%{
+output_create_product = BluefinTecsMerchantPortal.Entity.OutputCreateProduct.create(output_create_product, BluefinTecsMerchantPortal.Helpers.deep(%{
   "allowMultipleOrders" => true,  # boolean()
   "appFormTemplateName" => "example_appFormTemplateName",  # String.t()
   "contractNeeded" => true,  # boolean()
@@ -891,19 +893,19 @@ output_detail = BluefinTecsMerchantPortal.output_detail(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `map()` | No |  |
+| `details` | `map()` | No |  |
 | `id` | `String.t()` | No |  |
-| `lines` | `map()` | No |  |
-| `progress` | `map()` | No |  |
+| `responseCode` | `integer()` | Yes | Response code. |
+| `responseMessage` | `String.t()` | Yes | Response message. |
 
 ### Operations
 
-#### `load(entity, reqmatch, ctrl \\ nil) :: map()`
+#### `load(entity, reqmatch, ctrl \\ nil) :: entity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get/1` reads, and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.OutputDetail.load(output_detail, BluefinTecsMerchantPortal.Helpers.deep(%{"id" => "output_detail_id"}))
+output_detail = BluefinTecsMerchantPortal.Entity.OutputDetail.load(output_detail, BluefinTecsMerchantPortal.Helpers.deep(%{"id" => "output_detail_id"}))
 ```
 
 ### Common Functions
@@ -953,12 +955,12 @@ output_list = BluefinTecsMerchantPortal.output_list(sdk)
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.OutputList.create(output_list, BluefinTecsMerchantPortal.Helpers.deep(%{
+output_list = BluefinTecsMerchantPortal.Entity.OutputList.create(output_list, BluefinTecsMerchantPortal.Helpers.deep(%{
   "pagination" => %{},  # map()
   "responseCode" => 1,  # integer()
   "responseMessage" => "example_responseMessage",  # String.t()
@@ -1010,12 +1012,12 @@ output_message = BluefinTecsMerchantPortal.output_message(sdk)
 
 ### Operations
 
-#### `load(entity, reqmatch, ctrl \\ nil) :: map()`
+#### `load(entity, reqmatch, ctrl \\ nil) :: entity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get/1` reads, and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.OutputMessage.load(output_message, BluefinTecsMerchantPortal.Helpers.deep(%{"id" => "output_message_id"}))
+output_message = BluefinTecsMerchantPortal.Entity.OutputMessage.load(output_message, BluefinTecsMerchantPortal.Helpers.deep(%{"id" => "output_message_id"}))
 ```
 
 ### Common Functions
@@ -1065,12 +1067,12 @@ output_move_tid = BluefinTecsMerchantPortal.output_move_tid(sdk)
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.OutputMoveTid.create(output_move_tid, BluefinTecsMerchantPortal.Helpers.deep(%{
+output_move_tid = BluefinTecsMerchantPortal.Entity.OutputMoveTid.create(output_move_tid, BluefinTecsMerchantPortal.Helpers.deep(%{
   "productOrderUUIDs" => [],  # list()
   "responseCode" => 1,  # integer()
   "responseMessage" => "example_responseMessage",  # String.t()
@@ -1125,12 +1127,12 @@ output_remove_product = BluefinTecsMerchantPortal.output_remove_product(sdk)
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.OutputRemoveProduct.create(output_remove_product, BluefinTecsMerchantPortal.Helpers.deep(%{
+output_remove_product = BluefinTecsMerchantPortal.Entity.OutputRemoveProduct.create(output_remove_product, BluefinTecsMerchantPortal.Helpers.deep(%{
   "packageUUID" => "example_packageUUID",  # String.t()
   "productUUIDs" => [],  # list()
   "responseCode" => 1,  # integer()
@@ -1183,16 +1185,18 @@ output_start = BluefinTecsMerchantPortal.output_start(sdk)
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.OutputStart.create(output_start, BluefinTecsMerchantPortal.Helpers.deep(%{
+output_start = BluefinTecsMerchantPortal.Entity.OutputStart.create(output_start, BluefinTecsMerchantPortal.Helpers.deep(%{
   "responseCode" => 1,  # integer()
   "responseMessage" => "example_responseMessage",  # String.t()
 }))
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Functions
 
@@ -1241,12 +1245,12 @@ output_status = BluefinTecsMerchantPortal.output_status(sdk)
 
 ### Operations
 
-#### `load(entity, reqmatch, ctrl \\ nil) :: map()`
+#### `load(entity, reqmatch, ctrl \\ nil) :: entity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get/1` reads, and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.OutputStatus.load(output_status, BluefinTecsMerchantPortal.Helpers.deep(%{"id" => "output_status_id"}))
+output_status = BluefinTecsMerchantPortal.Entity.OutputStatus.load(output_status, BluefinTecsMerchantPortal.Helpers.deep(%{"id" => "output_status_id"}))
 ```
 
 ### Common Functions
@@ -1304,12 +1308,12 @@ output_update_product = BluefinTecsMerchantPortal.output_update_product(sdk)
 
 ### Operations
 
-#### `create(entity, reqdata, ctrl \\ nil) :: map()`
+#### `create(entity, reqdata, ctrl \\ nil) :: entity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```elixir
-record = BluefinTecsMerchantPortal.Entity.OutputUpdateProduct.create(output_update_product, BluefinTecsMerchantPortal.Helpers.deep(%{
+output_update_product = BluefinTecsMerchantPortal.Entity.OutputUpdateProduct.create(output_update_product, BluefinTecsMerchantPortal.Helpers.deep(%{
   "productUUID" => "example_productUUID",  # String.t()
   "responseCode" => 1,  # integer()
   "responseMessage" => "example_responseMessage",  # String.t()
@@ -1766,6 +1770,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

@@ -9,7 +9,7 @@ import { createLiveTransport } from '../../live-runner'
 import { runLiveEntity } from '../../live-entity'
 
 
-import { BluefinTecsMerchantPortalSDK, BaseFeature, stdutil } from '../../..'
+import { BluefinTecsMerchantPortalSDK, BaseFeature, config, stdutil } from '../../..'
 
 import {
   envOverride,
@@ -41,6 +41,8 @@ describe('MerchantPortalCommonControllerEntity', async () => {
   })
 
 
+
+
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.BLUEFIN_TECS_MERCHANT_PORTAL_TEST_LIVE
@@ -51,7 +53,7 @@ describe('MerchantPortalCommonControllerEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{},"name":"merchant_portal_common_controller","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /merchantportalws/logDeveloperInfo","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/merchantportalws/logDeveloperInfo","q":{},"r":{},"s":[{"lit":"merchantportalws"},{"lit":"logDeveloperInfo"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"GET /merchantportalws/version","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/merchantportalws/version","q":{},"r":{},"s":[{"lit":"merchantportalws"},{"lit":"version"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"merchant_portal_common_controller","name__orig":"merchant_portal_common_controller","Name":"MerchantPortalCommonController","name_":"merchant_portal_common_controller","name-":"merchant-portal-common-controller","NAME":"MERCHANT_PORTAL_COMMON_CONTROLLER","index$":1}, {"active":true,"entity":"merchant_portal_common_controller","key$":"BasicMerchantPortalCommonControllerFlow","kind":"basic","name":"BasicMerchantPortalCommonControllerFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"merchant_portal_common_controller_ref01","srcdatavar":"merchant_portal_common_controller_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-merchant_portal_common_controller_ref01"}}],"index$":0}]}, 'MerchantPortalCommonController', {"GET /merchantportalws/logDeveloperInfo":{"protocol":"http","parameters":[]},"GET /merchantportalws/version":{"protocol":"http","parameters":[]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{},"name":"merchant_portal_common_controller","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /merchantportalws/logDeveloperInfo","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/merchantportalws/logDeveloperInfo","q":{},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"merchantportalws"},{"lit":"logDeveloperInfo"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"GET /merchantportalws/version","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/merchantportalws/version","q":{},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"merchantportalws"},{"lit":"version"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"merchant_portal_common_controller","name__orig":"merchant_portal_common_controller","Name":"MerchantPortalCommonController","name_":"merchant_portal_common_controller","name-":"merchant-portal-common-controller","NAME":"MERCHANT_PORTAL_COMMON_CONTROLLER","index$":1}, {"active":true,"entity":"merchant_portal_common_controller","key$":"BasicMerchantPortalCommonControllerFlow","kind":"basic","name":"BasicMerchantPortalCommonControllerFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"merchant_portal_common_controller_ref01","srcdatavar":"merchant_portal_common_controller_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-merchant_portal_common_controller_ref01"}}],"index$":0}]}, 'MerchantPortalCommonController', {"GET /merchantportalws/logDeveloperInfo":{"protocol":"http","parameters":[]},"GET /merchantportalws/version":{"protocol":"http","parameters":[]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -72,6 +74,12 @@ describe('MerchantPortalCommonControllerEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra?: any) {
   // TODO: fix test def options

@@ -195,9 +195,9 @@ merchant_portal_api_controller = client.MerchantPortalApiController()
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> MerchantPortalApiControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.MerchantPortalApiController().create({
@@ -259,9 +259,9 @@ merchant_portal_common_controller = client.MerchantPortalCommonController()
 
 ### Operations
 
-#### `load(reqmatch, ctrl=None) -> dict`
+#### `load(reqmatch, ctrl=None) -> MerchantPortalCommonControllerEntity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
 
 ```python
 result = client.MerchantPortalCommonController().load()
@@ -311,9 +311,9 @@ merchant_portal_pam_contract_controller = client.MerchantPortalPamContractContro
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> MerchantPortalPamContractControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.MerchantPortalPamContractController().create({
@@ -321,6 +321,8 @@ result = client.MerchantPortalPamContractController().create({
     "productOrderUUID": "example_productOrderUUID",  # str
 })
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -367,9 +369,9 @@ merchant_portal_pam_document_controller = client.MerchantPortalPamDocumentContro
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> MerchantPortalPamDocumentControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.MerchantPortalPamDocumentController().create({
@@ -442,9 +444,9 @@ merchant_portal_pam_form_controller = client.MerchantPortalPamFormController()
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> MerchantPortalPamFormControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.MerchantPortalPamFormController().create({
@@ -501,9 +503,9 @@ merchant_portal_pam_mandator_controller = client.MerchantPortalPamMandatorContro
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> MerchantPortalPamMandatorControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.MerchantPortalPamMandatorController().create({
@@ -611,9 +613,9 @@ merchant_portal_pam_merchant_controller = client.MerchantPortalPamMerchantContro
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> MerchantPortalPamMerchantControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.MerchantPortalPamMerchantController().create({
@@ -702,9 +704,9 @@ merchant_portal_pam_package_controller = client.MerchantPortalPamPackageControll
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> MerchantPortalPamPackageControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.MerchantPortalPamPackageController().create({
@@ -765,9 +767,9 @@ merchant_portal_pam_product_controller = client.MerchantPortalPamProductControll
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> MerchantPortalPamProductControllerEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.MerchantPortalPamProductController().create({
@@ -824,9 +826,9 @@ output_add_product = client.OutputAddProduct()
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> OutputAddProductEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.OutputAddProduct().create({
@@ -893,9 +895,9 @@ output_create_product = client.OutputCreateProduct()
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> OutputCreateProductEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.OutputCreateProduct().create({
@@ -953,16 +955,16 @@ output_detail = client.OutputDetail()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `dict` | No |  |
+| `details` | `dict` | No |  |
 | `id` | `str` | No |  |
-| `lines` | `dict` | No |  |
-| `progress` | `dict` | No |  |
+| `responseCode` | `int` | Yes | Response code. |
+| `responseMessage` | `str` | Yes | Response message. |
 
 ### Operations
 
-#### `load(reqmatch, ctrl=None) -> dict`
+#### `load(reqmatch, ctrl=None) -> OutputDetailEntity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
 
 ```python
 result = client.OutputDetail().load({"id": "output_detail_id"})
@@ -1025,9 +1027,9 @@ output_list = client.OutputList()
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> OutputListEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.OutputList().create({
@@ -1082,9 +1084,9 @@ output_message = client.OutputMessage()
 
 ### Operations
 
-#### `load(reqmatch, ctrl=None) -> dict`
+#### `load(reqmatch, ctrl=None) -> OutputMessageEntity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
 
 ```python
 result = client.OutputMessage().load({"id": "output_message_id"})
@@ -1137,9 +1139,9 @@ output_move_tid = client.OutputMoveTid()
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> OutputMoveTidEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.OutputMoveTid().create({
@@ -1197,9 +1199,9 @@ output_remove_product = client.OutputRemoveProduct()
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> OutputRemoveProductEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.OutputRemoveProduct().create({
@@ -1255,9 +1257,9 @@ output_start = client.OutputStart()
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> OutputStartEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.OutputStart().create({
@@ -1265,6 +1267,8 @@ result = client.OutputStart().create({
     "responseMessage": "example_responseMessage",  # str
 })
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -1313,9 +1317,9 @@ output_status = client.OutputStatus()
 
 ### Operations
 
-#### `load(reqmatch, ctrl=None) -> dict`
+#### `load(reqmatch, ctrl=None) -> OutputStatusEntity`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
 
 ```python
 result = client.OutputStatus().load({"id": "output_status_id"})
@@ -1376,9 +1380,9 @@ output_update_product = client.OutputUpdateProduct()
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> dict`
+#### `create(reqdata, ctrl=None) -> OutputUpdateProductEntity`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
 result = client.OutputUpdateProduct().create({
@@ -1838,6 +1842,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

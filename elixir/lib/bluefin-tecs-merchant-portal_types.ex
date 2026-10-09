@@ -401,10 +401,10 @@ defmodule BluefinTecsMerchantPortal.Types do
   OutputDetail entity data model.
 
   Members:
-    * `"batch"` — map() (optional)
+    * `"details"` — map() (optional)
     * `"id"` — String.t() (optional)
-    * `"lines"` — map() (optional)
-    * `"progress"` — map() (optional)
+    * `"responseCode"` — integer() (required)
+    * `"responseMessage"` — String.t() (required)
   """
   @type output_detail :: %{optional(String.t()) => any()}
 

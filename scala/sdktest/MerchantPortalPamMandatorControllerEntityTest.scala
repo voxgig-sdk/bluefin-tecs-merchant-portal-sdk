@@ -5,16 +5,36 @@
 
 import java.util.{ArrayList, LinkedHashMap, List => JList, Map => JMap}
 
-import voxgig.bluefintecsmerchantportalsdk.core.{Helpers, SdkEntity, BluefinTecsMerchantPortalSDK}
+import voxgig.bluefintecsmerchantportalsdk.core.{Config, Context, Helpers, SdkEntity, SdkError, BluefinTecsMerchantPortalSDK}
+import voxgig.bluefintecsmerchantportalsdk.feature.BaseFeature
 import voxgig.bluefintecsmerchantportalsdk.utility.struct.Struct
 
 object MerchantPortalPamMandatorControllerEntityTest {
+
+  import SdkTestSupport.{B, I, jl, om}
+
+  private def hasFeature(name: String): Boolean = {
+    val fm = Helpers.toMapAny(Config.sharedConfig().get("feature"))
+    fm != null && fm.get(name) != null
+  }
 
   def run(rep: SdkTestReport): Unit = {
     rep.scope("merchant_portal_pam_mandator_controller.instance") {
       val testsdk = BluefinTecsMerchantPortalSDK.testSDK()
       val ent = testsdk.merchantPortalPamMandatorController(null)
       rep.check("merchant_portal_pam_mandator_controller.instance", ent != null, "expected non-null merchant_portal_pam_mandator_controller entity")
+    }
+
+    rep.scope("merchant_portal_pam_mandator_controller.validate") {
+      if (hasFeature("validate")) {
+        val client = BluefinTecsMerchantPortalSDK.testSDK(null, om("feature" -> om("validate" -> om("active" -> B(true)))))
+        val err = try {
+          client.merchantPortalPamMandatorController(null).create(om("clientSecret" -> I(1), "mandatorName" -> "x", "packageUUID" -> "x"), null)
+          null
+        } catch { case e: SdkError => e }
+        rep.check("merchant_portal_pam_mandator_controller.validate", err != null && "validate_failed" == err.code,
+          "expected validate_failed, got " + err)
+      }
     }
 
     rep.scope("merchant_portal_pam_mandator_controller.basic") {

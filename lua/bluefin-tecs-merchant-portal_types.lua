@@ -283,10 +283,10 @@
 ---@field xmlTemplateFile string
 
 ---@class OutputDetail
----@field batch? table
+---@field details? table
 ---@field id? string
----@field lines? table
----@field progress? table
+---@field responseCode number
+---@field responseMessage string
 
 ---@class OutputDetailLoadMatch
 ---@field id string

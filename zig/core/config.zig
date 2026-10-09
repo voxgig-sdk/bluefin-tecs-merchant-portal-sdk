@@ -192,6 +192,7 @@ pub fn make_config() Value {
                 }) },
                 .{ "optspec", h.jo(&.{
                     .{ "clearTimer", h.vstr("`$FUNCTION`") },
+                    .{ "now", h.vstr("`$FUNCTION`") },
                     .{ "setTimer", h.vstr("`$FUNCTION`") },
                 }) },
                 .{ "strict", h.vbool(false) },
@@ -483,7 +484,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -494,6 +495,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -521,7 +526,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -532,6 +537,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -559,7 +568,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -570,6 +579,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -597,7 +610,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -608,6 +621,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -648,6 +665,10 @@ pub fn make_config() Value {
                                 }) },
                                 .{ "args", h.omap() },
                                 .{ "select", h.omap() },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
+                                }) },
                             }),
                             h.jo(&.{
                                 .{ "kind", h.vstr("http") },
@@ -672,6 +693,10 @@ pub fn make_config() Value {
                                 }) },
                                 .{ "args", h.omap() },
                                 .{ "select", h.omap() },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
+                                }) },
                             }),
                         }) },
                     }) },
@@ -726,7 +751,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -737,6 +762,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -764,7 +793,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -775,6 +804,23 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "body", h.jo(&.{
+                                    .{ "fields", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("inputMessage") },
+                                        }),
+                                        h.jo(&.{
+                                            .{ "binary", h.vbool(true) },
+                                            .{ "name", h.vstr("pdfFile") },
+                                        }),
+                                    }) },
+                                    .{ "kind", h.vstr("multipart") },
+                                    .{ "media", h.vstr("multipart/form-data") },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -836,7 +882,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -847,6 +893,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -874,7 +924,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -885,6 +935,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -995,7 +1049,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1006,6 +1060,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -1033,7 +1091,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1044,6 +1102,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -1071,7 +1133,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1082,6 +1144,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -1109,7 +1175,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1120,6 +1186,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -1147,7 +1217,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1158,6 +1228,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -1185,7 +1259,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1196,6 +1270,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -1261,7 +1339,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1272,6 +1350,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -1299,7 +1381,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1310,6 +1392,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -1337,7 +1423,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1348,6 +1434,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -1559,7 +1649,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1570,6 +1660,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -1597,7 +1691,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1608,6 +1702,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -1635,7 +1733,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1646,6 +1744,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -1671,6 +1773,10 @@ pub fn make_config() Value {
                                 }) },
                                 .{ "args", h.omap() },
                                 .{ "select", h.omap() },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
+                                }) },
                             }),
                         }) },
                     }) },
@@ -1780,7 +1886,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1791,6 +1897,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -1818,7 +1928,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1829,6 +1939,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -1856,7 +1970,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1867,6 +1981,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -1894,7 +2012,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -1905,6 +2023,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -1932,16 +2054,16 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                         }),
                                     }) },
                                 }) },
-                                .{ "select", h.jo(&.{
-                                    .{ "exist", h.ja(&.{
-                                        h.vstr("authorization"),
-                                    }) },
+                                .{ "select", h.omap() },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -2040,7 +2162,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -2051,6 +2173,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -2078,7 +2204,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -2089,6 +2215,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -2116,7 +2246,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -2127,6 +2257,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -2154,7 +2288,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -2165,6 +2299,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -2237,7 +2375,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -2248,6 +2386,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -2388,7 +2530,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -2399,6 +2541,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -2411,8 +2557,8 @@ pub fn make_config() Value {
             .{ "output_detail", h.jo(&.{
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
-                        .{ "name", h.vstr("batch") },
-                        .{ "title", h.vstr("Batch") },
+                        .{ "name", h.vstr("details") },
+                        .{ "title", h.vstr("Details") },
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
@@ -2421,14 +2567,19 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
-                        .{ "name", h.vstr("lines") },
-                        .{ "title", h.vstr("Lines") },
-                        .{ "type", h.vstr("`$OBJECT`") },
+                        .{ "name", h.vstr("responseCode") },
+                        .{ "title", h.vstr("Response Code") },
+                        .{ "type", h.vstr("`$INTEGER`") },
+                        .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response code.") },
+                        .{ "format", h.vstr("int32") },
                     }),
                     h.jo(&.{
-                        .{ "name", h.vstr("progress") },
-                        .{ "title", h.vstr("Progress") },
-                        .{ "type", h.vstr("`$OBJECT`") },
+                        .{ "name", h.vstr("responseMessage") },
+                        .{ "title", h.vstr("Response Message") },
+                        .{ "type", h.vstr("`$STRING`") },
+                        .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Response message.") },
                     }),
                 }) },
                 .{ "id", h.jo(&.{
@@ -2472,13 +2623,13 @@ pub fn make_config() Value {
                                 .{ "rename", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
-                                    .{ "res", h.vstr("`body.details`") },
+                                    .{ "res", h.vstr("`body`") },
                                 }) },
                                 .{ "args", h.jo(&.{
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -2499,6 +2650,10 @@ pub fn make_config() Value {
                                         h.vstr("authorization"),
                                         h.vstr("id"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -2586,7 +2741,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -2597,6 +2752,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -2676,7 +2835,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -2697,6 +2856,10 @@ pub fn make_config() Value {
                                         h.vstr("authorization"),
                                         h.vstr("id"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                             h.jo(&.{
@@ -2736,7 +2899,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -2757,6 +2920,10 @@ pub fn make_config() Value {
                                         h.vstr("authorization"),
                                         h.vstr("id"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -2833,7 +3000,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -2844,6 +3011,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -2916,7 +3087,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -2927,6 +3098,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -3002,7 +3177,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -3013,6 +3188,23 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "body", h.jo(&.{
+                                    .{ "fields", h.ja(&.{
+                                        h.jo(&.{
+                                            .{ "binary", h.vbool(true) },
+                                            .{ "name", h.vstr("inputCsvFile") },
+                                        }),
+                                        h.jo(&.{
+                                            .{ "name", h.vstr("inputJsonMessage") },
+                                        }),
+                                    }) },
+                                    .{ "kind", h.vstr("multipart") },
+                                    .{ "media", h.vstr("multipart/form-data") },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -3103,7 +3295,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -3124,6 +3316,10 @@ pub fn make_config() Value {
                                         h.vstr("authorization"),
                                         h.vstr("id"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },
@@ -3249,7 +3445,7 @@ pub fn make_config() Value {
                                     .{ "header", h.ja(&.{
                                         h.jo(&.{
                                             .{ "name", h.vstr("authorization") },
-                                            .{ "orig", h.vstr("authorization") },
+                                            .{ "orig", h.vstr("Authorization") },
                                             .{ "type", h.vstr("`$STRING`") },
                                             .{ "kind", h.vstr("header") },
                                             .{ "reqd", h.vbool(true) },
@@ -3260,6 +3456,10 @@ pub fn make_config() Value {
                                     .{ "exist", h.ja(&.{
                                         h.vstr("authorization"),
                                     }) },
+                                }) },
+                                .{ "response", h.jo(&.{
+                                    .{ "kind", h.vstr("json") },
+                                    .{ "media", h.vstr("application/json") },
                                 }) },
                             }),
                         }) },

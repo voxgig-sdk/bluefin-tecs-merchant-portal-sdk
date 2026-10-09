@@ -15,7 +15,7 @@ keeps the cognitive load low.
 
 ## Install
 This package is not yet published to NuGet. Install it from the GitHub
-release tag (`csharp/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases)) or
+release tag (`csharp/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags)) or
 from a source checkout — build the library and add a project reference:
 
 ```bash
@@ -32,6 +32,7 @@ loading a specific record.
 
 ```csharp
 using BluefinTecsMerchantPortalSdk;
+using Voxgig.Struct;
 
 var client = new BluefinTecsMerchantPortalSDK();
 ```
@@ -39,7 +40,7 @@ var client = new BluefinTecsMerchantPortalSDK();
 ### 4. Create, update, and remove
 
 ```csharp
-// Create — returns the bare created record (as object?)
+// Create — returns the created entity (as object?)
 var created = client.MerchantPortalApiController().Create(new Dictionary<string, object?> { ["business_reg_number"] = "example_business_reg_number", ["city"] = "example_city", ["country"] = "example_country", ["currency"] = "example_currency", ["merchant_category_code"] = 1L, ["merchant_name"] = "example_merchant_name", ["packageid"] = "example_packageid", ["packageorderuuid"] = "example_packageorderuuid", ["reason_deactivation"] = "example_reason_deactivation", ["reason_reactivation"] = "example_reason_reactivation", ["street"] = "example_street", ["terminal_country_code"] = "example_terminal_country_code", ["terminal_language_code"] = "example_terminal_language_code", ["terminal_location"] = "example_terminal_location", ["terminal_serial_number"] = "example_terminal_serial_number", ["terminalid"] = 1L, ["vu_nummer"] = "example_vu_nummer", ["zipcode"] = "example_zipcode" });
 
 ```
@@ -52,14 +53,15 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 ```ts
 try {
   const outputdetail = await client.OutputDetail().load({ id: "example_id" })
-  console.log(outputdetail)
+  console.log(outputdetail.data())
 } catch (err) {
   console.error('load failed:', err)
 }
 ```
 
 The low-level `direct()` method does **not** throw — it returns the
-value or an `Error`, so check the result before using it:
+result envelope. Branch on `ok`; on failure `status` holds the HTTP status
+(for error responses) and `err` holds the error:
 
 ```ts
 const result = await client.direct({
@@ -68,8 +70,8 @@ const result = await client.direct({
   params: { id: 'example_id' },
 })
 
-if (result instanceof Error) {
-  throw result
+if (!result.ok) {
+  console.error('request failed:', result.status, result.err)
 }
 ```
 
@@ -127,10 +129,10 @@ Create a mock client for unit testing — no server required:
 ```csharp
 var client = BluefinTecsMerchantPortalSDK.TestSDK(null, null);
 
-// Entity ops return the bare record and raise on error.
-var outputDetail = client.OutputDetail().Load(new Dictionary<string, object?> { ["id"] = "test01" });
-// outputDetail holds the mock response record
-Console.WriteLine(outputDetail);
+// Entity ops return the entity; they raise on error.
+var outputDetail = (IEntity)client.OutputDetail().Load(new Dictionary<string, object?> { ["id"] = "test01" })!;
+// Data() reads the entity's mock record
+Console.WriteLine(StructUtils.Jsonify(outputDetail.Data()));
 ```
 
 ### Use a custom fetch function
@@ -235,8 +237,8 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `Load` | `(reqmatch, ctrl) -> object?` | Load a single entity by match criteria. Raises on error. |
-| `Create` | `(reqdata, ctrl) -> object?` | Create a new entity. Raises on error. |
+| `Load` | `(reqmatch, ctrl) -> object?` | Load a single entity by match criteria, and return it. Raises on error. |
+| `Create` | `(reqdata, ctrl) -> object?` | Create a new entity, and return it. Raises on error. |
 | `Data` | `(newdata) -> object?` | Get or set entity data. |
 | `Match` | `(newmatch) -> object?` | Get or set entity match criteria. |
 | `Make` | `() -> IEntity` | Create a new instance with the same options. |
@@ -244,9 +246,10 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `Dictionary` for
-single-entity ops, an aggregate list for `List`) as `object?` and raise on
-error. Wrap calls in `try`/`catch` to handle failures.
+Entity operations return the entity, and `List` a list of entities, one per
+record, as `object?`; an entity is an `IEntity`, whose `Data()` reads its
+record. They raise on error, so wrap calls in `try`/`catch` to handle
+failures.
 
 The `Direct()` escape hatch never raises — it returns a result
 `Dictionary<string, object?>` you branch on via `result["ok"]`:
@@ -481,10 +484,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Load.
 
@@ -1045,10 +1048,10 @@ Create an instance: `var outputDetail = client.OutputDetail();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `Dictionary<string, object?>` |  |
+| `details` | `Dictionary<string, object?>` |  |
 | `id` | `string` |  |
-| `lines` | `Dictionary<string, object?>` |  |
-| `progress` | `Dictionary<string, object?>` |  |
+| `responseCode` | `long` | Response code. |
+| `responseMessage` | `string` | Response message. |
 
 #### Example: Load
 

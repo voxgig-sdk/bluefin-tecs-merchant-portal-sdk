@@ -90,6 +90,12 @@ main: kit: entity: merchant_portal_pam_package_controller: {
       name: "create"
       points: [
         {
+          bf: [
+            "filter"
+            "language"
+            "pagination"
+            "sorting"
+          ]
           co: {
             id: "POST /merchantportalws/availablePackages"
             source: "openapi3"
@@ -100,7 +106,7 @@ main: kit: entity: merchant_portal_pam_package_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -112,6 +118,10 @@ main: kit: entity: merchant_portal_pam_package_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -127,6 +137,12 @@ main: kit: entity: merchant_portal_pam_package_controller: {
           }
         }
         {
+          bf: [
+            "consumerUUID"
+            "corporateUUID"
+            "language"
+            "packageUUID"
+          ]
           co: {
             id: "POST /merchantportalws/orderPackage"
             source: "openapi3"
@@ -137,7 +153,7 @@ main: kit: entity: merchant_portal_pam_package_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -149,6 +165,10 @@ main: kit: entity: merchant_portal_pam_package_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -164,6 +184,12 @@ main: kit: entity: merchant_portal_pam_package_controller: {
           }
         }
         {
+          bf: [
+            "filter"
+            "language"
+            "pagination"
+            "sorting"
+          ]
           co: {
             id: "POST /merchantportalws/orderedPackages"
             source: "openapi3"
@@ -174,7 +200,7 @@ main: kit: entity: merchant_portal_pam_package_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -186,6 +212,10 @@ main: kit: entity: merchant_portal_pam_package_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -201,6 +231,11 @@ main: kit: entity: merchant_portal_pam_package_controller: {
           }
         }
         {
+          bf: [
+            "filter"
+            "pagination"
+            "sorting"
+          ]
           co: {
             id: "POST /merchantportalws/packageTemplates"
             source: "openapi3"
@@ -211,7 +246,7 @@ main: kit: entity: merchant_portal_pam_package_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -223,6 +258,10 @@ main: kit: entity: merchant_portal_pam_package_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -238,6 +277,13 @@ main: kit: entity: merchant_portal_pam_package_controller: {
           }
         }
         {
+          bf: [
+            "country"
+            "descriptionKey"
+            "nameKey"
+            "packageStatus"
+            "packageUUID"
+          ]
           co: {
             id: "POST /merchantportalws/updatePackageData"
             source: "openapi3"
@@ -248,7 +294,7 @@ main: kit: entity: merchant_portal_pam_package_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: false
                 t: "`$STRING`"
               }
@@ -256,10 +302,9 @@ main: kit: entity: merchant_portal_pam_package_controller: {
           }
           m: "POST"
           o: "/merchantportalws/updatePackageData"
-          q: {
-            exist: [
-              "authorization"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

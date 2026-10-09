@@ -356,10 +356,10 @@ pub struct OutputCreateProductCreateData {
 /// OutputDetail is the typed data model for the output_detail entity.
 #[derive(Debug, Clone)]
 pub struct OutputDetail {
-    pub batch: Option<std::collections::HashMap<String, Value>>,
+    pub details: Option<std::collections::HashMap<String, Value>>,
     pub id: Option<String>,
-    pub lines: Option<std::collections::HashMap<String, Value>>,
-    pub progress: Option<std::collections::HashMap<String, Value>>,
+    pub responsecode: i64,
+    pub responsemessage: String,
 }
 
 /// OutputDetailLoadMatch is the typed request payload for OutputDetail.load.

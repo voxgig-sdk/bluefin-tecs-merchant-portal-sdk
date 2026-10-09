@@ -364,11 +364,14 @@ class OutputCreateProductCreateData(OutputCreateProductCreateDataRequired, total
     credentialsNeeded: bool
 
 
-class OutputDetail(TypedDict, total=False):
-    batch: dict
+class OutputDetailRequired(TypedDict):
+    responseCode: int
+    responseMessage: str
+
+
+class OutputDetail(OutputDetailRequired, total=False):
+    details: dict
     id: str
-    lines: dict
-    progress: dict
 
 
 class OutputDetailLoadMatch(TypedDict):

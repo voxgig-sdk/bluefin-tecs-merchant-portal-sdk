@@ -2,6 +2,7 @@
 
 using System.Text.Json;
 
+using BluefinTecsMerchantPortalSdk.Feature;
 using Voxgig.Struct;
 using Xunit;
 
@@ -9,6 +10,12 @@ namespace BluefinTecsMerchantPortalSdk.Test;
 
 public class MerchantPortalCommonControllerEntityTest
 {
+    // main.kit.test.live.strict is true (the default is true): a live
+    // request that fails, or a live test missing an input it needs,
+    // fails the test.
+    // An account with no record for a test to read skips it either way.
+    private const bool LIVE_STRICT = true;
+
     [Fact]
     public void Instance()
     {
@@ -32,13 +39,6 @@ public class MerchantPortalCommonControllerEntityTest
             {
                 return; // skipped via sdk-test-control.json
             }
-        }
-        // The basic flow consumes synthetic IDs from the fixture. In live
-        // mode without an *_ENTID env override, those IDs hit the live API
-        // and 4xx; set BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID JSON to run live.
-        if (setup.SyntheticOnly)
-        {
-            return;
         }
         var client = setup.Client;
 
@@ -96,9 +96,8 @@ public class MerchantPortalCommonControllerEntityTest
                 },
             });
 
-        // Detect ENTID env override before EnvOverride consumes it. When
-        // live mode is on without a real override, the basic test runs
-        // against synthetic IDs from the fixture and 4xx's.
+        // Whether *_ENTID supplied the idmap, read before EnvOverride consumes
+        // it: without it, the ids a live flow binds are the fixture's synthetic ones.
         var entidEnvRaw = Environment.GetEnvironmentVariable(
             "BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_COMMON_CONTROLLER_ENTID") ?? "";
         var idmapOverridden = entidEnvRaw != "" &&

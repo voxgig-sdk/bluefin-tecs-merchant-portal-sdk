@@ -202,7 +202,7 @@ $merchant_portal_api_controller = $client->MerchantPortalApiController();
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->MerchantPortalApiController()->create([
@@ -267,7 +267,7 @@ $merchant_portal_common_controller = $client->MerchantPortalCommonController();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->MerchantPortalCommonController()->load();
@@ -320,7 +320,7 @@ $merchant_portal_pam_contract_controller = $client->MerchantPortalPamContractCon
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->MerchantPortalPamContractController()->create([
@@ -328,6 +328,8 @@ $result = $client->MerchantPortalPamContractController()->create([
   "productOrderUUID" => null, // string
 ]);
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -377,7 +379,7 @@ $merchant_portal_pam_document_controller = $client->MerchantPortalPamDocumentCon
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->MerchantPortalPamDocumentController()->create([
@@ -453,7 +455,7 @@ $merchant_portal_pam_form_controller = $client->MerchantPortalPamFormController(
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->MerchantPortalPamFormController()->create([
@@ -513,7 +515,7 @@ $merchant_portal_pam_mandator_controller = $client->MerchantPortalPamMandatorCon
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->MerchantPortalPamMandatorController()->create([
@@ -624,7 +626,7 @@ $merchant_portal_pam_merchant_controller = $client->MerchantPortalPamMerchantCon
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->MerchantPortalPamMerchantController()->create([
@@ -716,7 +718,7 @@ $merchant_portal_pam_package_controller = $client->MerchantPortalPamPackageContr
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->MerchantPortalPamPackageController()->create([
@@ -780,7 +782,7 @@ $merchant_portal_pam_product_controller = $client->MerchantPortalPamProductContr
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->MerchantPortalPamProductController()->create([
@@ -840,7 +842,7 @@ $output_add_product = $client->OutputAddProduct();
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->OutputAddProduct()->create([
@@ -910,7 +912,7 @@ $output_create_product = $client->OutputCreateProduct();
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->OutputCreateProduct()->create([
@@ -969,16 +971,16 @@ $output_detail = $client->OutputDetail();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `array` | No |  |
+| `details` | `array` | No |  |
 | `id` | `string` | No |  |
-| `lines` | `array` | No |  |
-| `progress` | `array` | No |  |
+| `responseCode` | `int` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
 
 ### Operations
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->OutputDetail()->load(["id" => "output_detail_id"]);
@@ -1044,7 +1046,7 @@ $output_list = $client->OutputList();
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->OutputList()->create([
@@ -1102,7 +1104,7 @@ $output_message = $client->OutputMessage();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->OutputMessage()->load(["id" => "output_message_id"]);
@@ -1158,7 +1160,7 @@ $output_move_tid = $client->OutputMoveTid();
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->OutputMoveTid()->create([
@@ -1219,7 +1221,7 @@ $output_remove_product = $client->OutputRemoveProduct();
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->OutputRemoveProduct()->create([
@@ -1278,7 +1280,7 @@ $output_start = $client->OutputStart();
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->OutputStart()->create([
@@ -1286,6 +1288,8 @@ $result = $client->OutputStart()->create([
   "responseMessage" => null, // string
 ]);
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -1337,7 +1341,7 @@ $output_status = $client->OutputStatus();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->OutputStatus()->load(["id" => "output_status_id"]);
@@ -1401,7 +1405,7 @@ $output_update_product = $client->OutputUpdateProduct();
 
 #### `create(array $reqdata, ?array $ctrl = null): mixed`
 
-Create a new entity with the given data. Throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```php
 $result = $client->OutputUpdateProduct()->create([
@@ -1862,6 +1866,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

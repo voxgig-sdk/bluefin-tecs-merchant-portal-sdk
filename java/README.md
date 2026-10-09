@@ -15,7 +15,7 @@ keeps the cognitive load low.
 
 ## Install
 This package is not yet published to Maven Central. Install it from the GitHub
-release tag (`java/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases)) or
+release tag (`java/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags)) or
 from a source checkout — build the library with Maven:
 
 ```bash
@@ -31,7 +31,10 @@ loading a specific record.
 ### 1. Create a client
 
 ```java
+import java.util.List;
+import java.util.Map;
 import voxgig.bluefintecsmerchantportalsdk.core.BluefinTecsMerchantPortalSDK;
+import voxgig.bluefintecsmerchantportalsdk.core.SdkEntity;
 
 BluefinTecsMerchantPortalSDK client = new BluefinTecsMerchantPortalSDK();
 ```
@@ -40,7 +43,7 @@ BluefinTecsMerchantPortalSDK client = new BluefinTecsMerchantPortalSDK();
 
 ```java
 // Create — returns the ENTITY (call data() for the record)
-Object created = client.merchantPortalApiController(null).create(Map.of("business_reg_number", "example_business_reg_number", "city", "example_city", "country", "example_country", "currency", "example_currency", "merchant_category_code", 1L, "merchant_name", "example_merchant_name", "packageid", "example_packageid", "packageorderuuid", "example_packageorderuuid", "reason_deactivation", "example_reason_deactivation", "reason_reactivation", "example_reason_reactivation", "street", "example_street", "terminal_country_code", "example_terminal_country_code", "terminal_language_code", "example_terminal_language_code", "terminal_location", "example_terminal_location", "terminal_serial_number", "example_terminal_serial_number", "terminalid", 1L, "vu_nummer", "example_vu_nummer", "zipcode", "example_zipcode"), null);
+Object created = client.merchantPortalApiController(null).create(Map.ofEntries(Map.entry("business_reg_number", "example_business_reg_number"), Map.entry("city", "example_city"), Map.entry("country", "example_country"), Map.entry("currency", "example_currency"), Map.entry("merchant_category_code", 1L), Map.entry("merchant_name", "example_merchant_name"), Map.entry("packageid", "example_packageid"), Map.entry("packageorderuuid", "example_packageorderuuid"), Map.entry("reason_deactivation", "example_reason_deactivation"), Map.entry("reason_reactivation", "example_reason_reactivation"), Map.entry("street", "example_street"), Map.entry("terminal_country_code", "example_terminal_country_code"), Map.entry("terminal_language_code", "example_terminal_language_code"), Map.entry("terminal_location", "example_terminal_location"), Map.entry("terminal_serial_number", "example_terminal_serial_number"), Map.entry("terminalid", 1L), Map.entry("vu_nummer", "example_vu_nummer"), Map.entry("zipcode", "example_zipcode")), null);
 
 ```
 
@@ -52,14 +55,15 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 ```ts
 try {
   const outputdetail = await client.OutputDetail().load({ id: "example_id" })
-  console.log(outputdetail)
+  console.log(outputdetail.data())
 } catch (err) {
   console.error('load failed:', err)
 }
 ```
 
 The low-level `direct()` method does **not** throw — it returns the
-value or an `Error`, so check the result before using it:
+result envelope. Branch on `ok`; on failure `status` holds the HTTP status
+(for error responses) and `err` holds the error:
 
 ```ts
 const result = await client.direct({
@@ -68,8 +72,8 @@ const result = await client.direct({
   params: { id: 'example_id' },
 })
 
-if (result instanceof Error) {
-  throw result
+if (!result.ok) {
+  console.error('request failed:', result.status, result.err)
 }
 ```
 
@@ -119,11 +123,10 @@ Create a mock client for unit testing — no server required:
 ```java
 BluefinTecsMerchantPortalSDK client = BluefinTecsMerchantPortalSDK.testSDK(null, null);
 
-// Entity ops return the ENTITY and raises on error;
-// call data() for the record.
-Object outputDetail = client.outputDetail(null).load(Map.of("id", "test01"), null);
-// outputDetail holds the mock response record
-System.out.println(outputDetail);
+// Entity ops return the entity; they raise on error.
+SdkEntity outputDetail = (SdkEntity) client.outputDetail(null).load(Map.of("id", "test01"), null);
+// data() reads the entity's mock record
+System.out.println(outputDetail.data());
 ```
 
 ### Use a custom fetch function
@@ -224,8 +227,8 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> Object` | Load a single entity by match criteria. Raises on error. |
-| `create` | `(reqdata, ctrl) -> Object` | Create a new entity. Raises on error. |
+| `load` | `(reqmatch, ctrl) -> Object` | Load a single entity by match criteria, and return it. Raises on error. |
+| `create` | `(reqdata, ctrl) -> Object` | Create a new entity, and return it. Raises on error. |
 | `data` | `(newdata...) -> Object` | Get or set entity data. |
 | `match` | `(newmatch...) -> Object` | Get or set entity match criteria. |
 | `make` | `() -> Entity` | Create a new instance with the same options. |
@@ -233,9 +236,10 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the ENTITY (call data() for the record) (a `Map` for single-entity
-ops, an aggregate `List` for `list`) as `Object` and raise on error. Wrap
-calls in `try`/`catch` to handle failures.
+Entity operations return the entity, and `list` a list of entities, one per
+record, as `Object`; an entity is an `SdkEntity`, whose `data()` reads its
+record. They raise on error, so wrap calls in `try`/`catch` to handle
+failures.
 
 The `direct()` escape hatch never raises — it returns a result
 `Map<String, Object>` you branch on via `result.get("ok")`:
@@ -470,10 +474,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: load.
 
@@ -636,25 +640,25 @@ Create an instance: `SdkEntity merchantPortalApiController = client.merchantPort
 #### Example: Create
 
 ```java
-Object merchantPortalApiController = client.merchantPortalApiController(null).create(Map.of(
-    "business_reg_number", "example_business_reg_number",  // String
-    "city", "example_city",  // String
-    "country", "example_country",  // String
-    "currency", "example_currency",  // String
-    "merchant_category_code", 1L,  // Long
-    "merchant_name", "example_merchant_name",  // String
-    "packageid", "example_packageid",  // String
-    "packageorderuuid", "example_packageorderuuid",  // String
-    "reason_deactivation", "example_reason_deactivation",  // String
-    "reason_reactivation", "example_reason_reactivation",  // String
-    "street", "example_street",  // String
-    "terminal_country_code", "example_terminal_country_code",  // String
-    "terminal_language_code", "example_terminal_language_code",  // String
-    "terminal_location", "example_terminal_location",  // String
-    "terminal_serial_number", "example_terminal_serial_number",  // String
-    "terminalid", 1L,  // Long
-    "vu_nummer", "example_vu_nummer",  // String
-    "zipcode", "example_zipcode"  // String
+Object merchantPortalApiController = client.merchantPortalApiController(null).create(Map.ofEntries(
+    Map.entry("business_reg_number", "example_business_reg_number"),  // String
+    Map.entry("city", "example_city"),  // String
+    Map.entry("country", "example_country"),  // String
+    Map.entry("currency", "example_currency"),  // String
+    Map.entry("merchant_category_code", 1L),  // Long
+    Map.entry("merchant_name", "example_merchant_name"),  // String
+    Map.entry("packageid", "example_packageid"),  // String
+    Map.entry("packageorderuuid", "example_packageorderuuid"),  // String
+    Map.entry("reason_deactivation", "example_reason_deactivation"),  // String
+    Map.entry("reason_reactivation", "example_reason_reactivation"),  // String
+    Map.entry("street", "example_street"),  // String
+    Map.entry("terminal_country_code", "example_terminal_country_code"),  // String
+    Map.entry("terminal_language_code", "example_terminal_language_code"),  // String
+    Map.entry("terminal_location", "example_terminal_location"),  // String
+    Map.entry("terminal_serial_number", "example_terminal_serial_number"),  // String
+    Map.entry("terminalid", 1L),  // Long
+    Map.entry("vu_nummer", "example_vu_nummer"),  // String
+    Map.entry("zipcode", "example_zipcode")  // String
 ), null);
 ```
 
@@ -839,20 +843,20 @@ Create an instance: `SdkEntity merchantPortalPamMerchantController = client.merc
 #### Example: Create
 
 ```java
-Object merchantPortalPamMerchantController = client.merchantPortalPamMerchantController(null).create(Map.of(
-    "businessRegistrationNumber", "example_businessRegistrationNumber",  // String
-    "companyName", "example_companyName",  // String
-    "corporateUUID", "example_corporateUUID",  // String
-    "currency", "example_currency",  // String
-    "email", "example_email",  // String
-    "language", "example_language",  // String
-    "login", "example_login",  // String
-    "mandator", "example_mandator",  // String
-    "merchantContractNumber", "example_merchantContractNumber",  // String
-    "packageorderuuid", "example_packageorderuuid",  // String
-    "phoneNumber", "example_phoneNumber",  // String
-    "productid_acquirer", "example_productid_acquirer",  // String
-    "vu_nummer", "example_vu_nummer"  // String
+Object merchantPortalPamMerchantController = client.merchantPortalPamMerchantController(null).create(Map.ofEntries(
+    Map.entry("businessRegistrationNumber", "example_businessRegistrationNumber"),  // String
+    Map.entry("companyName", "example_companyName"),  // String
+    Map.entry("corporateUUID", "example_corporateUUID"),  // String
+    Map.entry("currency", "example_currency"),  // String
+    Map.entry("email", "example_email"),  // String
+    Map.entry("language", "example_language"),  // String
+    Map.entry("login", "example_login"),  // String
+    Map.entry("mandator", "example_mandator"),  // String
+    Map.entry("merchantContractNumber", "example_merchantContractNumber"),  // String
+    Map.entry("packageorderuuid", "example_packageorderuuid"),  // String
+    Map.entry("phoneNumber", "example_phoneNumber"),  // String
+    Map.entry("productid_acquirer", "example_productid_acquirer"),  // String
+    Map.entry("vu_nummer", "example_vu_nummer")  // String
 ), null);
 ```
 
@@ -993,19 +997,19 @@ Create an instance: `SdkEntity outputCreateProduct = client.outputCreateProduct(
 #### Example: Create
 
 ```java
-Object outputCreateProduct = client.outputCreateProduct(null).create(Map.of(
-    "allowMultipleOrders", true,  // Boolean
-    "appFormTemplateName", "example_appFormTemplateName",  // String
-    "contractNeeded", true,  // Boolean
-    "descriptionKey", "example_descriptionKey",  // String
-    "nameKey", "example_nameKey",  // String
-    "prescreeningAllowed", true,  // Boolean
-    "productName", "example_productName",  // String
-    "responseCode", 1L,  // Long
-    "responseMessage", "example_responseMessage",  // String
-    "terminalTemplateName", "example_terminalTemplateName",  // String
-    "vendorName", "example_vendorName",  // String
-    "xmlTemplateFile", "example_xmlTemplateFile"  // String
+Object outputCreateProduct = client.outputCreateProduct(null).create(Map.ofEntries(
+    Map.entry("allowMultipleOrders", true),  // Boolean
+    Map.entry("appFormTemplateName", "example_appFormTemplateName"),  // String
+    Map.entry("contractNeeded", true),  // Boolean
+    Map.entry("descriptionKey", "example_descriptionKey"),  // String
+    Map.entry("nameKey", "example_nameKey"),  // String
+    Map.entry("prescreeningAllowed", true),  // Boolean
+    Map.entry("productName", "example_productName"),  // String
+    Map.entry("responseCode", 1L),  // Long
+    Map.entry("responseMessage", "example_responseMessage"),  // String
+    Map.entry("terminalTemplateName", "example_terminalTemplateName"),  // String
+    Map.entry("vendorName", "example_vendorName"),  // String
+    Map.entry("xmlTemplateFile", "example_xmlTemplateFile")  // String
 ), null);
 ```
 
@@ -1024,10 +1028,10 @@ Create an instance: `SdkEntity outputDetail = client.outputDetail(null);`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `Map<String, Object>` |  |
+| `details` | `Map<String, Object>` |  |
 | `id` | `String` |  |
-| `lines` | `Map<String, Object>` |  |
-| `progress` | `Map<String, Object>` |  |
+| `responseCode` | `Long` | Response code. |
+| `responseMessage` | `String` | Response message. |
 
 #### Example: Load
 

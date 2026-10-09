@@ -12,7 +12,7 @@ An entity groups related API operations. An operation can have several routes wi
 
 ## What the API provides
 
-### [MerchantPortalApiController](docs/api/merchant_portal_api_controller.html)
+### MerchantPortalApiController
 
 Results: OK; Successful registration of an additional terminal.; Successful merchant and terminal registration.
 
@@ -26,30 +26,19 @@ Key fields to recognise:
 - `city`: Merchant&#39;s address: city.
 - `corporateuuid`: An UUID of the newly registered corporate (if created during the flow - it is an optional value).
 
-### [MerchantPortalCommonController](docs/api/merchant_portal_common_controller.html)
+### MerchantPortalCommonController
 
 Results: OK.
 
 SDK operations: `load`.
 
-### [MerchantPortalPamContractController](docs/api/merchant_portal_pam_contract_controller.html)
+### MerchantPortalPamContractController
 
 Results: OK.
 
 SDK operations: `create`.
 
-### [MerchantPortalPamDocumentController](docs/api/merchant_portal_pam_document_controller.html)
-
-Results: OK.
-
-SDK operations: `create`.
-
-Key fields to recognise:
-
-- `packageOrderUUID`: UUID of the package order.
-- `productOrderUUID`: UUID of the product order.
-
-### [MerchantPortalPamFormController](docs/api/merchant_portal_pam_form_controller.html)
+### MerchantPortalPamDocumentController
 
 Results: OK.
 
@@ -60,13 +49,24 @@ Key fields to recognise:
 - `packageOrderUUID`: UUID of the package order.
 - `productOrderUUID`: UUID of the product order.
 
-### [MerchantPortalPamMandatorController](docs/api/merchant_portal_pam_mandator_controller.html)
+### MerchantPortalPamFormController
 
 Results: OK.
 
 SDK operations: `create`.
 
-### [MerchantPortalPamMerchantController](docs/api/merchant_portal_pam_merchant_controller.html)
+Key fields to recognise:
+
+- `packageOrderUUID`: UUID of the package order.
+- `productOrderUUID`: UUID of the product order.
+
+### MerchantPortalPamMandatorController
+
+Results: OK.
+
+SDK operations: `create`.
+
+### MerchantPortalPamMerchantController
 
 Results: OK; Successful registration of additional acquiring.
 
@@ -80,7 +80,7 @@ Key fields to recognise:
 - `country`: Country where the merchant is located.
 - `currency`: Transaction currency in ISO 4217 format.
 
-### [MerchantPortalPamPackageController](docs/api/merchant_portal_pam_package_controller.html)
+### MerchantPortalPamPackageController
 
 Results: OK.
 
@@ -94,7 +94,7 @@ Key fields to recognise:
 - `packageStatus`: Status of the package.
 - `packageUUID`: Unique identifier for the package.
 
-### [MerchantPortalPamProductController](docs/api/merchant_portal_pam_product_controller.html)
+### MerchantPortalPamProductController
 
 Results: OK.
 
@@ -105,7 +105,7 @@ Key fields to recognise:
 - `productUUID`: UUID of the product.
 - `reason_decline`: Reason for product decline.
 
-### [OutputAddProduct](docs/api/output_add_product.html)
+### OutputAddProduct
 
 Results: OK.
 
@@ -118,7 +118,7 @@ Key fields to recognise:
 - `responseCode`: Response code. For success state 0. For failure state lower than 0.
 - `responseMessage`: Response message. For success state OK. For failure state description of the cause.
 
-### [OutputCreateProduct](docs/api/output_create_product.html)
+### OutputCreateProduct
 
 Results: OK.
 
@@ -132,24 +132,7 @@ Key fields to recognise:
 - `contractNeeded`: Indication whether contract is needed or not.
 - `credentialsNeeded`: Indication whether credentials are needed or not.
 
-### [OutputDetail](docs/api/output_detail.html)
-
-Results: OK.
-
-SDK operations: `load`.
-
-### [OutputList](docs/api/output_list.html)
-
-Results: OK.
-
-SDK operations: `create`.
-
-Key fields to recognise:
-
-- `responseCode`: Response code. For success state 0. For failure state lower than 0.
-- `responseMessage`: Response message. For success state OK. For failure state description of the cause.
-
-### [OutputMessage](docs/api/output_message.html)
+### OutputDetail
 
 Results: OK.
 
@@ -160,7 +143,7 @@ Key fields to recognise:
 - `responseCode`: Response code. For success state 0. For failure state lower than 0.
 - `responseMessage`: Response message. For success state OK. For failure state description of the cause.
 
-### [OutputMoveTid](docs/api/output_move_tid.html)
+### OutputList
 
 Results: OK.
 
@@ -171,7 +154,29 @@ Key fields to recognise:
 - `responseCode`: Response code. For success state 0. For failure state lower than 0.
 - `responseMessage`: Response message. For success state OK. For failure state description of the cause.
 
-### [OutputRemoveProduct](docs/api/output_remove_product.html)
+### OutputMessage
+
+Results: OK.
+
+SDK operations: `load`.
+
+Key fields to recognise:
+
+- `responseCode`: Response code. For success state 0. For failure state lower than 0.
+- `responseMessage`: Response message. For success state OK. For failure state description of the cause.
+
+### OutputMoveTid
+
+Results: OK.
+
+SDK operations: `create`.
+
+Key fields to recognise:
+
+- `responseCode`: Response code. For success state 0. For failure state lower than 0.
+- `responseMessage`: Response message. For success state OK. For failure state description of the cause.
+
+### OutputRemoveProduct
 
 Results: OK.
 
@@ -184,7 +189,7 @@ Key fields to recognise:
 - `responseCode`: Response code. For success state 0. For failure state lower than 0.
 - `responseMessage`: Response message. For success state OK. For failure state description of the cause.
 
-### [OutputStart](docs/api/output_start.html)
+### OutputStart
 
 Results: OK.
 
@@ -195,7 +200,7 @@ Key fields to recognise:
 - `responseCode`: Response code. For success state 0. For failure state lower than 0.
 - `responseMessage`: Response message. For success state OK. For failure state description of the cause.
 
-### [OutputStatus](docs/api/output_status.html)
+### OutputStatus
 
 Results: OK.
 
@@ -206,7 +211,7 @@ Key fields to recognise:
 - `responseCode`: Response code. For success state 0. For failure state lower than 0.
 - `responseMessage`: Response message. For success state OK. For failure state description of the cause.
 
-### [OutputUpdateProduct](docs/api/output_update_product.html)
+### OutputUpdateProduct
 
 Results: OK.
 
@@ -226,49 +231,49 @@ Use this map to locate a capability. Consult the entity reference before supplyi
 
 | Entity | SDK operation | HTTP route | Authentication |
 | --- | --- | --- | --- |
-| [MerchantPortalApiController](docs/api/merchant_portal_api_controller.html) | `create` | `POST /merchantportalws/deactivateTerminal` | See reference |
-| [MerchantPortalApiController](docs/api/merchant_portal_api_controller.html) | `create` | `POST /merchantportalws/reactivateTerminal` | See reference |
-| [MerchantPortalApiController](docs/api/merchant_portal_api_controller.html) | `create` | `POST /merchantportalws/registerAdditionalTerminal` | See reference |
-| [MerchantPortalApiController](docs/api/merchant_portal_api_controller.html) | `create` | `POST /merchantportalws/registerNewMerchant` | See reference |
-| [MerchantPortalCommonController](docs/api/merchant_portal_common_controller.html) | `load` | `GET /merchantportalws/logDeveloperInfo` | See reference |
-| [MerchantPortalCommonController](docs/api/merchant_portal_common_controller.html) | `load` | `GET /merchantportalws/version` | See reference |
-| [MerchantPortalPamContractController](docs/api/merchant_portal_pam_contract_controller.html) | `create` | `POST /merchantportalws/generateContract` | See reference |
-| [MerchantPortalPamContractController](docs/api/merchant_portal_pam_contract_controller.html) | `create` | `POST /merchantportalws/uploadContract` | See reference |
-| [MerchantPortalPamDocumentController](docs/api/merchant_portal_pam_document_controller.html) | `create` | `POST /merchantportalws/documentsList` | See reference |
-| [MerchantPortalPamDocumentController](docs/api/merchant_portal_pam_document_controller.html) | `create` | `POST /merchantportalws/downloadDocument` | See reference |
-| [MerchantPortalPamFormController](docs/api/merchant_portal_pam_form_controller.html) | `create` | `POST /merchantportalws/applicationForm` | See reference |
-| [MerchantPortalPamFormController](docs/api/merchant_portal_pam_form_controller.html) | `create` | `POST /merchantportalws/packageForm` | See reference |
-| [MerchantPortalPamFormController](docs/api/merchant_portal_pam_form_controller.html) | `create` | `POST /merchantportalws/reopenForm` | See reference |
-| [MerchantPortalPamFormController](docs/api/merchant_portal_pam_form_controller.html) | `create` | `POST /merchantportalws/secretKey` | See reference |
-| [MerchantPortalPamFormController](docs/api/merchant_portal_pam_form_controller.html) | `create` | `POST /merchantportalws/submitForm` | See reference |
-| [MerchantPortalPamFormController](docs/api/merchant_portal_pam_form_controller.html) | `create` | `POST /merchantportalws/submitValues` | See reference |
-| [MerchantPortalPamMandatorController](docs/api/merchant_portal_pam_mandator_controller.html) | `create` | `POST /merchantportalws/createMandatorConfig` | See reference |
-| [MerchantPortalPamMandatorController](docs/api/merchant_portal_pam_mandator_controller.html) | `create` | `POST /merchantportalws/introduceMandatorPackage` | See reference |
-| [MerchantPortalPamMandatorController](docs/api/merchant_portal_pam_mandator_controller.html) | `create` | `POST /merchantportalws/selfRegistrationLink` | See reference |
-| [MerchantPortalPamMerchantController](docs/api/merchant_portal_pam_merchant_controller.html) | `create` | `POST /merchantportalws/contractNumber` | See reference |
-| [MerchantPortalPamMerchantController](docs/api/merchant_portal_pam_merchant_controller.html) | `create` | `POST /merchantportalws/registerAdditionalAcquiring` | See reference |
-| [MerchantPortalPamMerchantController](docs/api/merchant_portal_pam_merchant_controller.html) | `create` | `POST /merchantportalws/updateMerchant` | See reference |
-| [MerchantPortalPamMerchantController](docs/api/merchant_portal_pam_merchant_controller.html) | `create` | `POST /merchantportalws/registerMerchant` | See reference |
-| [MerchantPortalPamPackageController](docs/api/merchant_portal_pam_package_controller.html) | `create` | `POST /merchantportalws/availablePackages` | See reference |
-| [MerchantPortalPamPackageController](docs/api/merchant_portal_pam_package_controller.html) | `create` | `POST /merchantportalws/orderPackage` | See reference |
-| [MerchantPortalPamPackageController](docs/api/merchant_portal_pam_package_controller.html) | `create` | `POST /merchantportalws/orderedPackages` | See reference |
-| [MerchantPortalPamPackageController](docs/api/merchant_portal_pam_package_controller.html) | `create` | `POST /merchantportalws/packageTemplates` | See reference |
-| [MerchantPortalPamPackageController](docs/api/merchant_portal_pam_package_controller.html) | `create` | `POST /merchantportalws/updatePackageData` | See reference |
-| [MerchantPortalPamProductController](docs/api/merchant_portal_pam_product_controller.html) | `create` | `POST /merchantportalws/approveProduct` | See reference |
-| [MerchantPortalPamProductController](docs/api/merchant_portal_pam_product_controller.html) | `create` | `POST /merchantportalws/declineProduct` | See reference |
-| [MerchantPortalPamProductController](docs/api/merchant_portal_pam_product_controller.html) | `create` | `POST /merchantportalws/orderAdditionalProduct` | See reference |
-| [MerchantPortalPamProductController](docs/api/merchant_portal_pam_product_controller.html) | `create` | `POST /merchantportalws/productsList` | See reference |
-| [OutputAddProduct](docs/api/output_add_product.html) | `create` | `POST /merchantportalws/addProductsToPackage` | See reference |
-| [OutputCreateProduct](docs/api/output_create_product.html) | `create` | `POST /merchantportalws/createNewProduct` | See reference |
-| [OutputDetail](docs/api/output_detail.html) | `load` | `GET /merchantportalws/batch/registerAdditionalTerminal/details/{id}` | See reference |
-| [OutputList](docs/api/output_list.html) | `create` | `POST /merchantportalws/batch/registerAdditionalTerminal/list` | See reference |
-| [OutputMessage](docs/api/output_message.html) | `load` | `GET /merchantportalws/batch/registerAdditionalTerminal/restart/{id}` | See reference |
-| [OutputMessage](docs/api/output_message.html) | `load` | `GET /merchantportalws/batch/registerAdditionalTerminal/stop/{id}` | See reference |
-| [OutputMoveTid](docs/api/output_move_tid.html) | `create` | `POST /merchantportalws/moveTid` | See reference |
-| [OutputRemoveProduct](docs/api/output_remove_product.html) | `create` | `POST /merchantportalws/removeProductsFromPackage` | See reference |
-| [OutputStart](docs/api/output_start.html) | `create` | `POST /merchantportalws/batch/registerAdditionalTerminal/start` | See reference |
-| [OutputStatus](docs/api/output_status.html) | `load` | `GET /merchantportalws/batch/registerAdditionalTerminal/status/{id}` | See reference |
-| [OutputUpdateProduct](docs/api/output_update_product.html) | `create` | `POST /merchantportalws/updateProduct` | See reference |
+| MerchantPortalApiController | `create` | `POST /merchantportalws/deactivateTerminal` | See reference |
+| MerchantPortalApiController | `create` | `POST /merchantportalws/reactivateTerminal` | See reference |
+| MerchantPortalApiController | `create` | `POST /merchantportalws/registerAdditionalTerminal` | See reference |
+| MerchantPortalApiController | `create` | `POST /merchantportalws/registerNewMerchant` | See reference |
+| MerchantPortalCommonController | `load` | `GET /merchantportalws/logDeveloperInfo` | See reference |
+| MerchantPortalCommonController | `load` | `GET /merchantportalws/version` | See reference |
+| MerchantPortalPamContractController | `create` | `POST /merchantportalws/generateContract` | See reference |
+| MerchantPortalPamContractController | `create` | `POST /merchantportalws/uploadContract` | See reference |
+| MerchantPortalPamDocumentController | `create` | `POST /merchantportalws/documentsList` | See reference |
+| MerchantPortalPamDocumentController | `create` | `POST /merchantportalws/downloadDocument` | See reference |
+| MerchantPortalPamFormController | `create` | `POST /merchantportalws/applicationForm` | See reference |
+| MerchantPortalPamFormController | `create` | `POST /merchantportalws/packageForm` | See reference |
+| MerchantPortalPamFormController | `create` | `POST /merchantportalws/reopenForm` | See reference |
+| MerchantPortalPamFormController | `create` | `POST /merchantportalws/secretKey` | See reference |
+| MerchantPortalPamFormController | `create` | `POST /merchantportalws/submitForm` | See reference |
+| MerchantPortalPamFormController | `create` | `POST /merchantportalws/submitValues` | See reference |
+| MerchantPortalPamMandatorController | `create` | `POST /merchantportalws/createMandatorConfig` | See reference |
+| MerchantPortalPamMandatorController | `create` | `POST /merchantportalws/introduceMandatorPackage` | See reference |
+| MerchantPortalPamMandatorController | `create` | `POST /merchantportalws/selfRegistrationLink` | See reference |
+| MerchantPortalPamMerchantController | `create` | `POST /merchantportalws/contractNumber` | See reference |
+| MerchantPortalPamMerchantController | `create` | `POST /merchantportalws/registerAdditionalAcquiring` | See reference |
+| MerchantPortalPamMerchantController | `create` | `POST /merchantportalws/updateMerchant` | See reference |
+| MerchantPortalPamMerchantController | `create` | `POST /merchantportalws/registerMerchant` | See reference |
+| MerchantPortalPamPackageController | `create` | `POST /merchantportalws/availablePackages` | See reference |
+| MerchantPortalPamPackageController | `create` | `POST /merchantportalws/orderPackage` | See reference |
+| MerchantPortalPamPackageController | `create` | `POST /merchantportalws/orderedPackages` | See reference |
+| MerchantPortalPamPackageController | `create` | `POST /merchantportalws/packageTemplates` | See reference |
+| MerchantPortalPamPackageController | `create` | `POST /merchantportalws/updatePackageData` | See reference |
+| MerchantPortalPamProductController | `create` | `POST /merchantportalws/approveProduct` | See reference |
+| MerchantPortalPamProductController | `create` | `POST /merchantportalws/declineProduct` | See reference |
+| MerchantPortalPamProductController | `create` | `POST /merchantportalws/orderAdditionalProduct` | See reference |
+| MerchantPortalPamProductController | `create` | `POST /merchantportalws/productsList` | See reference |
+| OutputAddProduct | `create` | `POST /merchantportalws/addProductsToPackage` | See reference |
+| OutputCreateProduct | `create` | `POST /merchantportalws/createNewProduct` | See reference |
+| OutputDetail | `load` | `GET /merchantportalws/batch/registerAdditionalTerminal/details/{id}` | See reference |
+| OutputList | `create` | `POST /merchantportalws/batch/registerAdditionalTerminal/list` | See reference |
+| OutputMessage | `load` | `GET /merchantportalws/batch/registerAdditionalTerminal/restart/{id}` | See reference |
+| OutputMessage | `load` | `GET /merchantportalws/batch/registerAdditionalTerminal/stop/{id}` | See reference |
+| OutputMoveTid | `create` | `POST /merchantportalws/moveTid` | See reference |
+| OutputRemoveProduct | `create` | `POST /merchantportalws/removeProductsFromPackage` | See reference |
+| OutputStart | `create` | `POST /merchantportalws/batch/registerAdditionalTerminal/start` | See reference |
+| OutputStatus | `load` | `GET /merchantportalws/batch/registerAdditionalTerminal/status/{id}` | See reference |
+| OutputUpdateProduct | `create` | `POST /merchantportalws/updateProduct` | See reference |
 
 ## Connect to the API
 
@@ -290,29 +295,29 @@ Choose the language already used by your application or service. The clients rep
 
 | Client | Repository directory | Distribution |
 | --- | --- | --- |
-| [C](docs/sdks/c.html) | `c/` | Build from source |
-| [Clojure](docs/sdks/clojure.html) | `clojure/` | Build from source |
-| [C++](docs/sdks/cpp.html) | `cpp/` | Build from source |
-| [C#](docs/sdks/csharp.html) | `csharp/` | Build from source |
-| [Dart](docs/sdks/dart.html) | `dart/` | Build from source |
-| [Elixir](docs/sdks/elixir.html) | `elixir/` | Build from source |
-| [Golang](docs/sdks/go.html) | `go/` | Build from source |
-| [Haskell](docs/sdks/haskell.html) | `haskell/` | Build from source |
-| [Java](docs/sdks/java.html) | `java/` | Build from source |
-| [JavaScript](docs/sdks/js.html) | `js/` | Build from source |
-| [Kotlin](docs/sdks/kotlin.html) | `kotlin/` | Build from source |
-| [Lean](docs/sdks/lean.html) | `lean/` | Build from source |
-| [Lua](docs/sdks/lua.html) | `lua/` | Build from source |
-| [OCaml](docs/sdks/ocaml.html) | `ocaml/` | Build from source |
-| [Perl](docs/sdks/perl.html) | `perl/` | Build from source |
-| [PHP](docs/sdks/php.html) | `php/` | Build from source |
-| [Python](docs/sdks/py.html) | `py/` | Build from source |
-| [Ruby](docs/sdks/rb.html) | `rb/` | Build from source |
-| [Rust](docs/sdks/rust.html) | `rust/` | Build from source |
-| [Scala](docs/sdks/scala.html) | `scala/` | Build from source |
-| [Swift](docs/sdks/swift.html) | `swift/` | Build from source |
-| [TypeScript](docs/sdks/ts.html) | `ts/` | Build from source |
-| [Zig](docs/sdks/zig.html) | `zig/` | Build from source |
+| C | `c/` | Build from source |
+| Clojure | `clojure/` | Build from source |
+| C++ | `cpp/` | Build from source |
+| C# | `csharp/` | Build from source |
+| Dart | `dart/` | Build from source |
+| Elixir | `elixir/` | Build from source |
+| Golang | `go/` | Build from source |
+| Haskell | `haskell/` | Build from source |
+| Java | `java/` | Build from source |
+| JavaScript | `js/` | Build from source |
+| Kotlin | `kotlin/` | Build from source |
+| Lean | `lean/` | Build from source |
+| Lua | `lua/` | Build from source |
+| OCaml | `ocaml/` | Build from source |
+| Perl | `perl/` | Build from source |
+| PHP | `php/` | Build from source |
+| Python | `py/` | Build from source |
+| Ruby | `rb/` | Build from source |
+| Rust | `rust/` | Build from source |
+| Scala | `scala/` | Build from source |
+| Swift | `swift/` | Build from source |
+| TypeScript | `ts/` | Build from source |
+| Zig | `zig/` | Build from source |
 
 Build-from-source entries are not marked as published in the project model. Follow the build instructions in that target’s README, then consume the resulting package using your language’s local dependency mechanism. Published entries give the installation command recorded for that client.
 
@@ -320,14 +325,14 @@ Build-from-source entries are not marked as published in the project model. Foll
 
 These targets provide another way to use the API. Their available commands or tools can cover a smaller set of operations than the client libraries.
 
-### [Go CLI](docs/tools/go-cli.html)
+### Go CLI
 
 Use the command-line interface for shell-based tasks and scripts.
 
 Repository directory: `go-cli/`. Not published. Build from the go-cli directory.
 
 
-### [Go MCP server](docs/tools/go-mcp.html)
+### Go MCP server
 
 Use the MCP server to expose supported API operations to an MCP client.
 
@@ -340,25 +345,25 @@ Repository directory: `go-mcp/`. Not published. Build from the go-mcp directory.
 
 Features supply behaviour around API calls, such as request handling, diagnostics, or local testing. Inclusion in this project does not mean a feature is enabled at runtime. Check the selected SDK’s supported features and configuration defaults, then enable the behaviour your application needs.
 
-- [`audit`](docs/features/audit.html): Structured audit trail of operations
-- [`clienttrack`](docs/features/clienttrack.html): Client identity and per-request correlation headers
-- [`debug`](docs/features/debug.html): Request/response capture ring buffer for debugging
-- [`idempotency`](docs/features/idempotency.html): Idempotency keys for safe retries of mutating operations
-- [`log`](docs/features/log.html): Structured request and response logging
-- [`metrics`](docs/features/metrics.html): Statistics capture: per-operation counters and latency
-- [`paging`](docs/features/paging.html): Pagination signals for list operations
-- [`ratelimit`](docs/features/ratelimit.html): Client-side rate limiting via a token bucket
-- [`retry`](docs/features/retry.html): Automatic retry of transient failures with exponential backoff
-- [`telemetry`](docs/features/telemetry.html): Distributed tracing spans with W3C trace-context propagation
-- [`test`](docs/features/test.html): In-memory mock transport for testing without a live server
-- [`timeout`](docs/features/timeout.html): Per-request timeout with transport abort
+- `audit`: Structured audit trail of operations
+- `clienttrack`: Client identity and per-request correlation headers
+- `debug`: Request/response capture ring buffer for debugging
+- `idempotency`: Idempotency keys for safe retries of mutating operations
+- `log`: Structured request and response logging
+- `metrics`: Statistics capture: per-operation counters and latency
+- `paging`: Pagination signals for list operations
+- `ratelimit`: Client-side rate limiting via a token bucket
+- `retry`: Automatic retry of transient failures with exponential backoff
+- `telemetry`: Distributed tracing spans with W3C trace-context propagation
+- `test`: In-memory mock transport for testing without a live server
+- `timeout`: Per-request timeout with transport abort
 
 Start with the default client configuration. Add request limits and diagnostics as needed, test error paths, and review retry behaviour before using operations that change data. A retry can repeat an operation unless the API provides a suitable guarantee.
 
 ## Continue with the documentation
 
-- Follow the [first-call guide](docs/guides/first-call.html) for the setup sequence.
-- Read the [authentication guide](docs/guides/authentication.html) before using protected routes.
-- Use the [API reference](docs/api/index.html) for request schemas, response formats, and status codes.
+- Follow the first-call guide for the setup sequence.
+- Read the authentication guide before using protected routes.
+- Use the API reference for request schemas, response formats, and status codes.
 - Check the chosen SDK or companion tool reference for its configuration and supported operations.
 

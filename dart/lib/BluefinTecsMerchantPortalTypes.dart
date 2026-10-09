@@ -1930,41 +1930,41 @@ class OutputCreateProductCreateData {
 
 class OutputDetail {
   /// OBJECT
-  Map<String, dynamic>? batch;
+  Map<String, dynamic>? details;
   /// STRING
   String? id;
-  /// OBJECT
-  Map<String, dynamic>? lines;
-  /// OBJECT
-  Map<String, dynamic>? progress;
+  /// INTEGER (required at the API)
+  int? responseCode;
+  /// STRING (required at the API)
+  String? responseMessage;
 
   OutputDetail({
-    this.batch,
+    this.details,
     this.id,
-    this.lines,
-    this.progress,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputDetail.fromMap(Map<String, dynamic> m) => OutputDetail(
-        batch: m['batch'] is Map<String, dynamic> ? m['batch'] : null,
+        details: m['details'] is Map<String, dynamic> ? m['details'] : null,
         id: m['id'] is String ? m['id'] : null,
-        lines: m['lines'] is Map<String, dynamic> ? m['lines'] : null,
-        progress: m['progress'] is Map<String, dynamic> ? m['progress'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != batch) {
-      m['batch'] = batch;
+    if (null != details) {
+      m['details'] = details;
     }
     if (null != id) {
       m['id'] = id;
     }
-    if (null != lines) {
-      m['lines'] = lines;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != progress) {
-      m['progress'] = progress;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }

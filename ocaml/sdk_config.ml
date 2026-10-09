@@ -155,6 +155,7 @@ let make_config () : value =
           ("ms", (Num (30000.))) ]));
         ("optspec", (jo [
           ("clearTimer", (Str "`$FUNCTION`"));
+          ("now", (Str "`$FUNCTION`"));
           ("setTimer", (Str "`$FUNCTION`")) ]));
         ("strict", (Bool false));
         ("transport", (Str "wrap")) ])) ]));
@@ -401,13 +402,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -428,13 +432,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -455,13 +462,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -482,13 +492,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_common_controller", (jo [
@@ -516,7 +529,10 @@ let make_config () : value =
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
                 ("args", (empty_map ()));
-                ("select", (empty_map ())) ]);
+                ("select", (empty_map ()));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
@@ -534,7 +550,10 @@ let make_config () : value =
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
                 ("args", (empty_map ()));
-                ("select", (empty_map ())) ]) ])) ])) ]));
+                ("select", (empty_map ()));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_pam_contract_controller", (jo [
@@ -575,13 +594,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -602,13 +624,25 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+                    (Str "authorization") ])) ]));
+                ("body", (jo [
+                  ("fields", (ja [
+                    (jo [
+                      ("name", (Str "inputMessage")) ]);
+                    (jo [
+                      ("binary", (Bool true));
+                      ("name", (Str "pdfFile")) ]) ]));
+                  ("kind", (Str "multipart"));
+                  ("media", (Str "multipart/form-data")) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_pam_document_controller", (jo [
@@ -654,13 +688,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -681,13 +718,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_pam_form_controller", (jo [
@@ -770,13 +810,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -797,13 +840,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -824,13 +870,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -851,13 +900,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -878,13 +930,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -905,13 +960,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_pam_mandator_controller", (jo [
@@ -960,13 +1018,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -987,13 +1048,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -1014,13 +1078,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_pam_merchant_controller", (jo [
@@ -1191,13 +1258,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -1218,13 +1288,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -1245,13 +1318,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -1269,7 +1345,10 @@ let make_config () : value =
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
                 ("args", (empty_map ()));
-                ("select", (empty_map ())) ]) ])) ])) ]));
+                ("select", (empty_map ()));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_pam_package_controller", (jo [
@@ -1354,13 +1433,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -1381,13 +1463,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -1408,13 +1493,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -1435,13 +1523,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -1462,12 +1553,13 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header")) ]) ])) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+                ("select", (empty_map ()));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_pam_product_controller", (jo [
@@ -1543,13 +1635,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -1570,13 +1665,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -1597,13 +1695,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]);
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
@@ -1624,13 +1725,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_add_product", (jo [
@@ -1686,13 +1790,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_create_product", (jo [
@@ -1806,33 +1913,41 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_detail", (jo [
         ("fields", (ja [
           (jo [
-            ("name", (Str "batch"));
-            ("title", (Str "Batch"));
+            ("name", (Str "details"));
+            ("title", (Str "Details"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "id"));
             ("title", (Str "Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("name", (Str "lines"));
-            ("title", (Str "Lines"));
-            ("type", (Str "`$OBJECT`")) ]);
+            ("name", (Str "responseCode"));
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("req", (Bool true));
+            ("short", (Str "Response code."));
+            ("format", (Str "int32")) ]);
           (jo [
-            ("name", (Str "progress"));
-            ("title", (Str "Progress"));
-            ("type", (Str "`$OBJECT`")) ]) ]));
+            ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true));
+            ("short", (Str "Response message.")) ]) ]));
         ("id", (jo [
           ("field", (Str "id"));
           ("name", (Str "id")) ]));
@@ -1866,12 +1981,12 @@ let make_config () : value =
                 ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body.details`")) ]));
+                  ("res", (Str "`body`")) ]));
                 ("args", (jo [
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ]));
@@ -1885,7 +2000,10 @@ let make_config () : value =
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization");
-                    (Str "id") ])) ])) ]) ])) ])) ]));
+                    (Str "id") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_list", (jo [
@@ -1951,13 +2069,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_message", (jo [
@@ -2017,7 +2138,7 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ]));
@@ -2031,7 +2152,10 @@ let make_config () : value =
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization");
-                    (Str "id") ])) ])) ]);
+                    (Str "id") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]);
               (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
@@ -2061,7 +2185,7 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ]));
@@ -2075,7 +2199,10 @@ let make_config () : value =
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization");
-                    (Str "id") ])) ])) ]) ])) ])) ]));
+                    (Str "id") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_move_tid", (jo [
@@ -2134,13 +2261,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_remove_product", (jo [
@@ -2196,13 +2326,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_start", (jo [
@@ -2259,13 +2392,25 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+                    (Str "authorization") ])) ]));
+                ("body", (jo [
+                  ("fields", (ja [
+                    (jo [
+                      ("binary", (Bool true));
+                      ("name", (Str "inputCsvFile")) ]);
+                    (jo [
+                      ("name", (Str "inputJsonMessage")) ]) ]));
+                  ("kind", (Str "multipart"));
+                  ("media", (Str "multipart/form-data")) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_status", (jo [
@@ -2334,7 +2479,7 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ]));
@@ -2348,7 +2493,10 @@ let make_config () : value =
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization");
-                    (Str "id") ])) ])) ]) ])) ])) ]));
+                    (Str "id") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_update_product", (jo [
@@ -2448,13 +2596,16 @@ let make_config () : value =
                   ("header", (ja [
                     (jo [
                       ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
+                      ("orig", (Str "Authorization"));
                       ("type", (Str "`$STRING`"));
                       ("kind", (Str "header"));
                       ("reqd", (Bool true)) ]) ])) ]));
                 ("select", (jo [
                   ("exist", (ja [
-                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+                    (Str "authorization") ])) ]));
+                ("response", (jo [
+                  ("kind", (Str "json"));
+                  ("media", (Str "application/json")) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ])) ])) ])
 

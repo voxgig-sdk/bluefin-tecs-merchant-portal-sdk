@@ -17,6 +17,10 @@ main: kit: entity: merchant_portal_common_controller: {
           }
           m: "GET"
           o: "/merchantportalws/logDeveloperInfo"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "merchantportalws"
@@ -38,6 +42,10 @@ main: kit: entity: merchant_portal_common_controller: {
           }
           m: "GET"
           o: "/merchantportalws/version"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "merchantportalws"

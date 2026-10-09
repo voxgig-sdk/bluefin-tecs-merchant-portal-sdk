@@ -12,7 +12,7 @@ Learn more about Voxgig SDKs at [voxgig.com/sdk](https://voxgig.com/sdk/).
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Haskell, Java, JavaScript, Kotlin, Lean, OCaml, Perl, Rust, Scala, Swift, Zig SDKs, a CLI with an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
 
-> **Features:** `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined` — opt-in,
+> **Features:** `audit`, `clienttrack`, `debug`, `idempotency`, `log`, `metrics`, `paging`, `ratelimit`, `retry`, `telemetry`, `test`, `timeout` — opt-in,
 > inactive until switched on, and configured per client. See the Features
 > section of any SDK README below for what each one does.
 
@@ -69,9 +69,8 @@ const client = BluefinTecsMerchantPortalSDK.test({
   },
 })
 const outputdetail = await client.OutputDetail().load({ id: 'test01' })
-// outputdetail is the OutputDetail entity, populated with mock data
-// — call outputdetail.data() for the record itself
-console.log(outputdetail)
+// outputdetail is the OutputDetail entity; .data() reads its mock record
+console.log(outputdetail.data())
 ```
 
 ### Python
@@ -79,7 +78,7 @@ console.log(outputdetail)
 ```python
 client = BluefinTecsMerchantPortalSDK.test()
 outputdetail = client.OutputDetail().load({"id": "test01"})
-print(outputdetail)
+print(outputdetail.data_get())
 ```
 
 ### PHP
@@ -87,7 +86,7 @@ print(outputdetail)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = BluefinTecsMerchantPortalSDK::test([
-    "entity" => ["outputdetail" => ["test01" => ["id" => "test01"]]],
+    "entity" => ["output_detail" => ["test01" => ["id" => "test01"]]],
 ]);
 $outputdetail = $client->OutputDetail()->load(["id" => "test01"]);
 ```
@@ -106,7 +105,7 @@ result, err := client.OutputDetail(nil).Load(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = BluefinTecsMerchantPortalSDK.test({
-  "entity" => { "outputdetail" => { "test01" => { "id" => "test01" } } },
+  "entity" => { "output_detail" => { "test01" => { "id" => "test01" } } },
 })
 outputdetail = client.OutputDetail.load({ "id" => "test01" })
 ```
@@ -126,8 +125,10 @@ local result, err = client:OutputDetail():load({ id = "test01" })
 BluefinTecsMerchantPortalSDK* client = test_sdk(NULL, NULL);
 PNError* err = NULL;
 Entity* output_detail = bluefintecsmerchantportal_output_detail(client, NULL);
-voxgig_value* output_detail_rec = output_detail->vt->load(output_detail, cmap(1, "id", v_str("test01")), NULL, &err);
-printf("%s\n", voxgig_to_json(output_detail_rec));
+Entity* result = output_detail->vt->load(output_detail, cmap(1, "id", v_str("test01")), NULL, &err);
+if (result) {
+    printf("%s\n", voxgig_to_json(result->vt->data(result, NULL)));
+}
 ```
 
 ### Clojure
@@ -139,23 +140,23 @@ printf("%s\n", voxgig_to_json(output_detail_rec));
 
 (def client (api/test-sdk nil nil))
 (def output_detail (e-output_detail/load (api/output_detail client nil) (vs/jm "id" "test01") nil))
-(println output_detail)
+(println ((:data-get output_detail)))
 ```
 
 ### C++
 
 ```cpp
 auto client = BluefinTecsMerchantPortalSDK::testSDK();
-Value output_detail = client->output_detail()->load(vmap({{"id", Value("test01")}}), Value::undef());
-std::cout << Struct::jsonify(output_detail) << std::endl;
+SdkEntityPtr output_detail = client->output_detail()->load(vmap({{"id", Value("test01")}}), Value::undef());
+std::cout << Struct::jsonify(output_detail->data()) << std::endl;
 ```
 
 ### C#
 
 ```csharp
 var client = BluefinTecsMerchantPortalSDK.TestSDK(null, null);
-var outputDetail = client.OutputDetail().Load(new Dictionary<string, object?> { ["id"] = "test01" });
-Console.WriteLine(outputDetail);
+var outputDetail = (IEntity)client.OutputDetail().Load(new Dictionary<string, object?> { ["id"] = "test01" })!;
+Console.WriteLine(StructUtils.Jsonify(outputDetail.Data()));
 ```
 
 ### Dart
@@ -166,7 +167,7 @@ import 'package:bluefin_tecs_merchant_portal_sdk/BluefinTecsMerchantPortalSDK.da
 Future<void> main() async {
   final client = BluefinTecsMerchantPortalSDK.test();
   final outputdetail = await client.OutputDetail().load({'id': 'test01'});
-  print(outputdetail);
+  print(outputdetail.data());
 }
 ```
 
@@ -177,15 +178,15 @@ alias BluefinTecsMerchantPortal.Helpers, as: H
 
 sdk = BluefinTecsMerchantPortal.test()
 output_detail = BluefinTecsMerchantPortal.output_detail(sdk)
-record = BluefinTecsMerchantPortal.Entity.OutputDetail.load(output_detail, H.deep(%{"id" => "test01"}))
-IO.inspect(record)
+output_detail = BluefinTecsMerchantPortal.Entity.OutputDetail.load(output_detail, H.deep(%{"id" => "test01"}))
+IO.puts(Voxgig.Struct.jsonify(BluefinTecsMerchantPortal.Entity.OutputDetail.data_get(output_detail)))
 ```
 
 ### Haskell
 
 ```haskell
 import qualified SdkClient as Sdk
-import VoxgigStruct (Value (..), emptyMap)
+import VoxgigStruct (Value (..), emptyMap, stringify)
 import SdkHelpers (jo)
 
 main :: IO ()
@@ -195,15 +196,15 @@ main = do
   arg <- jo [("id", VStr "test01")]
   ctrl <- emptyMap
   output_detail <- Sdk.eLoad ent arg ctrl
-  print output_detail
+  putStrLn =<< stringify =<< Sdk.eDataGet output_detail
 ```
 
 ### Java
 
 ```java
 BluefinTecsMerchantPortalSDK client = BluefinTecsMerchantPortalSDK.testSDK(null, null);
-Object outputDetail = client.outputDetail(null).load(Map.of("id", "test01"), null);
-System.out.println(outputDetail);
+SdkEntity outputDetail = (SdkEntity) client.outputDetail(null).load(Map.of("id", "test01"), null);
+System.out.println(outputDetail.data());
 ```
 
 ### JavaScript
@@ -211,17 +212,16 @@ System.out.println(outputDetail);
 ```js
 const client = BluefinTecsMerchantPortalSDK.test()
 const outputdetail = await client.OutputDetail().load({ id: 'test01' })
-// outputdetail is the entity, populated with mock data
-// — call outputdetail.data() for the record itself
-console.log(outputdetail)
+// outputdetail is the OutputDetail entity; .data() reads its mock record
+console.log(outputdetail.data())
 ```
 
 ### Kotlin
 
 ```kotlin
 val client = BluefinTecsMerchantPortalSDK.testSDK(null, null)
-val outputDetail = client.outputDetail(null).load(mutableMapOf<String, Any?>("id" to "test01"), null)
-println(outputDetail)
+val outputDetail = client.outputDetail(null).load(mutableMapOf<String, Any?>("id" to "test01"), null) as SdkEntity
+println(outputDetail.data())
 ```
 
 ### Lean
@@ -231,6 +231,7 @@ cd lean
 lake build
 lake exe omnismoke      # the vendored @voxgig/omni corpus engine itself
 lake exe primary        # shared corpus: request-shaping utilities
+lake exe pipeline       # request shaping driven directly: header, cookie and query arguments
 lake exe feature        # the feature catalog (retry, cache, rbac, netsim, …)
 lake exe structcorpus   # shared corpus: the vendored struct model
 lake exe runner         # entity behaviour (offline; add SDK_TEST_BASE for live)
@@ -254,25 +255,25 @@ use BluefinTecsMerchantPortalSDK;
 
 my $client = BluefinTecsMerchantPortalSDK->test(undef, undef);
 my $outputdetail = $client->OutputDetail->load({ 'id' => 'test01' });
-print "$outputdetail->{id}\n";
+print $outputdetail->data_get->{id}, "\n";
 ```
 
 ### Rust
 
 ```rust
-use bluefin_tecs_merchant_portal_sdk::{jo, test_sdk, Value};
+use bluefin_tecs_merchant_portal_sdk::{jo, test_sdk, BluefinTecsMerchantPortalEntity, Entity, Value};
 
 let client = test_sdk(Value::Noval, Value::Noval);
 let output_detail = client.output_detail(Value::Noval).load(jo(vec![("id", Value::str("test01"))]), Value::Noval).unwrap();
-println!("{:?}", output_detail);
+println!("{:?}", output_detail.data(None));
 ```
 
 ### Scala
 
 ```scala
 val client = BluefinTecsMerchantPortalSDK.testSDK(null, null)
-val outputDetail = client.outputDetail(null).load(java.util.Map.of("id", "test01"), null)
-println(outputDetail)
+val outputDetail = client.outputDetail(null).load(java.util.Map.of("id", "test01"), null).asInstanceOf[SdkEntity]
+println(outputDetail.data())
 ```
 
 ### Swift
@@ -280,7 +281,9 @@ println(outputDetail)
 ```swift
 let client = BluefinTecsMerchantPortalSDK.testSDK(nil, nil)
 let outputDetail = try client.OutputDetail().load(VMap([("id", .string("test01"))]), nil)
-print(outputDetail)
+if let outputDetailEntity = outputDetail.asNative as? Entity {
+    print(outputDetailEntity.data())
+}
 ```
 
 ### Zig
@@ -292,7 +295,7 @@ const h = sdk.h;
 
 const client = sdk.test_sdk(h.vnull(), h.vnull());
 switch (client.output_detail(h.vnull()).load(h.jo(&.{.{ "id", h.vstr("test01") }}), h.vnull())) {
-    .ok => |output_detail| std.debug.print("{s}\n", .{h.stringify(output_detail)}),
+    .ok => |output_detail| std.debug.print("{s}\n", .{h.stringify(output_detail.asEntity().data(null))}),
     .err => |e| std.debug.print("load failed: {s}\n", .{e.msg}),
 }
 ```
@@ -301,31 +304,31 @@ switch (client.output_detail(h.vnull()).load(h.jo(&.{.{ "id", h.vstr("test01") }
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Python | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| PHP | `voxgig-sdk/bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
+| TypeScript | `@voxgig-sdk/bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](ts/README.md#install) |
+| Python | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](py/README.md#install) |
+| PHP | `voxgig-sdk/bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](php/README.md#install) |
 | Golang | `github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/go` | `go get github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/go@latest` |
-| Ruby | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Lua | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| C | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Clojure | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| C++ | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| C# | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Dart | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Elixir | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Haskell | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Java | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| JavaScript | `@voxgig-sdk/bluefin-tecs-merchant-portal-sdk-js` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Kotlin | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Lean | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| OCaml | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Perl | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Rust | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Scala | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Swift | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Zig | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags) |
-| Go CLI | `github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/go-cli` | `go install github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/go-cli/cmd/bluefin-tecs-merchant-portal@latest` |
-| Go MCP server | `github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/go-mcp` | `go get github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/go-mcp@latest` |
+| Ruby | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](rb/README.md#install) |
+| Lua | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](lua/README.md#install) |
+| C | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](c/README.md#install) |
+| Clojure | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](clojure/README.md#install) |
+| C++ | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](cpp/README.md#install) |
+| C# | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](csharp/README.md#install) |
+| Dart | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](dart/README.md#install) |
+| Elixir | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](elixir/README.md#install) |
+| Haskell | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](haskell/README.md#install) |
+| Java | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](java/README.md#install) |
+| JavaScript | `@voxgig-sdk/bluefin-tecs-merchant-portal-sdk-js` | publish pending — [install from source](js/README.md#install) |
+| Kotlin | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](kotlin/README.md#install) |
+| Lean | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](lean/README.md#install) |
+| OCaml | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](ocaml/README.md#install) |
+| Perl | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](perl/README.md#install) |
+| Rust | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](rust/README.md#install) |
+| Scala | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](scala/README.md#install) |
+| Swift | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](swift/README.md#install) |
+| Zig | `voxgig-sdk-bluefin-tecs-merchant-portal-sdk` | publish pending — [install from source](zig/README.md#install) |
+| Go CLI | `github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/go-cli` | build from source — [go-cli/README.md](go-cli/README.md) |
+| Go MCP server | `github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/go-mcp` | build from source — [go-mcp/README.md](go-mcp/README.md) |
 
 ## Quickstart
 
@@ -350,9 +353,10 @@ See the [TypeScript README](ts/README.md) for the full guide.
 
 ## Use it from an AI agent (MCP)
 
-The generated MCP server exposes every operation in this SDK as an
-[MCP](https://modelcontextprotocol.io) tool that Claude, Cursor or Cline
-can call directly. Build and register it:
+The generated MCP server exposes this SDK's load operations as
+[MCP](https://modelcontextprotocol.io) tools that Claude, Cursor or Cline
+can call directly. It only reads: create, update, patch and remove become tools when the SDK's model sets
+`main: kit: target: 'go-mcp': tool: write: true`. Build and register it:
 
 ```bash
 cd go-mcp && go build -o bluefin-tecs-merchant-portal-mcp .
@@ -513,7 +517,7 @@ merchant_portal_api_controller = BluefinTecsMerchantPortal.merchant_portal_api_c
 
 ```haskell
 import qualified SdkClient as Sdk
-import VoxgigStruct (Value (..), emptyMap)
+import VoxgigStruct (Value (..), emptyMap, stringify)
 import SdkHelpers (jo)
 
 main :: IO ()
@@ -570,6 +574,7 @@ Build it with `cd lean && lake build`.
 ```ocaml
 open Voxgig_struct
 open Sdk_helpers
+open Sdk_types
 
 let () =
   let client = Sdk_client.make0 () in
@@ -588,7 +593,7 @@ my $client = BluefinTecsMerchantPortalSDK->new;
 ### Rust
 
 ```rust
-use bluefin_tecs_merchant_portal_sdk::{jo, BluefinTecsMerchantPortalSDK, Value};
+use bluefin_tecs_merchant_portal_sdk::{jo, BluefinTecsMerchantPortalEntity, BluefinTecsMerchantPortalSDK, Entity, Value};
 
 let client = BluefinTecsMerchantPortalSDK::new(Value::Noval);
 
@@ -646,10 +651,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
-if (result instanceof Error) {
-  throw result
+if (result.ok) {
+  console.log(result.data)
 }
-console.log(result.data)
 ```
 
 **Python:**
@@ -760,7 +764,7 @@ result = BluefinTecsMerchantPortal.direct(sdk, BluefinTecsMerchantPortal.Helpers
 ```haskell
 import qualified SdkClient as Sdk
 import qualified SdkFeatures as F
-import VoxgigStruct (Value (..))
+import VoxgigStruct (Value (..), stringify)
 import SdkHelpers (jo)
 
 main :: IO ()
@@ -769,7 +773,7 @@ main = do
   params <- jo [("id", VStr "example")]
   args <- jo [("path", VStr "/api/resource/{id}"), ("method", VStr "GET"), ("params", params)]
   result <- F.direct sdk args
-  print result
+  putStrLn =<< stringify result
 ```
 
 **Java:**
@@ -787,10 +791,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
-if (result instanceof Error) {
-  throw result
+if (result.ok) {
+  console.log(result.data)
 }
-console.log(result.data)
 ```
 
 **Kotlin:**
@@ -912,10 +915,12 @@ customizable without forking any upstream tool:
 - **Templates** (`.sdk/tm/`) and **components** (`.sdk/src/cmp/`) are
   the two layers of generation, copied into this repo: templates are the
   literal per-language source, components generate the API-shaped parts.
-- **Regeneration merges.** By default, newly generated content is
-  three-way merged into existing files, so generator updates and local
-  edits usually converge without manual conflict handling. A project can
-  opt for plain overwrite instead.
+- **Regeneration overwrites.** Each run rewrites every generated file from
+  the model, the templates and the components, so an edit made to
+  generated output is lost. Say what this project needs in its own model
+  (`.sdk/model/sdk.aontu`), or extend a target with a component of its
+  own in `.sdk/src/cmp/<target>/`, registered with `registerComponent`,
+  which `voxgig-sdkgen doctor` reports as an addition rather than drift.
 - **Custom features and entire custom targets** arrive through sdkgen
   packages (`voxgig-sdkgen package add`), on the same rails as the
   bundled languages, and `voxgig-sdkgen doctor` reports any drift from

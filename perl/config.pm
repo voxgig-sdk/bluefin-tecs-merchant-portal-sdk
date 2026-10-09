@@ -200,6 +200,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       },
       "optspec": {
         "clearTimer": "`$FUNCTION`",
+        "now": "`$FUNCTION`",
         "setTimer": "`$FUNCTION`"
       },
       "strict": false,
@@ -491,7 +492,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -502,6 +503,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -529,7 +534,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -540,6 +545,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -567,7 +576,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -578,6 +587,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -605,7 +618,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -616,6 +629,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -655,7 +672,11 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "res": "`body`"
               },
               "args": {},
-              "select": {}
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
+              }
             },
             {
               "kind": "http",
@@ -679,7 +700,11 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "res": "`body`"
               },
               "args": {},
-              "select": {}
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
+              }
             }
           ]
         }
@@ -734,7 +759,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -745,6 +770,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -772,7 +801,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -783,6 +812,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "body": {
+                "fields": [
+                  {
+                    "name": "inputMessage"
+                  },
+                  {
+                    "binary": true,
+                    "name": "pdfFile"
+                  }
+                ],
+                "kind": "multipart",
+                "media": "multipart/form-data"
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -844,7 +890,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -855,6 +901,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -882,7 +932,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -893,6 +943,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -1003,7 +1057,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1014,6 +1068,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -1041,7 +1099,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1052,6 +1110,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -1079,7 +1141,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1090,6 +1152,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -1117,7 +1183,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1128,6 +1194,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -1155,7 +1225,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1166,6 +1236,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -1193,7 +1267,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1204,6 +1278,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -1269,7 +1347,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1280,6 +1358,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -1307,7 +1389,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1318,6 +1400,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -1345,7 +1431,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1356,6 +1442,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -1567,7 +1657,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1578,6 +1668,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -1605,7 +1699,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1616,6 +1710,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -1643,7 +1741,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1654,6 +1752,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -1678,7 +1780,11 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "res": "`body`"
               },
               "args": {},
-              "select": {}
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
+              }
             }
           ]
         }
@@ -1788,7 +1894,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1799,6 +1905,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -1826,7 +1936,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1837,6 +1947,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -1864,7 +1978,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1875,6 +1989,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -1902,7 +2020,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -1913,6 +2031,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -1940,16 +2062,16 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header"
                   }
                 ]
               },
-              "select": {
-                "exist": [
-                  "authorization"
-                ]
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -2048,7 +2170,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -2059,6 +2181,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -2086,7 +2212,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -2097,6 +2223,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -2124,7 +2254,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -2135,6 +2265,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -2162,7 +2296,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -2173,6 +2307,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -2245,7 +2383,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -2256,6 +2394,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -2396,7 +2538,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -2407,6 +2549,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -2419,8 +2565,8 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "output_detail": {
       "fields": [
         {
-          "name": "batch",
-          "title": "Batch",
+          "name": "details",
+          "title": "Details",
           "type": "`$OBJECT`"
         },
         {
@@ -2429,14 +2575,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
-          "name": "lines",
-          "title": "Lines",
-          "type": "`$OBJECT`"
+          "name": "responseCode",
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "req": true,
+          "short": "Response code.",
+          "format": "int32"
         },
         {
-          "name": "progress",
-          "title": "Progress",
-          "type": "`$OBJECT`"
+          "name": "responseMessage",
+          "title": "Response Message",
+          "type": "`$STRING`",
+          "req": true,
+          "short": "Response message."
         }
       ],
       "id": {
@@ -2480,13 +2631,13 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body.details`"
+                "res": "`body`"
               },
               "args": {
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -2507,6 +2658,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "authorization",
                   "id"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -2594,7 +2749,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -2605,6 +2760,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -2684,7 +2843,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -2705,6 +2864,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "authorization",
                   "id"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             },
             {
@@ -2744,7 +2907,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -2765,6 +2928,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "authorization",
                   "id"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -2841,7 +3008,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -2852,6 +3019,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -2924,7 +3095,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -2935,6 +3106,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -3010,7 +3185,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -3021,6 +3196,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "body": {
+                "fields": [
+                  {
+                    "binary": true,
+                    "name": "inputCsvFile"
+                  },
+                  {
+                    "name": "inputJsonMessage"
+                  }
+                ],
+                "kind": "multipart",
+                "media": "multipart/form-data"
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -3111,7 +3303,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -3132,6 +3324,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "authorization",
                   "id"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -3257,7 +3453,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "header": [
                   {
                     "name": "authorization",
-                    "orig": "authorization",
+                    "orig": "Authorization",
                     "type": "`$STRING`",
                     "kind": "header",
                     "reqd": true
@@ -3268,6 +3464,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                 "exist": [
                   "authorization"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]

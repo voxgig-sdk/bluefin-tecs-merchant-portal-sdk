@@ -9,6 +9,7 @@ Complete API reference for the BluefinTecsMerchantPortal C# SDK.
 
 ```csharp
 using BluefinTecsMerchantPortalSdk;
+using Voxgig.Struct;
 
 var client = new BluefinTecsMerchantPortalSDK(options);
 ```
@@ -220,7 +221,7 @@ var merchantPortalApiController = client.MerchantPortalApiController();
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.MerchantPortalApiController().Create(new Dictionary<string, object?>
@@ -277,7 +278,7 @@ var merchantPortalCommonController = client.MerchantPortalCommonController();
 
 #### `Load(reqmatch, ctrl = null) -> object?`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `Data()` reads, and raises on error.
 
 ```csharp
 var result = client.MerchantPortalCommonController().Load(null);
@@ -321,7 +322,7 @@ var merchantPortalPamContractController = client.MerchantPortalPamContractContro
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.MerchantPortalPamContractController().Create(new Dictionary<string, object?>
@@ -330,6 +331,8 @@ var result = client.MerchantPortalPamContractController().Create(new Dictionary<
     ["productOrderUUID"] = "example_productOrderUUID",  // string
 });
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -370,7 +373,7 @@ var merchantPortalPamDocumentController = client.MerchantPortalPamDocumentContro
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.MerchantPortalPamDocumentController().Create(new Dictionary<string, object?>
@@ -438,7 +441,7 @@ var merchantPortalPamFormController = client.MerchantPortalPamFormController();
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.MerchantPortalPamFormController().Create(new Dictionary<string, object?>
@@ -490,7 +493,7 @@ var merchantPortalPamMandatorController = client.MerchantPortalPamMandatorContro
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.MerchantPortalPamMandatorController().Create(new Dictionary<string, object?>
@@ -593,7 +596,7 @@ var merchantPortalPamMerchantController = client.MerchantPortalPamMerchantContro
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.MerchantPortalPamMerchantController().Create(new Dictionary<string, object?>
@@ -677,7 +680,7 @@ var merchantPortalPamPackageController = client.MerchantPortalPamPackageControll
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.MerchantPortalPamPackageController().Create(new Dictionary<string, object?>
@@ -733,7 +736,7 @@ var merchantPortalPamProductController = client.MerchantPortalPamProductControll
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.MerchantPortalPamProductController().Create(new Dictionary<string, object?>
@@ -785,7 +788,7 @@ var outputAddProduct = client.OutputAddProduct();
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.OutputAddProduct().Create(new Dictionary<string, object?>
@@ -847,7 +850,7 @@ var outputCreateProduct = client.OutputCreateProduct();
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.OutputCreateProduct().Create(new Dictionary<string, object?>
@@ -898,16 +901,16 @@ var outputDetail = client.OutputDetail();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `Dictionary<string, object?>` | No |  |
+| `details` | `Dictionary<string, object?>` | No |  |
 | `id` | `string` | No |  |
-| `lines` | `Dictionary<string, object?>` | No |  |
-| `progress` | `Dictionary<string, object?>` | No |  |
+| `responseCode` | `long` | Yes | Response code. |
+| `responseMessage` | `string` | Yes | Response message. |
 
 ### Operations
 
 #### `Load(reqmatch, ctrl = null) -> object?`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `Data()` reads, and raises on error.
 
 ```csharp
 var result = client.OutputDetail().Load(new Dictionary<string, object?> { ["id"] = "output_detail_id" });
@@ -964,7 +967,7 @@ var outputList = client.OutputList();
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.OutputList().Create(new Dictionary<string, object?>
@@ -1014,7 +1017,7 @@ var outputMessage = client.OutputMessage();
 
 #### `Load(reqmatch, ctrl = null) -> object?`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `Data()` reads, and raises on error.
 
 ```csharp
 var result = client.OutputMessage().Load(new Dictionary<string, object?> { ["id"] = "output_message_id" });
@@ -1061,7 +1064,7 @@ var outputMoveTid = client.OutputMoveTid();
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.OutputMoveTid().Create(new Dictionary<string, object?>
@@ -1114,7 +1117,7 @@ var outputRemoveProduct = client.OutputRemoveProduct();
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.OutputRemoveProduct().Create(new Dictionary<string, object?>
@@ -1165,7 +1168,7 @@ var outputStart = client.OutputStart();
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.OutputStart().Create(new Dictionary<string, object?>
@@ -1174,6 +1177,8 @@ var result = client.OutputStart().Create(new Dictionary<string, object?>
     ["responseMessage"] = "example_responseMessage",  // string
 });
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -1216,7 +1221,7 @@ var outputStatus = client.OutputStatus();
 
 #### `Load(reqmatch, ctrl = null) -> object?`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `Data()` reads, and raises on error.
 
 ```csharp
 var result = client.OutputStatus().Load(new Dictionary<string, object?> { ["id"] = "output_status_id" });
@@ -1271,7 +1276,7 @@ var outputUpdateProduct = client.OutputUpdateProduct();
 
 #### `Create(reqdata, ctrl = null) -> object?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```csharp
 var result = client.OutputUpdateProduct().Create(new Dictionary<string, object?>
@@ -1726,6 +1731,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

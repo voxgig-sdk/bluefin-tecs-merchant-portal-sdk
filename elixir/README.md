@@ -16,7 +16,7 @@ keeps the cognitive load low.
 
 ## Install
 This package is not yet published to [Hex](https://hex.pm). Install it from
-the GitHub release tag (`elixir/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases))
+the GitHub release tag (`elixir/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags))
 by adding a git dependency to your `mix.exs`:
 
 ```elixir
@@ -58,7 +58,7 @@ sdk = BluefinTecsMerchantPortal.new()
 ```elixir
 merchant_portal_api_controller = BluefinTecsMerchantPortal.merchant_portal_api_controller(sdk)
 
-# Create — returns the bare created record
+# Create — returns the created entity
 created = BluefinTecsMerchantPortal.Entity.MerchantPortalApiController.create(merchant_portal_api_controller, H.deep(%{"business_reg_number" => "example_business_reg_number", "city" => "example_city", "country" => "example_country", "currency" => "example_currency", "merchant_category_code" => 1, "merchant_name" => "example_merchant_name", "packageid" => "example_packageid", "packageorderuuid" => "example_packageorderuuid", "reason_deactivation" => "example_reason_deactivation", "reason_reactivation" => "example_reason_reactivation", "street" => "example_street", "terminal_country_code" => "example_terminal_country_code", "terminal_language_code" => "example_terminal_language_code", "terminal_location" => "example_terminal_location", "terminal_serial_number" => "example_terminal_serial_number", "terminalid" => 1, "vu_nummer" => "example_vu_nummer", "zipcode" => "example_zipcode"}))
 
 ```
@@ -71,14 +71,15 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 ```ts
 try {
   const outputdetail = await client.OutputDetail().load({ id: "example_id" })
-  console.log(outputdetail)
+  console.log(outputdetail.data())
 } catch (err) {
   console.error('load failed:', err)
 }
 ```
 
 The low-level `direct()` method does **not** throw — it returns the
-value or an `Error`, so check the result before using it:
+result envelope. Branch on `ok`; on failure `status` holds the HTTP status
+(for error responses) and `err` holds the error:
 
 ```ts
 const result = await client.direct({
@@ -87,8 +88,8 @@ const result = await client.direct({
   params: { id: 'example_id' },
 })
 
-if (result instanceof Error) {
-  throw result
+if (!result.ok) {
+  console.error('request failed:', result.status, result.err)
 }
 ```
 
@@ -145,10 +146,10 @@ alias BluefinTecsMerchantPortal.Helpers, as: H
 
 sdk = BluefinTecsMerchantPortal.test()
 
-# Entity ops return the bare record (raise on error).
+# Entity ops return the entity, and list one per record (raise on error).
 output_detail = BluefinTecsMerchantPortal.output_detail(sdk)
-record = BluefinTecsMerchantPortal.Entity.OutputDetail.load(output_detail, H.deep(%{"id" => "test01"}))
-IO.inspect(record)
+output_detail = BluefinTecsMerchantPortal.Entity.OutputDetail.load(output_detail, H.deep(%{"id" => "test01"}))
+IO.puts(Voxgig.Struct.jsonify(BluefinTecsMerchantPortal.Entity.OutputDetail.data_get(output_detail)))
 ```
 
 ### Use a custom fetch function
@@ -253,8 +254,8 @@ Every entity's `BluefinTecsMerchantPortal.Entity.<Name>` module shares the same 
 
 | Function | Signature | Description |
 | --- | --- | --- |
-| `load` | `(entity, reqmatch, ctrl \\ nil) :: map()` | Load a single entity by match criteria. Raises on error. |
-| `create` | `(entity, reqdata, ctrl \\ nil) :: map()` | Create a new entity. Raises on error. |
+| `load` | `(entity, reqmatch, ctrl \\ nil) :: entity` | Load a single entity by match criteria, and return it. Raises on error. |
+| `create` | `(entity, reqdata, ctrl \\ nil) :: entity` | Create a new entity, and return it. Raises on error. |
 | `data_get` | `(entity) :: map()` | Get entity data. |
 | `data_set` | `(entity, data)` | Set entity data. |
 | `match_get` | `(entity) :: map()` | Get entity match criteria. |
@@ -264,9 +265,10 @@ Every entity's `BluefinTecsMerchantPortal.Entity.<Name>` module shares the same 
 
 ### Result shape
 
-Entity operations return the bare result data (a value node — a map for
-single-entity ops, a list for `list`) and raise a `BluefinTecsMerchantPortal.Error` on
-failure. Wrap calls in `try`/`rescue` to handle errors.
+Entity operations return the entity, and `list` a list of entities, one per
+record; an entity module's `data_get/1` reads an entity's record. They raise
+a `BluefinTecsMerchantPortal.Error` on failure, so wrap calls in `try`/`rescue` to handle
+errors.
 
 The `direct/2` escape hatch never raises — it returns a result node you
 branch on via `Voxgig.Struct.getprop(result, "ok")`:
@@ -501,10 +503,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Load.
 
@@ -671,7 +673,7 @@ Create a handle: `merchant_portal_api_controller = BluefinTecsMerchantPortal.mer
 
 ```elixir
 merchant_portal_api_controller = BluefinTecsMerchantPortal.merchant_portal_api_controller(sdk)
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalApiController.create(merchant_portal_api_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_api_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalApiController.create(merchant_portal_api_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "business_reg_number" => "example_business_reg_number",  # String.t()
   "city" => "example_city",  # String.t()
   "country" => "example_country",  # String.t()
@@ -708,7 +710,7 @@ Create a handle: `merchant_portal_common_controller = BluefinTecsMerchantPortal.
 
 ```elixir
 merchant_portal_common_controller = BluefinTecsMerchantPortal.merchant_portal_common_controller(sdk)
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalCommonController.load(merchant_portal_common_controller, BluefinTecsMerchantPortal.Helpers.deep(%{}))
+merchant_portal_common_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalCommonController.load(merchant_portal_common_controller, BluefinTecsMerchantPortal.Helpers.deep(%{}))
 ```
 
 
@@ -733,7 +735,7 @@ Create a handle: `merchant_portal_pam_contract_controller = BluefinTecsMerchantP
 
 ```elixir
 merchant_portal_pam_contract_controller = BluefinTecsMerchantPortal.merchant_portal_pam_contract_controller(sdk)
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamContractController.create(merchant_portal_pam_contract_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_pam_contract_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalPamContractController.create(merchant_portal_pam_contract_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "language" => "example_language",  # String.t()
   "productOrderUUID" => "example_productOrderUUID",  # String.t()
 }))
@@ -762,7 +764,7 @@ Create a handle: `merchant_portal_pam_document_controller = BluefinTecsMerchantP
 
 ```elixir
 merchant_portal_pam_document_controller = BluefinTecsMerchantPortal.merchant_portal_pam_document_controller(sdk)
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamDocumentController.create(merchant_portal_pam_document_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_pam_document_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalPamDocumentController.create(merchant_portal_pam_document_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "appFormFieldDescUUID" => "example_appFormFieldDescUUID",  # String.t()
 }))
 ```
@@ -796,7 +798,7 @@ Create a handle: `merchant_portal_pam_form_controller = BluefinTecsMerchantPorta
 
 ```elixir
 merchant_portal_pam_form_controller = BluefinTecsMerchantPortal.merchant_portal_pam_form_controller(sdk)
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamFormController.create(merchant_portal_pam_form_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_pam_form_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalPamFormController.create(merchant_portal_pam_form_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "appFormFieldsDescUUID" => "example_appFormFieldsDescUUID",  # String.t()
   "language" => "example_language",  # String.t()
   "packageOrderUUID" => "example_packageOrderUUID",  # String.t()
@@ -828,7 +830,7 @@ Create a handle: `merchant_portal_pam_mandator_controller = BluefinTecsMerchantP
 
 ```elixir
 merchant_portal_pam_mandator_controller = BluefinTecsMerchantPortal.merchant_portal_pam_mandator_controller(sdk)
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamMandatorController.create(merchant_portal_pam_mandator_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_pam_mandator_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalPamMandatorController.create(merchant_portal_pam_mandator_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "mandatorName" => "example_mandatorName",  # String.t()
   "packageUUID" => "example_packageUUID",  # String.t()
 }))
@@ -880,7 +882,7 @@ Create a handle: `merchant_portal_pam_merchant_controller = BluefinTecsMerchantP
 
 ```elixir
 merchant_portal_pam_merchant_controller = BluefinTecsMerchantPortal.merchant_portal_pam_merchant_controller(sdk)
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamMerchantController.create(merchant_portal_pam_merchant_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_pam_merchant_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalPamMerchantController.create(merchant_portal_pam_merchant_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "businessRegistrationNumber" => "example_businessRegistrationNumber",  # String.t()
   "companyName" => "example_companyName",  # String.t()
   "corporateUUID" => "example_corporateUUID",  # String.t()
@@ -928,7 +930,7 @@ Create a handle: `merchant_portal_pam_package_controller = BluefinTecsMerchantPo
 
 ```elixir
 merchant_portal_pam_package_controller = BluefinTecsMerchantPortal.merchant_portal_pam_package_controller(sdk)
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamPackageController.create(merchant_portal_pam_package_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_pam_package_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalPamPackageController.create(merchant_portal_pam_package_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "language" => "example_language",  # String.t()
   "packageUUID" => "example_packageUUID",  # String.t()
 }))
@@ -964,7 +966,7 @@ Create a handle: `merchant_portal_pam_product_controller = BluefinTecsMerchantPo
 
 ```elixir
 merchant_portal_pam_product_controller = BluefinTecsMerchantPortal.merchant_portal_pam_product_controller(sdk)
-record = BluefinTecsMerchantPortal.Entity.MerchantPortalPamProductController.create(merchant_portal_pam_product_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
+merchant_portal_pam_product_controller = BluefinTecsMerchantPortal.Entity.MerchantPortalPamProductController.create(merchant_portal_pam_product_controller, BluefinTecsMerchantPortal.Helpers.deep(%{
   "packageOrderUUID" => "example_packageOrderUUID",  # String.t()
   "productOrderUUID" => "example_productOrderUUID",  # String.t()
   "productUUID" => "example_productUUID",  # String.t()
@@ -996,7 +998,7 @@ Create a handle: `output_add_product = BluefinTecsMerchantPortal.output_add_prod
 
 ```elixir
 output_add_product = BluefinTecsMerchantPortal.output_add_product(sdk)
-record = BluefinTecsMerchantPortal.Entity.OutputAddProduct.create(output_add_product, BluefinTecsMerchantPortal.Helpers.deep(%{
+output_add_product = BluefinTecsMerchantPortal.Entity.OutputAddProduct.create(output_add_product, BluefinTecsMerchantPortal.Helpers.deep(%{
   "packageUUID" => "example_packageUUID",  # String.t()
   "productUUIDs" => [],  # list()
   "responseCode" => 1,  # integer()
@@ -1038,7 +1040,7 @@ Create a handle: `output_create_product = BluefinTecsMerchantPortal.output_creat
 
 ```elixir
 output_create_product = BluefinTecsMerchantPortal.output_create_product(sdk)
-record = BluefinTecsMerchantPortal.Entity.OutputCreateProduct.create(output_create_product, BluefinTecsMerchantPortal.Helpers.deep(%{
+output_create_product = BluefinTecsMerchantPortal.Entity.OutputCreateProduct.create(output_create_product, BluefinTecsMerchantPortal.Helpers.deep(%{
   "allowMultipleOrders" => true,  # boolean()
   "appFormTemplateName" => "example_appFormTemplateName",  # String.t()
   "contractNeeded" => true,  # boolean()
@@ -1069,16 +1071,16 @@ Create a handle: `output_detail = BluefinTecsMerchantPortal.output_detail(sdk)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `map()` |  |
+| `details` | `map()` |  |
 | `id` | `String.t()` |  |
-| `lines` | `map()` |  |
-| `progress` | `map()` |  |
+| `responseCode` | `integer()` | Response code. |
+| `responseMessage` | `String.t()` | Response message. |
 
 #### Example: Load
 
 ```elixir
 output_detail = BluefinTecsMerchantPortal.output_detail(sdk)
-record = BluefinTecsMerchantPortal.Entity.OutputDetail.load(output_detail, BluefinTecsMerchantPortal.Helpers.deep(%{"id" => "output_detail_id"}))
+output_detail = BluefinTecsMerchantPortal.Entity.OutputDetail.load(output_detail, BluefinTecsMerchantPortal.Helpers.deep(%{"id" => "output_detail_id"}))
 ```
 
 
@@ -1106,7 +1108,7 @@ Create a handle: `output_list = BluefinTecsMerchantPortal.output_list(sdk)`
 
 ```elixir
 output_list = BluefinTecsMerchantPortal.output_list(sdk)
-record = BluefinTecsMerchantPortal.Entity.OutputList.create(output_list, BluefinTecsMerchantPortal.Helpers.deep(%{
+output_list = BluefinTecsMerchantPortal.Entity.OutputList.create(output_list, BluefinTecsMerchantPortal.Helpers.deep(%{
   "pagination" => %{},  # map()
   "responseCode" => 1,  # integer()
   "responseMessage" => "example_responseMessage",  # String.t()
@@ -1136,7 +1138,7 @@ Create a handle: `output_message = BluefinTecsMerchantPortal.output_message(sdk)
 
 ```elixir
 output_message = BluefinTecsMerchantPortal.output_message(sdk)
-record = BluefinTecsMerchantPortal.Entity.OutputMessage.load(output_message, BluefinTecsMerchantPortal.Helpers.deep(%{"id" => "output_message_id"}))
+output_message = BluefinTecsMerchantPortal.Entity.OutputMessage.load(output_message, BluefinTecsMerchantPortal.Helpers.deep(%{"id" => "output_message_id"}))
 ```
 
 
@@ -1164,7 +1166,7 @@ Create a handle: `output_move_tid = BluefinTecsMerchantPortal.output_move_tid(sd
 
 ```elixir
 output_move_tid = BluefinTecsMerchantPortal.output_move_tid(sdk)
-record = BluefinTecsMerchantPortal.Entity.OutputMoveTid.create(output_move_tid, BluefinTecsMerchantPortal.Helpers.deep(%{
+output_move_tid = BluefinTecsMerchantPortal.Entity.OutputMoveTid.create(output_move_tid, BluefinTecsMerchantPortal.Helpers.deep(%{
   "productOrderUUIDs" => [],  # list()
   "responseCode" => 1,  # integer()
   "responseMessage" => "example_responseMessage",  # String.t()
@@ -1197,7 +1199,7 @@ Create a handle: `output_remove_product = BluefinTecsMerchantPortal.output_remov
 
 ```elixir
 output_remove_product = BluefinTecsMerchantPortal.output_remove_product(sdk)
-record = BluefinTecsMerchantPortal.Entity.OutputRemoveProduct.create(output_remove_product, BluefinTecsMerchantPortal.Helpers.deep(%{
+output_remove_product = BluefinTecsMerchantPortal.Entity.OutputRemoveProduct.create(output_remove_product, BluefinTecsMerchantPortal.Helpers.deep(%{
   "packageUUID" => "example_packageUUID",  # String.t()
   "productUUIDs" => [],  # list()
   "responseCode" => 1,  # integer()
@@ -1228,7 +1230,7 @@ Create a handle: `output_start = BluefinTecsMerchantPortal.output_start(sdk)`
 
 ```elixir
 output_start = BluefinTecsMerchantPortal.output_start(sdk)
-record = BluefinTecsMerchantPortal.Entity.OutputStart.create(output_start, BluefinTecsMerchantPortal.Helpers.deep(%{
+output_start = BluefinTecsMerchantPortal.Entity.OutputStart.create(output_start, BluefinTecsMerchantPortal.Helpers.deep(%{
   "responseCode" => 1,  # integer()
   "responseMessage" => "example_responseMessage",  # String.t()
 }))
@@ -1259,7 +1261,7 @@ Create a handle: `output_status = BluefinTecsMerchantPortal.output_status(sdk)`
 
 ```elixir
 output_status = BluefinTecsMerchantPortal.output_status(sdk)
-record = BluefinTecsMerchantPortal.Entity.OutputStatus.load(output_status, BluefinTecsMerchantPortal.Helpers.deep(%{"id" => "output_status_id"}))
+output_status = BluefinTecsMerchantPortal.Entity.OutputStatus.load(output_status, BluefinTecsMerchantPortal.Helpers.deep(%{"id" => "output_status_id"}))
 ```
 
 
@@ -1295,7 +1297,7 @@ Create a handle: `output_update_product = BluefinTecsMerchantPortal.output_updat
 
 ```elixir
 output_update_product = BluefinTecsMerchantPortal.output_update_product(sdk)
-record = BluefinTecsMerchantPortal.Entity.OutputUpdateProduct.create(output_update_product, BluefinTecsMerchantPortal.Helpers.deep(%{
+output_update_product = BluefinTecsMerchantPortal.Entity.OutputUpdateProduct.create(output_update_product, BluefinTecsMerchantPortal.Helpers.deep(%{
   "productUUID" => "example_productUUID",  # String.t()
   "responseCode" => 1,  # integer()
   "responseMessage" => "example_responseMessage",  # String.t()
@@ -1550,7 +1552,8 @@ that every later pipeline stage observes — the immutable-Elixir way to honour
 the shared-mutable hook contract.
 
 Build inputs from native Elixir maps with `BluefinTecsMerchantPortal.Helpers.deep/1`,
-and read fields off results with `Voxgig.Struct.getprop/2`.
+and read fields off a record, which an entity's `data_get/1` returns, with
+`Voxgig.Struct.getprop/2`.
 
 ### Module structure
 

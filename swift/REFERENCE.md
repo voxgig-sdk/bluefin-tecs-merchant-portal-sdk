@@ -216,7 +216,7 @@ let merchantPortalApiController = client.MerchantPortalApiController()
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.MerchantPortalApiController().create(VMap([
@@ -272,7 +272,7 @@ let merchantPortalCommonController = client.MerchantPortalCommonController()
 
 #### `load(reqmatch, ctrl) throws -> Value`
 
-Load a single entity matching the given criteria. Returns the entity data and throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, as a native `Value` that `asNative as? Entity` unwraps, and throws on error.
 
 ```swift
 let result = try client.MerchantPortalCommonController().load(nil, nil)
@@ -316,7 +316,7 @@ let merchantPortalPamContractController = client.MerchantPortalPamContractContro
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.MerchantPortalPamContractController().create(VMap([
@@ -324,6 +324,8 @@ let result = try client.MerchantPortalPamContractController().create(VMap([
     ("productOrderUUID", .string("example_productOrderUUID"))  // String
 ]), nil)
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -364,7 +366,7 @@ let merchantPortalPamDocumentController = client.MerchantPortalPamDocumentContro
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.MerchantPortalPamDocumentController().create(VMap([
@@ -431,7 +433,7 @@ let merchantPortalPamFormController = client.MerchantPortalPamFormController()
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.MerchantPortalPamFormController().create(VMap([
@@ -482,7 +484,7 @@ let merchantPortalPamMandatorController = client.MerchantPortalPamMandatorContro
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.MerchantPortalPamMandatorController().create(VMap([
@@ -584,7 +586,7 @@ let merchantPortalPamMerchantController = client.MerchantPortalPamMerchantContro
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.MerchantPortalPamMerchantController().create(VMap([
@@ -667,7 +669,7 @@ let merchantPortalPamPackageController = client.MerchantPortalPamPackageControll
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.MerchantPortalPamPackageController().create(VMap([
@@ -722,7 +724,7 @@ let merchantPortalPamProductController = client.MerchantPortalPamProductControll
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.MerchantPortalPamProductController().create(VMap([
@@ -773,7 +775,7 @@ let outputAddProduct = client.OutputAddProduct()
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.OutputAddProduct().create(VMap([
@@ -834,7 +836,7 @@ let outputCreateProduct = client.OutputCreateProduct()
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.OutputCreateProduct().create(VMap([
@@ -884,16 +886,16 @@ let outputDetail = client.OutputDetail()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `VMap` | No |  |
+| `details` | `VMap` | No |  |
 | `id` | `String` | No |  |
-| `lines` | `VMap` | No |  |
-| `progress` | `VMap` | No |  |
+| `responseCode` | `Int` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
 
 ### Operations
 
 #### `load(reqmatch, ctrl) throws -> Value`
 
-Load a single entity matching the given criteria. Returns the entity data and throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, as a native `Value` that `asNative as? Entity` unwraps, and throws on error.
 
 ```swift
 let result = try client.OutputDetail().load(VMap([("id", .string("output_detail_id"))]), nil)
@@ -950,7 +952,7 @@ let outputList = client.OutputList()
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.OutputList().create(VMap([
@@ -999,7 +1001,7 @@ let outputMessage = client.OutputMessage()
 
 #### `load(reqmatch, ctrl) throws -> Value`
 
-Load a single entity matching the given criteria. Returns the entity data and throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, as a native `Value` that `asNative as? Entity` unwraps, and throws on error.
 
 ```swift
 let result = try client.OutputMessage().load(VMap([("id", .string("output_message_id"))]), nil)
@@ -1046,7 +1048,7 @@ let outputMoveTid = client.OutputMoveTid()
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.OutputMoveTid().create(VMap([
@@ -1098,7 +1100,7 @@ let outputRemoveProduct = client.OutputRemoveProduct()
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.OutputRemoveProduct().create(VMap([
@@ -1148,7 +1150,7 @@ let outputStart = client.OutputStart()
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.OutputStart().create(VMap([
@@ -1156,6 +1158,8 @@ let result = try client.OutputStart().create(VMap([
     ("responseMessage", .string("example_responseMessage"))  // String
 ]), nil)
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -1198,7 +1202,7 @@ let outputStatus = client.OutputStatus()
 
 #### `load(reqmatch, ctrl) throws -> Value`
 
-Load a single entity matching the given criteria. Returns the entity data and throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, as a native `Value` that `asNative as? Entity` unwraps, and throws on error.
 
 ```swift
 let result = try client.OutputStatus().load(VMap([("id", .string("output_status_id"))]), nil)
@@ -1253,7 +1257,7 @@ let outputUpdateProduct = client.OutputUpdateProduct()
 
 #### `create(reqdata, ctrl) throws -> Value`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```swift
 let result = try client.OutputUpdateProduct().create(VMap([
@@ -1705,6 +1709,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

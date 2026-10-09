@@ -50,7 +50,7 @@ static MerchantPortalPamMandatorControllerSetup merchant_portal_pam_mandator_con
 
   MerchantPortalPamMandatorControllerSetup s;
   s.client = client;
-  s.d = entity_data;
+  s.data = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;
@@ -65,6 +65,27 @@ static void merchant_portal_pam_mandator_controller_entity_instance() {
   ASSERT_EQ(ent->getName(), std::string("merchant_portal_pam_mandator_controller"), "entity name");
 }
 
+
+static bool merchant_portal_pam_mandator_controller_has_feature(const std::string& name) {
+  Value fm = Helpers::toMapAny(getp(sharedConfig(), "feature"));
+  return fm.is_map() && !getp(fm, name).is_undef();
+}
+
+static void merchant_portal_pam_mandator_controller_entity_validate() {
+  if (!merchant_portal_pam_mandator_controller_has_feature("validate")) {
+    std::cerr << "skip: feature not present in this SDK: validate\n";
+    return;
+  }
+  auto vsdk = BluefinTecsMerchantPortalSDK::testSDK(Value::undef(), vmap({{"feature",
+      vmap({{"validate", vmap({{"active", Value(true)}})}})}}));
+  std::string code;
+  try {
+    vsdk->merchant_portal_pam_mandator_controller()->create(vmap({{"clientSecret", Value(1)}, {"mandatorName", Value("x")}, {"packageUUID", Value("x")}}), Value::undef());
+  } catch (const SdkErrorPtr& err) {
+    code = err->code;
+  }
+  ASSERT_EQ(code, std::string("validate_failed"), "an invalid request fails with validate_failed");
+}
 
 static void merchant_portal_pam_mandator_controller_entity_basic() {
   auto setup = merchant_portal_pam_mandator_controller_basic_setup(Value::undef());
@@ -89,6 +110,7 @@ static void merchant_portal_pam_mandator_controller_entity_basic() {
 
 int main() {
   T_RUN(merchant_portal_pam_mandator_controller_entity_instance);
+  T_RUN(merchant_portal_pam_mandator_controller_entity_validate);
   T_RUN(merchant_portal_pam_mandator_controller_entity_basic);
   return sdktest::summary("merchant_portal_pam_mandator_controller_entity_test");
 }

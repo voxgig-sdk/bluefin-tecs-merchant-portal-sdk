@@ -217,7 +217,7 @@ val merchantPortalApiController = client.merchantPortalApiController(null)
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.merchantPortalApiController(null).create(mutableMapOf<String, Any?>(
@@ -273,7 +273,7 @@ val merchantPortalCommonController = client.merchantPortalCommonController(null)
 
 #### `load(reqmatch, ctrl) -> Any?`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and raises on error.
 
 ```kotlin
 val result = client.merchantPortalCommonController(null).load(null, null)
@@ -317,7 +317,7 @@ val merchantPortalPamContractController = client.merchantPortalPamContractContro
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.merchantPortalPamContractController(null).create(mutableMapOf<String, Any?>(
@@ -325,6 +325,8 @@ val result = client.merchantPortalPamContractController(null).create(mutableMapO
     "productOrderUUID" to "example_productOrderUUID"  // String?
 ), null)
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -365,7 +367,7 @@ val merchantPortalPamDocumentController = client.merchantPortalPamDocumentContro
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.merchantPortalPamDocumentController(null).create(mutableMapOf<String, Any?>(
@@ -432,7 +434,7 @@ val merchantPortalPamFormController = client.merchantPortalPamFormController(nul
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.merchantPortalPamFormController(null).create(mutableMapOf<String, Any?>(
@@ -483,7 +485,7 @@ val merchantPortalPamMandatorController = client.merchantPortalPamMandatorContro
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.merchantPortalPamMandatorController(null).create(mutableMapOf<String, Any?>(
@@ -585,7 +587,7 @@ val merchantPortalPamMerchantController = client.merchantPortalPamMerchantContro
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.merchantPortalPamMerchantController(null).create(mutableMapOf<String, Any?>(
@@ -668,7 +670,7 @@ val merchantPortalPamPackageController = client.merchantPortalPamPackageControll
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.merchantPortalPamPackageController(null).create(mutableMapOf<String, Any?>(
@@ -723,7 +725,7 @@ val merchantPortalPamProductController = client.merchantPortalPamProductControll
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.merchantPortalPamProductController(null).create(mutableMapOf<String, Any?>(
@@ -774,7 +776,7 @@ val outputAddProduct = client.outputAddProduct(null)
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.outputAddProduct(null).create(mutableMapOf<String, Any?>(
@@ -835,7 +837,7 @@ val outputCreateProduct = client.outputCreateProduct(null)
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.outputCreateProduct(null).create(mutableMapOf<String, Any?>(
@@ -885,16 +887,16 @@ val outputDetail = client.outputDetail(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `Map<String, Any?>?` | No |  |
+| `details` | `Map<String, Any?>?` | No |  |
 | `id` | `String?` | No |  |
-| `lines` | `Map<String, Any?>?` | No |  |
-| `progress` | `Map<String, Any?>?` | No |  |
+| `responseCode` | `Long?` | Yes | Response code. |
+| `responseMessage` | `String?` | Yes | Response message. |
 
 ### Operations
 
 #### `load(reqmatch, ctrl) -> Any?`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and raises on error.
 
 ```kotlin
 val result = client.outputDetail(null).load(mutableMapOf<String, Any?>("id" to "output_detail_id"), null)
@@ -951,7 +953,7 @@ val outputList = client.outputList(null)
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.outputList(null).create(mutableMapOf<String, Any?>(
@@ -1000,7 +1002,7 @@ val outputMessage = client.outputMessage(null)
 
 #### `load(reqmatch, ctrl) -> Any?`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and raises on error.
 
 ```kotlin
 val result = client.outputMessage(null).load(mutableMapOf<String, Any?>("id" to "output_message_id"), null)
@@ -1047,7 +1049,7 @@ val outputMoveTid = client.outputMoveTid(null)
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.outputMoveTid(null).create(mutableMapOf<String, Any?>(
@@ -1099,7 +1101,7 @@ val outputRemoveProduct = client.outputRemoveProduct(null)
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.outputRemoveProduct(null).create(mutableMapOf<String, Any?>(
@@ -1149,7 +1151,7 @@ val outputStart = client.outputStart(null)
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.outputStart(null).create(mutableMapOf<String, Any?>(
@@ -1157,6 +1159,8 @@ val result = client.outputStart(null).create(mutableMapOf<String, Any?>(
     "responseMessage" to "example_responseMessage"  // String?
 ), null)
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -1199,7 +1203,7 @@ val outputStatus = client.outputStatus(null)
 
 #### `load(reqmatch, ctrl) -> Any?`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and raises on error.
 
 ```kotlin
 val result = client.outputStatus(null).load(mutableMapOf<String, Any?>("id" to "output_status_id"), null)
@@ -1254,7 +1258,7 @@ val outputUpdateProduct = client.outputUpdateProduct(null)
 
 #### `create(reqdata, ctrl) -> Any?`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```kotlin
 val result = client.outputUpdateProduct(null).create(mutableMapOf<String, Any?>(
@@ -1705,6 +1709,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

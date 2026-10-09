@@ -12,9 +12,18 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `c
 
 ## Install
 This package is not yet published to RubyGems. Install it from the
-GitHub release tag (`rb/vX.Y.Z`):
+GitHub release tag (`rb/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags)), or
+from a clone:
 
-- Releases: [https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases)
+```bash
+git clone https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk
+```
+
+Then add it to your `Gemfile` by path, and run `bundle install`:
+
+```ruby
+gem "voxgig-sdk-bluefin-tecs-merchant-portal-sdk", path: "./bluefin-tecs-merchant-portal-sdk/rb"
+```
 
 
 ## Tutorial: your first API call
@@ -113,13 +122,13 @@ data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
 client = BluefinTecsMerchantPortalSDK.test({
-  "entity" => { "outputdetail" => { "test01" => { "id" => "test01" } } },
+  "entity" => { "output_detail" => { "test01" => { "id" => "test01" } } },
 })
 
 # Entity ops return the ENTITY (raises on error);
-# call data_get for the mock record.
+# data_get reads its mock record.
 outputdetail = client.OutputDetail.load({ "id" => "test01" })
-puts outputdetail
+puts outputdetail.data_get
 ```
 
 ### Use a custom fetch function
@@ -221,8 +230,8 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
-| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
+| `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria, and return it. Raises on error. |
+| `create` | `(reqdata, ctrl) -> any` | Create a new entity, and return it. Raises on error. |
 | `data_get` | `() -> Hash` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> Hash` | Get entity match criteria. |
@@ -232,9 +241,10 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the result data directly. On failure they
-raise a `BluefinTecsMerchantPortalError` (a `StandardError` subclass), so wrap
-calls in `begin`/`rescue` where you need to handle errors.
+Entity operations return the entity, and `list` an `Array` of entities, one
+per record; an entity's `data_get` reads its record. On failure they raise a
+`BluefinTecsMerchantPortalError` (a `StandardError` subclass), so wrap calls in
+`begin`/`rescue` where you need to handle errors.
 
 The `direct` escape hatch is the exception: it never raises and instead
 returns a result `Hash` with these keys:
@@ -468,10 +478,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Load.
 
@@ -1023,10 +1033,10 @@ Create an instance: `output_detail = client.OutputDetail`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `Hash` |  |
+| `details` | `Hash` |  |
 | `id` | `String` |  |
-| `lines` | `Hash` |  |
-| `progress` | `Hash` |  |
+| `responseCode` | `Integer` | Response code. |
+| `responseMessage` | `String` | Response message. |
 
 #### Example: Load
 

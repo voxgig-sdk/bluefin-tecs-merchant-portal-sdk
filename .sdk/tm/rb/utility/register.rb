@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 BluefinTecsMerchantPortalUtility.registrar = ->(u) {
   u.clean = BluefinTecsMerchantPortalUtilities::Clean
+  u.clean_add = BluefinTecsMerchantPortalUtilities::CleanAdd
+  u.clean_explain = BluefinTecsMerchantPortalUtilities::CleanExplain
   u.done = BluefinTecsMerchantPortalUtilities::Done
   u.make_error = BluefinTecsMerchantPortalUtilities::MakeError
   u.feature_add = BluefinTecsMerchantPortalUtilities::FeatureAdd

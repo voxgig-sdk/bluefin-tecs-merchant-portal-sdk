@@ -193,6 +193,7 @@ func MakeConfig() map[string]any {
 				},
 				"optspec": map[string]any{
 					"clearTimer": "`$FUNCTION`",
+					"now": "`$FUNCTION`",
 					"setTimer": "`$FUNCTION`",
 				},
 				"strict": false,
@@ -484,7 +485,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -495,6 +496,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -522,7 +527,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -533,6 +538,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -560,7 +569,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -571,6 +580,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -598,7 +611,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -609,6 +622,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -649,6 +666,10 @@ func MakeConfig() map[string]any {
 								},
 								"args": map[string]any{},
 								"select": map[string]any{},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
+								},
 							},
 							map[string]any{
 								"kind": "http",
@@ -673,6 +694,10 @@ func MakeConfig() map[string]any {
 								},
 								"args": map[string]any{},
 								"select": map[string]any{},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
+								},
 							},
 						},
 					},
@@ -727,7 +752,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -738,6 +763,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -765,7 +794,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -776,6 +805,23 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"body": map[string]any{
+									"fields": []any{
+										map[string]any{
+											"name": "inputMessage",
+										},
+										map[string]any{
+											"binary": true,
+											"name": "pdfFile",
+										},
+									},
+									"kind": "multipart",
+									"media": "multipart/form-data",
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -837,7 +883,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -848,6 +894,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -875,7 +925,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -886,6 +936,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -996,7 +1050,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1007,6 +1061,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -1034,7 +1092,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1045,6 +1103,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -1072,7 +1134,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1083,6 +1145,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -1110,7 +1176,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1121,6 +1187,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -1148,7 +1218,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1159,6 +1229,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -1186,7 +1260,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1197,6 +1271,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -1262,7 +1340,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1273,6 +1351,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -1300,7 +1382,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1311,6 +1393,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -1338,7 +1424,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1349,6 +1435,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -1560,7 +1650,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1571,6 +1661,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -1598,7 +1692,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1609,6 +1703,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -1636,7 +1734,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1647,6 +1745,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -1672,6 +1774,10 @@ func MakeConfig() map[string]any {
 								},
 								"args": map[string]any{},
 								"select": map[string]any{},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
+								},
 							},
 						},
 					},
@@ -1781,7 +1887,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1792,6 +1898,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -1819,7 +1929,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1830,6 +1940,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -1857,7 +1971,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1868,6 +1982,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -1895,7 +2013,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -1906,6 +2024,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -1933,16 +2055,16 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 										},
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"authorization",
-									},
+								"select": map[string]any{},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -2041,7 +2163,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -2052,6 +2174,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -2079,7 +2205,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -2090,6 +2216,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -2117,7 +2247,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -2128,6 +2258,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -2155,7 +2289,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -2166,6 +2300,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -2238,7 +2376,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -2249,6 +2387,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -2389,7 +2531,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -2400,6 +2542,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -2412,8 +2558,8 @@ func MakeConfig() map[string]any {
 			"output_detail": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"name": "batch",
-						"title": "Batch",
+						"name": "details",
+						"title": "Details",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
@@ -2422,14 +2568,19 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"name": "lines",
-						"title": "Lines",
-						"type": "`$OBJECT`",
+						"name": "responseCode",
+						"title": "Response Code",
+						"type": "`$INTEGER`",
+						"req": true,
+						"short": "Response code.",
+						"format": "int32",
 					},
 					map[string]any{
-						"name": "progress",
-						"title": "Progress",
-						"type": "`$OBJECT`",
+						"name": "responseMessage",
+						"title": "Response Message",
+						"type": "`$STRING`",
+						"req": true,
+						"short": "Response message.",
 					},
 				},
 				"id": map[string]any{
@@ -2473,13 +2624,13 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body.details`",
+									"res": "`body`",
 								},
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -2500,6 +2651,10 @@ func MakeConfig() map[string]any {
 										"authorization",
 										"id",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -2587,7 +2742,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -2598,6 +2753,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -2677,7 +2836,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -2698,6 +2857,10 @@ func MakeConfig() map[string]any {
 										"authorization",
 										"id",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -2737,7 +2900,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -2758,6 +2921,10 @@ func MakeConfig() map[string]any {
 										"authorization",
 										"id",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -2834,7 +3001,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -2845,6 +3012,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -2917,7 +3088,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -2928,6 +3099,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -3003,7 +3178,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -3014,6 +3189,23 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"body": map[string]any{
+									"fields": []any{
+										map[string]any{
+											"binary": true,
+											"name": "inputCsvFile",
+										},
+										map[string]any{
+											"name": "inputJsonMessage",
+										},
+									},
+									"kind": "multipart",
+									"media": "multipart/form-data",
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -3104,7 +3296,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -3125,6 +3317,10 @@ func MakeConfig() map[string]any {
 										"authorization",
 										"id",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -3250,7 +3446,7 @@ func MakeConfig() map[string]any {
 									"header": []any{
 										map[string]any{
 											"name": "authorization",
-											"orig": "authorization",
+											"orig": "Authorization",
 											"type": "`$STRING`",
 											"kind": "header",
 											"reqd": true,
@@ -3261,6 +3457,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"authorization",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},

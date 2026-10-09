@@ -13,11 +13,34 @@ use bluefin_tecs_merchant_portal_sdk::core::helpers::{getp, getpath, ja, jo, now
 use bluefin_tecs_merchant_portal_sdk::utility::voxgigstruct as vs;
 use bluefin_tecs_merchant_portal_sdk::{test_sdk, Entity, BluefinTecsMerchantPortalEntity, BluefinTecsMerchantPortalSDK, Value};
 
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT: bool = true;
+
 #[test]
 fn merchant_portal_pam_document_controller_entity_instance() {
     let testsdk = test_sdk(Value::Noval, Value::Noval);
     let ent = testsdk.merchant_portal_pam_document_controller(Value::Noval);
     assert_eq!(ent.get_name(), "merchant_portal_pam_document_controller");
+}
+
+#[test]
+fn merchant_portal_pam_document_controller_entity_validate() {
+    if getp(&getp(&bluefin_tecs_merchant_portal_sdk::make_config(), "feature"), "validate").is_noval() {
+        return;
+    }
+    let client = test_sdk(Value::Noval, jo(vec![(
+        "feature",
+        jo(vec![("validate", jo(vec![("active", Value::Bool(true))]))]),
+    )]));
+    let err = client
+        .merchant_portal_pam_document_controller(Value::Noval)
+        .create(jo(vec![("appFormFieldDescUUID", Value::Num(1.0))]), Value::Noval)
+        .err()
+        .expect("an invalid request should fail");
+    assert_eq!(err.code, "validate_failed");
 }
 
 #[test]
@@ -37,12 +60,6 @@ fn merchant_portal_pam_document_controller_entity_basic() {
             eprintln!("skip: {}", reason);
             return;
         }
-    }
-    // The basic flow consumes synthetic IDs from the fixture. In live mode
-    // without an *_ENTID env override, those IDs hit the live API and 4xx.
-    if setup.synthetic_only {
-        eprintln!("skip: live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER_ENTID JSON to run live");
-        return;
     }
     let client = setup.client.clone();
     // CREATE
@@ -104,9 +121,8 @@ fn merchant_portal_pam_document_controller_basic_setup(extra: Value) -> EntityTe
     )
     .unwrap_or_else(|_| Value::empty_map());
 
-    // Detect ENTID env override before env_override consumes it. When live
-    // mode is on without a real override, the basic test runs against
-    // synthetic IDs from the fixture and 4xx's.
+    // Whether *_ENTID supplied the idmap, read before env_override consumes
+    // it: without it, the ids a live flow binds are the fixture's synthetic ones.
     let entid_env_raw = std::env::var("BLUEFIN_TECS_MERCHANT_PORTAL_TEST_MERCHANT_PORTAL_PAM_DOCUMENT_CONTROLLER_ENTID").unwrap_or_default();
     let idmap_overridden =
         !entid_env_raw.trim().is_empty() && entid_env_raw.trim().starts_with('{');

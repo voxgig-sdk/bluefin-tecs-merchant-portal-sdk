@@ -15,7 +15,7 @@ keeps the cognitive load low.
 
 ## Install
 This package is not yet published to Maven Central. Install it from the GitHub
-release tag (`kotlin/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases)) or
+release tag (`kotlin/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags)) or
 from a source checkout — build the library with Gradle:
 
 ```bash
@@ -32,6 +32,7 @@ loading a specific record.
 
 ```kotlin
 import voxgig.bluefintecsmerchantportalsdk.core.BluefinTecsMerchantPortalSDK
+import voxgig.bluefintecsmerchantportalsdk.core.SdkEntity
 
 val client = BluefinTecsMerchantPortalSDK()
 ```
@@ -52,14 +53,15 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 ```ts
 try {
   const outputdetail = await client.OutputDetail().load({ id: "example_id" })
-  console.log(outputdetail)
+  console.log(outputdetail.data())
 } catch (err) {
   console.error('load failed:', err)
 }
 ```
 
 The low-level `direct()` method does **not** throw — it returns the
-value or an `Error`, so check the result before using it:
+result envelope. Branch on `ok`; on failure `status` holds the HTTP status
+(for error responses) and `err` holds the error:
 
 ```ts
 const result = await client.direct({
@@ -68,8 +70,8 @@ const result = await client.direct({
   params: { id: 'example_id' },
 })
 
-if (result instanceof Error) {
-  throw result
+if (!result.ok) {
+  console.error('request failed:', result.status, result.err)
 }
 ```
 
@@ -119,11 +121,10 @@ Create a mock client for unit testing — no server required:
 ```kotlin
 val client = BluefinTecsMerchantPortalSDK.testSDK(null, null)
 
-// Entity ops return the ENTITY and raises on error;
-// call data() for the record.
-val outputDetail = client.outputDetail(null).load(mutableMapOf<String, Any?>("id" to "test01"), null)
-// outputDetail holds the mock response record
-println(outputDetail)
+// Entity ops return the entity; they raise on error.
+val outputDetail = client.outputDetail(null).load(mutableMapOf<String, Any?>("id" to "test01"), null) as SdkEntity
+// data() reads the entity's mock record
+println(outputDetail.data())
 ```
 
 ### Use a custom fetch function
@@ -222,8 +223,8 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> Any?` | Load a single entity by match criteria. Raises on error. |
-| `create` | `(reqdata, ctrl) -> Any?` | Create a new entity. Raises on error. |
+| `load` | `(reqmatch, ctrl) -> Any?` | Load a single entity by match criteria, and return it. Raises on error. |
+| `create` | `(reqdata, ctrl) -> Any?` | Create a new entity, and return it. Raises on error. |
 | `data` | `(vararg newdata) -> Any?` | Get or set entity data. |
 | `match` | `(vararg newmatch) -> Any?` | Get or set entity match criteria. |
 | `make` | `() -> Entity` | Create a new instance with the same options. |
@@ -231,9 +232,10 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the ENTITY (call data() for the record) (a `Map` for single-entity
-ops, an aggregate `List` for `list`) as `Any?` and raise on error. Wrap
-calls in `try`/`catch` to handle failures.
+Entity operations return the entity, and `list` a list of entities, one per
+record, as `Any?`; an entity is an `SdkEntity`, whose `data()` reads its
+record. They raise on error, so wrap calls in `try`/`catch` to handle
+failures.
 
 The `direct()` escape hatch never raises — it returns a result
 `MutableMap<String, Any?>` you branch on via `result["ok"]`:
@@ -468,10 +470,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: load.
 
@@ -1022,10 +1024,10 @@ Create an instance: `val outputDetail = client.outputDetail(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `Map<String, Any?>?` |  |
+| `details` | `Map<String, Any?>?` |  |
 | `id` | `String?` |  |
-| `lines` | `Map<String, Any?>?` |  |
-| `progress` | `Map<String, Any?>?` |  |
+| `responseCode` | `Long?` | Response code. |
+| `responseMessage` | `String?` | Response message. |
 
 #### Example: Load
 

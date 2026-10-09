@@ -198,12 +198,12 @@ auto merchant_portal_api_controller = client->merchant_portal_api_controller();
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->merchant_portal_api_controller()->create(vmap({
+SdkEntityPtr result = client->merchant_portal_api_controller()->create(vmap({
     {"business_reg_number", Value("example_business_reg_number")},  // std::string
     {"city", Value("example_city")},  // std::string
     {"country", Value("example_country")},  // std::string
@@ -254,12 +254,13 @@ auto merchant_portal_common_controller = client->merchant_portal_common_controll
 
 ### Operations
 
-#### `load(reqmatch, ctrl) -> Value`
+#### `load(reqmatch, ctrl) -> SdkEntityPtr`
 
-Load a single entity matching the given criteria. Returns the entity data and throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and throws on error.
 
 ```cpp
-Value result = client->merchant_portal_common_controller()->load(Value::undef(), Value::undef());
+SdkEntityPtr result = client->merchant_portal_common_controller()->load(Value::undef(), Value::undef());
+std::cout << Struct::jsonify(result->data()) << std::endl;
 ```
 
 ### Common Methods
@@ -298,16 +299,18 @@ auto merchant_portal_pam_contract_controller = client->merchant_portal_pam_contr
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->merchant_portal_pam_contract_controller()->create(vmap({
+SdkEntityPtr result = client->merchant_portal_pam_contract_controller()->create(vmap({
     {"language", Value("example_language")},  // std::string
     {"productOrderUUID", Value("example_productOrderUUID")},  // std::string
 }), Value::undef());
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -346,12 +349,12 @@ auto merchant_portal_pam_document_controller = client->merchant_portal_pam_docum
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->merchant_portal_pam_document_controller()->create(vmap({
+SdkEntityPtr result = client->merchant_portal_pam_document_controller()->create(vmap({
     {"appFormFieldDescUUID", Value("example_appFormFieldDescUUID")},  // std::string
 }), Value::undef());
 ```
@@ -413,12 +416,12 @@ auto merchant_portal_pam_form_controller = client->merchant_portal_pam_form_cont
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->merchant_portal_pam_form_controller()->create(vmap({
+SdkEntityPtr result = client->merchant_portal_pam_form_controller()->create(vmap({
     {"appFormFieldsDescUUID", Value("example_appFormFieldsDescUUID")},  // std::string
     {"language", Value("example_language")},  // std::string
     {"packageOrderUUID", Value("example_packageOrderUUID")},  // std::string
@@ -464,12 +467,12 @@ auto merchant_portal_pam_mandator_controller = client->merchant_portal_pam_manda
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->merchant_portal_pam_mandator_controller()->create(vmap({
+SdkEntityPtr result = client->merchant_portal_pam_mandator_controller()->create(vmap({
     {"mandatorName", Value("example_mandatorName")},  // std::string
     {"packageUUID", Value("example_packageUUID")},  // std::string
 }), Value::undef());
@@ -566,12 +569,12 @@ auto merchant_portal_pam_merchant_controller = client->merchant_portal_pam_merch
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->merchant_portal_pam_merchant_controller()->create(vmap({
+SdkEntityPtr result = client->merchant_portal_pam_merchant_controller()->create(vmap({
     {"businessRegistrationNumber", Value("example_businessRegistrationNumber")},  // std::string
     {"companyName", Value("example_companyName")},  // std::string
     {"corporateUUID", Value("example_corporateUUID")},  // std::string
@@ -649,12 +652,12 @@ auto merchant_portal_pam_package_controller = client->merchant_portal_pam_packag
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->merchant_portal_pam_package_controller()->create(vmap({
+SdkEntityPtr result = client->merchant_portal_pam_package_controller()->create(vmap({
     {"language", Value("example_language")},  // std::string
     {"packageUUID", Value("example_packageUUID")},  // std::string
 }), Value::undef());
@@ -704,12 +707,12 @@ auto merchant_portal_pam_product_controller = client->merchant_portal_pam_produc
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->merchant_portal_pam_product_controller()->create(vmap({
+SdkEntityPtr result = client->merchant_portal_pam_product_controller()->create(vmap({
     {"packageOrderUUID", Value("example_packageOrderUUID")},  // std::string
     {"productOrderUUID", Value("example_productOrderUUID")},  // std::string
     {"productUUID", Value("example_productUUID")},  // std::string
@@ -755,12 +758,12 @@ auto output_add_product = client->output_add_product();
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->output_add_product()->create(vmap({
+SdkEntityPtr result = client->output_add_product()->create(vmap({
     {"packageUUID", Value("example_packageUUID")},  // std::string
     {"productUUIDs", vlist()},  // std::vector<Value>
     {"responseCode", Value(1)},  // int64_t
@@ -816,12 +819,12 @@ auto output_create_product = client->output_create_product();
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->output_create_product()->create(vmap({
+SdkEntityPtr result = client->output_create_product()->create(vmap({
     {"allowMultipleOrders", Value(true)},  // bool
     {"appFormTemplateName", Value("example_appFormTemplateName")},  // std::string
     {"contractNeeded", Value(true)},  // bool
@@ -868,19 +871,20 @@ auto output_detail = client->output_detail();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `std::map<std::string, Value>` | No |  |
+| `details` | `std::map<std::string, Value>` | No |  |
 | `id` | `std::string` | No |  |
-| `lines` | `std::map<std::string, Value>` | No |  |
-| `progress` | `std::map<std::string, Value>` | No |  |
+| `responseCode` | `int64_t` | Yes | Response code. |
+| `responseMessage` | `std::string` | Yes | Response message. |
 
 ### Operations
 
-#### `load(reqmatch, ctrl) -> Value`
+#### `load(reqmatch, ctrl) -> SdkEntityPtr`
 
-Load a single entity matching the given criteria. Returns the entity data and throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and throws on error.
 
 ```cpp
-Value result = client->output_detail()->load(vmap({{"id", Value("output_detail_id")}}), Value::undef());
+SdkEntityPtr result = client->output_detail()->load(vmap({{"id", Value("output_detail_id")}}), Value::undef());
+std::cout << Struct::jsonify(result->data()) << std::endl;
 ```
 
 ### Common Methods
@@ -932,12 +936,12 @@ auto output_list = client->output_list();
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->output_list()->create(vmap({
+SdkEntityPtr result = client->output_list()->create(vmap({
     {"pagination", vmap()},  // std::map<std::string, Value>
     {"responseCode", Value(1)},  // int64_t
     {"responseMessage", Value("example_responseMessage")},  // std::string
@@ -981,12 +985,13 @@ auto output_message = client->output_message();
 
 ### Operations
 
-#### `load(reqmatch, ctrl) -> Value`
+#### `load(reqmatch, ctrl) -> SdkEntityPtr`
 
-Load a single entity matching the given criteria. Returns the entity data and throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and throws on error.
 
 ```cpp
-Value result = client->output_message()->load(vmap({{"id", Value("output_message_id")}}), Value::undef());
+SdkEntityPtr result = client->output_message()->load(vmap({{"id", Value("output_message_id")}}), Value::undef());
+std::cout << Struct::jsonify(result->data()) << std::endl;
 ```
 
 ### Common Methods
@@ -1028,12 +1033,12 @@ auto output_move_tid = client->output_move_tid();
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->output_move_tid()->create(vmap({
+SdkEntityPtr result = client->output_move_tid()->create(vmap({
     {"productOrderUUIDs", vlist()},  // std::vector<Value>
     {"responseCode", Value(1)},  // int64_t
     {"responseMessage", Value("example_responseMessage")},  // std::string
@@ -1080,12 +1085,12 @@ auto output_remove_product = client->output_remove_product();
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->output_remove_product()->create(vmap({
+SdkEntityPtr result = client->output_remove_product()->create(vmap({
     {"packageUUID", Value("example_packageUUID")},  // std::string
     {"productUUIDs", vlist()},  // std::vector<Value>
     {"responseCode", Value(1)},  // int64_t
@@ -1130,16 +1135,18 @@ auto output_start = client->output_start();
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->output_start()->create(vmap({
+SdkEntityPtr result = client->output_start()->create(vmap({
     {"responseCode", Value(1)},  // int64_t
     {"responseMessage", Value("example_responseMessage")},  // std::string
 }), Value::undef());
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -1180,12 +1187,13 @@ auto output_status = client->output_status();
 
 ### Operations
 
-#### `load(reqmatch, ctrl) -> Value`
+#### `load(reqmatch, ctrl) -> SdkEntityPtr`
 
-Load a single entity matching the given criteria. Returns the entity data and throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and throws on error.
 
 ```cpp
-Value result = client->output_status()->load(vmap({{"id", Value("output_status_id")}}), Value::undef());
+SdkEntityPtr result = client->output_status()->load(vmap({{"id", Value("output_status_id")}}), Value::undef());
+std::cout << Struct::jsonify(result->data()) << std::endl;
 ```
 
 ### Common Methods
@@ -1235,12 +1243,12 @@ auto output_update_product = client->output_update_product();
 
 ### Operations
 
-#### `create(reqdata, ctrl) -> Value`
+#### `create(reqdata, ctrl) -> SdkEntityPtr`
 
-Create a new entity with the given data. Returns the created entity data and throws on error.
+Create a new entity with the given data. Returns the created entity and throws on error.
 
 ```cpp
-Value result = client->output_update_product()->create(vmap({
+SdkEntityPtr result = client->output_update_product()->create(vmap({
     {"productUUID", Value("example_productUUID")},  // std::string
     {"responseCode", Value(1)},  // int64_t
     {"responseMessage", Value("example_responseMessage")},  // std::string
@@ -1689,6 +1697,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

@@ -21,7 +21,7 @@ The C++ SDK is **header-only** — there is no package to install
 from a registry. Vendor the `cpp/` directory into your project (or add the
 repository as a git submodule) and put it on your compiler's include path.
 Releases are cut as the git tag `cpp/vX.Y.Z` (see
-[Releases](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/releases)).
+[Tags](https://github.com/voxgig-sdk/bluefin-tecs-merchant-portal-sdk/tags)).
 
 ```bash
 # Add the SDK as a submodule (or copy the cpp/ directory into your tree).
@@ -57,8 +57,8 @@ auto client = BluefinTecsMerchantPortalSDK::create();
 ### 4. Create, update, and remove
 
 ```cpp
-// Create — returns the bare created record.
-Value created = client->merchant_portal_api_controller()->create(vmap({{"business_reg_number", Value("example_business_reg_number")}, {"city", Value("example_city")}, {"country", Value("example_country")}, {"currency", Value("example_currency")}, {"merchant_category_code", Value(1)}, {"merchant_name", Value("example_merchant_name")}, {"packageid", Value("example_packageid")}, {"packageorderuuid", Value("example_packageorderuuid")}, {"reason_deactivation", Value("example_reason_deactivation")}, {"reason_reactivation", Value("example_reason_reactivation")}, {"street", Value("example_street")}, {"terminal_country_code", Value("example_terminal_country_code")}, {"terminal_language_code", Value("example_terminal_language_code")}, {"terminal_location", Value("example_terminal_location")}, {"terminal_serial_number", Value("example_terminal_serial_number")}, {"terminalid", Value(1)}, {"vu_nummer", Value("example_vu_nummer")}, {"zipcode", Value("example_zipcode")}}), Value::undef());
+// Create — returns the created entity.
+SdkEntityPtr created = client->merchant_portal_api_controller()->create(vmap({{"business_reg_number", Value("example_business_reg_number")}, {"city", Value("example_city")}, {"country", Value("example_country")}, {"currency", Value("example_currency")}, {"merchant_category_code", Value(1)}, {"merchant_name", Value("example_merchant_name")}, {"packageid", Value("example_packageid")}, {"packageorderuuid", Value("example_packageorderuuid")}, {"reason_deactivation", Value("example_reason_deactivation")}, {"reason_reactivation", Value("example_reason_reactivation")}, {"street", Value("example_street")}, {"terminal_country_code", Value("example_terminal_country_code")}, {"terminal_language_code", Value("example_terminal_language_code")}, {"terminal_location", Value("example_terminal_location")}, {"terminal_serial_number", Value("example_terminal_serial_number")}, {"terminalid", Value(1)}, {"vu_nummer", Value("example_vu_nummer")}, {"zipcode", Value("example_zipcode")}}), Value::undef());
 
 ```
 
@@ -70,14 +70,15 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 ```ts
 try {
   const outputdetail = await client.OutputDetail().load({ id: "example_id" })
-  console.log(outputdetail)
+  console.log(outputdetail.data())
 } catch (err) {
   console.error('load failed:', err)
 }
 ```
 
 The low-level `direct()` method does **not** throw — it returns the
-value or an `Error`, so check the result before using it:
+result envelope. Branch on `ok`; on failure `status` holds the HTTP status
+(for error responses) and `err` holds the error:
 
 ```ts
 const result = await client.direct({
@@ -86,8 +87,8 @@ const result = await client.direct({
   params: { id: 'example_id' },
 })
 
-if (result instanceof Error) {
-  throw result
+if (!result.ok) {
+  console.error('request failed:', result.status, result.err)
 }
 ```
 
@@ -142,10 +143,10 @@ feature installs an in-memory mock transport:
 ```cpp
 auto client = BluefinTecsMerchantPortalSDK::testSDK();
 
-// Entity ops return the bare record and throw on error.
-Value output_detail = client->output_detail()->load(vmap({{"id", Value("test01")}}), Value::undef());
-// output_detail contains the mock response record
-std::cout << Struct::jsonify(output_detail) << std::endl;
+// Entity ops return the entity and throw on error.
+SdkEntityPtr output_detail = client->output_detail()->load(vmap({{"id", Value("test01")}}), Value::undef());
+// output_detail->data() is the mock response record
+std::cout << Struct::jsonify(output_detail->data()) << std::endl;
 ```
 
 You can seed the mock store by passing test options — see the generated
@@ -232,8 +233,8 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> Value` | Load a single entity by match criteria. Throws on error. |
-| `create` | `(reqdata, ctrl) -> Value` | Create a new entity. Throws on error. |
+| `load` | `(reqmatch, ctrl) -> SdkEntityPtr` | Load a single entity by match criteria. Throws on error. |
+| `create` | `(reqdata, ctrl) -> SdkEntityPtr` | Create a new entity. Throws on error. |
 | `data` | `(arg) -> Value` | Get (no arg) or set (with arg) entity data. |
 | `match` | `(arg) -> Value` | Get (no arg) or set (with arg) entity match criteria. |
 | `make` | `() -> EntityPtr` | Create a new instance with the same options. |
@@ -241,9 +242,9 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a map `Value` for
-single-entity ops, a list `Value` for `list`) and throw
-`sdk::SdkErrorPtr` on error. Wrap calls in `try`/`catch` to handle
+Entity operations return the entity, and `list` a `std::vector` of
+entities, one per record; `data()` reads an entity's record. They throw
+`sdk::SdkErrorPtr` on error, so wrap calls in `try`/`catch` to handle
 failures.
 
 The `direct()` escape hatch never throws — it returns a result `Value`
@@ -479,10 +480,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Load.
 
@@ -602,7 +603,7 @@ Create an instance: `auto merchant_portal_api_controller = client->merchant_port
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -645,7 +646,7 @@ Create an instance: `auto merchant_portal_api_controller = client->merchant_port
 #### Example: Create
 
 ```cpp
-Value merchant_portal_api_controller = client->merchant_portal_api_controller()->create(vmap({
+SdkEntityPtr merchant_portal_api_controller = client->merchant_portal_api_controller()->create(vmap({
     {"business_reg_number", Value("example_business_reg_number")},  // std::string
     {"city", Value("example_city")},  // std::string
     {"country", Value("example_country")},  // std::string
@@ -676,12 +677,13 @@ Create an instance: `auto merchant_portal_common_controller = client->merchant_p
 
 | Method | Description |
 | --- | --- |
-| `load(match, ctrl)` | Load a single entity by match criteria. |
+| `load(match, ctrl) -> SdkEntityPtr` | Load a single entity by match criteria. |
 
 #### Example: Load
 
 ```cpp
-Value merchant_portal_common_controller = client->merchant_portal_common_controller()->load(Value::undef(), Value::undef());
+SdkEntityPtr merchant_portal_common_controller = client->merchant_portal_common_controller()->load(Value::undef(), Value::undef());
+std::cout << Struct::jsonify(merchant_portal_common_controller->data()) << std::endl;
 ```
 
 
@@ -693,7 +695,7 @@ Create an instance: `auto merchant_portal_pam_contract_controller = client->merc
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -705,7 +707,7 @@ Create an instance: `auto merchant_portal_pam_contract_controller = client->merc
 #### Example: Create
 
 ```cpp
-Value merchant_portal_pam_contract_controller = client->merchant_portal_pam_contract_controller()->create(vmap({
+SdkEntityPtr merchant_portal_pam_contract_controller = client->merchant_portal_pam_contract_controller()->create(vmap({
     {"language", Value("example_language")},  // std::string
     {"productOrderUUID", Value("example_productOrderUUID")},  // std::string
 }), Value::undef());
@@ -720,7 +722,7 @@ Create an instance: `auto merchant_portal_pam_document_controller = client->merc
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -733,7 +735,7 @@ Create an instance: `auto merchant_portal_pam_document_controller = client->merc
 #### Example: Create
 
 ```cpp
-Value merchant_portal_pam_document_controller = client->merchant_portal_pam_document_controller()->create(vmap({
+SdkEntityPtr merchant_portal_pam_document_controller = client->merchant_portal_pam_document_controller()->create(vmap({
     {"appFormFieldDescUUID", Value("example_appFormFieldDescUUID")},  // std::string
 }), Value::undef());
 ```
@@ -747,7 +749,7 @@ Create an instance: `auto merchant_portal_pam_form_controller = client->merchant
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -766,7 +768,7 @@ Create an instance: `auto merchant_portal_pam_form_controller = client->merchant
 #### Example: Create
 
 ```cpp
-Value merchant_portal_pam_form_controller = client->merchant_portal_pam_form_controller()->create(vmap({
+SdkEntityPtr merchant_portal_pam_form_controller = client->merchant_portal_pam_form_controller()->create(vmap({
     {"appFormFieldsDescUUID", Value("example_appFormFieldsDescUUID")},  // std::string
     {"language", Value("example_language")},  // std::string
     {"packageOrderUUID", Value("example_packageOrderUUID")},  // std::string
@@ -783,7 +785,7 @@ Create an instance: `auto merchant_portal_pam_mandator_controller = client->merc
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -797,7 +799,7 @@ Create an instance: `auto merchant_portal_pam_mandator_controller = client->merc
 #### Example: Create
 
 ```cpp
-Value merchant_portal_pam_mandator_controller = client->merchant_portal_pam_mandator_controller()->create(vmap({
+SdkEntityPtr merchant_portal_pam_mandator_controller = client->merchant_portal_pam_mandator_controller()->create(vmap({
     {"mandatorName", Value("example_mandatorName")},  // std::string
     {"packageUUID", Value("example_packageUUID")},  // std::string
 }), Value::undef());
@@ -812,7 +814,7 @@ Create an instance: `auto merchant_portal_pam_merchant_controller = client->merc
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -848,7 +850,7 @@ Create an instance: `auto merchant_portal_pam_merchant_controller = client->merc
 #### Example: Create
 
 ```cpp
-Value merchant_portal_pam_merchant_controller = client->merchant_portal_pam_merchant_controller()->create(vmap({
+SdkEntityPtr merchant_portal_pam_merchant_controller = client->merchant_portal_pam_merchant_controller()->create(vmap({
     {"businessRegistrationNumber", Value("example_businessRegistrationNumber")},  // std::string
     {"companyName", Value("example_companyName")},  // std::string
     {"corporateUUID", Value("example_corporateUUID")},  // std::string
@@ -874,7 +876,7 @@ Create an instance: `auto merchant_portal_pam_package_controller = client->merch
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -895,7 +897,7 @@ Create an instance: `auto merchant_portal_pam_package_controller = client->merch
 #### Example: Create
 
 ```cpp
-Value merchant_portal_pam_package_controller = client->merchant_portal_pam_package_controller()->create(vmap({
+SdkEntityPtr merchant_portal_pam_package_controller = client->merchant_portal_pam_package_controller()->create(vmap({
     {"language", Value("example_language")},  // std::string
     {"packageUUID", Value("example_packageUUID")},  // std::string
 }), Value::undef());
@@ -910,7 +912,7 @@ Create an instance: `auto merchant_portal_pam_product_controller = client->merch
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -930,7 +932,7 @@ Create an instance: `auto merchant_portal_pam_product_controller = client->merch
 #### Example: Create
 
 ```cpp
-Value merchant_portal_pam_product_controller = client->merchant_portal_pam_product_controller()->create(vmap({
+SdkEntityPtr merchant_portal_pam_product_controller = client->merchant_portal_pam_product_controller()->create(vmap({
     {"packageOrderUUID", Value("example_packageOrderUUID")},  // std::string
     {"productOrderUUID", Value("example_productOrderUUID")},  // std::string
     {"productUUID", Value("example_productUUID")},  // std::string
@@ -947,7 +949,7 @@ Create an instance: `auto output_add_product = client->output_add_product();`
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -961,7 +963,7 @@ Create an instance: `auto output_add_product = client->output_add_product();`
 #### Example: Create
 
 ```cpp
-Value output_add_product = client->output_add_product()->create(vmap({
+SdkEntityPtr output_add_product = client->output_add_product()->create(vmap({
     {"packageUUID", Value("example_packageUUID")},  // std::string
     {"productUUIDs", vlist()},  // std::vector<Value>
     {"responseCode", Value(1)},  // int64_t
@@ -978,7 +980,7 @@ Create an instance: `auto output_create_product = client->output_create_product(
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -1002,7 +1004,7 @@ Create an instance: `auto output_create_product = client->output_create_product(
 #### Example: Create
 
 ```cpp
-Value output_create_product = client->output_create_product()->create(vmap({
+SdkEntityPtr output_create_product = client->output_create_product()->create(vmap({
     {"allowMultipleOrders", Value(true)},  // bool
     {"appFormTemplateName", Value("example_appFormTemplateName")},  // std::string
     {"contractNeeded", Value(true)},  // bool
@@ -1027,21 +1029,22 @@ Create an instance: `auto output_detail = client->output_detail();`
 
 | Method | Description |
 | --- | --- |
-| `load(match, ctrl)` | Load a single entity by match criteria. |
+| `load(match, ctrl) -> SdkEntityPtr` | Load a single entity by match criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `std::map<std::string, Value>` |  |
+| `details` | `std::map<std::string, Value>` |  |
 | `id` | `std::string` |  |
-| `lines` | `std::map<std::string, Value>` |  |
-| `progress` | `std::map<std::string, Value>` |  |
+| `responseCode` | `int64_t` | Response code. |
+| `responseMessage` | `std::string` | Response message. |
 
 #### Example: Load
 
 ```cpp
-Value output_detail = client->output_detail()->load(vmap({{"id", Value("output_detail_id")}}), Value::undef());
+SdkEntityPtr output_detail = client->output_detail()->load(vmap({{"id", Value("output_detail_id")}}), Value::undef());
+std::cout << Struct::jsonify(output_detail->data()) << std::endl;
 ```
 
 
@@ -1053,7 +1056,7 @@ Create an instance: `auto output_list = client->output_list();`
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -1068,7 +1071,7 @@ Create an instance: `auto output_list = client->output_list();`
 #### Example: Create
 
 ```cpp
-Value output_list = client->output_list()->create(vmap({
+SdkEntityPtr output_list = client->output_list()->create(vmap({
     {"pagination", vmap()},  // std::map<std::string, Value>
     {"responseCode", Value(1)},  // int64_t
     {"responseMessage", Value("example_responseMessage")},  // std::string
@@ -1084,7 +1087,7 @@ Create an instance: `auto output_message = client->output_message();`
 
 | Method | Description |
 | --- | --- |
-| `load(match, ctrl)` | Load a single entity by match criteria. |
+| `load(match, ctrl) -> SdkEntityPtr` | Load a single entity by match criteria. |
 
 #### Fields
 
@@ -1097,7 +1100,8 @@ Create an instance: `auto output_message = client->output_message();`
 #### Example: Load
 
 ```cpp
-Value output_message = client->output_message()->load(vmap({{"id", Value("output_message_id")}}), Value::undef());
+SdkEntityPtr output_message = client->output_message()->load(vmap({{"id", Value("output_message_id")}}), Value::undef());
+std::cout << Struct::jsonify(output_message->data()) << std::endl;
 ```
 
 
@@ -1109,7 +1113,7 @@ Create an instance: `auto output_move_tid = client->output_move_tid();`
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -1124,7 +1128,7 @@ Create an instance: `auto output_move_tid = client->output_move_tid();`
 #### Example: Create
 
 ```cpp
-Value output_move_tid = client->output_move_tid()->create(vmap({
+SdkEntityPtr output_move_tid = client->output_move_tid()->create(vmap({
     {"productOrderUUIDs", vlist()},  // std::vector<Value>
     {"responseCode", Value(1)},  // int64_t
     {"responseMessage", Value("example_responseMessage")},  // std::string
@@ -1142,7 +1146,7 @@ Create an instance: `auto output_remove_product = client->output_remove_product(
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -1156,7 +1160,7 @@ Create an instance: `auto output_remove_product = client->output_remove_product(
 #### Example: Create
 
 ```cpp
-Value output_remove_product = client->output_remove_product()->create(vmap({
+SdkEntityPtr output_remove_product = client->output_remove_product()->create(vmap({
     {"packageUUID", Value("example_packageUUID")},  // std::string
     {"productUUIDs", vlist()},  // std::vector<Value>
     {"responseCode", Value(1)},  // int64_t
@@ -1173,7 +1177,7 @@ Create an instance: `auto output_start = client->output_start();`
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -1186,7 +1190,7 @@ Create an instance: `auto output_start = client->output_start();`
 #### Example: Create
 
 ```cpp
-Value output_start = client->output_start()->create(vmap({
+SdkEntityPtr output_start = client->output_start()->create(vmap({
     {"responseCode", Value(1)},  // int64_t
     {"responseMessage", Value("example_responseMessage")},  // std::string
 }), Value::undef());
@@ -1201,7 +1205,7 @@ Create an instance: `auto output_status = client->output_status();`
 
 | Method | Description |
 | --- | --- |
-| `load(match, ctrl)` | Load a single entity by match criteria. |
+| `load(match, ctrl) -> SdkEntityPtr` | Load a single entity by match criteria. |
 
 #### Fields
 
@@ -1216,7 +1220,8 @@ Create an instance: `auto output_status = client->output_status();`
 #### Example: Load
 
 ```cpp
-Value output_status = client->output_status()->load(vmap({{"id", Value("output_status_id")}}), Value::undef());
+SdkEntityPtr output_status = client->output_status()->load(vmap({{"id", Value("output_status_id")}}), Value::undef());
+std::cout << Struct::jsonify(output_status->data()) << std::endl;
 ```
 
 
@@ -1228,7 +1233,7 @@ Create an instance: `auto output_update_product = client->output_update_product(
 
 | Method | Description |
 | --- | --- |
-| `create(data, ctrl)` | Create a new entity with the given data. |
+| `create(data, ctrl) -> SdkEntityPtr` | Create a new entity with the given data. |
 
 #### Fields
 
@@ -1251,7 +1256,7 @@ Create an instance: `auto output_update_product = client->output_update_product(
 #### Example: Create
 
 ```cpp
-Value output_update_product = client->output_update_product()->create(vmap({
+SdkEntityPtr output_update_product = client->output_update_product()->create(vmap({
     {"productUUID", Value("example_productUUID")},  // std::string
     {"responseCode", Value(1)},  // int64_t
     {"responseMessage", Value("example_responseMessage")},  // std::string

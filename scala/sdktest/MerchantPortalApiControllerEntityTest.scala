@@ -5,16 +5,36 @@
 
 import java.util.{ArrayList, LinkedHashMap, List => JList, Map => JMap}
 
-import voxgig.bluefintecsmerchantportalsdk.core.{Helpers, SdkEntity, BluefinTecsMerchantPortalSDK}
+import voxgig.bluefintecsmerchantportalsdk.core.{Config, Context, Helpers, SdkEntity, SdkError, BluefinTecsMerchantPortalSDK}
+import voxgig.bluefintecsmerchantportalsdk.feature.BaseFeature
 import voxgig.bluefintecsmerchantportalsdk.utility.struct.Struct
 
 object MerchantPortalApiControllerEntityTest {
+
+  import SdkTestSupport.{B, I, jl, om}
+
+  private def hasFeature(name: String): Boolean = {
+    val fm = Helpers.toMapAny(Config.sharedConfig().get("feature"))
+    fm != null && fm.get(name) != null
+  }
 
   def run(rep: SdkTestReport): Unit = {
     rep.scope("merchant_portal_api_controller.instance") {
       val testsdk = BluefinTecsMerchantPortalSDK.testSDK()
       val ent = testsdk.merchantPortalApiController(null)
       rep.check("merchant_portal_api_controller.instance", ent != null, "expected non-null merchant_portal_api_controller entity")
+    }
+
+    rep.scope("merchant_portal_api_controller.validate") {
+      if (hasFeature("validate")) {
+        val client = BluefinTecsMerchantPortalSDK.testSDK(null, om("feature" -> om("validate" -> om("active" -> B(true)))))
+        val err = try {
+          client.merchantPortalApiController(null).create(om("account_number" -> "x", "business_reg_number" -> "x", "city" -> "x", "country" -> "x", "currency" -> "x", "merchant_category_code" -> I(1), "merchant_name" -> "x", "packageid" -> "x", "packageorderuuid" -> "x", "reason_deactivation" -> "x", "reason_reactivation" -> "x", "street" -> "x", "terminal_country_code" -> "x", "terminal_language_code" -> "x", "terminal_location" -> "x", "terminal_serial_number" -> "x", "terminalid" -> I(1), "vu_nummer" -> "x", "zipcode" -> "x"), null)
+          null
+        } catch { case e: SdkError => e }
+        rep.check("merchant_portal_api_controller.validate", err != null && "validate_failed" == err.code,
+          "expected validate_failed, got " + err)
+      }
     }
 
     rep.scope("merchant_portal_api_controller.basic") {

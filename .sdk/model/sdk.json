@@ -53,7 +53,7 @@
         },
         "edition": {
           "github-pages": {
-            "active": true,
+            "active": false,
             "base": "node_modules/@voxgig/docgen/project/.sdk",
             "brand": {},
             "filter": {
@@ -409,6 +409,10 @@
               "points": [
                 {
                   "a": true,
+                  "bf": [
+                    "reason_deactivation",
+                    "terminalid"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/deactivateTerminal",
                     "source": "openapi3",
@@ -420,7 +424,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -435,6 +439,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -450,6 +458,10 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "reason_reactivation",
+                    "terminalid"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/reactivateTerminal",
                     "source": "openapi3",
@@ -461,7 +473,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -476,6 +488,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -491,6 +507,21 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "additional_data",
+                    "packageorderuuid",
+                    "password",
+                    "productid",
+                    "terminal_country_code",
+                    "terminal_language_code",
+                    "terminal_location",
+                    "terminal_serial_number",
+                    "terminalid_acquirer",
+                    "user_email",
+                    "user_phone_number",
+                    "username",
+                    "web_shop_url"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/registerAdditionalTerminal",
                     "source": "openapi3",
@@ -502,7 +533,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -517,6 +548,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -532,6 +567,37 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "account_number",
+                    "additional_data",
+                    "business_reg_number",
+                    "city",
+                    "corporateuuid",
+                    "country",
+                    "currency",
+                    "merchant_category_code",
+                    "merchant_email",
+                    "merchant_name",
+                    "merchant_phone_number",
+                    "packageid",
+                    "password",
+                    "productid",
+                    "productid_acquirer",
+                    "sorting_code",
+                    "state",
+                    "street",
+                    "terminal_country_code",
+                    "terminal_language_code",
+                    "terminal_location",
+                    "terminal_serial_number",
+                    "terminalid_acquirer",
+                    "user_email",
+                    "user_phone_number",
+                    "username",
+                    "vu_nummer",
+                    "web_shop_url",
+                    "zipcode"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/registerNewMerchant",
                     "source": "openapi3",
@@ -543,7 +609,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -558,6 +624,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -603,6 +673,10 @@
                   "o": "/merchantportalws/logDeveloperInfo",
                   "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -629,6 +703,10 @@
                   "o": "/merchantportalws/version",
                   "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -678,6 +756,10 @@
               "points": [
                 {
                   "a": true,
+                  "bf": [
+                    "language",
+                    "productOrderUUID"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/generateContract",
                     "source": "openapi3",
@@ -689,7 +771,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -704,6 +786,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -730,7 +816,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -745,6 +831,23 @@
                     ]
                   },
                   "r": {},
+                  "rb": {
+                    "fields": [
+                      {
+                        "name": "inputMessage"
+                      },
+                      {
+                        "binary": true,
+                        "name": "pdfFile"
+                      }
+                    ],
+                    "kind": "multipart",
+                    "media": "multipart/form-data"
+                  },
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -803,6 +906,10 @@
               "points": [
                 {
                   "a": true,
+                  "bf": [
+                    "packageOrderUUID",
+                    "productOrderUUID"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/documentsList",
                     "source": "openapi3",
@@ -814,7 +921,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -829,6 +936,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -844,6 +955,11 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "appFormFieldDescUUID",
+                    "packageOrderUUID",
+                    "productOrderUUID"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/downloadDocument",
                     "source": "openapi3",
@@ -855,7 +971,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -870,6 +986,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -988,6 +1108,11 @@
               "points": [
                 {
                   "a": true,
+                  "bf": [
+                    "filter",
+                    "language",
+                    "packageOrderUUID"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/applicationForm",
                     "source": "openapi3",
@@ -999,7 +1124,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1014,6 +1139,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1029,6 +1158,11 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "filter",
+                    "language",
+                    "packageUUID"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/packageForm",
                     "source": "openapi3",
@@ -1040,7 +1174,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1055,6 +1189,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1070,6 +1208,12 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "appFormFieldsDescUUID",
+                    "packageOrderUUID",
+                    "productOrderUUID",
+                    "reasonOfReopening"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/reopenForm",
                     "source": "openapi3",
@@ -1081,7 +1225,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1096,6 +1240,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1111,6 +1259,9 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "productOrderUUID"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/secretKey",
                     "source": "openapi3",
@@ -1122,7 +1273,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1137,6 +1288,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1152,6 +1307,9 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "productOrderUUID"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/submitForm",
                     "source": "openapi3",
@@ -1163,7 +1321,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1178,6 +1336,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1193,6 +1355,10 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "packageOrder",
+                    "productOrders"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/submitValues",
                     "source": "openapi3",
@@ -1204,7 +1370,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1219,6 +1385,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1282,6 +1452,11 @@
               "points": [
                 {
                   "a": true,
+                  "bf": [
+                    "clientSecret",
+                    "mandatorName",
+                    "notificationEmail"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/createMandatorConfig",
                     "source": "openapi3",
@@ -1293,7 +1468,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1308,6 +1483,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1323,6 +1502,9 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "packageUUID"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/introduceMandatorPackage",
                     "source": "openapi3",
@@ -1334,7 +1516,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1349,6 +1531,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1364,6 +1550,9 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "packageUUID"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/selfRegistrationLink",
                     "source": "openapi3",
@@ -1375,7 +1564,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1390,6 +1579,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1633,6 +1826,9 @@
               "points": [
                 {
                   "a": true,
+                  "bf": [
+                    "merchantContractNumber"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/contractNumber",
                     "source": "openapi3",
@@ -1644,7 +1840,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1659,6 +1855,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1674,6 +1874,15 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "additional_data",
+                    "currency",
+                    "packageorderuuid",
+                    "productid_acquirer",
+                    "terminalIds",
+                    "terminalid_acquirer",
+                    "vu_nummer"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/registerAdditionalAcquiring",
                     "source": "openapi3",
@@ -1685,7 +1894,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1700,6 +1909,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1715,6 +1928,18 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "city",
+                    "corporateUUID",
+                    "country",
+                    "merchantContractNumber",
+                    "merchantName",
+                    "merchant_category_code",
+                    "postalCode",
+                    "region",
+                    "registrationNumber",
+                    "street"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/updateMerchant",
                     "source": "openapi3",
@@ -1726,7 +1951,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1741,6 +1966,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1756,6 +1985,17 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "businessRegistrationNumber",
+                    "companyName",
+                    "email",
+                    "language",
+                    "login",
+                    "mandator",
+                    "packageUUID",
+                    "phoneNumber",
+                    "signature"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/registerMerchant",
                     "source": "openapi3",
@@ -1767,6 +2007,10 @@
                   "o": "/merchantportalws/registerMerchant",
                   "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1890,6 +2134,12 @@
               "points": [
                 {
                   "a": true,
+                  "bf": [
+                    "filter",
+                    "language",
+                    "pagination",
+                    "sorting"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/availablePackages",
                     "source": "openapi3",
@@ -1901,7 +2151,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1916,6 +2166,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1931,6 +2185,12 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "consumerUUID",
+                    "corporateUUID",
+                    "language",
+                    "packageUUID"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/orderPackage",
                     "source": "openapi3",
@@ -1942,7 +2202,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1957,6 +2217,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -1972,6 +2236,12 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "filter",
+                    "language",
+                    "pagination",
+                    "sorting"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/orderedPackages",
                     "source": "openapi3",
@@ -1983,7 +2253,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1998,6 +2268,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -2013,6 +2287,11 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "filter",
+                    "pagination",
+                    "sorting"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/packageTemplates",
                     "source": "openapi3",
@@ -2024,7 +2303,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -2039,6 +2318,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -2054,6 +2337,13 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "country",
+                    "descriptionKey",
+                    "nameKey",
+                    "packageStatus",
+                    "packageUUID"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/updatePackageData",
                     "source": "openapi3",
@@ -2065,7 +2355,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": false,
                         "t": "`$STRING`"
                       }
@@ -2074,12 +2364,12 @@
                   "k": "http",
                   "m": "POST",
                   "o": "/merchantportalws/updatePackageData",
-                  "q": {
-                    "exist": [
-                      "authorization"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -2186,6 +2476,10 @@
               "points": [
                 {
                   "a": true,
+                  "bf": [
+                    "merchantID",
+                    "productOrderUUID"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/approveProduct",
                     "source": "openapi3",
@@ -2197,7 +2491,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -2212,6 +2506,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -2227,6 +2525,10 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "productOrderUUID",
+                    "reason_decline"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/declineProduct",
                     "source": "openapi3",
@@ -2238,7 +2540,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -2253,6 +2555,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -2268,6 +2574,12 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "consumerUUID",
+                    "language",
+                    "packageOrderUUID",
+                    "productUUID"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/orderAdditionalProduct",
                     "source": "openapi3",
@@ -2279,7 +2591,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -2294,6 +2606,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -2309,6 +2625,11 @@
                 },
                 {
                   "a": true,
+                  "bf": [
+                    "filter",
+                    "pagination",
+                    "sorting"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/productsList",
                     "source": "openapi3",
@@ -2320,7 +2641,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -2335,6 +2656,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -2403,6 +2728,10 @@
               "points": [
                 {
                   "a": true,
+                  "bf": [
+                    "packageUUID",
+                    "productUUIDs"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/addProductsToPackage",
                     "source": "openapi3",
@@ -2414,7 +2743,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -2429,6 +2758,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -2577,6 +2910,20 @@
               "points": [
                 {
                   "a": true,
+                  "bf": [
+                    "acquirerId",
+                    "allowMultipleOrders",
+                    "appFormTemplateName",
+                    "contractNeeded",
+                    "credentialsNeeded",
+                    "descriptionKey",
+                    "nameKey",
+                    "prescreeningAllowed",
+                    "productName",
+                    "terminalTemplateName",
+                    "vendorName",
+                    "xmlTemplateFile"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/createNewProduct",
                     "source": "openapi3",
@@ -2588,7 +2935,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -2603,6 +2950,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -2629,10 +2980,10 @@
             "field": {}
           },
           "fields": {
-            "batch": {
+            "details": {
               "a": true,
-              "h": "Batch",
-              "n": "batch",
+              "h": "Details",
+              "n": "details",
               "r": false,
               "t": "`$OBJECT`"
             },
@@ -2643,19 +2994,22 @@
               "r": false,
               "t": "`$STRING`"
             },
-            "lines": {
+            "responseCode": {
               "a": true,
-              "h": "Lines",
-              "n": "lines",
-              "r": false,
-              "t": "`$OBJECT`"
+              "fo": "int32",
+              "h": "Response Code",
+              "n": "responseCode",
+              "r": true,
+              "sh": "Response code.",
+              "t": "`$INTEGER`"
             },
-            "progress": {
+            "responseMessage": {
               "a": true,
-              "h": "Progress",
-              "n": "progress",
-              "r": false,
-              "t": "`$OBJECT`"
+              "h": "Response Message",
+              "n": "responseMessage",
+              "r": true,
+              "sh": "Response message.",
+              "t": "`$STRING`"
             }
           },
           "id": {
@@ -2681,7 +3035,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -2707,6 +3061,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -2726,7 +3084,7 @@
                   ],
                   "t": {
                     "req": "`reqdata`",
-                    "res": "`body.details`"
+                    "res": "`body`"
                   }
                 }
               ]
@@ -2795,6 +3153,10 @@
               "points": [
                 {
                   "a": true,
+                  "bf": [
+                    "pagination",
+                    "sorting"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/batch/registerAdditionalTerminal/list",
                     "source": "openapi3",
@@ -2806,7 +3168,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -2821,6 +3183,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -2901,7 +3267,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -2927,6 +3293,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -2962,7 +3332,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -2988,6 +3358,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -3070,6 +3444,11 @@
               "points": [
                 {
                   "a": true,
+                  "bf": [
+                    "productOrderUUIDs",
+                    "targetPackageOrderUUID",
+                    "targetProductOrderUUID"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/moveTid",
                     "source": "openapi3",
@@ -3081,7 +3460,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -3096,6 +3475,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -3164,6 +3547,10 @@
               "points": [
                 {
                   "a": true,
+                  "bf": [
+                    "packageUUID",
+                    "productUUIDs"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/removeProductsFromPackage",
                     "source": "openapi3",
@@ -3175,7 +3562,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -3190,6 +3577,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -3264,7 +3655,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -3279,6 +3670,23 @@
                     ]
                   },
                   "r": {},
+                  "rb": {
+                    "fields": [
+                      {
+                        "binary": true,
+                        "name": "inputCsvFile"
+                      },
+                      {
+                        "name": "inputJsonMessage"
+                      }
+                    ],
+                    "kind": "multipart",
+                    "media": "multipart/form-data"
+                  },
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -3374,7 +3782,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -3400,6 +3808,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -3549,6 +3961,19 @@
               "points": [
                 {
                   "a": true,
+                  "bf": [
+                    "allowMultipleOrders",
+                    "appFormName",
+                    "contractNeeded",
+                    "credentialsNeeded",
+                    "descriptionKey",
+                    "nameKey",
+                    "prescreeningAllowed",
+                    "productName",
+                    "productStatus",
+                    "productUUID",
+                    "vendorName"
+                  ],
                   "co": {
                     "id": "POST /merchantportalws/updateProduct",
                     "source": "openapi3",
@@ -3560,7 +3985,7 @@
                         "a": true,
                         "k": "header",
                         "n": "authorization",
-                        "or": "authorization",
+                        "or": "Authorization",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -3575,6 +4000,10 @@
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "merchantportalws"
@@ -5355,6 +5784,7 @@
             },
             "optspec": {
               "clearTimer": "`$FUNCTION`",
+              "now": "`$FUNCTION`",
               "setTimer": "`$FUNCTION`"
             },
             "strict": false
@@ -5965,7 +6395,7 @@
       "optspec": {
         "allow": {
           "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
-          "op": "create,update,load,list,remove,command,direct,graphql"
+          "op": "create,update,patch,load,list,remove,command,direct,graphql"
         },
         "apikey": "",
         "auth": {
@@ -5976,7 +6406,12 @@
         },
         "base": "http://localhost:8000",
         "clean": {
-          "keys": "key,token,id"
+          "active": true,
+          "hint": "0",
+          "keys": "key,secret,token,password,passwd,authorization,cookie,credential,signature",
+          "mask": "[redacted]",
+          "min": "4",
+          "values": ""
         },
         "entity": {
           "`$CHILD`": {
@@ -6013,6 +6448,11 @@
         "top": {
           "active": true
         }
+      },
+      "publisher": {
+        "name": "",
+        "security": "",
+        "url": ""
       },
       "repo": {
         "host": "github.com",
@@ -6650,7 +7090,10 @@
             "version": "0.1.1"
           },
           "superseded": [],
-          "title": "Go MCP server"
+          "title": "Go MCP server",
+          "tool": {
+            "write": false
+          }
         },
         "haskell": {
           "active": true,
@@ -7805,6 +8248,17 @@
           "base": "",
           "strict": true
         }
+      },
+      "text": {
+        "about_md": "",
+        "docs_url": "",
+        "entity_desc": {},
+        "homepage": "",
+        "meta_source": "",
+        "summary": "",
+        "tagline": "",
+        "title": "",
+        "website": ""
       }
     }
   },

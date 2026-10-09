@@ -52,6 +52,10 @@ main: kit: entity: output_list: {
       name: "create"
       points: [
         {
+          bf: [
+            "pagination"
+            "sorting"
+          ]
           co: {
             id: "POST /merchantportalws/batch/registerAdditionalTerminal/list"
             source: "openapi3"
@@ -62,7 +66,7 @@ main: kit: entity: output_list: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -74,6 +78,10 @@ main: kit: entity: output_list: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

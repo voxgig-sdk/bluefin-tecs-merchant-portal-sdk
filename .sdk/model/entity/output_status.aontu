@@ -62,7 +62,7 @@ main: kit: entity: output_status: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -84,6 +84,10 @@ main: kit: entity: output_status: {
               "authorization"
               "id"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

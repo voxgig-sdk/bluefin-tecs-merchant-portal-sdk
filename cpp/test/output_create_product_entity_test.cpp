@@ -50,7 +50,7 @@ static OutputCreateProductSetup output_create_product_basic_setup(const Value& e
 
   OutputCreateProductSetup s;
   s.client = client;
-  s.d = entity_data;
+  s.data = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;
@@ -65,6 +65,27 @@ static void output_create_product_entity_instance() {
   ASSERT_EQ(ent->getName(), std::string("output_create_product"), "entity name");
 }
 
+
+static bool output_create_product_has_feature(const std::string& name) {
+  Value fm = Helpers::toMapAny(getp(sharedConfig(), "feature"));
+  return fm.is_map() && !getp(fm, name).is_undef();
+}
+
+static void output_create_product_entity_validate() {
+  if (!output_create_product_has_feature("validate")) {
+    std::cerr << "skip: feature not present in this SDK: validate\n";
+    return;
+  }
+  auto vsdk = BluefinTecsMerchantPortalSDK::testSDK(Value::undef(), vmap({{"feature",
+      vmap({{"validate", vmap({{"active", Value(true)}})}})}}));
+  std::string code;
+  try {
+    vsdk->output_create_product()->create(vmap({{"acquirerId", Value(1)}, {"allowMultipleOrders", Value(true)}, {"appFormTemplateName", Value("x")}, {"contractNeeded", Value(true)}, {"descriptionKey", Value("x")}, {"nameKey", Value("x")}, {"prescreeningAllowed", Value(true)}, {"productName", Value("x")}, {"responseCode", Value(1)}, {"responseMessage", Value("x")}, {"terminalTemplateName", Value("x")}, {"vendorName", Value("x")}, {"xmlTemplateFile", Value("x")}}), Value::undef());
+  } catch (const SdkErrorPtr& err) {
+    code = err->code;
+  }
+  ASSERT_EQ(code, std::string("validate_failed"), "an invalid request fails with validate_failed");
+}
 
 static void output_create_product_entity_basic() {
   auto setup = output_create_product_basic_setup(Value::undef());
@@ -89,6 +110,7 @@ static void output_create_product_entity_basic() {
 
 int main() {
   T_RUN(output_create_product_entity_instance);
+  T_RUN(output_create_product_entity_validate);
   T_RUN(output_create_product_entity_basic);
   return sdktest::summary("output_create_product_entity_test");
 }

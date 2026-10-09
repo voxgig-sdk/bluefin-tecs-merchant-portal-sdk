@@ -217,28 +217,28 @@ val merchantPortalApiController = client.merchantPortalApiController(null)
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
-val result = client.merchantPortalApiController(null).create(java.util.Map.of(
-    "business_reg_number", "example_business_reg_number",  // String
-    "city", "example_city",  // String
-    "country", "example_country",  // String
-    "currency", "example_currency",  // String
-    "merchant_category_code", 1L,  // java.lang.Long
-    "merchant_name", "example_merchant_name",  // String
-    "packageid", "example_packageid",  // String
-    "packageorderuuid", "example_packageorderuuid",  // String
-    "reason_deactivation", "example_reason_deactivation",  // String
-    "reason_reactivation", "example_reason_reactivation",  // String
-    "street", "example_street",  // String
-    "terminal_country_code", "example_terminal_country_code",  // String
-    "terminal_language_code", "example_terminal_language_code",  // String
-    "terminal_location", "example_terminal_location",  // String
-    "terminal_serial_number", "example_terminal_serial_number",  // String
-    "terminalid", 1L,  // java.lang.Long
-    "vu_nummer", "example_vu_nummer",  // String
-    "zipcode", "example_zipcode"  // String
+val result = client.merchantPortalApiController(null).create(java.util.Map.ofEntries(
+    java.util.Map.entry("business_reg_number", "example_business_reg_number"),  // String
+    java.util.Map.entry("city", "example_city"),  // String
+    java.util.Map.entry("country", "example_country"),  // String
+    java.util.Map.entry("currency", "example_currency"),  // String
+    java.util.Map.entry("merchant_category_code", 1L),  // java.lang.Long
+    java.util.Map.entry("merchant_name", "example_merchant_name"),  // String
+    java.util.Map.entry("packageid", "example_packageid"),  // String
+    java.util.Map.entry("packageorderuuid", "example_packageorderuuid"),  // String
+    java.util.Map.entry("reason_deactivation", "example_reason_deactivation"),  // String
+    java.util.Map.entry("reason_reactivation", "example_reason_reactivation"),  // String
+    java.util.Map.entry("street", "example_street"),  // String
+    java.util.Map.entry("terminal_country_code", "example_terminal_country_code"),  // String
+    java.util.Map.entry("terminal_language_code", "example_terminal_language_code"),  // String
+    java.util.Map.entry("terminal_location", "example_terminal_location"),  // String
+    java.util.Map.entry("terminal_serial_number", "example_terminal_serial_number"),  // String
+    java.util.Map.entry("terminalid", 1L),  // java.lang.Long
+    java.util.Map.entry("vu_nummer", "example_vu_nummer"),  // String
+    java.util.Map.entry("zipcode", "example_zipcode")  // String
 ), null)
 ```
 
@@ -273,7 +273,7 @@ val merchantPortalCommonController = client.merchantPortalCommonController(null)
 
 #### `load(reqmatch, ctrl) -> Object`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and raises on error.
 
 ```scala
 val result = client.merchantPortalCommonController(null).load(null, null)
@@ -317,7 +317,7 @@ val merchantPortalPamContractController = client.merchantPortalPamContractContro
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
 val result = client.merchantPortalPamContractController(null).create(java.util.Map.of(
@@ -325,6 +325,8 @@ val result = client.merchantPortalPamContractController(null).create(java.util.M
     "productOrderUUID", "example_productOrderUUID"  // String
 ), null)
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -365,7 +367,7 @@ val merchantPortalPamDocumentController = client.merchantPortalPamDocumentContro
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
 val result = client.merchantPortalPamDocumentController(null).create(java.util.Map.of(
@@ -432,7 +434,7 @@ val merchantPortalPamFormController = client.merchantPortalPamFormController(nul
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
 val result = client.merchantPortalPamFormController(null).create(java.util.Map.of(
@@ -483,7 +485,7 @@ val merchantPortalPamMandatorController = client.merchantPortalPamMandatorContro
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
 val result = client.merchantPortalPamMandatorController(null).create(java.util.Map.of(
@@ -585,23 +587,23 @@ val merchantPortalPamMerchantController = client.merchantPortalPamMerchantContro
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
-val result = client.merchantPortalPamMerchantController(null).create(java.util.Map.of(
-    "businessRegistrationNumber", "example_businessRegistrationNumber",  // String
-    "companyName", "example_companyName",  // String
-    "corporateUUID", "example_corporateUUID",  // String
-    "currency", "example_currency",  // String
-    "email", "example_email",  // String
-    "language", "example_language",  // String
-    "login", "example_login",  // String
-    "mandator", "example_mandator",  // String
-    "merchantContractNumber", "example_merchantContractNumber",  // String
-    "packageorderuuid", "example_packageorderuuid",  // String
-    "phoneNumber", "example_phoneNumber",  // String
-    "productid_acquirer", "example_productid_acquirer",  // String
-    "vu_nummer", "example_vu_nummer"  // String
+val result = client.merchantPortalPamMerchantController(null).create(java.util.Map.ofEntries(
+    java.util.Map.entry("businessRegistrationNumber", "example_businessRegistrationNumber"),  // String
+    java.util.Map.entry("companyName", "example_companyName"),  // String
+    java.util.Map.entry("corporateUUID", "example_corporateUUID"),  // String
+    java.util.Map.entry("currency", "example_currency"),  // String
+    java.util.Map.entry("email", "example_email"),  // String
+    java.util.Map.entry("language", "example_language"),  // String
+    java.util.Map.entry("login", "example_login"),  // String
+    java.util.Map.entry("mandator", "example_mandator"),  // String
+    java.util.Map.entry("merchantContractNumber", "example_merchantContractNumber"),  // String
+    java.util.Map.entry("packageorderuuid", "example_packageorderuuid"),  // String
+    java.util.Map.entry("phoneNumber", "example_phoneNumber"),  // String
+    java.util.Map.entry("productid_acquirer", "example_productid_acquirer"),  // String
+    java.util.Map.entry("vu_nummer", "example_vu_nummer")  // String
 ), null)
 ```
 
@@ -668,7 +670,7 @@ val merchantPortalPamPackageController = client.merchantPortalPamPackageControll
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
 val result = client.merchantPortalPamPackageController(null).create(java.util.Map.of(
@@ -723,7 +725,7 @@ val merchantPortalPamProductController = client.merchantPortalPamProductControll
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
 val result = client.merchantPortalPamProductController(null).create(java.util.Map.of(
@@ -774,7 +776,7 @@ val outputAddProduct = client.outputAddProduct(null)
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
 val result = client.outputAddProduct(null).create(java.util.Map.of(
@@ -835,22 +837,22 @@ val outputCreateProduct = client.outputCreateProduct(null)
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
-val result = client.outputCreateProduct(null).create(java.util.Map.of(
-    "allowMultipleOrders", true,  // java.lang.Boolean
-    "appFormTemplateName", "example_appFormTemplateName",  // String
-    "contractNeeded", true,  // java.lang.Boolean
-    "descriptionKey", "example_descriptionKey",  // String
-    "nameKey", "example_nameKey",  // String
-    "prescreeningAllowed", true,  // java.lang.Boolean
-    "productName", "example_productName",  // String
-    "responseCode", 1L,  // java.lang.Long
-    "responseMessage", "example_responseMessage",  // String
-    "terminalTemplateName", "example_terminalTemplateName",  // String
-    "vendorName", "example_vendorName",  // String
-    "xmlTemplateFile", "example_xmlTemplateFile"  // String
+val result = client.outputCreateProduct(null).create(java.util.Map.ofEntries(
+    java.util.Map.entry("allowMultipleOrders", true),  // java.lang.Boolean
+    java.util.Map.entry("appFormTemplateName", "example_appFormTemplateName"),  // String
+    java.util.Map.entry("contractNeeded", true),  // java.lang.Boolean
+    java.util.Map.entry("descriptionKey", "example_descriptionKey"),  // String
+    java.util.Map.entry("nameKey", "example_nameKey"),  // String
+    java.util.Map.entry("prescreeningAllowed", true),  // java.lang.Boolean
+    java.util.Map.entry("productName", "example_productName"),  // String
+    java.util.Map.entry("responseCode", 1L),  // java.lang.Long
+    java.util.Map.entry("responseMessage", "example_responseMessage"),  // String
+    java.util.Map.entry("terminalTemplateName", "example_terminalTemplateName"),  // String
+    java.util.Map.entry("vendorName", "example_vendorName"),  // String
+    java.util.Map.entry("xmlTemplateFile", "example_xmlTemplateFile")  // String
 ), null)
 ```
 
@@ -885,16 +887,16 @@ val outputDetail = client.outputDetail(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `java.util.Map[String, Object]` | No |  |
+| `details` | `java.util.Map[String, Object]` | No |  |
 | `id` | `String` | No |  |
-| `lines` | `java.util.Map[String, Object]` | No |  |
-| `progress` | `java.util.Map[String, Object]` | No |  |
+| `responseCode` | `java.lang.Long` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
 
 ### Operations
 
 #### `load(reqmatch, ctrl) -> Object`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and raises on error.
 
 ```scala
 val result = client.outputDetail(null).load(java.util.Map.of("id", "output_detail_id"), null)
@@ -951,7 +953,7 @@ val outputList = client.outputList(null)
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
 val result = client.outputList(null).create(java.util.Map.of(
@@ -1000,7 +1002,7 @@ val outputMessage = client.outputMessage(null)
 
 #### `load(reqmatch, ctrl) -> Object`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and raises on error.
 
 ```scala
 val result = client.outputMessage(null).load(java.util.Map.of("id", "output_message_id"), null)
@@ -1047,7 +1049,7 @@ val outputMoveTid = client.outputMoveTid(null)
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
 val result = client.outputMoveTid(null).create(java.util.Map.of(
@@ -1099,7 +1101,7 @@ val outputRemoveProduct = client.outputRemoveProduct(null)
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
 val result = client.outputRemoveProduct(null).create(java.util.Map.of(
@@ -1149,7 +1151,7 @@ val outputStart = client.outputStart(null)
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
 val result = client.outputStart(null).create(java.util.Map.of(
@@ -1157,6 +1159,8 @@ val result = client.outputStart(null).create(java.util.Map.of(
     "responseMessage", "example_responseMessage"  // String
 ), null)
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -1199,7 +1203,7 @@ val outputStatus = client.outputStatus(null)
 
 #### `load(reqmatch, ctrl) -> Object`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data()` reads, and raises on error.
 
 ```scala
 val result = client.outputStatus(null).load(java.util.Map.of("id", "output_status_id"), null)
@@ -1254,7 +1258,7 @@ val outputUpdateProduct = client.outputUpdateProduct(null)
 
 #### `create(reqdata, ctrl) -> Object`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```scala
 val result = client.outputUpdateProduct(null).create(java.util.Map.of(
@@ -1706,6 +1710,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

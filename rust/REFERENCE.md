@@ -8,7 +8,7 @@ Complete API reference for the BluefinTecsMerchantPortal Rust SDK.
 ### Constructor
 
 ```rust
-use bluefin_tecs_merchant_portal_sdk::{BluefinTecsMerchantPortalSDK, Value};
+use bluefin_tecs_merchant_portal_sdk::{jo, BluefinTecsMerchantPortalEntity, BluefinTecsMerchantPortalSDK, Entity, Value};
 
 let client = BluefinTecsMerchantPortalSDK::new(options);
 ```
@@ -218,9 +218,9 @@ let merchant_portal_api_controller = client.merchant_portal_api_controller(Value
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.merchant_portal_api_controller(Value::Noval).create(jo(vec![
@@ -274,12 +274,13 @@ let merchant_portal_common_controller = client.merchant_portal_common_controller
 
 ### Operations
 
-#### `load(reqmatch: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `load(reqmatch: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Load a single entity matching the given criteria. Returns the entity data on `Ok` and `Err` on failure.
+Load a single entity matching the given criteria. `Ok` is the entity, whose record `data(None)` reads, and `Err` a failure.
 
 ```rust
 let result = client.merchant_portal_common_controller(Value::Noval).load(Value::Noval, Value::Noval).unwrap();
+println!("{:?}", result.data(None));
 ```
 
 ### Common Methods
@@ -318,9 +319,9 @@ let merchant_portal_pam_contract_controller = client.merchant_portal_pam_contrac
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.merchant_portal_pam_contract_controller(Value::Noval).create(jo(vec![
@@ -328,6 +329,8 @@ let result = client.merchant_portal_pam_contract_controller(Value::Noval).create
     ("productOrderUUID", Value::str("example_productOrderUUID")),  // String
 ]), Value::Noval).unwrap();
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -366,9 +369,9 @@ let merchant_portal_pam_document_controller = client.merchant_portal_pam_documen
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.merchant_portal_pam_document_controller(Value::Noval).create(jo(vec![
@@ -433,9 +436,9 @@ let merchant_portal_pam_form_controller = client.merchant_portal_pam_form_contro
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.merchant_portal_pam_form_controller(Value::Noval).create(jo(vec![
@@ -484,9 +487,9 @@ let merchant_portal_pam_mandator_controller = client.merchant_portal_pam_mandato
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.merchant_portal_pam_mandator_controller(Value::Noval).create(jo(vec![
@@ -586,9 +589,9 @@ let merchant_portal_pam_merchant_controller = client.merchant_portal_pam_merchan
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.merchant_portal_pam_merchant_controller(Value::Noval).create(jo(vec![
@@ -669,9 +672,9 @@ let merchant_portal_pam_package_controller = client.merchant_portal_pam_package_
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.merchant_portal_pam_package_controller(Value::Noval).create(jo(vec![
@@ -724,9 +727,9 @@ let merchant_portal_pam_product_controller = client.merchant_portal_pam_product_
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.merchant_portal_pam_product_controller(Value::Noval).create(jo(vec![
@@ -775,9 +778,9 @@ let output_add_product = client.output_add_product(Value::Noval);
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.output_add_product(Value::Noval).create(jo(vec![
@@ -836,9 +839,9 @@ let output_create_product = client.output_create_product(Value::Noval);
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.output_create_product(Value::Noval).create(jo(vec![
@@ -888,19 +891,20 @@ let output_detail = client.output_detail(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `std::collections::HashMap<String, Value>` | No |  |
+| `details` | `std::collections::HashMap<String, Value>` | No |  |
 | `id` | `String` | No |  |
-| `lines` | `std::collections::HashMap<String, Value>` | No |  |
-| `progress` | `std::collections::HashMap<String, Value>` | No |  |
+| `responseCode` | `i64` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
 
 ### Operations
 
-#### `load(reqmatch: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `load(reqmatch: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Load a single entity matching the given criteria. Returns the entity data on `Ok` and `Err` on failure.
+Load a single entity matching the given criteria. `Ok` is the entity, whose record `data(None)` reads, and `Err` a failure.
 
 ```rust
 let result = client.output_detail(Value::Noval).load(jo(vec![("id", Value::str("output_detail_id"))]), Value::Noval).unwrap();
+println!("{:?}", result.data(None));
 ```
 
 ### Common Methods
@@ -952,9 +956,9 @@ let output_list = client.output_list(Value::Noval);
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.output_list(Value::Noval).create(jo(vec![
@@ -1001,12 +1005,13 @@ let output_message = client.output_message(Value::Noval);
 
 ### Operations
 
-#### `load(reqmatch: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `load(reqmatch: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Load a single entity matching the given criteria. Returns the entity data on `Ok` and `Err` on failure.
+Load a single entity matching the given criteria. `Ok` is the entity, whose record `data(None)` reads, and `Err` a failure.
 
 ```rust
 let result = client.output_message(Value::Noval).load(jo(vec![("id", Value::str("output_message_id"))]), Value::Noval).unwrap();
+println!("{:?}", result.data(None));
 ```
 
 ### Common Methods
@@ -1048,9 +1053,9 @@ let output_move_tid = client.output_move_tid(Value::Noval);
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.output_move_tid(Value::Noval).create(jo(vec![
@@ -1100,9 +1105,9 @@ let output_remove_product = client.output_remove_product(Value::Noval);
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.output_remove_product(Value::Noval).create(jo(vec![
@@ -1150,9 +1155,9 @@ let output_start = client.output_start(Value::Noval);
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.output_start(Value::Noval).create(jo(vec![
@@ -1160,6 +1165,8 @@ let result = client.output_start(Value::Noval).create(jo(vec![
     ("responseMessage", Value::str("example_responseMessage")),  // String
 ]), Value::Noval).unwrap();
 ```
+
+Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
 ### Common Methods
 
@@ -1200,12 +1207,13 @@ let output_status = client.output_status(Value::Noval);
 
 ### Operations
 
-#### `load(reqmatch: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `load(reqmatch: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Load a single entity matching the given criteria. Returns the entity data on `Ok` and `Err` on failure.
+Load a single entity matching the given criteria. `Ok` is the entity, whose record `data(None)` reads, and `Err` a failure.
 
 ```rust
 let result = client.output_status(Value::Noval).load(jo(vec![("id", Value::str("output_status_id"))]), Value::Noval).unwrap();
+println!("{:?}", result.data(None));
 ```
 
 ### Common Methods
@@ -1255,9 +1263,9 @@ let output_update_product = client.output_update_product(Value::Noval);
 
 ### Operations
 
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantPortalError>`
+#### `create(reqdata: Value, ctrl: Value) -> Result<Rc<Self>, BluefinTecsMerchantPortalError>`
 
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+Create a new entity with the given data. `Ok` is the created entity, and `Err` a failure.
 
 ```rust
 let result = client.output_update_product(Value::Noval).create(jo(vec![
@@ -1709,6 +1717,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

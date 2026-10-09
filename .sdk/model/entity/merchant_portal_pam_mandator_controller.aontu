@@ -37,6 +37,11 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
       name: "create"
       points: [
         {
+          bf: [
+            "clientSecret"
+            "mandatorName"
+            "notificationEmail"
+          ]
           co: {
             id: "POST /merchantportalws/createMandatorConfig"
             source: "openapi3"
@@ -47,7 +52,7 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -59,6 +64,10 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -74,6 +83,9 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
           }
         }
         {
+          bf: [
+            "packageUUID"
+          ]
           co: {
             id: "POST /merchantportalws/introduceMandatorPackage"
             source: "openapi3"
@@ -84,7 +96,7 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -96,6 +108,10 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -111,6 +127,9 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
           }
         }
         {
+          bf: [
+            "packageUUID"
+          ]
           co: {
             id: "POST /merchantportalws/selfRegistrationLink"
             source: "openapi3"
@@ -121,7 +140,7 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -133,6 +152,10 @@ main: kit: entity: merchant_portal_pam_mandator_controller: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

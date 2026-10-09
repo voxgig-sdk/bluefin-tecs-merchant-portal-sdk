@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 BluefinTecsMerchantPortalUtility::setRegistrar(function (BluefinTecsMerchantPortalUtility $u): void {
     $u->clean = [BluefinTecsMerchantPortalClean::class, 'call'];
+    $u->clean_add = [BluefinTecsMerchantPortalClean::class, 'add'];
+    $u->clean_explain = [BluefinTecsMerchantPortalDone::class, 'clean_explain'];
     $u->done = [BluefinTecsMerchantPortalDone::class, 'call'];
     $u->make_error = [BluefinTecsMerchantPortalMakeError::class, 'call'];
     $u->feature_add = [BluefinTecsMerchantPortalFeatureAdd::class, 'call'];

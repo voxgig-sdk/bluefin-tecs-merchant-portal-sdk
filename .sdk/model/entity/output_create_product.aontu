@@ -112,6 +112,20 @@ main: kit: entity: output_create_product: {
       name: "create"
       points: [
         {
+          bf: [
+            "acquirerId"
+            "allowMultipleOrders"
+            "appFormTemplateName"
+            "contractNeeded"
+            "credentialsNeeded"
+            "descriptionKey"
+            "nameKey"
+            "prescreeningAllowed"
+            "productName"
+            "terminalTemplateName"
+            "vendorName"
+            "xmlTemplateFile"
+          ]
           co: {
             id: "POST /merchantportalws/createNewProduct"
             source: "openapi3"
@@ -122,7 +136,7 @@ main: kit: entity: output_create_product: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -134,6 +148,10 @@ main: kit: entity: output_create_product: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

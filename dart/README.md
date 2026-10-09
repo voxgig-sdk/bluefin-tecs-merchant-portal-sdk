@@ -52,7 +52,7 @@ final client = BluefinTecsMerchantPortalSDK();
 ### 4. Create, update, and remove
 
 ```dart
-// Create — returns the ENTITY (call data() for the record)
+// Create — returns the created entity; data() reads its record
 final created = await client.MerchantPortalApiController().create({'business_reg_number': 'example_business_reg_number', 'city': 'example_city', 'country': 'example_country', 'currency': 'example_currency', 'merchant_category_code': 1, 'merchant_name': 'example_merchant_name', 'packageid': 'example_packageid', 'packageorderuuid': 'example_packageorderuuid', 'reason_deactivation': 'example_reason_deactivation', 'reason_reactivation': 'example_reason_reactivation', 'street': 'example_street', 'terminal_country_code': 'example_terminal_country_code', 'terminal_language_code': 'example_terminal_language_code', 'terminal_location': 'example_terminal_location', 'terminal_serial_number': 'example_terminal_serial_number', 'terminalid': 1, 'vu_nummer': 'example_vu_nummer', 'zipcode': 'example_zipcode'});
 
 ```
@@ -65,14 +65,15 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 ```ts
 try {
   const outputdetail = await client.OutputDetail().load({ id: "example_id" })
-  console.log(outputdetail)
+  console.log(outputdetail.data())
 } catch (err) {
   console.error('load failed:', err)
 }
 ```
 
 The low-level `direct()` method does **not** throw — it returns the
-value or an `Error`, so check the result before using it:
+result envelope. Branch on `ok`; on failure `status` holds the HTTP status
+(for error responses) and `err` holds the error:
 
 ```ts
 const result = await client.direct({
@@ -81,8 +82,8 @@ const result = await client.direct({
   params: { id: 'example_id' },
 })
 
-if (result instanceof Error) {
-  throw result
+if (!result.ok) {
+  console.error('request failed:', result.status, result.err)
 }
 ```
 
@@ -134,11 +135,10 @@ Create a mock client for unit testing — no server required:
 ```dart
 final client = BluefinTecsMerchantPortalSDK.test();
 
-// Entity ops return the ENTITY and throws on error;
-// call data() for the record.
+// Entity ops return the entity and throw on error;
+// data() reads its mock record.
 final outputdetail = await client.OutputDetail().load({'id': 'test01'});
-// outputdetail contains the mock response record
-print(outputdetail);
+print(outputdetail.data());
 ```
 
 ### Use a custom fetch function
@@ -241,8 +241,8 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, [ctrl]) -> Future<dynamic>` | Load a single entity by match criteria. Throws on error. |
-| `create` | `(reqdata, [ctrl]) -> Future<dynamic>` | Create a new entity. Throws on error. |
+| `load` | `(reqmatch, [ctrl]) -> Future<dynamic>` | Load a single entity by match criteria. Returns the entity. Throws on error. |
+| `create` | `(reqdata, [ctrl]) -> Future<dynamic>` | Create a new entity. Returns the entity. Throws on error. |
 | `data` | `([d]) -> Map` | Get (or, with an argument, set) entity data. |
 | `match` | `([m]) -> Map` | Get (or, with an argument, set) entity match criteria. |
 | `make` | `() -> Entity` | Create a new instance with the same options. |
@@ -251,9 +251,10 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the ENTITY (call data() for the record) (a `Map` for single-entity
-ops, a `List` of entity instances for `list`) and throw on error. Wrap calls
-in `try`/`catch` to handle failures.
+Entity operations return the entity, not the raw record — `list` a `List`
+of entities, one per record — and throw on error. An entity's `data()` reads
+its record. `remove` returns the entity marked as deleted (`deleted()`); it
+keeps the data it held. Wrap calls in `try`/`catch` to handle failures.
 
 The `direct()` escape hatch never throws — it returns a result `Map` you
 branch on via `result['ok']`:
@@ -488,10 +489,10 @@ API path: `/merchantportalws/createNewProduct`
 
 | Field | Description |
 | --- | --- |
-| `batch` |  |
+| `details` |  |
 | `id` |  |
-| `lines` |  |
-| `progress` |  |
+| `responseCode` | Response code. |
+| `responseMessage` | Response message. |
 
 Operations: Load.
 
@@ -611,7 +612,7 @@ Create an instance: `final merchant_portal_api_controller = client.MerchantPorta
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 
@@ -685,7 +686,7 @@ Create an instance: `final merchant_portal_common_controller = client.MerchantPo
 
 | Method | Description |
 | --- | --- |
-| `load(match)` | Load a single entity by match criteria. |
+| `load(match)` | Load a single entity by match criteria. Returns the entity. |
 
 #### Example: Load
 
@@ -702,7 +703,7 @@ Create an instance: `final merchant_portal_pam_contract_controller = client.Merc
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 
@@ -729,7 +730,7 @@ Create an instance: `final merchant_portal_pam_document_controller = client.Merc
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 
@@ -756,7 +757,7 @@ Create an instance: `final merchant_portal_pam_form_controller = client.Merchant
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 
@@ -792,7 +793,7 @@ Create an instance: `final merchant_portal_pam_mandator_controller = client.Merc
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 
@@ -821,7 +822,7 @@ Create an instance: `final merchant_portal_pam_merchant_controller = client.Merc
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 
@@ -883,7 +884,7 @@ Create an instance: `final merchant_portal_pam_package_controller = client.Merch
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 
@@ -919,7 +920,7 @@ Create an instance: `final merchant_portal_pam_product_controller = client.Merch
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 
@@ -956,7 +957,7 @@ Create an instance: `final output_add_product = client.OutputAddProduct();`
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 
@@ -987,7 +988,7 @@ Create an instance: `final output_create_product = client.OutputCreateProduct();
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 
@@ -1036,16 +1037,16 @@ Create an instance: `final output_detail = client.OutputDetail();`
 
 | Method | Description |
 | --- | --- |
-| `load(match)` | Load a single entity by match criteria. |
+| `load(match)` | Load a single entity by match criteria. Returns the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `batch` | `Map<String, dynamic>` |  |
+| `details` | `Map<String, dynamic>` |  |
 | `id` | `String` |  |
-| `lines` | `Map<String, dynamic>` |  |
-| `progress` | `Map<String, dynamic>` |  |
+| `responseCode` | `int` | Response code. |
+| `responseMessage` | `String` | Response message. |
 
 #### Example: Load
 
@@ -1062,7 +1063,7 @@ Create an instance: `final output_list = client.OutputList();`
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 
@@ -1093,7 +1094,7 @@ Create an instance: `final output_message = client.OutputMessage();`
 
 | Method | Description |
 | --- | --- |
-| `load(match)` | Load a single entity by match criteria. |
+| `load(match)` | Load a single entity by match criteria. Returns the entity. |
 
 #### Fields
 
@@ -1118,7 +1119,7 @@ Create an instance: `final output_move_tid = client.OutputMoveTid();`
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 
@@ -1151,7 +1152,7 @@ Create an instance: `final output_remove_product = client.OutputRemoveProduct();
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 
@@ -1182,7 +1183,7 @@ Create an instance: `final output_start = client.OutputStart();`
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 
@@ -1210,7 +1211,7 @@ Create an instance: `final output_status = client.OutputStatus();`
 
 | Method | Description |
 | --- | --- |
-| `load(match)` | Load a single entity by match criteria. |
+| `load(match)` | Load a single entity by match criteria. Returns the entity. |
 
 #### Fields
 
@@ -1237,7 +1238,7 @@ Create an instance: `final output_update_product = client.OutputUpdateProduct();
 
 | Method | Description |
 | --- | --- |
-| `create(data)` | Create a new entity with the given data. |
+| `create(data)` | Create a new entity with the given data. Returns the entity. |
 
 #### Fields
 

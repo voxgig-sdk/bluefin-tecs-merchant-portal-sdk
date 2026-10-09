@@ -38,12 +38,24 @@ describe('OutputMoveTidEntity', async () => {
   })
 
 
+  test('validate', async (t) => {
+    if (null == config.feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = BluefinTecsMerchantPortalSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.OutputMoveTid().create({"productOrderUUIDs":"x","responseCode":"x","responseMessage":"x","targetPackageOrderUUID":"x","targetProductOrderUUID":"x"}),
+      (err) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"productOrderUUIDs":{"a":true,"h":"Product Order Uui Ds","n":"productOrderUUIDs","r":true,"t":"`$ARRAY`","key$":"productOrderUUIDs","index$":0},"responseCode":{"a":true,"fo":"int32","h":"Response Code","n":"responseCode","r":true,"sh":"Response code.","t":"`$INTEGER`","key$":"responseCode","index$":1},"responseMessage":{"a":true,"h":"Response Message","n":"responseMessage","r":true,"sh":"Response message.","t":"`$STRING`","key$":"responseMessage","index$":2},"targetPackageOrderUUID":{"a":true,"h":"Target Package Order Uuid","n":"targetPackageOrderUUID","r":true,"t":"`$STRING`","key$":"targetPackageOrderUUID","index$":3},"targetProductOrderUUID":{"a":true,"h":"Target Product Order Uuid","n":"targetProductOrderUUID","r":true,"t":"`$STRING`","key$":"targetProductOrderUUID","index$":4}},"name":"output_move_tid","op":{"create":{"input":"data","name":"create","points":[{"a":true,"co":{"id":"POST /merchantportalws/moveTid","source":"openapi3","version":2},"g":{"header":[{"a":true,"k":"header","n":"authorization","or":"authorization","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/merchantportalws/moveTid","q":{"exist":["authorization"]},"r":{},"s":[{"lit":"merchantportalws"},{"lit":"moveTid"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"create"}},"relations":{"ancestors":[]},"key$":"output_move_tid","name__orig":"output_move_tid","Name":"OutputMoveTid","name_":"output_move_tid","name-":"output-move-tid","NAME":"OUTPUT_MOVE_TID","index$":14}, {"active":true,"entity":"output_move_tid","key$":"BasicOutputMoveTidFlow","kind":"basic","name":"BasicOutputMoveTidFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"output_move_tid_ref01"},"m":{},"o":"create","s":[],"v":[],"index$":0}]}, 'OutputMoveTid', {"POST /merchantportalws/moveTid":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","required":["productOrderUUIDs","targetPackageOrderUUID","targetProductOrderUUID"],"properties":{"productOrderUUIDs":{"type":"array","uniqueItems":true,"items":{"type":"string"},"key$":"productOrderUUIDs"},"targetPackageOrderUUID":{"type":"string","key$":"targetPackageOrderUUID"},"targetProductOrderUUID":{"type":"string","key$":"targetProductOrderUUID"}},"title":"InputMoveTid","x-ref":"#/components/schemas/InputMoveTid","index$":1}}},"description":"inputMoveTid","required":true},"parameters":[{"name":"Authorization","in":"header","description":"Authorization","required":true,"schema":{"type":"string"},"index$":0}]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"productOrderUUIDs":{"a":true,"h":"Product Order Uui Ds","n":"productOrderUUIDs","r":true,"t":"`$ARRAY`","key$":"productOrderUUIDs","index$":0},"responseCode":{"a":true,"fo":"int32","h":"Response Code","n":"responseCode","r":true,"sh":"Response code.","t":"`$INTEGER`","key$":"responseCode","index$":1},"responseMessage":{"a":true,"h":"Response Message","n":"responseMessage","r":true,"sh":"Response message.","t":"`$STRING`","key$":"responseMessage","index$":2},"targetPackageOrderUUID":{"a":true,"h":"Target Package Order Uuid","n":"targetPackageOrderUUID","r":true,"t":"`$STRING`","key$":"targetPackageOrderUUID","index$":3},"targetProductOrderUUID":{"a":true,"h":"Target Product Order Uuid","n":"targetProductOrderUUID","r":true,"t":"`$STRING`","key$":"targetProductOrderUUID","index$":4}},"name":"output_move_tid","op":{"create":{"input":"data","name":"create","points":[{"a":true,"bf":["productOrderUUIDs","targetPackageOrderUUID","targetProductOrderUUID"],"co":{"id":"POST /merchantportalws/moveTid","source":"openapi3","version":2},"g":{"header":[{"a":true,"k":"header","n":"authorization","or":"Authorization","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/merchantportalws/moveTid","q":{"exist":["authorization"]},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"merchantportalws"},{"lit":"moveTid"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"create"}},"relations":{"ancestors":[]},"key$":"output_move_tid","name__orig":"output_move_tid","Name":"OutputMoveTid","name_":"output_move_tid","name-":"output-move-tid","NAME":"OUTPUT_MOVE_TID","index$":14}, {"active":true,"entity":"output_move_tid","key$":"BasicOutputMoveTidFlow","kind":"basic","name":"BasicOutputMoveTidFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"output_move_tid_ref01"},"m":{},"o":"create","s":[],"v":[],"index$":0}]}, 'OutputMoveTid', {"POST /merchantportalws/moveTid":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","required":["productOrderUUIDs","targetPackageOrderUUID","targetProductOrderUUID"],"properties":{"productOrderUUIDs":{"type":"array","uniqueItems":true,"items":{"type":"string"},"key$":"productOrderUUIDs"},"targetPackageOrderUUID":{"type":"string","key$":"targetPackageOrderUUID"},"targetProductOrderUUID":{"type":"string","key$":"targetProductOrderUUID"}},"title":"InputMoveTid","x-ref":"#/components/schemas/InputMoveTid","index$":1}}},"description":"inputMoveTid","required":true},"parameters":[{"name":"Authorization","in":"header","description":"Authorization","required":true,"schema":{"type":"string"},"index$":0}]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -64,6 +76,12 @@ describe('OutputMoveTidEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra) {
   // TODO: fix test def options

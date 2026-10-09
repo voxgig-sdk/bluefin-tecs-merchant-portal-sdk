@@ -202,7 +202,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_api_controller sdk VNoval
@@ -266,7 +266,7 @@ The entity name.
 
 #### `eLoad ent match ctrl :: IO Entity`
 
-Load a single entity matching the given criteria. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `eDataGet` reads, and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_common_controller sdk VNoval
@@ -317,7 +317,7 @@ The entity name.
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_contract_controller sdk VNoval
@@ -373,7 +373,7 @@ The entity name.
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_document_controller sdk VNoval
@@ -448,7 +448,7 @@ The entity name.
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_form_controller sdk VNoval
@@ -507,7 +507,7 @@ The entity name.
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_mandator_controller sdk VNoval
@@ -617,7 +617,7 @@ The entity name.
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_merchant_controller sdk VNoval
@@ -708,7 +708,7 @@ The entity name.
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_package_controller sdk VNoval
@@ -771,7 +771,7 @@ The entity name.
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.merchant_portal_pam_product_controller sdk VNoval
@@ -830,7 +830,7 @@ The entity name.
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.output_add_product sdk VNoval
@@ -899,7 +899,7 @@ The entity name.
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.output_create_product sdk VNoval
@@ -957,16 +957,16 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `batch` | `Value` | No |  |
+| `details` | `Value` | No |  |
 | `id` | `String` | No |  |
-| `lines` | `Value` | No |  |
-| `progress` | `Value` | No |  |
+| `responseCode` | `Int` | Yes | Response code. |
+| `responseMessage` | `String` | Yes | Response message. |
 
 ### Operations
 
 #### `eLoad ent match ctrl :: IO Entity`
 
-Load a single entity matching the given criteria. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `eDataGet` reads, and raises on error.
 
 ```haskell
   ent <- Sdk.output_detail sdk VNoval
@@ -1030,7 +1030,7 @@ The entity name.
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.output_list sdk VNoval
@@ -1087,7 +1087,7 @@ The entity name.
 
 #### `eLoad ent match ctrl :: IO Entity`
 
-Load a single entity matching the given criteria. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `eDataGet` reads, and raises on error.
 
 ```haskell
   ent <- Sdk.output_message sdk VNoval
@@ -1141,7 +1141,7 @@ The entity name.
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.output_move_tid sdk VNoval
@@ -1201,7 +1201,7 @@ The entity name.
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.output_remove_product sdk VNoval
@@ -1259,7 +1259,7 @@ The entity name.
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.output_start sdk VNoval
@@ -1317,7 +1317,7 @@ The entity name.
 
 #### `eLoad ent match ctrl :: IO Entity`
 
-Load a single entity matching the given criteria. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `eDataGet` reads, and raises on error.
 
 ```haskell
   ent <- Sdk.output_status sdk VNoval
@@ -1379,7 +1379,7 @@ The entity name.
 
 #### `eCreate ent data ctrl :: IO Entity`
 
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+Create a new entity with the given data. Resolves to the created entity and raises on error.
 
 ```haskell
   ent <- Sdk.output_update_product sdk VNoval

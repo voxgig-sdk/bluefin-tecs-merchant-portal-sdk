@@ -42,6 +42,10 @@ main: kit: entity: output_remove_product: {
       name: "create"
       points: [
         {
+          bf: [
+            "packageUUID"
+            "productUUIDs"
+          ]
           co: {
             id: "POST /merchantportalws/removeProductsFromPackage"
             source: "openapi3"
@@ -52,7 +56,7 @@ main: kit: entity: output_remove_product: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -64,6 +68,10 @@ main: kit: entity: output_remove_product: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

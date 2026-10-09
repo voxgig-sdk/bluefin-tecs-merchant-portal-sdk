@@ -38,12 +38,24 @@ describe('OutputAddProductEntity', async () => {
   })
 
 
+  test('validate', async (t) => {
+    if (null == config.feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = BluefinTecsMerchantPortalSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.OutputAddProduct().create({"packageUUID":1,"productUUIDs":"x","responseCode":1,"responseMessage":"x"}),
+      (err) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"packageUUID":{"a":true,"h":"Package Uuid","n":"packageUUID","r":true,"sh":"Unique identifier for the package.","t":"`$STRING`","key$":"packageUUID","index$":0},"productUUIDs":{"a":true,"h":"Product Uui Ds","n":"productUUIDs","r":true,"sh":"The list of unique identifiers of the products.","t":"`$ARRAY`","key$":"productUUIDs","index$":1},"responseCode":{"a":true,"fo":"int32","h":"Response Code","n":"responseCode","r":true,"sh":"Response code.","t":"`$INTEGER`","key$":"responseCode","index$":2},"responseMessage":{"a":true,"h":"Response Message","n":"responseMessage","r":true,"sh":"Response message.","t":"`$STRING`","key$":"responseMessage","index$":3}},"name":"output_add_product","op":{"create":{"input":"data","name":"create","points":[{"a":true,"co":{"id":"POST /merchantportalws/addProductsToPackage","source":"openapi3","version":2},"g":{"header":[{"a":true,"k":"header","n":"authorization","or":"authorization","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/merchantportalws/addProductsToPackage","q":{"exist":["authorization"]},"r":{},"s":[{"lit":"merchantportalws"},{"lit":"addProductsToPackage"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"create"}},"relations":{"ancestors":[]},"key$":"output_add_product","name__orig":"output_add_product","Name":"OutputAddProduct","name_":"output_add_product","name-":"output-add-product","NAME":"OUTPUT_ADD_PRODUCT","index$":9}, {"active":true,"entity":"output_add_product","key$":"BasicOutputAddProductFlow","kind":"basic","name":"BasicOutputAddProductFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"output_add_product_ref01"},"m":{},"o":"create","s":[],"v":[],"index$":0}]}, 'OutputAddProduct', {"POST /merchantportalws/addProductsToPackage":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","required":["packageUUID","productUUIDs"],"properties":{"packageUUID":{"type":"string","example":"123e4567-e89b-12d3-a456-426614174000","description":"Unique identifier for the package.","key$":"packageUUID"},"productUUIDs":{"type":"array","example":["123e4567-e89b-12d3-a456-426614174000","123e4567-e89b-12d3-a456-426614174001"],"description":"The list of unique identifiers of the products.","uniqueItems":true,"items":{"type":"string"},"key$":"productUUIDs"}},"title":"InputAddProducts","x-ref":"#/components/schemas/InputAddProducts","index$":1}}},"description":"inputAddProducts","required":true},"parameters":[{"name":"Authorization","in":"header","description":"Authorization","required":true,"schema":{"type":"string"},"index$":0}]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"packageUUID":{"a":true,"h":"Package Uuid","n":"packageUUID","r":true,"sh":"Unique identifier for the package.","t":"`$STRING`","key$":"packageUUID","index$":0},"productUUIDs":{"a":true,"h":"Product Uui Ds","n":"productUUIDs","r":true,"sh":"The list of unique identifiers of the products.","t":"`$ARRAY`","key$":"productUUIDs","index$":1},"responseCode":{"a":true,"fo":"int32","h":"Response Code","n":"responseCode","r":true,"sh":"Response code.","t":"`$INTEGER`","key$":"responseCode","index$":2},"responseMessage":{"a":true,"h":"Response Message","n":"responseMessage","r":true,"sh":"Response message.","t":"`$STRING`","key$":"responseMessage","index$":3}},"name":"output_add_product","op":{"create":{"input":"data","name":"create","points":[{"a":true,"bf":["packageUUID","productUUIDs"],"co":{"id":"POST /merchantportalws/addProductsToPackage","source":"openapi3","version":2},"g":{"header":[{"a":true,"k":"header","n":"authorization","or":"Authorization","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/merchantportalws/addProductsToPackage","q":{"exist":["authorization"]},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"merchantportalws"},{"lit":"addProductsToPackage"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"create"}},"relations":{"ancestors":[]},"key$":"output_add_product","name__orig":"output_add_product","Name":"OutputAddProduct","name_":"output_add_product","name-":"output-add-product","NAME":"OUTPUT_ADD_PRODUCT","index$":9}, {"active":true,"entity":"output_add_product","key$":"BasicOutputAddProductFlow","kind":"basic","name":"BasicOutputAddProductFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"output_add_product_ref01"},"m":{},"o":"create","s":[],"v":[],"index$":0}]}, 'OutputAddProduct', {"POST /merchantportalws/addProductsToPackage":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","required":["packageUUID","productUUIDs"],"properties":{"packageUUID":{"type":"string","example":"123e4567-e89b-12d3-a456-426614174000","description":"Unique identifier for the package.","key$":"packageUUID"},"productUUIDs":{"type":"array","example":["123e4567-e89b-12d3-a456-426614174000","123e4567-e89b-12d3-a456-426614174001"],"description":"The list of unique identifiers of the products.","uniqueItems":true,"items":{"type":"string"},"key$":"productUUIDs"}},"title":"InputAddProducts","x-ref":"#/components/schemas/InputAddProducts","index$":1}}},"description":"inputAddProducts","required":true},"parameters":[{"name":"Authorization","in":"header","description":"Authorization","required":true,"schema":{"type":"string"},"index$":0}]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -64,6 +76,12 @@ describe('OutputAddProductEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra) {
   // TODO: fix test def options

@@ -46,6 +46,11 @@ main: kit: entity: output_move_tid: {
       name: "create"
       points: [
         {
+          bf: [
+            "productOrderUUIDs"
+            "targetPackageOrderUUID"
+            "targetProductOrderUUID"
+          ]
           co: {
             id: "POST /merchantportalws/moveTid"
             source: "openapi3"
@@ -56,7 +61,7 @@ main: kit: entity: output_move_tid: {
               {
                 k: "header"
                 n: "authorization"
-                or: "authorization"
+                or: "Authorization"
                 r: true
                 t: "`$STRING`"
               }
@@ -68,6 +73,10 @@ main: kit: entity: output_move_tid: {
             exist: [
               "authorization"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

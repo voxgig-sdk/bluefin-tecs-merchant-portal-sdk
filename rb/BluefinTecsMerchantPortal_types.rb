@@ -1046,22 +1046,22 @@ OutputCreateProductCreateData = Struct.new(
 
 # OutputDetail entity data model.
 #
-# @!attribute [rw] batch
+# @!attribute [rw] details
 #   @return [Hash, nil]
 #
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] lines
-#   @return [Hash, nil]
+# @!attribute [rw] responseCode
+#   @return [Integer]
 #
-# @!attribute [rw] progress
-#   @return [Hash, nil]
+# @!attribute [rw] responseMessage
+#   @return [String]
 OutputDetail = Struct.new(
-  :batch,
+  :details,
   :id,
-  :lines,
-  :progress,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
